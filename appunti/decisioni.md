@@ -1,7 +1,6 @@
 # Decisioni
 
-Una riga per decisione, con data e motivo. Le decisioni si cambiano con una nuova riga,
-non cancellando quella vecchia.
+Una riga per decisione, con data e motivo. Le decisioni si cambiano con una nuova riga, non cancellando quella vecchia.
 
 | Data | Tema | Decisione | Motivo |
 |---|---|---|---|
