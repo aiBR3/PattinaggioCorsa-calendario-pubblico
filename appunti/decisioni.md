@@ -8,7 +8,7 @@ non cancellando quella vecchia.
 | 2026-11-05 | Perimetro | Master + Amatori/Fitness, gare e pattinate; Italia + CH, ES, PT, FR, AT, DE, SI | È il perimetro d'interesse del proprietario |
 | 2026-11-05 | Piattaforma | File ICS pubblicato via GitHub Pages da questo repository; altri siti si limitano a un link `webcal://` e non vengono toccati | Separare il lavoro degli agenti dal sito di produzione |
 | 2026-11-05 | Ritardo Android | Accettato: Google Calendar aggiorna le sottoscrizioni ICS ogni 12–24 h (talvolta di più) | Non dipende da noi |
-| 2026-11-05 | Memoria degli agenti | Il repository stesso: `CLAUDE.md` + `note/diario.md` + `note/decisioni.md` | Versionata, leggibile dal proprietario, nessun servizio in più |
+| 2026-11-05 | Memoria degli agenti | Il repository stesso: `CLAUDE.md` + `appunti/diario.md` + `appunti/decisioni.md` | Versionata, leggibile dal proprietario, nessun servizio in più |
 | 2026-11-05 | Scrittura | Nessun agente o script scrive su `main`: solo pull request; merge solo del proprietario (aiBR3) | Il proprietario approva ogni modifica |
 | 2026-11-05 | Pubblicazione (opzione A) | Un workflow Actions genera `calendario.ics` da `eventi.yaml` a ogni merge su `main` e lo pubblica su Pages (sorgente "GitHub Actions"); l'ICS non è committato | Mai stantio, nessun file derivato nel repo |
 | 2026-11-05 | Releases | Niente: l'ICS non va negli allegati delle release | Redirect + Content-Type non garantito, una release a settimana non ha senso; eventuale snapshot a fine stagione |
@@ -24,6 +24,10 @@ non cancellando quella vecchia.
 | 2026-11-05 | Prova dal titolo ufficiale | Per i campionati FISR senza indizione, il titolo nel calendario federale ('Campionato Italiano Maratona cat. J/S/M') vale come prova delle categorie: M → `confermato` con `categorie: [master]`; `cat.` senza M → `escluso` | Il calendario federale è ufficiale; il regolamento del campionato si cercherà nei comunicati per distanze e dettagli |
 | 2026-11-05 | Scansione degli id delle indizioni | Le indizioni restano online anche senza link: si scandisce l'intervallo di id (6300–7100 nel 2026) e si abbinano alle righe della lista per data e nome | Unico modo per avere la prova delle gare passate e di quelle 'non autorizzate' |
 | 2026-11-05 | Conversione automatica con revisione | `converti_fisr.py` propone le voci (categorie e prova dalle righe dell'art. 10); nomi, luoghi e organizzatori vengono rivisti a mano prima della PR; le voci già presenti non si toccano | Evita errori di battitura su decine di voci; la decisione resta tracciabile |
+| 2026-11-05 | Descrizione degli eventi | Solo ciò che serve a chi pattina: categorie e distanze, organizzatore, scadenza, un solo link ("Informazioni"), note. Niente prova, fonti, stato, link al calendario | Troppe informazioni confondevano; i dati di lavoro restano nell'YAML |
+| 2026-11-05 | Link dell'evento | Proprietà `URL` dell'evento (RFC 5545) **e** stessa riga nella descrizione | Calendario di Apple mostra `URL`, Google Calendar la ignora |
+| 2026-11-05 | Pagina Pages | Testo e CSS in `script/modello_index.html` con segnaposto; lo script controlla che i segnaposto ci siano tutti e nessuno resti | Modificabile senza toccare Python |
+| 2026-11-05 | Cartella appunti | `note/` rinominata `appunti/` | Richiesta del proprietario |
 | 2026-11-05 | Scartato | Submodule del solo file ICS (un submodule punta a un repository intero); profilo Facebook fittizio (viola i termini di Meta, viene bloccato) | |
 
 ## Fasi

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+  Modello della pagina pubblicata su GitHub Pages (index.html).
+  Testo e CSS si modificano QUI; script/genera_ics.py sostituisce i segnaposto {{...}}:
+    {{titolo}}             nome del calendario
+    {{descrizione}}        descrizione del calendario
+    {{blocco_iscrizione}}  pulsante webcal + istruzioni per Google Calendar (HTML generato)
+    {{numero_eventi}}      quanti eventi sono pubblicati
+    {{righe_tabella}}      le righe <tr> della tabella (HTML generato)
+    {{generato_il}}        data e ora di generazione (UTC)
+  Lo script si rifiuta di generare la pagina se un segnaposto manca o resta non sostituito.
+-->
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{titolo}}</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; max-width: 60rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #222; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+  th, td { border-bottom: 1px solid #ddd; padding: 0.5rem 0.4rem; text-align: left; vertical-align: top; }
+  th { background: #f3f3f3; }
+  .bottone { display: inline-block; padding: 0.6rem 1rem; background: #0b5fff; color: #fff; border-radius: 0.4rem; text-decoration: none; }
+  code { background: #f3f3f3; padding: 0.1rem 0.3rem; word-break: break-all; }
+  footer { margin-top: 2rem; font-size: 0.85rem; color: #666; }
+</style>
+</head>
+<body>
+<h1>{{titolo}}</h1>
+<p>{{descrizione}}</p>
+{{blocco_iscrizione}}
+<h2>Eventi pubblicati ({{numero_eventi}})</h2>
+<table>
+<thead><tr><th>Data</th><th>Evento</th><th>Luogo</th><th>Tipo</th><th>Categorie</th><th>Stato</th></tr></thead>
+<tbody>
+{{righe_tabella}}
+</tbody>
+</table>
+<footer>
+<p>Generato il {{generato_il}} UTC da
+<a href="https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico">dati/eventi.yaml</a>.
+Legenda degli stati: <em>confermato</em> = categorie verificate sull'indizione o sul regolamento;
+<em>da verificare</em> = segnalato ma non ancora controllato; <em>non ancora autorizzata</em> = a calendario federale in attesa di autorizzazione.</p>
+</footer>
+</body>
+</html>

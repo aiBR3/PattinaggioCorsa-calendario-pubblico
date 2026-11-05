@@ -1,8 +1,8 @@
 # CLAUDE.md — regole permanenti per chi lavora in questo repository
 
 Questo file è la memoria permanente di agenti e script. Leggilo per intero prima di
-fare qualsiasi cosa. Poi leggi `note/diario.md` (cosa non ha funzionato, per non
-riprovarlo) e `note/decisioni.md` (perché le cose sono fatte così).
+fare qualsiasi cosa. Poi leggi `appunti/diario.md` (cosa non ha funzionato, per non
+riprovarlo) e `appunti/decisioni.md` (perché le cose sono fatte così).
 
 ## Scopo
 
@@ -31,9 +31,9 @@ evento in meno che una data sbagliata.
 4. **Non inventare.** Campo sconosciuto = campo vuoto. Mai dedurre date, luoghi o
    categorie dal nome dell'evento o dall'edizione precedente.
 5. **Ogni esecuzione lascia traccia.** Un file in `log/` anche in caso di errore; una
-   riga in `note/diario.md` se qualcosa non ha funzionato.
+   riga in `appunti/diario.md` se qualcosa non ha funzionato.
 6. **Non ripetere errori.** Prima di tentare un approccio, controlla in
-   `note/diario.md` se è già fallito e perché.
+   `appunti/diario.md` se è già fallito e perché.
 7. **Un evento non si duplica.** La chiave è `id`. Se un evento esiste già si aggiorna
    la voce, si aggiunge la fonte e si ricontrolla `verificato_il`.
 8. **Nessun altro repository o sito si tocca.** Questo repository è l'unico posto di
@@ -47,13 +47,14 @@ evento in meno che una data sbagliata.
 ```
 CLAUDE.md                  ← questo file
 README.md                  ← per le persone: cos'è e come iscriversi
-note/decisioni.md          ← decisioni prese, con data e motivo
-note/diario.md             ← cosa non ha funzionato
+appunti/decisioni.md       ← decisioni prese, con data e motivo
+appunti/diario.md          ← cosa non ha funzionato
 dati/eventi.yaml           ← SORGENTE DI VERITÀ degli eventi
 dati/fonti.yaml            ← registro delle fonti e di come si leggono
 script/raccogli_fisr.py    ← livello 1: lista + indizioni di fisr.info → JSON grezzo (non decide)
 script/converti_fisr.py    ← livelli 2-3: JSON grezzo → voci di eventi.yaml, con prova citata dall'art. 10
 script/genera_ics.py       ← eventi.yaml → calendario.ics + index.html (valida ingresso e uscita)
+script/modello_index.html  ← testo e CSS della pagina pubblicata: si modifica QUI (segnaposto {{...}})
 script/requisiti.txt       ← dipendenze Python
 .github/workflows/         ← verifica.yml (sulle PR), pubblica.yml (su main → Pages)
 agenti/                    ← prompt dei compiti (da creare in Fase 2+)
@@ -61,8 +62,19 @@ log/                       ← un rapporto per esecuzione: AAAA-MM-GG-raccolta-f
 uscita/                    ← generato localmente, ignorato da git
 ```
 
-`calendario.ics` non è mai committato: lo genera il workflow a ogni merge su `main`
-e lo pubblica su GitHub Pages.
+`calendario.ics` e `index.html` non sono mai committati: li genera il workflow a ogni
+merge su `main` e li pubblica su GitHub Pages. Per cambiare testo o aspetto della pagina
+si modifica `script/modello_index.html` (una PR come le altre); il contenuto della
+tabella e il pulsante di iscrizione li produce lo script.
+
+## Cosa vede chi consulta il calendario
+
+Per ogni evento: titolo (con eventuale prefisso di stato), date, luogo, e una descrizione
+breve: categorie ammesse e distanze, organizzatore, scadenza iscrizioni, **un solo link**
+("Informazioni": `url_ufficiale`, altrimenti `url_iscrizione`) e le `note`. Lo stesso link
+va anche nella proprietà `URL` dell'evento (Calendario di Apple la mostra, Google la ignora).
+`prova`, `fonti`, `stato` e `verificato_il` sono dati di lavoro: restano nell'YAML e non
+vanno nella descrizione. Le `note` sono visibili a tutti: scriverle per chi pattina.
 
 ## Schema di `dati/eventi.yaml`
 
@@ -148,4 +160,4 @@ Le voci già presenti in `eventi.yaml` non vengono mai modificate dallo script.
 
 **Fase 1 — a mano, insieme.** Nessun agente autonomo è attivo. Ogni voce in
 `eventi.yaml` è stata letta e verificata da una persona con Claude nella stessa
-conversazione. Le fasi successive sono descritte in `note/decisioni.md`.
+conversazione. Le fasi successive sono descritte in `appunti/decisioni.md`.

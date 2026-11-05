@@ -328,6 +328,7 @@ def costruisci_evento(riga: dict | None, indizione: dict | None, letto_il: str) 
             note.append(f"Manifestazione di categoria {indizione.get('categoria_manifestazione') or '?'} su {indizione.get('disciplina') or '?'}.")
         if indizione.get("campo_gara"):
             campo = re.sub(r"\s+", " ", indizione["campo_gara"]).strip()
+            campo = re.sub(r"\.?\.? ?CAP della localit[àa]? \d{5}\.?$", ".", campo)   # rumore del modulo, inutile per chi legge
             note.append("Campo di gara: " + (campo[:220] + "…" if len(campo) > 220 else campo))
         if not luogo and indizione.get("campo_gara"):
             luogo = "da indicare (vedi note)"
