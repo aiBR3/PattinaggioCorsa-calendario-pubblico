@@ -30,8 +30,9 @@ Ogni evento ha nel titolo il nome ufficiale e, se serve, un prefisso:
 | `[non ancora autorizzata]` | a calendario federale, in attesa di autorizzazione |
 | `[RINVIATA]`, `[ANNULLATA]` | come dice |
 
-Nella descrizione: tipo, categorie ammesse, distanze, organizzatore, scadenza iscrizioni,
-link all'indizione, la frase del regolamento che prova le categorie, le fonti.
+Nella descrizione: categorie ammesse e distanze, organizzatore, scadenza iscrizioni, un link
+alle informazioni ufficiali (indizione o sito) e le note utili. La prova delle categorie e le
+fonti restano in `dati/eventi.yaml`.
 
 ## Segnalare una gara
 
@@ -45,8 +46,8 @@ data, luogo, nome e il link (o il testo del post).
   verifica e la prova delle categorie ammesse.
 - `script/genera_ics.py` valida il file e genera `calendario.ics` + `index.html`.
 - A ogni modifica su `main`, un workflow GitHub Actions rigenera e pubblica su Pages.
-- `dati/fonti.yaml` è il registro delle fonti; `note/` contiene decisioni e diario.
+- `dati/fonti.yaml` è il registro delle fonti; `appunti/` contiene decisioni e diario.
 - Le regole per chi lavora qui (persone, script, agenti) sono in `CLAUDE.md`.
 
 Ogni modifica passa da una pull request. Il progetto è in **Fase 1**: inserimento manuale
-e verificato; l'automazione arriverà a fasi (vedi `note/decisioni.md`).
+e verificato; l'automazione arriverà a fasi (vedi `appunti/decisioni.md`).

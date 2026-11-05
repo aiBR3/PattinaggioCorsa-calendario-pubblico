@@ -12,7 +12,8 @@ Cosa fa, nell'ordine:
   2. costruisce il calendario: gli eventi con stato "escluso" non vengono
      pubblicati, tutti gli altri sì (con un prefisso nel titolo se lo stato
      non è "confermato" o "annunciato");
-  3. scrive calendario.ics e index.html nella cartella di uscita;
+  3. scrive calendario.ics e index.html (testo e CSS in script/modello_index.html)
+     nella cartella di uscita;
   4. rilegge il file .ics appena scritto e verifica che contenga esattamente
      gli eventi attesi, con le proprietà obbligatorie e righe conformi.
 
@@ -90,6 +91,7 @@ DESCRIZIONE_CALENDARIO = (
 )
 NOME_FILE_ICS = "calendario.ics"
 NOME_FILE_HTML = "index.html"
+PERCORSO_MODELLO_HTML = Path(__file__).resolve().parent / "modello_index.html"   # testo e CSS della pagina
 LUNGHEZZA_MASSIMA_RIGA_ICS = 75  # ottetti, RFC 5545 §3.1
 
 
@@ -372,40 +374,36 @@ def intervallo_date(evento: Evento) -> str:
     return f"{formatta_data_it(evento.data_inizio)} – {formatta_data_it(evento.data_fine)}"
 
 
-def etichetta_stato(evento: Evento) -> str:
-    testo = evento.stato.replace("_", " ")
-    if evento.verificato_il:
-        testo += f" (verificato il {formatta_data_it(evento.verificato_il)})"
-    return testo
-
-
 def titolo_evento(evento: Evento) -> str:
     return PREFISSO_TITOLO.get(evento.stato, "") + evento.nome
 
 
-def descrizione_evento(evento: Evento, url_base: str) -> str:
+def collegamento_evento(evento: Evento) -> str:
+    """Un solo URL per l'evento: il sito ufficiale o l'indizione; in mancanza, la pagina d'iscrizione."""
+    return evento.url_ufficiale or evento.url_iscrizione
+
+
+def descrizione_evento(evento: Evento) -> str:
+    """Testo per chi consulta il calendario: poche righe, niente dati di lavoro
+    (prova, fonti, stato: lo stato è già nel titolo come prefisso)."""
     righe: list[str] = []
-    riga_tipo = f"Tipo: {evento.tipo}"
-    riga_tipo += " · Categorie ammesse: " + (", ".join(evento.categorie) if evento.categorie else "non ancora verificate")
+    if evento.tipo == "pattinata":
+        prima_riga = "Pattinata non competitiva"
+    elif evento.categorie:
+        prima_riga = "Categorie ammesse: " + ", ".join(c.capitalize() for c in evento.categorie)
+    else:
+        prima_riga = "Categorie ammesse: da verificare"
     if evento.distanze:
-        riga_tipo += " · Distanze: " + ", ".join(evento.distanze)
-    righe.append(riga_tipo)
+        prima_riga += " · Distanze: " + ", ".join(evento.distanze)
+    righe.append(prima_riga)
     if evento.organizzatore:
         righe.append(f"Organizzatore: {evento.organizzatore}")
     if evento.scadenza_iscrizione:
         righe.append(f"Scadenza iscrizioni: {formatta_data_it(evento.scadenza_iscrizione)}")
-    if evento.url_ufficiale:
-        righe.append(f"Sito/indizione: {evento.url_ufficiale}")
-    if evento.url_iscrizione:
-        righe.append(f"Iscrizione: {evento.url_iscrizione}")
-    righe.append(f"Stato: {etichetta_stato(evento)}")
-    if evento.prova:
-        righe.append(f"Prova: {evento.prova}")
+    if collegamento := collegamento_evento(evento):
+        righe.append(f"Informazioni: {collegamento}")
     if evento.note:
-        righe.append(f"Note: {evento.note}")
-    righe.append("Fonti: " + "; ".join(f"{fonte.url} (letto il {formatta_data_it(fonte.letto_il)})" for fonte in evento.fonti))
-    if url_base:
-        righe.append(f"Calendario: {url_base}/")
+        righe.append(evento.note)
     return "\n".join(righe)
 
 
@@ -434,10 +432,12 @@ def costruisci_calendario(eventi: list[Evento], url_base: str) -> Calendar:
         voce.add("dtstart", evento.data_inizio)                      # VALUE=DATE: evento di giornata intera
         voce.add("dtend", evento.data_fine + timedelta(days=1))      # DTEND escluso, come da RFC 5545
         voce.add("summary", titolo_evento(evento))
-        voce.add("description", descrizione_evento(evento, url_base))
+        voce.add("description", descrizione_evento(evento))
         voce.add("location", f"{evento.luogo} ({evento.paese})")
-        if evento.url_ufficiale:
-            voce.add("url", evento.url_ufficiale)
+        if collegamento := collegamento_evento(evento):
+            # Proprietà URL (RFC 5545 §3.8.4.6): Calendario di Apple la mostra come campo "URL";
+            # Google Calendar la ignora, per questo lo stesso link sta anche nella descrizione.
+            voce.add("url", collegamento)
         voce.add("categories", [evento.tipo, *evento.categorie])
         if evento.stato in STATUS_ICAL:
             voce.add("status", STATUS_ICAL[evento.stato])
@@ -483,42 +483,25 @@ def genera_indice_html(eventi: list[Evento], url_base: str, generato_il: datetim
         f'<p>File del calendario: <a href="{html.escape(url_ics_https)}">{html.escape(NOME_FILE_ICS)}</a></p>'
     )
 
-    return f"""<!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{html.escape(NOME_CALENDARIO)}</title>
-<style>
-  body {{ font-family: -apple-system, system-ui, sans-serif; max-width: 60rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #222; }}
-  table {{ border-collapse: collapse; width: 100%; font-size: 0.95rem; }}
-  th, td {{ border-bottom: 1px solid #ddd; padding: 0.5rem 0.4rem; text-align: left; vertical-align: top; }}
-  th {{ background: #f3f3f3; }}
-  .bottone {{ display: inline-block; padding: 0.6rem 1rem; background: #0b5fff; color: #fff; border-radius: 0.4rem; text-decoration: none; }}
-  code {{ background: #f3f3f3; padding: 0.1rem 0.3rem; word-break: break-all; }}
-  footer {{ margin-top: 2rem; font-size: 0.85rem; color: #666; }}
-</style>
-</head>
-<body>
-<h1>{html.escape(NOME_CALENDARIO)}</h1>
-<p>{html.escape(DESCRIZIONE_CALENDARIO)}</p>
-{blocco_iscrizione}
-<h2>Eventi pubblicati ({len(pubblicati)})</h2>
-<table>
-<thead><tr><th>Data</th><th>Evento</th><th>Luogo</th><th>Tipo</th><th>Categorie</th><th>Stato</th></tr></thead>
-<tbody>
-{chr(10).join(righe_tabella)}
-</tbody>
-</table>
-<footer>
-<p>Generato il {generato_il.strftime('%d/%m/%Y alle %H:%M')} UTC da
-<a href="https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico">dati/eventi.yaml</a>.
-Legenda degli stati: <em>confermato</em> = categorie verificate sull'indizione o sul regolamento;
-<em>da verificare</em> = segnalato ma non ancora controllato; <em>non ancora autorizzata</em> = a calendario federale in attesa di autorizzazione.</p>
-</footer>
-</body>
-</html>
-"""
+    segnaposto = {
+        "titolo": html.escape(NOME_CALENDARIO),
+        "descrizione": html.escape(DESCRIZIONE_CALENDARIO),
+        "blocco_iscrizione": blocco_iscrizione,
+        "numero_eventi": str(len(pubblicati)),
+        "righe_tabella": "\n".join(righe_tabella),
+        "generato_il": generato_il.strftime("%d/%m/%Y alle %H:%M"),
+    }
+    if not PERCORSO_MODELLO_HTML.is_file():
+        raise FileNotFoundError(f"modello della pagina non trovato: {PERCORSO_MODELLO_HTML}")
+    pagina = PERCORSO_MODELLO_HTML.read_text(encoding="utf-8")
+    mancanti = [chiave for chiave in segnaposto if f"{{{{{chiave}}}}}" not in pagina]
+    if mancanti:
+        raise ValueError(f"{PERCORSO_MODELLO_HTML}: segnaposto mancanti {mancanti}")
+    for chiave, valore in segnaposto.items():
+        pagina = pagina.replace(f"{{{{{chiave}}}}}", valore)
+    if residui := re.findall(r"\{\{\s*[a-z_]+\s*\}\}", pagina):
+        raise ValueError(f"{PERCORSO_MODELLO_HTML}: segnaposto sconosciuti {sorted(set(residui))}")
+    return pagina
 
 
 def scrivi_uscita(cartella: Path, calendario: Calendar, pagina: str) -> tuple[Path, Path]:
