@@ -454,10 +454,14 @@ def costruisci_calendario(eventi: list[Evento], url_base: str) -> Calendar:
 # 3. Uscita: file .ics e pagina index.html
 # ---------------------------------------------------------------------------
 
+SEGNAPOSTO_OBBLIGATORI = {"righe_tabella"}   # senza la tabella la pagina non ha senso; gli altri sono facoltativi
+
+
 def genera_indice_html(eventi: list[Evento], url_base: str, generato_il: datetime) -> str:
-    pubblicati = sorted((e for e in eventi if e.pubblicato), key=lambda e: (e.data_inizio, e.id))
+    # Nella tabella il più recente sta in alto (ordine cronologico inverso).
+    pubblicati = sorted((e for e in eventi if e.pubblicato), key=lambda e: (e.data_inizio, e.id), reverse=True)
     url_ics_https = f"{url_base}/{NOME_FILE_ICS}" if url_base else NOME_FILE_ICS
-    url_ics_webcal = url_ics_https.replace("https://", "webcal://", 1) if url_base else ""
+    url_ics_webcal = url_ics_https.replace("https://", "webcal://", 1) if url_base else url_ics_https
 
     righe_tabella: list[str] = []
     for evento in pubblicati:
@@ -478,19 +482,12 @@ def genera_indice_html(eventi: list[Evento], url_base: str, generato_il: datetim
     if not righe_tabella:
         righe_tabella.append('<tr><td colspan="6">Nessun evento pubblicato al momento.</td></tr>')
 
-    blocco_iscrizione = (
-        f'<p><a class="bottone" href="{html.escape(url_ics_webcal)}">Iscriviti al calendario (iPhone, iPad, Mac)</a></p>\n'
-        f"<p>Su Android/Google Calendar: apri <a href=\"https://calendar.google.com/\">Google Calendar dal computer</a> → "
-        f"<em>Altri calendari</em> → <em>Da URL</em> e incolla:<br><code>{html.escape(url_ics_https)}</code><br>"
-        f"<small>Google aggiorna le sottoscrizioni ogni 12–24 ore circa.</small></p>"
-        if url_base else
-        f'<p>File del calendario: <a href="{html.escape(url_ics_https)}">{html.escape(NOME_FILE_ICS)}</a></p>'
-    )
-
+    # Tutto il testo della pagina sta nel modello; da qui arrivano solo i valori che dipendono dai dati.
     segnaposto = {
         "titolo": html.escape(NOME_CALENDARIO),
         "descrizione": html.escape(DESCRIZIONE_CALENDARIO),
-        "blocco_iscrizione": blocco_iscrizione,
+        "url_webcal": html.escape(url_ics_webcal),
+        "url_ics": html.escape(url_ics_https),
         "numero_eventi": str(len(pubblicati)),
         "righe_tabella": "\n".join(righe_tabella),
         "generato_il": generato_il.strftime("%d/%m/%Y alle %H:%M"),
@@ -498,13 +495,13 @@ def genera_indice_html(eventi: list[Evento], url_base: str, generato_il: datetim
     if not PERCORSO_MODELLO_HTML.is_file():
         raise FileNotFoundError(f"modello della pagina non trovato: {PERCORSO_MODELLO_HTML}")
     pagina = PERCORSO_MODELLO_HTML.read_text(encoding="utf-8")
-    mancanti = [chiave for chiave in segnaposto if f"{{{{{chiave}}}}}" not in pagina]
+    mancanti = [chiave for chiave in SEGNAPOSTO_OBBLIGATORI if f"{{{{{chiave}}}}}" not in pagina]
     if mancanti:
-        raise ValueError(f"{PERCORSO_MODELLO_HTML}: segnaposto mancanti {mancanti}")
+        raise ValueError(f"{PERCORSO_MODELLO_HTML}: segnaposto obbligatori mancanti {mancanti}")
     for chiave, valore in segnaposto.items():
         pagina = pagina.replace(f"{{{{{chiave}}}}}", valore)
     if residui := re.findall(r"\{\{\s*[a-z_]+\s*\}\}", pagina):
-        raise ValueError(f"{PERCORSO_MODELLO_HTML}: segnaposto sconosciuti {sorted(set(residui))}")
+        raise ValueError(f"{PERCORSO_MODELLO_HTML}: segnaposto sconosciuti {sorted(set(residui))}; quelli disponibili sono {sorted(segnaposto)}")
     return pagina
 
 

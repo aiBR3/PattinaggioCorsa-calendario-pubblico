@@ -64,10 +64,12 @@ uscita/                    ← generato localmente, ignorato da git
 ```
 
 `calendario.ics` e `index.html` non sono mai committati: li genera il workflow a ogni
-merge su `main` e li pubblica su GitHub Pages insieme ai file di `pagina/`. Per cambiare
-il testo della pagina si modifica `pagina/modello_index.html`, per l'aspetto
-`pagina/stile.css` (una PR come le altre); il contenuto della tabella e il pulsante di
-iscrizione li produce lo script.
+merge su `main` e li pubblica su GitHub Pages insieme ai file di `pagina/`. Tutto il
+testo della pagina sta in `pagina/modello_index.html`, l'aspetto in `pagina/stile.css`
+(una PR come le altre); lo script fornisce solo i segnaposto che dipendono dai dati
+(`{{righe_tabella}}`, l'unico obbligatorio; `{{numero_eventi}}`, `{{url_webcal}}`,
+`{{url_ics}}`, `{{generato_il}}`, `{{titolo}}`, `{{descrizione}}`). Nella tabella gli
+eventi sono in ordine cronologico inverso: il più recente in alto.
 
 ## Cosa vede chi consulta il calendario
 
