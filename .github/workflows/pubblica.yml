@@ -1,0 +1,71 @@
+# Pubblica il calendario su GitHub Pages.
+#
+# Quando: a ogni push su main che tocca dati, script o questo workflow
+# (cioè dopo ogni merge di una PR), oppure a mano da "Actions → Run workflow".
+# Cosa: genera calendario.ics + index.html da dati/eventi.yaml e li pubblica.
+# Requisito: Settings → Pages → Source = "GitHub Actions".
+
+name: Pubblica il calendario
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "dati/**"
+      - "script/**"
+      - ".github/workflows/pubblica.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un solo deploy alla volta; quelli in coda non vengono annullati.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  genera:
+    name: Genera calendario.ics
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il repository
+        uses: actions/checkout@v6
+
+      - name: Prepara Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Installa le dipendenze
+        run: pip install -r script/requisiti.txt
+
+      - name: Legge l'URL di Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Genera e verifica l'uscita
+        run: >
+          python3 script/genera_ics.py
+          --ingresso dati/eventi.yaml
+          --uscita uscita
+          --url-base "${{ steps.pages.outputs.base_url }}"
+
+      - name: Carica l'artefatto per Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: uscita
+
+  pubblica:
+    name: Pubblica su GitHub Pages
+    needs: genera
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

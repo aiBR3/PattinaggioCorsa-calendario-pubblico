@@ -1,0 +1,100 @@
+# Sorgente di verità del calendario. Ogni modifica passa da una pull request.
+# Schema, stati e regole: CLAUDE.md. Lo script script/genera_ics.py valida
+# ogni campo e si rifiuta di generare il calendario se qualcosa non torna.
+#
+# Promemoria:
+#   - id = data_inizio + città + slug (minuscole, senza accenti, trattini)
+#   - categorie si compila SOLO con prova compilata (frase citata dall'indizione)
+#   - stato "escluso" = verificato: NON ammette Master/Amatori → resta qui come
+#     memoria (così nessuno lo ripropone) ma non finisce nel calendario
+#   - ogni voce ha almeno una fonte con url e letto_il
+
+- id: 2026-11-08-imola-gran-premio-indoor
+  nome: "49° Gran Premio Indoor Città di Imola"
+  data_inizio: 2026-11-08
+  data_fine: 2026-11-08
+  luogo: "Imola (BO), pista piana in cemento, via B. Croce"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Gruppo Imolese P."
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7045"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-11-02
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7045
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione, art. 9-10: 'Sono ammessi i concorrenti, maschi e femmine, delle categorie sotto indicate' — elencate solo Allievi, Ragazzi, Ragazzi 12, Esordienti, Giovanissimi. Nessuna categoria Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Stesso nome e stessa numerazione dell'edizione dell'8 dicembre (id_manif 7046), che invece ammette i Master."
+
+- id: 2026-11-28-pescara-trofeo-nazionale
+  nome: "4° Trofeo Nazionale Città di Pescara"
+  data_inizio: 2026-11-28
+  data_fine: 2026-11-29
+  luogo: "Pescara, pista 175 m con curve sopraelevate, via Maestri del Lavoro"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "C.SP.P. Pescara"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7052"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-11-20
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7052
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione, art. 9-10: categorie ammesse Seniores, Juniores, Allievi, Ragazzi, Ragazzi 12, Esordienti, Giovanissimi (quote d'iscrizione per G/E e R12/R/A/J/S). Nessuna categoria Master o Amatori."
+  note: "Manifestazione di categoria B su pista."
+
+- id: 2026-12-06-laquila-internazionali-open-indoor-master-race
+  nome: "Internazionali d'Italia Open Indoor — Master Race — Vesmaco Race, VI Memorial Romano Maria Cacciani"
+  data_inizio: 2026-12-06
+  data_fine: 2026-12-06
+  luogo: "L'Aquila"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "C.P.G.A. ASD"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-11-30
+  stato: non_autorizzato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: ""
+  prova: ""
+  note: "Nel calendario fisr.info compare con la dicitura 'Attività non ancora autorizzata' e senza modulo d'indizione. Il nome dice 'MASTER RACE', ma le categorie vanno verificate sull'indizione appena esce. Scadenza iscrizioni 30/11, termine depennamenti 01/12 (dalla lista)."
+
+- id: 2026-12-08-imola-gran-premio-indoor
+  nome: "49° Gran Premio Indoor Città di Imola"
+  data_inizio: 2026-12-08
+  data_fine: 2026-12-08
+  luogo: "Imola (BO), pista piana in cemento, via B. Croce"
+  paese: IT
+  tipo: gara
+  categorie: [master]
+  distanze: ["2 giri sprint", "2000 m in linea"]
+  organizzatore: "Gruppo Imolese P."
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7046"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-12-02
+  stato: confermato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7046
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione, art. 10: righe di programma da 'MASTER OVER 30' a 'MASTER OVER 75', F e M, '2 g Sprint' e '2000 m In linea'. Orari: 'Master m/f Ritrovo ore13 00 Inizio gare ore 13 30.' Premi: 'Verrà premiata la società Master + numerosa con Il Trofeo Memorial MASSIMO PANINI.'"
+  note: "Manifestazione di categoria B su pista piana in cemento (90/100 m). Aperta ai tesserati in regola per l'anno in corso (art. 2). Iscrizioni solo tramite il sito federale entro le 24 del 02/12, conferme entro le 17 del 05/12. Categorie Amatori non menzionate."

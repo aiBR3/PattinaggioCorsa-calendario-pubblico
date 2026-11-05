@@ -1,0 +1,42 @@
+# Verifica una pull request: i dati devono generare un calendario valido.
+#
+# Non pubblica nulla. Serve a chi fa il merge per vedere un segno verde (o rosso)
+# prima di approvare. Il rapporto dello script è nel log del job.
+
+name: Verifica i dati
+
+on:
+  pull_request:
+    paths:
+      - "dati/**"
+      - "script/**"
+      - ".github/workflows/verifica.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verifica:
+    name: Genera il calendario di prova
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il repository
+        uses: actions/checkout@v6
+
+      - name: Prepara Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Installa le dipendenze
+        run: pip install -r script/requisiti.txt
+
+      - name: Genera e verifica l'uscita
+        run: >
+          python3 script/genera_ics.py
+          --ingresso dati/eventi.yaml
+          --uscita uscita
+          --url-base https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico
+
+      - name: Mostra il calendario generato
+        run: cat uscita/calendario.ics
