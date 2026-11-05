@@ -72,10 +72,12 @@ iscrizione li produce lo script.
 ## Cosa vede chi consulta il calendario
 
 Per ogni evento: titolo (con eventuale prefisso di stato), date, luogo, e una descrizione
-breve: categorie ammesse e distanze, organizzatore, scadenza iscrizioni, **un solo link**
-nella riga `URL:` (`url_ufficiale`, altrimenti `url_iscrizione`) e le `note` nella riga
-`Informazioni:`. Lo stesso link va anche nella proprietà `URL` dell'evento (Calendario di
-Apple la mostra, Google la ignora).
+breve, una riga per voce e in quest'ordine: categorie ammesse (o "non ancora pubblicate"
+per `annunciato`, "da verificare" negli altri casi senza categorie; "Pattinata non
+competitiva" per le pattinate), distanze, organizzatore, scadenza iscrizioni, le `note`
+nella riga `Informazioni:` e per ultimo **un solo link** nella riga `URL:` (`url_ufficiale`,
+altrimenti `url_iscrizione`). Lo stesso link va anche nella proprietà `URL` dell'evento
+(Calendario di Apple la mostra, Google la ignora).
 `prova`, `fonti`, `stato`, `verificato_il` e `note_interne` sono dati di lavoro: restano
 nell'YAML e non vanno nella descrizione. Le `note` sono visibili a tutti: scriverle per chi
 pattina (impianto, orari, quote, come ci si iscrive); tutto il resto (dubbi, doppioni,
