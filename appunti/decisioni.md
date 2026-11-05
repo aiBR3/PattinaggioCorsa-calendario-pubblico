@@ -30,6 +30,7 @@ non cancellando quella vecchia.
 | 2026-11-05 | `note` e `note_interne` | `note` = pubbliche (descrizione dell'evento), `note_interne` = dati di lavoro mai pubblicati. Migrate le 59 voci: 22 frasi spostate | Le note erano l'unico campo libero visibile a tutti e mescolavano le due cose |
 | 2026-11-05 | Cartella appunti | `note/` rinominata `appunti/` | Richiesta del proprietario |
 | 2026-11-05 | Parola "indizione" | Sostituita ovunque (testi, dati, codice, parametri degli script, chiavi JSON) con "regolamento di gara" / "regolamento" | Incomprensibile per chi non vive nel gergo federale; il documento stesso si intitola "Regolamento particolare" |
+| 2026-11-05 | Testo della pagina | Tutto nel modello HTML, compresi pulsante di iscrizione e istruzioni per Google; lo script passa solo `url_webcal`, `url_ics`, `numero_eventi`, `righe_tabella`, `generato_il` (più `titolo`/`descrizione`, facoltativi). Tabella in ordine cronologico inverso | Il proprietario deve poter cambiare il testo senza toccare Python |
 | 2026-11-05 | Righe della descrizione | Il link è preceduto da `URL:`, le note pubbliche da `Informazioni:` | Richiesta del proprietario |
 | 2026-11-05 | Scartato | Submodule del solo file ICS (un submodule punta a un repository intero); profilo Facebook fittizio (viola i termini di Meta, viene bloccato) | |
 
