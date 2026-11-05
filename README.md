@@ -1,4 +1,4 @@
-# Calendario pubblico del pattinaggio corsa per Master e Amatori
+# Calendario pubblico del pattinaggio corsa per Master e Amatori (generato automaticamente)
 
 Un calendario condiviso con le gare e gli eventi di pattinaggio corsa (inline speed
 skating) aperti alle categorie **Master** e **Amatori/Fitness**, comprese le pattinate non
