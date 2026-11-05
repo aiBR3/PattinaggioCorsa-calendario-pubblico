@@ -134,7 +134,7 @@
   ultimo_controllo: ""
 
 - id: segnalazioni-tally
-  nome: "Segnalazioni dei compagni di squadra (modulo Tally)"
+  nome: "Segnalazioni volontarie (modulo Tally)"
   url: ""
   paese: IT
   metodo: script
