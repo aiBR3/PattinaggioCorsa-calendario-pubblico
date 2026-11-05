@@ -35,6 +35,31 @@ Quando un problema si risolve per sempre, si aggiorna la voce invece di cancella
   (es. `fisr.info corsa_calendario.php`), poi la lettura. Vale anche per le pagine delle
   indizioni (`corsa_trofeo_modulo.php?id_manif=N`).
 
+## 2026-11-05 — fisr.info: i link alle indizioni spariscono, ma le pagine restano
+
+- **Volevo:** leggere l'indizione di tutte le gare dal 1° gennaio 2026.
+- **Successo:** nella lista solo 3 gare su 66 avevano il link 'modulo' (quelle future). Le pagine
+  `corsa_trofeo_modulo.php?id_manif=N` però esistono ancora, anche per le gare 'non ancora
+  autorizzate' (es. 7047 = L'Aquila 06/12/2026). Gli id non sono cronologici e molti sono vuoti o bozze
+  (`[[denom]]`, date mancanti).
+- **Invece:** `raccogli_fisr.py --scansione-indizioni 6300 7100` scarica tutto l'intervallo (≈800
+  richieste, ~10 minuti con pausa 0,2 s), tiene solo le indizioni complete nel periodo, e
+  `converti_fisr.py` le abbina alle righe per data (±1 giorno) e somiglianza del nome o dell'organizzatore.
+  Trovate 46 indizioni complete per il 2026.
+
+## 2026-11-05 — fisr.info: trappole nella lista
+
+- `?anno=2026` restituisce la stagione 2025/26 **più** i mesi già noti della 2026/27: chiedere anche
+  `?anno=2027` produce righe doppie.
+- Campionati e attività nazionale stanno in righe a 2 celle (`nome - località`, a volte `-Torino`
+  senza spazio), spesso ripetute accanto alla riga a 7 celle con date leggermente diverse (04-07/06 vs
+  05-07/06). `converti_fisr.py` le unisce (stessa data ±2 giorni e nomi simili).
+- Un nome era in **base64** nella fonte (`MbBtYWdnaW8g…` = "1°maggio Ferrara Inlne…"): decodificato.
+- Lo stesso evento può comparire due volte con nomi diversi (Cardano al Campo 12-13/09 e 13/09) o
+  con la stessa numerazione in due date (Montesilvano 13/09 e 04/10; Imola 08/11 e 08/12, entrambe "49°").
+- Le pagine delle indizioni hanno codifica mista: decodificare come cp1252 e riparare il mojibake
+  UTF-8 parola per parola.
+
 ## 2026-11-05 — fisr.info: la lista non dice le categorie, l'indizione sì
 
 - **Volevo:** capire dalla lista `corsa_calendario.php` quali gare ammettono i Master.

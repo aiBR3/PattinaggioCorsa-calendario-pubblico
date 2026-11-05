@@ -51,11 +51,13 @@ note/decisioni.md          ← decisioni prese, con data e motivo
 note/diario.md             ← cosa non ha funzionato
 dati/eventi.yaml           ← SORGENTE DI VERITÀ degli eventi
 dati/fonti.yaml            ← registro delle fonti e di come si leggono
+script/raccogli_fisr.py    ← livello 1: lista + indizioni di fisr.info → JSON grezzo (non decide)
+script/converti_fisr.py    ← livelli 2-3: JSON grezzo → voci di eventi.yaml, con prova citata dall'art. 10
 script/genera_ics.py       ← eventi.yaml → calendario.ics + index.html (valida ingresso e uscita)
 script/requisiti.txt       ← dipendenze Python
 .github/workflows/         ← verifica.yml (sulle PR), pubblica.yml (su main → Pages)
 agenti/                    ← prompt dei compiti (da creare in Fase 2+)
-log/                       ← un rapporto per esecuzione (da creare in Fase 2+)
+log/                       ← un rapporto per esecuzione: AAAA-MM-GG-raccolta-fisr.json, AAAA-MM-GG-conversione-fisr.md
 uscita/                    ← generato localmente, ignorato da git
 ```
 
@@ -115,13 +117,32 @@ Una voce per fonte: `id`, `nome`, `url`, `paese`, `metodo` (`script`, `agente`,
   ("Aggiunge le gare di dicembre da fisr.info").
 - Ogni PR dice nel testo: cosa cambia, da quali fonti, cosa resta in dubbio.
 
-## Come si genera il calendario in locale
+## Come si lavora in locale
 
 ```
 pip install -r script/requisiti.txt
+
+# 1. Raccolta grezza da fisr.info (lista della stagione + indizioni; la scansione degli id
+#    trova anche le indizioni che la lista non linka più: gare passate e "non autorizzate")
+python3 script/raccogli_fisr.py --anno 2026 --da 2026-01-01 --indizioni \
+    --scansione-indizioni 6300 7100 --uscita log/AAAA-MM-GG-raccolta-fisr.json
+
+# 2. Conversione in voci di eventi.yaml (prima senza --scrivi, per leggere il rapporto)
+python3 script/converti_fisr.py --raccolta log/AAAA-MM-GG-raccolta-fisr.json \
+    --rapporto log/AAAA-MM-GG-conversione-fisr.md [--scrivi]
+
+# 3. Revisione a mano delle voci nuove (nomi, luoghi, organizzatori), poi:
 python3 script/genera_ics.py --ingresso dati/eventi.yaml --uscita uscita \
     --url-base https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico
 ```
+
+Cosa decide `converti_fisr.py` e cosa no:
+- indizione con righe `MASTER …` nell'art. 10 → `confermato`, `categorie: [master]`, prova = le righe citate;
+- indizione senza righe Master/Amatori → `escluso`, prova = l'elenco delle categorie;
+- nessuna indizione ma titolo ufficiale con `cat. …/M` (campionati FISR) → `confermato` con prova = il titolo;
+  con `cat.` senza M → `escluso`;
+- tutto il resto → `da_verificare`, categorie vuote.
+Le voci già presenti in `eventi.yaml` non vengono mai modificate dallo script.
 
 ## Fase attuale
 
