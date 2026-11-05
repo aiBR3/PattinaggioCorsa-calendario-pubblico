@@ -26,7 +26,8 @@ non cancellando quella vecchia.
 | 2026-11-05 | Conversione automatica con revisione | `converti_fisr.py` propone le voci (categorie e prova dalle righe dell'art. 10); nomi, luoghi e organizzatori vengono rivisti a mano prima della PR; le voci già presenti non si toccano | Evita errori di battitura su decine di voci; la decisione resta tracciabile |
 | 2026-11-05 | Descrizione degli eventi | Solo ciò che serve a chi pattina: categorie e distanze, organizzatore, scadenza, un solo link ("Informazioni"), note. Niente prova, fonti, stato, link al calendario | Troppe informazioni confondevano; i dati di lavoro restano nell'YAML |
 | 2026-11-05 | Link dell'evento | Proprietà `URL` dell'evento (RFC 5545) **e** stessa riga nella descrizione | Calendario di Apple mostra `URL`, Google Calendar la ignora |
-| 2026-11-05 | Pagina Pages | Testo e CSS in `script/modello_index.html` con segnaposto; lo script controlla che i segnaposto ci siano tutti e nessuno resti | Modificabile senza toccare Python |
+| 2026-11-05 | Pagina Pages | Testo in `pagina/modello_index.html` (segnaposto controllati dallo script), CSS in `pagina/stile.css`; ogni file di `pagina/` viene copiato nella cartella pubblicata e lo script verifica che i file citati da `href`/`src` esistano | Modificabile senza toccare Python |
+| 2026-11-05 | `note` e `note_interne` | `note` = pubbliche (descrizione dell'evento), `note_interne` = dati di lavoro mai pubblicati. Migrate le 59 voci: 22 frasi spostate | Le note erano l'unico campo libero visibile a tutti e mescolavano le due cose |
 | 2026-11-05 | Cartella appunti | `note/` rinominata `appunti/` | Richiesta del proprietario |
 | 2026-11-05 | Scartato | Submodule del solo file ICS (un submodule punta a un repository intero); profilo Facebook fittizio (viola i termini di Meta, viene bloccato) | |
 

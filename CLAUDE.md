@@ -54,8 +54,9 @@ dati/fonti.yaml            ← registro delle fonti e di come si leggono
 script/raccogli_fisr.py    ← livello 1: lista + indizioni di fisr.info → JSON grezzo (non decide)
 script/converti_fisr.py    ← livelli 2-3: JSON grezzo → voci di eventi.yaml, con prova citata dall'art. 10
 script/genera_ics.py       ← eventi.yaml → calendario.ics + index.html (valida ingresso e uscita)
-script/modello_index.html  ← testo e CSS della pagina pubblicata: si modifica QUI (segnaposto {{...}})
 script/requisiti.txt       ← dipendenze Python
+pagina/modello_index.html  ← testo della pagina pubblicata (segnaposto {{...}})
+pagina/stile.css           ← CSS della pagina; ogni altro file in pagina/ viene pubblicato così com'è
 .github/workflows/         ← verifica.yml (sulle PR), pubblica.yml (su main → Pages)
 agenti/                    ← prompt dei compiti (da creare in Fase 2+)
 log/                       ← un rapporto per esecuzione: AAAA-MM-GG-raccolta-fisr.json, AAAA-MM-GG-conversione-fisr.md
@@ -63,9 +64,10 @@ uscita/                    ← generato localmente, ignorato da git
 ```
 
 `calendario.ics` e `index.html` non sono mai committati: li genera il workflow a ogni
-merge su `main` e li pubblica su GitHub Pages. Per cambiare testo o aspetto della pagina
-si modifica `script/modello_index.html` (una PR come le altre); il contenuto della
-tabella e il pulsante di iscrizione li produce lo script.
+merge su `main` e li pubblica su GitHub Pages insieme ai file di `pagina/`. Per cambiare
+il testo della pagina si modifica `pagina/modello_index.html`, per l'aspetto
+`pagina/stile.css` (una PR come le altre); il contenuto della tabella e il pulsante di
+iscrizione li produce lo script.
 
 ## Cosa vede chi consulta il calendario
 
@@ -73,8 +75,10 @@ Per ogni evento: titolo (con eventuale prefisso di stato), date, luogo, e una de
 breve: categorie ammesse e distanze, organizzatore, scadenza iscrizioni, **un solo link**
 ("Informazioni": `url_ufficiale`, altrimenti `url_iscrizione`) e le `note`. Lo stesso link
 va anche nella proprietà `URL` dell'evento (Calendario di Apple la mostra, Google la ignora).
-`prova`, `fonti`, `stato` e `verificato_il` sono dati di lavoro: restano nell'YAML e non
-vanno nella descrizione. Le `note` sono visibili a tutti: scriverle per chi pattina.
+`prova`, `fonti`, `stato`, `verificato_il` e `note_interne` sono dati di lavoro: restano
+nell'YAML e non vanno nella descrizione. Le `note` sono visibili a tutti: scriverle per chi
+pattina (impianto, orari, quote, come ci si iscrive); tutto il resto (dubbi, doppioni,
+anomalie di lettura, cosa ricontrollare) va in `note_interne`.
 
 ## Schema di `dati/eventi.yaml`
 
@@ -98,7 +102,8 @@ Lo script rifiuta chiavi sconosciute, chiavi mancanti e valori incoerenti.
 | `fonti` | lista, **almeno una** | ogni voce: `url` + `letto_il` (data) |
 | `verificato_il` | data o `""` | obbligatoria per `confermato` ed `escluso` |
 | `prova` | testo | obbligatoria se `categorie` non è vuota e per `confermato`/`escluso` |
-| `note` | testo | tutto ciò che non entra negli altri campi |
+| `note` | testo | **pubbliche**: vanno nella descrizione dell'evento; solo cose utili a chi pattina |
+| `note_interne` | testo | dati di lavoro: dubbi, doppioni nella fonte, anomalie, cosa ricontrollare; mai pubblicate |
 
 Stati:
 

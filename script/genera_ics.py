@@ -12,8 +12,8 @@ Cosa fa, nell'ordine:
   2. costruisce il calendario: gli eventi con stato "escluso" non vengono
      pubblicati, tutti gli altri sì (con un prefisso nel titolo se lo stato
      non è "confermato" o "annunciato");
-  3. scrive calendario.ics e index.html (testo e CSS in script/modello_index.html)
-     nella cartella di uscita;
+  3. scrive calendario.ics e index.html nella cartella di uscita (il testo della pagina
+     viene da pagina/modello_index.html) e vi copia gli altri file di pagina/ (stile.css…);
   4. rilegge il file .ics appena scritto e verifica che contenga esattamente
      gli eventi attesi, con le proprietà obbligatorie e righe conformi.
 
@@ -75,7 +75,7 @@ CHIAVI_EVENTO = [
     "id", "nome", "data_inizio", "data_fine", "luogo", "paese", "tipo",
     "categorie", "distanze", "organizzatore", "url_ufficiale",
     "url_iscrizione", "scadenza_iscrizione", "stato", "fonti",
-    "verificato_il", "prova", "note",
+    "verificato_il", "prova", "note", "note_interne",
 ]
 CHIAVI_FONTE = ["url", "letto_il"]
 
@@ -91,7 +91,8 @@ DESCRIZIONE_CALENDARIO = (
 )
 NOME_FILE_ICS = "calendario.ics"
 NOME_FILE_HTML = "index.html"
-PERCORSO_MODELLO_HTML = Path(__file__).resolve().parent / "modello_index.html"   # testo e CSS della pagina
+CARTELLA_PAGINA = Path(__file__).resolve().parent.parent / "pagina"   # modello HTML, CSS e altri file statici
+PERCORSO_MODELLO_HTML = CARTELLA_PAGINA / "modello_index.html"
 LUNGHEZZA_MASSIMA_RIGA_ICS = 75  # ottetti, RFC 5545 §3.1
 
 
@@ -124,7 +125,8 @@ class Evento:
     fonti: list[Fonte]
     verificato_il: date | None
     prova: str
-    note: str
+    note: str            # visibili a tutti: finiscono nella descrizione dell'evento
+    note_interne: str    # dati di lavoro: restano nell'YAML
 
     @property
     def pubblicato(self) -> bool:
@@ -302,6 +304,7 @@ def converti_evento(grezzo, posizione: int, esito: Esito) -> Evento | None:
     verificato_il = converti_data(grezzo["verificato_il"], "verificato_il", contesto, esito, obbligatoria=False)
     prova = converti_testo(grezzo["prova"], "prova", contesto, esito, obbligatorio=False)
     note = converti_testo(grezzo["note"], "note", contesto, esito, obbligatorio=False)
+    note_interne = converti_testo(grezzo["note_interne"], "note_interne", contesto, esito, obbligatorio=False)
 
     # Regole di coerenza: chi decide cita la prova.
     if categorie and not prova:
@@ -326,7 +329,7 @@ def converti_evento(grezzo, posizione: int, esito: Esito) -> Evento | None:
         luogo=luogo, paese=paese, tipo=tipo, categorie=categorie, distanze=distanze,
         organizzatore=organizzatore, url_ufficiale=url_ufficiale, url_iscrizione=url_iscrizione,
         scadenza_iscrizione=scadenza_iscrizione, stato=stato, fonti=fonti,
-        verificato_il=verificato_il, prova=prova, note=note,
+        verificato_il=verificato_il, prova=prova, note=note, note_interne=note_interne,
     )
 
 
@@ -504,13 +507,25 @@ def genera_indice_html(eventi: list[Evento], url_base: str, generato_il: datetim
     return pagina
 
 
-def scrivi_uscita(cartella: Path, calendario: Calendar, pagina: str) -> tuple[Path, Path]:
+def file_statici_pagina() -> list[Path]:
+    """Tutto ciò che sta in pagina/ tranne il modello: CSS, immagini, favicon…"""
+    if not CARTELLA_PAGINA.is_dir():
+        return []
+    return sorted(p for p in CARTELLA_PAGINA.iterdir() if p.is_file() and p != PERCORSO_MODELLO_HTML and not p.name.startswith("."))
+
+
+def scrivi_uscita(cartella: Path, calendario: Calendar, pagina: str) -> tuple[Path, Path, list[Path]]:
     cartella.mkdir(parents=True, exist_ok=True)
     percorso_ics = cartella / NOME_FILE_ICS
     percorso_html = cartella / NOME_FILE_HTML
     percorso_ics.write_bytes(calendario.to_ical())
     percorso_html.write_text(pagina, encoding="utf-8")
-    return percorso_ics, percorso_html
+    copiati: list[Path] = []
+    for sorgente in file_statici_pagina():
+        destinazione = cartella / sorgente.name
+        destinazione.write_bytes(sorgente.read_bytes())
+        copiati.append(destinazione)
+    return percorso_ics, percorso_html, copiati
 
 
 # ---------------------------------------------------------------------------
@@ -571,10 +586,17 @@ def verifica_ics(percorso_ics: Path, eventi: list[Evento], esito: Esito) -> None
         esito.errore(f"{percorso_ics}: eventi presenti ma non attesi: {sorted(in_piu)}")
 
 
-def verifica_html(percorso_html: Path, eventi: list[Evento], esito: Esito) -> None:
+def verifica_html(percorso_html: Path, eventi: list[Evento], copiati: list[Path], esito: Esito) -> None:
     testo = percorso_html.read_text(encoding="utf-8")
     if NOME_FILE_ICS not in testo:
         esito.errore(f"{percorso_html}: non contiene il collegamento a {NOME_FILE_ICS}")
+    for copiato in copiati:
+        sorgente = CARTELLA_PAGINA / copiato.name
+        if not copiato.is_file() or copiato.stat().st_size != sorgente.stat().st_size:
+            esito.errore(f"{copiato}: copia di {sorgente} mancante o incompleta")
+    for riferimento in re.findall(r'(?:href|src)="([^"/:]+\.(?:css|js|png|svg|ico|jpg|webp))"', testo):
+        if not (percorso_html.parent / riferimento).is_file():
+            esito.errore(f"{percorso_html}: fa riferimento a '{riferimento}' che non è nella cartella di uscita (va messo in {CARTELLA_PAGINA})")
     for evento in eventi:
         if evento.pubblicato and html.escape(evento.nome) not in testo:
             esito.errore(f"{percorso_html}: manca l'evento '{evento.id}'")
@@ -596,6 +618,7 @@ def stampa_rapporto(eventi: list[Evento], esito: Esito, percorso_ics: Path | Non
         print(f"    - {stato}: {per_stato[stato]}")
     if percorso_ics is not None and percorso_ics.exists():
         print(f"  file scritto:      {percorso_ics} ({percorso_ics.stat().st_size} byte)")
+        print(f"  file di pagina:    {', '.join(p.name for p in file_statici_pagina()) or 'nessuno'}")
     for avviso in esito.avvisi:
         print(f"  AVVISO: {avviso}")
     for errore in esito.errori:
@@ -624,10 +647,10 @@ def principale(argomenti: list[str] | None = None) -> int:
 
     calendario = costruisci_calendario(eventi, url_base)
     pagina = genera_indice_html(eventi, url_base, datetime.now(timezone.utc))
-    percorso_ics, percorso_html = scrivi_uscita(opzioni.uscita, calendario, pagina)
+    percorso_ics, percorso_html, copiati = scrivi_uscita(opzioni.uscita, calendario, pagina)
 
     verifica_ics(percorso_ics, eventi, esito)
-    verifica_html(percorso_html, eventi, esito)
+    verifica_html(percorso_html, eventi, copiati, esito)
     stampa_rapporto(eventi, esito, percorso_ics)
     return 1 if esito.errori else 0
 

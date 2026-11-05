@@ -51,7 +51,7 @@ PAROLE_VUOTE_SLUG = {"di", "del", "della", "dei", "degli", "delle", "e", "con", 
 
 ORDINE_CAMPI = ["id", "nome", "data_inizio", "data_fine", "luogo", "paese", "tipo", "categorie", "distanze",
                 "organizzatore", "url_ufficiale", "url_iscrizione", "scadenza_iscrizione", "stato", "fonti",
-                "verificato_il", "prova", "note"]
+                "verificato_il", "prova", "note", "note_interne"]
 
 
 # ---------------------------------------------------------------------------
@@ -310,7 +310,8 @@ def costruisci_evento(riga: dict | None, indizione: dict | None, letto_il: str) 
     if indizione and not organizzatore and indizione.get("societa"):
         organizzatore = normalizza_luogo(indizione["societa"])
 
-    note: list[str] = []
+    note: list[str] = []            # per chi pattina: finiscono nella descrizione dell'evento
+    note_interne: list[str] = []    # per chi lavora sui dati: restano nell'YAML
     categorie: list[str] = []
     distanze: list[str] = []
     prova = ""
@@ -333,22 +334,22 @@ def costruisci_evento(riga: dict | None, indizione: dict | None, letto_il: str) 
         if not luogo and indizione.get("campo_gara"):
             luogo = "da indicare (vedi note)"
         if riga is None:
-            note.append("Non compare nella lista corsa_calendario.php: trovato solo tra le indizioni.")
+            note_interne.append("Non compare nella lista corsa_calendario.php: trovato solo tra le indizioni.")
         righe_extra = [r for r in indizione.get("righe_master_amatori", []) if " | " not in r]
         if righe_extra and not categorie:
-            note.append("Nel testo dell'indizione compaiono righe con Master/Amatori fuori dal programma gare (da leggere): " + " / ".join(r[:120] for r in righe_extra[:2]))
+            note_interne.append("Nel testo dell'indizione compaiono righe con Master/Amatori fuori dal programma gare (da leggere): " + " / ".join(r[:120] for r in righe_extra[:2]))
         if riga is not None and riga["data_inizio"] != indizione["dal"]:
-            note.append(f"Date: la lista dice {riga['data_inizio']}, l'indizione {indizione['dal']}–{indizione['al']}.")
+            note_interne.append(f"Date: la lista dice {riga['data_inizio']}, l'indizione {indizione['dal']}–{indizione['al']}.")
             data_inizio, data_fine = indizione["dal"], indizione["al"] or indizione["dal"]
 
     categorie_nel_titolo = categorie_dal_titolo(riga["evento"]) if riga is not None and not indizione else None
     if riga is not None and riga["non_autorizzata"] and (not indizione or categorie):
         stato = "non_autorizzato"
-        note.append("Nella lista FISR compare come 'Attività non ancora autorizzata'" + (" (l'indizione esiste già)." if indizione else "."))
+        note_interne.append("Nella lista FISR compare come 'Attività non ancora autorizzata'" + (" (l'indizione esiste già)." if indizione else "."))
     elif indizione:
         stato = "confermato" if categorie else "escluso"
         if riga is not None and riga["non_autorizzata"]:
-            note.append("Nella lista FISR compare come 'Attività non ancora autorizzata'; l'indizione (bozza) non prevede Master/Amatori.")
+            note_interne.append("Nella lista FISR compare come 'Attività non ancora autorizzata'; l'indizione (bozza) non prevede Master/Amatori.")
     elif categorie_nel_titolo is not None:
         # Campionati e attività nazionale: la lista FISR non ha l'indizione, ma il titolo ufficiale dice le categorie.
         sigle = categorie_nel_titolo
@@ -356,12 +357,12 @@ def costruisci_evento(riga: dict | None, indizione: dict | None, letto_il: str) 
         stato = "confermato" if categorie else "escluso"
         verificato_il = letto_il
         prova = f"Calendario FISR {riga['stagione']} ({URL_LISTA}), titolo ufficiale: '{riga['evento']}'. Categorie indicate nel titolo: {'/'.join(sigle)}" + (" (M = Master)." if categorie else "; nessuna M (Master).")
-        note.append("Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare.")
+        note_interne.append("Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare.")
     else:
         stato = "da_verificare"
-        note.append("Indizione non trovata: categorie ammesse sconosciute.")
+        note_interne.append("Indizione non trovata: categorie ammesse sconosciute.")
     if riga is not None and riga["anomalie"]:
-        note.append("Anomalie di lettura: " + "; ".join(riga["anomalie"]))
+        note_interne.append("Anomalie di lettura: " + "; ".join(riga["anomalie"]))
 
     scadenza = (riga["scadenza_iscrizioni"] if riga else "") or (indizione["iscrizioni_entro"] if indizione else "") or ""
     return {
@@ -370,6 +371,7 @@ def costruisci_evento(riga: dict | None, indizione: dict | None, letto_il: str) 
         "paese": "IT", "tipo": "gara", "categorie": categorie, "distanze": distanze, "organizzatore": organizzatore,
         "url_ufficiale": url_ufficiale, "url_iscrizione": "", "scadenza_iscrizione": scadenza, "stato": stato,
         "fonti": fonti, "verificato_il": verificato_il, "prova": prova, "note": " ".join(note),
+        "note_interne": " ".join(note_interne),
     }
 
 

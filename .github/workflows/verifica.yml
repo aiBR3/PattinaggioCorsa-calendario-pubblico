@@ -10,6 +10,7 @@ on:
     paths:
       - "dati/**"
       - "script/**"
+      - "pagina/**"
       - ".github/workflows/verifica.yml"
 
 permissions:
