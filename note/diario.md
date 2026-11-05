@@ -10,7 +10,7 @@ Quando un problema si risolve per sempre, si aggiorna la voce invece di cancella
 - **Successo:** `GET/POST /repos/…/pages`, `/actions/permissions`, `/collaborators` → HTTP 403
   "Access to this GitHub API path is not permitted through this proxy". Anche `gh api`
   verso repository non collegati alla sessione (es. `actions/checkout`) → 403.
-- **Invece:** Pages la attiva T dalle impostazioni (Settings → Pages → Source: GitHub
+- **Invece:** Pages la attiva il proprietario dalle impostazioni (Settings → Pages → Source: GitHub
   Actions). Le versioni delle azioni si leggono dalla documentazione GitHub, non dall'API.
   I ruleset invece si leggono (`/rulesets`, `/rules/branches/main`).
 
@@ -22,9 +22,9 @@ Quando un problema si risolve per sempre, si aggiorna la voce invece di cancella
 
 ## 2026-11-05 — Sessione Claude: estensione Chrome non collegata
 
-- **Volevo:** usare Claude in Chrome (con il login di T) per attivare Pages.
+- **Volevo:** usare Claude in Chrome (con il login del proprietario) per attivare Pages.
 - **Successo:** "Browser extension is not connected".
-- **Invece:** per ora le operazioni nell'interfaccia GitHub le fa T. Da riprovare quando
+- **Invece:** per ora le operazioni nell'interfaccia GitHub le fa il proprietario. Da riprovare quando
   servirà per Facebook (Fase 4): l'estensione va collegata allo stesso account claude.ai.
 
 ## 2026-11-05 — Sessione Claude: WebFetch legge solo URL già comparsi nella conversazione

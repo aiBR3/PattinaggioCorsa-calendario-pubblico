@@ -14,14 +14,14 @@ comprese le pattinate non competitive (notturne, al mare, natalizie, per famigli
 Perimetro geografico: Italia, Svizzera, Spagna, Portogallo, Francia, Austria,
 Germania, Slovenia.
 
-Chi lo consulta: la squadra. T (aiBR3) su iPhone (app Calendario), compagni su
+Chi lo consulta: chi si iscrive al calendario, da iPhone (app Calendario) o da
 Android (Google Calendar). Il calendario è utile solo se è **affidabile**: meglio un
 evento in meno che una data sbagliata.
 
 ## Regole inviolabili
 
 1. **Nessuno scrive su `main`.** Ogni modifica è una pull request; il merge lo fa
-   solo T, a mano. Vale anche per chi agisce con le credenziali di T.
+   solo il proprietario (aiBR3), a mano. Vale anche per chi agisce con le sue credenziali.
 2. **Chi raccoglie non decide.** Un compito di raccolta restituisce dati grezzi con la
    fonte e la data di lettura; non classifica, non scarta, non corregge, non
    "migliora" i nomi.
@@ -36,8 +36,11 @@ evento in meno che una data sbagliata.
    `note/diario.md` se è già fallito e perché.
 7. **Un evento non si duplica.** La chiave è `id`. Se un evento esiste già si aggiorna
    la voce, si aggiunge la fonte e si ricontrolla `verificato_il`.
-8. **Il sito Hugo della squadra non si tocca.** Questo repository è l'unico posto di
+8. **Nessun altro repository o sito si tocca.** Questo repository è l'unico posto di
    lavoro.
+9. **Niente informazioni personali.** Il repository è pubblico: nessun nome, contatto,
+   dispositivo o dettaglio su chi lo usa o su chi segnala. Si scrive "il proprietario"
+   (aiBR3) e "segnalazioni volontarie".
 
 ## Struttura del repository
 
