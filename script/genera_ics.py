@@ -391,22 +391,23 @@ def descrizione_evento(evento: Evento) -> str:
     (prova, fonti, stato: lo stato è già nel titolo come prefisso)."""
     righe: list[str] = []
     if evento.tipo == "pattinata":
-        prima_riga = "Pattinata non competitiva"
+        righe.append("Pattinata non competitiva")
     elif evento.categorie:
-        prima_riga = "Categorie ammesse: " + ", ".join(c.capitalize() for c in evento.categorie)
+        righe.append("Categorie ammesse: " + ", ".join(c.capitalize() for c in evento.categorie))
+    elif evento.stato == "annunciato":
+        righe.append("Categorie ammesse: non ancora pubblicate")
     else:
-        prima_riga = "Categorie ammesse: da verificare"
+        righe.append("Categorie ammesse: da verificare")
     if evento.distanze:
-        prima_riga += " · Distanze: " + ", ".join(evento.distanze)
-    righe.append(prima_riga)
+        righe.append("Distanze: " + ", ".join(evento.distanze))
     if evento.organizzatore:
         righe.append(f"Organizzatore: {evento.organizzatore}")
     if evento.scadenza_iscrizione:
         righe.append(f"Scadenza iscrizioni: {formatta_data_it(evento.scadenza_iscrizione)}")
-    if collegamento := collegamento_evento(evento):
-        righe.append(f"URL: {collegamento}")
     if evento.note:
         righe.append(f"Informazioni: {evento.note}")
+    if collegamento := collegamento_evento(evento):
+        righe.append(f"URL: {collegamento}")
     return "\n".join(righe)
 
 
