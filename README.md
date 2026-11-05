@@ -35,7 +35,7 @@ link all'indizione, la frase del regolamento che prova le categorie, le fonti.
 
 ## Segnalare una gara
 
-In arrivo: un modulo per i compagni di squadra. Nel frattempo apri una
+In arrivo: un modulo per le segnalazioni volontarie. Nel frattempo apri una
 [issue](https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico/issues) con
 data, luogo, nome e il link (o il testo del post).
 
