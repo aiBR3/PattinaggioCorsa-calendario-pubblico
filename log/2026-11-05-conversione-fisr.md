@@ -11,7 +11,7 @@
 Righe: 66 raccolte → 59 dopo la deduplica.
 
 
-Indizioni: 46 dalla scansione; 46 righe con indizione; 0 indizioni senza riga nella lista.
+Regolamenti di gara: 46 dalla scansione; 46 righe con regolamento di gara; 0 regolamenti di gara senza riga nella lista.
 
 
 ## Eventi già presenti (non toccati)
@@ -28,7 +28,7 @@ Indizioni: 46 dalla scansione; 46 righe con indizione; 0 indizioni senza riga ne
 - escluso: 40
 - non_autorizzato: 3
 
-| Data | Evento | Luogo | Stato | Categorie | Indizione |
+| Data | Evento | Luogo | Stato | Categorie | Regolamento di gara |
 |---|---|---|---|---|---|
 | 2026-01-06 | 3° Trofeo della Befana | Pescara | escluso | — | 6743 |
 | 2026-02-08 | I Trofeo Cus Molise Skating indoor | Campobasso | escluso | — | 6774 |

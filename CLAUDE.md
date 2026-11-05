@@ -26,7 +26,7 @@ evento in meno che una data sbagliata.
    fonte e la data di lettura; non classifica, non scarta, non corregge, non
    "migliora" i nomi.
 3. **Chi decide cita la prova.** `categorie` si compila solo insieme a `prova`: una
-   frase citata dal regolamento o dall'indizione, con l'articolo. Senza prova:
+   frase citata dal regolamento di gara o dal regolamento del campionato, con l'articolo. Senza prova:
    `categorie: []` e `stato: da_verificare`.
 4. **Non inventare.** Campo sconosciuto = campo vuoto. Mai dedurre date, luoghi o
    categorie dal nome dell'evento o dall'edizione precedente.
@@ -51,7 +51,7 @@ appunti/decisioni.md       ← decisioni prese, con data e motivo
 appunti/diario.md          ← cosa non ha funzionato
 dati/eventi.yaml           ← SORGENTE DI VERITÀ degli eventi
 dati/fonti.yaml            ← registro delle fonti e di come si leggono
-script/raccogli_fisr.py    ← livello 1: lista + indizioni di fisr.info → JSON grezzo (non decide)
+script/raccogli_fisr.py    ← livello 1: lista + regolamenti di gara di fisr.info → JSON grezzo (non decide)
 script/converti_fisr.py    ← livelli 2-3: JSON grezzo → voci di eventi.yaml, con prova citata dall'art. 10
 script/genera_ics.py       ← eventi.yaml → calendario.ics + index.html (valida ingresso e uscita)
 script/requisiti.txt       ← dipendenze Python
@@ -73,8 +73,9 @@ iscrizione li produce lo script.
 
 Per ogni evento: titolo (con eventuale prefisso di stato), date, luogo, e una descrizione
 breve: categorie ammesse e distanze, organizzatore, scadenza iscrizioni, **un solo link**
-("Informazioni": `url_ufficiale`, altrimenti `url_iscrizione`) e le `note`. Lo stesso link
-va anche nella proprietà `URL` dell'evento (Calendario di Apple la mostra, Google la ignora).
+nella riga `URL:` (`url_ufficiale`, altrimenti `url_iscrizione`) e le `note` nella riga
+`Informazioni:`. Lo stesso link va anche nella proprietà `URL` dell'evento (Calendario di
+Apple la mostra, Google la ignora).
 `prova`, `fonti`, `stato`, `verificato_il` e `note_interne` sono dati di lavoro: restano
 nell'YAML e non vanno nella descrizione. Le `note` sono visibili a tutti: scriverle per chi
 pattina (impianto, orari, quote, come ci si iscrive); tutto il resto (dubbi, doppioni,
@@ -128,6 +129,9 @@ Una voce per fonte: `id`, `nome`, `url`, `paese`, `metodo` (`script`, `agente`,
 
 - Lingua: italiano ovunque, anche nel codice (nomi di variabili, funzioni, file,
   messaggi). Le date in ISO 8601.
+- Parole: il documento FISR `corsa_trofeo_modulo.php?id_manif=N` si chiama **regolamento
+  di gara** (o "regolamento"), mai "indizione" (gergo federale, incomprensibile ai più);
+  "regolamento del campionato" è invece quello pubblicato nei comunicati FISR.
 - Gli script non danno nulla per scontato: controllano cosa ricevono in ingresso e
   cosa producono in uscita, e si fermano con un messaggio chiaro.
 - Messaggi di commit in italiano, al presente, un argomento per PR
@@ -139,10 +143,10 @@ Una voce per fonte: `id`, `nome`, `url`, `paese`, `metodo` (`script`, `agente`,
 ```
 pip install -r script/requisiti.txt
 
-# 1. Raccolta grezza da fisr.info (lista della stagione + indizioni; la scansione degli id
-#    trova anche le indizioni che la lista non linka più: gare passate e "non autorizzate")
-python3 script/raccogli_fisr.py --anno 2026 --da 2026-01-01 --indizioni \
-    --scansione-indizioni 6300 7100 --uscita log/AAAA-MM-GG-raccolta-fisr.json
+# 1. Raccolta grezza da fisr.info (lista della stagione + regolamenti di gara; la scansione degli id
+#    trova anche i regolamenti di gara che la lista non linka più: gare passate e "non autorizzate")
+python3 script/raccogli_fisr.py --anno 2026 --da 2026-01-01 --regolamenti \
+    --scansione-regolamenti 6300 7100 --uscita log/AAAA-MM-GG-raccolta-fisr.json
 
 # 2. Conversione in voci di eventi.yaml (prima senza --scrivi, per leggere il rapporto)
 python3 script/converti_fisr.py --raccolta log/AAAA-MM-GG-raccolta-fisr.json \
@@ -154,9 +158,9 @@ python3 script/genera_ics.py --ingresso dati/eventi.yaml --uscita uscita \
 ```
 
 Cosa decide `converti_fisr.py` e cosa no:
-- indizione con righe `MASTER …` nell'art. 10 → `confermato`, `categorie: [master]`, prova = le righe citate;
-- indizione senza righe Master/Amatori → `escluso`, prova = l'elenco delle categorie;
-- nessuna indizione ma titolo ufficiale con `cat. …/M` (campionati FISR) → `confermato` con prova = il titolo;
+- regolamento di gara con righe `MASTER …` nell'art. 10 → `confermato`, `categorie: [master]`, prova = le righe citate;
+- regolamento di gara senza righe Master/Amatori → `escluso`, prova = l'elenco delle categorie;
+- nessun regolamento di gara ma titolo ufficiale con `cat. …/M` (campionati FISR) → `confermato` con prova = il titolo;
   con `cat.` senza M → `escluso`;
 - tutto il resto → `da_verificare`, categorie vuote.
 Le voci già presenti in `eventi.yaml` non vengono mai modificate dallo script.

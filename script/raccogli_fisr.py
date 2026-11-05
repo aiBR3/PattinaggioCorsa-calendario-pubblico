@@ -2,23 +2,23 @@
 """
 raccogli_fisr.py — raccolta (livello 1) dal calendario corsa di fisr.info.
 
-Legge la lista per stagione (corsa_calendario.php) e, a richiesta, l'indizione di
+Legge la lista per stagione (corsa_calendario.php) e, a richiesta, il regolamento di
 ogni gara (corsa_trofeo_modulo.php?id_manif=N). Restituisce dati GREZZI in JSON:
 non classifica, non scarta, non corregge i nomi. Chi decide è un altro passo.
 
 Uso:
     python3 script/raccogli_fisr.py --uscita log/raccolta.json \
-        [--anno 2026] [--anno 2027] [--da 2026-01-01] [--indizioni] [--pausa 0.5]
+        [--anno 2026] [--anno 2027] [--da 2026-01-01] [--regolamenti] [--pausa 0.5]
 
   --anno N      parametro "anno" di fisr.info: N=2026 dà la stagione 2025/26,
                 N=2027 la 2026/27, e così via. Senza --anno: la stagione corrente.
   --da DATA     tiene solo le righe con data di inizio >= DATA (dopo il parsing).
-  --indizioni   scarica anche la pagina dell'indizione di ogni gara che ha il link.
+  --regolamenti   scarica anche la pagina del regolamento di ogni gara che ha il link.
   --pausa S     secondi di attesa tra una richiesta e l'altra (educazione verso il sito).
-  --scansione-indizioni DA A
-                scarica le indizioni con id_manif da DA ad A anche se la lista non le
+  --scansione-regolamenti DA A
+                scarica i regolamenti con id_manif da DA ad A anche se la lista non li
                 linka più (succede per le gare passate e per quelle "non ancora
-                autorizzate"): tiene solo quelle complete (data, nome, programma) e nel
+                autorizzate"): tiene solo quelli completi (data, nome, programma) e nel
                 periodo. L'abbinamento alle righe della lista lo fa converti_fisr.py.
   Nota: la pagina ?anno=2026 (stagione 2025/26) contiene anche i mesi della 2026/27;
   chiedere due stagioni consecutive produce righe doppie.
@@ -58,7 +58,7 @@ ESPRESSIONE_RIGA_PROGRAMMA = re.compile(r"^(?P<categoria>[^|]+?)\s*\|\s*(?P<sess
 
 
 @dataclass
-class Indizione:
+class Regolamento:
     id_manif: str
     url: str
     scaricata: bool = False
@@ -98,7 +98,7 @@ class RigaLista:
     id_manif: str = ""
     url_modulo: str = ""
     anomalie: list[str] = field(default_factory=list)
-    indizione: Indizione | None = None
+    regolamento: Regolamento | None = None
 
 
 # ---------------------------------------------------------------------------
@@ -119,7 +119,7 @@ def scarica(url: str, pausa: float) -> bytes:
 
 
 def decodifica(grezzo: bytes) -> tuple[str, str]:
-    """fisr.info mescola codifiche: la lista è UTF-8 (con BOM), le indizioni no."""
+    """fisr.info mescola codifiche: la lista è UTF-8 (con BOM), i regolamenti no."""
     try:
         return grezzo.decode("utf-8-sig"), "utf-8"
     except UnicodeDecodeError:
@@ -218,7 +218,7 @@ def interpreta_data_breve(grezza: str, anno_riferimento: int, mese_riferimento: 
         return ""
 
 
-def interpreta_data_indizione(grezza: str) -> str:
+def interpreta_data_regolamento(grezza: str) -> str:
     """'08/12/26' → '2026-12-08'."""
     corrispondenza = re.fullmatch(r"(\d{2})/(\d{2})/(\d{2})", grezza.strip())
     if not corrispondenza:
@@ -294,7 +294,7 @@ def analizza_lista(pagina: str, etichetta_richiesta: str) -> tuple[str, list[Rig
 
 
 # ---------------------------------------------------------------------------
-# Indizione
+# Regolamento
 # ---------------------------------------------------------------------------
 
 def testo_da_html(pagina: str) -> list[str]:
@@ -307,9 +307,9 @@ def testo_da_html(pagina: str) -> list[str]:
     return [riga for riga in righe if riga and riga != "|"]
 
 
-def analizza_indizione(id_manif: str, grezzo: bytes) -> Indizione:
-    indizione = Indizione(id_manif=id_manif, url=URL_MODULO + id_manif, scaricata=True)
-    pagina, indizione.codifica = decodifica(grezzo)
+def analizza_regolamento(id_manif: str, grezzo: bytes) -> Regolamento:
+    regolamento = Regolamento(id_manif=id_manif, url=URL_MODULO + id_manif, scaricata=True)
+    pagina, regolamento.codifica = decodifica(grezzo)
     righe = testo_da_html(pagina)
     testo_intero = "\n".join(righe)
 
@@ -319,54 +319,54 @@ def analizza_indizione(id_manif: str, grezzo: bytes) -> Indizione:
         r"una manifestazione di categoria (?P<categoria>\S+?) di corsa su (?P<disciplina>\w+)\s+denominata:?\s*\n(?P<nome>[^\n|]+)",
         testo_intero, flags=re.S,
     ):
-        indizione.societa = ripara_codifica(corrispondenza["societa"].strip())
-        indizione.dal_grezzo = f"{corrispondenza['dal']} - {corrispondenza['al']}"
-        indizione.dal = interpreta_data_indizione(corrispondenza["dal"])
-        indizione.al = interpreta_data_indizione(corrispondenza["al"])
-        indizione.categoria_manifestazione = corrispondenza["categoria"]
-        indizione.disciplina = corrispondenza["disciplina"].lower()
-        indizione.denominazione = ripara_codifica(corrispondenza["nome"].strip().rstrip("."))
-        if not indizione.dal or not indizione.al:
-            indizione.anomalie.append(f"date dell'indizione non interpretabili: {indizione.dal_grezzo!r}")
+        regolamento.societa = ripara_codifica(corrispondenza["societa"].strip())
+        regolamento.dal_grezzo = f"{corrispondenza['dal']} - {corrispondenza['al']}"
+        regolamento.dal = interpreta_data_regolamento(corrispondenza["dal"])
+        regolamento.al = interpreta_data_regolamento(corrispondenza["al"])
+        regolamento.categoria_manifestazione = corrispondenza["categoria"]
+        regolamento.disciplina = corrispondenza["disciplina"].lower()
+        regolamento.denominazione = ripara_codifica(corrispondenza["nome"].strip().rstrip("."))
+        if not regolamento.dal or not regolamento.al:
+            regolamento.anomalie.append(f"date del regolamento non interpretabili: {regolamento.dal_grezzo!r}")
     else:
-        indizione.anomalie.append("blocco DENOMINAZIONE non riconosciuto: la pagina ha un formato diverso")
+        regolamento.anomalie.append("blocco DENOMINAZIONE non riconosciuto: la pagina ha un formato diverso")
 
     if corrispondenza := re.search(r"ART\. 3 .*?con inizio alle ore (?P<ora>[\d.,: ]+?) del giorno.*?descritto:\s*\n(?P<campo>[^\n]+)", testo_intero, flags=re.S):
-        indizione.orario_inizio = corrispondenza["ora"].strip()
-        indizione.campo_gara = ripara_codifica(corrispondenza["campo"].strip(" |"))
+        regolamento.orario_inizio = corrispondenza["ora"].strip()
+        regolamento.campo_gara = ripara_codifica(corrispondenza["campo"].strip(" |"))
     else:
-        indizione.anomalie.append("ART. 3 (campo di gara) non riconosciuto")
+        regolamento.anomalie.append("ART. 3 (campo di gara) non riconosciuto")
 
     if corrispondenza := re.search(r"ART\. 4 .*?entro le ore \S+ del (\d{2}/\d{2}/\d{2})", testo_intero, flags=re.S):
-        indizione.iscrizioni_entro = interpreta_data_indizione(corrispondenza[1])
+        regolamento.iscrizioni_entro = interpreta_data_regolamento(corrispondenza[1])
     else:
-        indizione.anomalie.append("ART. 4 (scadenza iscrizioni) non riconosciuto")
+        regolamento.anomalie.append("ART. 4 (scadenza iscrizioni) non riconosciuto")
 
     # ART. 10: righe della tabella del programma, finché somigliano a "Categoria | Sesso | Distanza | Tipo |"
     indice_programma = next((i for i, riga in enumerate(righe) if riga.startswith("ART. 10")), None)
     if indice_programma is None:
-        indizione.anomalie.append("ART. 10 (programma gare) non trovato")
+        regolamento.anomalie.append("ART. 10 (programma gare) non trovato")
     else:
         for riga in righe[indice_programma + 1:]:
             if riga.startswith("Categoria |"):
                 continue
             corrispondenza = ESPRESSIONE_RIGA_PROGRAMMA.match(riga)
             if not corrispondenza:
-                if indizione.righe_programma:
+                if regolamento.righe_programma:
                     break
                 continue
             voce = {chiave: valore.strip() for chiave, valore in corrispondenza.groupdict().items()}
             voce["categoria"] = ripara_codifica(voce["categoria"])
-            indizione.righe_programma.append(voce)
-            if voce["categoria"] not in indizione.categorie_programma:
-                indizione.categorie_programma.append(voce["categoria"])
-        if not indizione.righe_programma:
-            indizione.anomalie.append("ART. 10 trovato ma nessuna riga di programma riconosciuta")
+            regolamento.righe_programma.append(voce)
+            if voce["categoria"] not in regolamento.categorie_programma:
+                regolamento.categorie_programma.append(voce["categoria"])
+        if not regolamento.righe_programma:
+            regolamento.anomalie.append("ART. 10 trovato ma nessuna riga di programma riconosciuta")
 
     for riga in righe:
         if re.search(r"MASTER|AMATOR|FITNESS|\bOVER\b|NON AGONIST", riga, flags=re.I):
-            indizione.righe_master_amatori.append(ripara_codifica(riga)[:300])
-    return indizione
+            regolamento.righe_master_amatori.append(ripara_codifica(riga)[:300])
+    return regolamento
 
 
 # ---------------------------------------------------------------------------
@@ -377,10 +377,10 @@ def principale(argomenti: list[str] | None = None) -> int:
     analizzatore = argparse.ArgumentParser(description="Raccolta grezza dal calendario corsa di fisr.info")
     analizzatore.add_argument("--anno", type=int, action="append", help="parametro 'anno' di fisr.info (ripetibile); senza: stagione corrente")
     analizzatore.add_argument("--da", type=date.fromisoformat, default=None, help="tiene solo le righe con data_inizio >= AAAA-MM-GG")
-    analizzatore.add_argument("--indizioni", action="store_true", help="scarica anche l'indizione di ogni gara con il link")
+    analizzatore.add_argument("--regolamenti", action="store_true", help="scarica anche il regolamento di ogni gara con il link")
     analizzatore.add_argument("--pausa", type=float, default=0.5, help="secondi tra una richiesta e l'altra")
-    analizzatore.add_argument("--scansione-indizioni", nargs=2, type=int, metavar=("DA", "A"), default=None,
-                              help="scarica le indizioni con id_manif da DA ad A (inclusi) anche senza link nella lista; tiene solo quelle complete e con data >= --da")
+    analizzatore.add_argument("--scansione-regolamenti", nargs=2, type=int, metavar=("DA", "A"), default=None,
+                              help="scarica i regolamenti con id_manif da DA ad A (inclusi) anche senza link nella lista; tiene solo quelli completi e con data >= --da")
     analizzatore.add_argument("--uscita", type=Path, required=True, help="file JSON da scrivere")
     opzioni = analizzatore.parse_args(argomenti)
 
@@ -407,39 +407,39 @@ def principale(argomenti: list[str] | None = None) -> int:
         righe_totali = [riga for riga in righe_totali if riga.data_inizio and date.fromisoformat(riga.data_inizio) >= opzioni.da or not riga.data_inizio]
         print(f"filtro --da {opzioni.da}: {prima} → {len(righe_totali)} righe (le righe con data non interpretabile restano)", file=sys.stderr)
 
-    if opzioni.indizioni:
+    if opzioni.regolamenti:
         for riga in righe_totali:
             if not riga.id_manif:
                 continue
             try:
-                riga.indizione = analizza_indizione(riga.id_manif, scarica(riga.url_modulo, opzioni.pausa))
+                riga.regolamento = analizza_regolamento(riga.id_manif, scarica(riga.url_modulo, opzioni.pausa))
             except (urllib.error.URLError, RuntimeError, TimeoutError) as errore:
-                riga.indizione = Indizione(id_manif=riga.id_manif, url=riga.url_modulo, scaricata=False, anomalie=[f"scaricamento fallito ({errore})"])
-            # Controllo incrociato lista ↔ indizione: non corregge, segnala.
-            if riga.indizione.scaricata and riga.indizione.dal and riga.data_inizio and riga.indizione.dal != riga.data_inizio:
-                riga.anomalie.append(f"la lista dice {riga.data_inizio}, l'indizione {riga.indizione.dal}")
-        print(f"indizioni scaricate: {sum(1 for r in righe_totali if r.indizione and r.indizione.scaricata)}", file=sys.stderr)
+                riga.regolamento = Regolamento(id_manif=riga.id_manif, url=riga.url_modulo, scaricata=False, anomalie=[f"scaricamento fallito ({errore})"])
+            # Controllo incrociato lista ↔ regolamento: non corregge, segnala.
+            if riga.regolamento.scaricata and riga.regolamento.dal and riga.data_inizio and riga.regolamento.dal != riga.data_inizio:
+                riga.anomalie.append(f"la lista dice {riga.data_inizio}, il regolamento {riga.regolamento.dal}")
+        print(f"regolamenti scaricati: {sum(1 for r in righe_totali if r.regolamento and r.regolamento.scaricata)}", file=sys.stderr)
 
-    indizioni_scansione: list[dict] = []
+    regolamenti_scansione: list[dict] = []
     scartate_scansione = 0
-    if opzioni.scansione_indizioni:
-        primo, ultimo = opzioni.scansione_indizioni
+    if opzioni.scansione_regolamenti:
+        primo, ultimo = opzioni.scansione_regolamenti
         if primo > ultimo or primo < 1:
-            print("ERRORE: --scansione-indizioni vuole DA <= A, entrambi positivi", file=sys.stderr)
+            print("ERRORE: --scansione-regolamenti vuole DA <= A, entrambi positivi", file=sys.stderr)
             return 2
         for id_manif in range(primo, ultimo + 1):
             try:
-                indizione = analizza_indizione(str(id_manif), scarica(URL_MODULO + str(id_manif), opzioni.pausa))
+                regolamento = analizza_regolamento(str(id_manif), scarica(URL_MODULO + str(id_manif), opzioni.pausa))
             except (urllib.error.URLError, RuntimeError, TimeoutError) as errore:
                 anomalie_globali.append(f"scansione id {id_manif}: scaricamento fallito ({errore})")
                 continue
-            completa = bool(indizione.dal and indizione.denominazione and indizione.righe_programma)
-            nel_periodo = not opzioni.da or date.fromisoformat(indizione.dal) >= opzioni.da if indizione.dal else False
+            completa = bool(regolamento.dal and regolamento.denominazione and regolamento.righe_programma)
+            nel_periodo = not opzioni.da or date.fromisoformat(regolamento.dal) >= opzioni.da if regolamento.dal else False
             if completa and nel_periodo:
-                indizioni_scansione.append(asdict(indizione))
+                regolamenti_scansione.append(asdict(regolamento))
             else:
                 scartate_scansione += 1
-        print(f"scansione id {primo}-{ultimo}: {len(indizioni_scansione)} indizioni complete nel periodo, {scartate_scansione} scartate (vuote, bozze o fuori periodo)", file=sys.stderr)
+        print(f"scansione id {primo}-{ultimo}: {len(regolamenti_scansione)} regolamenti completi nel periodo, {scartate_scansione} scartate (vuote, bozze o fuori periodo)", file=sys.stderr)
 
     documento = {
         "generato_il": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -449,21 +449,21 @@ def principale(argomenti: list[str] | None = None) -> int:
         "filtro_da": opzioni.da.isoformat() if opzioni.da else "",
         "anomalie_globali": anomalie_globali,
         "righe": [asdict(riga) for riga in righe_totali],
-        "scansione_indizioni": {"intervallo": opzioni.scansione_indizioni or [], "scartate": scartate_scansione},
-        "indizioni_scansione": indizioni_scansione,
+        "scansione_regolamenti": {"intervallo": opzioni.scansione_regolamenti or [], "scartate": scartate_scansione},
+        "regolamenti_scansione": regolamenti_scansione,
     }
     opzioni.uscita.parent.mkdir(parents=True, exist_ok=True)
     opzioni.uscita.write_text(json.dumps(documento, ensure_ascii=False, indent=1), encoding="utf-8")
 
     # Verifica dell'uscita: rilettura e conteggio.
     riletto = json.loads(opzioni.uscita.read_text(encoding="utf-8"))
-    if len(riletto["indizioni_scansione"]) != len(indizioni_scansione):
-        print("ERRORE: le indizioni scansionate rilette non corrispondono a quelle scritte", file=sys.stderr)
+    if len(riletto["regolamenti_scansione"]) != len(regolamenti_scansione):
+        print("ERRORE: i regolamenti scansionati rilette non corrispondono a quelle scritte", file=sys.stderr)
         return 1
     if len(riletto["righe"]) != len(righe_totali):
         print(f"ERRORE: scritte {len(righe_totali)} righe ma rilette {len(riletto['righe'])}", file=sys.stderr)
         return 1
-    con_anomalie = sum(1 for riga in righe_totali if riga.anomalie or (riga.indizione and riga.indizione.anomalie))
+    con_anomalie = sum(1 for riga in righe_totali if riga.anomalie or (riga.regolamento and riga.regolamento.anomalie))
     print(f"scritto {opzioni.uscita}: {len(righe_totali)} righe, {con_anomalie} con anomalie, {len(anomalie_globali)} anomalie globali", file=sys.stderr)
     for anomalia in anomalie_globali:
         print(f"  ANOMALIA: {anomalia}", file=sys.stderr)

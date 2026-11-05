@@ -13,8 +13,8 @@
   note: "Tabella HTML per mese (div t_mese_AAMM): data, evento, località, organizzatore, scadenza iscrizioni, termine depennamenti, link 'modulo' (icona nella cella Evento). Parametro ?anno=N: N=2026 dà la stagione 2025/26 (che include anche i mesi della 2026/27). Campionati e attività nazionale in righe a 2 celle ('nome - località'), spesso duplicate. Nessuna categoria nella lista, tranne nei titoli dei campionati (cat. A/J/S/M). Il link 'modulo' sparisce per le gare passate. Dicitura 'Attività non ancora autorizzata' per le gare in attesa. Errori di codifica nei nomi (CITTÃ) e almeno un nome in base64. Letta da script/raccogli_fisr.py."
   ultimo_controllo: 2026-11-05
 
-- id: fisr-info-indizioni
-  nome: "FISR.info — indizioni (modulo della manifestazione)"
+- id: fisr-info-regolamenti di gara
+  nome: "FISR.info — regolamenti di gara (modulo della manifestazione)"
   url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=
   paese: IT
   metodo: script
@@ -22,7 +22,7 @@
   copre: [verifica]
   affidabilita: ufficiale
   stato: attiva
-  note: "Una pagina per gara (id_manif numerico, NON cronologico: 6037 = giugno 2024, 6700 = settembre 2026, 7045 = novembre 2026). Le pagine restano online anche quando la lista non le linka più (gare passate, 'non autorizzate'): si trovano scandendo gli id (--scansione-indizioni). Molti id sono vuoti o bozze. Blocco DENOMINAZIONE: date e tipo (pista/strada, categoria A/B); art. 3 campo di gara; art. 4 iscrizioni; art. 9-10 categorie ammesse e programma (tabella Categoria | Sesso | Distanza | Tipo gara). È la fonte della 'prova'. Codifica mista (cp1252 + UTF-8)."
+  note: "Una pagina per gara (id_manif numerico, NON cronologico: 6037 = giugno 2024, 6700 = settembre 2026, 7045 = novembre 2026). Le pagine restano online anche quando la lista non le linka più (gare passate, 'non autorizzate'): si trovano scandendo gli id (--scansione-regolamenti). Molti id sono vuoti o bozze. Blocco DENOMINAZIONE: date e tipo (pista/strada, categoria A/B); art. 3 campo di gara; art. 4 iscrizioni; art. 9-10 categorie ammesse e programma (tabella Categoria | Sesso | Distanza | Tipo gara). È la fonte della 'prova'. Codifica mista (cp1252 + UTF-8)."
   ultimo_controllo: 2026-11-05
 
 - id: fisr-it-calendario-eventi
@@ -46,7 +46,7 @@
   copre: [verifica]
   affidabilita: ufficiale
   stato: da_verificare
-  note: "Indice per anno; RSS solo per le news generali. Utile per indizioni e regolamenti dei campionati (Master)."
+  note: "Indice per anno; RSS solo per le news generali. Utile per regolamenti di gara e regolamenti dei campionati (Master)."
   ultimo_controllo: ""
 
 - id: fisr-toscana-corsa
