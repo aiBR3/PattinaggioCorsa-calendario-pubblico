@@ -21,12 +21,15 @@ non cancellando quella vecchia.
 | 2026-11-05 | Scoperta di nuove gare | Ricerca aperta ogni 2 settimane | |
 | 2026-11-05 | Content-Type | GitHub Pages serve `calendario.ics` come `text/calendar` (verificato con curl dopo il primo deploy) | Nessun accorgimento necessario |
 | 2026-11-05 | Informazioni personali | Il repository è pubblico: niente nomi, contatti, dispositivi o dettagli su chi lo usa. Si scrive "il proprietario" (aiBR3) e "segnalazioni volontarie" | Non pubblicare più del dovuto |
+| 2026-11-05 | Prova dal titolo ufficiale | Per i campionati FISR senza indizione, il titolo nel calendario federale ('Campionato Italiano Maratona cat. J/S/M') vale come prova delle categorie: M → `confermato` con `categorie: [master]`; `cat.` senza M → `escluso` | Il calendario federale è ufficiale; il regolamento del campionato si cercherà nei comunicati per distanze e dettagli |
+| 2026-11-05 | Scansione degli id delle indizioni | Le indizioni restano online anche senza link: si scandisce l'intervallo di id (6300–7100 nel 2026) e si abbinano alle righe della lista per data e nome | Unico modo per avere la prova delle gare passate e di quelle 'non autorizzate' |
+| 2026-11-05 | Conversione automatica con revisione | `converti_fisr.py` propone le voci (categorie e prova dalle righe dell'art. 10); nomi, luoghi e organizzatori vengono rivisti a mano prima della PR; le voci già presenti non si toccano | Evita errori di battitura su decine di voci; la decisione resta tracciabile |
 | 2026-11-05 | Scartato | Submodule del solo file ICS (un submodule punta a un repository intero); profilo Facebook fittizio (viola i termini di Meta, viene bloccato) | |
 
 ## Fasi
 
 - **Fase 0 — fatta (2026-11-05):** schema, piattaforma, perimetro, repository.
-- **Fase 1 — in corso:** a mano, insieme: fisr.info → `eventi.yaml` → `calendario.ics` → Pages → iscrizione dal telefono. Zero autonomia. Pubblicazione fatta con la PR #1 (2026-11-05); resta la prova di iscrizione dai telefoni.
+- **Fase 1 — in corso:** a mano, insieme: fisr.info → `eventi.yaml` → `calendario.ics` → Pages → iscrizione dal telefono. Zero autonomia. Pubblicazione fatta con la PR #1 (2026-11-05); con la PR #4 tutte le gare FISR dal 1° gennaio 2026 (59 voci, 16 pubblicate) per la verifica del proprietario, che ad alcune ha partecipato.
 - **Fase 2:** la stessa cosa come attività pianificata settimanale che apre una PR.
 - **Fase 3:** verifica (apre l'indizione, cita la prova) + supervisore (assembla la PR con riassunto e dubbi).
 - **Fase 4:** scoperta di nuove fonti, registro fonti, segnalazioni Tally, Facebook via Claude in Chrome.
@@ -47,6 +50,9 @@ non cancellando quella vecchia.
 ## Punti aperti
 
 - Chi esegue gli script deterministici delle fasi 2+: GitHub Actions a orario (segreti nei GitHub Secrets) oppure attività pianificate Claude. Proposta: Actions per gli script (le PR sarebbero di `github-actions[bot]`, che il proprietario può approvare), Claude per i compiti di giudizio.
+- Le due voci `da_verificare` ancora pubblicate (Speed Track European Series 14-17/05, Cardano al Campo 12-13/09) e i due campionati `confermato` dal solo titolo (Pordenone 24/05, Vado Ligure 3-6/09): cercare il regolamento nei comunicati FISR.
+- Nessuna gara FISR 2026 prevede la categoria Amatori nel programma: gli Amatori si troveranno negli Enti di promozione e nelle pattinate.
+- `url_iscrizione` per le gare FISR: le iscrizioni passano "esclusivamente attraverso il sito Internet federale"; quale pagina linkare?
 - Il Google Calendar di pattiniamolitalia.it è pubblico? Ha un ICS diretto?
 - Quali tappe del World Skate Marathon Tour ammettono Master/amatori.
 - Gli Enti di promozione (AICS, UISP, CSEN…) hanno circuiti con categoria Amatori: da censire come fonti.

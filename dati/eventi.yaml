@@ -9,6 +9,1136 @@
 #     memoria (così nessuno lo ripropone) ma non finisce nel calendario
 #   - ogni voce ha almeno una fonte con url e letto_il
 
+- id: 2026-01-06-pescara-trofeo-befana
+  nome: "3° Trofeo della Befana"
+  data_inizio: 2026-01-06
+  data_fine: 2026-01-06
+  luogo: "Pescara"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "C.SP.P. Pescara"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6743"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2025-12-31
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6743
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6743, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: PISTA DI 175 m. con curve sopraelevate, Via Maestri del Lavoro. CAP della localit 65125."
+
+- id: 2026-02-08-campobasso-trofeo-cus-molise-skating
+  nome: "I Trofeo CUS Molise Skating Indoor"
+  data_inizio: 2026-02-08
+  data_fine: 2026-02-08
+  luogo: "Campobasso"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "CUS Molise"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6774"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-02-02
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6774
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6774, art. 10 'Programma gare': categorie elencate ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Fondo in parquet 20X40. Giro MT. 80, Viale Manzoni SNC - Palaunimol. CAP della localit 86100."
+
+- id: 2026-02-20-pescara-campionato-italiano-indoor-r
+  nome: "Campionato Italiano Indoor cat. R - Trofeo Skate Italia cat. R12"
+  data_inizio: 2026-02-20
+  data_fine: 2026-02-22
+  luogo: "Pescara"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "FISR"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-02-08
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Calendario FISR 2025/26 (https://www.fisr.info/attivita/corsa_calendario.php), titolo ufficiale: 'Campionato italiano Indoor cat. R - Trofeo Skate Italia cat. R12'. Categorie indicate nel titolo: R/R12; nessuna M (Master)."
+  note: "Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare."
+
+- id: 2026-02-27-pescara-campionato-italiano-indoor-j
+  nome: "Campionato Italiano Indoor cat. A/J/S"
+  data_inizio: 2026-02-27
+  data_fine: 2026-03-01
+  luogo: "Pescara"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "FISR"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-02-15
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Calendario FISR 2025/26 (https://www.fisr.info/attivita/corsa_calendario.php), titolo ufficiale: 'Campionato italiano Indoor cat. A/J/S'. Categorie indicate nel titolo: A/J/S; nessuna M (Master)."
+  note: "Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare."
+
+- id: 2026-03-22-rende-trofeo-indoor-cus-unical
+  nome: "Trofeo Indoor CUS UNICAL"
+  data_inizio: 2026-03-22
+  data_fine: 2026-03-22
+  luogo: "Rende (CS)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "CUS UNICAL"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6781"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-03-17
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6781
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6781, art. 10 'Programma gare': categorie elencate ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Fondo in parquet 20x40 giro 80 m, via Petro Bucci. CAP della localit 87036."
+
+- id: 2026-04-06-paderno-dadda-trofeo-primavera
+  nome: "XIX Trofeo di Primavera"
+  data_inizio: 2026-04-06
+  data_fine: 2026-04-06
+  luogo: "Paderno d'Adda"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "A.S.Dil. Padernese"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6731"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-04-02
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6731
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6731, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su strada. Campo di gara: Circuito stradale in mescola di asfalto extrafine. Lunghezza 290m - Larghezza 7.50m. Illuminazione a giorno., via Airoldi 22 - Paderno d'Adda - (LC). CAP della localit 23877."
+
+- id: 2026-04-19-imola-gran-premio-imola
+  nome: "48° Gran Premio Città di Imola"
+  data_inizio: 2026-04-19
+  data_fine: 2026-04-19
+  luogo: "Imola"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Gruppo Imolese P."
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6741"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-04-14
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6741
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6741, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su strada. Campo di gara: ANELLO STRADALE 300MT IN ASFALTO GRANA FINE, via B. Croce Imola.. CAP della localit 40026."
+
+- id: 2026-04-25-noale-trofeo-noale
+  nome: "Trofeo Città di Noale"
+  data_inizio: 2026-04-25
+  data_fine: 2026-04-26
+  luogo: "Noale (VE)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "ADHP Gruppo Cosmo"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6772"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-04-22
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6772
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6772, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: PISTA SOPRAELEVATA 200 MT RESINATA - PISTA PIANA 20X40 RESINATA, NOALE - VIA GAGLIARDI. CAP della localit 30033."
+
+- id: 2026-04-25-terni-trofeo-appennini-memorial-d
+  nome: "1° Trofeo degli Appennini - XIV Memorial D. Pioli"
+  data_inizio: 2026-04-25
+  data_fine: 2026-04-25
+  luogo: "Terni"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Euro S. Club"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6746"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-04-20
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6746
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6746, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su strada. Campo di gara: 450 m circuito stradale grana fine, Piazzale Senio 1. CAP della localit 05100."
+
+- id: 2026-04-26-pollenza-memorial-gilda-leoperdi-trofeo
+  nome: "XI Memorial Gilda Leoperdi - 1° Trofeo Città di Pollenza"
+  data_inizio: 2026-04-26
+  data_fine: 2026-04-26
+  luogo: "Pollenza"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "A.P.D. Juvenilia"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6710"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-04-21
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6710
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6710, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Pista 200mt con curve a pendenza costante resina Casali sport, Via G. Falcone snc. CAP della localit 62100."
+
+- id: 2026-05-01-ferrara-maggio-ferrara-inlne-trofeo
+  nome: "1° Maggio Ferrara Inline - Trofeo Internazionale del Lavoro"
+  data_inizio: 2026-05-01
+  data_fine: 2026-05-01
+  luogo: "Ferrara, piazza Ariostea"
+  paese: IT
+  tipo: gara
+  categorie: ["master"]
+  distanze: ["5000 m in linea"]
+  organizzatore: "FISR"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6814"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-04-26
+  stato: confermato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6814
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6814, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  note: "Manifestazione di categoria A su strada: circuito stradale in asfalto a grana fine di 325 m in piazza Ariostea. Nella fonte il nome è scritto 'Inlne' e compare codificato in base64 (decodificato dallo script)."
+
+- id: 2026-05-02-roma-trofeo-roma
+  nome: "Trofeo Città di Roma 2026 - 3° edizione"
+  data_inizio: 2026-05-02
+  data_fine: 2026-05-03
+  luogo: "Roma, pattinodromo delle Tre Fontane"
+  paese: IT
+  tipo: gara
+  categorie: ["master"]
+  distanze: ["5000 m in linea"]
+  organizzatore: "Roma 7 Pattinaggio"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6732"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-04-28
+  stato: confermato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6732
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6732, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  note: "Manifestazione di categoria A su pista. Campo di gara: PISTA SOPRAELEVATA CON CURVE PARABOLICHE MT 175 ALLA CORDA E LARGHEZZA MT 5.50 CON PAVIMENTAZIONE IN CEMENTO AL QUARZO, VIA DELLE TRE FONTANE 1 - ROMA (PATTINODROMO DELLE TRE FONTANE). CAP della localit 00144."
+
+- id: 2026-05-02-rovigo-memorial-nazionale-arturo-ponzetti
+  nome: "40° Memorial Nazionale Arturo Ponzetti - Tappa comune GPG-CNO"
+  data_inizio: 2026-05-02
+  data_fine: 2026-05-02
+  luogo: "Rovigo"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Skating C. Rovigo"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6740"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-04-27
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6740
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6740, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Pattinodromo delle Rose (resinatura Atp) - Pista sopraelevata 200 metri e larga 6 - Pista piana 25x50, via L. Muratori - via D. Bramante - Rovigo. CAP della localit 45100."
+
+- id: 2026-05-07-siena-international-cup-siena-maggio
+  nome: "XVII International Cup Città di Siena - 7° Memorial Fabio Belotti"
+  data_inizio: 2026-05-07
+  data_fine: 2026-05-10
+  luogo: "Siena"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "A.S.D. Mens Sana 1871"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6784"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-04-30
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6784
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6784, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria A su pista. Campo di gara: PISTA SOPRAELEVATA MT 200 ALLA CORDA LARGHEZZA MT 5.50 (pavimentazione VESMACO DURFLEX 101 SP ROLLER PROFESSIONAL) per tutte le categorie., VIA FAUSTO COPPI - SIENA (IMPIANTI ACQUACALDA). CAP della localit 53100."
+
+- id: 2026-05-10-spilimbergo-mosaico-roller-next-gen
+  nome: "Mosaico Roller Next Gen - Tappa GPG"
+  data_inizio: 2026-05-10
+  data_fine: 2026-05-10
+  luogo: "Spilimbergo"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Pol. Aquila Spilimbergo"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6833"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-05-05
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6833
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6833, art. 10 'Programma gare': categorie elencate ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: pista piana resinata 20x40, Via Monsignor Tesolin 1 Spilimbergo. CAP della localit 33090."
+
+- id: 2026-05-14-senigallia-speed-track-european-series
+  nome: "Speed Track European Series"
+  data_inizio: 2026-05-14
+  data_fine: 2026-05-17
+  luogo: "Senigallia (AN)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: ""
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: ""
+  stato: da_verificare
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: ""
+  prova: ""
+  note: "Indizione non trovata: categorie ammesse sconosciute."
+
+- id: 2026-05-24-pordenone-campionato-italiano-maratona-allievi
+  nome: "Campionato Italiano Maratona cat. J/S/M - Campionato Italiano Mezza Maratona cat. Allievi"
+  data_inizio: 2026-05-24
+  data_fine: 2026-05-24
+  luogo: "Pordenone (PN)"
+  paese: IT
+  tipo: gara
+  categorie: ["master"]
+  distanze: []
+  organizzatore: "FISR"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-05-18
+  stato: confermato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Calendario FISR 2025/26 (https://www.fisr.info/attivita/corsa_calendario.php), titolo ufficiale: 'Campionato Italiano 1/2 maratona cat. Allievi - Campionato Italiano maratona cat. J/S/M'. Categorie indicate nel titolo: A/J/S/M (M = Master)."
+  note: "Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare."
+
+- id: 2026-05-30-bellusco-trofeo-lorenzo-brioni
+  nome: "25° Trofeo Lorenzo Brioni"
+  data_inizio: 2026-05-30
+  data_fine: 2026-05-31
+  luogo: "Bellusco"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Pol. Bellusco"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6808"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-05-26
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6808
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6808, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Pista a curve sopraelevate lunghezza mt 200 alla corda larghezza mt 6 pavimentazione VESMACO DURFLEX101 SP ROLLER PROFESSIONAL omologata FISR, VIA PASCOLI 7. CAP della localit 20882."
+
+- id: 2026-05-31-campobasso-trofeo-dimensione-campobasso
+  nome: "1° Trofeo Dimensione Città di Campobasso"
+  data_inizio: 2026-05-31
+  data_fine: 2026-05-31
+  luogo: "Campobasso"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "ASD Dimensione"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6815"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-05-22
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6815
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6815, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: pista di m. 175 con curve paraboliche fondo in resina Vesmaco durflex 200 sp pista interna piana 20x40 m, Contrada Selvapiana snc. CAP della localit 86100."
+
+- id: 2026-05-31-manduria-manduria-roller-trophy
+  nome: "Manduria Roller Trophy"
+  data_inizio: 2026-05-31
+  data_fine: 2026-05-31
+  luogo: "Manduria"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "ASD Acc. S. Rot."
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6848"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-05-22
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6848
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6848, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: PISTA DI 200 MT CON CURVE SOPRAELEVATE A PENDENZA COSTANTE CON FONDO VESMACO E PISTA PIANA 25*50, VIA PER FRANCAVILLA FONTANA - PATTINODROMO COMUNALE CITTA' DI MANDURIA. CAP della localit 74024."
+
+- id: 2026-06-02-forli-trofeo-forli-asd-pattinodromo
+  nome: "30° Trofeo Città di Forlì - Tappa GPG (in collaborazione con ASD Pattinodromo 3287)"
+  data_inizio: 2026-06-02
+  data_fine: 2026-06-02
+  luogo: "Forlì"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Forlì Roller"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6778"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-05-28
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6778
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6778, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI, PRIMI PASSI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: PISTA SOPRAELEVATA PISTA PIANA 20X40, PATTINODROMO BRUNO PATRIGNANI VIALE SPAZZOLI 113 FORLI. CAP della localit 47121."
+
+- id: 2026-06-04-elmas-campionato-italiano-pista-r
+  nome: "Campionato Italiano Pista cat. R - Trofeo Skate Italia su pista cat. R12"
+  data_inizio: 2026-06-04
+  data_fine: 2026-06-07
+  luogo: "Elmas (CA)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "FISR"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-05-20
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Calendario FISR 2025/26 (https://www.fisr.info/attivita/corsa_calendario.php), titolo ufficiale: 'Campionato Italiano Pista cat.R- Trofeo Skate Italia su pista cat. R12'. Categorie indicate nel titolo: R/R12; nessuna M (Master)."
+  note: "Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare."
+
+- id: 2026-06-11-martinsicuro-giochi-nazionali-societa-bruno
+  nome: "Giochi Nazionali per Società Bruno Tiezzi cat. G/E"
+  data_inizio: 2026-06-11
+  data_fine: 2026-06-13
+  luogo: "Martinsicuro (TE)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "FISR"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-05-31
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Calendario FISR 2025/26 (https://www.fisr.info/attivita/corsa_calendario.php), titolo ufficiale: 'Giochi Nazionali per Società B. Tiezzi cat. G/E'. Categorie indicate nel titolo: G/E (Giovanissimi, Esordienti); nessuna M (Master)."
+  note: "Categorie prese dal titolo ufficiale nel calendario FISR (la lista riporta l'evento due volte, una con 'cat. G/E')."
+
+- id: 2026-06-20-torino-memorial-samuele-giaccaglia
+  nome: "8° Memorial Samuele Giaccaglia"
+  data_inizio: 2026-06-20
+  data_fine: 2026-06-21
+  luogo: "Torino, parco della Colletta"
+  paese: IT
+  tipo: gara
+  categorie: ["master"]
+  distanze: ["10 giri in linea"]
+  organizzatore: "Patt. S. Mauro TO"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6832"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-06-16
+  stato: confermato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6832
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6832, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 10 g | In linea'; 'MASTER OVER 75 | M | 10 g | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  note: "Manifestazione di categoria B su strada. Campo di gara: CIRCUITO STRADALE PARCO DELLA COLLETTA TORINO SVILUPPO CIRCA 400MT ASFALTO GRANA MEDIA, PIAZZA SIBILLA ALERAMO. CAP della localit 10153."
+
+- id: 2026-06-21-san-giorgio-ionico-memorial-nazionale-pierfrancesco-mazza
+  nome: "3° Memorial Nazionale Pierfrancesco Mazza"
+  data_inizio: 2026-06-21
+  data_fine: 2026-06-21
+  luogo: "San Giorgio Ionico (TA)"
+  paese: IT
+  tipo: gara
+  categorie: ["master"]
+  distanze: ["5000 m in linea"]
+  organizzatore: "Pol. Fit For Fun"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6847"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-06-17
+  stato: confermato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6847
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6847, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Pista sopraelevata di mt. 165 con curve paraboliche fondo in Resina Vesmaco Pista Piana mt. 20x40, via Giotto 65 - San Giorgio Ionico (TA). CAP della localit 74027."
+
+- id: 2026-06-26-bellusco-campionato-italiano-pista-j
+  nome: "Campionato Italiano Pista cat. A/J/S"
+  data_inizio: 2026-06-26
+  data_fine: 2026-06-28
+  luogo: "Bellusco (MB)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "FISR"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-06-12
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Calendario FISR 2025/26 (https://www.fisr.info/attivita/corsa_calendario.php), titolo ufficiale: 'Campionato Italiano Pista cat. A/J/S'. Categorie indicate nel titolo: A/J/S; nessuna M (Master)."
+  note: "Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare."
+
+- id: 2026-07-04-cantu-trofeo-cantu
+  nome: "47° Trofeo Città di Cantù"
+  data_inizio: 2026-07-04
+  data_fine: 2026-07-05
+  luogo: "Cantù (CO), circuito stradale Toto Caimi"
+  paese: IT
+  tipo: gara
+  categorie: ["master"]
+  distanze: ["5000 m in linea"]
+  organizzatore: "G.P. Mobili Cantù"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6733"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-07-02
+  stato: confermato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6733
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6733, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  note: "Manifestazione di categoria B su strada. Campo di gara: Circuito stradale TOTO CAIMI lunghezza 380 metri larghezza minima 6 00 metri avente pavimentazione asfalto grana fine, Via Baracca 54 e Via della Selva snc. CAP della localit 22063."
+
+- id: 2026-07-04-fabriano-trofeo-dellamicizia-memorial-donatella
+  nome: "46° Trofeo dell'Amicizia e 10° Memorial Donatella Boero"
+  data_inizio: 2026-07-04
+  data_fine: 2026-07-05
+  luogo: "Fabriano (AN)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Fortitudo Fabriano"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6711"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-07-01
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6711
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6711, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su strada. Campo di gara: Il trofeo si svolgera' in due location: il 4 luglio su percorso cittadino in Viale Moccia al centro della citta' per la 100 metri in corsia ed il 5 luglio per le restanti gare nella pista di pattinaggio che si sviluppa s…"
+
+- id: 2026-07-11-san-miniato-memorial-moreno-guerri-trofeo
+  nome: "VII Memorial Moreno Guerri - Trofeo Città di San Miniato"
+  data_inizio: 2026-07-11
+  data_fine: 2026-07-12
+  luogo: "San Miniato"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Gruppo P. S. Miniato"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6849"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-07-09
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6849
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6849, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: pista sopraelevata a pendenza unica 200 m + pista piana 20X40 in resina ATP roller, via Cavane 151 località La Catena - San Miniato. CAP della localit 56028."
+
+- id: 2026-07-12-cologno-monzese-trofeo-cologno-monzese
+  nome: "5° Trofeo Città di Cologno Monzese"
+  data_inizio: 2026-07-12
+  data_fine: 2026-07-12
+  luogo: "Cologno Monzese"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Anpinline Cologno Monzese"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6739"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-07-08
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6739
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6739, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su strada. Campo di gara: Percorso stradale 250m x 6m avente pavimentazione di asfalto di grana fine illuminazione a giorno., Viale Campania 50 Cologno Monzese. CAP della localit 20093. Nel testo dell'indizione compaiono righe con Master/Amatori fuori dal programma gare (da leggere): Ritrovo categorie G/E ore 8.00 del 12/07/2026. Inizio gare ore 8.30. Ritrovo categorie R12/R/A ore 14.00 del 12/07/2026. / La manifestazione aderisce al Circuito Nord Ovest. Per gli atleti iscritti al CNO la quota di iscrizione allamanifestazi"
+
+- id: 2026-07-16-torino-campionato-italiano-strada-r
+  nome: "Campionato Italiano Strada cat. R - Trofeo Skate Italia su strada cat. R12"
+  data_inizio: 2026-07-16
+  data_fine: 2026-07-19
+  luogo: "Torino"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "FISR"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-07-06
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Calendario FISR 2025/26 (https://www.fisr.info/attivita/corsa_calendario.php), titolo ufficiale: 'Campionato Italiano Strada cat.R- Trofeo Skate Italia su strada cat. R12'. Categorie indicate nel titolo: R/R12; nessuna M (Master)."
+  note: "Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare."
+
+- id: 2026-07-25-laquila-race-aquila-open-indoor
+  nome: "Race L'Aquila Open Indoor - Memorial Romano Maria Cacciani (corsa su pista)"
+  data_inizio: 2026-07-25
+  data_fine: 2026-07-26
+  luogo: "L'Aquila"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "C.P.G.A. ASD"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6759"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-07-21
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6759
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6759, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio con curve soprelevate pendenza cosante mt 150 alla corda rivestimento VESMACO. Tutte le gare si effettueranno esclusivamente in pista soprelevata., VIALE OVIDIO SNC - Pattinodromo coperto E.De Felice…"
+
+- id: 2026-07-25-san-giorgio-delle-pertiche-trofeo-vita-avis
+  nome: "XIX Trofeo per la Vita con l'AVIS - Tappa GPG e IRC"
+  data_inizio: 2026-07-25
+  data_fine: 2026-07-26
+  luogo: "San Giorgio delle Pertiche (PD)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Skating C. Pertichese"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6777"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-07-22
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6777
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6777, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: pista con curve sopraelevate mt . 200 pista piana mt 25X50 resina Vesmaco, Pattinodromo comunale Via Zuanon San Giorgio delle Pertiche. CAP della localit 35010."
+
+- id: 2026-08-01-san-benedetto-del-tronto-meeting-san-benedetto-tronto
+  nome: "38° Meeting Città di San Benedetto del Tronto"
+  data_inizio: 2026-08-01
+  data_fine: 2026-08-01
+  luogo: "San Benedetto del Tronto (AP)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Patt. Sambenedettesi"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6779"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-07-27
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6779
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6779, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio a curve sopraelevate paraboliche della lunghezza di metri 175 e larghezza metri 5.80. Fondo in resina ATP, Via delle Tamerici. CAP della localit 63074."
+
+- id: 2026-08-05-santa-maria-nuova-giorni-international
+  nome: "6 Giorni International 2026"
+  data_inizio: 2026-08-05
+  data_fine: 2026-08-09
+  luogo: "Santa Maria Nuova (AN)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "S. Maria Nuova"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6735"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-08-02
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6735
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6735, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria A su pista. Campo di gara: PISTA PIANA INTERNA RIVERNICIATA CON MATERIALE RESINOSO 20x40 mt. PISTA ESTERNA RIVERNICIATA CON MATERIALE RESINOSO CON CURVE SOPRAELEVATE A PENDENZA CRESCENTE LUNGA 165 mt., VIA RAVAGLI 5. CAP della localit 60030."
+
+- id: 2026-08-30-mena-di-castagnaro-trofeo-vangadina-corsa-avis
+  nome: "Trofeo La Vangadina in Corsa con AVIS"
+  data_inizio: 2026-08-30
+  data_fine: 2026-08-30
+  luogo: "Menà di Castagnaro (VR)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "La Vangadina Menà"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6807"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-08-25
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6807
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6807, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su strada. Campo di gara: Circuito stradale sviluppo m.333 larghezza m. 7 asfalto grana medio fina, viale Europa Mena' di Castagnaro. CAP della localit 37040."
+
+- id: 2026-09-03-vado-ligure-campionato-italiano-strada-j
+  nome: "Campionato Italiano su Strada cat. A/J/S/M"
+  data_inizio: 2026-09-03
+  data_fine: 2026-09-06
+  luogo: "Vado Ligure (SV)"
+  paese: IT
+  tipo: gara
+  categorie: ["master"]
+  distanze: []
+  organizzatore: "FISR"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-08-15
+  stato: confermato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Calendario FISR 2025/26 (https://www.fisr.info/attivita/corsa_calendario.php), titolo ufficiale: 'Campionato Italiano su strada cat. A/J/S/M'. Categorie indicate nel titolo: A/J/S/M (M = Master)."
+  note: "Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare."
+
+- id: 2026-09-12-cardano-al-campo-trofeo-memorial-antonio-rocchetta
+  nome: "8° Trofeo Memorial Antonio Rocchetta - Trofeo Città di Cardano al Campo"
+  data_inizio: 2026-09-12
+  data_fine: 2026-09-13
+  luogo: "Cardano al Campo (VA)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Cardano Skating"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-09-07
+  stato: da_verificare
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: ""
+  prova: ""
+  note: "Indizione non trovata: categorie ammesse sconosciute. La lista FISR riporta l'evento due volte: '8° Trofeo Memorial Antonio Rocchetta' (12-13/09) e 'Trofeo Città di Cardano al Campo - VIII Memorial Antonio Rocchetta' (13/09), stesso organizzatore."
+
+- id: 2026-09-13-bagnoli-di-sopra-trofeo-bagnoli-sopra-memorial
+  nome: "35° Trofeo Comune di Bagnoli di Sopra - Memorial Guerrino Maggio e Marta Vanzetto - Tappa GPG"
+  data_inizio: 2026-09-13
+  data_fine: 2026-09-13
+  luogo: "Bagnoli di Sopra (PD), via M. Molini 7"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Patt.ri S. Siro"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6794"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-09-08
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6794
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6794, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su strada. Campo di gara: Circuito stradale sviluppo 340 m larghezza 7m asfalto grana medio fine, Via Molini 7. CAP della localit 35023."
+
+- id: 2026-09-13-galbiate-trofeo-sala-galbiate
+  nome: "2° Trofeo Sala Galbiate"
+  data_inizio: 2026-09-13
+  data_fine: 2026-09-13
+  luogo: "Galbiate (LC)"
+  paese: IT
+  tipo: gara
+  categorie: ["master"]
+  distanze: ["50 m sprint", "1800 m cronometro"]
+  organizzatore: "A.S.D. GS Sala al Barro"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6738"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-09-09
+  stato: confermato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6738
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6738, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 50 m | Sprint'; 'MASTER OVER 75 | F | 1800 m | Cronometro' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  note: "Manifestazione di categoria B su strada. Campo di gara: Percorso su strada cittadina con fondo in asfalto (via Aldo Moro). La cronoscalata si svolgerà su un tratto di strada in salita con dislivello di circa 90 mt e una lunghezza di 1800 mt, Piazza Martiri della Liberazione 6…"
+
+- id: 2026-09-13-montesilvano-trofeo-montesilvano
+  nome: "1° Trofeo Città di Montesilvano"
+  data_inizio: 2026-09-13
+  data_fine: 2026-09-13
+  luogo: "Montesilvano"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "C.SP.P. Pescara"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6831"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-09-06
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6831
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6831, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su strada. Attenzione: la lista FISR riporta un '1° Trofeo Città di Montesilvano' sia il 13/09 (indizione 6831) sia il 04/10 (indizione 6867), stesso organizzatore."
+
+- id: 2026-09-19-cassano-dadda-gran-prix-cassano-dadda
+  nome: "16° Gran Prix Cassano d'Adda"
+  data_inizio: 2026-09-19
+  data_fine: 2026-09-20
+  luogo: "Cassano d'Adda"
+  paese: IT
+  tipo: gara
+  categorie: ["master"]
+  distanze: ["5000 m in linea"]
+  organizzatore: "Speed Skating Cassano"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6700"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-09-15
+  stato: confermato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6700
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6700, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  note: "Manifestazione di categoria B su strada. Campo di gara: ANELLO STRADALE SVILUPPO mt. 400 LARGHEZZA mt. 6 IN ASFALTO A GRANA FINE., CASSANO D'ADDA VIA VALENTINO MAZZOLA s.n... CAP della localit 20062."
+
+- id: 2026-09-19-elmas-trofeo-elmas
+  nome: "Trofeo Città di Elmas"
+  data_inizio: 2026-09-19
+  data_fine: 2026-09-20
+  luogo: "Elmas (CA)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Elmas In Line"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6796"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-09-14
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6796
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6796, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria A su pista. Campo di gara: Pista in mattonelle di graniglia sopraelevata di metri 175, Via Don Sturzo 13. CAP della localit 09067."
+
+- id: 2026-09-20-scaltenigo-memorial-manuel-calzavara-samuele
+  nome: "Memorial 2026 Manuel Calzavara e Samuele Spolaore - Tappa GPG"
+  data_inizio: 2026-09-20
+  data_fine: 2026-09-20
+  luogo: "Scaltenigo (VE)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "GS Scaltenigo"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6863"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-09-15
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6863
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6863, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Percorso stradale, Via ballo 16. CAP della localit 30035."
+
+- id: 2026-09-25-laquila-internazionali-ditalia-open-indoor
+  nome: "Internazionali d'Italia Open Indoor"
+  data_inizio: 2026-09-25
+  data_fine: 2026-09-27
+  luogo: "L'Aquila"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "C.P.G.A. ASD"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6752"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-09-23
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6752
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6752, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio con curve soprelevate pendenza costante mt 150 alla corda larghezza mt 5 50 con rivestimento VESMACO Tutte le gare si effettueranno esclusivamente in pista soprelevata. Il venerdì mattina sarà possib…"
+
+- id: 2026-09-26-trebaseleghe-trofeo-trebaseleghe
+  nome: "20° Trofeo Città di Trebaseleghe - Tappa GPG e IRC"
+  data_inizio: 2026-09-26
+  data_fine: 2026-09-27
+  luogo: "Trebaseleghe (PD)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Azzurra Patt."
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6795"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-09-23
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6795
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6795, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su strada. Campo di gara: Circuito stradale sviluppo m. 360 larghezza m. 7 asfalto grana fine, Via Draganziolo. CAP della localit 35010."
+
+- id: 2026-09-27-cinisello-balsamo-memorial-lodovico-bossi
+  nome: "1° Memorial Lodovico Bossi"
+  data_inizio: 2026-09-27
+  data_fine: 2026-09-27
+  luogo: "Cinisello Balsamo"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "ASA"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6856"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-09-23
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6856
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6856, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su strada. Campo di gara: Circuito stradale asfaltato sviluppo 338 mt larghezza minima 6 mt, Parco della Costituzione - Via Mozart Cinisello Balsamo. CAP della localit 20092."
+
+- id: 2026-10-04-montesilvano-trofeo-montesilvano
+  nome: "1° Trofeo Città di Montesilvano"
+  data_inizio: 2026-10-04
+  data_fine: 2026-10-04
+  luogo: "Montesilvano"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "C.SP.P. Pescara"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6867"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-09-27
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6867
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6867, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: PISTA DI 200 MT CON CURVE SOPRAELEVATE E PISTA PIANA 20*40 CON FONDO VESMACO, VIA ALFIERI MONTESILVANO. CAP della localit 65015."
+
+- id: 2026-10-17-montichiari-finale-circuiti-senza-frontiere
+  nome: "Finale dei Circuiti Senza Frontiere"
+  data_inizio: 2026-10-17
+  data_fine: 2026-10-17
+  luogo: "Montichiari (BS)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Skating C. Pertichese"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6869"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-10-14
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6869
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6869, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Palazzetto Palageorge di Montichiari pista piana 20x40, Via Giovanni Falcone 24 Montichiari(BS). CAP della localit 25018."
+
+- id: 2026-10-25-terni-memorial-d-pioli
+  nome: "XIV Memorial D. Pioli"
+  data_inizio: 2026-10-25
+  data_fine: 2026-10-25
+  luogo: "Terni"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Euro S. Club"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6868"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-10-21
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6868
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 6868, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su strada. Campo di gara: Percorso stradale in grana fine di 450 mt., Piazzale Senio 1. CAP della localit 05100."
+
 - id: 2026-11-08-imola-gran-premio-indoor
   nome: "49° Gran Premio Indoor Città di Imola"
   data_inizio: 2026-11-08
@@ -59,22 +1189,24 @@
   nome: "Internazionali d'Italia Open Indoor — Master Race — Vesmaco Race, VI Memorial Romano Maria Cacciani"
   data_inizio: 2026-12-06
   data_fine: 2026-12-06
-  luogo: "L'Aquila"
+  luogo: "L'Aquila, pista con curve sopraelevate 150 m (Vesmaco)"
   paese: IT
   tipo: gara
-  categorie: []
-  distanze: []
+  categorie: ["master"]
+  distanze: ["7 giri in linea", "3000 m in linea"]
   organizzatore: "C.P.G.A. ASD"
-  url_ufficiale: ""
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7047"
   url_iscrizione: ""
   scadenza_iscrizione: 2026-11-30
   stato: non_autorizzato
   fonti:
     - url: https://www.fisr.info/attivita/corsa_calendario.php
       letto_il: 2026-11-05
-  verificato_il: ""
-  prova: ""
-  note: "Nel calendario fisr.info compare con la dicitura 'Attività non ancora autorizzata' e senza modulo d'indizione. Il nome dice 'MASTER RACE', ma le categorie vanno verificate sull'indizione appena esce. Scadenza iscrizioni 30/11, termine depennamenti 01/12 (dalla lista)."
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7047
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 7047, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 7 g | In linea'; 'MASTER OVER 75 | F | 3000 m | In linea' e seguenti, da MASTER OVER 75 a MASTER OVER 30, F e M."
+  note: "Nel calendario fisr.info compare come 'Attività non ancora autorizzata' e senza link, ma l'indizione (id_manif 7047, manifestazione di categoria B su pista) esiste già e prevede le categorie Master: da ricontrollare quando arriva l'autorizzazione. Scadenza iscrizioni 30/11, termine depennamenti 01/12."
 
 - id: 2026-12-08-imola-gran-premio-indoor
   nome: "49° Gran Premio Indoor Città di Imola"
@@ -83,7 +1215,7 @@
   luogo: "Imola (BO), pista piana in cemento, via B. Croce"
   paese: IT
   tipo: gara
-  categorie: [master]
+  categorie: ["master"]
   distanze: ["2 giri sprint", "2000 m in linea"]
   organizzatore: "Gruppo Imolese P."
   url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7046"
@@ -98,3 +1230,112 @@
   verificato_il: 2026-11-05
   prova: "Indizione, art. 10: righe di programma da 'MASTER OVER 30' a 'MASTER OVER 75', F e M, '2 g Sprint' e '2000 m In linea'. Orari: 'Master m/f Ritrovo ore13 00 Inizio gare ore 13 30.' Premi: 'Verrà premiata la società Master + numerosa con Il Trofeo Memorial MASSIMO PANINI.'"
   note: "Manifestazione di categoria B su pista piana in cemento (90/100 m). Aperta ai tesserati in regola per l'anno in corso (art. 2). Iscrizioni solo tramite il sito federale entro le 24 del 02/12, conferme entro le 17 del 05/12. Categorie Amatori non menzionate."
+
+- id: 2027-05-29-laquila-internazionali-ditalia-open-indoor
+  nome: "Internazionali d'Italia Open Indoor - VII Memorial Romano Maria Cacciani"
+  data_inizio: 2027-05-29
+  data_fine: 2027-05-29
+  luogo: "L'Aquila"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "C.P.G.A. ASD"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7073"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2027-05-26
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7073
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 7073, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio con curve soprelevate pendenza costante mt 150 alla corda larghezza mt 5.50 con rivestimento VESMACO Tutte le gare si effettueranno esclusivamente in pista soprelevata. Il sabato mattina sarà possibi… Nella lista FISR compare come 'Attività non ancora autorizzata'; l'indizione (bozza) non prevede Master/Amatori."
+
+- id: 2027-06-06-terni-memorial-alfonso-zenga
+  nome: "1° Memorial Alfonso Zenga - Tappa RSC"
+  data_inizio: 2027-06-06
+  data_fine: 2027-06-06
+  luogo: "Terni"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Euro S. Club"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2027-06-02
+  stato: non_autorizzato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: ""
+  prova: ""
+  note: "Nella lista FISR compare come 'Attività non ancora autorizzata'."
+
+- id: 2027-07-03-fabriano-trofeo-dellamicizia-memorial-donatella
+  nome: "47° Trofeo dell'Amicizia e 11° Memorial Donatella Boero"
+  data_inizio: 2027-07-03
+  data_fine: 2027-07-04
+  luogo: "Fabriano (AN)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Fortitudo Fabriano"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2027-06-30
+  stato: non_autorizzato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: ""
+  prova: ""
+  note: "Nella lista FISR compare come 'Attività non ancora autorizzata'. Il cognome 'Boero' manca nel titolo della lista: preso dall'edizione 2026."
+
+- id: 2027-08-03-santa-maria-nuova-trofeo-internazionale-giorni-international
+  nome: "Trofeo Internazionale 6 Giorni International 2027 - Circuito RSC"
+  data_inizio: 2027-08-03
+  data_fine: 2027-08-07
+  luogo: "Santa Maria Nuova (AN)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "S. Maria Nuova"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7059"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2027-07-29
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7059
+      letto_il: 2026-11-05
+  verificato_il: 2026-11-05
+  prova: "Indizione id_manif 7059, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI, PRIMI PASSI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria A su pista. Campo di gara: Pista piana interna riverniciata con materiale resinoso 20x40 mt. Pista esterna riverniciata con materiale resinoso con curve sopraelevate a pendenza crescente lunga 165 mt. Pista omologata secondo le direttive Skate Ita… Nella lista FISR compare come 'Attività non ancora autorizzata'; l'indizione (bozza) non prevede Master/Amatori."
+
+- id: 2027-09-25-pollenza-memorial-gilda-leoperdi-trofeo
+  nome: "XII Memorial Gilda Leoperdi - 2° Trofeo Città di Pollenza"
+  data_inizio: 2027-09-25
+  data_fine: 2027-09-26
+  luogo: "Pollenza"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "A.P.D. Juvenilia"
+  url_ufficiale: ""
+  url_iscrizione: ""
+  scadenza_iscrizione: 2027-09-22
+  stato: non_autorizzato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-05
+  verificato_il: ""
+  prova: ""
+  note: "Nella lista FISR compare come 'Attività non ancora autorizzata'."
