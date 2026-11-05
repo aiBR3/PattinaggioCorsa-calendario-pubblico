@@ -1,0 +1,158 @@
+# Registro delle fonti: dove si trovano le gare e come si leggono.
+# Schema in CLAUDE.md. Una fonte "da_verificare" non è ancora stata letta davvero.
+
+- id: fisr-info-calendario
+  nome: "FISR.info — calendario corsa (lista per mese)"
+  url: https://www.fisr.info/attivita/corsa_calendario.php
+  paese: IT
+  metodo: script
+  frequenza: settimanale
+  copre: [gare]
+  affidabilita: ufficiale
+  stato: attiva
+  note: "Tabella HTML per mese: data, evento, località, organizzatore, scadenza iscrizioni, termine depennamenti, link 'modulo' (icona nella cella Evento). Nessuna categoria nella lista. Dicitura 'Attività non ancora autorizzata' per le gare in attesa. Errori di codifica nei nomi (CITTÃ)."
+  ultimo_controllo: 2026-11-05
+
+- id: fisr-info-indizioni
+  nome: "FISR.info — indizioni (modulo della manifestazione)"
+  url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=
+  paese: IT
+  metodo: script
+  frequenza: a_richiesta
+  copre: [verifica]
+  affidabilita: ufficiale
+  stato: attiva
+  note: "Una pagina per gara (id_manif numerico). Art. 1 date e tipo (pista/strada, categoria A/B), art. 4 iscrizioni, art. 9-10 categorie ammesse e programma. È la fonte della 'prova'."
+  ultimo_controllo: 2026-11-05
+
+- id: fisr-it-calendario-eventi
+  nome: "FISR.it — calendario eventi corsa"
+  url: https://www.fisr.it/corsa/calendario-eventi.html
+  paese: IT
+  metodo: browser
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Solo campionati e trofei nazionali; lista caricata via JS o dietro filtri. Bassa priorità: fisr.info copre di più."
+  ultimo_controllo: ""
+
+- id: fisr-it-comunicati
+  nome: "FISR.it — comunicati ufficiali corsa"
+  url: https://www.fisr.it/corsa/comunicati-ufficiali.html
+  paese: IT
+  metodo: script
+  frequenza: mensile
+  copre: [verifica]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Indice per anno; RSS solo per le news generali. Utile per indizioni e regolamenti dei campionati (Master)."
+  ultimo_controllo: ""
+
+- id: fisr-toscana-corsa
+  nome: "FISR Comitato Toscana — settore corsa"
+  url: https://corsa.fisrtoscana.it/
+  paese: IT
+  metodo: agente
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Comunicati PDF con campionati regionali/provinciali, anche categoria Master. Da capire se c'è una pagina calendario leggibile."
+  ultimo_controllo: ""
+
+- id: fisr-veneto-corsa
+  nome: "FISR Comitato Veneto — calendario corsa"
+  url: https://www.fisrveneto.it/category/corsa/corsa-calendario/
+  paese: IT
+  metodo: script
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "WordPress: categoria 'Corsa-Calendario' con un articolo per gara. Probabile feed RSS della categoria."
+  ultimo_controllo: ""
+
+- id: fisr-fvg-corsa
+  nome: "FISR Comitato Friuli Venezia Giulia — calendario corsa"
+  url: https://www.fisrfvg.it/docs/calendario.php?IDCat=3
+  paese: IT
+  metodo: script
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Lista testuale data · località · nome, con categorie nel nome (es. R12/R/A/J/S/M)."
+  ultimo_controllo: ""
+
+- id: rollergames-calendario-corsa
+  nome: "attivita.rollergames.it — calendario corsa"
+  url: https://attivita.rollergames.it/corsa/calendario.php
+  paese: IT
+  metodo: script
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Sembra una copia del calendario FISR con filtri (internazionale, nazionale, regionale, trofei, enti di promozione). Da capire se è la stessa base dati di fisr.info."
+  ultimo_controllo: ""
+
+- id: aics-pattinaggio-corsa
+  nome: "AICS — circuito nazionale di pattinaggio corsa"
+  url: https://www.aics.it/
+  paese: IT
+  metodo: agente
+  frequenza: mensile
+  copre: [gare, pattinate]
+  affidabilita: organizzatore
+  stato: da_verificare
+  note: "Ente di promozione: circuito a tappe con categoria 'Amatori' esplicita nelle circolari PDF (es. Verolavecchia, Lumezzane). Da trovare la pagina indice del settore."
+  ultimo_controllo: ""
+
+- id: worldskate-competitions
+  nome: "World Skate — competizioni"
+  url: https://www.worldskate.org/
+  paese: ""
+  metodo: script
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Livello élite; utile per le tappe del World Skate Marathon Tour aperte agli amatori (da verificare quali). Pagina esatta del calendario da individuare."
+  ultimo_controllo: ""
+
+- id: pattiniamolitalia-eventi
+  nome: "Pattiniamo l'Italia — eventi"
+  url: https://pattiniamolitalia.it/eventi/
+  paese: IT
+  metodo: script
+  frequenza: settimanale
+  copre: [pattinate, gare]
+  affidabilita: aggregatore
+  stato: da_verificare
+  note: "WordPress con Google Calendar incorporato: se il calendario è pubblico, esiste un ICS diretto."
+  ultimo_controllo: ""
+
+- id: segnalazioni-tally
+  nome: "Segnalazioni dei compagni di squadra (modulo Tally)"
+  url: ""
+  paese: IT
+  metodo: script
+  frequenza: settimanale
+  copre: [gare, pattinate]
+  affidabilita: social
+  stato: da_verificare
+  note: "Da creare (Fase 4). Campo obbligatorio 'incolla il testo del post'. Lettura via API Tally; copia su Google Sheet. Sostituisce la lettura di Facebook/Instagram, che hanno il login wall."
+  ultimo_controllo: ""
+
+- id: federazioni-estere
+  nome: "Federazioni di CH, ES, PT, FR, AT, DE, SI"
+  url: ""
+  paese: ""
+  metodo: agente
+  frequenza: mensile
+  copre: [gare, pattinate]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Da censire una per una (FFRS, DRIV, RFEP, Swiss Inline Cup…); gli URL non sono stati verificati e per questo non sono scritti qui."
+  ultimo_controllo: ""

@@ -1,2 +1,10 @@
 .DS_Store
 Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Uscita generata in locale (su Pages la genera il workflow)
+uscita/
