@@ -4,7 +4,7 @@
 #
 # Promemoria:
 #   - id = data_inizio + città + slug (minuscole, senza accenti, trattini)
-#   - categorie si compila SOLO con prova compilata (frase citata dall'indizione)
+#   - categorie si compila SOLO con prova compilata (frase citata dal regolamento di gara)
 #   - stato "escluso" = verificato: NON ammette Master/Amatori → resta qui come
 #     memoria (così nessuno lo ripropone) ma non finisce nel calendario
 #   - ogni voce ha almeno una fonte con url e letto_il
@@ -29,7 +29,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6743
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6743, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6743, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: PISTA DI 175 m. con curve sopraelevate, Via Maestri del Lavoro."
   note_interne: ""
 
@@ -53,7 +53,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6774
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6774, art. 10 'Programma gare': categorie elencate ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6774, art. 10 'Programma gare': categorie elencate ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: Fondo in parquet 20X40. Giro MT. 80, Viale Manzoni SNC - Palaunimol."
   note_interne: ""
 
@@ -121,7 +121,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6781
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6781, art. 10 'Programma gare': categorie elencate ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6781, art. 10 'Programma gare': categorie elencate ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: Fondo in parquet 20x40 giro 80 m, via Petro Bucci."
   note_interne: ""
 
@@ -145,7 +145,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6731
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6731, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6731, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su strada. Campo di gara: Circuito stradale in mescola di asfalto extrafine. Lunghezza 290m - Larghezza 7.50m. Illuminazione a giorno., via Airoldi 22 - Paderno d'Adda - (LC)."
   note_interne: ""
 
@@ -169,7 +169,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6741
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6741, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6741, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su strada. Campo di gara: ANELLO STRADALE 300MT IN ASFALTO GRANA FINE, via B. Croce Imola."
   note_interne: ""
 
@@ -193,7 +193,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6772
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6772, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6772, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: PISTA SOPRAELEVATA 200 MT RESINATA - PISTA PIANA 20X40 RESINATA, NOALE - VIA GAGLIARDI."
   note_interne: ""
 
@@ -217,7 +217,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6746
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6746, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6746, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su strada. Campo di gara: 450 m circuito stradale grana fine, Piazzale Senio 1."
   note_interne: ""
 
@@ -241,7 +241,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6710
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6710, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6710, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: Pista 200mt con curve a pendenza costante resina Casali sport, Via G. Falcone snc."
   note_interne: ""
 
@@ -265,7 +265,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6814
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6814, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  prova: "Regolamento di gara id_manif 6814, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
   note: "Manifestazione di categoria A su strada: circuito stradale in asfalto a grana fine di 325 m in piazza Ariostea."
   note_interne: "Nella fonte il nome è scritto 'Inlne' e compare codificato in base64 (decodificato dallo script)."
 
@@ -289,7 +289,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6732
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6732, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  prova: "Regolamento di gara id_manif 6732, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
   note: "Manifestazione di categoria A su pista. Campo di gara: PISTA SOPRAELEVATA CON CURVE PARABOLICHE MT 175 ALLA CORDA E LARGHEZZA MT 5.50 CON PAVIMENTAZIONE IN CEMENTO AL QUARZO, VIA DELLE TRE FONTANE 1 - ROMA (PATTINODROMO DELLE TRE FONTANE)."
   note_interne: ""
 
@@ -313,7 +313,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6740
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6740, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6740, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: Pattinodromo delle Rose (resinatura Atp) - Pista sopraelevata 200 metri e larga 6 - Pista piana 25x50, via L. Muratori - via D. Bramante - Rovigo."
   note_interne: ""
 
@@ -337,7 +337,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6784
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6784, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6784, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria A su pista. Campo di gara: PISTA SOPRAELEVATA MT 200 ALLA CORDA LARGHEZZA MT 5.50 (pavimentazione VESMACO DURFLEX 101 SP ROLLER PROFESSIONAL) per tutte le categorie., VIA FAUSTO COPPI - SIENA (IMPIANTI ACQUACALDA)."
   note_interne: ""
 
@@ -361,7 +361,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6833
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6833, art. 10 'Programma gare': categorie elencate ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6833, art. 10 'Programma gare': categorie elencate ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: pista piana resinata 20x40, Via Monsignor Tesolin 1 Spilimbergo."
   note_interne: ""
 
@@ -385,7 +385,7 @@
   verificato_il: ""
   prova: ""
   note: ""
-  note_interne: "Indizione non trovata: categorie ammesse sconosciute."
+  note_interne: "Regolamento di gara non trovato: categorie ammesse sconosciute."
 
 - id: 2026-05-24-pordenone-campionato-italiano-maratona-allievi
   nome: "Campionato Italiano Maratona cat. J/S/M - Campionato Italiano Mezza Maratona cat. Allievi"
@@ -429,7 +429,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6808
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6808, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6808, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: Pista a curve sopraelevate lunghezza mt 200 alla corda larghezza mt 6 pavimentazione VESMACO DURFLEX101 SP ROLLER PROFESSIONAL omologata FISR, VIA PASCOLI 7."
   note_interne: ""
 
@@ -453,7 +453,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6815
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6815, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6815, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: pista di m. 175 con curve paraboliche fondo in resina Vesmaco durflex 200 sp pista interna piana 20x40 m, Contrada Selvapiana snc."
   note_interne: ""
 
@@ -477,7 +477,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6848
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6848, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6848, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: PISTA DI 200 MT CON CURVE SOPRAELEVATE A PENDENZA COSTANTE CON FONDO VESMACO E PISTA PIANA 25*50, VIA PER FRANCAVILLA FONTANA - PATTINODROMO COMUNALE CITTA' DI MANDURIA."
   note_interne: ""
 
@@ -501,7 +501,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6778
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6778, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI, PRIMI PASSI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6778, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI, PRIMI PASSI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: PISTA SOPRAELEVATA PISTA PIANA 20X40, PATTINODROMO BRUNO PATRIGNANI VIALE SPAZZOLI 113 FORLI."
   note_interne: ""
 
@@ -569,7 +569,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6832
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6832, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 10 g | In linea'; 'MASTER OVER 75 | M | 10 g | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  prova: "Regolamento di gara id_manif 6832, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 10 g | In linea'; 'MASTER OVER 75 | M | 10 g | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
   note: "Manifestazione di categoria B su strada. Campo di gara: CIRCUITO STRADALE PARCO DELLA COLLETTA TORINO SVILUPPO CIRCA 400MT ASFALTO GRANA MEDIA, PIAZZA SIBILLA ALERAMO."
   note_interne: ""
 
@@ -593,7 +593,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6847
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6847, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  prova: "Regolamento di gara id_manif 6847, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
   note: "Manifestazione di categoria B su pista. Campo di gara: Pista sopraelevata di mt. 165 con curve paraboliche fondo in Resina Vesmaco Pista Piana mt. 20x40, via Giotto 65 - San Giorgio Ionico (TA)."
   note_interne: ""
 
@@ -639,7 +639,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6733
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6733, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  prova: "Regolamento di gara id_manif 6733, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
   note: "Manifestazione di categoria B su strada. Campo di gara: Circuito stradale TOTO CAIMI lunghezza 380 metri larghezza minima 6 00 metri avente pavimentazione asfalto grana fine, Via Baracca 54 e Via della Selva snc."
   note_interne: ""
 
@@ -663,7 +663,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6711
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6711, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6711, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su strada. Campo di gara: Il trofeo si svolgera' in due location: il 4 luglio su percorso cittadino in Viale Moccia al centro della citta' per la 100 metri in corsia ed il 5 luglio per le restanti gare nella pista di pattinaggio che si sviluppa s…"
   note_interne: ""
 
@@ -687,7 +687,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6849
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6849, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6849, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: pista sopraelevata a pendenza unica 200 m + pista piana 20X40 in resina ATP roller, via Cavane 151 località La Catena - San Miniato."
   note_interne: ""
 
@@ -711,9 +711,9 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6739
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6739, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6739, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su strada. Campo di gara: Percorso stradale 250m x 6m avente pavimentazione di asfalto di grana fine illuminazione a giorno., Viale Campania 50 Cologno Monzese. Inizio gare ore 8.30. Ritrovo categorie R12/R/A ore 14.00 del 12/07/2026. / La manifestazione aderisce al Circuito Nord Ovest. Per gli atleti iscritti al CNO la quota di iscrizione allamanifestazi"
-  note_interne: "Nel testo dell'indizione compaiono righe con Master/Amatori fuori dal programma gare (da leggere): Ritrovo categorie G/E ore 8.00 del 12/07/2026."
+  note_interne: "Nel testo del regolamento di gara compaiono righe con Master/Amatori fuori dal programma gare (da leggere): Ritrovo categorie G/E ore 8.00 del 12/07/2026."
 
 - id: 2026-07-16-torino-campionato-italiano-strada-r
   nome: "Campionato Italiano Strada cat. R - Trofeo Skate Italia su strada cat. R12"
@@ -757,7 +757,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6759
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6759, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6759, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio con curve soprelevate pendenza cosante mt 150 alla corda rivestimento VESMACO. Tutte le gare si effettueranno esclusivamente in pista soprelevata., VIALE OVIDIO SNC - Pattinodromo coperto E.De Felice…"
   note_interne: ""
 
@@ -781,7 +781,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6777
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6777, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6777, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: pista con curve sopraelevate mt . 200 pista piana mt 25X50 resina Vesmaco, Pattinodromo comunale Via Zuanon San Giorgio delle Pertiche."
   note_interne: ""
 
@@ -805,7 +805,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6779
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6779, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6779, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio a curve sopraelevate paraboliche della lunghezza di metri 175 e larghezza metri 5.80. Fondo in resina ATP, Via delle Tamerici."
   note_interne: ""
 
@@ -829,7 +829,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6735
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6735, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6735, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria A su pista. Campo di gara: PISTA PIANA INTERNA RIVERNICIATA CON MATERIALE RESINOSO 20x40 mt. PISTA ESTERNA RIVERNICIATA CON MATERIALE RESINOSO CON CURVE SOPRAELEVATE A PENDENZA CRESCENTE LUNGA 165 mt., VIA RAVAGLI 5."
   note_interne: ""
 
@@ -853,7 +853,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6807
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6807, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6807, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su strada. Campo di gara: Circuito stradale sviluppo m.333 larghezza m. 7 asfalto grana medio fina, viale Europa Mena' di Castagnaro."
   note_interne: ""
 
@@ -899,7 +899,7 @@
   verificato_il: ""
   prova: ""
   note: ""
-  note_interne: "Indizione non trovata: categorie ammesse sconosciute. La lista FISR riporta l'evento due volte: '8° Trofeo Memorial Antonio Rocchetta' (12-13/09) e 'Trofeo Città di Cardano al Campo - VIII Memorial Antonio Rocchetta' (13/09), stesso organizzatore."
+  note_interne: "Regolamento di gara non trovato: categorie ammesse sconosciute. La lista FISR riporta l'evento due volte: '8° Trofeo Memorial Antonio Rocchetta' (12-13/09) e 'Trofeo Città di Cardano al Campo - VIII Memorial Antonio Rocchetta' (13/09), stesso organizzatore."
 
 - id: 2026-09-13-bagnoli-di-sopra-trofeo-bagnoli-sopra-memorial
   nome: "35° Trofeo Comune di Bagnoli di Sopra - Memorial Guerrino Maggio e Marta Vanzetto - Tappa GPG"
@@ -921,7 +921,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6794
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6794, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6794, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su strada. Campo di gara: Circuito stradale sviluppo 340 m larghezza 7m asfalto grana medio fine, Via Molini 7."
   note_interne: ""
 
@@ -945,7 +945,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6738
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6738, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 50 m | Sprint'; 'MASTER OVER 75 | F | 1800 m | Cronometro' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  prova: "Regolamento di gara id_manif 6738, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 50 m | Sprint'; 'MASTER OVER 75 | F | 1800 m | Cronometro' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
   note: "Manifestazione di categoria B su strada. Campo di gara: Percorso su strada cittadina con fondo in asfalto (via Aldo Moro). La cronoscalata si svolgerà su un tratto di strada in salita con dislivello di circa 90 mt e una lunghezza di 1800 mt, Piazza Martiri della Liberazione 6…"
   note_interne: ""
 
@@ -969,9 +969,9 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6831
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6831, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6831, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su strada."
-  note_interne: "Attenzione: la lista FISR riporta un '1° Trofeo Città di Montesilvano' sia il 13/09 (indizione 6831) sia il 04/10 (indizione 6867), stesso organizzatore."
+  note_interne: "Attenzione: la lista FISR riporta un '1° Trofeo Città di Montesilvano' sia il 13/09 (regolamento di gara 6831) sia il 04/10 (regolamento di gara 6867), stesso organizzatore."
 
 - id: 2026-09-19-cassano-dadda-gran-prix-cassano-dadda
   nome: "16° Gran Prix Cassano d'Adda"
@@ -993,7 +993,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6700
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6700, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  prova: "Regolamento di gara id_manif 6700, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
   note: "Manifestazione di categoria B su strada. Campo di gara: ANELLO STRADALE SVILUPPO mt. 400 LARGHEZZA mt. 6 IN ASFALTO A GRANA FINE., CASSANO D'ADDA VIA VALENTINO MAZZOLA s.n."
   note_interne: ""
 
@@ -1017,7 +1017,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6796
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6796, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6796, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria A su pista. Campo di gara: Pista in mattonelle di graniglia sopraelevata di metri 175, Via Don Sturzo 13."
   note_interne: ""
 
@@ -1041,7 +1041,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6863
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6863, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6863, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: Percorso stradale, Via ballo 16."
   note_interne: ""
 
@@ -1065,7 +1065,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6752
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6752, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6752, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio con curve soprelevate pendenza costante mt 150 alla corda larghezza mt 5 50 con rivestimento VESMACO Tutte le gare si effettueranno esclusivamente in pista soprelevata. Il venerdì mattina sarà possib…"
   note_interne: ""
 
@@ -1089,7 +1089,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6795
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6795, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6795, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su strada. Campo di gara: Circuito stradale sviluppo m. 360 larghezza m. 7 asfalto grana fine, Via Draganziolo."
   note_interne: ""
 
@@ -1113,7 +1113,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6856
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6856, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6856, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su strada. Campo di gara: Circuito stradale asfaltato sviluppo 338 mt larghezza minima 6 mt, Parco della Costituzione - Via Mozart Cinisello Balsamo."
   note_interne: ""
 
@@ -1137,7 +1137,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6867
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6867, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6867, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: PISTA DI 200 MT CON CURVE SOPRAELEVATE E PISTA PIANA 20*40 CON FONDO VESMACO, VIA ALFIERI MONTESILVANO."
   note_interne: ""
 
@@ -1161,7 +1161,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6869
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6869, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6869, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su pista. Campo di gara: Palazzetto Palageorge di Montichiari pista piana 20x40, Via Giovanni Falcone 24 Montichiari(BS)."
   note_interne: ""
 
@@ -1185,7 +1185,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=6868
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 6868, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  prova: "Regolamento di gara id_manif 6868, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
   note: "Manifestazione di categoria B su strada. Campo di gara: Percorso stradale in grana fine di 450 mt., Piazzale Senio 1."
   note_interne: ""
 
@@ -1209,7 +1209,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7045
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione, art. 9-10: 'Sono ammessi i concorrenti, maschi e femmine, delle categorie sotto indicate' — elencate solo Allievi, Ragazzi, Ragazzi 12, Esordienti, Giovanissimi. Nessuna categoria Master o Amatori."
+  prova: "Regolamento, art. 9-10: 'Sono ammessi i concorrenti, maschi e femmine, delle categorie sotto indicate' — elencate solo Allievi, Ragazzi, Ragazzi 12, Esordienti, Giovanissimi. Nessuna categoria Master o Amatori."
   note: "Manifestazione di categoria B su pista."
   note_interne: "Stesso nome e stessa numerazione dell'edizione dell'8 dicembre (id_manif 7046), che invece ammette i Master."
 
@@ -1233,7 +1233,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7052
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione, art. 9-10: categorie ammesse Seniores, Juniores, Allievi, Ragazzi, Ragazzi 12, Esordienti, Giovanissimi (quote d'iscrizione per G/E e R12/R/A/J/S). Nessuna categoria Master o Amatori."
+  prova: "Regolamento, art. 9-10: categorie ammesse Seniores, Juniores, Allievi, Ragazzi, Ragazzi 12, Esordienti, Giovanissimi (quote d'iscrizione per G/E e R12/R/A/J/S). Nessuna categoria Master o Amatori."
   note: "Manifestazione di categoria B su pista."
   note_interne: ""
 
@@ -1257,9 +1257,9 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7047
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 7047, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 7 g | In linea'; 'MASTER OVER 75 | F | 3000 m | In linea' e seguenti, da MASTER OVER 75 a MASTER OVER 30, F e M."
+  prova: "Regolamento di gara id_manif 7047, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 7 g | In linea'; 'MASTER OVER 75 | F | 3000 m | In linea' e seguenti, da MASTER OVER 75 a MASTER OVER 30, F e M."
   note: ""
-  note_interne: "Nel calendario fisr.info compare come 'Attività non ancora autorizzata' e senza link, ma l'indizione (id_manif 7047, manifestazione di categoria B su pista) esiste già e prevede le categorie Master: da ricontrollare quando arriva l'autorizzazione. Scadenza iscrizioni 30/11, termine depennamenti 01/12."
+  note_interne: "Nel calendario fisr.info compare come 'Attività non ancora autorizzata' e senza link, ma il regolamento di gara (id_manif 7047, manifestazione di categoria B su pista) esiste già e prevede le categorie Master: da ricontrollare quando arriva l'autorizzazione. Scadenza iscrizioni 30/11, termine depennamenti 01/12."
 
 - id: 2026-12-08-imola-gran-premio-indoor
   nome: "49° Gran Premio Indoor Città di Imola"
@@ -1281,7 +1281,7 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7046
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione, art. 10: righe di programma da 'MASTER OVER 30' a 'MASTER OVER 75', F e M, '2 g Sprint' e '2000 m In linea'. Orari: 'Master m/f Ritrovo ore13 00 Inizio gare ore 13 30.' Premi: 'Verrà premiata la società Master + numerosa con Il Trofeo Memorial MASSIMO PANINI.'"
+  prova: "Regolamento, art. 10: righe di programma da 'MASTER OVER 30' a 'MASTER OVER 75', F e M, '2 g Sprint' e '2000 m In linea'. Orari: 'Master m/f Ritrovo ore13 00 Inizio gare ore 13 30.' Premi: 'Verrà premiata la società Master + numerosa con Il Trofeo Memorial MASSIMO PANINI.'"
   note: "Manifestazione di categoria B su pista piana in cemento (90/100 m). Aperta ai tesserati in regola per l'anno in corso (art. 2). Iscrizioni solo tramite il sito federale entro le 24 del 02/12, conferme entro le 17 del 05/12."
   note_interne: "Categorie Amatori non menzionate."
 
@@ -1305,8 +1305,8 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7073
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 7073, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
-  note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio con curve soprelevate pendenza costante mt 150 alla corda larghezza mt 5.50 con rivestimento VESMACO Tutte le gare si effettueranno esclusivamente in pista soprelevata. Il sabato mattina sarà possibi… Nella lista FISR compare come 'Attività non ancora autorizzata'; l'indizione (bozza) non prevede Master/Amatori."
+  prova: "Regolamento di gara id_manif 7073, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio con curve soprelevate pendenza costante mt 150 alla corda larghezza mt 5.50 con rivestimento VESMACO Tutte le gare si effettueranno esclusivamente in pista soprelevata. Il sabato mattina sarà possibi… Nella lista FISR compare come 'Attività non ancora autorizzata'; il regolamento di gara (bozza) non prevede Master/Amatori."
   note_interne: ""
 
 - id: 2027-06-06-terni-memorial-alfonso-zenga
@@ -1373,8 +1373,8 @@
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7059
       letto_il: 2026-11-05
   verificato_il: 2026-11-05
-  prova: "Indizione id_manif 7059, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI, PRIMI PASSI; nessuna riga Master o Amatori."
-  note: "Manifestazione di categoria A su pista. Campo di gara: Pista piana interna riverniciata con materiale resinoso 20x40 mt. Pista esterna riverniciata con materiale resinoso con curve sopraelevate a pendenza crescente lunga 165 mt. Pista omologata secondo le direttive Skate Ita… Nella lista FISR compare come 'Attività non ancora autorizzata'; l'indizione (bozza) non prevede Master/Amatori."
+  prova: "Regolamento di gara id_manif 7059, art. 10 'Programma gare': categorie elencate SENIORES, JUNIORES, ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI, PRIMI PASSI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria A su pista. Campo di gara: Pista piana interna riverniciata con materiale resinoso 20x40 mt. Pista esterna riverniciata con materiale resinoso con curve sopraelevate a pendenza crescente lunga 165 mt. Pista omologata secondo le direttive Skate Ita… Nella lista FISR compare come 'Attività non ancora autorizzata'; il regolamento di gara (bozza) non prevede Master/Amatori."
   note_interne: ""
 
 - id: 2027-09-25-pollenza-memorial-gilda-leoperdi-trofeo

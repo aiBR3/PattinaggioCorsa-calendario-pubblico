@@ -382,7 +382,7 @@ def titolo_evento(evento: Evento) -> str:
 
 
 def collegamento_evento(evento: Evento) -> str:
-    """Un solo URL per l'evento: il sito ufficiale o l'indizione; in mancanza, la pagina d'iscrizione."""
+    """Un solo URL per l'evento: il sito ufficiale o il regolamento di gara; in mancanza, la pagina d'iscrizione."""
     return evento.url_ufficiale or evento.url_iscrizione
 
 
@@ -404,9 +404,9 @@ def descrizione_evento(evento: Evento) -> str:
     if evento.scadenza_iscrizione:
         righe.append(f"Scadenza iscrizioni: {formatta_data_it(evento.scadenza_iscrizione)}")
     if collegamento := collegamento_evento(evento):
-        righe.append(f"Informazioni: {collegamento}")
+        righe.append(f"URL: {collegamento}")
     if evento.note:
-        righe.append(evento.note)
+        righe.append(f"Informazioni: {evento.note}")
     return "\n".join(righe)
 
 

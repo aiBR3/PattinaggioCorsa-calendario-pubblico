@@ -25,13 +25,13 @@ Ogni evento ha nel titolo il nome ufficiale e, se serve, un prefisso:
 
 | Prefisso | Significato |
 |---|---|
-| *(nessuno)* | categorie Master/Amatori verificate sull'indizione o sul regolamento, oppure evento ufficiale in attesa del programma |
+| *(nessuno)* | categorie Master/Amatori verificate sul regolamento di gara o su quello del campionato, oppure evento ufficiale in attesa del programma |
 | `[da verificare]` | segnalato ma non ancora controllato |
 | `[non ancora autorizzata]` | a calendario federale, in attesa di autorizzazione |
 | `[RINVIATA]`, `[ANNULLATA]` | come dice |
 
 Nella descrizione: categorie ammesse e distanze, organizzatore, scadenza iscrizioni, un link
-alle informazioni ufficiali (indizione o sito) e le note utili. La prova delle categorie e le
+alle informazioni ufficiali (regolamento di gara o sito) e le note utili. La prova delle categorie e le
 fonti restano in `dati/eventi.yaml`.
 
 ## Segnalare una gara

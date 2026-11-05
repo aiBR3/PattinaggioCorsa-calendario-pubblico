@@ -3,9 +3,9 @@
 converti_fisr.py — da raccolta grezza (raccogli_fisr.py) a voci di dati/eventi.yaml.
 
 Livello 2 (normalizzazione + deduplica) e livello 3 "meccanico" (classificazione
-con prova): quando l'indizione ha il programma gare (art. 10), le categorie
+con prova): quando il regolamento di gara ha il programma gare (art. 10), le categorie
 ammesse sono scritte nero su bianco e lo script le cita testualmente. Dove non c'è
-indizione, lo script NON decide: stato "da_verificare", categorie vuote.
+regolamento, lo script NON decide: stato "da_verificare", categorie vuote.
 
 Uso:
     python3 script/converti_fisr.py --raccolta log/raccolta.json \
@@ -172,7 +172,7 @@ def somiglianza(a: str, b: str) -> float:
 
 def carica_raccolta(percorso: Path) -> dict:
     documento = json.loads(percorso.read_text(encoding="utf-8"))
-    for chiave in ("righe", "indizioni_scansione", "fonte"):
+    for chiave in ("righe", "regolamenti_scansione", "fonte"):
         if chiave not in documento:
             sys.exit(f"{percorso}: manca la chiave '{chiave}': non è l'uscita di raccogli_fisr.py?")
     return documento
@@ -215,34 +215,34 @@ def deduplica_righe(righe: list[dict], rapporto: list[str]) -> list[dict]:
 
 
 # ---------------------------------------------------------------------------
-# Abbinamento lista ↔ indizioni
+# Abbinamento lista ↔ regolamenti
 # ---------------------------------------------------------------------------
 
-def abbina_indizioni(righe: list[dict], indizioni: list[dict], rapporto: list[str]) -> tuple[dict[int, dict], list[dict]]:
-    """Restituisce {indice_riga: indizione} e le indizioni rimaste senza riga."""
+def abbina_regolamenti(righe: list[dict], regolamenti: list[dict], rapporto: list[str]) -> tuple[dict[int, dict], list[dict]]:
+    """Restituisce {indice_riga: regolamento} e i regolamenti rimasti senza riga."""
     abbinate: dict[int, dict] = {}
     usate: set[str] = set()
     for indice, riga in enumerate(righe):
-        if riga.get("indizione") and riga["indizione"].get("scaricata") and riga["indizione"].get("dal"):
-            abbinate[indice] = riga["indizione"]
-            usate.add(riga["indizione"]["id_manif"])
+        if riga.get("regolamento") and riga["regolamento"].get("scaricata") and riga["regolamento"].get("dal"):
+            abbinate[indice] = riga["regolamento"]
+            usate.add(riga["regolamento"]["id_manif"])
             continue
         migliore, punteggio_migliore = None, 0.0
-        for indizione in indizioni:
-            if indizione["id_manif"] in usate or not indizione["dal"]:
+        for regolamento in regolamenti:
+            if regolamento["id_manif"] in usate or not regolamento["dal"]:
                 continue
-            distanza_giorni = abs((date.fromisoformat(indizione["dal"]) - date.fromisoformat(riga["data_inizio"])).days)
+            distanza_giorni = abs((date.fromisoformat(regolamento["dal"]) - date.fromisoformat(riga["data_inizio"])).days)
             if distanza_giorni > 1:
                 continue
-            punteggio = max(somiglianza(indizione["denominazione"], riga["evento"]), somiglianza(indizione["societa"], riga["organizzatore"]) * 0.9)
+            punteggio = max(somiglianza(regolamento["denominazione"], riga["evento"]), somiglianza(regolamento["societa"], riga["organizzatore"]) * 0.9)
             if punteggio > punteggio_migliore:
-                migliore, punteggio_migliore = indizione, punteggio
+                migliore, punteggio_migliore = regolamento, punteggio
         if migliore is not None and punteggio_migliore >= 0.34:
             abbinate[indice] = migliore
             usate.add(migliore["id_manif"])
             if punteggio_migliore < 0.6:
-                rapporto.append(f"- abbinamento debole ({punteggio_migliore:.2f}): lista {riga['evento'][:45]!r} ↔ indizione {migliore['id_manif']} {migliore['denominazione'][:45]!r}")
-    rimaste = [i for i in indizioni if i["id_manif"] not in usate]
+                rapporto.append(f"- abbinamento debole ({punteggio_migliore:.2f}): lista {riga['evento'][:45]!r} ↔ regolamento {migliore['id_manif']} {migliore['denominazione'][:45]!r}")
+    rimaste = [i for i in regolamenti if i["id_manif"] not in usate]
     return abbinate, rimaste
 
 
@@ -250,9 +250,9 @@ def abbina_indizioni(righe: list[dict], indizioni: list[dict], rapporto: list[st
 # Classificazione con prova
 # ---------------------------------------------------------------------------
 
-def classifica(indizione: dict) -> tuple[list[str], list[str], str]:
+def classifica(regolamento: dict) -> tuple[list[str], list[str], str]:
     """Dalle righe dell'art. 10: categorie ammesse, distanze dei Master/Amatori, prova citata."""
-    righe = indizione["righe_programma"]
+    righe = regolamento["righe_programma"]
     righe_master = [r for r in righe if ESPRESSIONE_MASTER.search(r["categoria"])]
     righe_amatori = [r for r in righe if ESPRESSIONE_AMATORI.search(r["categoria"])]
     categorie: list[str] = []
@@ -271,7 +271,7 @@ def classifica(indizione: dict) -> tuple[list[str], list[str], str]:
     def riga_testuale(r: dict) -> str:
         return f"{r['categoria']} | {r['sesso']} | {r['distanza']} | {r['tipo']}"
 
-    riferimento = f"Indizione id_manif {indizione['id_manif']}, art. 10 'Programma gare'"
+    riferimento = f"Regolamento di gara id_manif {regolamento['id_manif']}, art. 10 'Programma gare'"
     if categorie:
         nomi_categorie = []
         for r in righe_master + righe_amatori:
@@ -280,7 +280,7 @@ def classifica(indizione: dict) -> tuple[list[str], list[str], str]:
         esempi = "; ".join(f"'{riga_testuale(r)}'" for r in (righe_master + righe_amatori)[:2])
         prova = f"{riferimento}: righe {esempi}" + (" e seguenti" if len(righe_master + righe_amatori) > 2 else "") + f". Categorie elencate: {', '.join(nomi_categorie)}."
     else:
-        prova = f"{riferimento}: categorie elencate {', '.join(indizione['categorie_programma'])}; nessuna riga Master o Amatori."
+        prova = f"{riferimento}: categorie elencate {', '.join(regolamento['categorie_programma'])}; nessuna riga Master o Amatori."
     return categorie, distanze, prova
 
 
@@ -294,21 +294,21 @@ def categorie_dal_titolo(nome: str) -> list[str] | None:
     return sigle or None
 
 
-def costruisci_evento(riga: dict | None, indizione: dict | None, letto_il: str) -> dict:
-    """Una voce di eventi.yaml. Se riga è None, l'evento viene dalla sola indizione (non è nella lista)."""
-    assert riga is not None or indizione is not None
+def costruisci_evento(riga: dict | None, regolamento: dict | None, letto_il: str) -> dict:
+    """Una voce di eventi.yaml. Se riga è None, l'evento viene dalla solo regolamento (non è nella lista)."""
+    assert riga is not None or regolamento is not None
     if riga is not None:
         nome = normalizza_nome(riga["evento"])
         data_inizio, data_fine = riga["data_inizio"], riga["data_fine"]
         luogo = normalizza_luogo(riga["localita"])
         organizzatore = normalizza_luogo(riga["organizzatore"]) if riga["organizzatore"] else ""
     else:
-        nome = normalizza_nome(indizione["denominazione"])
-        data_inizio, data_fine = indizione["dal"], indizione["al"] or indizione["dal"]
+        nome = normalizza_nome(regolamento["denominazione"])
+        data_inizio, data_fine = regolamento["dal"], regolamento["al"] or regolamento["dal"]
         luogo = ""
-        organizzatore = normalizza_luogo(indizione["societa"]) if indizione["societa"] else ""
-    if indizione and not organizzatore and indizione.get("societa"):
-        organizzatore = normalizza_luogo(indizione["societa"])
+        organizzatore = normalizza_luogo(regolamento["societa"]) if regolamento["societa"] else ""
+    if regolamento and not organizzatore and regolamento.get("societa"):
+        organizzatore = normalizza_luogo(regolamento["societa"])
 
     note: list[str] = []            # per chi pattina: finiscono nella descrizione dell'evento
     note_interne: list[str] = []    # per chi lavora sui dati: restano nell'YAML
@@ -320,38 +320,38 @@ def costruisci_evento(riga: dict | None, indizione: dict | None, letto_il: str) 
     fonti = []
     if riga is not None:
         fonti.append({"url": URL_LISTA, "letto_il": letto_il})
-    if indizione:
-        url_ufficiale = indizione["url"]
-        fonti.append({"url": indizione["url"], "letto_il": letto_il})
-        categorie, distanze, prova = classifica(indizione)
+    if regolamento:
+        url_ufficiale = regolamento["url"]
+        fonti.append({"url": regolamento["url"], "letto_il": letto_il})
+        categorie, distanze, prova = classifica(regolamento)
         verificato_il = letto_il
-        if indizione.get("categoria_manifestazione") or indizione.get("disciplina"):
-            note.append(f"Manifestazione di categoria {indizione.get('categoria_manifestazione') or '?'} su {indizione.get('disciplina') or '?'}.")
-        if indizione.get("campo_gara"):
-            campo = re.sub(r"\s+", " ", indizione["campo_gara"]).strip()
+        if regolamento.get("categoria_manifestazione") or regolamento.get("disciplina"):
+            note.append(f"Manifestazione di categoria {regolamento.get('categoria_manifestazione') or '?'} su {regolamento.get('disciplina') or '?'}.")
+        if regolamento.get("campo_gara"):
+            campo = re.sub(r"\s+", " ", regolamento["campo_gara"]).strip()
             campo = re.sub(r"\.?\.? ?CAP della localit[àa]? \d{5}\.?$", ".", campo)   # rumore del modulo, inutile per chi legge
             note.append("Campo di gara: " + (campo[:220] + "…" if len(campo) > 220 else campo))
-        if not luogo and indizione.get("campo_gara"):
+        if not luogo and regolamento.get("campo_gara"):
             luogo = "da indicare (vedi note)"
         if riga is None:
-            note_interne.append("Non compare nella lista corsa_calendario.php: trovato solo tra le indizioni.")
-        righe_extra = [r for r in indizione.get("righe_master_amatori", []) if " | " not in r]
+            note_interne.append("Non compare nella lista corsa_calendario.php: trovato solo tra i regolamenti.")
+        righe_extra = [r for r in regolamento.get("righe_master_amatori", []) if " | " not in r]
         if righe_extra and not categorie:
-            note_interne.append("Nel testo dell'indizione compaiono righe con Master/Amatori fuori dal programma gare (da leggere): " + " / ".join(r[:120] for r in righe_extra[:2]))
-        if riga is not None and riga["data_inizio"] != indizione["dal"]:
-            note_interne.append(f"Date: la lista dice {riga['data_inizio']}, l'indizione {indizione['dal']}–{indizione['al']}.")
-            data_inizio, data_fine = indizione["dal"], indizione["al"] or indizione["dal"]
+            note_interne.append("Nel testo del regolamento compaiono righe con Master/Amatori fuori dal programma gare (da leggere): " + " / ".join(r[:120] for r in righe_extra[:2]))
+        if riga is not None and riga["data_inizio"] != regolamento["dal"]:
+            note_interne.append(f"Date: la lista dice {riga['data_inizio']}, il regolamento {regolamento['dal']}–{regolamento['al']}.")
+            data_inizio, data_fine = regolamento["dal"], regolamento["al"] or regolamento["dal"]
 
-    categorie_nel_titolo = categorie_dal_titolo(riga["evento"]) if riga is not None and not indizione else None
-    if riga is not None and riga["non_autorizzata"] and (not indizione or categorie):
+    categorie_nel_titolo = categorie_dal_titolo(riga["evento"]) if riga is not None and not regolamento else None
+    if riga is not None and riga["non_autorizzata"] and (not regolamento or categorie):
         stato = "non_autorizzato"
-        note_interne.append("Nella lista FISR compare come 'Attività non ancora autorizzata'" + (" (l'indizione esiste già)." if indizione else "."))
-    elif indizione:
+        note_interne.append("Nella lista FISR compare come 'Attività non ancora autorizzata'" + (" (il regolamento esiste già)." if regolamento else "."))
+    elif regolamento:
         stato = "confermato" if categorie else "escluso"
         if riga is not None and riga["non_autorizzata"]:
-            note_interne.append("Nella lista FISR compare come 'Attività non ancora autorizzata'; l'indizione (bozza) non prevede Master/Amatori.")
+            note_interne.append("Nella lista FISR compare come 'Attività non ancora autorizzata'; il regolamento (bozza) non prevede Master/Amatori.")
     elif categorie_nel_titolo is not None:
-        # Campionati e attività nazionale: la lista FISR non ha l'indizione, ma il titolo ufficiale dice le categorie.
+        # Campionati e attività nazionale: la lista FISR non ha il regolamento, ma il titolo ufficiale dice le categorie.
         sigle = categorie_nel_titolo
         categorie = ["master"] if "M" in sigle else []
         stato = "confermato" if categorie else "escluso"
@@ -360,11 +360,11 @@ def costruisci_evento(riga: dict | None, indizione: dict | None, letto_il: str) 
         note_interne.append("Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare.")
     else:
         stato = "da_verificare"
-        note_interne.append("Indizione non trovata: categorie ammesse sconosciute.")
+        note_interne.append("Regolamento di gara non trovato: categorie ammesse sconosciute.")
     if riga is not None and riga["anomalie"]:
         note_interne.append("Anomalie di lettura: " + "; ".join(riga["anomalie"]))
 
-    scadenza = (riga["scadenza_iscrizioni"] if riga else "") or (indizione["iscrizioni_entro"] if indizione else "") or ""
+    scadenza = (riga["scadenza_iscrizioni"] if riga else "") or (regolamento["iscrizioni_entro"] if regolamento else "") or ""
     return {
         "id": f"{data_inizio}-{slug_citta(luogo) if luogo and not luogo.startswith('da indicare') else 'luogo-ignoto'}-{slug_nome(nome)}",
         "nome": nome, "data_inizio": data_inizio, "data_fine": data_fine, "luogo": luogo or "da indicare",
@@ -450,9 +450,9 @@ def principale(argomenti: list[str] | None = None) -> int:
     righe = deduplica_righe(raccolta["righe"], rapporto)
     rapporto.append(f"\nRighe: {len(raccolta['righe'])} raccolte → {len(righe)} dopo la deduplica.\n")
 
-    indizioni = [i for i in raccolta["indizioni_scansione"] if i.get("dal") and i.get("righe_programma")]
-    abbinate, rimaste = abbina_indizioni(righe, indizioni, rapporto)
-    rapporto.append(f"\nIndizioni: {len(indizioni)} dalla scansione; {len(abbinate)} righe con indizione; {len(rimaste)} indizioni senza riga nella lista.\n")
+    regolamenti = [i for i in raccolta["regolamenti_scansione"] if i.get("dal") and i.get("righe_programma")]
+    abbinate, rimaste = abbina_regolamenti(righe, regolamenti, rapporto)
+    rapporto.append(f"\nRegolamenti di gara: {len(regolamenti)} dalla scansione; {len(abbinate)} righe con regolamento; {len(rimaste)} regolamenti senza riga nella lista.\n")
 
     intestazione, esistenti = carica_eventi(opzioni.eventi)
     nuovi: list[dict] = []
@@ -470,8 +470,8 @@ def principale(argomenti: list[str] | None = None) -> int:
             rapporto.append(f"- `{esistente['id']}` ↔ {evento['nome'][:50]!r}" + (": " + "; ".join(differenze) if differenze else ""))
             continue
         nuovi.append(evento)
-    for indizione in rimaste:
-        evento = costruisci_evento(None, indizione, letto_il)
+    for regolamento in rimaste:
+        evento = costruisci_evento(None, regolamento, letto_il)
         if corrisponde_esistente(evento, esistenti + nuovi):
             continue
         nuovi.append(evento)
@@ -488,7 +488,7 @@ def principale(argomenti: list[str] | None = None) -> int:
     rapporto.append(f"\n## Nuovi eventi: {len(nuovi)}\n")
     for stato in sorted(conteggio_stati):
         rapporto.append(f"- {stato}: {conteggio_stati[stato]}")
-    rapporto.append("\n| Data | Evento | Luogo | Stato | Categorie | Indizione |\n|---|---|---|---|---|---|")
+    rapporto.append("\n| Data | Evento | Luogo | Stato | Categorie | Regolamento |\n|---|---|---|---|---|---|")
     for evento in sorted(nuovi, key=lambda e: e["data_inizio"]):
         id_manif = evento["url_ufficiale"].rsplit("=", 1)[-1] if evento["url_ufficiale"] else "—"
         rapporto.append(f"| {evento['data_inizio']} | {evento['nome']} | {evento['luogo']} | {evento['stato']} | {', '.join(evento['categorie']) or '—'} | {id_manif} |")

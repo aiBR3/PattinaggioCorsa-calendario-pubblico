@@ -21,14 +21,16 @@ non cancellando quella vecchia.
 | 2026-11-05 | Scoperta di nuove gare | Ricerca aperta ogni 2 settimane | |
 | 2026-11-05 | Content-Type | GitHub Pages serve `calendario.ics` come `text/calendar` (verificato con curl dopo il primo deploy) | Nessun accorgimento necessario |
 | 2026-11-05 | Informazioni personali | Il repository è pubblico: niente nomi, contatti, dispositivi o dettagli su chi lo usa. Si scrive "il proprietario" (aiBR3) e "segnalazioni volontarie" | Non pubblicare più del dovuto |
-| 2026-11-05 | Prova dal titolo ufficiale | Per i campionati FISR senza indizione, il titolo nel calendario federale ('Campionato Italiano Maratona cat. J/S/M') vale come prova delle categorie: M → `confermato` con `categorie: [master]`; `cat.` senza M → `escluso` | Il calendario federale è ufficiale; il regolamento del campionato si cercherà nei comunicati per distanze e dettagli |
-| 2026-11-05 | Scansione degli id delle indizioni | Le indizioni restano online anche senza link: si scandisce l'intervallo di id (6300–7100 nel 2026) e si abbinano alle righe della lista per data e nome | Unico modo per avere la prova delle gare passate e di quelle 'non autorizzate' |
+| 2026-11-05 | Prova dal titolo ufficiale | Per i campionati FISR senza regolamento di gara, il titolo nel calendario federale ('Campionato Italiano Maratona cat. J/S/M') vale come prova delle categorie: M → `confermato` con `categorie: [master]`; `cat.` senza M → `escluso` | Il calendario federale è ufficiale; il regolamento del campionato si cercherà nei comunicati per distanze e dettagli |
+| 2026-11-05 | Scansione degli id dei regolamenti di gara | I regolamenti di gara restano online anche senza link: si scandisce l'intervallo di id (6300–7100 nel 2026) e si abbinano alle righe della lista per data e nome | Unico modo per avere la prova delle gare passate e di quelle 'non autorizzate' |
 | 2026-11-05 | Conversione automatica con revisione | `converti_fisr.py` propone le voci (categorie e prova dalle righe dell'art. 10); nomi, luoghi e organizzatori vengono rivisti a mano prima della PR; le voci già presenti non si toccano | Evita errori di battitura su decine di voci; la decisione resta tracciabile |
 | 2026-11-05 | Descrizione degli eventi | Solo ciò che serve a chi pattina: categorie e distanze, organizzatore, scadenza, un solo link ("Informazioni"), note. Niente prova, fonti, stato, link al calendario | Troppe informazioni confondevano; i dati di lavoro restano nell'YAML |
 | 2026-11-05 | Link dell'evento | Proprietà `URL` dell'evento (RFC 5545) **e** stessa riga nella descrizione | Calendario di Apple mostra `URL`, Google Calendar la ignora |
 | 2026-11-05 | Pagina Pages | Testo in `pagina/modello_index.html` (segnaposto controllati dallo script), CSS in `pagina/stile.css`; ogni file di `pagina/` viene copiato nella cartella pubblicata e lo script verifica che i file citati da `href`/`src` esistano | Modificabile senza toccare Python |
 | 2026-11-05 | `note` e `note_interne` | `note` = pubbliche (descrizione dell'evento), `note_interne` = dati di lavoro mai pubblicati. Migrate le 59 voci: 22 frasi spostate | Le note erano l'unico campo libero visibile a tutti e mescolavano le due cose |
 | 2026-11-05 | Cartella appunti | `note/` rinominata `appunti/` | Richiesta del proprietario |
+| 2026-11-05 | Parola "indizione" | Sostituita ovunque (testi, dati, codice, parametri degli script, chiavi JSON) con "regolamento di gara" / "regolamento" | Incomprensibile per chi non vive nel gergo federale; il documento stesso si intitola "Regolamento particolare" |
+| 2026-11-05 | Righe della descrizione | Il link è preceduto da `URL:`, le note pubbliche da `Informazioni:` | Richiesta del proprietario |
 | 2026-11-05 | Scartato | Submodule del solo file ICS (un submodule punta a un repository intero); profilo Facebook fittizio (viola i termini di Meta, viene bloccato) | |
 
 ## Fasi
@@ -36,7 +38,7 @@ non cancellando quella vecchia.
 - **Fase 0 — fatta (2026-11-05):** schema, piattaforma, perimetro, repository.
 - **Fase 1 — in corso:** a mano, insieme: fisr.info → `eventi.yaml` → `calendario.ics` → Pages → iscrizione dal telefono. Zero autonomia. Pubblicazione fatta con la PR #1 (2026-11-05); con la PR #4 tutte le gare FISR dal 1° gennaio 2026 (59 voci, 16 pubblicate) per la verifica del proprietario, che ad alcune ha partecipato.
 - **Fase 2:** la stessa cosa come attività pianificata settimanale che apre una PR.
-- **Fase 3:** verifica (apre l'indizione, cita la prova) + supervisore (assembla la PR con riassunto e dubbi).
+- **Fase 3:** verifica (apre il regolamento di gara, cita la prova) + supervisore (assembla la PR con riassunto e dubbi).
 - **Fase 4:** scoperta di nuove fonti, registro fonti, segnalazioni Tally, Facebook via Claude in Chrome.
 
 ## Architettura: chi fa cosa
@@ -46,7 +48,7 @@ non cancellando quella vecchia.
 | 0 | `eventi.yaml` + `fonti.yaml` in git | — | sorgente di verità |
 | 1 | Raccolta: legge una pagina, restituisce dati grezzi, non interpreta | script; modello economico solo per pagine irregolari | settimanale |
 | 2 | Normalizzazione + deduplica | codice | ogni giro |
-| 3 | Verifica e classificazione: apre l'indizione, decide se ammette Master/Amatori, cita la prova | modello capace | solo su candidati nuovi o cambiati |
+| 3 | Verifica e classificazione: apre il regolamento di gara, decide se ammette Master/Amatori, cita la prova | modello capace | solo su candidati nuovi o cambiati |
 | 4 | Supervisore: assembla la PR con riassunto e dubbi evidenziati | modello capace | ogni giro |
 | 5 | Pubblicazione: ICS + pagina via Pages | workflow Actions, dopo il merge del proprietario | — |
 | 6 | Scoperta: ricerca aperta di nuove gare e nuove fonti → propone aggiunte a `fonti.yaml` | modello capace | ogni 2 settimane |

@@ -33,19 +33,19 @@ Quando un problema si risolve per sempre, si aggiorna la voce invece di cancella
 - **Successo:** "URL_NOT_ON_ALLOWLIST".
 - **Invece:** prima una ricerca web che faccia comparire l'URL tra i risultati
   (es. `fisr.info corsa_calendario.php`), poi la lettura. Vale anche per le pagine delle
-  indizioni (`corsa_trofeo_modulo.php?id_manif=N`).
+  regolamenti di gara (`corsa_trofeo_modulo.php?id_manif=N`).
 
-## 2026-11-05 — fisr.info: i link alle indizioni spariscono, ma le pagine restano
+## 2026-11-05 — fisr.info: i link ai regolamenti di gara spariscono, ma le pagine restano
 
-- **Volevo:** leggere l'indizione di tutte le gare dal 1° gennaio 2026.
+- **Volevo:** leggere il regolamento di gara di tutte le gare dal 1° gennaio 2026.
 - **Successo:** nella lista solo 3 gare su 66 avevano il link 'modulo' (quelle future). Le pagine
   `corsa_trofeo_modulo.php?id_manif=N` però esistono ancora, anche per le gare 'non ancora
   autorizzate' (es. 7047 = L'Aquila 06/12/2026). Gli id non sono cronologici e molti sono vuoti o bozze
   (`[[denom]]`, date mancanti).
-- **Invece:** `raccogli_fisr.py --scansione-indizioni 6300 7100` scarica tutto l'intervallo (≈800
-  richieste, ~10 minuti con pausa 0,2 s), tiene solo le indizioni complete nel periodo, e
+- **Invece:** `raccogli_fisr.py --scansione-regolamenti 6300 7100` scarica tutto l'intervallo (≈800
+  richieste, ~10 minuti con pausa 0,2 s), tiene solo i regolamenti di gara completi nel periodo, e
   `converti_fisr.py` le abbina alle righe per data (±1 giorno) e somiglianza del nome o dell'organizzatore.
-  Trovate 46 indizioni complete per il 2026.
+  Trovati 46 regolamenti di gara completi per il 2026.
 
 ## 2026-11-05 — fisr.info: trappole nella lista
 
@@ -57,16 +57,16 @@ Quando un problema si risolve per sempre, si aggiorna la voce invece di cancella
 - Un nome era in **base64** nella fonte (`MbBtYWdnaW8g…` = "1°maggio Ferrara Inlne…"): decodificato.
 - Lo stesso evento può comparire due volte con nomi diversi (Cardano al Campo 12-13/09 e 13/09) o
   con la stessa numerazione in due date (Montesilvano 13/09 e 04/10; Imola 08/11 e 08/12, entrambe "49°").
-- Le pagine delle indizioni hanno codifica mista: decodificare come cp1252 e riparare il mojibake
+- Le pagine dei regolamenti di gara hanno codifica mista: decodificare come cp1252 e riparare il mojibake
   UTF-8 parola per parola.
 
-## 2026-11-05 — fisr.info: la lista non dice le categorie, l'indizione sì
+## 2026-11-05 — fisr.info: la lista non dice le categorie, il regolamento di gara sì
 
 - **Volevo:** capire dalla lista `corsa_calendario.php` quali gare ammettono i Master.
 - **Successo:** la lista ha solo data, nome, località, organizzatore, scadenze. Le categorie
-  sono nell'indizione (`corsa_trofeo_modulo.php?id_manif=N`, link "modulo" nella riga),
+  sono nel regolamento di gara (`corsa_trofeo_modulo.php?id_manif=N`, link "modulo" nella riga),
   art. 9-10. Gli eventi "Attività non ancora autorizzata" non hanno ancora il modulo.
   Esempio: Imola 08/11 e 08/12 hanno lo stesso nome e numero (49°), ma solo quella di
   dicembre ha le categorie Master.
 - **Invece:** la lista serve a scoprire; la decisione sulle categorie si prende solo
-  sull'indizione. La pagina ha errori di codifica ("CITTÃ" per "CITTÀ"): normalizzare i nomi.
+  sul regolamento di gara. La pagina ha errori di codifica ("CITTÃ" per "CITTÀ"): normalizzare i nomi.
