@@ -30,14 +30,23 @@
 <p>Compilato automaticamente da script e agenti di IA. Una volta che ti sei iscritto al calendario, il tuo dispositivo riceve gli aggiornamenti in automatico.</p>
 
 <ul>
-	<li>Se usi l'app <em>Calendario di Apple</em>, <a class="bottone" href="{{url_webcal}}">clicca qui</a></li>
-	<li>Se usi l'app <em>Calendario di Google</em>, apri <a href="https://calendar.google.com/">Google Calendar</a> → Altri calendari → Da URL e incolla: <code>{{url_ics}}</code> (Google aggiorna le sottoscrizioni ogni 12–24 ore circa)
+	<li>Se usi l'app Calendario di Apple, <a href="{{url_webcal}}">clicca qui</a></li>
+	<li>Se usi l'app Calendario di Google, apri <em><a href="https://calendar.google.com/">Google Calendar</a> → Altri calendari → Da URL</em> e incolla: <code>{{url_ics}}</code> (Google aggiorna le sottoscrizioni ogni 12–24 ore circa)
 </ul>
 
 <h2>Eventi pubblicati ({{numero_eventi}})</h2>
 
 <table>
-	<thead><tr><th>Data</th><th>Evento</th><th>Luogo</th><th>Tipo</th><th>Categorie</th><th>Stato</th></tr></thead>
+	<thead>
+		<tr>
+			<th>Data</th>
+			<th>Evento</th>
+			<th>Luogo</th>
+			<th>Tipo</th>
+			<th>Categorie</th>
+			<th>Stato</th>
+		</tr>
+	</thead>
 	<tbody>
 		{{righe_tabella}}
 	</tbody>
@@ -46,5 +55,6 @@
 <footer>
 	<p>Generato il {{generato_il}} UTC da <a href="https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico">https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico</a>.</p>
 </footer>
+
 </body>
 </html>
