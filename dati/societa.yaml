@@ -141,19 +141,19 @@
 - codice_fisr: "173"
   nome_fisr: "S.CLUB COMINA"
   sigle_fisr: ["S.CLUB COMINA"]
-  nome: "S. CLUB COMINA"
+  nome: "Skating Club Comina A.S.D."
   citta: "Pordenone"
   regione: "Friuli-Venezia Giulia"
-  sito: "https://www.skatingclubcomina.it/"
+  sito: "https://www.skatingclubcomina.eu/"
   social: "https://www.facebook.com/skatingcomina/"
-  stato_sito: "sito_non_raggiungibile"
-  fonte_sito: "ricerca web del 2026-11-06 (non verificabile dalla shell: dominio dal risultato di ricerca 'skating club comina' (www.skatingclubcomina.it, indicizzato con http; dalla shell CONNECT tunnel); aperto il 2026-11-06: HTTP 000"
+  stato_sito: "sito_verificato"
+  fonte_sito: "pagina del Campionato Italiano Maratona 2026 letta il 2026-11-06 (dati/eventi.yaml, prova della voce 2026-05-24); la ricerca web aveva dato skatingclubcomina.it, che non risponde"
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Friuli-Venezia Giulia 2025/26", "Campionato regionale strada Friuli-Venezia Giulia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
   gare_organizzate: ["CAMPIONATO ITALIANO 1/2 MARATONA cat. Allievi - CAMPIONATO ITALIANO MARATONA cat. J/S/M (PORDENONE (PN) - 24/05/26)"]
   ultimo_controllo: 2026-11-06
-  note: ""
+  note: "La pagina dell'evento 2026 sta nell'indirizzo con '2025' (/campionati-italiani-maratona-2025), quella con '2026' è vuota (diario 2026-11-06)."
 
 - codice_fisr: "183"
   nome_fisr: "POL.PONTEVECCHIO"
@@ -736,7 +736,7 @@
 - codice_fisr: "1091"
   nome_fisr: "C.P.G.A. ASD"
   sigle_fisr: ["C.P.G.A. ASD"]
-  nome: ""
+  nome: "C.P.G.A. ASD (Centro Polisportivo Giovanile Aquilano)"
   citta: ""
   regione: "Abruzzo"
   sito: "https://cpga.net/"
@@ -2380,7 +2380,7 @@
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Liguria 2025/26", "Campionato regionale strada Liguria 2025/26", "Trofeo Bonacossa 2025/26"]
   gare_organizzate: ["CAMPIONATO ITALIANO STRADA A/J/S/M (VADO LIGURE (SV) - 04/09/26 - 07/09/26)", "Campionato regionale Strada Liguria Tutte le categorie (Savona (SV) - 15/03/2026)"]
   ultimo_controllo: 2026-11-06
-  note: ""
+  note: "Il sito dell'evento Campionato Italiano Strada 2026, vadosustrada2026.it, è compromesso (pagine interne di spam, 2026-11-06): non linkare. Sito della società non trovato."
 
 - codice_fisr: "4349"
   nome_fisr: "SKYROLLER"
