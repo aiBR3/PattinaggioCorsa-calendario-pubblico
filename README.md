@@ -9,7 +9,7 @@ Il calendario è un file `.ics` pubblicato con *GitHub Pages* e aggiornato a ogn
 - Se usi l'app Calendario di Apple, incolla nel browser `webcal://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/calendario.ics`
 - Se usi l'app Calendario di Google, apri *Google Calendar → Altri calendari → Da URL* e incolla `https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/calendario.ics` (Google aggiorna le sottoscrizioni ogni 12–24 ore circa)
 
-La pagina web [https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) mostra le istruzioni con i link qui sopra e gli eventi pubblicati.
+La [pagina web pubblica](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) mostra queste istruzioni e gli eventi pubblicati.
 
 ## Segnalare una gara
 
