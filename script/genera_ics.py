@@ -388,26 +388,28 @@ def collegamento_evento(evento: Evento) -> str:
 
 def descrizione_evento(evento: Evento) -> str:
     """Testo per chi consulta il calendario: poche righe, niente dati di lavoro
-    (prova, fonti, stato: lo stato è già nel titolo come prefisso)."""
+    (prova, fonti, stato: lo stato è già nel titolo come prefisso).
+    Le etichette stanno tra parentesi quadre: i due punti li usano gli organizzatori
+    nei loro testi e creerebbero confusione."""
     righe: list[str] = []
     if evento.tipo == "pattinata":
-        righe.append("Pattinata non competitiva")
+        righe.append("[Categorie ammesse] Pattinata non competitiva")
     elif evento.categorie:
-        righe.append("Categorie ammesse: " + ", ".join(c.capitalize() for c in evento.categorie))
+        righe.append("[Categorie ammesse] " + ", ".join(c.capitalize() for c in evento.categorie))
     elif evento.stato == "annunciato":
-        righe.append("Categorie ammesse: non ancora pubblicate")
+        righe.append("[Categorie ammesse] Non ancora pubblicate")
     else:
-        righe.append("Categorie ammesse: da verificare")
+        righe.append("[Categorie ammesse] Da verificare")
     if evento.distanze:
-        righe.append("Distanze: " + ", ".join(evento.distanze))
+        righe.append("[Distanze] " + ", ".join(evento.distanze))
     if evento.organizzatore:
-        righe.append(f"Organizzatore: {evento.organizzatore}")
+        righe.append(f"[Organizzatore] {evento.organizzatore}")
     if evento.scadenza_iscrizione:
-        righe.append(f"Scadenza iscrizioni: {formatta_data_it(evento.scadenza_iscrizione)}")
+        righe.append(f"[Scadenza iscrizioni] {formatta_data_it(evento.scadenza_iscrizione)}")
     if evento.note:
-        righe.append(f"Informazioni: {evento.note}")
+        righe.append(f"[Informazioni] {evento.note}")
     if collegamento := collegamento_evento(evento):
-        righe.append(f"URL: {collegamento}")
+        righe.append(f"[URL] {collegamento}")
     return "\n".join(righe)
 
 
