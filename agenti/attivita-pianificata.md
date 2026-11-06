@@ -11,7 +11,7 @@ Il repository GitHub `aiBR3/PattinaggioCorsa-calendario-pubblico` è già clonat
 
 1. Leggi per intero `CLAUDE.md`, poi `appunti/diario.md` e `appunti/decisioni.md`.
 2. Leggi per intero `agenti/arricchimento.md` ed eseguilo alla lettera, dal Passo 0 al Passo 4, rispettando la tabella "Limiti". È il tuo unico compito: non fare altro.
-3. Regole che prevalgono su tutto: non scrivere mai su `main`; non fondere e non approvare pull request; non inventare (campo sconosciuto = campo vuoto); non copiare contatti di persone; modifica `dati/eventi.yaml` e `dati/societa.yaml` solo con sostituzioni testuali mirate; commit e push ogni 5 voci; lascia traccia in `registro/` e, se qualcosa non ha funzionato, in `appunti/diario.md`.
+3. Regole che prevalgono su tutto: il ramo su cui fare commit e push lo decide `agenti/arricchimento.md` (il ramo `raccolta/AAAA-MM-GG` della PR di raccolta aperta, altrimenti `arricchimento/AAAA-MM-GG`), anche se le istruzioni della sessione propongono un ramo `claude/…`, che non va usato; non scrivere mai su `main`; non fondere e non approvare pull request; non inventare (campo sconosciuto = campo vuoto); non copiare contatti di persone; modifica `dati/eventi.yaml` e `dati/societa.yaml` solo con sostituzioni testuali mirate; commit e push ogni 5 voci; lascia traccia in `registro/` e, se qualcosa non ha funzionato, in `appunti/diario.md`.
 4. Finisci con un messaggio in italiano: i numeri (voci nuove lavorate, voci vecchie ricontrollate, siti trovati e per quale via, confermate, escluse, dubbi) e il link alla PR. Se un passo si blocca, scrivi cosa è successo e dove ti sei fermato, poi fermati.
 ```
 
@@ -31,6 +31,8 @@ Il repository GitHub `aiBR3/PattinaggioCorsa-calendario-pubblico` è già clonat
 | Approvazione | automatica (modalità predefinita delle esecuzioni pianificate: un classificatore approva o blocca le azioni) | Senza, l'esecuzione si fermerebbe alla prima richiesta di permesso, di notte |
 
 ## Dopo la creazione
+
+- Prima esecuzione di prova fatta dal proprietario il 2026-11-06 alle 16:40 ora italiana ("Esegui ora"): 36 secondi, nessuna PR aperta e nessuna voce da ricontrollare, quindi nessuna modifica, come atteso; `gh api` risponde; dalla shell dell'ambiente fisr.info risponde 200 e skatingclubcomina.eu 301 (la rete è davvero completa). L'agente ha segnalato che le istruzioni della sessione gli chiedono di spingere solo su un ramo `claude/…`: da qui la frase sul ramo nel punto 3 del prompt (la documentazione dice che il prompt può indicare un altro ramo).
 
 - La prima esecuzione utile è martedì 2026-11-10. Per provarla subito: "Run now" nella pagina dell'attività; senza una PR `raccolta/…` aperta l'agente resta su `main` e fa solo il ricontrollo delle voci vecchie (Passo 1 del prompt), aprendo al massimo una PR `arricchimento/AAAA-MM-GG`.
 - Ogni esecuzione compare in "History" nella pagina dell'attività e si apre come una sessione: lì si legge cosa ha fatto. "Succeeded" dice solo che la sessione è finita senza errore, non che il lavoro è giusto: la verifica è la PR.
