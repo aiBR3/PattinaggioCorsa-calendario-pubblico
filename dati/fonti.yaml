@@ -110,16 +110,64 @@
   ultimo_controllo: ""
 
 - id: worldskate-competitions
-  nome: "World Skate — competizioni"
-  url: https://www.worldskate.org/
+  nome: "World Skate — eventi e bollettini del Marathon Tour"
+  url: https://www.worldskate.org/events/upcoming-events.html
   paese: ""
-  metodo: script
+  metodo: agente
   frequenza: mensile
   copre: [gare]
   affidabilita: ufficiale
+  stato: attiva
+  note: "Lista degli eventi (tutte le discipline: filtrare 'Marathon Tour'). Le tappe del World Skate Marathon Tour hanno un bollettino PDF con programma e categorie: nel 2026 le tappe Challenger (Pamplona 07/06, Napoli 31/10) prevedono 'Pro, Master & Amateur'. Da qui si risale al sito dell'organizzatore locale (es. rollerskatingfestivalnapoli.it), che pubblica il bollettino e la gara amatori. Pamplona 2026 ancora da leggere."
+  ultimo_controllo: 2026-11-06
+
+- id: scc-events-calendario
+  nome: "SCC EVENTS (Berlino) — calendario degli eventi"
+  url: https://www.scc-events.com/en/events/calendar
+  paese: DE
+  metodo: script
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: organizzatore
+  stato: attiva
+  note: "Organizzatore della Berlin-Marathon, della Berlin Half Marathon e della City Night: la pagina elenca ogni evento con data, distanza e disciplina ('Inline skating') e offre un file .ics di tutti gli eventi. Nel 2027: Half Marathon Inlineskating 04/04 (21 km), City Night Inlineskating 31/07 (10 km); la maratona 26/09/2027 non elenca l'inline. Le pagine di iscrizione (generali-berliner-halbmarathon.de, berlin-citynight.de) contengono la frase di ammissione ('Jahrgänge … und älter'): la versione tedesca è quella da citare, l'inglese a volte è tradotto male. Le pagine dell'edizione passata vengono tolte subito dopo la gara: leggerle in tempo o dalla Wayback Machine."
+  ultimo_controllo: 2026-11-06
+
+- id: world-inline-cup
+  nome: "World Inline Cup — gare"
+  url: https://www.world-inline-cup.com/races/berlin
+  paese: ""
+  metodo: agente
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: aggregatore
   stato: da_verificare
-  note: "Livello élite; utile per le tappe del World Skate Marathon Tour aperte agli amatori (da verificare quali). Pagina esatta del calendario da individuare."
-  ultimo_controllo: ""
+  note: "Circuito delle maratone inline europee (classe 'Top Class'), con scheda per gara (città, data, sito dell'organizzatore). Da leggere la lista completa delle tappe per CH, FR, DE, AT, SI. L'URL registrato è la scheda di Berlino, l'unica letta finora."
+  ultimo_controllo: 2026-11-06
+
+- id: siti-organizzatori
+  nome: "Siti degli organizzatori locali (uno per evento)"
+  url: ""
+  paese: ""
+  metodo: agente
+  frequenza: a_richiesta
+  copre: [verifica]
+  affidabilita: organizzatore
+  stato: attiva
+  note: "Non è una fonte unica ma un metodo (regola 10 di CLAUDE.md): dal nome dell'organizzatore nella lista federale si cerca il suo sito e la pagina dell'evento; lì si trovano link ufficiale, distanze, orari, quote e le gare Amatori/Fitness che il regolamento FISR non copre (es. Pordenone 24/05/2026). Attenzione ai siti compromessi (vadosustrada2026.it, 2026-11-06) e alle pagine dell'edizione precedente lasciate online con l'anno vecchio nell'indirizzo (skatingclubcomina.eu)."
+  ultimo_controllo: 2026-11-06
+
+- id: wayback-machine
+  nome: "Internet Archive — Wayback Machine"
+  url: https://web.archive.org/
+  paese: ""
+  metodo: agente
+  frequenza: a_richiesta
+  copre: [verifica]
+  affidabilita: aggregatore
+  stato: attiva
+  note: "Per leggere la pagina ufficiale di una gara già passata e tolta dal sito (es. Berlin-Marathon Inlineskating 2026). Dalla shell funzionano gli snapshot (web.archive.org/web/AAAAMMGG/URL) e l'API 'available' (archive.org/wayback/available?url=…); l'API CDX è bloccata dal proxy. La copia va citata con l'URL dello snapshot in fonti."
+  ultimo_controllo: 2026-11-06
 
 - id: pattiniamolitalia-eventi
   nome: "Pattiniamo l'Italia — eventi"

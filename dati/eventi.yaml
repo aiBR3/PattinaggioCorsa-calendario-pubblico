@@ -391,23 +391,25 @@
   nome: "Campionato Italiano Maratona cat. J/S/M - Campionato Italiano Mezza Maratona cat. Allievi"
   data_inizio: 2026-05-24
   data_fine: 2026-05-24
-  luogo: "Pordenone (PN)"
+  luogo: "Pordenone (PN); la mezza maratona parte da Aviano (PN)"
   paese: IT
   tipo: gara
-  categorie: ["master"]
-  distanze: []
-  organizzatore: "FISR"
-  url_ufficiale: ""
+  categorie: ["master", "amatori"]
+  distanze: ["maratona 42 km (Junior, Senior, Master)", "mezza maratona 21 km (Allievi e Fitness)"]
+  organizzatore: "Skating Club Comina A.S.D."
+  url_ufficiale: "https://skatingclubcomina.eu/campionato-italiano-maratona-2025"
   url_iscrizione: ""
   scadenza_iscrizione: 2026-05-18
   stato: confermato
   fonti:
     - url: https://www.fisr.info/attivita/corsa_calendario.php
       letto_il: 2026-11-05
-  verificato_il: 2026-11-05
-  prova: "Calendario FISR 2025/26 (https://www.fisr.info/attivita/corsa_calendario.php), titolo ufficiale: 'Campionato Italiano 1/2 maratona cat. Allievi - Campionato Italiano maratona cat. J/S/M'. Categorie indicate nel titolo: A/J/S/M (M = Master)."
-  note: ""
-  note_interne: "Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare."
+    - url: https://skatingclubcomina.eu/campionato-italiano-maratona-2025
+      letto_il: 2026-11-06
+  verificato_il: 2026-11-06
+  prova: "Calendario FISR 2025/26 (https://www.fisr.info/attivita/corsa_calendario.php), titolo ufficiale: 'Campionato Italiano 1/2 maratona cat. Allievi - Campionato Italiano maratona cat. J/S/M'. Categorie indicate nel titolo: A/J/S/M (M = Master). Pagina dell'organizzatore (https://skatingclubcomina.eu/campionato-italiano-maratona-2025): '42K Cat. Junior / Senior + Master'; '21K Cat. Allievi + Fitness'. Fitness = amatori."
+  note: "Partenza ore 9.00. Maratona di 42 km per Junior, Senior e Master; mezza maratona di 21 km per Allievi e Fitness, con partenza ad Aviano e navetta compresa nella quota. Quota 25 € per tutte le categorie. Iscrizione con i link di pagamento sulla pagina dell'organizzatore, indicando nelle note data di nascita e telefono (e, per la 21 km, se si usa la navetta)."
+  note_interne: "Master dal titolo ufficiale FISR; Fitness dalla pagina dell'organizzatore (decisione 2026-11-06). Regolamento del campionato non letto: il 'REGOLAMENTO' sulla pagina dell'organizzatore è un'immagine, non leggibile da script. Il menu del sito punta a /campionati-italiani-maratona-2026, che è vuota: la pagina buona resta quella con '2025' nell'indirizzo. La pagina chiama la gara 'TriRoller Race 2025/26/27'. Scadenza iscrizioni presa dalla lista FISR."
 
 - id: 2026-05-30-bellusco-trofeo-lorenzo-brioni
   nome: "25° Trofeo Lorenzo Brioni"
@@ -861,12 +863,12 @@
   nome: "Campionato Italiano su Strada cat. A/J/S/M"
   data_inizio: 2026-09-03
   data_fine: 2026-09-06
-  luogo: "Vado Ligure (SV)"
+  luogo: "Vado Ligure (SV), Stadio Chittolina"
   paese: IT
   tipo: gara
   categorie: ["master"]
   distanze: []
-  organizzatore: "FISR"
+  organizzatore: "A.S.D. Roller Sports Vado Ligure"
   url_ufficiale: ""
   url_iscrizione: ""
   scadenza_iscrizione: 2026-08-15
@@ -874,10 +876,12 @@
   fonti:
     - url: https://www.fisr.info/attivita/corsa_calendario.php
       letto_il: 2026-11-05
-  verificato_il: 2026-11-05
+    - url: https://vadosustrada2026.it/
+      letto_il: 2026-11-06
+  verificato_il: 2026-11-06
   prova: "Calendario FISR 2025/26 (https://www.fisr.info/attivita/corsa_calendario.php), titolo ufficiale: 'Campionato Italiano su strada cat. A/J/S/M'. Categorie indicate nel titolo: A/J/S/M (M = Master)."
   note: ""
-  note_interne: "Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare."
+  note_interne: "Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare. Sito dell'organizzatore vadosustrada2026.it (letto il 2026-11-06): la home conferma date (3-6 settembre 2026), impianto e organizzatore, ma /programma/, /contatti/ e /area-camper/ servono spam di gioco d'azzardo e 'La manifestazione' risponde 404 in indonesiano: sito compromesso, non linkato nel calendario (decisione 2026-11-06). Ricontrollare se viene ripulito e in quel caso mettere la home in url_ufficiale."
 
 - id: 2026-09-12-cardano-al-campo-trofeo-memorial-antonio-rocchetta
   nome: "8° Trofeo Memorial Antonio Rocchetta - Trofeo Città di Cardano al Campo"
@@ -1069,6 +1073,30 @@
   note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio con curve soprelevate pendenza costante mt 150 alla corda larghezza mt 5 50 con rivestimento VESMACO Tutte le gare si effettueranno esclusivamente in pista soprelevata. Il venerdì mattina sarà possib…"
   note_interne: ""
 
+- id: 2026-09-26-berlino-bmw-berlin-marathon-inlineskating
+  nome: "BMW Berlin-Marathon Inlineskating"
+  data_inizio: 2026-09-26
+  data_fine: 2026-09-26
+  luogo: "Berlino, percorso della maratona con arrivo alla Porta di Brandeburgo"
+  paese: DE
+  tipo: gara
+  categorie: ["master", "amatori"]
+  distanze: ["maratona 42,195 km"]
+  organizzatore: "SCC EVENTS"
+  url_ufficiale: "https://www.bmw-berlin-marathon.com/en/"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-08-27
+  stato: confermato
+  fonti:
+    - url: https://web.archive.org/web/20260927155139/https://www.bmw-berlin-marathon.com/en/registration/inlineskating
+      letto_il: 2026-11-06
+    - url: https://www.scc-events.com/en/events/calendar
+      letto_il: 2026-11-06
+  verificato_il: 2026-11-06
+  prova: "Pagina ufficiale di iscrizione (copia Wayback del 2026-09-27), sezione 'Eligibility': 'all inline skater year 2009 and older are allowed to participate'; gara organizzata secondo il regolamento (WKO) della federazione tedesca DRIV. Aperta a tutti i nati nel 2009 o prima, senza obbligo di categoria agonistica: Master e amatori ammessi (decisione 2026-11-06)."
+  note: "Partenza dalle 12:20 a ondate. Limite di tempo 2:10 h; casco obbligatorio; solo pattini in linea (ruote max 125 mm) e quad. Iscrizioni dal 26/02 al 27/08/2026 (o fino a esaurimento), quota 99-119 €."
+  note_interne: "La pagina ufficiale dell'edizione 2026 è stata tolta dopo la gara (skating.bmw-berlin-marathon.com e /en/registration/inlineskating → 404): letta dalla Wayback Machine. Edizione 2027 (Generali Berlin-Marathon, 26/09/2027): il calendario SCC Events e la pagina 'Disciplines' del nuovo sito elencano solo corsa, handbike e carrozzina, nessuna gara inline; nessun annuncio esplicito trovato (2026-11-06). Ricontrollare prima di creare la voce 2027."
+
 - id: 2026-09-26-trebaseleghe-trofeo-trebaseleghe
   nome: "20° Trofeo Città di Trebaseleghe - Tappa GPG e IRC"
   data_inizio: 2026-09-26
@@ -1189,6 +1217,32 @@
   note: "Manifestazione di categoria B su strada. Campo di gara: Percorso stradale in grana fine di 450 mt., Piazzale Senio 1."
   note_interne: ""
 
+- id: 2026-10-31-napoli-world-skate-marathon-tour-challenger
+  nome: "World Skate Marathon Tour 2026 - Naples Challenger Stage"
+  data_inizio: 2026-10-31
+  data_fine: 2026-10-31
+  luogo: "Napoli, Lungomare Caracciolo (circuito di 4 km, centro gara alla Rotonda Diaz)"
+  paese: IT
+  tipo: gara
+  categorie: ["master", "amatori"]
+  distanze: ["maratona 42 km (Pro e Master)", "20 km (Amatori)"]
+  organizzatore: "ASD SEBS Fiera dello Sport"
+  url_ufficiale: "https://www.rollerskatingfestivalnapoli.it/world-skate-marathon-tour-2026/"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2026-10-22
+  stato: confermato
+  fonti:
+    - url: https://www.rollerskatingfestivalnapoli.it/wp-content/uploads/2026/07/Naples-Marathon-Challenger-Stage-WSMT-2026-Bulletin01.pdf
+      letto_il: 2026-11-06
+    - url: https://www.rollerskatingfestivalnapoli.it/amatour-world-skate-marathon-tour-challenger/
+      letto_il: 2026-11-06
+    - url: https://www.rollerskatingfestivalnapoli.it/world-skate-marathon-tour-2026/
+      letto_il: 2026-11-06
+  verificato_il: 2026-11-06
+  prova: "World Skate Marathon Tour 2026, Naples Challenger Stage, Bulletin #1 del 2026-06-17 (PDF sul sito dell'organizzatore): copertina 'Pro, Master & Amateur Category'; programma del 31 ottobre: '8:30am Pro & Master Women 42km', '10:30am Pro & Master Men 42km', '1:00pm Amateurs 20km'; categorie Master 30 (30 to 34) … Master 75 (75+), età al 31 dicembre 2026. Pagina amatori dell'organizzatore: 'Percorso: 5 giri completi per un totale di 20 km'."
+  note: "Tappa Challenger del World Skate Marathon Tour, dentro il Roller Skating Festival di Napoli (30 ottobre - 1 novembre). Pro e Master: 42 km, categorie Master a scatti di 5 anni dai 30 ai 75+, iscrizione su World Skate Infinity dal 22/07 al 22/10/2026, quota 70 USD. Amatori: 20 km con partenza alle 13.00, quota 60 €, iscrizione con il modulo e il bonifico indicati sulla pagina dell'organizzatore. Accrediti venerdì 30 e sabato 31 mattina."
+  note_interne: "Assente dalla lista fisr.info: segnalato dal proprietario, trovato poi dal sito dell'organizzatore e dalla pagina eventi di World Skate. Una voce sola per le due gare dello stesso giorno (decisione 2026-11-06). La pagina amatori contiene un IBAN e un numero di cellulare: non copiarli nel repository. Il festival comprende altre discipline (freestyle, roller cross, ecc.): fuori dal calendario. Scadenza iscrizioni: quella di World Skate Infinity (Pro/Master); per gli amatori la pagina non indica una scadenza."
+
 - id: 2026-11-08-imola-gran-premio-indoor
   nome: "49° Gran Premio Indoor Città di Imola"
   data_inizio: 2026-11-08
@@ -1285,6 +1339,30 @@
   note: "Manifestazione di categoria B su pista piana in cemento (90/100 m). Aperta ai tesserati in regola per l'anno in corso (art. 2). Iscrizioni solo tramite il sito federale entro le 24 del 02/12, conferme entro le 17 del 05/12."
   note_interne: "Categorie Amatori non menzionate."
 
+- id: 2027-04-04-berlino-generali-berlin-half-marathon-inlineskating
+  nome: "Generali Berlin Half Marathon Inlineskating"
+  data_inizio: 2027-04-04
+  data_fine: 2027-04-04
+  luogo: "Berlino, percorso della mezza maratona con arrivo alla Porta di Brandeburgo"
+  paese: DE
+  tipo: gara
+  categorie: ["master", "amatori"]
+  distanze: ["mezza maratona 21,0975 km"]
+  organizzatore: "SCC EVENTS"
+  url_ufficiale: "https://www.generali-berliner-halbmarathon.de/en/registration/inlineskating"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2027-03-11
+  stato: confermato
+  fonti:
+    - url: https://www.generali-berliner-halbmarathon.de/anmelden/inlineskating
+      letto_il: 2026-11-06
+    - url: https://www.scc-events.com/en/events/calendar
+      letto_il: 2026-11-06
+  verificato_il: 2026-11-06
+  prova: "Pagina ufficiale di iscrizione, versione tedesca, sezione 'Teilnahmeberechtigung': 'startberechtigt sind alle Skater der Jahrgänge 2012 und älter'; gara organizzata secondo il WKO della DRIV. Aperta a tutti i nati nel 2012 o prima: Master e amatori ammessi (decisione 2026-11-06). Data e distanza dal calendario SCC Events: 'GENERALI BERLIN HALF MARATHON Inlineskating, APRIL 04, 2027, 21,0975 k, Inline skating'."
+  note: "Iscrizioni dal 02/04/2026 all'11/03/2027 (o fino a esaurimento), quota 66-73 €. Limite di tempo 1:10 h; casco obbligatorio; solo pattini in linea (ruote max 125 mm) e quad."
+  note_interne: "L'intestazione della pagina di iscrizione dice ancora '2026', ma il periodo di iscrizione (fino all'11/03/2027) e il calendario SCC Events sono dell'edizione 2027. La versione inglese traduce male l'ammissione ('born in 2012 and later'): fa fede il tedesco. Rileggere quando il sito viene aggiornato."
+
 - id: 2027-05-29-laquila-internazionali-ditalia-open-indoor
   nome: "Internazionali d'Italia Open Indoor - VII Memorial Romano Maria Cacciani"
   data_inizio: 2027-05-29
@@ -1352,6 +1430,30 @@
   prova: ""
   note: ""
   note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'. Il cognome 'Boero' manca nel titolo della lista: preso dall'edizione 2026."
+
+- id: 2027-07-31-berlino-adidas-runners-city-night-inlineskating
+  nome: "adidas Runners City Night Inlineskating"
+  data_inizio: 2027-07-31
+  data_fine: 2027-07-31
+  luogo: "Berlino, Kurfürstendamm"
+  paese: DE
+  tipo: gara
+  categorie: []
+  distanze: ["10 km"]
+  organizzatore: "SCC EVENTS"
+  url_ufficiale: "https://www.berlin-citynight.de/en/registration/10k-inline-skating"
+  url_iscrizione: ""
+  scadenza_iscrizione: ""
+  stato: annunciato
+  fonti:
+    - url: https://www.scc-events.com/en/events/calendar
+      letto_il: 2026-11-06
+    - url: https://www.berlin-citynight.de/en/registration/10k-inline-skating
+      letto_il: 2026-11-06
+  verificato_il: ""
+  prova: ""
+  note: "Gara serale di 10 km sul Kurfürstendamm, dentro la adidas Runners City Night (con le corse di 5 e 10 km). Le condizioni dell'edizione 2027 non sono ancora pubblicate."
+  note_interne: "Data dal calendario SCC Events (31/07/2027, 10k, Inline skating). La pagina di iscrizione mostra ancora l'edizione 2026: partenza ore 18:00, classifiche 'Speed' e 'Fitness', ammissione 'according to DRIV WKO from YOB 2014', quote 35-45 €. Rileggere all'apertura delle iscrizioni 2027 e passare a confermato con la prova."
 
 - id: 2027-08-03-santa-maria-nuova-trofeo-internazionale-giorni-international
   nome: "Trofeo Internazionale 6 Giorni International 2027 - Circuito RSC"
