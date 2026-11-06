@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!--
   Modello della pagina pubblicata su GitHub Pages (index.html). Lo stile è in stile.css.
-  Tutto il testo si modifica QUI. script/genera_ics.py sostituisce solo i segnaposto {{...}}, che portano i valori dipendenti dai dati:
-    {{righe_tabella}}   le righe <tr> della tabella degli eventi (obbligatorio; l'unico)
-    {{numero_eventi}}   quanti eventi sono pubblicati
-    {{url_webcal}}      link webcal:// al calendario (per iPhone, iPad, Mac)
-    {{url_ics}}         link https:// al calendario (per Google Calendar e altri)
-    {{generato_il}}     data e ora di generazione (UTC)
-    {{titolo}}          nome del calendario come appare nelle app (lo stesso dell'ICS)
-    {{descrizione}}     descrizione del calendario come appare nelle app
+  Tutto il testo si modifica QUI. script/genera_ics.py sostituisce solo i segnaposto, cioè i nomi qui sotto scritti tra doppie parentesi graffe nel corpo della pagina (in questo commento sono senza graffe, altrimenti lo script li sostituirebbe anche qui):
+    righe_tabella   le righe <tr> della tabella degli eventi (obbligatorio; l'unico)
+    numero_eventi   quanti eventi sono pubblicati
+    url_webcal      link webcal:// al calendario (per iPhone, iPad, Mac)
+    url_ics         link https:// al calendario (per Google Calendar e altri)
+    generato_il     data e ora di generazione (UTC)
+    titolo          nome del calendario come appare nelle app (lo stesso dell'ICS)
+    descrizione     descrizione del calendario come appare nelle app
   Un segnaposto non usato non dà errore; uno sconosciuto sì. Ogni altro file di questa cartella (stile.css, immagini…) viene copiato così com'è nella cartella pubblicata.
 -->
 <html lang="it">
@@ -38,7 +38,7 @@
 </table>
 
 <footer>
-<p>Generato il {{generato_il}} UTC da <a href="https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico">https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico</a> (dati/eventi.yaml). Legenda degli stati: <em>confermato</em> = categorie verificate sul regolamento di gara o su quello del campionato; <em>da verificare</em> = segnalato ma non ancora controllato; <em>non ancora autorizzata</em> = a calendario federale in attesa di autorizzazione.</p>
+<p>Generato il {{generato_il}} UTC da <a href="https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico">https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico</a> (dati/eventi.yaml). Legenda degli stati: <em>confermato</em> = categorie verificate sul regolamento di gara o del campionato, sulla pagina ufficiale dell'organizzatore o sul bollettino della federazione; <em>annunciato</em> = evento ufficiale, categorie non ancora pubblicate; <em>da verificare</em> = segnalato ma non ancora controllato; <em>non ancora autorizzata</em> = a calendario federale in attesa di autorizzazione.</p>
 </footer>
 </body>
 </html>

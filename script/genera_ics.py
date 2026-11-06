@@ -386,20 +386,23 @@ def collegamento_evento(evento: Evento) -> str:
     return evento.url_ufficiale or evento.url_iscrizione
 
 
+def etichetta_categorie(evento: Evento) -> str:
+    """Cosa leggere alla voce 'categorie': vale sia per la descrizione nell'ICS sia per la tabella della pagina."""
+    if evento.tipo == "pattinata":
+        return "Pattinata non competitiva"
+    if evento.categorie:
+        return ", ".join(c.capitalize() for c in evento.categorie)
+    if evento.stato == "annunciato":
+        return "Non ancora pubblicate"
+    return "Da verificare"
+
+
 def descrizione_evento(evento: Evento) -> str:
     """Testo per chi consulta il calendario: poche righe, niente dati di lavoro
     (prova, fonti, stato: lo stato è già nel titolo come prefisso).
     Le etichette stanno tra parentesi quadre: i due punti li usano gli organizzatori
     nei loro testi e creerebbero confusione."""
-    righe: list[str] = []
-    if evento.tipo == "pattinata":
-        righe.append("[Categorie ammesse] Pattinata non competitiva")
-    elif evento.categorie:
-        righe.append("[Categorie ammesse] " + ", ".join(c.capitalize() for c in evento.categorie))
-    elif evento.stato == "annunciato":
-        righe.append("[Categorie ammesse] Non ancora pubblicate")
-    else:
-        righe.append("[Categorie ammesse] Da verificare")
+    righe: list[str] = ["[Categorie ammesse] " + etichetta_categorie(evento)]
     if evento.distanze:
         righe.append("[Distanze] " + ", ".join(evento.distanze))
     if evento.organizzatore:
@@ -468,9 +471,9 @@ def genera_indice_html(eventi: list[Evento], url_base: str, generato_il: datetim
     righe_tabella: list[str] = []
     for evento in pubblicati:
         nome = html.escape(titolo_evento(evento))
-        if evento.url_ufficiale:
-            nome = f'<a href="{html.escape(evento.url_ufficiale)}">{nome}</a>'
-        categorie = ", ".join(evento.categorie) if evento.categorie else "da verificare"
+        if collegamento := collegamento_evento(evento):          # lo stesso link della descrizione nell'ICS
+            nome = f'<a href="{html.escape(collegamento)}">{nome}</a>'
+        categorie = etichetta_categorie(evento)                   # lo stesso testo della descrizione nell'ICS
         righe_tabella.append(
             "<tr>"
             f"<td>{html.escape(intervallo_date(evento))}</td>"

@@ -77,3 +77,9 @@ Quando un problema si risolve per sempre, si aggiorna la voce invece di cancella
 ## 2026-11-06 — Cosa raggiunge la shell (aggiornamento)
 
 - Oltre a fisr.info e github.io, la shell raggiunge i siti degli organizzatori provati finora (vadosustrada2026.it, skatingclubcomina.eu, rollerskatingfestivalnapoli.it, bmw-berlin-marathon.com, generali-berlin-marathon.com, generali-berliner-halbmarathon.de, berlin-citynight.de, scc-events.com) e web.archive.org. Bloccato: adidas-runners-city-night.de (il sito vero della City Night è comunque berlin-citynight.de). Il blocco si vede come `CONNECT tunnel failed, response 502`.
+
+## 2026-11-06 — GitHub segna "conflitto" dopo il rinomina di una cartella
+
+- **Volevo:** aprire la PR #17 (modifica a `pagina/modello_index.html`) basata su `main` mentre la PR #16 rinominava la cartella in `pagina_web/`; in locale `git merge` fondeva le tre PR in ogni ordine senza conflitti.
+- **Successo:** appena la #16 è stata fusa, GitHub ha marcato la #17 `mergeable_state: dirty`: il calcolo di GitHub non riconosce "file rinominato da una parte, modificato dall'altra" come fa git in locale.
+- **Invece:** dopo un rinomina, le PR aperte che toccano i file rinominati vanno ribasate (`git rebase origin/main`, che applica la modifica al nuovo percorso) e spinte con `--force-with-lease=ramo:sha-remoto` (il `--force-with-lease` semplice fallisce con "stale info" dopo un `git fetch`). Meglio ancora: fondere prima la PR del rinomina, poi aprire le altre.
