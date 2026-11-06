@@ -374,7 +374,7 @@ def formatta_data_it(giorno: date) -> str:
 def intervallo_date(evento: Evento) -> str:
     if evento.data_inizio == evento.data_fine:
         return formatta_data_it(evento.data_inizio)
-    return f"{formatta_data_it(evento.data_inizio)} – {formatta_data_it(evento.data_fine)}"
+    return f"{formatta_data_it(evento.data_inizio)} → {formatta_data_it(evento.data_fine)}"
 
 
 def titolo_evento(evento: Evento) -> str:
