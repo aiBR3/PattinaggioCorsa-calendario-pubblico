@@ -862,7 +862,7 @@
 - id: 2026-09-03-vado-ligure-campionato-italiano-strada-j
   nome: "Campionato Italiano su Strada cat. A/J/S/M"
   data_inizio: 2026-09-03
-  data_fine: 2026-09-06
+  data_fine: 2026-09-09
   luogo: "Vado Ligure (SV), Stadio Chittolina"
   paese: IT
   tipo: gara
@@ -881,7 +881,7 @@
   verificato_il: 2026-11-06
   prova: "Calendario FISR 2025/26 (https://www.fisr.info/attivita/corsa_calendario.php), titolo ufficiale: 'Campionato Italiano su strada cat. A/J/S/M'. Categorie indicate nel titolo: A/J/S/M (M = Master)."
   note: ""
-  note_interne: "Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare. Sito dell'organizzatore vadosustrada2026.it (letto il 2026-11-06): la home conferma date (3-6 settembre 2026), impianto e organizzatore, ma /programma/, /contatti/ e /area-camper/ servono spam di gioco d'azzardo e 'La manifestazione' risponde 404 in indonesiano: sito compromesso, non linkato nel calendario (decisione 2026-11-06). Ricontrollare se viene ripulito e in quel caso mettere la home in url_ufficiale."
+  note_interne: "Categorie prese dal titolo ufficiale nel calendario FISR; regolamento del campionato non letto: distanze e dettagli da verificare. Sito dell'organizzatore vadosustrada2026.it (letto il 2026-11-06): la home conferma date (3-6 settembre 2026), impianto e organizzatore, ma /programma/, /contatti/ e /area-camper/ servono spam di gioco d'azzardo e 'La manifestazione' risponde 404 in indonesiano: sito compromesso, non linkato nel calendario (decisione 2026-11-06). Ricontrollare se viene ripulito e in quel caso mettere la home in url_ufficiale. Date corrette dal proprietario (2026-11-06), che ha partecipato: dal 3 al 9 settembre 2026, con il 3 dedicato alla prova della pista; la lista fisr.info dava 3-6, i risultati federali 4-7."
 
 - id: 2026-09-12-cardano-al-campo-trofeo-memorial-antonio-rocchetta
   nome: "8° Trofeo Memorial Antonio Rocchetta - Trofeo Città di Cardano al Campo"
