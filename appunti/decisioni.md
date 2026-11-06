@@ -42,13 +42,17 @@ Una riga per decisione, con data e motivo. Le decisioni si cambiano con una nuov
 | 2026-11-06 | Più gare nello stesso giorno | Una voce sola quando lo stesso organizzatore fa più gare nello stesso giorno e luogo (Napoli: 42 km Pro/Master + 20 km Amatori); le distanze dicono chi corre cosa | Un evento in calendario, non due |
 | 2026-11-06 | Pagine sparite | Le pagine ufficiali delle gare passate vengono tolte (Berlino 2026): si leggono dalla Wayback Machine e si cita lo snapshot in `fonti` | L'unica copia verificabile |
 | 2026-11-06 | Casi di prova | `appunti/casi-di-prova.md` raccoglie gli eventi reali che la scoperta e l'arricchimento devono saper trovare, con il motivo per cui erano sfuggiti | Misurare i livelli 2b e 6 quando saranno automatici |
+| 2026-11-06 | Fase 2: chi esegue la raccolta | GitHub Actions a orario (`raccolta.yml`, lunedì 05:17 UTC): script deterministici, PR di `github-actions[bot]`; Claude pianificato arriverà con la Fase 3 per i compiti di giudizio | Gratis, nessun giudizio da delegare in questa fase, PR che il proprietario può rivedere con calma |
+| 2026-11-06 | Raccolta settimanale: perimetro | Lista della stagione corrente con `--da` = 14 giorni prima; regolamenti linkati nella lista più la scansione degli id oltre l'ultimo visto (`intervallo_scansione.py`: ultimo − 50 … ultimo + 300); scansione completa solo a mano con "Run workflow" | Gli id crescono con la data di creazione del documento, non della gara; le gare future hanno il link nella lista; i primi id sotto l'ultimo visto nascono spesso come bozze vuote |
+| 2026-11-06 | Raccolta settimanale: PR | Una PR alla volta dal ramo `raccolta/AAAA-MM-GG`, solo se `eventi.yaml` cambia; il testo della PR contiene il rapporto di conversione; `log/` committato solo in quella PR, altrimenti artefatto del job (90 giorni) | Niente PR vuote; la revisione del proprietario ha tutto in una pagina |
+| 2026-11-06 | Raccolta settimanale: verifica | Il workflow esegue `genera_ics.py` prima di aprire la PR, perché le PR create con il token di Actions non fanno partire `verifica.yml` | Limite di GitHub; serve comunque il segno verde |
 
 ## Fasi
 
 - **Fase 0 — fatta (2026-11-05):** schema, piattaforma, perimetro, repository.
 - **Fase 1 — in corso:** a mano, insieme: fisr.info → `eventi.yaml` → `calendario.ics` → Pages → iscrizione dal telefono. Zero autonomia. Pubblicazione fatta con la PR #1 (2026-11-05); con la PR #4 tutte le gare FISR dal 1° gennaio 2026 (59 voci, 16 pubblicate) per la verifica del proprietario, che ad alcune ha partecipato. La verifica dal telefono (2026-11-06) ha fatto emergere quattro eventi o dettagli che solo i siti degli organizzatori e le fonti estere danno: da qui la regola 10 e i casi di prova.
-- **Fase 2:** la stessa cosa come attività pianificata settimanale che apre una PR.
-- **Fase 3:** arricchimento (cerca il sito dell'organizzatore, regola 10) + verifica (apre regolamento e pagina dell'organizzatore, cita la prova) + supervisore (assembla la PR con riassunto e dubbi). I casi di `appunti/casi-di-prova.md` sono il collaudo.
+- **Fase 2 — in corso dal 2026-11-06:** la stessa cosa come workflow Actions settimanale (`raccolta.yml`) che apre una PR; revisione del proprietario prima del merge. Fase 1 chiusa con 63 voci (20 pubblicate).
+- **Fase 3:** arricchimento (cerca il sito dell'organizzatore, regola 10) + verifica (apre regolamento e pagina dell'organizzatore, cita la prova) + supervisore (assembla la PR con riassunto e dubbi), come attività pianificata Claude sui candidati prodotti dalla PR di raccolta. I casi di `appunti/casi-di-prova.md` sono il collaudo.
 - **Fase 4:** scoperta di nuove fonti, registro fonti, segnalazioni Tally, Facebook via Claude in Chrome.
 
 ## Architettura: chi fa cosa
@@ -67,7 +71,8 @@ Una riga per decisione, con data e motivo. Le decisioni si cambiano con una nuov
 
 ## Punti aperti
 
-- Chi esegue gli script deterministici delle fasi 2+: GitHub Actions a orario (segreti nei GitHub Secrets) oppure attività pianificate Claude. Proposta: Actions per gli script (le PR sarebbero di `github-actions[bot]`, che il proprietario può approvare), Claude per i compiti di giudizio.
+- Fase 3: come far partire un'attività pianificata Claude sui candidati di una PR di raccolta (lettura della PR, regola 10, commit sullo stesso ramo o PR a parte?).
+- Prima esecuzione di `raccolta.yml`: verificare che fisr.info risponda dai runner di GitHub e che il token di Actions possa aprire PR (impostazione del repository).
 - Le due voci `da_verificare` ancora pubblicate (Speed Track European Series 14-17/05, Cardano al Campo 12-13/09) e i due campionati `confermato` dal solo titolo (Pordenone 24/05, Vado Ligure 3-6/09): cercare il regolamento nei comunicati FISR. Per Pordenone la pagina del club ha intanto dato distanze e Fitness; per Vado Ligure il sito dell'organizzatore è compromesso (2026-11-06): ricontrollare.
 - Nessuna gara FISR 2026 prevede la categoria Amatori nel programma: gli Amatori stanno nei siti degli organizzatori (Fitness), negli Enti di promozione, nelle tappe Challenger del World Skate Marathon Tour e nelle pattinate.
 - `url_iscrizione` per le gare FISR: le iscrizioni passano "esclusivamente attraverso il sito Internet federale"; quale pagina linkare?
