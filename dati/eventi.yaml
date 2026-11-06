@@ -1313,7 +1313,7 @@
   verificato_il: 2026-11-05
   prova: "Regolamento di gara id_manif 7047, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 7 g | In linea'; 'MASTER OVER 75 | F | 3000 m | In linea' e seguenti, da MASTER OVER 75 a MASTER OVER 30, F e M."
   note: ""
-  note_interne: "Nel calendario fisr.info compare come 'Attività non ancora autorizzata' e senza link, ma il regolamento di gara (id_manif 7047, manifestazione di categoria B su pista) esiste già e prevede le categorie Master: da ricontrollare quando arriva l'autorizzazione. Scadenza iscrizioni 30/11, termine depennamenti 01/12."
+  note_interne: "Nel calendario fisr.info compare come 'Attività non ancora autorizzata' e senza link, ma il regolamento di gara (id_manif 7047, manifestazione di categoria B su pista) esiste già e prevede le categorie Master: da ricontrollare quando arriva l'autorizzazione. Scadenza iscrizioni 30/11, termine depennamenti 01/12. I giornali (2023) citano accanto agli Internazionali un Campionato Nazionale CSEN: possibile gara promozionale, da verificare su una fonte ufficiale. Arricchimento 2026-11-06: sito non trovato; ricerche: 'C.P.G.A. ASD L'Aquila pattinaggio' | 'Internazionali d'Italia Open Indoor L'Aquila 2026 pattinaggio' | 'Vesmaco Race Memorial Cacciani L'Aquila pattinaggio corsa'; pagine: nessuna."
 
 - id: 2026-12-08-imola-gran-premio-indoor
   nome: "49° Gran Premio Indoor Città di Imola"
@@ -1337,7 +1337,7 @@
   verificato_il: 2026-11-05
   prova: "Regolamento, art. 10: righe di programma da 'MASTER OVER 30' a 'MASTER OVER 75', F e M, '2 g Sprint' e '2000 m In linea'. Orari: 'Master m/f Ritrovo ore13 00 Inizio gare ore 13 30.' Premi: 'Verrà premiata la società Master + numerosa con Il Trofeo Memorial MASSIMO PANINI.'"
   note: "Manifestazione di categoria B su pista piana in cemento (90/100 m). Aperta ai tesserati in regola per l'anno in corso (art. 2). Iscrizioni solo tramite il sito federale entro le 24 del 02/12, conferme entro le 17 del 05/12."
-  note_interne: "Categorie Amatori non menzionate."
+  note_interne: "Categorie Amatori non menzionate. Arricchimento 2026-11-06: sito non trovato; ricerche: 'Gruppo Imolese Pattinaggio Imola' | 'Gran Premio Indoor Città di Imola 2026 pattinaggio' | 'Gruppo Imolese Pattinaggio Memorial Massimo Panini indoor pattinaggio corsa'; pagine: nessuna."
 
 - id: 2027-04-04-berlino-generali-berlin-half-marathon-inlineskating
   nome: "Generali Berlin Half Marathon Inlineskating"
@@ -1361,7 +1361,7 @@
   verificato_il: 2026-11-06
   prova: "Pagina ufficiale di iscrizione, versione tedesca, sezione 'Teilnahmeberechtigung': 'startberechtigt sind alle Skater der Jahrgänge 2012 und älter'; gara organizzata secondo il WKO della DRIV. Aperta a tutti i nati nel 2012 o prima: Master e amatori ammessi (decisione 2026-11-06). Data e distanza dal calendario SCC Events: 'GENERALI BERLIN HALF MARATHON Inlineskating, APRIL 04, 2027, 21,0975 k, Inline skating'."
   note: "Iscrizioni dal 02/04/2026 all'11/03/2027 (o fino a esaurimento), quota 66-73 €. Limite di tempo 1:10 h; casco obbligatorio; solo pattini in linea (ruote max 125 mm) e quad."
-  note_interne: "L'intestazione della pagina di iscrizione dice ancora '2026', ma il periodo di iscrizione (fino all'11/03/2027) e il calendario SCC Events sono dell'edizione 2027. La versione inglese traduce male l'ammissione ('born in 2012 and later'): fa fede il tedesco. Rileggere quando il sito viene aggiornato."
+  note_interne: "L'intestazione della pagina di iscrizione dice ancora '2026', ma il periodo di iscrizione (fino all'11/03/2027) e il calendario SCC Events sono dell'edizione 2027. La versione inglese traduce male l'ammissione ('born in 2012 and later'): fa fede il tedesco. Rileggere quando il sito viene aggiornato. Arricchimento 2026-11-06: sito trovato, pagina dell'edizione giusta, nessuna novità; ricerche: nessuna (pagina già nota); pagine: https://www.generali-berliner-halbmarathon.de/anmelden/inlineskating."
 
 - id: 2027-05-29-laquila-internazionali-ditalia-open-indoor
   nome: "Internazionali d'Italia Open Indoor - VII Memorial Romano Maria Cacciani"
@@ -1407,7 +1407,7 @@
   verificato_il: ""
   prova: ""
   note: ""
-  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'."
+  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'. I giornali locali chiamano la società 'Euro Sport Club Terni' e ne collocano le gare al ciclopattinodromo Renato Perona (piazzale Senio): da confermare su una fonte ufficiale. Arricchimento 2026-11-06: sito non trovato; ricerche: 'Euro Skating Club Terni pattinaggio corsa' | 'Memorial Alfonso Zenga Terni pattinaggio' | 'Euro Sport Club Terni inline skating sito'; pagine: nessuna."
 
 - id: 2027-07-03-fabriano-trofeo-dellamicizia-memorial-donatella
   nome: "47° Trofeo dell'Amicizia e 11° Memorial Donatella Boero"
@@ -1429,7 +1429,7 @@
   verificato_il: ""
   prova: ""
   note: ""
-  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'. Il cognome 'Boero' manca nel titolo della lista: preso dall'edizione 2026."
+  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'. Il cognome 'Boero' manca nel titolo della lista: preso dall'edizione 2026. Arricchimento 2026-11-06: sito non trovato; ricerche: 'Fortitudo Fabriano pattinaggio corsa' | 'Trofeo dell'Amicizia Memorial Donatella Boero Fabriano pattinaggio' | 'Fortitudo Pattinaggio Fabriano inline sito ufficiale'; pagine: nessuna."
 
 - id: 2027-07-31-berlino-adidas-runners-city-night-inlineskating
   nome: "adidas Runners City Night Inlineskating"
@@ -1453,7 +1453,7 @@
   verificato_il: ""
   prova: ""
   note: "Gara serale di 10 km sul Kurfürstendamm, dentro la adidas Runners City Night (con le corse di 5 e 10 km). Le condizioni dell'edizione 2027 non sono ancora pubblicate."
-  note_interne: "Data dal calendario SCC Events (31/07/2027, 10k, Inline skating). La pagina di iscrizione mostra ancora l'edizione 2026: partenza ore 18:00, classifiche 'Speed' e 'Fitness', ammissione 'according to DRIV WKO from YOB 2014', quote 35-45 €. Rileggere all'apertura delle iscrizioni 2027 e passare a confermato con la prova."
+  note_interne: "Data dal calendario SCC Events (31/07/2027, 10k, Inline skating). La pagina di iscrizione mostra ancora l'edizione 2026: partenza ore 18:00, classifiche 'Speed' e 'Fitness', ammissione 'according to DRIV WKO from YOB 2014', quote 35-45 €. Rileggere all'apertura delle iscrizioni 2027 e passare a confermato con la prova. Arricchimento 2026-11-06: sito trovato, pagina dell'edizione precedente (quote e condizioni ancora 2026); ricerche: nessuna (pagina già nota); pagine: https://www.berlin-citynight.de/en/registration/10k-inline-skating."
 
 - id: 2027-08-03-santa-maria-nuova-trofeo-internazionale-giorni-international
   nome: "Trofeo Internazionale 6 Giorni International 2027 - Circuito RSC"
@@ -1499,4 +1499,4 @@
   verificato_il: ""
   prova: ""
   note: ""
-  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'."
+  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'. I giornali locali chiamano la società 'Polisportiva Juvenilia Pollenza' e inseriscono la gara nel Circuito Centro Marche: da confermare su una fonte ufficiale. Arricchimento 2026-11-06: sito non trovato; ricerche: 'A.P.D. Juvenilia Pollenza pattinaggio' | 'Memorial Gilda Leoperdi Trofeo Città di Pollenza pattinaggio' | 'Polisportiva Juvenilia Pollenza pattinaggio corsa sito'; pagine: nessuna."
