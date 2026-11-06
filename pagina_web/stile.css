@@ -1,4 +1,6 @@
-/* Stile della pagina pubblicata su GitHub Pages. Viene copiato così com'è accanto a index.html da script/genera_ics.py. */
+/* Stile della pagina pubblicata su GitHub Pages. Viene copiato così com'è accanto a index.html da script/genera_ics.py.
+   La pagina è responsiva: layout a colonna singola, tabella con scorrimento orizzontale sugli schermi stretti,
+   dimensioni ridotte sotto i 600 px (vedi le @media in fondo). */
 
 body {
 	font-family: -apple-system, system-ui, sans-serif;
@@ -9,10 +11,22 @@ body {
 	color: #222;
 }
 
+/* Gli URL lunghi (link alle gare, indirizzo del calendario) vanno a capo invece di allargare la pagina. */
+a {
+	overflow-wrap: anywhere;
+}
+
+/* Contenitore della tabella: sugli schermi più stretti della tabella compare lo scorrimento orizzontale,
+   così la tabella non deforma la pagina. Sugli schermi larghi non ha alcun effetto visibile. */
+.scorri-tabella {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
 table {
 	border-collapse: collapse;
 	width: 100%;
-	font-size: 0.95rem;
+	font-size: 0.9rem;
 }
 
 th, td {
@@ -24,6 +38,7 @@ th, td {
 
 th {
 	background: #f3f3f3;
+	white-space: nowrap;
 }
 
 code {
@@ -36,4 +51,25 @@ footer {
 	margin-top: 2rem;
 	font-size: 0.85rem;
 	color: #666;
+}
+
+/* Schermi stretti (telefoni): titoli e margini più compatti. */
+@media (max-width: 600px) {
+	body {
+		margin: 1rem auto;
+	}
+
+	h1 {
+		font-size: 1.5rem;
+		line-height: 1.25;
+	}
+
+	h2 {
+		font-size: 1.25rem;
+	}
+
+	/* Larghezza minima della tabella: sotto questa soglia si scorre, invece di schiacciare le colonne. */
+	table {
+		min-width: 36rem;
+	}
 }
