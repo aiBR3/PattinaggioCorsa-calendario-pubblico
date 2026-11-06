@@ -154,7 +154,31 @@
   copre: [verifica]
   affidabilita: organizzatore
   stato: attiva
-  note: "Non è una fonte unica ma un metodo (regola 10 di CLAUDE.md): dal nome dell'organizzatore nella lista federale si cerca il suo sito e la pagina dell'evento; lì si trovano link ufficiale, distanze, orari, quote e le gare Amatori/Fitness che il regolamento FISR non copre (es. Pordenone 24/05/2026). Attenzione ai siti compromessi (vadosustrada2026.it, 2026-11-06) e alle pagine dell'edizione precedente lasciate online con l'anno vecchio nell'indirizzo (skatingclubcomina.eu)."
+  note: "Non è una fonte unica ma un metodo (regola 10 di CLAUDE.md): dal nome dell'organizzatore nella lista federale si cerca il suo sito e la pagina dell'evento; lì si trovano link ufficiale, distanze, orari, quote e le gare Amatori/Fitness che il regolamento FISR non copre (es. Pordenone 24/05/2026). I siti e i social delle società affiliate FISR stanno in dati/societa.yaml (chiave: codice società; 158 voci al 2026-11-06, 44 siti verificati, 32 solo social): si guarda lì prima di cercare sul web, che per i piccoli club non trova nulla (collaudo del 2026-11-06). Attenzione ai siti compromessi (vadosustrada2026.it, 2026-11-06) e alle pagine dell'edizione precedente lasciate online con l'anno vecchio nell'indirizzo (skatingclubcomina.eu)."
+  ultimo_controllo: 2026-11-06
+
+- id: fisr-info-classifiche-societa
+  nome: "FISR.info — classifiche di società corsa (nazionali e regionali)"
+  url: https://www.fisr.info/attivita/corsa_classifiche.php
+  paese: IT
+  metodo: script
+  frequenza: stagionale
+  copre: [verifica]
+  affidabilita: ufficiale
+  stato: attiva
+  note: "POST anno=N (N=2026 → stagione 2025/26). Linka 5 classifiche nazionali su attivita.rollergames.it/corsa/ (tiezzi_red.php, bonacossa_red.php, italiani_red.php?tipo=IS|IP|II) e, via corsa_campionati_locali.php (POST anno, cosa=R, id_regione 1-20, tipo P|S), le 40 regionali. Ogni riga: posizione, CODICE SOCIETÀ FISR, sigla, punti. È l'unica fonte pubblica trovata dell'elenco delle società (fisr.it non ne ha uno). Letta da script/raccogli_societa.py."
+  ultimo_controllo: 2026-11-06
+
+- id: rollergames-risultati-corsa
+  nome: "attivita.rollergames.it — risultati delle gare (intestazione 'Organizzato da')"
+  url: https://www.fisr.info/attivita/corsa_risultati.php
+  paese: IT
+  metodo: script
+  frequenza: stagionale
+  copre: [verifica]
+  affidabilita: ufficiale
+  stato: attiva
+  note: "La lista (POST anno=N) linka una pagina index.htm per gara su attivita.rollergames.it/corsa/rrunn/ANNO/ID/RWnnnnn.1/: l'intestazione dice titolo, luogo e date e 'Organizzato da NOME ESTESO' della società organizzatrice (111 gare nella 2025/26, 110 con organizzatore). Le classifiche di società nei risultati hanno valore ufficioso (dice il sito): per i codici si usano le classifiche ufficiali. Letta da script/raccogli_societa.py."
   ultimo_controllo: 2026-11-06
 
 - id: wayback-machine

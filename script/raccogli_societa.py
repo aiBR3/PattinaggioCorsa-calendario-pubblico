@@ -78,13 +78,19 @@ def scarica(url: str, dati: dict | None = None, pausa: float = 0.3) -> str:
     """Scarica una pagina (GET o POST), prova UTF-8 poi cp1252. Solleva RuntimeError se non risponde."""
     corpo = urllib.parse.urlencode(dati).encode() if dati else None
     richiesta = urllib.request.Request(url, data=corpo, headers=INTESTAZIONE_HTTP)
-    try:
-        with urllib.request.urlopen(richiesta, timeout=40) as risposta:
-            grezzo = risposta.read()
-    except (urllib.error.URLError, TimeoutError, OSError) as errore:
-        raise RuntimeError(f"{url}: {errore}") from errore
-    finally:
-        time.sleep(pausa)
+    ultimo_errore: Exception | None = None
+    for tentativo in range(3):  # i server federali chiudono la connessione ogni tanto: si riprova
+        try:
+            with urllib.request.urlopen(richiesta, timeout=40) as risposta:
+                grezzo = risposta.read()
+            break
+        except (urllib.error.URLError, TimeoutError, OSError) as errore:
+            ultimo_errore = errore
+            time.sleep(pausa * (tentativo + 1) + 1.0)
+        finally:
+            time.sleep(pausa)
+    else:
+        raise RuntimeError(f"{url}: {ultimo_errore}")
     try:
         return grezzo.decode("utf-8")
     except UnicodeDecodeError:
@@ -135,7 +141,7 @@ def abbina(nome: str, registro: dict[str, dict]) -> str | None:
         return re.sub(r"[\s.]+", "", testo).upper()
 
     for codice, voce in registro.items():  # sigla identica: nessun dubbio
-        if compatta(nome) in {compatta(s) for s in [voce["nome_fisr"], *voce.get("sigle_fisr", [])]}:
+        if compatta(nome) in {compatta(s) for s in [voce["nome_fisr"], voce.get("nome") or "", *voce.get("sigle_fisr", [])] if s}:
             return codice
     candidati: list[tuple[float, int, str]] = []
     for codice, voce in registro.items():
@@ -370,9 +376,12 @@ def aggiorna_registro(registro: dict[str, dict], anno: int, classifiche: dict[st
             voce["sigle_fisr"].append(voce["nome_fisr"])
         if not voce["regione"] and trovata["regioni"]:
             voce["regione"] = ", ".join(sorted(trovata["regioni"]))
+        if voce["ultima_stagione"] == stagione:
+            voce["classifiche"] = sorted(set(voce["classifiche"]) | trovata["classifiche"])  # stessa stagione: si aggiunge, non si toglie
+        else:
+            voce["classifiche"] = sorted(trovata["classifiche"])
         voce["ultima_stagione"] = stagione
-        voce["classifiche"] = sorted(trovata["classifiche"])
-        voce["gare_organizzate"] = []
+        voce["gare_organizzate"] = []  # i risultati si rileggono tutti: l'elenco si ricostruisce
     rapporto.append(f"- società nelle classifiche: {len(classifiche)}, nuove nel registro: {nuove}")
 
     non_abbinati: set[str] = set()
@@ -382,12 +391,12 @@ def aggiorna_registro(registro: dict[str, dict], anno: int, classifiche: dict[st
             nome = parte.strip()
             if not nome or re.match(r"(?i)^(comitato|struttura|skate italia|delegato)", nome):
                 continue
-            if not PAROLE_SOCIETARIE.search(nome):
-                senza_sigla += 1  # probabile nome di persona: non va scritto da nessuna parte (regola 9)
-                continue
             codice = abbina(nome, registro)
             if codice is None:
-                non_abbinati.add(nome)
+                if PAROLE_SOCIETARIE.search(nome):
+                    non_abbinati.add(nome)
+                else:
+                    senza_sigla += 1  # probabile nome di persona: non va trascritto da nessuna parte (regola 9)
                 continue
             voce = registro[codice]
             if nome.upper() != voce["nome_fisr"].upper() and (not voce["nome"] or (voce["nome"].upper() == voce["nome_fisr"].upper())):

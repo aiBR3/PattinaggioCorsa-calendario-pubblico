@@ -22,7 +22,7 @@
 - codice_fisr: "88"
   nome_fisr: "GRUPPO P.S.MINIATO"
   sigle_fisr: ["GRUPPO P.S.MINIATO"]
-  nome: ""
+  nome: "GRUPPO PATTINAGGIO SAN MINIATO"
   citta: "San Miniato (PI)"
   regione: "Toscana"
   sito: ""
@@ -32,7 +32,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Toscana 2025/26", "Campionato regionale strada Toscana 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: ["VII Memorial Moreno Guerri - Trofeo Citta' di San Miniato (San Miniato - 11/07/26 - 13/07/26)"]
+  gare_organizzate: ["Campionato regionale Pista Toscana TUTTE le categorie (SAN MINIATO BASSO (PI) - 29/03/26)", "VII Memorial Moreno Guerri - Trofeo Citta' di San Miniato (San Miniato - 11/07/26 - 13/07/26)"]
   ultimo_controllo: 2026-11-06
   note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Gruppo Pattinatori San Miniato pattinaggio' | '\"Gruppo Pattinaggio San Miniato\" pattinaggio corsa asd'."
 
@@ -83,7 +83,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO PROVINCIALE TV/VE/VI PISTA G/E/R12/R (NOALE (VE) - 07/03/26)", "TROFEO CITTA' DI NOALE (NOALE (VE) - 25-26/04/26)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -117,7 +117,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato regionale pista Liguria 2025/26", "Campionato regionale strada Liguria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["Campionato Provinciale Pista IM/SP/SV categorie G/E (Savona (SV) - 22/03/2026)"]
   ultimo_controllo: 2026-11-06
   note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'G.P. Savonesi pattinaggio' | '\"Savonesi\" pattinaggio corsa asd Savona'."
 
@@ -185,7 +185,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO REGIONALE INDOOR VENETO/FRIULI VENEZIA GIULIA G/E (BAGNOLI DI SOPRA (PD) - 08/02/26)", "35^ TROFEO COMUNE DI BAGNOLI di SOPRA- MEMORIAL GUERRINO MAGGIO E MARTA VANZETTO-TAPPA GPG (BAGNOLI DI SOPRA (PD) - 13/09/26)"]
   ultimo_controllo: 2026-11-06
   note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Pattinatori San Siro pattinaggio' | '\"Pattinatori San Siro\" pattinaggio corsa asd' | '\"Pattinatori San Siro\" Bagnoli pattinaggio facebook'."
 
@@ -233,10 +233,10 @@
   social: "https://www.facebook.com/menssana.pattinaggiocorsa"
   stato_sito: "sito_verificato"
   fonte_sito: "regolamento di gara id_manif 6784; aperto il 2026-11-06: Pattinaggio Corsa Siena"
-  siti_candidati: []
+  siti_candidati: ["https://www.pattinaggiocorsasiena.it/"]
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Toscana 2025/26", "Campionato regionale strada Toscana 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: ["Campionato provinciale Pista AR/FI/GR/LI/MS/PI/SI cat. R12-RAG-ALL-JUN-SEN (SIENA - 22/03/26)", "Campionato provinciale Strada AR/FI/GR/LI/MS/PI/SI TUTTE le categorie (SIENA - 22/03/26)", "XVII INTERNATIONAL CUP CITTA' DI SIENA - 7 MEMORIAL FABIO BELOTTI (SIENA - 07/05/26 - 10/05/26)"]
+  gare_organizzate: ["Campionato Regionale Strada Toscana TUTTE le categorie (SIENA - 12/04/26)", "Campionato provinciale Pista AR/FI/GR/LI/MS/PI/SI cat. R12-RAG-ALL-JUN-SEN (SIENA - 22/03/26)", "Campionato provinciale Strada AR/FI/GR/LI/MS/PI/SI TUTTE le categorie (SIENA - 22/03/26)", "XVII INTERNATIONAL CUP CITTA' DI SIENA - 7 MEMORIAL FABIO BELOTTI (SIENA - 07/05/26 - 10/05/26)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -379,7 +379,7 @@
 - codice_fisr: "651"
   nome_fisr: "G.P.MOBILI CANTU'"
   sigle_fisr: ["G.P.MOBILI CANTU'"]
-  nome: ""
+  nome: "GRUPPO PATTINATORI MOBILI CANTU'"
   citta: ""
   regione: "Lombardia"
   sito: ""
@@ -389,7 +389,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO REGIONALE STRADA LOMBARDIA CAT. A/J/S/M (CANTU' - 29 MARZO 2026)", "47 TROFEO CITTA' DI CANTU' (CANTU' - 04/07/26 - 05/07/26)"]
   ultimo_controllo: 2026-11-06
   note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Gruppo Pattinatori Mobili Cantù pattinaggio' | '\"Mobili Cantù\" pattinatori Cantù pattinaggio corsa'."
 
@@ -440,7 +440,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO REGIONALE PISTA MARCHE (CIVITANOVA MARCHE - 11/04/26 - 12/04/26)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -576,7 +576,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale strada Abruzzo 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO ITALIANO INDOOR A/J/S (PESCARA - 27/02/26 - 01/03/26)", "CAMPIONATO ITALIANO INDOOR RAGAZZI - TROFEO SKATE ITALIA R12 (PESCARA - 20 - 22 FEBBRAIO 2026)", "CAMPIONATO INTEREGIONALE INDOOR ABRUZZO/MOLISE G/E (PESCARA - 28/03/26)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -593,7 +593,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO REGIONALE STRADA MARCHE (SAN SEVERINO MARCHE (MC) - 28/03/26 - 29/03/26)"]
   ultimo_controllo: 2026-11-06
   note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Rotellistica Settempeda pattinaggio' | '\"Rotellistica Settempeda\" San Severino Marche pattinaggio corsa'."
 
@@ -780,7 +780,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["XI MEMORIAL GILDA LEOPERDI - 1 TROFEO CITTA' DI POLLENZA (POLLENZA (MC) - 26/04/26)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -865,7 +865,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Piemonte 2025/26", "Campionato regionale strada Piemonte 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO ITALIANO STRADA CAT.R- TROFEO SKATE ITALIA SU STRADA CAT. R12 (TORINO - 17/07/26 - 19/07/26)", "CAMPIONATO REGIONALE PISTA PIEMONTE R12-R-A-J-S-M (TORINO - 29/03/26)", "CAMPIONATO REGIONALE STRADA PIEMONTE TUTTE LE CATEGORIE (TORINO - 15/03/26)", "8^ MEMORIAL SAMUELE GIACCAGLIA (TORINO - 20 - 21 GIUGNO 2026)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -964,10 +964,10 @@
   social: ""
   stato_sito: "sito_verificato"
   fonte_sito: "regolamento di gara id_manif 6831; aperto il 2026-11-06: Corsi Pattinaggio Pescara | Bambini, Ragazzi e Adulti | CSPP"
-  siti_candidati: []
+  siti_candidati: ["https://www.pescararoller.it"]
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato regionale strada Abruzzo 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO INTERREGIONALE PISTA ABRUZZO/MOLISE (MONTESILVANO - 29/03/26)", "3' TROFEO DELLA BEFANA (PESCARA - 06/01/26)", "3' TROFEO CITTA' DI PESCARA (PESCARA - 29/11/25 - 30/11/25)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -1001,7 +1001,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["Campionato provinciale Strada AG/CT/SR CAMP.INTERPROVINCIALE STRADA SR/CT/AG (Priolo - 31/05/26)", "Campionato provinciale Pista SR camp. Provinciale pista pattinodromo Priolo (Priolo - 14/03/26)"]
   ultimo_controllo: 2026-11-06
   note: "Ricerca web del 2026-11-06 senza esito; ricerche: '\"Sporting Club Pattinaggio Priolo\" pattinaggio' | '\"Sporting Club\" Priolo pattinaggio corsa facebook'."
 
@@ -1120,7 +1120,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato regionale pista Calabria 2025/26", "Campionato regionale strada Calabria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO REGIONALE CORSA SU STRADA CALABRIA (COSENZA - CS - 12/04/26)", "CAMPIONATO REGIONALE CALABRIA - PISTA - TUTTE LE CATEGORIE (AMANTEA (CS) - 21/03/26)", "CAMPIONATO REGIONALE INDOOR CALABRIA (CASOLE BRUZIO - 01/02/26)"]
   ultimo_controllo: 2026-11-06
   note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Pattinaggio Lamezia pattinaggio corsa asd' | '\"Pattinaggio Lamezia\" Lamezia Terme'."
 
@@ -1136,7 +1136,7 @@
   fonte_sito: "regolamento di gara id_manif 6746; aperto il 2026-11-06: ASD Euro Sport Club – Associazione Sportiva Dilettantistica:"
   siti_candidati: ["https://www.eurosportclub.it/2026/09/01/trofeo-nazionale-pattinaggio-corsa-memorial-d-pioli-terni-24-25-ottobre-2026/"]
   ultima_stagione: "2025/26"
-  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Umbria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Umbria 2025/26", "Campionato regionale strada Umbria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
   gare_organizzate: ["1° TROFEO DEGLI APPENNINI - XIV MEMORIAL D.PIOLI (TERNI - 25/04/26)"]
   ultimo_controllo: 2026-11-06
   note: ""
@@ -1221,8 +1221,8 @@
   fonte_sito: ""
   siti_candidati: []
   ultima_stagione: "2025/26"
-  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Umbria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Umbria 2025/26", "Campionato regionale strada Umbria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO REGIONALE PISTA UMBRIA (TERNI - 29/03/26)"]
   ultimo_controllo: 2026-11-06
   note: "Ricerca web del 2026-11-06 senza esito; ricerche: '\"Roller Team Centro Italia\" pattinaggio' | '\"Roller Team Centro Italia\" asd Umbria facebook instagram'."
 
@@ -1290,7 +1290,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sardegna 2025/26", "Campionato regionale strada Sardegna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO ITALIANO PISTA CAT.R- TROFEO SKATE ITALIA SU PISTA CAT. R12 (ELMAS (CA) - 05/06/26 - 07/06/26)", "Campionato Regionale Pista R12/R/A/J/S/M F/M (Assemini (CA) - 18/04/26)", "Trofeo Città di Elmas 2026 (Elmas - 19/09/26 - 20/09/26)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -1443,7 +1443,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["Campionato regionale Indoor Marche G/E (Monteprandone (AP) - 01/01/26)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -1527,7 +1527,7 @@
   fonte_sito: "ricerca web del 2026-11-06: Instagram dal risultato \"ASD B-SIDE ROLLER FOLIGNO (@bsiderollerfoligno)\". Il sito b-siderollerfoligno.webnode.it indicato dal risultato \"A.S.D. B_SIDE ROLLER F"
   siti_candidati: []
   ultima_stagione: "2025/26"
-  classifiche: ["Campionato regionale pista Umbria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  classifiche: ["Campionato regionale pista Umbria 2025/26", "Campionato regionale strada Umbria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
   gare_organizzate: ["CAMPIONATO INTERPROVINCIALE INDOOR PG/TR - TUTTE LE CATEGORIE (VALTOPINA - 15/03/26)"]
   ultimo_controllo: 2026-11-06
   note: ""
@@ -1561,7 +1561,7 @@
   fonte_sito: ""
   siti_candidati: []
   ultima_stagione: "2025/26"
-  classifiche: ["Campionato Italiano Strada 2025/26", "Campionato regionale pista Umbria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  classifiche: ["Campionato Italiano Strada 2025/26", "Campionato regionale pista Umbria 2025/26", "Campionato regionale strada Umbria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
   gare_organizzate: ["CAMPIONATO REGIONALE STRADA UMBRIA - TUTTE LE CATEGORIE (TERNI - 12/04/26)"]
   ultimo_controllo: 2026-11-06
   note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Pattinamelia Amelia pattinaggio' | '\"Pattinamelia\" asd pattinaggio corsa'."
@@ -1586,7 +1586,7 @@
 - codice_fisr: "3614"
   nome_fisr: "A.S.D.SPORT INSIDE"
   sigle_fisr: ["A.S.D.SPORT INSIDE"]
-  nome: ""
+  nome: "ASD SPORT'S INSIDE"
   citta: ""
   regione: "Liguria"
   sito: ""
@@ -1596,7 +1596,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Liguria 2025/26", "Campionato regionale strada Liguria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: ["Campionato Regionale Pista Liguria Categorie R12/R/A/J/S (Genova Pegli (GE) - 29/03/2026)"]
+  gare_organizzate: ["Campionato Regionale Pista Liguria Categorie R12/R/A/J/S (Genova Pegli (GE) - 29/03/2026)", "Campionato Provinciale Pista IM/SP/SV categorie R12/R/A/J/S (Genova Pegli (GE) - 21/03/2026)"]
   ultimo_controllo: 2026-11-06
   note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Sport Inside pattinaggio corsa Liguria asd' | '\"sport inside\" pattinaggio asd Savona Genova'."
 
@@ -2011,7 +2011,7 @@
 - codice_fisr: "4014"
   nome_fisr: "SPORT LAB"
   sigle_fisr: ["SPORT LAB"]
-  nome: ""
+  nome: "ASD SPORT LAB PONTECAGNANO"
   citta: ""
   regione: "Campania"
   sito: ""
@@ -2021,7 +2021,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Campania 2025/26", "Campionato regionale strada Campania 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO REGIONALE PISTA CAMPANIA (PONTECAGNANO FAIANO - 24/05/26)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -2072,7 +2072,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Piemonte 2025/26", "Campionato regionale strada Piemonte 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["Campionato regionale Pista Piemonte G/E (Biella - 08/03/26)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -2276,7 +2276,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato regionale pista Puglia 2025/26", "Campionato regionale strada Puglia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO REGIONALE PISTA PUGLIA (MANDURIA (TA) - 12/04/26)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -2368,7 +2368,7 @@
 - codice_fisr: "4333"
   nome_fisr: "R.S.VADO LIGURE ASD"
   sigle_fisr: ["R.S.VADO LIGURE ASD"]
-  nome: ""
+  nome: "ASD ROLLER SPORTS VADO LIGURE"
   citta: ""
   regione: "Liguria"
   sito: ""
@@ -2378,7 +2378,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Liguria 2025/26", "Campionato regionale strada Liguria 2025/26", "Trofeo Bonacossa 2025/26"]
-  gare_organizzate: []
+  gare_organizzate: ["CAMPIONATO ITALIANO STRADA A/J/S/M (VADO LIGURE (SV) - 04/09/26 - 07/09/26)", "Campionato regionale Strada Liguria Tutte le categorie (Savona (SV) - 15/03/2026)"]
   ultimo_controllo: 2026-11-06
   note: ""
 
@@ -2599,7 +2599,7 @@
   siti_candidati: []
   ultima_stagione: "2025/26"
   classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
-  gare_organizzate: ["Campionato provinciale Strada AG/CT/SR CAMP.INTERPROVINCIALE STRADA SR/CT/AG (Priolo - 31/05/26)", "Campionato provinciale Pista SR camp. Provinciale pista pattinodromo Priolo (Priolo - 14/03/26)"]
+  gare_organizzate: []
   ultimo_controllo: 2026-11-06
   note: "Ricerca web del 2026-11-06 senza esito; ricerche: '\"Skating In Line Priolo\" pattinaggio' | '\"Skating in Line Priolo\" facebook instagram asd'."
 
@@ -2687,3 +2687,71 @@
   gare_organizzate: []
   ultimo_controllo: 2026-11-06
   note: ""
+
+- codice_fisr: ""
+  nome_fisr: "ASD SEBS FIERA DELLO SPORT - NAPOLI"
+  sigle_fisr: ["ASD SEBS FIERA DELLO SPORT - NAPOLI"]
+  nome: "ASD SEBS Fiera dello Sport"
+  citta: "Napoli"
+  regione: "Campania"
+  sito: "https://www.rollerskatingfestivalnapoli.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "organizzatore del World Skate Marathon Tour Naples Challenger Stage 31/10/2026 (dati/eventi.yaml, letto il 2026-11-06)"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: []
+  gare_organizzate: ["World Skate Marathon Tour 2026 Naples Challenger Stage (Napoli - 31/10/26)"]
+  ultimo_controllo: 2026-11-06
+  note: "Non compare nelle classifiche federali 2025/26; organizza la tappa World Skate di Napoli."
+
+- codice_fisr: ""
+  nome_fisr: "CUS UNICAL"
+  sigle_fisr: ["CUS UNICAL"]
+  nome: "CUS Unical"
+  citta: "Rende (CS)"
+  regione: "Calabria"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: []
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Organizzatore nei risultati 2025/26 (Calabria); non compare nelle classifiche di società. Sito da cercare."
+
+- codice_fisr: ""
+  nome_fisr: "PALESTRA GINNASTICA FE"
+  sigle_fisr: ["PALESTRA GINNASTICA FE"]
+  nome: "Palestra Ginnastica Ferrara"
+  citta: "Ferrara"
+  regione: "Emilia-Romagna"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: []
+  gare_organizzate: ["1 MAGGIO FERRARA INLINE - TROFEO INTERNAZIONALE DEL LAVORO (FERRARA - 01/05/26)"]
+  ultimo_controllo: 2026-11-06
+  note: "Organizza il Trofeo del Lavoro di Ferrara (1° maggio); non compare nelle classifiche di società 2025/26. Sito da cercare."
+
+- codice_fisr: ""
+  nome_fisr: "SCC EVENTS"
+  sigle_fisr: ["SCC EVENTS"]
+  nome: "SCC EVENTS GmbH"
+  citta: "Berlino"
+  regione: ""
+  sito: "https://www.scc-events.com/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "organizzatore delle gare di Berlino in dati/eventi.yaml; calendario letto il 2026-11-06"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: []
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Organizzatore tedesco (DE), non affiliato FISR: Berlin Half Marathon Inlineskating, City Night Inlineskating, Berlin-Marathon Inlineskating."
