@@ -1,0 +1,2689 @@
+# Registro delle società di pattinaggio corsa (chiave: codice società FISR).
+# Generato e aggiornato da script/raccogli_societa.py; i campi nome, citta, sito, social, stato_sito,
+# fonte_sito e note si compilano a mano o dall'arricchimento e lo script non li tocca. Schema in CLAUDE.md.
+
+- codice_fisr: "81"
+  nome_fisr: "SKATING CONCOREZZO"
+  sigle_fisr: ["SKATING CONCOREZZO"]
+  nome: "A.S.D. A.S.CO. Skating Concorezzo"
+  citta: "Concorezzo (MB)"
+  regione: "Lombardia"
+  sito: "https://ascoskating.blogspot.com/"
+  social: "https://www.facebook.com/ascoconcorezzo/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'A.S.CO. SKATING CONCOREZZO' (ascoskating.blogspot.com: blog della società su Blogspot, non un dominio proprio; da valutare se tenerlo): aperto dalla ); aperto il 2026-11-06: A.S.CO. SKATING CONCOREZZO"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "88"
+  nome_fisr: "GRUPPO P.S.MINIATO"
+  sigle_fisr: ["GRUPPO P.S.MINIATO"]
+  nome: ""
+  citta: "San Miniato (PI)"
+  regione: "Toscana"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Toscana 2025/26", "Campionato regionale strada Toscana 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["VII Memorial Moreno Guerri - Trofeo Citta' di San Miniato (San Miniato - 11/07/26 - 13/07/26)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Gruppo Pattinatori San Miniato pattinaggio' | '\"Gruppo Pattinaggio San Miniato\" pattinaggio corsa asd'."
+
+- codice_fisr: "91"
+  nome_fisr: "A.H.P. PADOVA ASD"
+  sigle_fisr: ["A.H.P. PADOVA ASD"]
+  nome: "A.S.D. A.H.P. PADOVA"
+  citta: "Padova"
+  regione: "Veneto"
+  sito: "https://www.ahppadova.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati 'Contatti', 'Attività', 'La nostra storia' su ahppadova.it; la home aperta da shell ha titolo 'New AHP Padova | AHP Padova' e contiene 'pattinaggio' e); aperto il 2026-11-06: New AHP Padova | AHP Padova"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO REGIONALE PISTA VENETO G/E (PADOVA - 22/03/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "98"
+  nome_fisr: "SKATING C.ROVIGO"
+  sigle_fisr: ["SKATING C.ROVIGO"]
+  nome: "ASD SKATING CLUB ROVIGO"
+  citta: ""
+  regione: "Veneto"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO PROVINCIALE PD/RO/VR PISTA G/E/R12/R (ROVIGO - 15/03/26)", "40 MEMORIAL NAZIONALE ARTURO PONZETTI (ROVIGO - 02/05/26)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Skating Club Rovigo pattinaggio' | '\"skating club rovigo\" pattinaggio corsa asd'."
+
+- codice_fisr: "111"
+  nome_fisr: "ADHP GRUPPO COSMO"
+  sigle_fisr: ["ADHP GRUPPO COSMO"]
+  nome: "ADHP Gruppo Cosmo Noale"
+  citta: "Noale (VE)"
+  regione: "Veneto"
+  sito: ""
+  social: "https://www.instagram.com/adhp_gruppo_cosmo_noale/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati: gruppocosmonoaleice.com è dell'A.S.D. Gruppo Cosmo Noale Ice, società distinta (il Comune di Noale elenca separatamente 'A"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "113"
+  nome_fisr: "PATT.RI MARGHERA"
+  sigle_fisr: ["PATT.RI MARGHERA"]
+  nome: ""
+  citta: ""
+  regione: "Veneto"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Pattinatori Marghera pattinaggio' | '\"Pattinatori Marghera\" pattinaggio corsa asd'."
+
+- codice_fisr: "133"
+  nome_fisr: "A.S.D.G.P.SAVONESI"
+  sigle_fisr: ["A.S.D.G.P.SAVONESI"]
+  nome: "ASD G.P. Savonesi"
+  citta: ""
+  regione: "Liguria"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Liguria 2025/26", "Campionato regionale strada Liguria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'G.P. Savonesi pattinaggio' | '\"Savonesi\" pattinaggio corsa asd Savona'."
+
+- codice_fisr: "140"
+  nome_fisr: "A.S.D.GRUPPO ROTELL.CO MANDURIA"
+  sigle_fisr: ["A.S.D.GRUPPO ROTELL.CO MANDURIA"]
+  nome: "ASD Gruppo Rotellistico Manduria"
+  citta: ""
+  regione: "Puglia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Puglia 2025/26", "Campionato regionale strada Puglia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Gruppo Rotellistico Manduria pattinaggio' | '\"gruppo rotellistico\" Manduria pattinaggio corsa asd'."
+
+- codice_fisr: "173"
+  nome_fisr: "S.CLUB COMINA"
+  sigle_fisr: ["S.CLUB COMINA"]
+  nome: "S. CLUB COMINA"
+  citta: "Pordenone"
+  regione: "Friuli-Venezia Giulia"
+  sito: "https://www.skatingclubcomina.it/"
+  social: "https://www.facebook.com/skatingcomina/"
+  stato_sito: "sito_non_raggiungibile"
+  fonte_sito: "ricerca web del 2026-11-06 (non verificabile dalla shell: dominio dal risultato di ricerca 'skating club comina' (www.skatingclubcomina.it, indicizzato con http; dalla shell CONNECT tunnel); aperto il 2026-11-06: HTTP 000"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Friuli-Venezia Giulia 2025/26", "Campionato regionale strada Friuli-Venezia Giulia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO ITALIANO 1/2 MARATONA cat. Allievi - CAMPIONATO ITALIANO MARATONA cat. J/S/M (PORDENONE (PN) - 24/05/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "183"
+  nome_fisr: "POL.PONTEVECCHIO"
+  sigle_fisr: ["POL.PONTEVECCHIO"]
+  nome: "Pontevecchio Bologna"
+  citta: "Bologna"
+  regione: "Emilia-Romagna"
+  sito: "https://pontevecchiobologna.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (I risultati contengono PDF di risultati di gare di pattinaggio pubblicati su pontevecchiobologna.it; la home aperta con curl ha titolo 'Pontevecchio Bologna – S); aperto il 2026-11-06: Pontevecchio Bologna – Sport e attività sportive"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Emilia-Romagna 2025/26", "Campionato regionale strada Emilia-Romagna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "205"
+  nome_fisr: "PATT.RI S.SIRO"
+  sigle_fisr: ["PATT.RI S.SIRO"]
+  nome: "A.S.D. Pattinatori San Siro"
+  citta: ""
+  regione: "Veneto"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Pattinatori San Siro pattinaggio' | '\"Pattinatori San Siro\" pattinaggio corsa asd' | '\"Pattinatori San Siro\" Bagnoli pattinaggio facebook'."
+
+- codice_fisr: "218"
+  nome_fisr: "PATT.CARONNO PERT."
+  sigle_fisr: ["PATT.CARONNO PERT."]
+  nome: "A.S.D. Pattinaggio Caronno Pertusella"
+  citta: "Caronno Pertusella (VA)"
+  regione: "Lombardia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Pattinaggio Caronno Pertusella' | '\"pattinaggio caronno pertusella\" asd sito'."
+
+- codice_fisr: "264"
+  nome_fisr: "U.S.INVICTA SKATE"
+  sigle_fisr: ["U.S.INVICTA SKATE"]
+  nome: "U.S. Invicta Skate A.S.D. (Invicta Skate Modena)"
+  citta: "Modena"
+  regione: "Emilia-Romagna"
+  sito: "https://www.invicta-skate.com/"
+  social: "https://www.facebook.com/invictmo/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'Invicta Skate - Modena' (www.invicta-skate.com): aperto dalla shell, HTTP 200, testo con 'invicta skate' (10 volte) e 'pattinaggio' (23 volte). Faceb); aperto il 2026-11-06: Incolta Skate - Modena"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Campionato regionale strada Emilia-Romagna 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "302"
+  nome_fisr: "A.S.D.MENS SANA 1871"
+  sigle_fisr: ["A.S.D.MENS SANA 1871"]
+  nome: "ASD MENS SANA 1871"
+  citta: ""
+  regione: "Toscana"
+  sito: "https://www.pattinaggiocorsasiena.it"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "regolamento di gara id_manif 6784; aperto il 2026-11-06: Pattinaggio Corsa Siena"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Toscana 2025/26", "Campionato regionale strada Toscana 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato provinciale Pista AR/FI/GR/LI/MS/PI/SI cat. R12-RAG-ALL-JUN-SEN (SIENA - 22/03/26)", "Campionato provinciale Strada AR/FI/GR/LI/MS/PI/SI TUTTE le categorie (SIENA - 22/03/26)", "XVII INTERNATIONAL CUP CITTA' DI SIENA - 7 MEMORIAL FABIO BELOTTI (SIENA - 07/05/26 - 10/05/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "310"
+  nome_fisr: "POL. BELLUSCO"
+  sigle_fisr: ["POL. BELLUSCO"]
+  nome: "POLISPORTIVA BELLUSCO"
+  citta: ""
+  regione: "Lombardia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO ITALIANO PISTA A/J/S (BELLUSCO (MB) - 26-29 GIUGNO 2026)", "CAMPIONATO PROVINCIALE PISTA BG/BS/CO/CR/LC/MB/MI/VA cat. A/J/S/M (BELLUSCO - 19/04/26)", "CAMPIONATO REGIONALE PISTA LOMBARDIA cat. A/J/S/M (BELLUSCO - 12/04/26)", "25 TROFEO LORENZO BRIONI (BELLUSCO - 30/05/26 - 31/05/26)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Polisportiva Bellusco pattinaggio' | '\"Polisportiva Bellusco\" pattinaggio corsa asd'."
+
+- codice_fisr: "312"
+  nome_fisr: "SKATING CLUB JESI"
+  sigle_fisr: ["SKATING CLUB JESI"]
+  nome: "ASD Skating Club Jesi"
+  citta: "Jesi"
+  regione: "Marche"
+  sito: "https://skatingclubjesi.it/"
+  social: "https://www.instagram.com/skatingclubjesi/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'ASD Skating Club Jesi' su skatingclubjesi.it; la home aperta da shell ha titolo 'ASD Skating Club Jesi - Pattinaggio Corsa - Artistico - Master dal 1); aperto il 2026-11-06: ASD Skating Club Jesi – Pattinaggio Corsa – Artistico – Mast"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "315"
+  nome_fisr: "S.MARIA NUOVA"
+  sigle_fisr: ["S.MARIA NUOVA"]
+  nome: ""
+  citta: ""
+  regione: "Marche"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["6 GIORNI INTERNATIONAL 2026 (SANTA MARIA NUOVA (AN) - 6 - 9 AGOSTO 2026)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Santa Maria Nuova pattinaggio corsa Marche' | '\"santa maria nuova\" pattinaggio asd società rotellistica'."
+
+- codice_fisr: "371"
+  nome_fisr: "NUOVO CIRC. PATT.RI"
+  sigle_fisr: ["NUOVO CIRC. PATT.RI"]
+  nome: ""
+  citta: ""
+  regione: "Abruzzo"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato regionale strada Abruzzo 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Nuovo Circolo Pattinatori pattinaggio Abruzzo' | '\"Nuovo Circolo Pattinatori\" pattinaggio corsa' | '\"Nuovo Circolo Pattinatori\" Abruzzo pattinaggio'."
+
+- codice_fisr: "521"
+  nome_fisr: "ROT.CA VENTIMIGLIESE"
+  sigle_fisr: ["ROT.CA VENTIMIGLIESE"]
+  nome: ""
+  citta: ""
+  regione: "Liguria"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Liguria 2025/26", "Campionato regionale strada Liguria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Rotellistica Ventimigliese pattinaggio' | '\"Rotellistica Ventimigliese\" Ventimiglia'."
+
+- codice_fisr: "561"
+  nome_fisr: "ANSPI POL.S.NAZARIO"
+  sigle_fisr: ["ANSPI POL.S.NAZARIO"]
+  nome: "ANSPI POL.S.NAZARIO (SV)"
+  citta: "Varazze"
+  regione: "Liguria"
+  sito: ""
+  social: "https://www.facebook.com/polisportivasannazario.varazze/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (fisr.it, ivg.it, registro CONI); pagina Facebook dal risultato con titolo 'Polisportiva San Nazario Varazze'."
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Liguria 2025/26", "Campionato regionale strada Liguria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato Regionale Pista Liguria Categorie R12/R/A/J/S (Genova Pegli (GE) - 29/03/2026)", "Campionato Regionale Pista Liguria categorie G/E (Varazze (SV) - 28/03/2026)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "581"
+  nome_fisr: "PATT.LEGNAGO"
+  sigle_fisr: ["PATT.LEGNAGO"]
+  nome: ""
+  citta: ""
+  regione: "Veneto"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Pattinaggio Legnago pattinatori asd' | '\"pattinaggio legnago\" pattinaggio corsa'."
+
+- codice_fisr: "589"
+  nome_fisr: "SPEED SKATING CASSANO"
+  sigle_fisr: ["SPEED SKATING CASSANO"]
+  nome: "ASD SPEED SKATING CASSANO"
+  citta: ""
+  regione: "Lombardia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO PROVINCIALE STRADA BG/BS/CO/CR/LC/MI/VA/MB cat. A/J/S/M (CASSANO D'ADDA - 15/03/26)", "16 GRAN PRIX CASSANO D'ADDA (CASSANO D'ADDA - 19/09/26 - 20/09/26)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Speed Skating Cassano pattinaggio' | '\"Speed Skating Cassano\" d'Adda pattinaggio corsa' | '\"Speed Skating Cassano\" pattinaggio'."
+
+- codice_fisr: "651"
+  nome_fisr: "G.P.MOBILI CANTU'"
+  sigle_fisr: ["G.P.MOBILI CANTU'"]
+  nome: ""
+  citta: ""
+  regione: "Lombardia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Gruppo Pattinatori Mobili Cantù pattinaggio' | '\"Mobili Cantù\" pattinatori Cantù pattinaggio corsa'."
+
+- codice_fisr: "696"
+  nome_fisr: "OLIMPIADE PATT. SR"
+  sigle_fisr: ["OLIMPIADE PATT. SR"]
+  nome: "Olimpiade Pattinatori Siracusa"
+  citta: "Siracusa"
+  regione: "Sicilia"
+  sito: ""
+  social: "https://www.facebook.com/olimpiadepattinatori.siracusa/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (scheda fisr.it, registro CONI, giornali siracusani); pagina Facebook dal risultato con titolo 'Olimpiade Pattinatori Sirac"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "697"
+  nome_fisr: "A.S.DIL.PADERNESE"
+  sigle_fisr: ["A.S.DIL.PADERNESE"]
+  nome: "A.S.DIL. PADERNESE"
+  citta: ""
+  regione: "Lombardia"
+  sito: ""
+  social: "https://www.instagram.com/asd_padernese/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Le due ricerche dedicate non hanno dato nulla; la pagina Instagram col titolo \"ASD.Padernese\" è comparsa tra i risultati della ricerca \"asd castorina\" pattinagg"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["XIX TROFEO DI PRIMAVERA (PADERNO D'ADDA - 06/04/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "728"
+  nome_fisr: "ROLLER CIVITANOVA"
+  sigle_fisr: ["ROLLER CIVITANOVA"]
+  nome: "A.S.D. Roller Civitanova"
+  citta: "Civitanova Marche (MC)"
+  regione: "Marche"
+  sito: "https://www.rollercivitanova.it/"
+  social: "https://www.facebook.com/asdrollercivitanova/"
+  stato_sito: "sito_non_raggiungibile"
+  fonte_sito: "ricerca web del 2026-11-06 (non verificabile dalla shell: dominio dal risultato di ricerca 'Scuola di pattinaggio Roller Civitanova. Pattinaggio corsa, freestyle, slalom, rollercross, avvi); aperto il 2026-11-06: HTTP 000"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "752"
+  nome_fisr: "PATT.SPINEA"
+  sigle_fisr: ["PATT.SPINEA"]
+  nome: "ASD PATTINATORI SPINEA"
+  citta: ""
+  regione: "Veneto"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO REGIONALE STRADA VENETO/FRIULI VENEZIA GIULIA R12/R/A/J/S/M (SPINEA (VE) - 12/04/26)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Pattinatori Spinea pattinaggio' | '\"Pattinatori Spinea\" asd pattinaggio corsa'."
+
+- codice_fisr: "768"
+  nome_fisr: "FULGOR PUNTESE"
+  sigle_fisr: ["FULGOR PUNTESE"]
+  nome: ""
+  citta: ""
+  regione: "Sicilia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: '\"Fulgor Puntese\" pattinaggio' | '\"Fulgor Puntese\" pattinaggio corsa asd San Giovanni la Punta'."
+
+- codice_fisr: "785"
+  nome_fisr: "GS SCALTENIGO VE"
+  sigle_fisr: ["GS SCALTENIGO VE"]
+  nome: "G.S. SCALTENIGO"
+  citta: ""
+  regione: "Veneto"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["MEMORIAL 2026 MANUEL CALZAVARA E SAMUELE SPOLAORE (SCALTENIGO DI MIRANO (VE) - 20/09/26)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Gruppo Sportivo Scaltenigo pattinaggio' | '\"scaltenigo\" pattinaggio corsa Mirano'."
+
+- codice_fisr: "808"
+  nome_fisr: "GRUPPO IMOLESE P."
+  sigle_fisr: ["GRUPPO IMOLESE P."]
+  nome: "ASD Gruppo Imolese Pattinaggio"
+  citta: "Imola (BO)"
+  regione: "Emilia-Romagna"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Emilia-Romagna 2025/26", "Campionato regionale strada Emilia-Romagna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato regionale Indoor Emilia-Romagna Trofeo Bruno Morisi (Imola (BO) - 01/02/26)", "48 GRAN PREMIO CITTA' DI IMOLA (IMOLA - 19 APRILE 2026)", "47^ GRAN PREMIO CITTA' DI IMOLA (IMOLA - 07/12/25)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Gruppo Imolese Pattinaggio' | '\"Gruppo Imolese Pattinaggio\" Imola pattinaggio corsa'."
+
+- codice_fisr: "827"
+  nome_fisr: "LA VANGADINA MENA'"
+  sigle_fisr: ["LA VANGADINA MENA'"]
+  nome: ""
+  citta: ""
+  regione: "Veneto"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["TROFEO LA VANGADINA IN CORSA CON AVIS (MENA' DI CASTAGNARO (VR) - 30/08/26)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'La Vangadina Menà pattinaggio' | '\"Vangadina\" pattinaggio corsa Menà Castagnaro'."
+
+- codice_fisr: "836"
+  nome_fisr: "FORTITUDO FABRIANO"
+  sigle_fisr: ["FORTITUDO FABRIANO"]
+  nome: "S.S. FORTITUDO FABRIANO"
+  citta: ""
+  regione: "Marche"
+  sito: "https://www.rollerspeedcentro.it"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "regolamento di gara id_manif 6711; aperto il 2026-11-06: ROLLER SPEED CENTRO"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["46' Trofeo dell'Amicizia e 10' Memorial Donatella Boero (Fabriano (AN) - 04/07/26 - 05/07/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "887"
+  nome_fisr: "G.ROTELL. STUDIUM"
+  sigle_fisr: ["G.ROTELL. STUDIUM"]
+  nome: "Gruppo Rotellistico Studium A.S.D."
+  citta: "Sassari"
+  regione: "Sardegna"
+  sito: ""
+  social: "https://www.facebook.com/pattinaggiostudium/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (trovalosport, fisr.it); pagina Facebook dal risultato con titolo 'Pattinaggio Studium Sassari'; la città emerge anche da f"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sardegna 2025/26", "Campionato regionale strada Sardegna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "900"
+  nome_fisr: "A.S.D.PATT. PESCARA"
+  sigle_fisr: ["A.S.D.PATT. PESCARA"]
+  nome: "A.S.D. Pattinaggio Pescara"
+  citta: "Pescara"
+  regione: "Abruzzo"
+  sito: "https://www.pattinaggiopescara.it/"
+  social: "https://www.instagram.com/pattinaggio_pescara/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Le due ricerche dedicate (modalità standard) non hanno dato nulla; il sito è emerso dalla ricerca \"Pescara Roller Team pattinaggio asd\" (risultato \"ASD Pattinag); aperto il 2026-11-06: Corsi Pattinaggio Pescara - ASD Pattinaggio Pescara"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale strada Abruzzo 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "902"
+  nome_fisr: "ROT .SETTEMPEDA"
+  sigle_fisr: ["ROT .SETTEMPEDA"]
+  nome: "A.S.D. Rotellistica Settempeda"
+  citta: "San Severino Marche (MC)"
+  regione: "Marche"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Rotellistica Settempeda pattinaggio' | '\"Rotellistica Settempeda\" San Severino Marche pattinaggio corsa'."
+
+- codice_fisr: "919"
+  nome_fisr: "ASA"
+  sigle_fisr: ["ASA"]
+  nome: ""
+  citta: "Cinisello Balsamo (MI)"
+  regione: "Lombardia"
+  sito: "https://asacinisello.com/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'Sito Ufficiale ASD ASA CINISELLO' (www.asacinisello.it, che però non risolve dalla shell) e pagine 'Pattinaggio' e 'Un po' di storia' su asacinisello); aperto il 2026-11-06: ASA Asd – Associazione Sportiva Dilettantistica"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["1 MEMORIAL LODOVICO BOSSI (Cinisello Balsamo - 27/09/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "920"
+  nome_fisr: "A.S.D.POL.AIROLDI"
+  sigle_fisr: ["A.S.D.POL.AIROLDI"]
+  nome: "Polisportiva Airoldi Origgio"
+  citta: "Origgio"
+  regione: "Lombardia"
+  sito: "https://www.polisportivaairoldi.com/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Due domini nei risultati: polisportivaairoldi.com (pagina 'Pattinaggio', date 2025-2026) e polisportivaairoldi.eu (più vecchio, date 2021, linkato dal .com); en); aperto il 2026-11-06: Polisportiva di Origgio | Polisportiva Airoldi Origgio"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "951"
+  nome_fisr: "DIAVOLI ROSSI"
+  sigle_fisr: ["DIAVOLI ROSSI"]
+  nome: "ASD DIAVOLI ROSSI"
+  citta: "San Giovanni La Punta (CT)"
+  regione: "Sicilia"
+  sito: "http://www.asddiavolirossi.it/"
+  social: ""
+  stato_sito: "sito_non_raggiungibile"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato \"Pattinaggio Corsa Catania - ASD DIAVOLI ROSSI S.Giovanni La Punta\"; home aperta con curl (solo in http: in https la connessione fallisce), testo \"ASD); aperto il 2026-11-06: HTTP 999"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO PROVINCIALE PISTA CATANIA (SAN GIOVANNI LA PUNTA - 15/03/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "956"
+  nome_fisr: "ROLLER AGRIGENTO"
+  sigle_fisr: ["ROLLER AGRIGENTO"]
+  nome: ""
+  citta: "Agrigento"
+  regione: "Sicilia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Roller Agrigento pattinaggio' | '\"Roller Agrigento\" pattinaggio corsa'."
+
+- codice_fisr: "959"
+  nome_fisr: "S.C.GIUSSANO"
+  sigle_fisr: ["S.C.GIUSSANO"]
+  nome: "Skating Club Giussano A.S.D."
+  citta: "Giussano (MB)"
+  regione: "Lombardia"
+  sito: "https://www.skatingclubgiussano.com/"
+  social: ""
+  stato_sito: "sito_non_raggiungibile"
+  fonte_sito: "ricerca web del 2026-11-06 (Non verificabile dalla shell: dominio dal risultato di ricerca 'Skating Club Giussano' (www.skatingclubgiussano.com, con pagina 'SKATING CLUB GIUSSANO > Corsi d); aperto il 2026-11-06: HTTP 000"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1002"
+  nome_fisr: "VITTORIA TORINO"
+  sigle_fisr: ["VITTORIA TORINO"]
+  nome: "A.S.D. Vittoria Pattinatori Torino"
+  citta: "Torino"
+  regione: "Piemonte"
+  sito: "https://www.vittoria-pattinatori.org/"
+  social: ""
+  stato_sito: "sito_non_raggiungibile"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'Vittoria Pattinatori Torino' su vittoria-pattinatori.org; la home aperta da shell ha titolo 'Vittoria Pattinatori Torino | Pattina con noi' e contien); aperto il 2026-11-06: HTTP 000"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Piemonte 2025/26", "Campionato regionale strada Piemonte 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1014"
+  nome_fisr: "ASD MOLINELLI"
+  sigle_fisr: ["ASD MOLINELLI"]
+  nome: "A.S.D. Molinelli Pattinaggio Chiaravalle"
+  citta: "Chiaravalle (AN)"
+  regione: "Marche"
+  sito: "https://www.molinellipattinaggio.it/"
+  social: ""
+  stato_sito: "sito_non_raggiungibile"
+  fonte_sito: "ricerca web del 2026-11-06 (Non verificabile dalla shell: dominio dal risultato di ricerca \"Pattinaggio Molinelli Chiaravalle - Associazione Pattinaggio Molinelli Chiaravalle\" (più altre p); aperto il 2026-11-06: HTTP 500"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1057"
+  nome_fisr: "FORLI' ROLLER"
+  sigle_fisr: ["FORLI' ROLLER"]
+  nome: "A.S.D. Forlì Roller"
+  citta: "Forlì (FC)"
+  regione: "Emilia-Romagna"
+  sito: "https://forliroller.com/"
+  social: "https://www.facebook.com/ForliRoller/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'Home - Forlì Roller' (forliroller.com): aperto dalla shell, HTTP 200, titolo 'Home - Forlì Roller', testo con 'forlì roller', 'pattinaggio', 'inline'); aperto il 2026-11-06: Home - Forlì Roller"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Emilia-Romagna 2025/26", "Campionato regionale strada Emilia-Romagna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1091"
+  nome_fisr: "C.P.G.A. ASD"
+  sigle_fisr: ["C.P.G.A. ASD"]
+  nome: ""
+  citta: ""
+  regione: "Abruzzo"
+  sito: "https://cpga.net/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "regolamento di gara id_manif 6752; aperto il 2026-11-06: C.P.G.A. - Centro Polisportivo Giovanile Aquilano"
+  siti_candidati: ["https://cpga.net/iio"]
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale strada Abruzzo 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["INTERNAZIONALI D'ITALIA OPEN INDOOR (L'AQUILA - 25/09/26 - 27/09/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1136"
+  nome_fisr: "A.S.D. SKATING CLUB UBOLDO"
+  sigle_fisr: ["A.S.D. SKATING CLUB UBOLDO"]
+  nome: ""
+  citta: "Uboldo (VA)"
+  regione: "Lombardia"
+  sito: "https://www.skating-club-uboldo.it/"
+  social: ""
+  stato_sito: "sito_non_raggiungibile"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'skating club uboldo' (www.skating-club-uboldo.it, con pagine Corsi ed Eventi). Con user agent 'Mozilla/5.0' il server risponde HTTP 999; con un user ); aperto il 2026-11-06: HTTP 999"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1179"
+  nome_fisr: "A.P.D.JUVENILIA"
+  sigle_fisr: ["A.P.D.JUVENILIA"]
+  nome: "Polisportiva Juvenilia Pollenza"
+  citta: "Pollenza"
+  regione: "Marche"
+  sito: ""
+  social: "https://www.facebook.com/pjuvenilia/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (solo giornali maceratesi e fisr.it); pagina Facebook dal risultato con titolo 'Polisportiva Juvenilia Pollenza pattinaggio"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1216"
+  nome_fisr: "A.S.D. ELMAS"
+  sigle_fisr: ["A.S.D. ELMAS"]
+  nome: ""
+  citta: ""
+  regione: "Sardegna"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Campionato regionale pista Sardegna 2025/26", "Campionato regionale strada Sardegna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'ASD Elmas pattinaggio corsa Sardegna' | '\"asd elmas\" pattinaggio corsa società'."
+
+- codice_fisr: "1220"
+  nome_fisr: "ROTELL.ROSEDA MERATE"
+  sigle_fisr: ["ROTELL.ROSEDA MERATE"]
+  nome: "A.S.D. Rotellistica Roseda Merate"
+  citta: "Merate (LC)"
+  regione: "Lombardia"
+  sito: "https://www.rotellisticarosedamerate.net/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati 'Rotellistica Roseda Merate' su rotellisticarosedamerate.net: home aperta dalla shell, HTTP 200, titolo 'Rotellistica Roseda Merate – Associazione spo); aperto il 2026-11-06: Rotellistica Roseda Merate – Associazione sportiva dilettant"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1241"
+  nome_fisr: "ASS. DILETT.LANDI SKATE SALERNO"
+  sigle_fisr: ["ASS. DILETT.LANDI SKATE SALERNO"]
+  nome: "Ass. Dilettantistica Landi Skate Salerno"
+  citta: "Salerno"
+  regione: ""
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Landi Skate Salerno pattinaggio' | '\"Landi Skate\" Salerno asd pattinaggio corsa'."
+
+- codice_fisr: "1260"
+  nome_fisr: "ROLLING BOSICA"
+  sigle_fisr: ["ROLLING BOSICA"]
+  nome: "A.S.D. ROLLING PATTINATORI BOSICA"
+  citta: "Martinsicuro"
+  regione: "Abruzzo"
+  sito: "https://www.rollingbosica.it/"
+  social: "https://www.facebook.com/rollingpattinatori"
+  stato_sito: "sito_da_verificare"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati 'News' e 'Roller Race - Martinsicuro' su rollingbosica.it; la home reindirizza via JavaScript a /cms/, che ha titolo 'Rolling Bosica' e contiene 'Bosi); aperto il 2026-11-06: testo non conferma (nome_ok=True, sport_ok=False, 24 caratteri) "
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale strada Abruzzo 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["GIOCHI NAZIONALI PER SOCIETA' BRUNO TIEZZI (MARTINSICURO (TE) - 11/06/26 - 13/06/26)", "CAMPIONATO INTEREGIONALE STRADA ABRUZZO/MOLISE (SAN BENEDETTO DEL TRONTO - 12/04/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1285"
+  nome_fisr: "PATT.S.MAURO TO"
+  sigle_fisr: ["PATT.S.MAURO TO"]
+  nome: "ASD Pattinatori San Mauro"
+  citta: "San Mauro Torinese (TO)"
+  regione: "Piemonte"
+  sito: "https://pattinatorisanmauro.it/"
+  social: "https://www.facebook.com/PattinatoriSanMauro/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato \"Contatti\" su pattinatorisanmauro.it; home aperta con curl: titolo \"Home - ASD Pattinatori San Mauro\", testo con \"pattinaggio\", \"pattinatori\", \"roller); aperto il 2026-11-06: Home - ASD Pattinatori San Mauro"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Piemonte 2025/26", "Campionato regionale strada Piemonte 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1290"
+  nome_fisr: "SKATING RHO"
+  sigle_fisr: ["SKATING RHO"]
+  nome: "ASD SKATING RHO"
+  citta: "Rho (MI)"
+  regione: "Lombardia"
+  sito: ""
+  social: "https://www.facebook.com/SkatingRho/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Il dominio www.skatingrho.it compare nei risultati con titoli 'ASD Skating Rho' e 'Chi siamo: ASD Skating Rho - ASD Skating Rho', ma aperto dalla shell (tre ten"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATI INTERPROVINCIALI PISTA cat. G/E (RHO - 09/05/26)", "CAMPIONATO REGIONALE PISTA cat. G/E/R12/R (RHO - 26/04/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1475"
+  nome_fisr: "FOLGORE MONASTIR"
+  sigle_fisr: ["FOLGORE MONASTIR"]
+  nome: "ASD Pattinaggio Folgore Monastir"
+  citta: "Monastir (SU)"
+  regione: "Sardegna"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Sardegna 2025/26", "Campionato regionale strada Sardegna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Folgore Monastir pattinaggio' | '\"Folgore Monastir\" asd pattinaggio corsa'."
+
+- codice_fisr: "1511"
+  nome_fisr: "ASS.DIL.APAV FARA"
+  sigle_fisr: ["ASS.DIL.APAV FARA"]
+  nome: "APAV Fara"
+  citta: "Fara Vicentino"
+  regione: "Veneto"
+  sito: ""
+  social: "https://www.instagram.com/apav_fara/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati; Instagram dal risultato con titolo 'APAV FARA (@apav_fara)'; la città emerge dagli articoli vicentini (AltoVicentinOnline,"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1566"
+  nome_fisr: "ASD CASTORINA"
+  sigle_fisr: ["ASD CASTORINA"]
+  nome: ""
+  citta: ""
+  regione: "Sicilia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'ASD Castorina pattinaggio Sicilia' | '\"asd castorina\" pattinaggio corsa'."
+
+- codice_fisr: "1781"
+  nome_fisr: "A.S.D.PATTINATORI ARCA LATINA"
+  sigle_fisr: ["A.S.D.PATTINATORI ARCA LATINA"]
+  nome: "A.S.D. Pattinatori ARCA Latina"
+  citta: "Latina"
+  regione: "Lazio"
+  sito: "https://www.arcalatina.it/"
+  social: "https://www.facebook.com/p/ASD-pattinatori-ARCA-Latina-100063860520598/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati 'A.S.D. Pattinatori ARCA Latina' su arcalatina.it: home aperta dalla shell, HTTP 200 (al primo tentativo connessione interrotta), testo con 'pattinato); aperto il 2026-11-06: "
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato regionale pista Lazio 2025/26", "Campionato regionale strada Lazio 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1783"
+  nome_fisr: "C.SP.P.PESCARA"
+  sigle_fisr: ["C.SP.P.PESCARA"]
+  nome: "A.S.D. Centro Sportivo Pattinaggio Pescara"
+  citta: ""
+  regione: "Abruzzo"
+  sito: "https://www.rollerpescara.it"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "regolamento di gara id_manif 6831; aperto il 2026-11-06: Corsi Pattinaggio Pescara | Bambini, Ragazzi e Adulti | CSPP"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato regionale strada Abruzzo 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1840"
+  nome_fisr: "SKATING C.PERTICHESE"
+  sigle_fisr: ["SKATING C.PERTICHESE"]
+  nome: "SKATING CLUB PERTICHESE"
+  citta: "San Giorgio delle Pertiche (PD)"
+  regione: "Veneto"
+  sito: "https://www.skatingclubpertichese.org/"
+  social: "https://www.facebook.com/p/Skating-Club-Pertichese-100063176112514/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'Sito web Skating Club Pertichese' (www.skatingclubpertichese.org); la home aperta con curl (HTTP 200, anche in https) contiene 'Pertichese', 'skating); aperto il 2026-11-06: Home"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO REGIONALE PISTA VENETO/FRIULI VENEZIA GIULIA R12/R/A/J/S/M (SAN GIORGIO DELLE PERTICHE (PD) - 28-29/03/26)", "XIX TROFEO PER LA VITA CON L'AVIS (SAN GIORGIO DELLE PERTICHE - 25/07/26 - 26/07/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "1901"
+  nome_fisr: "A.S.D.S.C.P.PRIOLO"
+  sigle_fisr: ["A.S.D.S.C.P.PRIOLO"]
+  nome: "A.S.D. Sporting Club Pattinaggio Priolo"
+  citta: "Priolo Gargallo"
+  regione: "Sicilia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: '\"Sporting Club Pattinaggio Priolo\" pattinaggio' | '\"Sporting Club\" Priolo pattinaggio corsa facebook'."
+
+- codice_fisr: "1950"
+  nome_fisr: "GRUPPO PATT. SINNAI"
+  sigle_fisr: ["GRUPPO PATT. SINNAI"]
+  nome: "A.S.D. Gruppo Pattinatori Sinnai"
+  citta: "Sinnai (CA)"
+  regione: "Sardegna"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sardegna 2025/26", "Campionato regionale strada Sardegna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato Regionale Pista Sardegna G/E - F/M (Sinnai (CA) - 19/04/26)", "Campionato Provinciale Pista CA/SU/SS G/E F/M (Sinnai (CA) - 12/04/26)", "Campionato Regionale Strada Sardegna G/E (Settimo San Pietro (CA) - 29/03/26)", "Campionati Regionali Sardegna Strada - R12/R/A/J/S/M (Settimo San Pietro (SU) - 28/03/26)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Gruppo Pattinatori Sinnai pattinaggio' | '\"gruppo pattinatori sinnai\" facebook instagram'."
+
+- codice_fisr: "1983"
+  nome_fisr: "PATT.RI CETONA"
+  sigle_fisr: ["PATT.RI CETONA"]
+  nome: ""
+  citta: ""
+  regione: "Toscana"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Toscana 2025/26", "Campionato regionale strada Toscana 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: '\"Pattinatori Cetona\" pattinaggio' | 'Cetona pattinaggio corsa asd pattinatori'."
+
+- codice_fisr: "2050"
+  nome_fisr: "F.CLUB TARANTO"
+  sigle_fisr: ["F.CLUB TARANTO"]
+  nome: "A.S.D. Feder Club Taranto 1989"
+  citta: "Taranto"
+  regione: "Puglia"
+  sito: ""
+  social: "https://www.facebook.com/pattinaggiotaranto/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: La sigla si scioglie in 'Feder Club Taranto' (articoli di tuttosporttaranto.com e lojonio.it). Nessun dominio proprio nei risultati; pagina Facebook dal risulta"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Puglia 2025/26", "Campionato regionale strada Puglia 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2107"
+  nome_fisr: "POL.VA CASIER ARL"
+  sigle_fisr: ["POL.VA CASIER ARL"]
+  nome: "Polisportiva Casier SSD a r.l."
+  citta: "Casier"
+  regione: "Veneto"
+  sito: "https://www.polisportivacasier.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'pattinaggio2 - Polisportiva Casier' su polisportivacasier.it; la home aperta da shell ha titolo 'home - Polisportiva Casier' e contiene 'roller' e 'i); aperto il 2026-11-06: home - Polisportiva Casier"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2296"
+  nome_fisr: "A.S.D.PATT.RI BONONIA"
+  sigle_fisr: ["A.S.D.PATT.RI BONONIA"]
+  nome: "ASD Pattinatori Bononia (Bononia Skating)"
+  citta: "Bologna"
+  regione: "Emilia-Romagna"
+  sito: "https://www.bononiaskating.it/"
+  social: "https://www.facebook.com/pattinatoribononia/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato \"ATTIVITÀ E CORSI\" su bononiaskating.it; home aperta con curl: titolo \"Corsi Roller Bologna | Bononia roller skating pattinaggio in linea\", testo \"DAL); aperto il 2026-11-06: Corsi Roller Bologna | Bononia roller skating pattinaggio in"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Emilia-Romagna 2025/26", "Campionato regionale strada Emilia-Romagna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2386"
+  nome_fisr: "PATT. SAMBENEDETTESI"
+  sigle_fisr: ["PATT. SAMBENEDETTESI"]
+  nome: ""
+  citta: "San Benedetto del Tronto (AP)"
+  regione: "Marche"
+  sito: ""
+  social: "https://www.facebook.com/PattinatoriSambenedettesi.it/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (Wikipedia, registro CONI, Comune, giornali). Facebook dal risultato 'Pattinatori Sambenedettesi - Corsa' (facebook.com/Pat"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["38 MEETING CITTA' SAN BENEDETTO DEL TRONTO (SAN BENEDETTO DEL TRONTO - 01/08/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2448"
+  nome_fisr: "A.S.P. LAMEZIA"
+  sigle_fisr: ["A.S.P. LAMEZIA"]
+  nome: "ASD Pattinaggio Lamezia"
+  citta: "Lamezia Terme (CZ)"
+  regione: "Calabria"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Calabria 2025/26", "Campionato regionale strada Calabria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Pattinaggio Lamezia pattinaggio corsa asd' | '\"Pattinaggio Lamezia\" Lamezia Terme'."
+
+- codice_fisr: "2538"
+  nome_fisr: "EURO S.CLUB"
+  sigle_fisr: ["EURO S.CLUB"]
+  nome: "EURO SPORT CLUB"
+  citta: ""
+  regione: "Umbria"
+  sito: "https://www.eurosportclub.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "regolamento di gara id_manif 6746; aperto il 2026-11-06: ASD Euro Sport Club – Associazione Sportiva Dilettantistica:"
+  siti_candidati: ["https://www.eurosportclub.it/2026/09/01/trofeo-nazionale-pattinaggio-corsa-memorial-d-pioli-terni-24-25-ottobre-2026/"]
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Umbria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["1° TROFEO DEGLI APPENNINI - XIV MEMORIAL D.PIOLI (TERNI - 25/04/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2543"
+  nome_fisr: "ALTE CECCATO CLUB"
+  sigle_fisr: ["ALTE CECCATO CLUB"]
+  nome: "A.S.D. Pattinaggio Alte Ceccato Club"
+  citta: "Montecchio Maggiore"
+  regione: "Veneto"
+  sito: "https://www.pattinaggioalte.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'A.S.D. PATTINAGGIO ALTE CECCATO CLUB' su pattinaggioalte.it; la home aperta da shell ha titolo 'A.S.D. PATTINAGGIO ALTE CECCATO CLUB - Pattinaggio ad); aperto il 2026-11-06: A.S.D. PATTINAGGIO ALTE CECCATO CLUB – Pattinaggio ad Alte C"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2564"
+  nome_fisr: "SAVONA IN LINE"
+  sigle_fisr: ["SAVONA IN LINE"]
+  nome: "A.S.D. HP SAVONA IN LINE"
+  citta: "Savona"
+  regione: "Liguria"
+  sito: "https://www.asdhpsavonainline.com/"
+  social: "https://www.facebook.com/CorsiPattinaggioSavona/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato \"Società di pattinaggio corsa di Savona\"; home aperta con curl: titolo \"Società di pattinaggio corsa di Savona | H.P. SAVONA IN LINE\", testo \"ASD H.P.); aperto il 2026-11-06: Società di pattinaggio corsa di Savona | H.P. SAVONA IN LINE"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Liguria 2025/26", "Campionato regionale strada Liguria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato Provinciale Strada IM/SP/SV Tutte le categorie (Savona (SV) - 08/03/2026)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2590"
+  nome_fisr: "CSEN ROMA PATT."
+  sigle_fisr: ["CSEN ROMA PATT."]
+  nome: "CSEN Roma Pattinaggio A.S.D."
+  citta: "Roma"
+  regione: "Lazio"
+  sito: "https://www.romapattinaggio.it/"
+  social: "https://www.facebook.com/csenpattinaggioroma/"
+  stato_sito: "sito_non_raggiungibile"
+  fonte_sito: "ricerca web del 2026-11-06 (non verificabile dalla shell: dominio dal risultato di ricerca 'Csen Roma Pattinaggio' (www.romapattinaggio.it; dalla shell risponde HTTP 999 'IIS 10.0 Detailed); aperto il 2026-11-06: HTTP 999"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lazio 2025/26", "Campionato regionale strada Lazio 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2733"
+  nome_fisr: "AZZURRA PATT."
+  sigle_fisr: ["AZZURRA PATT."]
+  nome: "ASD AZZURRA PATTINAGGIO"
+  citta: "Trebaseleghe (PD)"
+  regione: "Veneto"
+  sito: ""
+  social: "https://www.facebook.com/AzzurraPattinaggioCorsaTrebaseleghe/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati; pagina Facebook dal risultato con titolo 'Azzurra Pattinaggio Corsa Trebaseleghe'. Nome e città anche da orangogo.it e gra"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO REGIONALE STRADA VENETO G/E (TREBASELEGHE (PD) - 11/04/26)", "20^ TROFEO CITTA' DI TREBASELEGHE (TREBASELEGHE (PD) - 26-27/09/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2796"
+  nome_fisr: "R.TEAM C.ITALIA"
+  sigle_fisr: ["R.TEAM C.ITALIA"]
+  nome: "A.S.D. Roller Team Centro Italia"
+  citta: ""
+  regione: "Umbria"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Umbria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: '\"Roller Team Centro Italia\" pattinaggio' | '\"Roller Team Centro Italia\" asd Umbria facebook instagram'."
+
+- codice_fisr: "2884"
+  nome_fisr: "PATTINAGGIO RIETI"
+  sigle_fisr: ["PATTINAGGIO RIETI"]
+  nome: "ASD Pattinaggio Rieti"
+  citta: "Rieti"
+  regione: "Lazio"
+  sito: "https://www.asdpattinaggiorieti.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati \"La scuola di pattinaggio Rieti ASD - ASD-Pattinaggio Rieti\" e articolo \"L'A.S.D. Pattinaggio Rieti a Magione per il Campionato Italiano di Maratona\";); aperto il 2026-11-06: Scuola di avviamento pattinaggio a Rieti, corsi per giovani "
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Lazio 2025/26", "Campionato regionale strada Lazio 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2885"
+  nome_fisr: "ROMA 7 PATTINAGGIO"
+  sigle_fisr: ["ROMA 7 PATTINAGGIO"]
+  nome: "S.S.D. ROMA 7 PATTINAGGIO"
+  citta: ""
+  regione: "Lazio"
+  sito: "https://www.roma7pattinaggio.com"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "regolamento di gara id_manif 6732; aperto il 2026-11-06: Roma 7 Pattinaggio – Scuola di pattinaggio a Roma"
+  siti_candidati: ["https://www.roma7patrinaggio.com"]
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lazio 2025/26", "Campionato regionale strada Lazio 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato regionale Pista Lazio Tutte le Categorie (Roma - 29/03/26)", "TROFEO CITTA' DI ROMA 2026 - 3^ edizione (ROMA - 02/05/26 - 03/05/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2914"
+  nome_fisr: "ASD RIVOLIROLLERTIME"
+  sigle_fisr: ["ASD RIVOLIROLLERTIME"]
+  nome: "A.S.D. Rivoli Roller Time"
+  citta: "Rivoli (TO)"
+  regione: "Piemonte"
+  sito: "https://www.rivoliroller.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati 'Home - Rivoli Roller' e 'asd rivoli roller time' (rivoliroller.it): aperto dalla shell, HTTP 200, titolo 'Home - Rivoli Roller', testo con 'rivoli ro); aperto il 2026-11-06: Home - Rivoli Roller"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Piemonte 2025/26", "Campionato regionale strada Piemonte 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2939"
+  nome_fisr: "ELMAS IN LINE"
+  sigle_fisr: ["ELMAS IN LINE"]
+  nome: "A.S.D. Elmas in Line"
+  citta: "Elmas (CA)"
+  regione: "Sardegna"
+  sito: ""
+  social: "https://www.facebook.com/p/Elmas-in-line-scuola-di-Pattinaggio-61559685118347/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati; pagina Facebook dal risultato con titolo 'Elmas in line scuola di Pattinaggio'. Città dagli articoli de L'Unione Sarda ('L"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sardegna 2025/26", "Campionato regionale strada Sardegna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2963"
+  nome_fisr: "GIULIANOVA S.IN LINE"
+  sigle_fisr: ["GIULIANOVA S.IN LINE"]
+  nome: "A.S.D. Giulianova Skate in Line"
+  citta: "Giulianova"
+  regione: "Abruzzo"
+  sito: ""
+  social: "https://www.facebook.com/giulianovaskate/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (solo directory e giornali abruzzesi); pagina Facebook dal risultato con titolo 'GIULIANOVA SKATE IN LINE'."
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato regionale strada Abruzzo 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "2964"
+  nome_fisr: "TEAM R.SENIGALLIA"
+  sigle_fisr: ["TEAM R.SENIGALLIA"]
+  nome: "ASD Team Roller Senigallia"
+  citta: "Senigallia (AN)"
+  regione: ""
+  sito: ""
+  social: "https://www.facebook.com/teamrollersenigallia/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Facebook dal risultato \"Team Roller Senigallia\"; nome completo da orangogo (\"ASD TEAM ROLLER SENIGALLIA\") e da senigallianotizie.it. Nessun sito della società ("
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3151"
+  nome_fisr: "HOCKEY EMPOLI"
+  sigle_fisr: ["HOCKEY EMPOLI"]
+  nome: "Hockey Empoli A.S.D. (sezione Pattinaggio Corsa)"
+  citta: "Empoli (FI)"
+  regione: "Toscana"
+  sito: "https://www.empolihockey.it/"
+  social: "https://www.facebook.com/PattinaggioCorsaEmpoli/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati su empolihockey.it (sezione 'Pattinaggio corsa' a /pattinaggio-corsa/): home aperta dalla shell, HTTP 200, titolo 'Hockey Empoli – Associazione Sporti); aperto il 2026-11-06: Hockey Empoli – Associazione Sportiva Dilettantistica"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Toscana 2025/26", "Campionato regionale strada Toscana 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3160"
+  nome_fisr: "ASD CITTA' DI PRIOLO"
+  sigle_fisr: ["ASD CITTA' DI PRIOLO"]
+  nome: "ASD Pattinaggio Città di Priolo Gargallo"
+  citta: "Priolo Gargallo (SR)"
+  regione: "Sicilia"
+  sito: ""
+  social: "https://www.facebook.com/pattinaggiopriologargallo/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati; pagina Facebook dal risultato con titolo 'Gsd Pattinaggio Città di Priolo Gargallo'. Nome da siracusanews.it ('5 medaglie "
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3186"
+  nome_fisr: "ROLLER C. LENDINARA"
+  sigle_fisr: ["ROLLER C. LENDINARA"]
+  nome: "A.S.D. Roller Club Lendinara"
+  citta: "Lendinara"
+  regione: "Veneto"
+  sito: ""
+  social: "https://www.facebook.com/rollerclublendinara/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (giornali polesani, trovalosport, registro CONI, Circuito Nord Ovest); pagina Facebook dal risultato con titolo 'Roller Clu"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3257"
+  nome_fisr: "DEBBY ROLLER TEAM"
+  sigle_fisr: ["DEBBY ROLLER TEAM"]
+  nome: "A.S.D. DEBBYROLLER TEAM"
+  citta: "Ladispoli (RM)"
+  regione: "Lazio"
+  sito: "http://www.debbyrollerteam.it/"
+  social: "https://www.instagram.com/debbyrollerteam/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato \"A.S.D. DEBBY ROLLER TEAM - Home\" su debbyrollerteam.it/cms/; la home aperta con curl ha titolo \"Debby Roller Team\" ma il solo testo \"Manca poco...\" (); aperto il 2026-11-06: Debby Roller Team"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lazio 2025/26", "Campionato regionale strada Lazio 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato regionale Strada Lazio Tutte le Categorie (Allumiere (RM) - 12/04/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3296"
+  nome_fisr: "CALATIA ROLLER CASERTA"
+  sigle_fisr: ["CALATIA ROLLER CASERTA"]
+  nome: "A.S.D. Calatia Roller Caserta (Scuola di Pattinaggio)"
+  citta: "Caserta"
+  regione: "Campania"
+  sito: "https://www.calatiarollercasertascuoladipattinaggio.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'A.S.D. CALATIA ROLLER CASERTA (SCUOLA DI PATTINAGGIO)' (calatiarollercasertascuoladipattinaggio.it): aperto dalla shell, HTTP 200, titolo uguale, tes); aperto il 2026-11-06: A.S.D. CALATIA ROLLER CASERTA (SCUOLA DI PATTINAGGIO) - Nuov"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale strada Campania 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3309"
+  nome_fisr: "POL.SALINE TRAPANESI"
+  sigle_fisr: ["POL.SALINE TRAPANESI"]
+  nome: "A.S.D. Polisportiva Saline Trapanesi (Pattinatori Trapanesi)"
+  citta: "Trapani"
+  regione: "Sicilia"
+  sito: "https://www.pattinatoritrapanesi.it/"
+  social: "https://www.facebook.com/pattinatoritrapanesiofficial/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'Pattinatori Trapanesi - A.S.D. Pol. Saline Trapanesi - FISR ... Il cambio del brand' su pattinatoritrapanesi.it; la home aperta con curl (redirige su); aperto il 2026-11-06: Pattinatori Trapanesi"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3333"
+  nome_fisr: "ROLLER GREEN"
+  sigle_fisr: ["ROLLER GREEN"]
+  nome: "A.S.D. Rollergreen"
+  citta: "Castel di Lama"
+  regione: "Marche"
+  sito: "https://www.rollergreen.eu/"
+  social: "https://www.facebook.com/people/rollergreen/100063741152319/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'Roller Green' su rollergreen.eu; la home aperta da shell ha titolo 'Roller Green | Scuola e Corsi di Pattinaggio a Ascoli Piceno, Castel di Lama, Spi); aperto il 2026-11-06: Roller Green | Scuola e Corsi di Pattinaggio a Ascoli Piceno"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3337"
+  nome_fisr: "SPEEDY GONZALES"
+  sigle_fisr: ["SPEEDY GONZALES"]
+  nome: "ASD Pattinatori Speedy Gonzales"
+  citta: ""
+  regione: "Puglia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Puglia 2025/26", "Campionato regionale strada Puglia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Speedy Gonzales pattinaggio corsa Puglia' | '\"pattinatori speedy gonzales\" Taranto asd'."
+
+- codice_fisr: "3339"
+  nome_fisr: "POL.FIT FOR FUN"
+  sigle_fisr: ["POL.FIT FOR FUN"]
+  nome: "POL. FIT FOR FUN"
+  citta: ""
+  regione: "Puglia"
+  sito: ""
+  social: "https://www.facebook.com/fitforfunpattinaggio/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (elenchi FISR, Agenzia delle Entrate, directory). Facebook dal risultato 'ASD Pol Fit For Fun Pattinaggio' (facebook.com/fi"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Puglia 2025/26", "Campionato regionale strada Puglia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["3 MEMORIAL NAZIONALE PIERFRANCESCO MAZZA (SAN GIORGIO IONICO (TA) - 21/06/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3370"
+  nome_fisr: "CARDANO SKATING SRL SSD"
+  sigle_fisr: ["CARDANO SKATING SRL SSD"]
+  nome: ""
+  citta: "Cardano al Campo (VA)"
+  regione: "Lombardia"
+  sito: "https://cardanoskating.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'Cardano Skating S.R.L. S.S.D. — Pattinaggio corsa a rotelle e ghiaccio' (cardanoskating.it); la home aperta con curl ha lo stesso titolo e il testo c); aperto il 2026-11-06: Cardano Skating S.R.L. S.S.D. — Pattinaggio corsa a rotelle "
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["8 Trofeo Memorial Antonio Rocchetta (Cardano al Campo - 12/09/26 - 13/09/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3388"
+  nome_fisr: "NUOVA RINASCITA"
+  sigle_fisr: ["NUOVA RINASCITA"]
+  nome: "Nuova Rinascita Pattinaggio A.S.D."
+  citta: "Ravenna"
+  regione: "Emilia-Romagna"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Emilia-Romagna 2025/26", "Campionato regionale strada Emilia-Romagna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: '\"Nuova Rinascita\" pattinaggio corsa Emilia-Romagna' | '\"Nuova Rinascita\" Ravenna pattinaggio sito facebook'."
+
+- codice_fisr: "3438"
+  nome_fisr: "B-SIDE R.FOLIGNO"
+  sigle_fisr: ["B-SIDE R.FOLIGNO"]
+  nome: "B-Side Roller Foligno"
+  citta: "Foligno (PG)"
+  regione: "Umbria"
+  sito: ""
+  social: "https://www.instagram.com/bsiderollerfoligno/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Instagram dal risultato \"ASD B-SIDE ROLLER FOLIGNO (@bsiderollerfoligno)\". Il sito b-siderollerfoligno.webnode.it indicato dal risultato \"A.S.D. B_SIDE ROLLER F"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Umbria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO INTERPROVINCIALE INDOOR PG/TR - TUTTE LE CATEGORIE (VALTOPINA - 15/03/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3446"
+  nome_fisr: "ROLLER C.SCALIGERO"
+  sigle_fisr: ["ROLLER C.SCALIGERO"]
+  nome: "A.S.D. Roller Club Scaligero"
+  citta: "Verona"
+  regione: "Veneto"
+  sito: "https://www.rollerclubscaligero.it/"
+  social: "https://www.facebook.com/ASDRollerClubScaligero/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati su rollerclubscaligero.it: home aperta dalla shell, HTTP 200, titolo 'Roller Club Scaligero – CORSI DI PATTINAGGIO A VERONA, PATTINAGGIO CORSA, PATTIN); aperto il 2026-11-06: Roller Club Scaligero – CORSI DI PATTINAGGIO A VERONA, PATTI"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3569"
+  nome_fisr: "PATTINAMELIA"
+  sigle_fisr: ["PATTINAMELIA"]
+  nome: ""
+  citta: ""
+  regione: "Umbria"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Campionato regionale pista Umbria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO REGIONALE STRADA UMBRIA - TUTTE LE CATEGORIE (TERNI - 12/04/26)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Pattinamelia Amelia pattinaggio' | '\"Pattinamelia\" asd pattinaggio corsa'."
+
+- codice_fisr: "3570"
+  nome_fisr: "SPEEDY WHEELS LT"
+  sigle_fisr: ["SPEEDY WHEELS LT"]
+  nome: "A.S.D. Speedy Wheels Latina"
+  citta: "Latina"
+  regione: "Lazio"
+  sito: "https://www.speedywheelslatina.it/"
+  social: "https://www.instagram.com/a.s.d.speedywheels/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati 'Speedywheelslatina' e 'Chi siamo!' su speedywheelslatina.it; la home aperta da shell contiene 'Speedy Wheels', 'pattinaggio', 'inline', 'rotelle' (ti); aperto il 2026-11-06: "
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lazio 2025/26", "Campionato regionale strada Lazio 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3614"
+  nome_fisr: "A.S.D.SPORT INSIDE"
+  sigle_fisr: ["A.S.D.SPORT INSIDE"]
+  nome: ""
+  citta: ""
+  regione: "Liguria"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Liguria 2025/26", "Campionato regionale strada Liguria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato Regionale Pista Liguria Categorie R12/R/A/J/S (Genova Pegli (GE) - 29/03/2026)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Sport Inside pattinaggio corsa Liguria asd' | '\"sport inside\" pattinaggio asd Savona Genova'."
+
+- codice_fisr: "3623"
+  nome_fisr: "NOI TEAM BOVOLONE"
+  sigle_fisr: ["NOI TEAM BOVOLONE"]
+  nome: "Polisportiva Noi Team Bovolone - Pattinaggio A.S.D."
+  citta: "Bovolone (VR)"
+  regione: "Veneto"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: '\"Noi Team Bovolone\" pattinaggio'."
+
+- codice_fisr: "3626"
+  nome_fisr: "ROAD RUNNERS"
+  sigle_fisr: ["ROAD RUNNERS"]
+  nome: "Road Runners Pattinaggio Chiaravalle"
+  citta: "Chiaravalle (AN)"
+  regione: "Marche"
+  sito: "https://road-runners.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati 'Home', 'Corsi', 'Risultati', 'Calendario eventi' su road-runners.it e 'GIOCA SUI PATTINI - ROAD RUNNERS' sul sito del Comune di Chiaravalle; la home ); aperto il 2026-11-06: Home | Road Runners Pattinaggio Chiaravalle"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3634"
+  nome_fisr: "ROLLER FENIX"
+  sigle_fisr: ["ROLLER FENIX"]
+  nome: "A.S.D. Roller Fenix"
+  citta: "Aci Catena"
+  regione: "Sicilia"
+  sito: "https://www.rollerfenix.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'A.S.D. Roller Fenix - Pattinodromo Acicatena' su rollerfenix.it; la home aperta da shell ha titolo 'A.S.D. Roller Fenix - Pattinaggio Corsa Freestyle); aperto il 2026-11-06: A.S.D. Roller Fenix – Pattinaggio Corsa Freestyle Acicatena "
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3635"
+  nome_fisr: "ASD FLASH"
+  sigle_fisr: ["ASD FLASH"]
+  nome: "A.S.D. Flash"
+  citta: "Assemini (CA)"
+  regione: "Sardegna"
+  sito: "https://www.flashpattinaggio.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati \"ASD FLASH\" e \"ASD FLASH| PATTINAGGIO CORSA\" su flashpattinaggio.it; home aperta con curl: titolo \"ASD FLASH | SCUOLA DI PATTINAGGIO | CORSA | ARTISTI); aperto il 2026-11-06: ASD FLASH | SCUOLA DI PATTINAGGIO | CORSA | ARTISTICO"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sardegna 2025/26", "Campionato regionale strada Sardegna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato Regionale Pista R12/R/A/J/S/M F/M (Assemini (CA) - 18/04/26)", "Campionato Regionale Indoor Sardegna - G / E / R12 F/M (Capoterra (CA) - 08/03/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3649"
+  nome_fisr: "TOROLLSKI CENTER"
+  sigle_fisr: ["TOROLLSKI CENTER"]
+  nome: "ASD Torollski Center"
+  citta: "Pesaro (PU)"
+  regione: "Marche"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: '\"Torollski Center\" pattinaggio'."
+
+- codice_fisr: "3662"
+  nome_fisr: "POL.VA ACIS"
+  sigle_fisr: ["POL.VA ACIS"]
+  nome: "ASD Polisportiva Acis"
+  citta: "Agrigento"
+  regione: "Sicilia"
+  sito: ""
+  social: "https://www.facebook.com/ASDPOLISPORTIVAACIS/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati; pagina Facebook dal risultato con titolo 'Asd Polisportiva Acis'. Città dagli articoli di grandangoloagrigento.it ('Acis A"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3676"
+  nome_fisr: "C.S. CAMPOBASSO"
+  sigle_fisr: ["C.S. CAMPOBASSO"]
+  nome: "ASD Centro Sportivo Pattinaggio Campobasso"
+  citta: "Campobasso"
+  regione: "Molise"
+  sito: ""
+  social: "https://www.facebook.com/p/ASD-Centro-Sportivo-Pattinaggio-Campobasso-100076194978742/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (giornali molisani, trovalosport); pagina Facebook dal risultato con titolo 'ASD Centro Sportivo Pattinaggio Campobasso'."
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale strada Molise 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3682"
+  nome_fisr: "A.S.D.GS SALA AL BARRO"
+  sigle_fisr: ["A.S.D.GS SALA AL BARRO"]
+  nome: "Gruppo Sportivo Sala al Barro A.S.D."
+  citta: "Galbiate (LC)"
+  regione: "Lombardia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'GS Sala al Barro pattinaggio Galbiate'."
+
+- codice_fisr: "3696"
+  nome_fisr: "SKATING TRAPANI"
+  sigle_fisr: ["SKATING TRAPANI"]
+  nome: "ASD SKATING TRAPANI E DELEGATO TERR. TRAPANI"
+  citta: "Trapani"
+  regione: "Sicilia"
+  sito: ""
+  social: "https://www.facebook.com/skatingtrapaniteam/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (registro CONI, giornali locali, aggregatori). Facebook dal risultato 'Pattinatori Skating Trapani Team' (facebook.com/skat"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato provinciale Pista AG/TP camp. Interprovinciale AG/TP pista pattinodromo Trapani (Trapani - 15/03/26)", "Campionato regionale Pista Sicilia Campionati Regionali tutte le categorie (Trapani - 28/03/26 - 29/03/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3703"
+  nome_fisr: "A.S.D. RIETI IN LINE"
+  sigle_fisr: ["A.S.D. RIETI IN LINE"]
+  nome: "ASD Rieti in Line"
+  citta: "Rieti"
+  regione: "Lazio"
+  sito: "https://www.rietiinline.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Non verificabile dalla shell: dominio dal risultato di ricerca 'Rieti in Line' (www.rietiinline.it); curl riceve una pagina di 399 byte con 'Country not allowed); aperto il 2026-11-06: (senza titolo)"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato regionale pista Lazio 2025/26", "Campionato regionale strada Lazio 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3707"
+  nome_fisr: "MLSKATE"
+  sigle_fisr: ["MLSKATE"]
+  nome: "ASD MLSkate Cagliari"
+  citta: "Cagliari"
+  regione: "Sardegna"
+  sito: "https://www.mlskate.it/"
+  social: "https://www.facebook.com/mlskateCagliariASD/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'CONTATTI - ASD MLSKATE CAGLIARI' su mlskate.it; la home aperta da shell ha titolo 'HOMEPAGE - ASD MLSKATE CAGLIARI' e contiene 'pattinaggio' e 'inlin); aperto il 2026-11-06: HOMEPAGE - ASD MLSKATE CAGLIARI"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sardegna 2025/26", "Campionato regionale strada Sardegna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3754"
+  nome_fisr: "NEW R.PORCIA ASD"
+  sigle_fisr: ["NEW R.PORCIA ASD"]
+  nome: "A.S.D. NEW ROLLER PORCIA"
+  citta: "Porcia (PN)"
+  regione: "Friuli-Venezia Giulia"
+  sito: "http://www.newrollerporcia.it/"
+  social: "https://www.facebook.com/newrollerporcia/"
+  stato_sito: "sito_non_raggiungibile"
+  fonte_sito: "ricerca web del 2026-11-06 (Non verificabile dalla shell: dominio dal risultato di ricerca \"Home\" (www.newrollerporcia.it); curl in https dà \"CONNECT tunnel failed, response 502\" e in http); aperto il 2026-11-06: HTTP 000"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Friuli-Venezia Giulia 2025/26", "Campionato regionale strada Friuli-Venezia Giulia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato regionale Strada Friuli-VG GIOVANISSIMI/ESORDIENTI (PORCIA - 15/03/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3800"
+  nome_fisr: "C.S.AERONAUTICA MI."
+  sigle_fisr: ["C.S.AERONAUTICA MI."]
+  nome: ""
+  citta: ""
+  regione: ""
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3809"
+  nome_fisr: "A.S.D.BRIANZA INLINE"
+  sigle_fisr: ["A.S.D.BRIANZA INLINE"]
+  nome: "ASD Brianza Inline"
+  citta: "Mariano Comense (CO)"
+  regione: "Lombardia"
+  sito: "https://www.brianzainline.com/"
+  social: "https://www.facebook.com/p/ASD-Brianza-Inline-100083361909711/"
+  stato_sito: "sito_non_raggiungibile"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati 'home » ASD BRIANZA Inline' e 'Chi siamo » ASD BRIANZA Inline' su brianzainline.com. Con user agent 'Mozilla/5.0' il server risponde HTTP 406; con un ); aperto il 2026-11-06: HTTP 406"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3814"
+  nome_fisr: "ANPINLINE COLOGNO MONZESE"
+  sigle_fisr: ["ANPINLINE COLOGNO MONZESE"]
+  nome: ""
+  citta: "Cologno Monzese"
+  regione: "Lombardia"
+  sito: "https://asdanpinline.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati 'CONTATTI' e 'CORSI PATTINAGGIO 2025/26' su asdanpinline.it; la home aperta da shell ha titolo 'Anpinline Cologno Monzese' e contiene 'pattinaggio' e ); aperto il 2026-11-06: Anpinline Cologno Monzese"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["5 TROFEO CITTA' DI COLOGNO MONZESE (Cologno Monzese - 12/07/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3816"
+  nome_fisr: "REDBLACK R.TEAM"
+  sigle_fisr: ["REDBLACK R.TEAM"]
+  nome: "REDBLACK ROLLER TEAM A.S.D."
+  citta: "Cremona"
+  regione: "Lombardia"
+  sito: "http://www.redblackrollerteam.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato \"Home Page\" su redblackrollerteam.it; home aperta con curl (rinvia a http://redblackrollerteam.it/): titolo \"Home Page - redblackrollerteam\", meta des); aperto il 2026-11-06: Home Page - redblackrollerteam"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATI REGIONALI STRADA cat. G/E/R12/R (CREMONA - 22/03/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3831"
+  nome_fisr: "PATT.FINALE EMILIA"
+  sigle_fisr: ["PATT.FINALE EMILIA"]
+  nome: ""
+  citta: ""
+  regione: ""
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3846"
+  nome_fisr: "GREEN TEAM PC"
+  sigle_fisr: ["GREEN TEAM PC"]
+  nome: "ASD Green Team Piacenza"
+  citta: "Piacenza"
+  regione: "Emilia-Romagna"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Emilia-Romagna 2025/26", "Campionato regionale strada Emilia-Romagna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Green Team Piacenza pattinaggio'."
+
+- codice_fisr: "3895"
+  nome_fisr: "SKATING ACADEMY PISA"
+  sigle_fisr: ["SKATING ACADEMY PISA"]
+  nome: "ASD SKATING ACADEMY PISA"
+  citta: "Pisa"
+  regione: "Toscana"
+  sito: "http://www.asdskatingacademypisa.it/"
+  social: "https://www.instagram.com/asdskatingacademy/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultato 'ASD SKATING ACADEMY PISA' su asdskatingacademypisa.it; la home aperta da shell ha titolo 'ASD SKATING ACADEMY PISA | Scuola di Pattinaggio' e contien); aperto il 2026-11-06: ASD SKATING ACADEMY PISA | Scuola di Pattinaggio"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Toscana 2025/26", "Campionato regionale strada Toscana 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato INTERREGIONALE Indoor Liguria/Toscana cat- GIO-ESO-R12-RAG (PISA Via Giuseppe Gioacchino Belli n. 23 - 25/01/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3899"
+  nome_fisr: "ASD HERMES ROLLER"
+  sigle_fisr: ["ASD HERMES ROLLER"]
+  nome: ""
+  citta: "Caserta"
+  regione: "Campania"
+  sito: ""
+  social: "https://www.facebook.com/asdhermesroller/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Facebook dal risultato \"ASD Hermes Roller\"; esiste anche Instagram \"Pattinaggio Hermes Roller (@hermes_roller)\". Città dal risultato \"Scuola di pattinaggio a Ca"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Campania 2025/26", "Campionato regionale strada Campania 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3901"
+  nome_fisr: "ARETUSA SKATE"
+  sigle_fisr: ["ARETUSA SKATE"]
+  nome: ""
+  citta: ""
+  regione: ""
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "3946"
+  nome_fisr: "PIACE SKATERS"
+  sigle_fisr: ["PIACE SKATERS"]
+  nome: "Piace Skaters ASD"
+  citta: "Piacenza"
+  regione: "Emilia-Romagna"
+  sito: ""
+  social: "https://www.facebook.com/piaceskaters/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati; pagina Facebook dal risultato con titolo 'Piace Skaters asd'. Città dagli articoli di piacenzasera.it e liberta.it."
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Emilia-Romagna 2025/26", "Campionato regionale strada Emilia-Romagna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4000"
+  nome_fisr: "ASD INLINE 360"
+  sigle_fisr: ["ASD INLINE 360"]
+  nome: ""
+  citta: "Rho"
+  regione: "Lombardia"
+  sito: "https://www.inline360.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati 'INLINE 360', 'Velocità', 'Scuola pattinaggio' su inline360.it; la home aperta da shell ha titolo 'INLINE 360 - 360 degrees skating team' e contiene '); aperto il 2026-11-06: INLINE 360 – 360 degrees skating team"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4011"
+  nome_fisr: "LUNA SPORTS ACADEMY"
+  sigle_fisr: ["LUNA SPORTS ACADEMY"]
+  nome: ""
+  citta: "Senigallia (AN)"
+  regione: "Marche"
+  sito: ""
+  social: "https://www.facebook.com/lunasportsacademy/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Facebook dal risultato \"LunA Sports Academy asd\"; città da più articoli (\"Luna Sports Academy Senigallia campione regionale su strada\", quisenigallia.it). Nessu"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["INTERNATIONAL VESMACO RACE (SENIGALLIA - 14/05/26 - 17/05/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4014"
+  nome_fisr: "SPORT LAB"
+  sigle_fisr: ["SPORT LAB"]
+  nome: ""
+  citta: ""
+  regione: "Campania"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Campania 2025/26", "Campionato regionale strada Campania 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4018"
+  nome_fisr: "REAL SKATING TEAM"
+  sigle_fisr: ["REAL SKATING TEAM"]
+  nome: ""
+  citta: ""
+  regione: "Emilia-Romagna"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Emilia-Romagna 2025/26", "Campionato regionale strada Emilia-Romagna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4020"
+  nome_fisr: "I CORVI"
+  sigle_fisr: ["I CORVI"]
+  nome: "ASD I Corvi"
+  citta: "Carbonia"
+  regione: "Sardegna"
+  sito: ""
+  social: "https://www.facebook.com/asdicorvi/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati; pagina Facebook dal risultato con titolo 'ASD I CORVI'. Città da Ajò Noas ('Carbonia: i giovani atleti dell'ASD I corvi')."
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sardegna 2025/26", "Campionato regionale strada Sardegna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4021"
+  nome_fisr: "BI ROLLER"
+  sigle_fisr: ["BI ROLLER"]
+  nome: "A.S.D. Bi Roller Pattinaggio Biella"
+  citta: "Biella"
+  regione: "Piemonte"
+  sito: "https://biroller.it/"
+  social: "https://www.facebook.com/pattinaggiobiella/"
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati \"Bi Roller -\", \"Attività - Bi Roller\", \"Storia - Bi Roller\" su biroller.it; home aperta con curl: titolo \"Bi Roller\", testo \"Società Biellese di ...\" ); aperto il 2026-11-06: Bi Roller -"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Piemonte 2025/26", "Campionato regionale strada Piemonte 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4030"
+  nome_fisr: "SPEED ROLLER UTA"
+  sigle_fisr: ["SPEED ROLLER UTA"]
+  nome: ""
+  citta: ""
+  regione: "Sardegna"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato regionale pista Sardegna 2025/26", "Campionato regionale strada Sardegna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4056"
+  nome_fisr: "SKATERS"
+  sigle_fisr: ["SKATERS"]
+  nome: ""
+  citta: ""
+  regione: "Puglia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Puglia 2025/26", "Campionato regionale strada Puglia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4081"
+  nome_fisr: "LIBERTAS AMBROSIANA"
+  sigle_fisr: ["LIBERTAS AMBROSIANA"]
+  nome: "Pattinatori Libertas Ambrosiana ASD"
+  citta: "Sesto San Giovanni"
+  regione: "Lombardia"
+  sito: ""
+  social: "https://www.facebook.com/pattinatorilibertas/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (scheda del Comune di Sesto San Giovanni, Rollerblade, Eventbrite); pagina Facebook dal risultato con titolo 'Pattinatori L"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4092"
+  nome_fisr: "CUS MOLISE"
+  sigle_fisr: ["CUS MOLISE"]
+  nome: ""
+  citta: ""
+  regione: "Molise"
+  sito: "https://cusmolise.unimol.it/"
+  social: ""
+  stato_sito: "sito_non_raggiungibile"
+  fonte_sito: "ricerca web del 2026-11-06 (Non verificabile dalla shell: dominio dai risultati di ricerca \"Cus Molise pattinaggio, grandi riscontri ai campionati regionali\", \"Pattinaggio, Cus Molise prot); aperto il 2026-11-06: HTTP 000"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale strada Molise 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4111"
+  nome_fisr: "ROLLER SKATE RAVENNA"
+  sigle_fisr: ["ROLLER SKATE RAVENNA"]
+  nome: ""
+  citta: ""
+  regione: "Emilia-Romagna"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Campionato regionale pista Emilia-Romagna 2025/26", "Campionato regionale strada Emilia-Romagna 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4157"
+  nome_fisr: "ASD CIVITANOVA SKATING TEAM"
+  sigle_fisr: ["ASD CIVITANOVA SKATING TEAM"]
+  nome: ""
+  citta: ""
+  regione: "Marche"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4160"
+  nome_fisr: "ROLLER CARBONIA A.S.D."
+  sigle_fisr: ["ROLLER CARBONIA A.S.D."]
+  nome: "Scuola di pattinaggio Roller Carbonia"
+  citta: "Carbonia"
+  regione: "Sardegna"
+  sito: ""
+  social: "https://www.facebook.com/p/Scuola-di-pattinaggio-Roller-Carbonia-100055885698878/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (giornali sulcitani, fisr.it); pagina Facebook dal risultato con titolo 'Scuola di pattinaggio Roller Carbonia'."
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sardegna 2025/26", "Campionato regionale strada Sardegna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4167"
+  nome_fisr: "ASD PESCARA ROLLER TEAM"
+  sigle_fisr: ["ASD PESCARA ROLLER TEAM"]
+  nome: ""
+  citta: ""
+  regione: "Abruzzo"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale strada Abruzzo 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Pescara Roller Team pattinaggio asd'."
+
+- codice_fisr: "4171"
+  nome_fisr: "SKATING VEROLAVECCHIA"
+  sigle_fisr: ["SKATING VEROLAVECCHIA"]
+  nome: ""
+  citta: ""
+  regione: "Lombardia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4185"
+  nome_fisr: "POL. CALUSCHESE"
+  sigle_fisr: ["POL. CALUSCHESE"]
+  nome: ""
+  citta: ""
+  regione: "Lombardia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4191"
+  nome_fisr: "A.S.D. ITK SKATING CINISELLO BALSAMO"
+  sigle_fisr: ["A.S.D. ITK SKATING CINISELLO BALSAMO"]
+  nome: "ASD ITK Skating Cinisello"
+  citta: "Cinisello Balsamo"
+  regione: "Lombardia"
+  sito: "https://www.itkskating.it/"
+  social: ""
+  stato_sito: "sito_verificato"
+  fonte_sito: "ricerca web del 2026-11-06 (Risultati 'ASD ITK SKATING CINISELLO' e 'IMPIANTI' su itkskating.it; la home aperta da shell ha titolo 'ASD ITK SKATING CINISELLO' e contiene 'pattinaggio' e 's); aperto il 2026-11-06: ASD ITK SKATING CINISELLO"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lombardia 2025/26", "Campionato regionale strada Lombardia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4233"
+  nome_fisr: "ASD ACC.S.ROT."
+  sigle_fisr: ["ASD ACC.S.ROT."]
+  nome: "ASD Accademia Sport Rotellistici"
+  citta: ""
+  regione: "Puglia"
+  sito: ""
+  social: "https://www.facebook.com/people/ASD-Accademia-Sport-Rotellistici/100063726061468/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Facebook dal risultato \"ASD Accademia Sport Rotellistici\". Nessun sito della società nei risultati; la città non emerge."
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Puglia 2025/26", "Campionato regionale strada Puglia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4239"
+  nome_fisr: "PATT. MAREMMANI"
+  sigle_fisr: ["PATT. MAREMMANI"]
+  nome: ""
+  citta: ""
+  regione: "Toscana"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Toscana 2025/26", "Campionato regionale strada Toscana 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4285"
+  nome_fisr: "SORBOLO"
+  sigle_fisr: ["SORBOLO"]
+  nome: ""
+  citta: ""
+  regione: ""
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4286"
+  nome_fisr: "POL. AQUILA SPILIMBERGO A.S.D"
+  sigle_fisr: ["POL. AQUILA SPILIMBERGO A.S.D"]
+  nome: "POLISPORTIVA AQUILA SPILIMBERGO"
+  citta: "Spilimbergo"
+  regione: "Friuli-Venezia Giulia"
+  sito: ""
+  social: "https://www.facebook.com/p/Polisportiva-Aquila-Spilimbergo-ASD-100067768247584/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (registro CONI, orangogo, fisrfvg.it); pagina Facebook dal risultato con titolo 'Polisportiva Aquila Spilimbergo ASD'; nei "
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Friuli-Venezia Giulia 2025/26", "Campionato regionale strada Friuli-Venezia Giulia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato regionale Pista Friuli-VG GIOVANISSIMI/ESORDIENTI (SPILIMBERGO - 08/03/26)", "MOSAICO ROLLER NEXT GEN (SPILIMBERGO (PN) - 10/05/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4302"
+  nome_fisr: "FUTURE INLINE A.S.D."
+  sigle_fisr: ["FUTURE INLINE A.S.D."]
+  nome: "Future Inline ASD"
+  citta: "Treviso"
+  regione: "Veneto"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Campionato regionale pista Veneto 2025/26", "Campionato regionale strada Veneto 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Future Inline pattinaggio corsa Veneto asd'."
+
+- codice_fisr: "4326"
+  nome_fisr: "ASD TERRASARDA PATT."
+  sigle_fisr: ["ASD TERRASARDA PATT."]
+  nome: ""
+  citta: ""
+  regione: "Sardegna"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sardegna 2025/26", "Campionato regionale strada Sardegna 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4333"
+  nome_fisr: "R.S.VADO LIGURE ASD"
+  sigle_fisr: ["R.S.VADO LIGURE ASD"]
+  nome: ""
+  citta: ""
+  regione: "Liguria"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Liguria 2025/26", "Campionato regionale strada Liguria 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4349"
+  nome_fisr: "SKYROLLER"
+  sigle_fisr: ["SKYROLLER"]
+  nome: ""
+  citta: "Macerata"
+  regione: "Marche"
+  sito: ""
+  social: "https://www.facebook.com/skyroller.it/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (solo Cronache Maceratesi e Resto del Carlino); pagina Facebook dal risultato con titolo 'Skyroller'; città dagli articoli "
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4359"
+  nome_fisr: "ASD PICENUM PASSION SKATE"
+  sigle_fisr: ["ASD PICENUM PASSION SKATE"]
+  nome: ""
+  citta: ""
+  regione: "Marche"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: 'Picenum Passion Skate pattinaggio'."
+
+- codice_fisr: "4383"
+  nome_fisr: "A.S.D.ATENA"
+  sigle_fisr: ["A.S.D.ATENA"]
+  nome: ""
+  citta: ""
+  regione: ""
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4385"
+  nome_fisr: "S.D.S. SPECIALISTI DELLO SPORT S.S.DIL.A.R.L."
+  sigle_fisr: ["S.D.S. SPECIALISTI DELLO SPORT S.S.DIL.A.R.L."]
+  nome: ""
+  citta: ""
+  regione: "Abruzzo"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale strada Abruzzo 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4393"
+  nome_fisr: "PATTINATORI BRINDISI ASD"
+  sigle_fisr: ["PATTINATORI BRINDISI ASD"]
+  nome: "ASD PATTINATORI BRINDISI"
+  citta: "Brindisi"
+  regione: "Puglia"
+  sito: ""
+  social: "https://www.facebook.com/pattinatoribrindisi/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Il dominio pattinatoribrindisi.it (risultato 'Pattinatori Brindisi') aperto da shell reindirizza oggi a facebook.com/pattinatoribrindisi (pagina di login Facebo"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Puglia 2025/26", "Campionato regionale strada Puglia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["CAMPIONATO REGIONALE STRADA PUGLIA (BRINDISI - 19/04/26)"]
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4400"
+  nome_fisr: "ASD PATTINATORI CANICATTINESI"
+  sigle_fisr: ["ASD PATTINATORI CANICATTINESI"]
+  nome: ""
+  citta: ""
+  regione: "Sicilia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4401"
+  nome_fisr: "A.S.D. PATTINAGGIO FLORIDIA"
+  sigle_fisr: ["A.S.D. PATTINAGGIO FLORIDIA"]
+  nome: ""
+  citta: ""
+  regione: "Sicilia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4413"
+  nome_fisr: "POL.SALESIANI VALLECROSIA"
+  sigle_fisr: ["POL.SALESIANI VALLECROSIA"]
+  nome: ""
+  citta: ""
+  regione: "Liguria"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Liguria 2025/26", "Campionato regionale strada Liguria 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4424"
+  nome_fisr: "A.S.D.SALENTO IN-LINE"
+  sigle_fisr: ["A.S.D.SALENTO IN-LINE"]
+  nome: "ASD Salento In-Line"
+  citta: ""
+  regione: "Puglia"
+  sito: ""
+  social: "https://www.facebook.com/p/ASD-Salento-In-Line-100092035934141/"
+  stato_sito: "solo_social"
+  fonte_sito: "ricerca web del 2026-11-06: Nessun dominio proprio nei risultati (solo articoli sul campionato regionale di Galatina); pagina Facebook dal risultato con titolo 'ASD Salento In-Line'; nei r"
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Puglia 2025/26", "Campionato regionale strada Puglia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4440"
+  nome_fisr: "PATT.PIOMBINESI"
+  sigle_fisr: ["PATT.PIOMBINESI"]
+  nome: ""
+  citta: ""
+  regione: "Toscana"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Toscana 2025/26", "Campionato regionale strada Toscana 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4441"
+  nome_fisr: "ASD DIMENSIONE"
+  sigle_fisr: ["ASD DIMENSIONE"]
+  nome: ""
+  citta: ""
+  regione: "Molise"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale strada Molise 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4443"
+  nome_fisr: "FIAMME AZZURRE"
+  sigle_fisr: ["FIAMME AZZURRE"]
+  nome: ""
+  citta: ""
+  regione: "Lazio"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Lazio 2025/26", "Campionato regionale strada Lazio 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4448"
+  nome_fisr: "A.S.D. SKATING IN LINE PRIOLO"
+  sigle_fisr: ["A.S.D. SKATING IN LINE PRIOLO"]
+  nome: "ASD SPORTING CLUB PATTINAGGIO PRIOLO"
+  citta: "Priolo Gargallo"
+  regione: "Sicilia"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato Italiano Pista 2025/26", "Campionato Italiano Strada 2025/26", "Campionato regionale pista Sicilia 2025/26", "Campionato regionale strada Sicilia 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: ["Campionato provinciale Strada AG/CT/SR CAMP.INTERPROVINCIALE STRADA SR/CT/AG (Priolo - 31/05/26)", "Campionato provinciale Pista SR camp. Provinciale pista pattinodromo Priolo (Priolo - 14/03/26)"]
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: '\"Skating In Line Priolo\" pattinaggio' | '\"Skating in Line Priolo\" facebook instagram asd'."
+
+- codice_fisr: "4452"
+  nome_fisr: "A.S.D. ROLLER AVELLINO"
+  sigle_fisr: ["A.S.D. ROLLER AVELLINO"]
+  nome: ""
+  citta: ""
+  regione: "Campania"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Campania 2025/26", "Campionato regionale strada Campania 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4472"
+  nome_fisr: "NOANGELS RIMINI"
+  sigle_fisr: ["NOANGELS RIMINI"]
+  nome: ""
+  citta: ""
+  regione: ""
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4493"
+  nome_fisr: "PATTINAGGIO ROLLER SALERNO ASD"
+  sigle_fisr: ["PATTINAGGIO ROLLER SALERNO ASD"]
+  nome: ""
+  citta: ""
+  regione: "Campania"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato regionale pista Campania 2025/26", "Campionato regionale strada Campania 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
+
+- codice_fisr: "4497"
+  nome_fisr: "V INLINE ASD"
+  sigle_fisr: ["V INLINE ASD"]
+  nome: ""
+  citta: ""
+  regione: "Marche"
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Indoor 2025/26", "Campionato regionale pista Marche 2025/26", "Campionato regionale strada Marche 2025/26", "Trofeo Bonacossa 2025/26", "Trofeo Tiezzi 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: "Ricerca web del 2026-11-06 senza esito; ricerche: '\"V Inline\" pattinaggio Marche asd' | '\"V-Inline\" OR \"V Inline ASD\" pattinaggio corsa'."
+
+- codice_fisr: "4533"
+  nome_fisr: "ASD ROLLERESTE"
+  sigle_fisr: ["ASD ROLLERESTE"]
+  nome: ""
+  citta: ""
+  regione: ""
+  sito: ""
+  social: ""
+  stato_sito: "senza_sito"
+  fonte_sito: ""
+  siti_candidati: []
+  ultima_stagione: "2025/26"
+  classifiche: ["Campionato Italiano Strada 2025/26", "Trofeo Bonacossa 2025/26"]
+  gare_organizzate: []
+  ultimo_controllo: 2026-11-06
+  note: ""
