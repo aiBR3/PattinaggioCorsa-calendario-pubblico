@@ -6,14 +6,14 @@ Un calendario pubblico con le gare e gli eventi di pattinaggio corsa aperti alle
 
 Il calendario è un file `.ics` pubblicato con *GitHub Pages* e aggiornato a ogni modifica.
 
-- per **iPhone, iPad, Mac / Apple Calendar**: aprire `webcal://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/calendario.ics`
-- per **Android / Google Calendar**: in Google Calendar → *Altri calendari* → *Da URL* → incollare `https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/calendario.ics` (Google aggiorna le sottoscrizioni ogni 12–24 ore circa)
+- Se usi l'app Calendario di Apple, incolla nel browser `webcal://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/calendario.ics`
+- Se usi l'app Calendario di Google, apri *Google Calendar → Altri calendari → Da URL* e incolla `https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/calendario.ics` (Google aggiorna le sottoscrizioni ogni 12–24 ore circa)
 
-La pagina web [https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) mostra queste istruzioni con i link qui sopra e gli eventi pubblicati.
+La pagina web [https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) mostra le istruzioni con i link qui sopra e gli eventi pubblicati.
 
 ## Segnalare una gara
 
-Un modulo per le segnalazioni volontarie è in arrivo.
+Un modulo per le segnalazioni volontarie è *in arrivo*.
 
 Nel frattempo apri una [issue](https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico/issues) con data, luogo, nome e il link della gara (o il testo del post sui social).
 
