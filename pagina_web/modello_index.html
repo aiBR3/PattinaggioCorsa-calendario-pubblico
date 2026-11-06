@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <!--
-  Modello della pagina pubblicata su GitHub Pages (index.html). Lo stile è in stile.css.
-  Tutto il testo si modifica QUI. script/genera_ics.py sostituisce solo i segnaposto, cioè i nomi qui sotto scritti tra doppie parentesi graffe nel corpo della pagina (in questo commento sono senza graffe, altrimenti lo script li sostituirebbe anche qui):
-    righe_tabella   le righe <tr> della tabella degli eventi (obbligatorio; l'unico)
-    numero_eventi   quanti eventi sono pubblicati
-    url_webcal      link webcal:// al calendario (per iPhone, iPad, Mac)
-    url_ics         link https:// al calendario (per Google Calendar e altri)
-    generato_il     data e ora di generazione (UTC)
-    titolo          nome del calendario come appare nelle app (lo stesso dell'ICS)
-    descrizione     descrizione del calendario come appare nelle app
-  Un segnaposto non usato non dà errore; uno sconosciuto sì. Ogni altro file di questa cartella (stile.css, immagini…) viene copiato così com'è nella cartella pubblicata.
+	Modello della pagina pubblicata su GitHub Pages (index.html).
+	Lo stile è in stile.css.
+	Tutto il testo si modifica QUI.
+	script/genera_ics.py sostituisce solo i segnaposto, cioè i nomi qui sotto scritti tra doppie parentesi graffe nel corpo della pagina (in questo commento sono senza graffe, altrimenti lo script li sostituirebbe anche qui):
+		righe_tabella   le righe <tr> della tabella degli eventi (obbligatorio; l'unico)
+		numero_eventi   quanti eventi sono pubblicati
+		url_webcal      link webcal:// al calendario (per iPhone, iPad, Mac)
+		url_ics         link https:// al calendario (per Google Calendar e altri)
+		generato_il     data e ora di generazione (UTC)
+		titolo          nome del calendario come appare nelle app (lo stesso dell'ICS)
+		descrizione     descrizione del calendario come appare nelle app
+  Un segnaposto non usato non dà errore; uno sconosciuto sì.
+  Ogni altro file di questa cartella (stile.css, immagini…) viene copiato così com'è nella cartella pubblicata.
 -->
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calendario pubblico del pattinaggio corsa per Master e Amatori (generato automaticamente)</title>
-<link rel="stylesheet" href="stile.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calendario pubblico del pattinaggio corsa per Master e Amatori (generato automaticamente)</title>
+	<link rel="stylesheet" href="stile.css">
 </head>
+
 <body>
 <h1>Calendario pubblico del pattinaggio corsa per Master e Amatori (generato automaticamente)</h1>
 
-<p>Gare ed eventi di pattinaggio corsa aperti alle categorie Master e Amatori/Fitness, comprese le pattinate non competitive, in Italia e nei paesi vicini, compilato automaticamente da script e agenti di IA. Si aggiorna da solo: una volta iscritto, il calendario sul telefono segue le modifiche.</p>
+<p>Un calendario pubblico con le gare e gli eventi di pattinaggio corsa aperti alle categorie <strong>Master</strong> e <strong>Amatori/Fitness</strong>, comprese le pattinate non competitive, in Italia e nei paesi vicini (Svizzera, Spagna, Portogallo, Francia, Austria, Germania, Slovenia).</p>
 
-<p><a class="bottone" href="{{url_webcal}}">Iscriviti al calendario (iPhone, iPad, Mac)</a></p>
+<p>Compilato automaticamente da script e agenti di IA. Una volta che ti sei iscritto al calendario, il tuo dispositivo riceve gli aggiornamenti in automatico.</p>
 
-<p>Su Android/Google Calendar: apri <a href="https://calendar.google.com/">Google Calendar dal computer</a> → <em>Altri calendari</em> → <em>Da URL</em> e incolla:<br>
-<code>{{url_ics}}</code><br>
-<small>Google aggiorna le sottoscrizioni ogni 12–24 ore circa.</small></p>
+<ul>
+	<li>Se usi l'app <em>Calendario di Apple</em>, <a class="bottone" href="{{url_webcal}}">clicca qui</a></li>
+	<li>Se usi l'app <em>Calendario di Google</em>, apri <a href="https://calendar.google.com/">Google Calendar</a> → Altri calendari → Da URL e incolla: <code>{{url_ics}}</code> (Google aggiorna le sottoscrizioni ogni 12–24 ore circa)
+</ul>
 
 <h2>Eventi pubblicati ({{numero_eventi}})</h2>
+
 <table>
-<thead><tr><th>Data</th><th>Evento</th><th>Luogo</th><th>Tipo</th><th>Categorie</th><th>Stato</th></tr></thead>
-<tbody>
-{{righe_tabella}}
-</tbody>
+	<thead><tr><th>Data</th><th>Evento</th><th>Luogo</th><th>Tipo</th><th>Categorie</th><th>Stato</th></tr></thead>
+	<tbody>
+		{{righe_tabella}}
+	</tbody>
 </table>
 
 <footer>
-<p>Generato il {{generato_il}} UTC da <a href="https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico">https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico</a> (dati/eventi.yaml). Legenda degli stati: <em>confermato</em> = categorie verificate sul regolamento di gara o del campionato, sulla pagina ufficiale dell'organizzatore o sul bollettino della federazione; <em>annunciato</em> = evento ufficiale, categorie non ancora pubblicate; <em>da verificare</em> = segnalato ma non ancora controllato; <em>non ancora autorizzata</em> = a calendario federale in attesa di autorizzazione.</p>
+	<p>Generato il {{generato_il}} UTC da <a href="https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico">https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico</a>.</p>
 </footer>
 </body>
 </html>
