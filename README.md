@@ -11,7 +11,7 @@ Il calendario è un file `.ics` pubblicato con *GitHub Pages* e aggiornato ad og
 
 Dopo che ti sei iscritto al calendario, riceverai gli aggiornamenti in automatico.
 
-La [pagina web pubblica](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) mostra queste istruzioni e gli eventi trovati.
+La [pagina web](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) mostra queste istruzioni e gli eventi trovati.
 
 ## Segnalare una gara
 
