@@ -3,9 +3,10 @@
 # Quando: ogni lunedì alle 05:17 UTC, oppure a mano da "Actions → Run workflow"
 # (con la possibilità di indicare un intervallo di id da scandire e una data minima).
 # Cosa: lancia gli script deterministici (raccogli_fisr.py → converti_fisr.py → genera_ics.py);
-# se compaiono voci nuove in dati/eventi.yaml apre una pull request, che il proprietario
+# se dati/eventi.yaml cambia (voci nuove, oppure voci esistenti promosse perché è arrivato
+# il regolamento di gara o l'autorizzazione) apre una pull request, che il proprietario
 # rivede (nomi, luoghi, organizzatori, regola 10 di CLAUDE.md) e fonde a mano.
-# Non scrive mai su main. Non giudica: le voci nuove hanno lo stato che converti_fisr.py
+# Non scrive mai su main. Non giudica: le voci hanno lo stato che converti_fisr.py
 # sa dimostrare con il regolamento di gara (confermato/escluso) oppure da_verificare.
 #
 # Tracce (regola 5): i rapporti di ogni esecuzione sono allegati al job come artefatto;
@@ -140,8 +141,8 @@ jobs:
         with:
           name: raccolta-${{ steps.parametri.outputs.oggi || 'senza-data' }}
           path: |
-            registro/*-raccolta-fisr.json
-            registro/*-conversione-fisr.md
+            registro/${{ steps.parametri.outputs.oggi }}-raccolta-fisr.json
+            registro/${{ steps.parametri.outputs.oggi }}-conversione-fisr.md
           if-no-files-found: ignore
           retention-days: 90
 
@@ -150,10 +151,10 @@ jobs:
         run: |
           if git diff --quiet -- dati/eventi.yaml; then
             echo "nuove=false" >> "$GITHUB_OUTPUT"
-            echo "Nessuna voce nuova in dati/eventi.yaml."
+            echo "Nessuna voce nuova o promossa in dati/eventi.yaml."
           else
             echo "nuove=true" >> "$GITHUB_OUTPUT"
-            echo "Voci nuove in dati/eventi.yaml: $(git diff --numstat -- dati/eventi.yaml)"
+            echo "Voci nuove o promosse in dati/eventi.yaml: $(git diff --numstat -- dati/eventi.yaml)"
           fi
 
       - name: Apre la pull request
@@ -171,12 +172,12 @@ jobs:
           git checkout -b "${ramo}"
           git add dati/eventi.yaml "registro/${OGGI}-raccolta-fisr.json" "registro/${OGGI}-conversione-fisr.md"
           git commit -m "Aggiunge le gare trovate su fisr.info il ${OGGI}" \
-            -m "Raccolta settimanale automatica (workflow raccolta.yml): gare dal ${DATA_MINIMA}, regolamenti di gara ${SCANSIONE_DA}-${SCANSIONE_A}. Le voci esistenti non sono state toccate."
+            -m "Raccolta settimanale automatica (workflow raccolta.yml): gare dal ${DATA_MINIMA}, regolamenti di gara ${SCANSIONE_DA}-${SCANSIONE_A}. Le voci esistenti sono state toccate solo per le promozioni elencate nel rapporto."
           git push origin "${ramo}"
           {
             echo "## Cosa cambia"
             echo
-            echo "Raccolta automatica del ${OGGI} (workflow \`raccolta.yml\`): voci nuove proposte da \`converti_fisr.py\` in \`dati/eventi.yaml\`; le voci esistenti non sono state toccate. \`genera_ics.py\` ha generato il calendario senza errori."
+            echo "Raccolta automatica del ${OGGI} (workflow \`raccolta.yml\`): voci nuove proposte da \`converti_fisr.py\` in \`dati/eventi.yaml\` e voci esistenti promosse (prova o autorizzazione arrivate dopo), elencate nel rapporto; nient'altro è stato toccato. \`genera_ics.py\` ha generato il calendario senza errori."
             echo
             echo "**Prima del merge** (regola 10 di \`CLAUDE.md\`): rivedere nomi, luoghi e organizzatori delle voci nuove; per ogni voce cercare il sito dell'organizzatore e completare link, distanze e note; le voci \`da_verificare\` restano tali finché non c'è una prova."
             echo
@@ -206,11 +207,11 @@ jobs:
           {
             echo "### Raccolta del ${OGGI:-?}"
             if [ "${NUOVE}" = "true" ] && [ -z "${PR_APERTA}" ]; then
-              echo "Voci nuove: **sì**, pull request aperta sul ramo \`raccolta/${OGGI}\`."
+              echo "Voci nuove o promosse: **sì**, pull request aperta sul ramo \`raccolta/${OGGI}\`."
             elif [ "${NUOVE}" = "true" ]; then
-              echo "Voci nuove: **sì**, ma la PR #${PR_APERTA} è ancora aperta: nessuna nuova PR. I rapporti sono nell'artefatto del job; la prossima esecuzione le riproporrà."
+              echo "Voci nuove o promosse: **sì**, ma la PR #${PR_APERTA} è ancora aperta: nessuna nuova PR. I rapporti sono nell'artefatto del job; la prossima esecuzione le riproporrà."
             elif [ "${NUOVE}" = "false" ]; then
-              echo "Voci nuove: nessuna. Rapporti nell'artefatto del job."
+              echo "Voci nuove o promosse: nessuna. Rapporti nell'artefatto del job."
             else
               echo "Esecuzione interrotta prima della conversione: vedere i passi in rosso e l'artefatto (se c'è)."
             fi

@@ -13,8 +13,14 @@ Uso:
 
 Senza --scrivi non tocca eventi.yaml: stampa solo il rapporto. Con --scrivi
 riscrive eventi.yaml con le voci esistenti INVARIATE nel contenuto (riordinate
-per data) più le nuove. Le voci esistenti vincono sempre: se un evento raccolto
-corrisponde a una voce già presente, lo script lo segnala e non lo tocca.
+per data) più le nuove. Le voci esistenti vincono: se un evento raccolto
+corrisponde a una voce già presente, lo script lo segnala e non la tocca,
+con una sola eccezione, la PROMOZIONE (regola 7 di CLAUDE.md): una voce ancora
+senza prova (da_verificare, non_autorizzato, annunciato) che ora ha il regolamento
+di gara riceve categorie, prova, stato, verificato_il e la fonte nuova; nome, luogo,
+organizzatore, note e tutto ciò che una persona ha scritto restano com'erano.
+Una voce che una prova ce l'ha già non viene mai cambiata: le differenze vanno
+solo nel rapporto.
 """
 
 from __future__ import annotations
@@ -398,6 +404,60 @@ def corrisponde_esistente(nuovo: dict, esistenti: list[dict]) -> dict | None:
     return None
 
 
+STATI_PROMUOVIBILI = {"da_verificare", "non_autorizzato", "annunciato"}
+FRASE_SENZA_REGOLAMENTO = "Regolamento di gara non trovato: categorie ammesse sconosciute."
+
+
+def promuovi(esistente: dict, proposta: dict, letto_il: str) -> list[str]:
+    """Promozione di una voce esistente (regola 7): aggiorna SUL POSTO la voce e ritorna l'elenco
+    di cosa è cambiato (vuoto = niente da fare). Due soli casi, entrambi senza giudizio:
+      1. la voce non ha prova e la proposta ne porta una (regolamento di gara o titolo ufficiale):
+         prende categorie, prova, stato, verificato_il, e riempie i campi vuoti (url, distanze, scadenza);
+      2. la voce è non_autorizzato con prova già citata e la lista ora non la segna più come
+         "non ancora autorizzata": cambia solo lo stato (confermato/escluso), se coerente con le categorie.
+    Nome, luogo, organizzatore, note pubbliche, url_iscrizione, date: mai toccati."""
+    stato_vecchio = str(esistente.get("stato") or "")
+    if stato_vecchio not in STATI_PROMUOVIBILI:
+        return []
+    cambiamenti: list[str] = []
+    stato_nuovo = proposta["stato"]
+    if not esistente.get("prova") and proposta.get("prova"):
+        esistente["categorie"] = list(proposta["categorie"])
+        esistente["prova"] = proposta["prova"]
+        cambiamenti.append(f"categorie {esistente['categorie']}")
+        for campo in ("distanze", "url_ufficiale", "scadenza_iscrizione"):
+            if not esistente.get(campo) and proposta.get(campo):
+                esistente[campo] = list(proposta[campo]) if isinstance(proposta[campo], list) else proposta[campo]
+                cambiamenti.append(f"{campo} riempito")
+        if stato_nuovo not in ("confermato", "escluso", "non_autorizzato"):
+            # non dovrebbe succedere: una proposta con prova ha sempre uno di questi stati
+            return []
+    elif stato_vecchio == "non_autorizzato" and esistente.get("prova") and stato_nuovo in ("confermato", "escluso") \
+            and bool(esistente.get("categorie")) == bool(proposta.get("categorie")):
+        pass  # cambia solo lo stato, sotto
+    else:
+        return []
+    if stato_nuovo != stato_vecchio:
+        esistente["stato"] = stato_nuovo
+        cambiamenti.append(f"stato {stato_vecchio} → {stato_nuovo}")
+    if not cambiamenti:
+        return []
+    esistente["verificato_il"] = letto_il
+    fonti_esistenti = esistente.setdefault("fonti", [])
+    for fonte in proposta.get("fonti", []):
+        presente = next((f for f in fonti_esistenti if f.get("url") == fonte["url"]), None)
+        if presente:
+            presente["letto_il"] = fonte["letto_il"]
+        else:
+            fonti_esistenti.append({"url": fonte["url"], "letto_il": fonte["letto_il"]})
+            cambiamenti.append(f"fonte aggiunta {fonte['url']}")
+    note_interne = str(esistente.get("note_interne") or "").replace(FRASE_SENZA_REGOLAMENTO, "").strip()
+    regolamento = proposta["url_ufficiale"].rsplit("=", 1)[-1] if "id_manif=" in str(proposta.get("url_ufficiale") or "") else ""
+    frase = f"Promossa il {letto_il} da converti_fisr.py: " + "; ".join(cambiamenti) + (f"; regolamento di gara id_manif {regolamento}." if regolamento else ".")
+    esistente["note_interne"] = (note_interne + " " + frase).strip()
+    return cambiamenti
+
+
 def testo_yaml(valore) -> str:
     if isinstance(valore, bool):
         return "true" if valore else "false"
@@ -456,25 +516,40 @@ def principale(argomenti: list[str] | None = None) -> int:
 
     intestazione, esistenti = carica_eventi(opzioni.eventi)
     nuovi: list[dict] = []
+    promossi: list[str] = []
     conteggio_stati: dict[str, int] = {}
-    rapporto.append("\n## Eventi già presenti (non toccati)\n")
+    righe_presenti: list[str] = []
+    proposte_per_esistente: list[tuple[dict, dict]] = []
     for indice, riga in enumerate(righe):
         evento = costruisci_evento(riga, abbinate.get(indice), letto_il)
         esistente = corrisponde_esistente(evento, esistenti)
         if esistente:
-            differenze = []
-            if evento["categorie"] and list(esistente.get("categorie") or []) != evento["categorie"]:
-                differenze.append(f"categorie proposte {evento['categorie']} (presenti {esistente.get('categorie')})")
-            if evento["stato"] != esistente.get("stato"):
-                differenze.append(f"stato proposto {evento['stato']} (presente {esistente.get('stato')})")
-            rapporto.append(f"- `{esistente['id']}` ↔ {evento['nome'][:50]!r}" + (": " + "; ".join(differenze) if differenze else ""))
+            proposte_per_esistente.append((esistente, evento))
             continue
         nuovi.append(evento)
     for regolamento in rimaste:
         evento = costruisci_evento(None, regolamento, letto_il)
-        if corrisponde_esistente(evento, esistenti + nuovi):
+        esistente = corrisponde_esistente(evento, esistenti + nuovi)
+        if esistente:
+            if esistente in esistenti:
+                proposte_per_esistente.append((esistente, evento))
             continue
         nuovi.append(evento)
+    for esistente, evento in proposte_per_esistente:
+        cambiamenti = promuovi(esistente, evento, letto_il)
+        if cambiamenti:
+            promossi.append(f"- `{esistente['id']}` ↔ {evento['nome'][:50]!r}: " + "; ".join(cambiamenti))
+            continue
+        differenze = []
+        if evento["categorie"] and list(esistente.get("categorie") or []) != evento["categorie"]:
+            differenze.append(f"categorie proposte {evento['categorie']} (presenti {esistente.get('categorie')})")
+        if evento["stato"] != esistente.get("stato"):
+            differenze.append(f"stato proposto {evento['stato']} (presente {esistente.get('stato')})")
+        righe_presenti.append(f"- `{esistente['id']}` ↔ {evento['nome'][:50]!r}" + (": " + "; ".join(differenze) if differenze else ""))
+    rapporto.append(f"\n## Voci promosse (prova o autorizzazione arrivate dopo la prima lettura): {len(promossi)}\n")
+    rapporto.extend(promossi)
+    rapporto.append("\n## Eventi già presenti (non toccati)\n")
+    rapporto.extend(righe_presenti)
 
     id_visti = {e["id"] for e in esistenti}
     for evento in nuovi:
@@ -509,7 +584,7 @@ def principale(argomenti: list[str] | None = None) -> int:
             return 1
         for prima, dopo in zip(esistenti, [e for e in riletti if e["id"] in {x["id"] for x in esistenti}]):
             pass  # le voci esistenti sono state riemesse: il controllo di contenuto lo fa il diff di git
-        print(f"scritto {opzioni.eventi}: {len(esistenti)} esistenti + {len(nuovi)} nuovi = {len(tutti)} eventi", file=sys.stderr)
+        print(f"scritto {opzioni.eventi}: {len(esistenti)} esistenti (di cui {len(promossi)} promossi) + {len(nuovi)} nuovi = {len(tutti)} eventi", file=sys.stderr)
     return 0
 
 

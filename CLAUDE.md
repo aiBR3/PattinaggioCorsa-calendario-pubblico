@@ -130,9 +130,10 @@ Cosa decide `converti_fisr.py` e cosa no:
 - regolamento di gara con righe `MASTER …` nell'art. 10 → `confermato`, `categorie: [master]`, prova = le righe citate;
 - regolamento di gara senza righe Master/Amatori → `escluso`, prova = l'elenco delle categorie;
 - nessun regolamento di gara ma titolo ufficiale con `cat. …/M` (campionati FISR) → `confermato` con prova = il titolo; con `cat.` senza M → `escluso`;
-- tutto il resto → `da_verificare`, categorie vuote.
+- tutto il resto → `da_verificare`, categorie vuote;
+- **promozione** (regola 7): una voce già presente ma senza prova (`da_verificare`, `non_autorizzato`, `annunciato`) che ora ha il regolamento di gara riceve categorie, prova, stato, `verificato_il`, la fonte nuova e i campi vuoti (link, distanze, scadenza); una voce `non_autorizzato` con prova che la lista non segna più come "non ancora autorizzata" passa a `confermato`/`escluso`. Nome, luogo, organizzatore, note e tutto ciò che una persona ha scritto restano com'erano.
 
-Le voci già presenti in `eventi.yaml` non vengono mai modificate dallo script.
+Per il resto le voci già presenti in `eventi.yaml` non vengono modificate dallo script: una voce che ha già la prova non cambia mai da sola, e le differenze con quanto raccolto finiscono solo nel rapporto.
 
 ## Fase attuale
 
