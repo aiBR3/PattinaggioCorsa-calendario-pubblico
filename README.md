@@ -17,7 +17,7 @@ Ogni evento ha nel titolo il nome ufficiale e, se serve, un prefisso:
 
 | Prefisso | Significato |
 |---|---|
-| *(nessuno)* | categorie Master/Amatori verificate sul regolamento di gara o su quello del campionato, oppure evento ufficiale in attesa del programma |
+| *(nessuno)* | categorie Master/Amatori verificate su un documento di chi fa la gara (regolamento di gara o del campionato, pagina ufficiale dell'organizzatore, bollettino della federazione), oppure evento ufficiale in attesa del programma |
 | `[da verificare]` | segnalato ma non ancora controllato |
 | `[non ancora autorizzata]` | a calendario federale, in attesa di autorizzazione |
 | `[RINVIATA]`, `[ANNULLATA]` | come dice |
@@ -33,7 +33,7 @@ In arrivo: un modulo per le segnalazioni volontarie. Nel frattempo apri una [iss
 - `dati/eventi.yaml` è la sorgente di verità: un evento per voce, con fonti, data di verifica e la prova delle categorie ammesse
 - `script/genera_ics.py` valida il file e genera `calendario.ics` + `index.html`
 - A ogni modifica su `main`, un workflow GitHub Actions rigenera e pubblica su Pages
-- `dati/fonti.yaml` è il registro delle fonti; `appunti/` contiene decisioni e diario
+- `dati/fonti.yaml` è il registro delle fonti; `appunti/` contiene decisioni, diario e casi di prova
 - Le regole per chi lavora qui (persone, script, agenti) sono in `CLAUDE.md`
 
 Ogni modifica passa da una pull request. Il progetto è in **Fase 1**: inserimento manuale e verificato; l'automazione arriverà a fasi (vedi `appunti/decisioni.md`).
