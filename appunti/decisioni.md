@@ -55,6 +55,8 @@ Una riga per decisione, con data e motivo. Le decisioni si cambiano con una nuov
 | 2026-11-06 | Eventi passati | Le voci con `data_inizio` prima di oggi non si ricontrollano più, anche se incomplete | Non interessano più a nessuno (proprietario) |
 | 2026-11-06 | Fase 3: collaudo | Prima di pianificare, lo stesso prompt viene eseguito a mano in una PR (ramo `fase3/arricchimento`) sulle voci future pubblicate e sui casi di prova; l'attività pianificata si crea solo se il risultato convince | Misurare prima di automatizzare |
 | 2026-11-06 | Registro dell'arricchimento | `registro/AAAA-MM-GG-arricchimento.md` committato solo quando c'è una PR; altrimenti il rapporto resta nel messaggio finale dell'esecuzione | Come la raccolta: nessuna scrittura su `main` per un registro |
+| 2026-11-06 | Registro delle società | File a sé, `dati/societa.yaml`, chiave `codice_fisr`; in `fonti.yaml` restano solo le fonti federali e un rimando. Fonti: classifiche di società nazionali e regionali (`corsa_classifiche.php` → rollergames, danno codice e sigla), pagine dei risultati ("Organizzato da" = nome esteso), regolamenti di gara (siti citati); poi una ricerca web per società (4 sottoagenti, max 2 ricerche) con verifica di ogni sito tramite apertura | Una società senza sito non è una fonte; 158 voci avrebbero reso illeggibile `fonti.yaml`; il codice sopravvive alle sigle che cambiano |
+| 2026-11-06 | Siti delle società | Un sito vale `sito_verificato` solo se aperto e il testo conferma nome e pattinaggio; un social è un recapito, mai fonte o prova; i siti citati nei regolamenti entrano come `siti_candidati` finché non sono verificati | Regole 3 e 4; i siti degli organizzatori sono proprio quelli che la ricerca web non trova |
 
 ## Fasi
 
@@ -81,6 +83,7 @@ Una riga per decisione, con data e motivo. Le decisioni si cambiano con una nuov
 ## Punti aperti
 
 - Fase 3: esito del collaudo; taratura dei limiti (5 voci, 3 ricerche, 14 giorni) con le misure del registro; poi creazione dell'attività pianificata e aggiornamento di `CLAUDE.md` (sezione "Fase attuale" e cartella `agenti/`).
+- Arricchimento e registro delle società: far cercare all'agente l'organizzatore prima in `dati/societa.yaml` (sito, social) e nel regolamento di gara, e solo dopo sul web; 70 società su 158 restano senza traccia e 32 hanno solo un social (Fase 4).
 - Prima esecuzione di `raccolta.yml`: verificare che fisr.info risponda dai runner di GitHub e che il token di Actions possa aprire PR (impostazione del repository).
 - Le due voci `da_verificare` ancora pubblicate (Speed Track European Series 14-17/05, Cardano al Campo 12-13/09) e i due campionati `confermato` dal solo titolo (Pordenone 24/05, Vado Ligure 3-6/09): cercare il regolamento nei comunicati FISR. Per Pordenone la pagina del club ha intanto dato distanze e Fitness; per Vado Ligure il sito dell'organizzatore è compromesso (2026-11-06): ricontrollare.
 - Nessuna gara FISR 2026 prevede la categoria Amatori nel programma: gli Amatori stanno nei siti degli organizzatori (Fitness), negli Enti di promozione, nelle tappe Challenger del World Skate Marathon Tour e nelle pattinate.
