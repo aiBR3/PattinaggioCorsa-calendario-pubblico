@@ -30,6 +30,7 @@ Una riga per decisione, con data e motivo. Le decisioni si cambiano con una nuov
 | 2026-11-05 | Cartella appunti | `note/` rinominata `appunti/` | Richiesta del proprietario |
 | 2026-11-05 | Parola "indizione" | Sostituita ovunque (testi, dati, codice, parametri degli script, chiavi JSON) con "regolamento di gara" / "regolamento" | Incomprensibile per chi non vive nel gergo federale; il documento stesso si intitola "Regolamento particolare" |
 | 2026-11-05 | Testo della pagina | Tutto nel modello HTML, compresi pulsante di iscrizione e istruzioni per Google; lo script passa solo `url_webcal`, `url_ics`, `numero_eventi`, `righe_tabella`, `generato_il` (più `titolo`/`descrizione`, facoltativi). Tabella in ordine cronologico inverso | Il proprietario deve poter cambiare il testo senza toccare Python |
+| 2026-11-06 | Etichette della descrizione | Tra parentesi quadre (`[Categorie ammesse] Master`), non seguite dai due punti | I due punti li usano gli organizzatori nei loro testi: si confondevano con le etichette |
 | 2026-11-05 | Righe della descrizione | Il link è preceduto da `URL:`, le note pubbliche da `Informazioni:` | Richiesta del proprietario |
 | 2026-11-05 | Scartato | Submodule del solo file ICS (un submodule punta a un repository intero); profilo Facebook fittizio (viola i termini di Meta, viene bloccato) | |
 
