@@ -14,5 +14,5 @@ Ogni caso: cosa mancava, perché era sfuggito, qual era la strada per trovarlo, 
 
 ## Come usare questo file
 
-- Quando un livello automatico viene messo in funzione, lo si lancia sui soli punti di partenza di questa tabella e si confronta ciò che produce con il risultato atteso; l'esito va in `log/` e, se diverso dall'atteso, in `appunti/diario.md`.
+- Quando un livello automatico viene messo in funzione, lo si lancia sui soli punti di partenza di questa tabella e si confronta ciò che produce con il risultato atteso; l'esito va in `registro/` e, se diverso dall'atteso, in `appunti/diario.md`.
 - Ogni evento che il proprietario segnala come mancante o incompleto diventa una riga qui, prima ancora di correggere `eventi.yaml`.

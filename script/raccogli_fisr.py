@@ -7,7 +7,7 @@ ogni gara (corsa_trofeo_modulo.php?id_manif=N). Restituisce dati GREZZI in JSON:
 non classifica, non scarta, non corregge i nomi. Chi decide è un altro passo.
 
 Uso:
-    python3 script/raccogli_fisr.py --uscita log/raccolta.json \
+    python3 script/raccogli_fisr.py --uscita registro/raccolta.json \
         [--anno 2026] [--anno 2027] [--da 2026-01-01] [--regolamenti] [--pausa 0.5]
 
   --anno N      parametro "anno" di fisr.info: N=2026 dà la stagione 2025/26,
