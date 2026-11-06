@@ -1,49 +1,39 @@
-/* Stile della pagina pubblicata su GitHub Pages.
-   Viene copiato così com'è accanto a index.html da script/genera_ics.py. */
+/* Stile della pagina pubblicata su GitHub Pages. Viene copiato così com'è accanto a index.html da script/genera_ics.py. */
 
 body {
-  font-family: -apple-system, system-ui, sans-serif;
-  max-width: 60rem;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  line-height: 1.5;
-  color: #222;
+	font-family: -apple-system, system-ui, sans-serif;
+	max-width: 60rem;
+	margin: 2rem auto;
+	padding: 0 1rem;
+	line-height: 1.5;
+	color: #222;
 }
 
 table {
-  border-collapse: collapse;
-  width: 100%;
-  font-size: 0.95rem;
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 0.95rem;
 }
 
 th, td {
-  border-bottom: 1px solid #ddd;
-  padding: 0.5rem 0.4rem;
-  text-align: left;
-  vertical-align: top;
+	border-bottom: 1px solid #ddd;
+	padding: 0.5rem 0.4rem;
+	text-align: left;
+	vertical-align: top;
 }
 
 th {
-  background: #f3f3f3;
-}
-
-.bottone {
-  display: inline-block;
-  padding: 0.6rem 1rem;
-  background: #0b5fff;
-  color: #fff;
-  border-radius: 0.4rem;
-  text-decoration: none;
+	background: #f3f3f3;
 }
 
 code {
-  background: #f3f3f3;
-  padding: 0.1rem 0.3rem;
-  word-break: break-all;
+	background: #f3f3f3;
+	padding: 0.1rem 0.3rem;
+	word-break: break-all;
 }
 
 footer {
-  margin-top: 2rem;
-  font-size: 0.85rem;
-  color: #666;
+	margin-top: 2rem;
+	font-size: 0.85rem;
+	color: #666;
 }
