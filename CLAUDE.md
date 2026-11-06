@@ -14,13 +14,14 @@ Chi lo consulta: chi si iscrive al calendario, da iPhone (app Calendario) o da A
 
 1. **Nessuno scrive su `main`.** Ogni modifica è una pull request; il merge lo fa solo il proprietario (aiBR3), a mano. Vale anche per chi agisce con le sue credenziali.
 2. **Chi raccoglie non decide.** Un compito di raccolta restituisce dati grezzi con la fonte e la data di lettura; non classifica, non scarta, non corregge, non "migliora" i nomi.
-3. **Chi decide cita la prova.** `categorie` si compila solo insieme a `prova`: una frase citata dal regolamento di gara o dal regolamento del campionato, con l'articolo. Senza prova: `categorie: []` e `stato: da_verificare`.
+3. **Chi decide cita la prova.** `categorie` si compila solo insieme a `prova`: una frase citata, con l'articolo o la sezione, da un documento di chi fa la gara: il regolamento di gara o del campionato (FISR), il bollettino della federazione internazionale (World Skate), oppure la pagina ufficiale dell'organizzatore (sito del club o della società che organizza), che da sola basta per `amatori`/Fitness, perché quelle gare non hanno regolamento federale. Mai da un aggregatore, da un social o da un articolo. Senza prova: `categorie: []` e `stato: da_verificare`.
 4. **Non inventare.** Campo sconosciuto = campo vuoto. Mai dedurre date, luoghi o categorie dal nome dell'evento o dall'edizione precedente.
 5. **Ogni esecuzione lascia traccia.** Un file in `log/` anche in caso di errore; una riga in `appunti/diario.md` se qualcosa non ha funzionato.
 6. **Non ripetere errori.** Prima di tentare un approccio, controlla in `appunti/diario.md` se è già fallito e perché.
 7. **Un evento non si duplica.** La chiave è `id`. Se un evento esiste già si aggiorna la voce, si aggiunge la fonte e si ricontrolla `verificato_il`.
 8. **Nessun altro repository o sito si tocca.** Questo repository è l'unico posto di lavoro.
-9. **Niente informazioni personali.** Il repository è pubblico: nessun nome, contatto, dispositivo o dettaglio su chi lo usa o su chi segnala. Si scrive "il proprietario" (aiBR3) e "segnalazioni volontarie".
+9. **Niente informazioni personali.** Il repository è pubblico: nessun nome, contatto, dispositivo o dettaglio su chi lo usa o su chi segnala. Si scrive "il proprietario" (aiBR3) e "segnalazioni volontarie". Vale anche per i dati trovati sui siti degli organizzatori (cellulari, IBAN, indirizzi email di persone): si rimanda alla pagina con il link, non si copiano.
+10. **Chi verifica cerca il sito dell'organizzatore.** Le liste federali danno nome, data e organizzatore; i dettagli che servono a chi pattina (link ufficiale, distanze, orari, quote, come iscriversi) e le gare Amatori/Fitness, che il regolamento federale non copre, stanno solo sul sito dell'organizzatore locale. Per ogni evento si cerca quindi il sito dell'organizzatore (nome dell'organizzatore + città + nome della gara) e si legge la pagina dell'evento, controllando che sia dell'edizione giusta (l'anno nell'indirizzo può ingannare) e che il sito non sia compromesso (pagine di spam, lingue estranee): un sito compromesso non si linka. Se la pagina ufficiale di una gara passata è già sparita, si legge dalla Wayback Machine e si cita lo snapshot.
 
 ## Struttura del repository
 
@@ -29,6 +30,7 @@ CLAUDE.md                  ← questo file
 README.md                  ← per le persone: cos'è e come iscriversi
 appunti/decisioni.md       ← decisioni prese, con data e motivo
 appunti/diario.md          ← cosa non ha funzionato
+appunti/casi-di-prova.md   ← eventi reali che la scoperta e l'arricchimento devono saper trovare
 dati/eventi.yaml           ← SORGENTE DI VERITÀ degli eventi
 dati/fonti.yaml            ← registro delle fonti e di come si leggono
 script/raccogli_fisr.py    ← livello 1: lista + regolamenti di gara di fisr.info → JSON grezzo (non decide)
@@ -63,9 +65,9 @@ Lo script rifiuta chiavi sconosciute, chiavi mancanti e valori incoerenti.
 | `luogo` | testo | città (provincia) e, se noto, impianto o indirizzo |
 | `paese` | codice | uno tra `IT CH ES PT FR AT DE SI` |
 | `tipo` | enum | `gara` oppure `pattinata` |
-| `categorie` | lista | sottoinsieme di `[master, amatori]`; **vuota finché non c'è `prova`** |
+| `categorie` | lista | sottoinsieme di `[master, amatori]`; **vuota finché non c'è `prova`**. Una gara aperta a tutti per anno di nascita, senza categorie agonistiche obbligatorie (tipiche all'estero: "Jahrgänge 2012 und älter"), vale `[master, amatori]` |
 | `distanze` | lista di testi | es. `["maratona", "10 km"]`; vuota se ignote |
-| `organizzatore` | testo | può essere vuoto |
+| `organizzatore` | testo | la società o il club che organizza materialmente la gara sul posto (es. "Skating Club Comina A.S.D."), non la federazione che la approva o la rende campionato; può essere vuoto |
 | `url_ufficiale`, `url_iscrizione` | URL http(s) o `""` | |
 | `scadenza_iscrizione` | data o `""` | |
 | `stato` | enum | vedi sotto |
@@ -128,4 +130,4 @@ Le voci già presenti in `eventi.yaml` non vengono mai modificate dallo script.
 
 ## Fase attuale
 
-**Fase 1 — a mano, insieme.** Nessun agente autonomo è attivo. Ogni voce in `eventi.yaml` è stata letta e verificata da una persona con Claude nella stessa conversazione. Le fasi successive sono descritte in `appunti/decisioni.md`.
+**Fase 1 — a mano, insieme.** Nessun agente autonomo è attivo. Ogni voce in `eventi.yaml` è stata letta e verificata da una persona con Claude nella stessa conversazione. Finora è stata letta solo fisr.info; i siti degli organizzatori (regola 10) e le fonti estere sono stati letti a mano per pochi eventi, registrati in `appunti/casi-di-prova.md`. Le fasi successive sono descritte in `appunti/decisioni.md`.

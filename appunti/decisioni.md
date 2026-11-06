@@ -33,13 +33,21 @@ Una riga per decisione, con data e motivo. Le decisioni si cambiano con una nuov
 | 2026-11-06 | Etichette della descrizione | Tra parentesi quadre (`[Categorie ammesse] Master`), non seguite dai due punti | I due punti li usano gli organizzatori nei loro testi: si confondevano con le etichette |
 | 2026-11-05 | Righe della descrizione | Il link è preceduto da `URL:`, le note pubbliche da `Informazioni:` | Richiesta del proprietario |
 | 2026-11-05 | Scartato | Submodule del solo file ICS (un submodule punta a un repository intero); profilo Facebook fittizio (viola i termini di Meta, viene bloccato) | |
+| 2026-11-06 | Sito dell'organizzatore | Regola 10: per ogni evento si cerca il sito dell'organizzatore locale e si legge la pagina dell'evento; è un passo a sé dell'architettura ("arricchimento", livello 2b) | Le liste federali non dicono link, distanze, quote né le gare Amatori/Fitness: Pordenone 24/05 ha una 21 km Fitness solo sul sito del club; Vado Ligure ha un sito proprio; Berlino e Napoli non stanno su fisr.info |
+| 2026-11-06 | Prova per Amatori/Fitness | La pagina ufficiale dell'organizzatore vale come prova (regola 3), insieme ai bollettini World Skate | Le gare Fitness non hanno regolamento FISR: senza questa fonte gli amatori non comparirebbero mai |
+| 2026-11-06 | Gare aperte per anno di nascita | Una gara aperta a tutti i nati entro un certo anno, senza categorie agonistiche obbligatorie (Berlino: "Jahrgänge 2012 und älter"), vale `[master, amatori]` con quella frase come prova | All'estero non esiste la distinzione italiana Master/Amatori |
+| 2026-11-06 | `organizzatore` | È la società o il club che organizza sul posto, non "FISR": la federazione approva e rende campionato, ma i dettagli li comunica solo l'organizzatore locale | Richiesta del proprietario |
+| 2026-11-06 | Siti compromessi | Un sito dell'organizzatore con pagine di spam non si linka (vadosustrada2026.it); si annota in `note_interne` e si ricontrolla | Non mandare chi pattina su pagine di gioco d'azzardo |
+| 2026-11-06 | Più gare nello stesso giorno | Una voce sola quando lo stesso organizzatore fa più gare nello stesso giorno e luogo (Napoli: 42 km Pro/Master + 20 km Amatori); le distanze dicono chi corre cosa | Un evento in calendario, non due |
+| 2026-11-06 | Pagine sparite | Le pagine ufficiali delle gare passate vengono tolte (Berlino 2026): si leggono dalla Wayback Machine e si cita lo snapshot in `fonti` | L'unica copia verificabile |
+| 2026-11-06 | Casi di prova | `appunti/casi-di-prova.md` raccoglie gli eventi reali che la scoperta e l'arricchimento devono saper trovare, con il motivo per cui erano sfuggiti | Misurare i livelli 2b e 6 quando saranno automatici |
 
 ## Fasi
 
 - **Fase 0 — fatta (2026-11-05):** schema, piattaforma, perimetro, repository.
-- **Fase 1 — in corso:** a mano, insieme: fisr.info → `eventi.yaml` → `calendario.ics` → Pages → iscrizione dal telefono. Zero autonomia. Pubblicazione fatta con la PR #1 (2026-11-05); con la PR #4 tutte le gare FISR dal 1° gennaio 2026 (59 voci, 16 pubblicate) per la verifica del proprietario, che ad alcune ha partecipato.
+- **Fase 1 — in corso:** a mano, insieme: fisr.info → `eventi.yaml` → `calendario.ics` → Pages → iscrizione dal telefono. Zero autonomia. Pubblicazione fatta con la PR #1 (2026-11-05); con la PR #4 tutte le gare FISR dal 1° gennaio 2026 (59 voci, 16 pubblicate) per la verifica del proprietario, che ad alcune ha partecipato. La verifica dal telefono (2026-11-06) ha fatto emergere quattro eventi o dettagli che solo i siti degli organizzatori e le fonti estere danno: da qui la regola 10 e i casi di prova.
 - **Fase 2:** la stessa cosa come attività pianificata settimanale che apre una PR.
-- **Fase 3:** verifica (apre il regolamento di gara, cita la prova) + supervisore (assembla la PR con riassunto e dubbi).
+- **Fase 3:** arricchimento (cerca il sito dell'organizzatore, regola 10) + verifica (apre regolamento e pagina dell'organizzatore, cita la prova) + supervisore (assembla la PR con riassunto e dubbi). I casi di `appunti/casi-di-prova.md` sono il collaudo.
 - **Fase 4:** scoperta di nuove fonti, registro fonti, segnalazioni Tally, Facebook via Claude in Chrome.
 
 ## Architettura: chi fa cosa
@@ -49,7 +57,8 @@ Una riga per decisione, con data e motivo. Le decisioni si cambiano con una nuov
 | 0 | `eventi.yaml` + `fonti.yaml` in git | — | sorgente di verità |
 | 1 | Raccolta: legge una pagina, restituisce dati grezzi, non interpreta | script; modello economico solo per pagine irregolari | settimanale |
 | 2 | Normalizzazione + deduplica | codice | ogni giro |
-| 3 | Verifica e classificazione: apre il regolamento di gara, decide se ammette Master/Amatori, cita la prova | modello capace | solo su candidati nuovi o cambiati |
+| 2b | Arricchimento: dal nome dell'organizzatore cerca il suo sito e la pagina dell'evento (regola 10); raccoglie link, distanze, orari, quote, gare Amatori/Fitness; segnala siti compromessi e pagine dell'edizione sbagliata | modello capace (serve giudizio) | solo su candidati nuovi o cambiati |
+| 3 | Verifica e classificazione: apre il regolamento di gara e la pagina dell'organizzatore, decide se ammette Master/Amatori, cita la prova | modello capace | solo su candidati nuovi o cambiati |
 | 4 | Supervisore: assembla la PR con riassunto e dubbi evidenziati | modello capace | ogni giro |
 | 5 | Pubblicazione: ICS + pagina via Pages | workflow Actions, dopo il merge del proprietario | — |
 | 6 | Scoperta: ricerca aperta di nuove gare e nuove fonti → propone aggiunte a `fonti.yaml` | modello capace | ogni 2 settimane |
@@ -58,9 +67,12 @@ Una riga per decisione, con data e motivo. Le decisioni si cambiano con una nuov
 ## Punti aperti
 
 - Chi esegue gli script deterministici delle fasi 2+: GitHub Actions a orario (segreti nei GitHub Secrets) oppure attività pianificate Claude. Proposta: Actions per gli script (le PR sarebbero di `github-actions[bot]`, che il proprietario può approvare), Claude per i compiti di giudizio.
-- Le due voci `da_verificare` ancora pubblicate (Speed Track European Series 14-17/05, Cardano al Campo 12-13/09) e i due campionati `confermato` dal solo titolo (Pordenone 24/05, Vado Ligure 3-6/09): cercare il regolamento nei comunicati FISR.
-- Nessuna gara FISR 2026 prevede la categoria Amatori nel programma: gli Amatori si troveranno negli Enti di promozione e nelle pattinate.
+- Le due voci `da_verificare` ancora pubblicate (Speed Track European Series 14-17/05, Cardano al Campo 12-13/09) e i due campionati `confermato` dal solo titolo (Pordenone 24/05, Vado Ligure 3-6/09): cercare il regolamento nei comunicati FISR. Per Pordenone la pagina del club ha intanto dato distanze e Fitness; per Vado Ligure il sito dell'organizzatore è compromesso (2026-11-06): ricontrollare.
+- Nessuna gara FISR 2026 prevede la categoria Amatori nel programma: gli Amatori stanno nei siti degli organizzatori (Fitness), negli Enti di promozione, nelle tappe Challenger del World Skate Marathon Tour e nelle pattinate.
 - `url_iscrizione` per le gare FISR: le iscrizioni passano "esclusivamente attraverso il sito Internet federale"; quale pagina linkare?
 - Il Google Calendar di pattiniamolitalia.it è pubblico? Ha un ICS diretto?
-- Quali tappe del World Skate Marathon Tour ammettono Master/amatori.
+- World Skate Marathon Tour 2026: la tappa Challenger di Pamplona (ES, 07/06/2026) è in perimetro e va letta (bollettino + sito dell'organizzatore); Napoli è fatta.
 - Gli Enti di promozione (AICS, UISP, CSEN…) hanno circuiti con categoria Amatori: da censire come fonti.
+- Berlin-Marathon 2027 (Generali, 26/09/2027): il programma ufficiale non elenca l'inline, ma manca un annuncio esplicito; ricontrollare prima di decidere se creare la voce.
+- Il calendario SCC Events offre un file `.ics` di tutti i suoi eventi: valutare se leggerlo da script (livello 1) invece della pagina HTML.
+- Dal 2027 il repository avrà gare estere (DE): i testi pubblici restano in italiano; decidere se le `note` devono riportare anche i termini originali (es. "Jahrgang").

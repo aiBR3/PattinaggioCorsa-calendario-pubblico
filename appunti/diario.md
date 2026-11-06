@@ -49,3 +49,31 @@ Quando un problema si risolve per sempre, si aggiorna la voce invece di cancella
 - **Volevo:** capire dalla lista `corsa_calendario.php` quali gare ammettono i Master.
 - **Successo:** la lista ha solo data, nome, località, organizzatore, scadenze. Le categorie sono nel regolamento di gara (`corsa_trofeo_modulo.php?id_manif=N`, link "modulo" nella riga), art. 9-10. Gli eventi "Attività non ancora autorizzata" non hanno ancora il modulo. Esempio: Imola 08/11 e 08/12 hanno lo stesso nome e numero (49°), ma solo quella di dicembre ha le categorie Master.
 - **Invece:** la lista serve a scoprire; la decisione sulle categorie si prende solo sul regolamento di gara. La pagina ha errori di codifica ("CITTÃ" per "CITTÀ"): normalizzare i nomi.
+
+## 2026-11-06 — vadosustrada2026.it: sito dell'organizzatore compromesso
+
+- **Volevo:** mettere il sito del Campionato Italiano su strada (Vado Ligure, 3-6/09/2026) in `url_ufficiale`.
+- **Successo:** la home è integra (date, impianto, organizzatore), ma `/programma/`, `/contatti/` e `/area-camper/` servono pagine di spam su gioco d'azzardo in indonesiano e "La manifestazione" risponde 404 "Halaman tidak ditemukan". WordPress compromesso.
+- **Invece:** nessun link nel calendario, nota in `note_interne`, ricontrollo periodico. Regola generale: prima di linkare un sito di un organizzatore, aprire almeno una pagina interna oltre alla home e cercare parole estranee (slot, togel, lingue non attese).
+
+## 2026-11-06 — Pagine ufficiali che spariscono dopo la gara
+
+- **Volevo:** citare la pagina di iscrizione della BMW Berlin-Marathon Inlineskating 2026 (26/09/2026).
+- **Successo:** `skating.bmw-berlin-marathon.com` e `/en/registration/inlineskating` rispondono 404 sei settimane dopo la gara; il sito è già passato all'edizione 2027 con un altro nome di dominio.
+- **Invece:** Wayback Machine dalla shell: `https://web.archive.org/web/AAAAMMGG/URL` restituisce lo snapshot più vicino (qui 2026-09-27); `http://archive.org/wayback/available?url=…&timestamp=…` dice se esiste. L'API CDX (`web.archive.org/cdx/search/cdx`) è bloccata dal proxy ("Blocked by egress policy"). Per le gare future: leggere e citare la pagina ufficiale prima che la gara passi.
+
+## 2026-11-06 — Pagine dell'edizione sbagliata
+
+- **Volevo:** leggere la pagina 2026 del Campionato Italiano Maratona (Skating Club Comina) e quella 2027 delle gare SCC Events.
+- **Successo:** su skatingclubcomina.eu il menu punta a `/campionati-italiani-maratona-2026`, che è vuota: i dati 2026 stanno nella pagina con `2025` nell'indirizzo. Su generali-berliner-halbmarathon.de l'intestazione dice "2026" ma il periodo di iscrizione arriva all'11/03/2027: è la pagina 2027. Su berlin-citynight.de la pagina mostra ancora quote e condizioni 2026 per l'evento del 31/07/2027.
+- **Invece:** l'edizione si riconosce dalle date nel testo (data della gara, periodo di iscrizione), mai dall'anno nell'indirizzo o nel titolo. Se il testo è dell'edizione passata, la voce resta `annunciato` con la data presa dal calendario dell'organizzatore.
+
+## 2026-11-06 — Traduzioni inglesi inaffidabili sui siti tedeschi
+
+- **Volevo:** citare la frase di ammissione della Generali Berlin Half Marathon Inlineskating.
+- **Successo:** la versione inglese dice "born in 2012 and later", il tedesco "Jahrgänge 2012 und älter" (nati nel 2012 o prima): la traduzione rovescia il senso.
+- **Invece:** per la prova si cita la lingua originale del sito.
+
+## 2026-11-06 — Cosa raggiunge la shell (aggiornamento)
+
+- Oltre a fisr.info e github.io, la shell raggiunge i siti degli organizzatori provati finora (vadosustrada2026.it, skatingclubcomina.eu, rollerskatingfestivalnapoli.it, bmw-berlin-marathon.com, generali-berlin-marathon.com, generali-berliner-halbmarathon.de, berlin-citynight.de, scc-events.com) e web.archive.org. Bloccato: adidas-runners-city-night.de (il sito vero della City Night è comunque berlin-citynight.de). Il blocco si vede come `CONNECT tunnel failed, response 502`.
