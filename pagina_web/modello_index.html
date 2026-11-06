@@ -31,17 +31,19 @@
 
 <h2>Scaricare il calendario</h2>
 
-Il calendario è un file <code>.ics</code> pubblicato con <em>GitHub Pages</em> e aggiornato ad ogni modifica:
+<p>Il calendario è un file <code>.ics</code> pubblicato con <em>GitHub Pages</em> e aggiornato ad ogni modifica:</p>
 
 <ul>
 	<li>se usi l'app Calendario di Apple, <a href="{{url_webcal}}">clicca qui</a></li>
-	<li>se usi l'app Calendario di Google, apri <em><a href="https://calendar.google.com/">Google Calendar</a> → Altri calendari → Da URL</em> e incolla: <code>{{url_ics}}</code> (Google aggiorna le sottoscrizioni ogni 12–24 ore circa)
+	<li>se usi l'app Calendario di Google, apri <em><a href="https://calendar.google.com/">Google Calendar</a> → Altri calendari → Da URL</em> e incolla: <code>{{url_ics}}</code> (Google aggiorna le sottoscrizioni ogni 12–24 ore circa)</li>
 </ul>
 
 <p>Dopo che ti sei iscritto al calendario, riceverai gli aggiornamenti in automatico.</p>
 
 <h2>Eventi trovati ({{numero_eventi}})</h2>
 
+<!-- Il div .scorri-tabella permette lo scorrimento orizzontale della tabella sugli schermi stretti (vedi stile.css). -->
+<div class="scorri-tabella">
 <table>
 	<thead>
 		<tr>
@@ -57,6 +59,7 @@ Il calendario è un file <code>.ics</code> pubblicato con <em>GitHub Pages</em> 
 		{{righe_tabella}}
 	</tbody>
 </table>
+</div>
 
 <footer>
 	<p>Generato il {{generato_il}} UTC.</p>
