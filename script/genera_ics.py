@@ -13,7 +13,7 @@ Cosa fa, nell'ordine:
      pubblicati, tutti gli altri sì (con un prefisso nel titolo se lo stato
      non è "confermato" o "annunciato");
   3. scrive calendario.ics e index.html nella cartella di uscita (il testo della pagina
-     viene da pagina/modello_index.html) e vi copia gli altri file di pagina/ (stile.css…);
+     viene da pagina_web/modello_index.html) e vi copia gli altri file di pagina_web/ (stile.css…);
   4. rilegge il file .ics appena scritto e verifica che contenga esattamente
      gli eventi attesi, con le proprietà obbligatorie e righe conformi.
 
@@ -91,7 +91,7 @@ DESCRIZIONE_CALENDARIO = (
 )
 NOME_FILE_ICS = "calendario.ics"
 NOME_FILE_HTML = "index.html"
-CARTELLA_PAGINA = Path(__file__).resolve().parent.parent / "pagina"   # modello HTML, CSS e altri file statici
+CARTELLA_PAGINA = Path(__file__).resolve().parent.parent / "pagina_web"   # modello HTML, CSS e altri file statici
 PERCORSO_MODELLO_HTML = CARTELLA_PAGINA / "modello_index.html"
 LUNGHEZZA_MASSIMA_RIGA_ICS = 75  # ottetti, RFC 5545 §3.1
 
@@ -508,7 +508,7 @@ def genera_indice_html(eventi: list[Evento], url_base: str, generato_il: datetim
 
 
 def file_statici_pagina() -> list[Path]:
-    """Tutto ciò che sta in pagina/ tranne il modello: CSS, immagini, favicon…"""
+    """Tutto ciò che sta in pagina_web/ tranne il modello: CSS, immagini, favicon…"""
     if not CARTELLA_PAGINA.is_dir():
         return []
     return sorted(p for p in CARTELLA_PAGINA.iterdir() if p.is_file() and p != PERCORSO_MODELLO_HTML and not p.name.startswith("."))
