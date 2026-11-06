@@ -1,6 +1,4 @@
-/* Stile della pagina pubblicata su GitHub Pages. Viene copiato così com'è accanto a index.html da script/genera_ics.py.
-   La pagina è responsiva: layout a colonna singola, tabella con scorrimento orizzontale sugli schermi stretti,
-   dimensioni ridotte sotto i 600 px (vedi le @media in fondo). */
+/* Stile della pagina pubblicata su GitHub Pages. Viene copiato così com'è accanto a index.html da script/genera_ics.py. */
 
 body {
 	font-family: -apple-system, system-ui, sans-serif;
@@ -16,8 +14,7 @@ a {
 	overflow-wrap: anywhere;
 }
 
-/* Contenitore della tabella: sugli schermi più stretti della tabella compare lo scorrimento orizzontale,
-   così la tabella non deforma la pagina. Sugli schermi larghi non ha alcun effetto visibile. */
+/* Contenitore della tabella: sugli schermi più stretti della tabella compare lo scorrimento orizzontale, così la tabella non deforma la pagina. Sugli schermi larghi non ha alcun effetto visibile. */
 .scorri-tabella {
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
