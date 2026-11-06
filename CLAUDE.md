@@ -35,15 +35,15 @@ script/raccogli_fisr.py    ← livello 1: lista + regolamenti di gara di fisr.in
 script/converti_fisr.py    ← livelli 2-3: JSON grezzo → voci di eventi.yaml, con prova citata dall'art. 10
 script/genera_ics.py       ← eventi.yaml → calendario.ics + index.html (valida ingresso e uscita)
 script/requisiti.txt       ← dipendenze Python
-pagina/modello_index.html  ← testo della pagina pubblicata (segnaposto {{...}})
-pagina/stile.css           ← CSS della pagina; ogni altro file in pagina/ viene pubblicato così com'è
+pagina_web/modello_index.html ← testo della pagina pubblicata (segnaposto {{...}})
+pagina_web/stile.css        ← CSS della pagina; ogni altro file in pagina_web/ viene pubblicato così com'è
 .github/workflows/         ← verifica.yml (sulle PR), pubblica.yml (su main → Pages)
 agenti/                    ← prompt dei compiti (da creare in Fase 2+)
 log/                       ← un rapporto per esecuzione: AAAA-MM-GG-raccolta-fisr.json, AAAA-MM-GG-conversione-fisr.md
 uscita/                    ← generato localmente, ignorato da git
 ```
 
-`calendario.ics` e `index.html` non sono mai committati: li genera il workflow a ogni merge su `main` e li pubblica su GitHub Pages insieme ai file di `pagina/`. Tutto il testo della pagina sta in `pagina/modello_index.html`, l'aspetto in `pagina/stile.css` (una PR come le altre); lo script fornisce solo i segnaposto che dipendono dai dati (`{{righe_tabella}}`, l'unico obbligatorio; `{{numero_eventi}}`, `{{url_webcal}}`, `{{url_ics}}`, `{{generato_il}}`, `{{titolo}}`, `{{descrizione}}`). Nella tabella gli eventi sono in ordine cronologico inverso: il più recente in alto.
+`calendario.ics` e `index.html` non sono mai committati: li genera il workflow a ogni merge su `main` e li pubblica su GitHub Pages insieme ai file di `pagina_web/`. Tutto il testo della pagina sta in `pagina_web/modello_index.html`, l'aspetto in `pagina_web/stile.css` (una PR come le altre); lo script fornisce solo i segnaposto che dipendono dai dati (`{{righe_tabella}}`, l'unico obbligatorio; `{{numero_eventi}}`, `{{url_webcal}}`, `{{url_ics}}`, `{{generato_il}}`, `{{titolo}}`, `{{descrizione}}`). Nella tabella gli eventi sono in ordine cronologico inverso: il più recente in alto.
 
 ## Cosa vede chi consulta il calendario
 
