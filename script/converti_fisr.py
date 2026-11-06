@@ -8,8 +8,8 @@ ammesse sono scritte nero su bianco e lo script le cita testualmente. Dove non c
 regolamento, lo script NON decide: stato "da_verificare", categorie vuote.
 
 Uso:
-    python3 script/converti_fisr.py --raccolta log/raccolta.json \
-        --eventi dati/eventi.yaml [--scrivi] [--rapporto log/rapporto.md]
+    python3 script/converti_fisr.py --raccolta registro/raccolta.json \
+        --eventi dati/eventi.yaml [--scrivi] [--rapporto registro/rapporto.md]
 
 Senza --scrivi non tocca eventi.yaml: stampa solo il rapporto. Con --scrivi
 riscrive eventi.yaml con le voci esistenti INVARIATE nel contenuto (riordinate

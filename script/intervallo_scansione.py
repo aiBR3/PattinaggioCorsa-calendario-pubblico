@@ -10,11 +10,11 @@ possibile a mano con "Run workflow" indicando gli estremi.
 
 L'ultimo id visto si ricava da due posti, e vince il più alto:
   - dati/eventi.yaml: gli URL corsa_trofeo_modulo.php?id_manif=N in url_ufficiale e in fonti;
-  - log/*-raccolta-fisr.json: l'estremo superiore dell'intervallo scandito
+  - registro/*-raccolta-fisr.json: l'estremo superiore dell'intervallo scandito
     (scansione_regolamenti.intervallo) e gli id dei regolamenti scaricati.
 
 Uso:
-  python3 script/intervallo_scansione.py [--eventi dati/eventi.yaml] [--log log] [--margine 300] [--ripresa 50]
+  python3 script/intervallo_scansione.py [--eventi dati/eventi.yaml] [--registro registro] [--margine 300] [--ripresa 50]
 Stampa su stdout due interi separati da uno spazio: "DA A", con DA = ultimo visto - ripresa + 1
 (gli ultimi id già scanditi vengono riletti: molti nascono come bozze vuote e si riempiono dopo)
 e A = ultimo visto + margine.
@@ -59,7 +59,7 @@ def id_dagli_eventi(percorso: Path) -> set[int]:
     return trovati
 
 
-def id_dai_log(cartella: Path) -> set[int]:
+def id_dal_registro(cartella: Path) -> set[int]:
     """Gli id visti nelle raccolte precedenti: estremo superiore dell'intervallo e regolamenti scaricati."""
     trovati: set[int] = set()
     if not cartella.is_dir():
@@ -90,7 +90,7 @@ def id_dai_log(cartella: Path) -> set[int]:
 def main() -> None:
     analizzatore = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     analizzatore.add_argument("--eventi", type=Path, default=Path("dati/eventi.yaml"))
-    analizzatore.add_argument("--log", type=Path, default=Path("log"), help="cartella dei rapporti di raccolta")
+    analizzatore.add_argument("--registro", type=Path, default=Path("registro"), help="cartella dei rapporti di raccolta")
     analizzatore.add_argument("--margine", type=int, default=300, help="quanti id oltre l'ultimo visto scandire")
     analizzatore.add_argument("--ripresa", type=int, default=50, help="quanti degli ultimi id già visti rileggere (bozze riempite dopo)")
     opzioni = analizzatore.parse_args()
@@ -100,9 +100,9 @@ def main() -> None:
     if opzioni.ripresa < 0 or opzioni.ripresa > 5000:
         sys.exit(f"--ripresa fuori misura: {opzioni.ripresa} (atteso tra 0 e 5000)")
 
-    visti = {n for n in id_dagli_eventi(opzioni.eventi) | id_dai_log(opzioni.log) if ID_MINIMO_PLAUSIBILE <= n <= ID_MASSIMO_PLAUSIBILE}
+    visti = {n for n in id_dagli_eventi(opzioni.eventi) | id_dal_registro(opzioni.registro) if ID_MINIMO_PLAUSIBILE <= n <= ID_MASSIMO_PLAUSIBILE}
     if not visti:
-        sys.exit("nessun id_manif trovato in eventi.yaml né nei log: indicare l'intervallo a mano")
+        sys.exit("nessun id_manif trovato in eventi.yaml né nel registro: indicare l'intervallo a mano")
 
     ultimo = max(visti)
     da, a = ultimo - opzioni.ripresa + 1, ultimo + opzioni.margine

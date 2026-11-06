@@ -16,7 +16,7 @@ Chi lo consulta: chi si iscrive al calendario, da iPhone (app Calendario) o da A
 2. **Chi raccoglie non decide.** Un compito di raccolta restituisce dati grezzi con la fonte e la data di lettura; non classifica, non scarta, non corregge, non "migliora" i nomi.
 3. **Chi decide cita la prova.** `categorie` si compila solo insieme a `prova`: una frase citata, con l'articolo o la sezione, da un documento di chi fa la gara: il regolamento di gara o del campionato (FISR), il bollettino della federazione internazionale (World Skate), oppure la pagina ufficiale dell'organizzatore (sito del club o della società che organizza), che da sola basta per `amatori`/Fitness, perché quelle gare non hanno regolamento federale. Mai da un aggregatore, da un social o da un articolo. Senza prova: `categorie: []` e `stato: da_verificare`.
 4. **Non inventare.** Campo sconosciuto = campo vuoto. Mai dedurre date, luoghi o categorie dal nome dell'evento o dall'edizione precedente.
-5. **Ogni esecuzione lascia traccia.** Un file in `log/` anche in caso di errore; una riga in `appunti/diario.md` se qualcosa non ha funzionato. Per le esecuzioni automatiche di `raccolta.yml` la traccia è l'artefatto allegato al job (90 giorni) e il riassunto del job; i file di `log/` vengono committati solo quando c'è una PR.
+5. **Ogni esecuzione lascia traccia.** Un file in `registro/` anche in caso di errore; una riga in `appunti/diario.md` se qualcosa non ha funzionato. Per le esecuzioni automatiche di `raccolta.yml` la traccia è l'artefatto allegato al job (90 giorni) e il riassunto del job; i file di `registro/` vengono committati solo quando c'è una PR.
 6. **Non ripetere errori.** Prima di tentare un approccio, controlla in `appunti/diario.md` se è già fallito e perché.
 7. **Un evento non si duplica.** La chiave è `id`. Se un evento esiste già si aggiorna la voce, si aggiunge la fonte e si ricontrolla `verificato_il`.
 8. **Nessun altro repository o sito si tocca.** Questo repository è l'unico posto di lavoro.
@@ -42,7 +42,7 @@ pagina_web/modello_index.html ← testo della pagina pubblicata (segnaposto {{..
 pagina_web/stile.css        ← CSS della pagina; ogni altro file in pagina_web/ viene pubblicato così com'è
 .github/workflows/         ← verifica.yml (sulle PR), pubblica.yml (su main → Pages), raccolta.yml (ogni lunedì → PR)
 agenti/                    ← prompt dei compiti (da creare in Fase 2+)
-log/                       ← un rapporto per esecuzione: AAAA-MM-GG-raccolta-fisr.json, AAAA-MM-GG-conversione-fisr.md
+registro/                  ← un rapporto per esecuzione: AAAA-MM-GG-raccolta-fisr.json, AAAA-MM-GG-conversione-fisr.md
 uscita/                    ← generato localmente, ignorato da git
 ```
 
@@ -110,11 +110,11 @@ pip install -r script/requisiti.txt
 # 1. Raccolta grezza da fisr.info (lista della stagione + regolamenti di gara; la scansione degli id
 #    trova anche i regolamenti di gara che la lista non linka più: gare passate e "non autorizzate")
 python3 script/raccogli_fisr.py --anno 2026 --da 2026-01-01 --regolamenti \
-    --scansione-regolamenti 6300 7100 --uscita log/AAAA-MM-GG-raccolta-fisr.json
+    --scansione-regolamenti 6300 7100 --uscita registro/AAAA-MM-GG-raccolta-fisr.json
 
 # 2. Conversione in voci di eventi.yaml (prima senza --scrivi, per leggere il rapporto)
-python3 script/converti_fisr.py --raccolta log/AAAA-MM-GG-raccolta-fisr.json \
-    --rapporto log/AAAA-MM-GG-conversione-fisr.md [--scrivi]
+python3 script/converti_fisr.py --raccolta registro/AAAA-MM-GG-raccolta-fisr.json \
+    --rapporto registro/AAAA-MM-GG-conversione-fisr.md [--scrivi]
 
 # 3. Revisione a mano delle voci nuove (nomi, luoghi, organizzatori), poi:
 python3 script/genera_ics.py --ingresso dati/eventi.yaml --uscita uscita \

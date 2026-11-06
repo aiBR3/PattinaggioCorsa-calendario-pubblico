@@ -9,7 +9,7 @@
 # sa dimostrare con il regolamento di gara (confermato/escluso) oppure da_verificare.
 #
 # Tracce (regola 5): i rapporti di ogni esecuzione sono allegati al job come artefatto;
-# quando c'è una PR sono anche committati in log/. Il riassunto del job dice cosa è successo.
+# quando c'è una PR sono anche committati in registro/. Il riassunto del job dice cosa è successo.
 #
 # Requisiti una tantum (impostazioni del repository, le fa il proprietario):
 #   Settings → Actions → General → Workflow permissions:
@@ -118,13 +118,13 @@ jobs:
           --regolamenti
           --scansione-regolamenti ${{ steps.parametri.outputs.scansione_da }} ${{ steps.parametri.outputs.scansione_a }}
           --pausa 0.3
-          --uscita "log/${{ steps.parametri.outputs.oggi }}-raccolta-fisr.json"
+          --uscita "registro/${{ steps.parametri.outputs.oggi }}-raccolta-fisr.json"
 
       - name: Conversione in voci di eventi.yaml
         run: >
           python3 script/converti_fisr.py
-          --raccolta "log/${{ steps.parametri.outputs.oggi }}-raccolta-fisr.json"
-          --rapporto "log/${{ steps.parametri.outputs.oggi }}-conversione-fisr.md"
+          --raccolta "registro/${{ steps.parametri.outputs.oggi }}-raccolta-fisr.json"
+          --rapporto "registro/${{ steps.parametri.outputs.oggi }}-conversione-fisr.md"
           --scrivi
 
       - name: Genera e verifica il calendario con i dati nuovi
@@ -140,8 +140,8 @@ jobs:
         with:
           name: raccolta-${{ steps.parametri.outputs.oggi || 'senza-data' }}
           path: |
-            log/*-raccolta-fisr.json
-            log/*-conversione-fisr.md
+            registro/*-raccolta-fisr.json
+            registro/*-conversione-fisr.md
           if-no-files-found: ignore
           retention-days: 90
 
@@ -169,7 +169,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "${ramo}"
-          git add dati/eventi.yaml "log/${OGGI}-raccolta-fisr.json" "log/${OGGI}-conversione-fisr.md"
+          git add dati/eventi.yaml "registro/${OGGI}-raccolta-fisr.json" "registro/${OGGI}-conversione-fisr.md"
           git commit -m "Aggiunge le gare trovate su fisr.info il ${OGGI}" \
             -m "Raccolta settimanale automatica (workflow raccolta.yml): gare dal ${DATA_MINIMA}, regolamenti di gara ${SCANSIONE_DA}-${SCANSIONE_A}. Le voci esistenti non sono state toccate."
           git push origin "${ramo}"
@@ -182,7 +182,7 @@ jobs:
             echo
             echo "## Fonti"
             echo
-            echo "fisr.info: lista della stagione corrente (gare dal ${DATA_MINIMA}) e regolamenti di gara linkati più la scansione degli id ${SCANSIONE_DA}-${SCANSIONE_A}. Dettagli nel rapporto qui sotto e in \`log/${OGGI}-raccolta-fisr.json\`."
+            echo "fisr.info: lista della stagione corrente (gare dal ${DATA_MINIMA}) e regolamenti di gara linkati più la scansione degli id ${SCANSIONE_DA}-${SCANSIONE_A}. Dettagli nel rapporto qui sotto e in \`registro/${OGGI}-raccolta-fisr.json\`."
             echo
             echo "## Cosa resta in dubbio"
             echo
@@ -190,7 +190,7 @@ jobs:
             echo
             echo "## Rapporto di conversione"
             echo
-            cat "log/${OGGI}-conversione-fisr.md"
+            cat "registro/${OGGI}-conversione-fisr.md"
           } > /tmp/corpo_pr.md
           gh pr create --base main --head "${ramo}" \
             --title "Aggiunge le gare trovate su fisr.info il ${OGGI}" \
@@ -214,11 +214,11 @@ jobs:
             else
               echo "Esecuzione interrotta prima della conversione: vedere i passi in rosso e l'artefatto (se c'è)."
             fi
-            if [ -f "log/${OGGI}-conversione-fisr.md" ]; then
+            if [ -f "registro/${OGGI}-conversione-fisr.md" ]; then
               echo
               echo "<details><summary>Rapporto di conversione</summary>"
               echo
-              cat "log/${OGGI}-conversione-fisr.md"
+              cat "registro/${OGGI}-conversione-fisr.md"
               echo
               echo "</details>"
             fi
