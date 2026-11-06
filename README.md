@@ -24,3 +24,4 @@ Nel frattempo apri una [issue](https://github.com/aiBR3/PattinaggioCorsa-calenda
 - [dati/eventi.yaml](dati/eventi.yaml) è la sorgente di verità, un evento per voce con fonti, data di verifica e la prova delle categorie ammesse
 - [script/genera_ics.py](script/genera_ics.py) valida il file e genera `calendario.ics` e `index.html`
 - a ogni modifica su `main`, un workflow *GitHub Actions* rigenera e pubblica la pagina web
+- ogni lunedì un altro workflow ([raccolta.yml](.github/workflows/raccolta.yml)) rilegge il calendario federale e, se trova gare nuove, apre una pull request che il proprietario rivede e fonde a mano
