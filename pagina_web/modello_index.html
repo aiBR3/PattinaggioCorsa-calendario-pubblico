@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <!--
 	Modello della pagina pubblicata su GitHub Pages (index.html).
-	Lo stile è in stile.css.
-	Tutto il testo si modifica QUI.
-	script/genera_ics.py sostituisce solo i segnaposto, cioè i nomi qui sotto scritti tra doppie parentesi graffe nel corpo della pagina (in questo commento sono senza graffe, altrimenti lo script li sostituirebbe anche qui):
+	script/genera_ics.py sostituisce solo i segnaposto:
 		righe_tabella   le righe <tr> della tabella degli eventi (obbligatorio; l'unico)
 		numero_eventi   quanti eventi sono pubblicati
 		url_webcal      link webcal:// al calendario (per iPhone, iPad, Mac)
@@ -27,22 +25,20 @@
 
 <p>Un calendario pubblico (compilato periodicamente da script e IA) con le gare e gli eventi di pattinaggio corsa aperti alle categorie <strong>Master</strong> e <strong>Amatori/Fitness</strong>, comprese le pattinate non competitive, in Italia e nei paesi vicini (Svizzera, Spagna, Portogallo, Francia, Austria, Germania, Slovenia).</p>
 
+<p>Il calendario è un file <code>.ics</code> pubblicato con <em>GitHub Pages</em> e aggiornato ad ogni modifica.</p>
+
 <p>Tutto il progetto si trova <a href="https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico">qui</a>.</p>
 
 <h2>Scaricare il calendario</h2>
 
-<p>Il calendario è un file <code>.ics</code> pubblicato con <em>GitHub Pages</em> e aggiornato ad ogni modifica:</p>
-
 <ul>
 	<li>se usi l'app Calendario di Apple, <a href="{{url_webcal}}">clicca qui</a></li>
 	<li>se usi l'app Calendario di Google, apri <em><a href="https://calendar.google.com/">Google Calendar</a> → Altri calendari → Da URL</em> e incolla: <code>{{url_ics}}</code> (Google aggiorna le sottoscrizioni ogni 12–24 ore circa)</li>
+	<li>dopo che ti sei iscritto al calendario, riceverai gli aggiornamenti in automatico</li>
 </ul>
-
-<p>Dopo che ti sei iscritto al calendario, riceverai gli aggiornamenti in automatico.</p>
 
 <h2>Eventi trovati ({{numero_eventi}})</h2>
 
-<!-- Il div .scorri-tabella permette lo scorrimento orizzontale della tabella sugli schermi stretti (vedi stile.css). -->
 <div class="scorri-tabella">
 <table>
 	<thead>
