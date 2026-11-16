@@ -72,7 +72,7 @@ STATUS_ICAL = {
 }
 
 CHIAVI_EVENTO = [
-    "id", "nome", "data_inizio", "data_fine", "luogo", "paese", "tipo",
+    "id", "nome", "nome_fonte", "data_inizio", "data_fine", "luogo", "paese", "tipo",
     "categorie", "distanze", "organizzatore", "url_ufficiale",
     "url_iscrizione", "scadenza_iscrizione", "stato", "fonti",
     "verificato_il", "prova", "note", "note_interne",
@@ -110,6 +110,7 @@ class Fonte:
 class Evento:
     id: str
     nome: str
+    nome_fonte: str      # titolo com'è nella lista federale all'ultima lettura: dato di lavoro di converti_fisr.py, mai pubblicato
     data_inizio: date
     data_fine: date
     luogo: str
@@ -273,6 +274,7 @@ def converti_evento(grezzo, posizione: int, esito: Esito) -> Evento | None:
         esito.errore(f"{contesto}: 'id' deve avere la forma AAAA-MM-GG-citta-slug (minuscole, trattini): {identificativo!r}")
 
     nome = converti_testo(grezzo["nome"], "nome", contesto, esito, obbligatorio=True)
+    nome_fonte = converti_testo(grezzo["nome_fonte"], "nome_fonte", contesto, esito, obbligatorio=False)
     data_inizio = converti_data(grezzo["data_inizio"], "data_inizio", contesto, esito, obbligatoria=True)
     data_fine = converti_data(grezzo["data_fine"], "data_fine", contesto, esito, obbligatoria=True)
     if data_inizio and data_fine and data_fine < data_inizio:
@@ -325,7 +327,7 @@ def converti_evento(grezzo, posizione: int, esito: Esito) -> Evento | None:
         return None
     assert data_inizio is not None and data_fine is not None  # garantito dai controlli sopra
     return Evento(
-        id=identificativo, nome=nome, data_inizio=data_inizio, data_fine=data_fine,
+        id=identificativo, nome=nome, nome_fonte=nome_fonte, data_inizio=data_inizio, data_fine=data_fine,
         luogo=luogo, paese=paese, tipo=tipo, categorie=categorie, distanze=distanze,
         organizzatore=organizzatore, url_ufficiale=url_ufficiale, url_iscrizione=url_iscrizione,
         scadenza_iscrizione=scadenza_iscrizione, stato=stato, fonti=fonti,
