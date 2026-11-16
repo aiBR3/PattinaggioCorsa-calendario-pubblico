@@ -35,7 +35,7 @@ Valori provvisori, scelti a stima il 2026-11-06 e da tarare con le misure del co
 Cerca la PR di raccolta aperta: `gh api 'repos/aiBR3/PattinaggioCorsa-calendario-pubblico/pulls?state=open' --jq '.[] | "\(.number) \(.head.ref)"'`.
 
 - Se un ramo `arricchimento/…` ha ancora una PR aperta, fermati: scrivi nel messaggio finale "PR #N di un arricchimento precedente ancora aperta: nessuna esecuzione" e non fare altro (una PR alla volta, come la raccolta).
-- Se c'è una PR con ramo `raccolta/AAAA-MM-GG`: `git fetch origin RAMO && git checkout RAMO`. Le **voci nuove** sono le voci di `dati/eventi.yaml` del ramo il cui `id` non esiste in `main` (confronta con `git show origin/main:dati/eventi.yaml`); le voci promosse (stesso `id`, prova arrivata dal regolamento) non sono nuove. Scriverai su questo ramo e commenterai in questa PR.
+- Se c'è una PR con ramo `raccolta/AAAA-MM-GG`: `git fetch origin RAMO && git checkout RAMO`. Le **voci nuove** sono le voci di `dati/eventi.yaml` del ramo il cui `id` non esiste in `main` (confronta con `git show origin/main:dati/eventi.yaml`); le voci promosse (stesso `id`, prova arrivata dal regolamento) non sono nuove. Vale come nuova anche una voce che in `main` era `escluso` e sul ramo non lo è più (il regolamento di gara è cambiato e ora ammette Master o Amatori: lo dice la frase `Aggiornata il … da converti_fisr.py` in `note_interne`), se non ha ancora una frase `Arricchimento …`. Scriverai su questo ramo e commenterai in questa PR.
 - Se non c'è: resta su `main`, non ci sono voci nuove e farai solo il ricontrollo (passo 2); se produrrà modifiche, le metterai su un ramo `arricchimento/OGGI` con una PR tua (passo 4).
 
 ## Passo 2: quali voci
@@ -44,6 +44,8 @@ Cerca la PR di raccolta aperta: `gh api 'repos/aiBR3/PattinaggioCorsa-calendario
 2. **Voci vecchie da ricontrollare**: voci con `data_inizio` ≥ OGGI e `prova` vuota **oppure `url_ufficiale` vuoto** (le `da_verificare`, le `annunciato`, le `non_autorizzato` senza regolamento, e le `confermato` dal solo titolo o regolamento che non hanno ancora il sito dell'organizzatore), il cui ultimo controllo è più vecchio di 14 giorni. L'ultimo controllo è la data più recente tra `verificato_il`, i `letto_il` delle `fonti` e la data della frase `Arricchimento AAAA-MM-GG:` in `note_interne` (passo 3, punto 9). Ordina per ultimo controllo crescente (le più trascurate prima) e prendi le prime 5. Le altre le elenchi sotto "Non fatto" con la loro data di ultimo controllo.
 
 Le voci con prova e con `url_ufficiale` e le voci `escluso`, `rinviato`, `annullato` non si toccano.
+
+**Doppioni (regola 7).** Prima di lavorare una voce nuova, controlla che `dati/eventi.yaml` non abbia già la stessa gara sotto un altro `id`: stesso numero di regolamento di gara (`id_manif` in `url_ufficiale` o nelle `fonti`), oppure stessa città e nome simile a meno di 60 giorni di distanza, oppure una frase `Possibile doppione di …` scritta dallo script in `note_interne`. Se la trovi, non arricchire nessuna delle due e non unirle: scrivi il sospetto in `note_interne` della voce nuova (con la frase `Arricchimento OGGI: possibile doppione di ID, non lavorata`) e mettilo in testa ai dubbi del commento; unire due voci tocca al proprietario. Due gare con lo stesso nome possono essere entrambe vere (Imola, 8/11 e 8/12/2026): se la lista federale le riporta tutte e due, non sono un doppione. Riporta tra i dubbi anche ogni frase `Da controllare (converti_fisr.py): …` che trovi nelle `note_interne` delle voci cambiate dalla PR.
 
 ## Passo 3: per ogni voce, la regola 10
 

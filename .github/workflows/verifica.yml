@@ -32,6 +32,9 @@ jobs:
       - name: Installa le dipendenze
         run: pip install -r script/requisiti.txt
 
+      - name: Prova le regole di converti_fisr.py su casi costruiti
+        run: python3 script/prove_converti_fisr.py
+
       - name: Genera e verifica l'uscita
         run: >
           python3 script/genera_ics.py

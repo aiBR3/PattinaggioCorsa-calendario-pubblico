@@ -12,15 +12,29 @@ Uso:
         --eventi dati/eventi.yaml [--scrivi] [--rapporto registro/rapporto.md]
 
 Senza --scrivi non tocca eventi.yaml: stampa solo il rapporto. Con --scrivi
-riscrive eventi.yaml con le voci esistenti INVARIATE nel contenuto (riordinate
-per data) più le nuove. Le voci esistenti vincono: se un evento raccolto
-corrisponde a una voce già presente, lo script lo segnala e non la tocca,
-con una sola eccezione, la PROMOZIONE (regola 7 di CLAUDE.md): una voce ancora
-senza prova (da_verificare, non_autorizzato, annunciato) che ora ha il regolamento
-di gara riceve categorie, prova, stato, verificato_il e la fonte nuova; nome, luogo,
-organizzatore, note e tutto ciò che una persona ha scritto restano com'erano.
-Una voce che una prova ce l'ha già non viene mai cambiata: le differenze vanno
-solo nel rapporto.
+riscrive eventi.yaml con le voci esistenti (riordinate per data) più le nuove.
+Una gara già presente si riconosce prima di tutto dal numero del regolamento di
+gara (id_manif), che la federazione non cambia mai, poi dall'id, poi da stessa
+data d'inizio con nome simile o stessa città. Le voci esistenti vincono: se un
+evento raccolto corrisponde a una voce già presente, lo script lo segnala e non
+la tocca, con due eccezioni (regola 7 di CLAUDE.md):
+
+  - PROMOZIONE: una voce ancora senza prova (da_verificare, non_autorizzato,
+    annunciato) che ora ha il regolamento di gara riceve categorie, prova, stato,
+    verificato_il e la fonte nuova;
+  - REGOLAMENTO CAMBIATO: una voce legata a un regolamento di gara (lo cita in
+    url_ufficiale o nelle fonti) segue il regolamento quando cambia: date,
+    scadenza delle iscrizioni e, se la prova è la frase scritta da questo script,
+    categorie, prova e stato. Se cambia la data d'inizio, la data nell'id la segue.
+    Ogni cambio è scritto in note_interne e nel rapporto, prima → dopo.
+
+In entrambi i casi nome, luogo, organizzatore, note e tutto ciò che una persona ha
+scritto restano com'erano. Una prova scritta a mano non viene mai riscritta: se il
+regolamento non le corrisponde più, lo script lo segnala in note_interne e nel
+rapporto ("da controllare") e lascia decidere a chi rivede la PR.
+
+Un regolamento che non ha ancora una riga nella lista (da cui viene la località)
+non diventa una voce: resta nel rapporto finché la lista non lo riporta.
 """
 
 from __future__ import annotations
@@ -371,7 +385,15 @@ def costruisci_evento(riga: dict | None, regolamento: dict | None, letto_il: str
         note_interne.append("Anomalie di lettura: " + "; ".join(riga["anomalie"]))
 
     scadenza = (riga["scadenza_iscrizioni"] if riga else "") or (regolamento["iscrizioni_entro"] if regolamento else "") or ""
+    categorie_regolamento, _, prova_regolamento = classifica(regolamento) if regolamento else ([], [], "")
     return {
+        # Campi di lavoro (iniziano con "_"): servono al confronto con le voci esistenti, non vengono mai scritti.
+        "_dalla_lista": riga is not None,
+        "_data_lista": riga["data_inizio"] if riga is not None else "",   # la lista può dare una data diversa dal regolamento
+        "_non_autorizzata": bool(riga is not None and riga["non_autorizzata"]),
+        "_regolamento": str(regolamento["id_manif"]) if regolamento else "",
+        "_categorie_regolamento": categorie_regolamento,
+        "_prova_regolamento": prova_regolamento,
         "id": f"{data_inizio}-{slug_citta(luogo) if luogo and not luogo.startswith('da indicare') else 'luogo-ignoto'}-{slug_nome(nome)}",
         "nome": nome, "data_inizio": data_inizio, "data_fine": data_fine, "luogo": luogo or "da indicare",
         "paese": "IT", "tipo": "gara", "categorie": categorie, "distanze": distanze, "organizzatore": organizzatore,
@@ -394,11 +416,41 @@ def carica_eventi(percorso: Path) -> tuple[str, list[dict]]:
     return intestazione.rstrip("\n") + "\n", eventi
 
 
+ESPRESSIONE_NUMERO_REGOLAMENTO = re.compile(r"[?&]id_manif=(\d+)")
+
+
+def numeri_regolamento(evento: dict) -> set[str]:
+    """I numeri di regolamento di gara (id_manif) citati da una voce, in url_ufficiale e nelle fonti.
+    La federazione non cambia mai il numero di una gara: è la chiave più stabile che abbiamo."""
+    testi = [str(evento.get("url_ufficiale") or "")]
+    for fonte in evento.get("fonti") or []:
+        if isinstance(fonte, dict):
+            testi.append(str(fonte.get("url") or ""))
+    numeri: set[str] = set()
+    for testo in testi:
+        numeri.update(ESPRESSIONE_NUMERO_REGOLAMENTO.findall(testo))
+    return numeri
+
+
+def giorni_tra(a, b) -> int:
+    return abs((date.fromisoformat(str(a)) - date.fromisoformat(str(b))).days)
+
+
 def corrisponde_esistente(nuovo: dict, esistenti: list[dict]) -> dict | None:
+    """La voce già presente che descrive la stessa gara, o None. In ordine: stesso numero di regolamento
+    (vale anche se nel frattempo sono cambiati data e nome), stesso id, stessa data d'inizio con nome simile
+    o stessa città."""
+    numeri = numeri_regolamento(nuovo)
+    if numeri:
+        stesso_regolamento = [e for e in esistenti if numeri_regolamento(e) & numeri]
+        if stesso_regolamento:
+            # di norma è una sola; se fossero più d'una, la più vicina per data
+            return min(stesso_regolamento, key=lambda e: giorni_tra(e["data_inizio"], nuovo["data_inizio"]))
+    date_possibili = {str(nuovo["data_inizio"]), str(nuovo.get("_data_lista") or nuovo["data_inizio"])}
     for esistente in esistenti:
         if esistente["id"] == nuovo["id"]:
             return esistente
-        stesso_giorno = str(esistente["data_inizio"]) == nuovo["data_inizio"]
+        stesso_giorno = str(esistente["data_inizio"]) in date_possibili
         if stesso_giorno and (somiglianza(str(esistente["nome"]), nuovo["nome"]) >= 0.4 or slug_citta(str(esistente["luogo"])) == slug_citta(nuovo["luogo"])):
             return esistente
     return None
@@ -433,8 +485,8 @@ def promuovi(esistente: dict, proposta: dict, letto_il: str) -> list[str]:
             # non dovrebbe succedere: una proposta con prova ha sempre uno di questi stati
             return []
     elif stato_vecchio == "non_autorizzato" and esistente.get("prova") and stato_nuovo in ("confermato", "escluso") \
-            and bool(esistente.get("categorie")) == bool(proposta.get("categorie")):
-        pass  # cambia solo lo stato, sotto
+            and bool(esistente.get("categorie")) == bool(proposta.get("categorie")) and proposta.get("_dalla_lista", True):
+        pass  # cambia solo lo stato, sotto (solo se la proposta viene da una riga della lista: è la lista che autorizza)
     else:
         return []
     if stato_nuovo != stato_vecchio:
@@ -456,6 +508,167 @@ def promuovi(esistente: dict, proposta: dict, letto_il: str) -> list[str]:
     frase = f"Promossa il {letto_il} da converti_fisr.py: " + "; ".join(cambiamenti) + (f"; regolamento di gara id_manif {regolamento}." if regolamento else ".")
     esistente["note_interne"] = (note_interne + " " + frase).strip()
     return cambiamenti
+
+
+# ---------------------------------------------------------------------------
+# Regolamento di gara cambiato dopo la prima lettura
+# ---------------------------------------------------------------------------
+
+STATI_RICALCOLABILI = {"confermato", "escluso", "non_autorizzato"}
+# Frasi scritte da questo script quando il regolamento non aveva righe Master/Amatori: se poi le righe arrivano non sono più vere.
+FRASI_SUPERATE_DA_CATEGORIE = [
+    re.compile(r"\s*Nella lista FISR compare come 'Attività non ancora autorizzata'; il regolamento(?: di gara)? \(bozza\) non prevede Master/Amatori\."),
+]
+
+
+def frase_prova_dello_script(prova: str, numero: str) -> str | None:
+    """La frase che questo script ha scritto come prova per il regolamento `numero`, se è ancora nella voce.
+    None se la prova è scritta a mano o viene da un'altra fonte: in quel caso non la si riscrive."""
+    inizio = re.escape(f"Regolamento di gara id_manif {numero}, art. 10 'Programma gare': ")
+    trovata = re.search(inizio + r"(?:righe .*? Categorie elencate: [^.]*\.|categorie elencate [^;]*; nessuna riga Master o Amatori\.)", prova, flags=re.S)
+    return trovata.group(0) if trovata else None
+
+
+def categorie_della_frase(frase: str) -> list[str]:
+    """Le categorie che il regolamento dava quando lo script ha scritto la frase di prova."""
+    if "nessuna riga Master o Amatori" in frase:
+        return []
+    elenco = frase.rsplit("Categorie elencate: ", 1)[-1]
+    categorie = []
+    if ESPRESSIONE_MASTER.search(elenco):
+        categorie.append("master")
+    if ESPRESSIONE_AMATORI.search(elenco):
+        categorie.append("amatori")
+    return categorie
+
+
+def aggiorna_dal_regolamento(esistente: dict, proposta: dict, letto_il: str, id_occupati: set[str]) -> tuple[list[str], list[str]]:
+    """Regolamento cambiato (regola 7): se la voce è legata allo stesso regolamento di gara della proposta
+    (stesso id_manif), la allinea SUL POSTO a ciò che il regolamento e la lista dicono oggi.
+    Ritorna (cambiamenti fatti, cose da controllare a mano); due liste vuote = niente da fare.
+      - date e scadenza delle iscrizioni: sempre; se cambia la data d'inizio, la data nell'id la segue;
+      - categorie, prova e stato: solo se la prova è la frase scritta da questo script per quel regolamento
+        (frase_prova_dello_script). Le categorie arrivate da altre fonti (es. 'amatori' dalla pagina
+        dell'organizzatore) e il testo aggiunto alla prova restano;
+      - prova scritta a mano e regolamento che oggi dà altre categorie: nessun cambio, solo "da controllare".
+    Nome, luogo, organizzatore, note pubbliche e url: mai toccati (tranne le frasi di questo script non più vere)."""
+    numero = str(proposta.get("_regolamento") or "")
+    if not numero or numero not in numeri_regolamento(esistente):
+        return [], []
+    cambiamenti: list[str] = []
+    da_controllare: list[str] = []
+    categorie_voce = [str(c) for c in (esistente.get("categorie") or [])]
+    categorie_nuove = list(proposta.get("_categorie_regolamento") or [])
+    prova_voce = str(esistente.get("prova") or "")
+    frase_vecchia = frase_prova_dello_script(prova_voce, numero)
+    stato_vecchio = str(esistente.get("stato") or "")
+
+    # 1. Categorie, prova e stato
+    if frase_vecchia is not None:
+        categorie_vecchie = categorie_della_frase(frase_vecchia)
+        if set(categorie_vecchie) != set(categorie_nuove):
+            tolte = [c for c in categorie_vecchie if c not in categorie_nuove]
+            aggiornate = [c for c in ("master", "amatori") if (c in categorie_voce and c not in tolte) or c in categorie_nuove]
+            esistente["prova"] = prova_voce.replace(frase_vecchia, proposta["_prova_regolamento"])
+            esistente["categorie"] = aggiornate
+            cambiamenti.append(f"categorie {categorie_voce} → {aggiornate}")
+            if not esistente.get("distanze") and proposta.get("distanze"):
+                esistente["distanze"] = list(proposta["distanze"])
+                cambiamenti.append(f"distanze {esistente['distanze']}")
+            elif esistente.get("distanze") and list(esistente["distanze"]) != list(proposta.get("distanze") or []):
+                da_controllare.append(f"le distanze della voce ({list(esistente['distanze'])}) non sono quelle che il regolamento {numero} dà oggi per Master/Amatori ({list(proposta.get('distanze') or [])})")
+            if aggiornate and not categorie_voce:
+                for campo in ("note", "note_interne"):
+                    testo = str(esistente.get(campo) or "")
+                    for espressione in FRASI_SUPERATE_DA_CATEGORIE:
+                        testo = espressione.sub("", testo)
+                    if testo.strip() != str(esistente.get(campo) or "").strip():
+                        esistente[campo] = testo.strip()
+                        cambiamenti.append(f"tolta da '{campo}' la frase sul regolamento senza Master/Amatori")
+            if stato_vecchio in STATI_RICALCOLABILI:
+                if not aggiornate:
+                    stato_nuovo = "escluso"
+                elif proposta.get("_non_autorizzata") or (stato_vecchio == "non_autorizzato" and not proposta.get("_dalla_lista")):
+                    stato_nuovo = "non_autorizzato"   # autorizza solo la lista: senza riga in lista lo stato non migliora
+                else:
+                    stato_nuovo = "confermato"
+                if stato_nuovo != stato_vecchio:
+                    esistente["stato"] = stato_nuovo
+                    cambiamenti.append(f"stato {stato_vecchio} → {stato_nuovo}")
+            else:
+                da_controllare.append(f"lo stato è '{stato_vecchio}' e non viene ricalcolato, ma le categorie del regolamento {numero} sono cambiate")
+    elif prova_voce:
+        manca_nella_voce = [c for c in categorie_nuove if c not in categorie_voce]
+        master_sparito = "master" in categorie_voce and "master" not in categorie_nuove
+        if manca_nella_voce or master_sparito:
+            da_controllare.append(f"il regolamento {numero} oggi dà categorie {categorie_nuove}, la voce ha {categorie_voce} con una prova scritta a mano")
+
+    # 2. Date (e id, se cambia la data d'inizio)
+    date_vecchie = (str(esistente["data_inizio"]), str(esistente["data_fine"]))
+    date_nuove = (str(proposta["data_inizio"]), str(proposta["data_fine"]))
+    if date_nuove != date_vecchie:
+        esistente["data_inizio"], esistente["data_fine"] = date_nuove
+        cambiamenti.append(f"date {date_vecchie[0]}–{date_vecchie[1]} → {date_nuove[0]}–{date_nuove[1]}")
+        if date_nuove[0] != date_vecchie[0]:
+            id_vecchio = str(esistente["id"])
+            resto = id_vecchio[11:] if re.match(r"\d{4}-\d{2}-\d{2}-.", id_vecchio) else id_vecchio
+            base = f"{date_nuove[0]}-{resto}"
+            id_nuovo, contatore = base, 2
+            while id_nuovo in id_occupati:
+                id_nuovo = f"{base}-{contatore}"
+                contatore += 1
+            id_occupati.discard(id_vecchio)
+            id_occupati.add(id_nuovo)
+            esistente["id"] = id_nuovo
+            cambiamenti.append(f"id {id_vecchio} → {id_nuovo}")
+
+    # 3. Scadenza delle iscrizioni
+    scadenza_vecchia, scadenza_nuova = str(esistente.get("scadenza_iscrizione") or ""), str(proposta.get("scadenza_iscrizione") or "")
+    if scadenza_nuova and scadenza_nuova != scadenza_vecchia:
+        esistente["scadenza_iscrizione"] = scadenza_nuova
+        cambiamenti.append(f"scadenza iscrizioni {scadenza_vecchia or 'vuota'} → {scadenza_nuova}")
+
+    note_interne = str(esistente.get("note_interne") or "").strip()
+    if cambiamenti:
+        esistente["verificato_il"] = letto_il
+        fonti_esistenti = esistente.setdefault("fonti", [])
+        for fonte in proposta.get("fonti", []):
+            presente = next((f for f in fonti_esistenti if f.get("url") == fonte["url"]), None)
+            if presente:
+                presente["letto_il"] = fonte["letto_il"]
+            else:
+                fonti_esistenti.append({"url": fonte["url"], "letto_il": fonte["letto_il"]})
+        note_interne = (note_interne + f" Aggiornata il {letto_il} da converti_fisr.py, il regolamento di gara id_manif {numero} è cambiato: " + "; ".join(cambiamenti) + ".").strip()
+    for cosa in da_controllare:
+        frase = f"Da controllare (converti_fisr.py): {cosa}."
+        if frase not in note_interne:      # la stessa segnalazione non si ripete ogni settimana
+            note_interne = (note_interne + " " + frase).strip()
+    if note_interne != str(esistente.get("note_interne") or "").strip():
+        esistente["note_interne"] = note_interne
+    return cambiamenti, da_controllare
+
+
+def segnala_possibili_doppioni(nuovi: list[dict], esistenti: list[dict], ancora_in_lista: set[int], filtro_da: str) -> list[str]:
+    """Una voce nuova senza regolamento può essere una gara già presente a cui la lista ha cambiato la data:
+    senza il numero del regolamento non si può dire con certezza, quindi lo script non unisce: scrive il sospetto
+    in note_interne della voce nuova e nel rapporto. Sospetto = una voce esistente, sparita dalla lista letta oggi,
+    con stessa città, nome simile e data entro 60 giorni."""
+    segnalazioni: list[str] = []
+    for nuovo in nuovi:
+        for esistente in esistenti:
+            if id(esistente) in ancora_in_lista or str(esistente.get("stato")) == "annullato":
+                continue
+            if filtro_da and str(esistente["data_inizio"]) < filtro_da:
+                continue    # più vecchia di ciò che la raccolta ha letto: è normale che non sia in lista
+            giorni = giorni_tra(esistente["data_inizio"], nuovo["data_inizio"])
+            if giorni == 0 or giorni > 60:
+                continue
+            if slug_citta(str(esistente["luogo"])) != slug_citta(nuovo["luogo"]) or somiglianza(str(esistente["nome"]), nuovo["nome"]) < 0.6:
+                continue
+            frase = f"Possibile doppione di {esistente['id']} (stessa città, nome simile, data {esistente['data_inizio']}; quella voce non è più nella lista FISR): controllare prima del merge."
+            nuovo["note_interne"] = (str(nuovo.get("note_interne") or "") + " " + frase).strip()
+            segnalazioni.append(f"- `{nuovo['id']}` ↔ `{esistente['id']}`: possibile doppione (stessa città, nome simile, {giorni} giorni di distanza; la voce esistente non è più nella lista)")
+    return segnalazioni
 
 
 def testo_yaml(valore) -> str:
@@ -517,6 +730,9 @@ def principale(argomenti: list[str] | None = None) -> int:
     intestazione, esistenti = carica_eventi(opzioni.eventi)
     nuovi: list[dict] = []
     promossi: list[str] = []
+    aggiornati: list[str] = []
+    da_controllare: list[str] = []
+    in_attesa: list[str] = []
     conteggio_stati: dict[str, int] = {}
     righe_presenti: list[str] = []
     proposte_per_esistente: list[tuple[dict, dict]] = []
@@ -531,14 +747,26 @@ def principale(argomenti: list[str] | None = None) -> int:
         evento = costruisci_evento(None, regolamento, letto_il)
         esistente = corrisponde_esistente(evento, esistenti + nuovi)
         if esistente:
-            if esistente in esistenti:
+            if any(esistente is voce for voce in esistenti):
                 proposte_per_esistente.append((esistente, evento))
             continue
-        nuovi.append(evento)
+        # Senza la riga della lista manca la località (e l'id la contiene): non diventa una voce, aspetta la lista.
+        in_attesa.append(f"- regolamento {regolamento['id_manif']}: {evento['nome']!r}, {evento['data_inizio']}, società {regolamento.get('societa') or '?'}; "
+                         f"Master/Amatori nel programma: {', '.join(evento['categorie']) or 'no'}")
+    ancora_in_lista = {id(esistente) for esistente, _ in proposte_per_esistente}
+    id_occupati = {str(e["id"]) for e in esistenti}
     for esistente, evento in proposte_per_esistente:
-        cambiamenti = promuovi(esistente, evento, letto_il)
+        id_prima = str(esistente["id"])
+        promozione = promuovi(esistente, evento, letto_il)
+        if promozione:
+            promossi.append(f"- `{id_prima}` ↔ {evento['nome'][:50]!r}: " + "; ".join(promozione))
+        # Anche una voce appena promossa è ora legata al regolamento: se le date non coincidono, lo segue subito.
+        cambiamenti, dubbi = aggiorna_dal_regolamento(esistente, evento, letto_il, id_occupati)
+        for dubbio in dubbi:
+            da_controllare.append(f"- `{esistente['id']}`: {dubbio}")
         if cambiamenti:
-            promossi.append(f"- `{esistente['id']}` ↔ {evento['nome'][:50]!r}: " + "; ".join(cambiamenti))
+            aggiornati.append(f"- `{id_prima}` (regolamento {evento['_regolamento']}): " + "; ".join(cambiamenti))
+        if promozione or cambiamenti:
             continue
         differenze = []
         if evento["categorie"] and list(esistente.get("categorie") or []) != evento["categorie"]:
@@ -546,10 +774,17 @@ def principale(argomenti: list[str] | None = None) -> int:
         if evento["stato"] != esistente.get("stato"):
             differenze.append(f"stato proposto {evento['stato']} (presente {esistente.get('stato')})")
         righe_presenti.append(f"- `{esistente['id']}` ↔ {evento['nome'][:50]!r}" + (": " + "; ".join(differenze) if differenze else ""))
+    da_controllare.extend(segnala_possibili_doppioni(nuovi, esistenti, ancora_in_lista, str(raccolta.get("filtro_da") or "")))
     rapporto.append(f"\n## Voci promosse (prova o autorizzazione arrivate dopo la prima lettura): {len(promossi)}\n")
     rapporto.extend(promossi)
+    rapporto.append(f"\n## Regolamenti cambiati (voci aggiornate, prima → dopo): {len(aggiornati)}\n")
+    rapporto.extend(aggiornati)
+    rapporto.append(f"\n## Da controllare a mano prima del merge: {len(da_controllare)}\n")
+    rapporto.extend(da_controllare)
     rapporto.append("\n## Eventi già presenti (non toccati)\n")
     rapporto.extend(righe_presenti)
+    rapporto.append(f"\n## Regolamenti in attesa della lista (nessuna voce creata): {len(in_attesa)}\n")
+    rapporto.extend(in_attesa)
 
     id_visti = {e["id"] for e in esistenti}
     for evento in nuovi:
@@ -582,9 +817,18 @@ def principale(argomenti: list[str] | None = None) -> int:
         if len(riletti) != len(tutti):
             print(f"ERRORE: scritti {len(tutti)} eventi, riletti {len(riletti)}", file=sys.stderr)
             return 1
+        id_riletti = [str(e["id"]) for e in riletti]
+        doppi = sorted({i for i in id_riletti if id_riletti.count(i) > 1})
+        if doppi:
+            print(f"ERRORE: id ripetuti dopo la scrittura: {doppi}", file=sys.stderr)
+            return 1
+        fuori_data = [str(e["id"]) for e in riletti if not str(e["id"]).startswith(str(e["data_inizio"]) + "-")]
+        if fuori_data:
+            print(f"ERRORE: la data nell'id non coincide con data_inizio: {fuori_data}", file=sys.stderr)
+            return 1
         for prima, dopo in zip(esistenti, [e for e in riletti if e["id"] in {x["id"] for x in esistenti}]):
             pass  # le voci esistenti sono state riemesse: il controllo di contenuto lo fa il diff di git
-        print(f"scritto {opzioni.eventi}: {len(esistenti)} esistenti (di cui {len(promossi)} promossi) + {len(nuovi)} nuovi = {len(tutti)} eventi", file=sys.stderr)
+        print(f"scritto {opzioni.eventi}: {len(esistenti)} esistenti (di cui {len(promossi)} promossi e {len(aggiornati)} aggiornati) + {len(nuovi)} nuovi = {len(tutti)} eventi", file=sys.stderr)
     return 0
 
 

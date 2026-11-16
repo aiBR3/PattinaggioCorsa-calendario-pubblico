@@ -18,7 +18,7 @@ Chi lo consulta: chi si iscrive al calendario, da iPhone (app Calendario) o da A
 4. **Non inventare.** Campo sconosciuto = campo vuoto. Mai dedurre date, luoghi o categorie dal nome dell'evento o dall'edizione precedente.
 5. **Ogni esecuzione lascia traccia.** Un file in `registro/` anche in caso di errore; una riga in `appunti/diario.md` se qualcosa non ha funzionato. Per le esecuzioni automatiche di `raccolta.yml` la traccia è l'artefatto allegato al job (90 giorni) e il riassunto del job; i file di `registro/` vengono committati solo quando c'è una PR.
 6. **Non ripetere errori.** Prima di tentare un approccio, controlla in `appunti/diario.md` se è già fallito e perché.
-7. **Un evento non si duplica.** La chiave è `id`. Se un evento esiste già si aggiorna la voce, si aggiunge la fonte e si ricontrolla `verificato_il`.
+7. **Un evento non si duplica.** La chiave è `id`. Se un evento esiste già si aggiorna la voce, si aggiunge la fonte e si ricontrolla `verificato_il`. Una gara FISR è la stessa gara se ha lo stesso numero di regolamento di gara (`id_manif`): la federazione non lo cambia mai, anche quando cambiano data e nome (confermato dal proprietario il 2026-11-16).
 8. **Nessun altro repository o sito si tocca.** Questo repository è l'unico posto di lavoro.
 9. **Niente informazioni personali.** Il repository è pubblico: nessun nome, contatto, dispositivo o dettaglio su chi lo usa o su chi segnala. Si scrive "il proprietario" (aiBR3) e "segnalazioni volontarie". Vale anche per i dati trovati sui siti degli organizzatori (cellulari, IBAN, indirizzi email di persone): si rimanda alla pagina con il link, non si copiano.
 10. **Chi verifica cerca il sito dell'organizzatore.** Le liste federali danno nome, data e organizzatore; i dettagli che servono a chi pattina (link ufficiale, distanze, orari, quote, come iscriversi) e le gare Amatori/Fitness, che il regolamento federale non copre, stanno solo sul sito dell'organizzatore locale. Per ogni evento si cerca quindi il sito dell'organizzatore, in quest'ordine: prima nel registro `dati/societa.yaml`, poi nel regolamento di gara (art. 1 e siti citati), solo dopo sul web (nome dell'organizzatore + città + nome della gara; un articolo di giornale si può aprire solo per leggere il nome esteso dell'organizzatore, mai come fonte), e si legge la pagina dell'evento, controllando che sia dell'edizione giusta (l'anno nell'indirizzo può ingannare) e che il sito non sia compromesso (pagine di spam, lingue estranee): un sito compromesso non si linka. Se la pagina ufficiale di una gara passata è già sparita, si legge dalla Wayback Machine e si cita lo snapshot.
@@ -36,6 +36,7 @@ dati/fonti.yaml            ← registro delle fonti e di come si leggono
 dati/societa.yaml          ← registro delle società (codice FISR, sigle, nome, sito, social): dove cercare l'organizzatore
 script/raccogli_fisr.py    ← livello 1: lista + regolamenti di gara di fisr.info → JSON grezzo (non decide)
 script/converti_fisr.py    ← livelli 2-3: JSON grezzo → voci di eventi.yaml, con prova citata dall'art. 10
+script/prove_converti_fisr.py ← prove automatiche di converti_fisr.py su casi costruiti (le esegue anche verifica.yml)
 script/genera_ics.py       ← eventi.yaml → calendario.ics + index.html (valida ingresso e uscita)
 script/intervallo_scansione.py ← quali id di regolamento scandire questa settimana (oltre l'ultimo visto)
 script/raccogli_societa.py ← registro delle società dalle classifiche, dai risultati e dai regolamenti di fisr.info
@@ -62,7 +63,7 @@ Lo script rifiuta chiavi sconosciute, chiavi mancanti e valori incoerenti.
 
 | Campo | Tipo | Regola |
 |---|---|---|
-| `id` | testo | `AAAA-MM-GG-citta-slug`, minuscolo, senza accenti; la data è `data_inizio`; diventa l'UID nell'ICS, quindi **non cambia mai** |
+| `id` | testo | `AAAA-MM-GG-citta-slug`, minuscolo, senza accenti; la data è `data_inizio`; diventa l'UID nell'ICS, quindi **cambia solo se cambia `data_inizio`** (la data nell'`id` la segue, decisione 2026-11-16) e mai per altri motivi |
 | `nome` | testo | nome ufficiale, con maiuscole normali (non TUTTO MAIUSCOLO) |
 | `data_inizio`, `data_fine` | data | ISO `AAAA-MM-GG`; evento di un giorno: uguali |
 | `luogo` | testo | città (provincia) e, se noto, impianto o indirizzo |
@@ -126,6 +127,9 @@ python3 script/converti_fisr.py --raccolta registro/AAAA-MM-GG-raccolta-fisr.jso
 python3 script/genera_ics.py --ingresso dati/eventi.yaml --uscita uscita \
     --url-base https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico
 
+# Dopo ogni modifica a converti_fisr.py: prove su casi costruiti (riconoscimento, regolamento cambiato, doppioni)
+python3 script/prove_converti_fisr.py
+
 # Settimanalmente serve solo l'intervallo di id oltre l'ultimo visto (è ciò che fa raccolta.yml):
 python3 script/intervallo_scansione.py        # stampa "DA A", es. 7031 7380
 
@@ -142,9 +146,13 @@ Cosa decide `converti_fisr.py` e cosa no:
 - regolamento di gara senza righe Master/Amatori → `escluso`, prova = l'elenco delle categorie;
 - nessun regolamento di gara ma titolo ufficiale con `cat. …/M` (campionati FISR) → `confermato` con prova = il titolo; con `cat.` senza M → `escluso`;
 - tutto il resto → `da_verificare`, categorie vuote;
-- **promozione** (regola 7): una voce già presente ma senza prova (`da_verificare`, `non_autorizzato`, `annunciato`) che ora ha il regolamento di gara riceve categorie, prova, stato, `verificato_il`, la fonte nuova e i campi vuoti (link, distanze, scadenza); una voce `non_autorizzato` con prova che la lista non segna più come "non ancora autorizzata" passa a `confermato`/`escluso`. Nome, luogo, organizzatore, note e tutto ciò che una persona ha scritto restano com'erano.
+- **promozione** (regola 7): una voce già presente ma senza prova (`da_verificare`, `non_autorizzato`, `annunciato`) che ora ha il regolamento di gara riceve categorie, prova, stato, `verificato_il`, la fonte nuova e i campi vuoti (link, distanze, scadenza); una voce `non_autorizzato` con prova che la lista non segna più come "non ancora autorizzata" passa a `confermato`/`escluso`. Nome, luogo, organizzatore, note e tutto ciò che una persona ha scritto restano com'erano;
+- **riconoscimento** (regola 7): una voce già presente è la stessa gara se cita lo stesso regolamento di gara (`id_manif` in `url_ufficiale` o nelle `fonti`), poi se ha lo stesso `id`, poi se ha la stessa `data_inizio` con nome simile o stessa città;
+- **regolamento cambiato** (regola 7): una voce legata a un regolamento di gara lo segue quando cambia: date, scadenza delle iscrizioni e, se la prova è la frase scritta dallo script, categorie, prova e stato (una gara `escluso` può così entrare nel calendario, e viceversa); se cambia `data_inizio` la data nell'`id` la segue; ogni cambio è scritto in `note_interne` e nel rapporto, prima → dopo. Una prova scritta a mano non viene mai riscritta: la differenza va in `note_interne` e nel rapporto come "da controllare";
+- **regolamento senza riga nella lista**: non diventa una voce (la località viene dalla lista e l'`id` la contiene); resta nel rapporto, "in attesa della lista", finché la lista non lo riporta;
+- **possibile doppione**: una voce nuova senza regolamento, con stessa città e nome simile a una voce sparita dalla lista, viene creata con il sospetto scritto in `note_interne` e nel rapporto; unire due voci tocca a chi rivede la PR.
 
-Per il resto le voci già presenti in `eventi.yaml` non vengono modificate dallo script: una voce che ha già la prova non cambia mai da sola, e le differenze con quanto raccolto finiscono solo nel rapporto.
+Per il resto le voci già presenti in `eventi.yaml` non vengono modificate dallo script: una voce che ha già la prova cambia solo se cambia il regolamento di gara che la prova, e sempre dentro una PR; nome, luogo, organizzatore e note non cambiano mai da soli. `python3 script/prove_converti_fisr.py` prova queste regole su casi costruiti.
 
 ## Fase attuale
 
