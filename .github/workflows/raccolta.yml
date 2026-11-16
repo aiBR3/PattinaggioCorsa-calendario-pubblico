@@ -105,13 +105,22 @@ jobs:
           else
             data_minima=$(date -u -d "${oggi} -14 days" +%Y-%m-%d)
           fi
+          # Regolamenti delle gare future già in eventi.yaml: si rileggono ogni settimana, uno per uno,
+          # perché gli organizzatori li cambiano (date, categorie, scadenza) anche quando il loro numero
+          # è ormai fuori dall'intervallo. Senza rilettura converti_fisr.py non vedrebbe i cambi.
+          rileggi=$(python3 script/intervallo_scansione.py --da-rileggere --dal "${data_minima}")
+          if ! [[ "${rileggi}" =~ ^[0-9\ ]*$ ]]; then
+            echo "::error::intervallo_scansione.py --da-rileggere non ha prodotto un elenco di numeri (ricevuto '${rileggi}')"
+            exit 1
+          fi
           {
             echo "oggi=${oggi}"
             echo "scansione_da=${da}"
             echo "scansione_a=${a}"
             echo "data_minima=${data_minima}"
+            echo "rileggi=${rileggi}"
           } >> "$GITHUB_OUTPUT"
-          echo "Raccolta del ${oggi}: gare dal ${data_minima}, scansione dei regolamenti ${da}-${a}"
+          echo "Raccolta del ${oggi}: gare dal ${data_minima}, scansione dei regolamenti ${da}-${a}, regolamenti da rileggere: ${rileggi:-nessuno}"
 
       - name: Raccolta grezza (lista + regolamenti di gara)
         run: >
@@ -119,6 +128,7 @@ jobs:
           --da "${{ steps.parametri.outputs.data_minima }}"
           --regolamenti
           --scansione-regolamenti ${{ steps.parametri.outputs.scansione_da }} ${{ steps.parametri.outputs.scansione_a }}
+          --rileggi-regolamenti ${{ steps.parametri.outputs.rileggi }}
           --pausa 0.3
           --uscita "registro/${{ steps.parametri.outputs.oggi }}-raccolta-fisr.json"
 
