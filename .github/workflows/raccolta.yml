@@ -4,7 +4,8 @@
 # (con la possibilità di indicare un intervallo di id da scandire e una data minima).
 # Cosa: lancia gli script deterministici (raccogli_fisr.py → converti_fisr.py → genera_ics.py);
 # se dati/eventi.yaml cambia (voci nuove, oppure voci esistenti promosse perché è arrivato
-# il regolamento di gara o l'autorizzazione) apre una pull request, che il proprietario
+# il regolamento di gara o l'autorizzazione, oppure aggiornate perché il regolamento di gara
+# è cambiato) apre una pull request, che il proprietario
 # rivede (nomi, luoghi, organizzatori, regola 10 di CLAUDE.md) e fonde a mano.
 # Non scrive mai su main. Non giudica: le voci hanno lo stato che converti_fisr.py
 # sa dimostrare con il regolamento di gara (confermato/escluso) oppure da_verificare.
@@ -172,12 +173,12 @@ jobs:
           git checkout -b "${ramo}"
           git add dati/eventi.yaml "registro/${OGGI}-raccolta-fisr.json" "registro/${OGGI}-conversione-fisr.md"
           git commit -m "Aggiunge le gare trovate su fisr.info il ${OGGI}" \
-            -m "Raccolta settimanale automatica (workflow raccolta.yml): gare dal ${DATA_MINIMA}, regolamenti di gara ${SCANSIONE_DA}-${SCANSIONE_A}. Le voci esistenti sono state toccate solo per le promozioni elencate nel rapporto."
+            -m "Raccolta settimanale automatica (workflow raccolta.yml): gare dal ${DATA_MINIMA}, regolamenti di gara ${SCANSIONE_DA}-${SCANSIONE_A}. Le voci esistenti sono state toccate solo per le promozioni e per i regolamenti cambiati elencati nel rapporto."
           git push origin "${ramo}"
           {
             echo "## Cosa cambia"
             echo
-            echo "Raccolta automatica del ${OGGI} (workflow \`raccolta.yml\`): voci nuove proposte da \`converti_fisr.py\` in \`dati/eventi.yaml\` e voci esistenti promosse (prova o autorizzazione arrivate dopo), elencate nel rapporto; nient'altro è stato toccato. \`genera_ics.py\` ha generato il calendario senza errori."
+            echo "Raccolta automatica del ${OGGI} (workflow \`raccolta.yml\`): voci nuove proposte da \`converti_fisr.py\` in \`dati/eventi.yaml\` e voci esistenti promosse (prova o autorizzazione arrivate dopo) o aggiornate perché il regolamento di gara è cambiato, elencate nel rapporto; nient'altro è stato toccato. \`genera_ics.py\` ha generato il calendario senza errori."
             echo
             echo "**Prima del merge** (regola 10 di \`CLAUDE.md\`): rivedere nomi, luoghi e organizzatori delle voci nuove; per ogni voce cercare il sito dell'organizzatore e completare link, distanze e note; le voci \`da_verificare\` restano tali finché non c'è una prova."
             echo
@@ -187,7 +188,7 @@ jobs:
             echo
             echo "## Cosa resta in dubbio"
             echo
-            echo "Tutto ciò che il rapporto elenca come \`da_verificare\` o come differenza rispetto a voci esistenti."
+            echo "Tutto ciò che il rapporto elenca come \`da_verificare\`, sotto \"Da controllare a mano prima del merge\" o come differenza rispetto a voci esistenti."
             echo
             echo "## Rapporto di conversione"
             echo
