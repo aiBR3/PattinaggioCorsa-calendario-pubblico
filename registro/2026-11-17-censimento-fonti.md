@@ -11,13 +11,13 @@ Primo passo della Fase 4, chiesto dal proprietario: capire dove stanno le gare e
 
 ## Risultato in breve
 
-Il registro passa da 19 a 30 fonti: 8 attive (come prima), 18 `da_verificare`, 4 `scartata`.
+Il registro passa da 19 a 30 fonti: 8 attive (come prima), 18 `da_verificare`, 4 `scartata`. Dopo la decisione del proprietario sui campionati regionali (in fondo) le `da_verificare` sono 14 e le `scartata` 8.
 
 | Fonte | Che cosa offre | Proposta |
 |---|---|---|
 | `fisr-it-comunicati` | Per ogni campionato: società organizzatrice, impianto, scadenze, gare per categoria (Master compresi), sito dell'organizzatore; indice per anno con titoli e PDF | **Prima da attivare** |
 | `pattiniamolitalia-eventi` | File ICS pubblico con 40 pattinate non competitive future (fino al 05/12/2027) | **Seconda da attivare**, dopo aver deciso come entrano le pattinate |
-| `fisr-fvg-corsa`, `fisr-toscana-corsa`, `fisr-veneto-corsa`, `fisr-comitati-regionali` | Campionati regionali e provinciali, alcuni con i Master, assenti dalla lista nazionale | Prima decidere se questi campionati entrano nel calendario |
+| `fisr-fvg-corsa`, `fisr-toscana-corsa`, `fisr-veneto-corsa`, `fisr-comitati-regionali` | Campionati regionali e provinciali, alcuni con i Master, assenti dalla lista nazionale | Scartate: il proprietario ha deciso che questi campionati non entrano nel calendario |
 | `world-inline-cup`, `german-inline-cup`, `worldskate-europe-calendario` | Indici delle maratone europee e del campionato europeo Master di maratona; ogni scheda porta al sito dell'organizzatore | Lettura mensile di un agente da dicembre: i calendari 2027 non sono ancora usciti |
 | `ffrs-calendario`, `rfep-velocidad`, `fpp-velocidade`, `rollsport-austria`, `driv-speedskating`, `skateresults` | Calendari delle federazioni di Francia, Spagna, Portogallo, Austria, Germania e una piattaforma tedesca | Una alla volta, più avanti; quattro sono state solo aperte |
 | `aics-pattinaggio-corsa` | Circuito a tappe nel Bresciano; gli "Amatori" fanno un giro non competitivo | Bassa priorità |
@@ -48,6 +48,11 @@ Il registro passa da 19 a 30 fonti: 8 attive (come prima), 18 `da_verificare`, 4
 - **Stato delle fonti lette**: in questa proposta restano `da_verificare` con `ultimo_controllo` compilato, e l'intestazione di `fonti.yaml` spiega la differenza. L'alternativa è uno stato nuovo (per esempio `proposta`), che richiede di cambiare lo schema in `CLAUDE.md`.
 - **Fonti scartate**: quattro, ciascuna con il motivo. Se una va tenuta, basta dirlo.
 - **Quale fonte attivare per prima**: l'ordine qui sopra è una proposta.
+
+## Decisioni del proprietario dopo il censimento (2026-11-17)
+
+- **Campionati regionali e provinciali FISR: non entrano nel calendario.** Le quattro fonti che li riguardano (`fisr-fvg-corsa`, `fisr-toscana-corsa`, `fisr-veneto-corsa`, `fisr-comitati-regionali`) passano a `scartata`, con la decisione scritta in testa alla nota e ciò che è stato letto conservato come memoria. Nell'ordine proposto qui sopra il punto 3 cade.
+- Le altre decisioni (pattinate, stato delle fonti lette, quale fonte attivare per prima) sono ancora aperte.
 
 ## Eventi visti durante il censimento
 

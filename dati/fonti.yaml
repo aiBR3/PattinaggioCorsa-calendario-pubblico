@@ -60,8 +60,8 @@
   frequenza: mensile
   copre: [gare]
   affidabilita: ufficiale
-  stato: da_verificare
-  note: "Letta il 2026-11-17: la home pubblica una notizia per stagione con il calendario regionale ('CALENDARIO REGIONALE date e luoghi', 16/11/2025, per la stagione 2025-26) e poi i comunicati con orari e logistica nella sezione documenti. Il calendario 2025-26 comprende campionati provinciali e regionali, alcuni con la categoria Master (es. 'CAMPIONATO PROVINCIALE PISTA & STRADA cat. R12RAJSM', 22/03/2026, Siena): gare che la lista nazionale di fisr.info non riporta. Testo libero dentro una notizia: serve un agente, non uno script. Il calendario 2026-27 non era ancora pubblicato."
+  stato: scartata
+  note: "Scartata per decisione del proprietario (2026-11-17): i campionati regionali e provinciali FISR non entrano nel calendario. Ciò che segue resta come memoria di che cosa è stato letto. Letta il 2026-11-17: la home pubblica una notizia per stagione con il calendario regionale ('CALENDARIO REGIONALE date e luoghi', 16/11/2025, per la stagione 2025-26) e poi i comunicati con orari e logistica nella sezione documenti. Il calendario 2025-26 comprende campionati provinciali e regionali, alcuni con la categoria Master (es. 'CAMPIONATO PROVINCIALE PISTA & STRADA cat. R12RAJSM', 22/03/2026, Siena): gare che la lista nazionale di fisr.info non riporta. Testo libero dentro una notizia: serve un agente, non uno script. Il calendario 2026-27 non era ancora pubblicato."
   ultimo_controllo: 2026-11-17
 
 - id: fisr-veneto-corsa
@@ -72,8 +72,8 @@
   frequenza: mensile
   copre: [gare]
   affidabilita: ufficiale
-  stato: da_verificare
-  note: "Letta il 2026-11-17: WordPress, categoria 'Corsa-Calendario' con un articolo per gara o per calendario; il feed RSS della categoria esiste (aggiungere /feed/ all'indirizzo). L'ultimo articolo è del 30/04/2025: per il 2026 non c'è nulla, mentre il calendario del Friuli Venezia Giulia (fisr-fvg-corsa) riporta i campionati regionali 2026 corsi insieme al Veneto (San Giorgio delle Pertiche, Spinea). Bassa priorità finché il sito non riprende a pubblicare."
+  stato: scartata
+  note: "Scartata per decisione del proprietario (2026-11-17): i campionati regionali e provinciali FISR non entrano nel calendario. Ciò che segue resta come memoria di che cosa è stato letto. Letta il 2026-11-17: WordPress, categoria 'Corsa-Calendario' con un articolo per gara o per calendario; il feed RSS della categoria esiste (aggiungere /feed/ all'indirizzo). L'ultimo articolo è del 30/04/2025: per il 2026 non c'è nulla, mentre il calendario del Friuli Venezia Giulia (fisr-fvg-corsa) riporta i campionati regionali 2026 corsi insieme al Veneto (San Giorgio delle Pertiche, Spinea). Bassa priorità finché il sito non riprende a pubblicare."
   ultimo_controllo: 2026-11-17
 
 - id: fisr-fvg-corsa
@@ -84,8 +84,8 @@
   frequenza: mensile
   copre: [gare]
   affidabilita: ufficiale
-  stato: da_verificare
-  note: "Letta il 2026-11-17: una pagina per anno (2020-2026), mese per mese, ogni riga con data, località e nome, con le categorie nel nome. Nel 2026: 'Campionato Regionale Pista R12/R/A/J/S/M' (28 e 29/03, San Giorgio delle Pertiche PD) e 'Campionato Regionale Strada R12/R/A/J/S/M' (12/04, Spinea VE), cioè campionati regionali con i Master che la lista nazionale di fisr.info non riporta; il resto sono gare giovanili. Il 2027 non era ancora pubblicato. È la fonte regionale più regolare tra quelle lette: proposta come prima da leggere con uno script quando si decide di includere i campionati regionali."
+  stato: scartata
+  note: "Scartata per decisione del proprietario (2026-11-17): i campionati regionali e provinciali FISR non entrano nel calendario. Ciò che segue resta come memoria di che cosa è stato letto. Letta il 2026-11-17: una pagina per anno (2020-2026), mese per mese, ogni riga con data, località e nome, con le categorie nel nome. Nel 2026: 'Campionato Regionale Pista R12/R/A/J/S/M' (28 e 29/03, San Giorgio delle Pertiche PD) e 'Campionato Regionale Strada R12/R/A/J/S/M' (12/04, Spinea VE), cioè campionati regionali con i Master che la lista nazionale di fisr.info non riporta; il resto sono gare giovanili. Il 2027 non era ancora pubblicato. È la fonte regionale più regolare tra quelle lette: proposta come prima da leggere con uno script quando si decide di includere i campionati regionali."
   ultimo_controllo: 2026-11-17
 
 - id: rollergames-calendario-corsa
@@ -204,8 +204,8 @@
   frequenza: stagionale
   copre: [gare]
   affidabilita: ufficiale
-  stato: da_verificare
-  note: "Letta il 2026-11-17: la pagina linka 20 schede di comitato (/territorio/comitato.html?comitato=N); solo 7 schede riportano il sito del comitato: fihplombardia.org, fisrveneto.it, fisrtoscana.it, fisrlazio.it, fisrabruzzo.it, fisrcampania.it, fisrpuglia.it. Aperte le home di Lombardia, Lazio e Campania (rispondono); Abruzzo e Puglia non hanno risposto alla shell. Serve perché i campionati regionali e provinciali ammettono spesso i Master (visto in Friuli Venezia Giulia e in Toscana) e non stanno nella lista nazionale di fisr.info: ogni comitato li pubblica a modo suo. Non è stato letto il calendario di nessuno di questi comitati oltre a Toscana, Veneto e Friuli Venezia Giulia, che hanno una voce propria. Da decidere prima se i campionati regionali e provinciali entrano nel calendario."
+  stato: scartata
+  note: "Scartata per decisione del proprietario (2026-11-17): i campionati regionali e provinciali FISR non entrano nel calendario. Ciò che segue resta come memoria di che cosa è stato letto. Letta il 2026-11-17: la pagina linka 20 schede di comitato (/territorio/comitato.html?comitato=N); solo 7 schede riportano il sito del comitato: fihplombardia.org, fisrveneto.it, fisrtoscana.it, fisrlazio.it, fisrabruzzo.it, fisrcampania.it, fisrpuglia.it. Aperte le home di Lombardia, Lazio e Campania (rispondono); Abruzzo e Puglia non hanno risposto alla shell. Serve perché i campionati regionali e provinciali ammettono spesso i Master (visto in Friuli Venezia Giulia e in Toscana) e non stanno nella lista nazionale di fisr.info: ogni comitato li pubblica a modo suo. Non è stato letto il calendario di nessuno di questi comitati oltre a Toscana, Veneto e Friuli Venezia Giulia, che hanno una voce propria. Da decidere prima se i campionati regionali e provinciali entrano nel calendario."
   ultimo_controllo: 2026-11-17
 
 - id: worldskate-europe-calendario
