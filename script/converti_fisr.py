@@ -69,7 +69,7 @@ PAROLE_VUOTE_SLUG = {"di", "del", "della", "dei", "degli", "delle", "e", "con", 
                      "le", "i", "gli", "a", "al", "alla", "da", "dal", "tra", "fra", "o", "ed", "citta", "tappa",
                      "gpg", "irc", "rsc", "cat", "edizione", "comune", "collaborazione"}
 
-ORDINE_CAMPI = ["id", "nome", "data_inizio", "data_fine", "luogo", "paese", "tipo", "categorie", "distanze",
+ORDINE_CAMPI = ["id", "nome", "nome_fonte", "data_inizio", "data_fine", "luogo", "paese", "tipo", "categorie", "distanze",
                 "organizzatore", "url_ufficiale", "url_iscrizione", "scadenza_iscrizione", "stato", "fonti",
                 "verificato_il", "prova", "note", "note_interne"]
 
@@ -134,10 +134,30 @@ def normalizza_nome(grezzo: str) -> str:
     testo = normalizza_ordinali(testo)
     testo = re.sub(r"\bcitta\b", "città", testo, flags=re.I)
     testo = re.sub(r"Ã(?=\s|$)", "À", testo)   # residuo di codifica non riparabile: in un nome è sempre una À
-    lettere = [c for c in testo if c.isalpha()]
-    if lettere and sum(1 for c in lettere if c.isupper()) / len(lettere) > 0.7:
-        testo = titolo_italiano(testo)
-    return testo
+    # Maiuscole: un titolo (o un suo tratto tra due " - ") scritto quasi tutto in maiuscolo torna a maiuscole normali.
+    # Tratto per tratto, perché la federazione mescola: "INTERNAZIONALI D'ITALIA OPEN INDOOR - VII Memorial Romano ...".
+    tratti = []
+    for tratto in testo.split(" - "):
+        lettere = [c for c in tratto if c.isalpha()]
+        if lettere and sum(1 for c in lettere if c.isupper()) / len(lettere) > 0.7 and len(lettere) > 3:
+            tratto = titolo_italiano(tratto)
+        tratti.append(tratto)
+    return " - ".join(tratti)
+
+
+def titolo_della_fonte(grezzo: str) -> str:
+    """Il titolo com'è scritto nella fonte federale, per il campo nome_fonte: senza la dicitura
+    'non ancora autorizzata' (che va e viene da sola) e con gli spazi in ordine; nient'altro viene toccato."""
+    testo = str(grezzo or "")
+    for espressione in DICITURE_DA_TOGLIERE:
+        testo = espressione.sub("", testo)
+    return re.sub(r"\s+", " ", testo).strip()
+
+
+def parole_del_titolo(titolo: str) -> list[str]:
+    """Le parole di un titolo, per capire se la fonte lo ha cambiato davvero: maiuscole, accenti, spazi e
+    punteggiatura non contano ('CITTA'' e 'Città', '1°maggio' e '1° maggio' sono lo stesso titolo)."""
+    return re.findall(r"[a-z0-9]+", senza_accenti(accenti_da_apostrofo(titolo)).lower())
 
 
 def normalizza_luogo(grezzo: str) -> str:
@@ -386,6 +406,7 @@ def costruisci_evento(riga: dict | None, regolamento: dict | None, letto_il: str
 
     scadenza = (riga["scadenza_iscrizioni"] if riga else "") or (regolamento["iscrizioni_entro"] if regolamento else "") or ""
     categorie_regolamento, _, prova_regolamento = classifica(regolamento) if regolamento else ([], [], "")
+    nome_fonte = titolo_della_fonte(riga["evento"]) if riga is not None else ""   # solo il titolo della LISTA: è quello che si rilegge ogni settimana
     return {
         # Campi di lavoro (iniziano con "_"): servono al confronto con le voci esistenti, non vengono mai scritti.
         "_dalla_lista": riga is not None,
@@ -395,7 +416,7 @@ def costruisci_evento(riga: dict | None, regolamento: dict | None, letto_il: str
         "_categorie_regolamento": categorie_regolamento,
         "_prova_regolamento": prova_regolamento,
         "id": f"{data_inizio}-{slug_citta(luogo) if luogo and not luogo.startswith('da indicare') else 'luogo-ignoto'}-{slug_nome(nome)}",
-        "nome": nome, "data_inizio": data_inizio, "data_fine": data_fine, "luogo": luogo or "da indicare",
+        "nome": nome, "nome_fonte": nome_fonte, "data_inizio": data_inizio, "data_fine": data_fine, "luogo": luogo or "da indicare",
         "paese": "IT", "tipo": "gara", "categorie": categorie, "distanze": distanze, "organizzatore": organizzatore,
         "url_ufficiale": url_ufficiale, "url_iscrizione": "", "scadenza_iscrizione": scadenza, "stato": stato,
         "fonti": fonti, "verificato_il": verificato_il, "prova": prova, "note": " ".join(note),
@@ -648,6 +669,40 @@ def aggiorna_dal_regolamento(esistente: dict, proposta: dict, letto_il: str, id_
     return cambiamenti, da_controllare
 
 
+def aggiorna_nome(esistente: dict, proposta: dict, letto_il: str, unica_riga: bool, solo_registrare: bool = False) -> tuple[list[str], bool]:
+    """Il nome segue la fonte quando la fonte cambia il titolo (decisione 2026-11-16).
+    nome_fonte ricorda il titolo com'era nella lista federale all'ultima lettura:
+      - se è vuoto, lo si registra e il nome non cambia (prima lettura: non c'è nulla con cui confrontare);
+      - se le parole del titolo sono le stesse (maiuscole, accenti e punteggiatura non contano), niente:
+        i ritocchi fatti a mano al nome restano;
+      - se le parole sono cambiate, il nome diventa il titolo nuovo ripulito dallo script, nome_fonte si aggiorna
+        e il nome vecchio resta scritto in note_interne. L'id non cambia.
+    Vale solo per le proposte che vengono da una riga della lista, e solo se a quella voce corrisponde una sola
+    riga (più gare dello stesso giorno in una voce sola hanno più titoli: non si sceglie).
+    Ritorna (cambiamenti, titolo registrato per la prima volta)."""
+    if not proposta.get("_dalla_lista") or not unica_riga:
+        return [], False
+    titolo_nuovo = str(proposta.get("nome_fonte") or "")
+    if not titolo_nuovo:
+        return [], False
+    titolo_vecchio = str(esistente.get("nome_fonte") or "")
+    if not titolo_vecchio:
+        esistente["nome_fonte"] = titolo_nuovo
+        return [], True
+    if solo_registrare or parole_del_titolo(titolo_vecchio) == parole_del_titolo(titolo_nuovo):
+        return [], False
+    nome_vecchio = str(esistente.get("nome") or "")
+    esistente["nome"] = proposta["nome"]
+    esistente["nome_fonte"] = titolo_nuovo
+    for fonte in esistente.get("fonti") or []:
+        if isinstance(fonte, dict) and fonte.get("url") == URL_LISTA:
+            fonte["letto_il"] = letto_il
+    frase = (f"Nome aggiornato il {letto_il} da converti_fisr.py perché la lista federale ha cambiato il titolo: "
+             f"da «{titolo_vecchio}» a «{titolo_nuovo}»; il nome della voce era «{nome_vecchio}».")
+    esistente["note_interne"] = (str(esistente.get("note_interne") or "").strip() + " " + frase).strip()
+    return [f"nome «{nome_vecchio}» → «{proposta['nome']}»"], False
+
+
 def segnala_possibili_doppioni(nuovi: list[dict], esistenti: list[dict], ancora_in_lista: set[int], filtro_da: str) -> list[str]:
     """Una voce nuova senza regolamento può essere una gara già presente a cui la lista ha cambiato la data:
     senza il numero del regolamento non si può dire con certezza, quindi lo script non unisce: scrive il sospetto
@@ -714,6 +769,9 @@ def principale(argomenti: list[str] | None = None) -> int:
     analizzatore.add_argument("--eventi", type=Path, default=Path("dati/eventi.yaml"))
     analizzatore.add_argument("--scrivi", action="store_true", help="riscrive eventi.yaml (senza: solo rapporto)")
     analizzatore.add_argument("--rapporto", type=Path, default=None, help="scrive il rapporto in Markdown in questo file")
+    analizzatore.add_argument("--solo-nome-fonte", action="store_true",
+                              help="non crea, non promuove e non aggiorna nulla: registra soltanto nome_fonte dove è vuoto, dal titolo della lista "
+                                   "(serve una volta, per dare alle voci già presenti il titolo di una raccolta precedente)")
     opzioni = analizzatore.parse_args(argomenti)
 
     raccolta = carica_raccolta(opzioni.raccolta)
@@ -755,6 +813,19 @@ def principale(argomenti: list[str] | None = None) -> int:
                          f"Master/Amatori nel programma: {', '.join(evento['categorie']) or 'no'}")
     ancora_in_lista = {id(esistente) for esistente, _ in proposte_per_esistente}
     id_occupati = {str(e["id"]) for e in esistenti}
+    righe_per_voce: dict[int, int] = {}    # quante righe della lista corrispondono a ciascuna voce
+    for esistente, evento in proposte_per_esistente:
+        if evento["_dalla_lista"]:
+            righe_per_voce[id(esistente)] = righe_per_voce.get(id(esistente), 0) + 1
+    rinominati: list[str] = []
+    titoli_registrati: list[str] = []
+    if opzioni.solo_nome_fonte:
+        # Modalità di servizio: solo il titolo della fonte dove manca; tutto il resto della voce resta com'è.
+        for esistente, evento in proposte_per_esistente:
+            _, registrato = aggiorna_nome(esistente, evento, letto_il, righe_per_voce.get(id(esistente), 0) == 1, solo_registrare=True)
+            if registrato:
+                titoli_registrati.append(f"- `{esistente['id']}`: «{esistente['nome_fonte']}»")
+        proposte_per_esistente, nuovi, in_attesa = [], [], []
     for esistente, evento in proposte_per_esistente:
         id_prima = str(esistente["id"])
         promozione = promuovi(esistente, evento, letto_il)
@@ -766,7 +837,12 @@ def principale(argomenti: list[str] | None = None) -> int:
             da_controllare.append(f"- `{esistente['id']}`: {dubbio}")
         if cambiamenti:
             aggiornati.append(f"- `{id_prima}` (regolamento {evento['_regolamento']}): " + "; ".join(cambiamenti))
-        if promozione or cambiamenti:
+        rinomina, registrato = aggiorna_nome(esistente, evento, letto_il, righe_per_voce.get(id(esistente), 0) == 1)
+        if rinomina:
+            rinominati.append(f"- `{esistente['id']}`: " + "; ".join(rinomina))
+        if registrato:
+            titoli_registrati.append(f"- `{esistente['id']}`: «{esistente['nome_fonte']}»")
+        if promozione or cambiamenti or rinomina:
             continue
         differenze = []
         if evento["categorie"] and list(esistente.get("categorie") or []) != evento["categorie"]:
@@ -779,6 +855,11 @@ def principale(argomenti: list[str] | None = None) -> int:
     rapporto.extend(promossi)
     rapporto.append(f"\n## Regolamenti cambiati (voci aggiornate, prima → dopo): {len(aggiornati)}\n")
     rapporto.extend(aggiornati)
+    rapporto.append(f"\n## Nomi aggiornati (la lista federale ha cambiato il titolo): {len(rinominati)}\n")
+    rapporto.extend(rinominati)
+    if titoli_registrati:
+        rapporto.append(f"\n## Titoli della fonte registrati per la prima volta (il nome non cambia): {len(titoli_registrati)}\n")
+        rapporto.extend(titoli_registrati)
     rapporto.append(f"\n## Da controllare a mano prima del merge: {len(da_controllare)}\n")
     rapporto.extend(da_controllare)
     rapporto.append("\n## Eventi già presenti (non toccati)\n")
@@ -828,7 +909,7 @@ def principale(argomenti: list[str] | None = None) -> int:
             return 1
         for prima, dopo in zip(esistenti, [e for e in riletti if e["id"] in {x["id"] for x in esistenti}]):
             pass  # le voci esistenti sono state riemesse: il controllo di contenuto lo fa il diff di git
-        print(f"scritto {opzioni.eventi}: {len(esistenti)} esistenti (di cui {len(promossi)} promossi e {len(aggiornati)} aggiornati) + {len(nuovi)} nuovi = {len(tutti)} eventi", file=sys.stderr)
+        print(f"scritto {opzioni.eventi}: {len(esistenti)} esistenti (di cui {len(promossi)} promossi, {len(aggiornati)} aggiornati dal regolamento, {len(rinominati)} rinominati) + {len(nuovi)} nuovi = {len(tutti)} eventi", file=sys.stderr)
     return 0
 
 

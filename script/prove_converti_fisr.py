@@ -30,7 +30,7 @@ convertitore = importlib.util.module_from_spec(specifica)
 specifica.loader.exec_module(convertitore)
 
 FUNZIONI_ATTESE = ("costruisci_evento", "corrisponde_esistente", "promuovi", "aggiorna_dal_regolamento",
-                   "segnala_possibili_doppioni", "emetti_evento", "numeri_regolamento")
+                   "segnala_possibili_doppioni", "emetti_evento", "numeri_regolamento", "aggiorna_nome", "normalizza_nome")
 mancanti = [nome for nome in FUNZIONI_ATTESE if not callable(getattr(convertitore, nome, None))]
 if mancanti:
     sys.exit(f"converti_fisr.py non ha più le funzioni {mancanti}: le prove vanno aggiornate insieme allo script")
@@ -44,8 +44,8 @@ def regolamento_finto(numero: str, categorie: list[str], dal: str = "2027-03-10"
             "categorie_programma": list(categorie), "righe_master_amatori": []}
 
 
-def riga_finta(data: str = "2027-03-10", non_autorizzata: bool = False) -> dict:
-    return {"evento": "1° Trofeo di Prova", "data_inizio": data, "data_fine": data, "localita": "PROVA", "organizzatore": "A.S.D. PROVA",
+def riga_finta(data: str = "2027-03-10", non_autorizzata: bool = False, titolo: str = "1° Trofeo di Prova") -> dict:
+    return {"evento": titolo, "data_inizio": data, "data_fine": data, "localita": "PROVA", "organizzatore": "A.S.D. PROVA",
             "non_autorizzata": non_autorizzata, "anomalie": [], "scadenza_iscrizioni": "", "stagione": "2026/27", "id_manif": "",
             "formato": "7_celle", "data_grezza": data}
 
@@ -154,6 +154,42 @@ def principale() -> int:
     cambiamenti, dubbi = c.aggiorna_dal_regolamento(voce, proposta, "2026-11-16", {id_vecchio})
     verifica("10. promossa con la prova del regolamento", bool(promozione) and voce["categorie"] == ["master"] and voce["stato"] == "confermato", promozione)
     verifica("10. una volta legata al regolamento ne segue la data, e l'id con lei", str(voce["data_inizio"]) == "2027-03-11" and voce["id"].startswith("2027-03-11-"), (voce["id"], cambiamenti))
+
+    # 11. Il nome segue la fonte quando la lista federale cambia il titolo (e solo allora)
+    voce = voce_scritta(c.costruisci_evento(riga_finta(titolo="GRAN PREMIO DI PROVA - VI Memorial Tizio Caio"), regolamento_finto("9011", ["MASTER OVER 30"]), "2026-11-01"))
+    voce["nome"] = "Gran Premio di Prova — VI Memorial Tizio Caio"       # ritoccato a mano
+    id_prima = voce["id"]
+    stessa = c.costruisci_evento(riga_finta(titolo="Gran premio  di prova - VI MEMORIAL TIZIO CAIO Attivita' non ancora autorizzata"), regolamento_finto("9011", ["MASTER OVER 30"]), "2026-11-09")
+    verifica("11. stesse parole (cambiano solo maiuscole, spazi e la dicitura 'non autorizzata'): il ritocco a mano resta",
+             c.aggiorna_nome(voce, stessa, "2026-11-09", True) == ([], False) and voce["nome"] == "Gran Premio di Prova — VI Memorial Tizio Caio", voce["nome"])
+    cambiata = c.costruisci_evento(riga_finta(titolo="MEMORIAL TIZIO CAIO - GRAN PREMIO DI PROVA - VII edizione"), regolamento_finto("9011", ["MASTER OVER 30"]), "2026-11-16")
+    rinomina, registrato = c.aggiorna_nome(voce, cambiata, "2026-11-16", True)
+    verifica("11. titolo cambiato: il nome diventa quello nuovo, con maiuscole normali", bool(rinomina) and voce["nome"] == "Memorial Tizio Caio - Gran Premio di Prova - VII edizione", voce["nome"])
+    verifica("11. nome_fonte ricorda il titolo nuovo com'è nella fonte", voce["nome_fonte"] == "MEMORIAL TIZIO CAIO - GRAN PREMIO DI PROVA - VII edizione", voce["nome_fonte"])
+    verifica("11. il nome vecchio resta scritto in note_interne e l'id non cambia", "Gran Premio di Prova — VI Memorial Tizio Caio" in voce["note_interne"] and voce["id"] == id_prima, voce["id"])
+    verifica("11. una seconda lettura uguale non cambia nulla", c.aggiorna_nome(voce, cambiata, "2026-11-23", True) == ([], False))
+
+    # 12. Prima lettura: il titolo si registra, il nome non cambia
+    voce = voce_scritta(c.costruisci_evento(riga_finta(titolo="1° Trofeo di Prova"), None, "2026-11-01"))
+    voce["nome"], voce["nome_fonte"] = "Primo Trofeo di Prova (a mano)", ""
+    proposta = c.costruisci_evento(riga_finta(titolo="1° TROFEO DI PROVA BIS"), None, "2026-11-16")
+    rinomina, registrato = c.aggiorna_nome(voce, proposta, "2026-11-16", True)
+    verifica("12. nome_fonte vuoto: titolo registrato, nome intatto", rinomina == [] and registrato and voce["nome"] == "Primo Trofeo di Prova (a mano)" and voce["nome_fonte"] == "1° TROFEO DI PROVA BIS", voce)
+
+    # 13. Più righe della lista per la stessa voce, o proposta dal solo regolamento: il nome non si tocca
+    voce = voce_scritta(c.costruisci_evento(riga_finta(titolo="Trofeo Alfa"), None, "2026-11-01"))
+    prima = copy.deepcopy(voce)
+    altra_gara = c.costruisci_evento(riga_finta(titolo="Trofeo Beta"), None, "2026-11-16")
+    verifica("13. due righe per la stessa voce: non si sceglie un titolo", c.aggiorna_nome(voce, altra_gara, "2026-11-16", False) == ([], False) and voce == prima)
+    solo_regolamento = c.costruisci_evento(None, regolamento_finto("9013", ["MASTER OVER 30"]), "2026-11-16")
+    verifica("13. proposta dal solo regolamento: il nome non si tocca", c.aggiorna_nome(voce, solo_regolamento, "2026-11-16", True) == ([], False) and voce == prima)
+
+    # 14. Maiuscole tratto per tratto, e posizione del campo nel file
+    verifica("14. titolo maiuscolo solo in parte", c.normalizza_nome("INTERNAZIONALI D'ITALIA OPEN INDOOR -VII Memorial Tizio Caio") == "Internazionali d'Italia Open Indoor - VII Memorial Tizio Caio",
+             c.normalizza_nome("INTERNAZIONALI D'ITALIA OPEN INDOOR -VII Memorial Tizio Caio"))
+    verifica("14. un titolo già scritto bene resta com'è", c.normalizza_nome("3° Trofeo della Befana - Tappa GPG") == "3° Trofeo della Befana - Tappa GPG", c.normalizza_nome("3° Trofeo della Befana - Tappa GPG"))
+    righe_scritte = c.emetti_evento(altra_gara).split("\n")
+    verifica("14. nome_fonte è scritto subito dopo nome", righe_scritte[1].startswith("  nome: ") and righe_scritte[2] == '  nome_fonte: "Trofeo Beta"', righe_scritte[:3])
 
     superate = sum(esiti)
     print(f"\n{superate}/{len(esiti)} prove superate")
