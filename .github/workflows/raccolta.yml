@@ -16,8 +16,8 @@
 # Requisiti una tantum (impostazioni del repository, le fa il proprietario):
 #   Settings → Actions → General → Workflow permissions:
 #   "Allow GitHub Actions to create and approve pull requests" attivo.
-# Nota: le PR aperte con il token di Actions non fanno partire verifica.yml,
-# perciò questo workflow esegue da sé genera_ics.py prima di aprire la PR.
+# Nota: su una PR aperta con il token di Actions verifica.yml non parte da sola (GitHub la tiene in attesa
+# di "Approve workflows to run"), perciò questo workflow esegue da sé genera_ics.py prima di aprire la PR.
 
 name: Raccolta settimanale da fisr.info
 
