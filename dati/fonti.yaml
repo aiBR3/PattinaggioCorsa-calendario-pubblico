@@ -1,5 +1,8 @@
 # Registro delle fonti: dove si trovano le gare e come si leggono.
-# Schema in CLAUDE.md. Una fonte "da_verificare" non è ancora stata letta davvero.
+# Schema in CLAUDE.md. Una fonte "da_verificare" non è ancora in uso: o non è stata letta davvero (ultimo_controllo vuoto),
+# o è stata letta (ultimo_controllo e note dicono quando e che cosa offre) e aspetta che il proprietario decida se attivarla.
+# Una fonte "scartata" è stata letta e non serve: resta qui con il motivo, per non riproporla.
+# Censimento del 2026-11-17: registro/2026-11-17-censimento-fonti.md.
 
 - id: fisr-info-calendario
   nome: "FISR.info — calendario corsa (lista per mese)"
@@ -13,7 +16,7 @@
   note: "Tabella HTML per mese (div t_mese_AAMM): data, evento, località, organizzatore, scadenza iscrizioni, termine depennamenti, link 'modulo' (icona nella cella Evento). Parametro ?anno=N: N=2026 dà la stagione 2025/26 (che include anche i mesi della 2026/27). Campionati e attività nazionale in righe a 2 celle ('nome - località'), spesso duplicate. Nessuna categoria nella lista, tranne nei titoli dei campionati (cat. A/J/S/M). Il link 'modulo' sparisce per le gare passate. Dicitura 'Attività non ancora autorizzata' per le gare in attesa. Errori di codifica nei nomi (CITTÃ) e almeno un nome in base64. Letta da script/raccogli_fisr.py."
   ultimo_controllo: 2026-11-05
 
-- id: fisr-info-regolamenti di gara
+- id: fisr-info-regolamenti-di-gara
   nome: "FISR.info — regolamenti di gara (modulo della manifestazione)"
   url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=
   paese: IT
@@ -33,33 +36,33 @@
   frequenza: mensile
   copre: [gare]
   affidabilita: ufficiale
-  stato: da_verificare
-  note: "Solo campionati e trofei nazionali; lista caricata via JS o dietro filtri. Bassa priorità: fisr.info copre di più."
-  ultimo_controllo: ""
+  stato: scartata
+  note: "Letta il 2026-11-17: la pagina risponde 'Nessun risultato per questa ricerca' e non elenca nessun evento; i filtri non sono stati esplorati. In ogni caso riguarda solo campionati e trofei nazionali, che fisr.info copre già con più dettagli. Scartata per questo; i dettagli dei campionati stanno nei comunicati (fisr-it-comunicati)."
+  ultimo_controllo: 2026-11-17
 
 - id: fisr-it-comunicati
   nome: "FISR.it — comunicati ufficiali corsa"
   url: https://www.fisr.it/corsa/comunicati-ufficiali.html
   paese: IT
   metodo: script
-  frequenza: mensile
-  copre: [verifica]
+  frequenza: settimanale
+  copre: [gare, verifica]
   affidabilita: ufficiale
   stato: da_verificare
-  note: "Indice per anno; RSS solo per le news generali. Utile per regolamenti di gara e regolamenti dei campionati (Master)."
-  ultimo_controllo: ""
+  note: "Letta il 2026-11-17. La pagina indice elenca gli anni (2013-2026) con il numero di comunicati; ogni anno ha una pagina (2026: /corsa/comunicati-ufficiali/category/601-2026.html, 43 comunicati) con titolo e link di scaricamento '?download=NUMERO:titolo' (PDF). I titoli dicono già gara, categorie, luogo e date: nel 2026 il Campionato Italiano maratona cat. J/S/M (CU 19 e 24), il Campionato Italiano su strada cat. A/J/S/M (CU 37 e 38), le precisazioni sulle norme per il Campionato Italiano su strada Master (CU 17 e 31), la tappa di Napoli del World Skate Marathon Tour (CU 43). Aperto il CU 37: dà la società organizzatrice ('ORGANIZZAZIONE'), l'impianto, le scadenze di iscrizione, le gare previste per categoria (Master: 5.000 e 10.000 m in linea) e il sito dell'organizzatore. È ciò che manca per i campionati futuri, dove la lista federale dice solo 'FISR'. Attenzione: i comunicati contengono nomi e telefoni di persone, che non si copiano (regola 9); il testo estratto dai PDF ha le lettere spaziate in alcuni titoli. Nella stessa sezione, /corsa/regolamenti.html ha le norme per l'attività e il regolamento tecnico della stagione. Proposta: prima fonte da attivare; uno script legge l'indice dell'anno e segnala i comunicati nuovi, l'arricchimento apre il PDF della gara."
+  ultimo_controllo: 2026-11-17
 
 - id: fisr-toscana-corsa
   nome: "FISR Comitato Toscana — settore corsa"
-  url: https://corsa.fisrtoscana.it/
+  url: https://www.corsa.fisrtoscana.it/
   paese: IT
   metodo: agente
   frequenza: mensile
   copre: [gare]
   affidabilita: ufficiale
   stato: da_verificare
-  note: "Comunicati PDF con campionati regionali/provinciali, anche categoria Master. Da capire se c'è una pagina calendario leggibile."
-  ultimo_controllo: ""
+  note: "Letta il 2026-11-17: la home pubblica una notizia per stagione con il calendario regionale ('CALENDARIO REGIONALE date e luoghi', 16/11/2025, per la stagione 2025-26) e poi i comunicati con orari e logistica nella sezione documenti. Il calendario 2025-26 comprende campionati provinciali e regionali, alcuni con la categoria Master (es. 'CAMPIONATO PROVINCIALE PISTA & STRADA cat. R12RAJSM', 22/03/2026, Siena): gare che la lista nazionale di fisr.info non riporta. Testo libero dentro una notizia: serve un agente, non uno script. Il calendario 2026-27 non era ancora pubblicato."
+  ultimo_controllo: 2026-11-17
 
 - id: fisr-veneto-corsa
   nome: "FISR Comitato Veneto — calendario corsa"
@@ -70,8 +73,8 @@
   copre: [gare]
   affidabilita: ufficiale
   stato: da_verificare
-  note: "WordPress: categoria 'Corsa-Calendario' con un articolo per gara. Probabile feed RSS della categoria."
-  ultimo_controllo: ""
+  note: "Letta il 2026-11-17: WordPress, categoria 'Corsa-Calendario' con un articolo per gara o per calendario; il feed RSS della categoria esiste (aggiungere /feed/ all'indirizzo). L'ultimo articolo è del 30/04/2025: per il 2026 non c'è nulla, mentre il calendario del Friuli Venezia Giulia (fisr-fvg-corsa) riporta i campionati regionali 2026 corsi insieme al Veneto (San Giorgio delle Pertiche, Spinea). Bassa priorità finché il sito non riprende a pubblicare."
+  ultimo_controllo: 2026-11-17
 
 - id: fisr-fvg-corsa
   nome: "FISR Comitato Friuli Venezia Giulia — calendario corsa"
@@ -82,8 +85,8 @@
   copre: [gare]
   affidabilita: ufficiale
   stato: da_verificare
-  note: "Lista testuale data · località · nome, con categorie nel nome (es. R12/R/A/J/S/M)."
-  ultimo_controllo: ""
+  note: "Letta il 2026-11-17: una pagina per anno (2020-2026), mese per mese, ogni riga con data, località e nome, con le categorie nel nome. Nel 2026: 'Campionato Regionale Pista R12/R/A/J/S/M' (28 e 29/03, San Giorgio delle Pertiche PD) e 'Campionato Regionale Strada R12/R/A/J/S/M' (12/04, Spinea VE), cioè campionati regionali con i Master che la lista nazionale di fisr.info non riporta; il resto sono gare giovanili. Il 2027 non era ancora pubblicato. È la fonte regionale più regolare tra quelle lette: proposta come prima da leggere con uno script quando si decide di includere i campionati regionali."
+  ultimo_controllo: 2026-11-17
 
 - id: rollergames-calendario-corsa
   nome: "attivita.rollergames.it — calendario corsa"
@@ -93,21 +96,21 @@
   frequenza: mensile
   copre: [gare]
   affidabilita: ufficiale
-  stato: da_verificare
-  note: "Sembra una copia del calendario FISR con filtri (internazionale, nazionale, regionale, trofei, enti di promozione). Da capire se è la stessa base dati di fisr.info."
-  ultimo_controllo: ""
+  stato: scartata
+  note: "Letta il 2026-11-17 (POST settore=C, gruppo=calendario, anno=N): è la stessa base dati di fisr.info con meno righe. Per la 2025/26 contiene solo 9 voci di attività nazionale; gli elenchi di trofei, attività regionale, internazionale e 'Calendario Enti di Promozione' sono vuoti anche nelle due stagioni precedenti, mentre nel 2019 c'erano 37 trofei, 3 gare regionali e 10 internazionali e nel 2015 anche 5 voci degli Enti di promozione; la 2026/27 è del tutto vuota. Scartata: non aggiunge nulla alla lista di fisr.info."
+  ultimo_controllo: 2026-11-17
 
 - id: aics-pattinaggio-corsa
   nome: "AICS — circuito nazionale di pattinaggio corsa"
   url: https://www.aics.it/
   paese: IT
   metodo: agente
-  frequenza: mensile
-  copre: [gare, pattinate]
+  frequenza: stagionale
+  copre: [gare]
   affidabilita: organizzatore
   stato: da_verificare
-  note: "Ente di promozione: circuito a tappe con categoria 'Amatori' esplicita nelle circolari PDF (es. Verolavecchia, Lumezzane). Da trovare la pagina indice del settore."
-  ultimo_controllo: ""
+  note: "Letta il 2026-11-17 la circolare 2026 (PDF in aics.it/wp-content/uploads, trovato con la ricerca web 'AICS pattinaggio corsa circuito nazionale'; la home di aics.it non ha un link al settore): 'Circuito Nazionale di Gare a Tappe di Pattinaggio Corsa su Strada', 1ª tappa a Verolavecchia (BS) il 07/06/2026; nel 2023 una tappa era a Lumezzane (BS). Ammette società AICS, FISR e di altri Enti di promozione. Categorie da Giovanissimi a Senior, promozionali e agonisti; nessuna categoria Master. 'Amatori' c'è, ma è 'preagonismo per Amatori tutte le categorie (4 anni ai 50)': 60 m e un giro di pista non competitivo, con medaglia per tutti. In perimetro per la lettera, poco interessante per un amatore adulto: bassa priorità. Si legge una volta a stagione con una ricerca web, non c'è una pagina indice. Le circolari contengono IBAN e nomi di persone: non si copiano (regola 9)."
+  ultimo_controllo: 2026-11-17
 
 - id: worldskate-competitions
   nome: "World Skate — eventi e bollettini del Marathon Tour"
@@ -118,8 +121,8 @@
   copre: [gare]
   affidabilita: ufficiale
   stato: attiva
-  note: "Lista degli eventi (tutte le discipline: filtrare 'Marathon Tour'). Le tappe del World Skate Marathon Tour hanno un bollettino PDF con programma e categorie: nel 2026 le tappe Challenger (Pamplona 07/06, Napoli 31/10) prevedono 'Pro, Master & Amateur'. Da qui si risale al sito dell'organizzatore locale (es. rollerskatingfestivalnapoli.it), che pubblica il bollettino e la gara amatori. Pamplona 2026 ancora da leggere."
-  ultimo_controllo: 2026-11-06
+  note: "Lista degli eventi (tutte le discipline: filtrare 'Marathon Tour'). Le tappe del World Skate Marathon Tour hanno un bollettino PDF con programma e categorie: nel 2026 le tappe Challenger (Pamplona 07/06, Napoli 31/10) prevedono 'Pro, Master & Amateur'. Da qui si risale al sito dell'organizzatore locale (es. rollerskatingfestivalnapoli.it), che pubblica il bollettino e la gara amatori. Pamplona 2026 non è stata letta (gara passata, caso di prova 5). Il 2026-11-17 la lista mostrava per il Marathon Tour solo la tappa di Shanghai del 2026: il calendario 2027 non era ancora pubblicato."
+  ultimo_controllo: 2026-11-17
 
 - id: scc-events-calendario
   nome: "SCC EVENTS (Berlino) — calendario degli eventi"
@@ -130,20 +133,20 @@
   copre: [gare]
   affidabilita: organizzatore
   stato: attiva
-  note: "Organizzatore della Berlin-Marathon, della Berlin Half Marathon e della City Night: la pagina elenca ogni evento con data, distanza e disciplina ('Inline skating') e offre un file .ics di tutti gli eventi. Nel 2027: Half Marathon Inlineskating 04/04 (21 km), City Night Inlineskating 31/07 (10 km); la maratona 26/09/2027 non elenca l'inline. Le pagine di iscrizione (generali-berliner-halbmarathon.de, berlin-citynight.de) contengono la frase di ammissione ('Jahrgänge … und älter'): la versione tedesca è quella da citare, l'inglese a volte è tradotto male. Le pagine dell'edizione passata vengono tolte subito dopo la gara: leggerle in tempo o dalla Wayback Machine."
-  ultimo_controllo: 2026-11-06
+  note: "Organizzatore della Berlin-Marathon, della Berlin Half Marathon e della City Night: la pagina elenca ogni evento con data, distanza e disciplina ('Inline skating') e offre un file .ics di tutti gli eventi (https://www.scc-events.com/events-scc-events.ics). Letto il file il 2026-11-17: 12 eventi con data, titolo e luogo, ma senza la disciplina (la parola 'inline' non compare): serve solo ad accorgersi di una data che cambia, non a sapere quali eventi hanno la gara sui pattini, che resta scritto nella pagina HTML. Nel 2027: Half Marathon Inlineskating 04/04 (21 km), City Night Inlineskating 31/07 (10 km); la maratona 26/09/2027 non elenca l'inline. Le pagine di iscrizione (generali-berliner-halbmarathon.de, berlin-citynight.de) contengono la frase di ammissione ('Jahrgänge … und älter'): la versione tedesca è quella da citare, l'inglese a volte è tradotto male. Le pagine dell'edizione passata vengono tolte subito dopo la gara: leggerle in tempo o dalla Wayback Machine."
+  ultimo_controllo: 2026-11-17
 
 - id: world-inline-cup
   nome: "World Inline Cup — gare"
-  url: https://www.world-inline-cup.com/races/berlin
+  url: https://www.world-inline-cup.com/races
   paese: ""
   metodo: agente
   frequenza: mensile
   copre: [gare]
   affidabilita: aggregatore
   stato: da_verificare
-  note: "Circuito delle maratone inline europee (classe 'Top Class'), con scheda per gara (città, data, sito dell'organizzatore). Da leggere la lista completa delle tappe per CH, FR, DE, AT, SI. L'URL registrato è la scheda di Berlino, l'unica letta finora."
-  ultimo_controllo: 2026-11-06
+  note: "Letta il 2026-11-17: circuito delle maratone inline (organizzatore del circuito: Iguana Deutschland GmbH). La pagina elenca le tappe della stagione e ogni tappa ha una scheda con città, paese, data e sito dell'organizzatore. Tappe 2026: Funchal (PT) 15/03, Rennes (FR) 31/05 nella scheda (25/05 nell'elenco: il sito si contraddice), Einsiedeln (CH) 27/06, Troyes (FR) 13/09, Duluth (USA) 19/09, Berlino 26/09; cinque su sei in perimetro. Siti degli organizzatori dalle schede: madeirarollermarathon.com (porta a madroller.pt), rennessurroulettes.com, swiss-skate-tour.ch (vedi swiss-skate-tour: il circuito svizzero chiude). Il calendario 2027 non era ancora pubblicato. Vale come indice: la prova delle categorie si cerca sul sito dell'organizzatore di ogni tappa. Proposta: lettura mensile da parte di un agente da dicembre, quando escono le date 2027."
+  ultimo_controllo: 2026-11-17
 
 - id: siti-organizzatori
   nome: "Siti degli organizzatori locali (uno per evento)"
@@ -193,17 +196,149 @@
   note: "Per leggere la pagina ufficiale di una gara già passata e tolta dal sito (es. Berlin-Marathon Inlineskating 2026). Dalla shell funzionano gli snapshot (web.archive.org/web/AAAAMMGG/URL) e l'API 'available' (archive.org/wayback/available?url=…); l'API CDX è bloccata dal proxy. La copia va citata con l'URL dello snapshot in fonti."
   ultimo_controllo: 2026-11-06
 
+- id: fisr-comitati-regionali
+  nome: "FISR.it — elenco dei comitati regionali (Territorio)"
+  url: https://www.fisr.it/territorio.html
+  paese: IT
+  metodo: agente
+  frequenza: stagionale
+  copre: [gare]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Letta il 2026-11-17: la pagina linka 20 schede di comitato (/territorio/comitato.html?comitato=N); solo 7 schede riportano il sito del comitato: fihplombardia.org, fisrveneto.it, fisrtoscana.it, fisrlazio.it, fisrabruzzo.it, fisrcampania.it, fisrpuglia.it. Aperte le home di Lombardia, Lazio e Campania (rispondono); Abruzzo e Puglia non hanno risposto alla shell. Serve perché i campionati regionali e provinciali ammettono spesso i Master (visto in Friuli Venezia Giulia e in Toscana) e non stanno nella lista nazionale di fisr.info: ogni comitato li pubblica a modo suo. Non è stato letto il calendario di nessuno di questi comitati oltre a Toscana, Veneto e Friuli Venezia Giulia, che hanno una voce propria. Da decidere prima se i campionati regionali e provinciali entrano nel calendario."
+  ultimo_controllo: 2026-11-17
+
+- id: worldskate-europe-calendario
+  nome: "World Skate Europe — calendario annuale (PDF)"
+  url: https://europe.worldskate.org/wse-sports-calendar/
+  paese: ""
+  metodo: agente
+  frequenza: stagionale
+  copre: [gare]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Letta il 2026-11-17: la pagina linka un PDF per anno con tutte le discipline (2026: wp-content/uploads/2026_Europe.pdf, aggiornato al 17/03/2026). Righe 'Speed' del 2026: sei tappe delle European Track Series (tra cui Senigallia 14-17/05), i Campionati Europei di Cardano al Campo (19-26/07) e la 'European Masters Marathon' a Thun (CH) il 05/09/2026. È la fonte del campionato europeo Master di maratona, che cambia sede ogni anno. Il calendario 2027 non era ancora pubblicato. Proposta: una lettura a stagione, più una a marzo per gli aggiornamenti."
+  ultimo_controllo: 2026-11-17
+
+- id: german-inline-cup
+  nome: "German Inline Cup — gare"
+  url: https://www.german-inline-cup.de/rennen
+  paese: DE
+  metodo: agente
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: aggregatore
+  stato: da_verificare
+  note: "Letta il 2026-11-17: circuito tedesco dello stesso organizzatore della World Inline Cup (Iguana Deutschland GmbH), con la stessa struttura: elenco delle gare e una scheda per gara con il sito dell'organizzatore. Gare 2026: Generali Berliner Halbmarathon Inline 29/03, Regensburg Inline Cup 09/05, Swiss Skate Tour Schaffhausen (CH) 25/05, Ring Frei am Salzburgring (AT) 30/08 (ring-frei.eu), BMW Berlin-Marathon Inlineskating 26/09: tutte in perimetro. Il calendario 2027 non era ancora pubblicato. Vale come indice, come world-inline-cup: la prova si cerca sul sito dell'organizzatore."
+  ultimo_controllo: 2026-11-17
+
+- id: swiss-skate-tour
+  nome: "Swiss Skate Tour — circuito svizzero (chiuso)"
+  url: https://www.swiss-skate-tour.ch/
+  paese: CH
+  metodo: agente
+  frequenza: a_richiesta
+  copre: [gare]
+  affidabilita: organizzatore
+  stato: scartata
+  note: "Letta il 2026-11-17: nel 2026 il circuito aveva cinque tappe 'für Fun-, Fitness- und Speedskater:innen' (Liechtenstein 09/05, Schaffhausen 25/05, Wolfwil 21/06, Einsiedeln 27/06, Thun 05/09 con il campionato europeo Master di maratona). La notizia 'Wir sagen Danke und Tschüss' sul sito annuncia la chiusura: '2027 wird es keine Tour mehr geben'. La stessa notizia dice che una tappa continua da sola: 'Mittelland Rollt findet am 20. Juni 2027 statt' (Wolfwil); il sito del suo organizzatore non è stato cercato. Scartata come fonte; le singole gare svizzere vanno cercate una per una (World Inline Cup, German Inline Cup)."
+  ultimo_controllo: 2026-11-17
+
+- id: ffrs-calendario
+  nome: "FFRS (Francia) — calendario delle competizioni"
+  url: https://ffroller-skateboard.fr/calendrier-des-competitions/
+  paese: FR
+  metodo: script
+  frequenza: mensile
+  copre: [gare, pattinate]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Letta il 2026-11-17: la pagina incorpora un calendario Teamup (teamup.com/kspv2pevbfirr5k1qa) di tutte le discipline, 'Roller Course' e 'Randonnée roller' comprese; il calendario ha un feed ICS (https://ics.teamup.com/feed/kspv2pevbfirr5k1qa/0.ics, risponde come text/calendar), che quel giorno conteneva solo 2 eventi, nessuno futuro di corsa: non è chiaro se il feed esporta solo una finestra di date o se la stagione 2027 non è ancora caricata. La Coupe de France Marathon Roller ha un protocollo PDF con l'elenco delle tappe in allegato (trovato dalla ricerca web, non letto). Da rileggere a inizio 2027 prima di decidere il metodo."
+  ultimo_controllo: 2026-11-17
+
+- id: rfep-velocidad
+  nome: "RFEP (Spagna) — calendario e circolari di patinaje velocidad"
+  url: https://fep.es/calendario/patinaje-velocidad
+  paese: ES
+  metodo: agente
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Aperta il 2026-11-17 ma non letta davvero: la pagina del calendario carica gli eventi con JavaScript e dalla shell arriva solo il menu. Esistono anche l'elenco delle circolari (https://fep.es/circulares/patinaje-velocidad, PDF in fep.es/administracio/upload/gestio_arxius/) e il sito del comitato (https://www.velocidad.fep.es/). I risultati della ricerca web mostrano che le 'Bases de competición' di ogni stagione contengono il calendario nazionale e che in passato il calendario ha incluso un Campeonato de España Máster, maratone e mezze maratone: da verificare sul documento della stagione 2027."
+  ultimo_controllo: 2026-11-17
+
+- id: fpp-velocidade
+  nome: "FPP (Portogallo) — patinagem de velocidade"
+  url: https://fpp.pt/patinagem-de-velocidade-encontros-nacionais/
+  paese: PT
+  metodo: agente
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Aperta il 2026-11-17 ma non letta davvero: la pagina esiste sul sito della federazione; la ricerca web mostra che la federazione pubblica calendari e regolamenti nei comunicati (PDF in fpp.pt/wp-content/uploads/). L'unica gara portoghese vista finora con una pagina propria è la tappa di Funchal della World Inline Cup (madroller.pt)."
+  ultimo_controllo: 2026-11-17
+
+- id: rollsport-austria
+  nome: "Rollsport Austria — calendario degli eventi"
+  url: https://www.rollsportaustria.at/veranstaltungskalender/
+  paese: AT
+  metodo: agente
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Aperta il 2026-11-17 ma non letta davvero: il sito della federazione austriaca ha una sezione 'Inline Speedskating' e un calendario degli eventi comune a tutte le discipline. Gare austriache viste per altre vie: Ring Frei am Salzburgring (german-inline-cup) e la tappa di Wörgl delle European Track Series (worldskate-europe-calendario)."
+  ultimo_controllo: 2026-11-17
+
+- id: driv-speedskating
+  nome: "DRIV (Germania) — speedskating, calendario delle gare"
+  url: https://driv-speedskating.com/
+  paese: DE
+  metodo: agente
+  frequenza: mensile
+  copre: [gare, pattinate]
+  affidabilita: ufficiale
+  stato: da_verificare
+  note: "Aperta il 2026-11-17 ma non letta davvero: il sito della commissione speedskating della federazione tedesca ha nel menu 'Wettkampfkalender' (gare internazionali, nazionali, 'Regio- und Nachwuchscups') e, sotto 'Breitensport', una voce 'Nightskating' (pattinate notturne). Da leggere per intero prima di decidere il metodo."
+  ultimo_controllo: 2026-11-17
+
+- id: skateresults
+  nome: "Skate Results — eventi e serie (Germania)"
+  url: https://skateresults.app/
+  paese: DE
+  metodo: agente
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: aggregatore
+  stato: da_verificare
+  note: "Letta il 2026-11-17: piattaforma di gestione delle gare e dei risultati usata da organizzatori tedeschi; la home elenca i prossimi eventi (per il 2027: arena geisingen international 15-18/04, summer cup 10/07, Löwen-Cup Finale 16-17/10) e le serie (Bayern Inline Cup, Inline-Löwen-Cup). Sono soprattutto gare su pista per i giovani; tra le passate c'è 'arena geisingen masters 2026' (23/10). Ogni evento ha una pagina con i documenti dell'organizzatore. Bassa priorità: utile per i Master tedeschi su pista, non per le maratone."
+  ultimo_controllo: 2026-11-17
+
+- id: uisp-pattinaggio-corsa
+  nome: "UISP Pattinaggio — settore corsa"
+  url: https://www.uisp.it/pattinaggio/
+  paese: IT
+  metodo: agente
+  frequenza: stagionale
+  copre: [gare]
+  affidabilita: organizzatore
+  stato: scartata
+  note: "Letta il 2026-11-17: il sito nazionale ha una sezione 'Corsa' (campionati nazionali pista e strada, gran fondo, indoor, attività promozionale), ma le pagine più recenti sono del 2019 e del 2020; le altre pagine lette riguardano soprattutto il pattinaggio artistico. Scartata finché non ricompare un calendario di corsa: da riguardare una volta all'anno, a inizio stagione."
+  ultimo_controllo: 2026-11-17
+
 - id: pattiniamolitalia-eventi
   nome: "Pattiniamo l'Italia — eventi"
-  url: https://pattiniamolitalia.it/eventi/
+  url: https://calendar.google.com/calendar/ical/7bpemuo7vdilljftkjo7iru42c%40group.calendar.google.com/public/basic.ics
   paese: IT
   metodo: script
   frequenza: settimanale
-  copre: [pattinate, gare]
+  copre: [pattinate]
   affidabilita: aggregatore
   stato: da_verificare
-  note: "WordPress con Google Calendar incorporato: se il calendario è pubblico, esiste un ICS diretto."
-  ultimo_controllo: ""
+  note: "Letta il 2026-11-17. La pagina https://www.pattiniamolitalia.it/eventi/ incorpora un Google Calendar pubblico: l'indirizzo registrato qui è il suo file ICS, che risponde come text/calendar. Contiene 242 eventi dal 2021, 40 dei quali futuri (dal 06/12/2026 al 05/12/2027): sono le pattinate non competitive del movimento, in media tre al mese (da una a sei), con il titolo nella forma 'PPUG - luogo - gruppo che organizza' (es. 'PPUG - Pasquetta al Mare - Pesaro Fano', 'PPUG - Pattinata di Roma - Pincio'). Limiti: solo la data (eventi di un giorno intero, senza orario né luogo nel campo apposito); 37 dei 40 eventi futuri non hanno descrizione; le descrizioni, quando ci sono, sono programmi scritti a mano o rimandi a eventi Facebook; alcune uscite sono fuori perimetro (Varsavia, Budapest); gli annullamenti sono scritti nel titolo ('ANNULLATA - …'). Il sito ha anche un plugin di eventi WordPress, ma la sua API non restituisce eventi. È il calendario di chi organizza le pattinate, quindi affidabile per data e luogo, non per i dettagli. Proposta: seconda fonte da attivare, con uno script; prima il proprietario deve decidere come entrano le pattinate (stato, prova, quanto dettaglio)."
+  ultimo_controllo: 2026-11-17
 
 - id: segnalazioni-tally
   nome: "Segnalazioni volontarie (modulo Tally)"
@@ -226,5 +361,5 @@
   copre: [gare, pattinate]
   affidabilita: ufficiale
   stato: da_verificare
-  note: "Da censire una per una (FFRS, DRIV, RFEP, Swiss Inline Cup…); gli URL non sono stati verificati e per questo non sono scritti qui."
-  ultimo_controllo: ""
+  note: "Censite il 2026-11-17: Francia (ffrs-calendario), Spagna (rfep-velocidad), Portogallo (fpp-velocidade), Austria (rollsport-austria) e Germania (driv-speedskating) hanno ora una voce propria. Restano da trovare la federazione svizzera (swiss-skate.ch porta a un sito estraneo: indirizzo non valido) e quella slovena (una ricerca web senza esito). A livello europeo: worldskate-europe-calendario."
+  ultimo_controllo: 2026-11-17
