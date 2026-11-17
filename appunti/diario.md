@@ -144,3 +144,10 @@ Quando un problema si risolve per sempre, si aggiorna la voce invece di cancella
 - **Volevo:** installare le dipendenze con `pip install -r script/requisiti.txt` (passo 0.4) e poi eseguire `genera_ics.py`.
 - **Successo:** `pip` è quello di sistema (Python 3.13), `python3` è 3.11: l'installazione riesce ma `genera_ics.py` risponde "Manca una dipendenza (No module named 'icalendar')". `python3 -m pip install` senza opzioni fallisce su PyYAML installato da Debian ("RECORD file not found").
 - **Invece:** `python3 -m pip install --ignore-installed -r script/requisiti.txt`. Da valutare se scriverlo così nel passo 0.4 di `agenti/arricchimento.md`.
+
+
+## 2026-11-17 — `note_interne`: lo script scriveva dopo la traccia dell'arricchimento
+
+- **Volevo:** che lo script (`converti_fisr.py`) e l'agente di arricchimento scrivessero tutti e due in `note_interne` senza pestarsi i piedi: lo script la storia dei cambi ("Aggiornata il …", "Nome aggiornato il …"), l'agente la traccia `Arricchimento AAAA-MM-GG: …`, che tiene in coda e sostituisce a ogni ricontrollo.
+- **Successo:** lo script accodava le sue frasi in fondo, quindi dopo la traccia. Simulando la raccolta del 23/11 sulla Master Race dell'Aquila del 06/12/2026 la traccia finiva a metà del testo, seguita da due frasi dello script; l'agente, che la ricontrolla il 24/11, avrebbe potuto cancellarle sostituendo "la frase in coda", oppure lasciare due tracce. Trovato prima che succedesse, guardando il risultato della simulazione e non solo i conteggi.
+- **Invece:** lo script inserisce le sue frasi subito prima della traccia (`aggiungi_a_note_interne`) e, prima di scrivere, controlla che la traccia di ogni voce sia identica a com'era; il prompt dice all'agente di non cancellare nulla se trova testo dopo la traccia. Lezione: quando un campo ha due scrittori, uno dei due deve conoscere e rispettare la forma dell'altro, e la regola va scritta in tutti e due i posti e provata.

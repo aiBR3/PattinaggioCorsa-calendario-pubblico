@@ -30,7 +30,8 @@ convertitore = importlib.util.module_from_spec(specifica)
 specifica.loader.exec_module(convertitore)
 
 FUNZIONI_ATTESE = ("costruisci_evento", "corrisponde_esistente", "promuovi", "aggiorna_dal_regolamento",
-                   "segnala_possibili_doppioni", "emetti_evento", "numeri_regolamento", "aggiorna_nome", "normalizza_nome")
+                   "segnala_possibili_doppioni", "emetti_evento", "numeri_regolamento", "aggiorna_nome", "normalizza_nome",
+                   "aggiungi_a_note_interne", "coda_arricchimento")
 mancanti = [nome for nome in FUNZIONI_ATTESE if not callable(getattr(convertitore, nome, None))]
 if mancanti:
     sys.exit(f"converti_fisr.py non ha più le funzioni {mancanti}: le prove vanno aggiornate insieme allo script")
@@ -190,6 +191,45 @@ def principale() -> int:
     verifica("14. un titolo già scritto bene resta com'è", c.normalizza_nome("3° Trofeo della Befana - Tappa GPG") == "3° Trofeo della Befana - Tappa GPG", c.normalizza_nome("3° Trofeo della Befana - Tappa GPG"))
     righe_scritte = c.emetti_evento(altra_gara).split("\n")
     verifica("14. nome_fonte è scritto subito dopo nome", righe_scritte[1].startswith("  nome: ") and righe_scritte[2] == '  nome_fonte: "Trofeo Beta"', righe_scritte[:3])
+
+    # 15. Le frasi dello script vanno prima della traccia dell'arricchimento, che resta l'ultima frase di note_interne
+    traccia = "Arricchimento 2026-11-06: sito non trovato; ricerche: 'Club di Prova pattinaggio' | 'Trofeo di Prova 2027'; pagine: nessuna."
+    verifica("15. senza traccia la frase va in fondo", c.aggiungi_a_note_interne("Nota a mano.", "Frase dello script.") == "Nota a mano. Frase dello script.")
+    verifica("15. con la traccia la frase va subito prima", c.aggiungi_a_note_interne("Nota a mano. " + traccia, "Frase dello script.") == "Nota a mano. Frase dello script. " + traccia,
+             c.aggiungi_a_note_interne("Nota a mano. " + traccia, "Frase dello script."))
+    verifica("15. note con la sola traccia", c.aggiungi_a_note_interne(traccia, "Frase dello script.") == "Frase dello script. " + traccia)
+    verifica("15. note vuote o frase vuota", c.aggiungi_a_note_interne("", "Frase dello script.") == "Frase dello script." and c.aggiungi_a_note_interne(None, "") == ""
+             and c.aggiungi_a_note_interne(traccia, "") == traccia)
+    traccia_vecchia = "Arricchimento 2026-10-20: sito non raggiungibile; ricerche: nessuna; pagine: nessuna."
+    verifica("15. due tracce (dati vecchi): la frase va prima dell'ultima", c.aggiungi_a_note_interne(traccia_vecchia + " " + traccia, "Frase dello script.") == traccia_vecchia + " Frase dello script. " + traccia)
+    verifica("15. coda_arricchimento dà la traccia, o niente", c.coda_arricchimento("Nota a mano. " + traccia) == traccia and c.coda_arricchimento("Nota a mano.") == "" and c.coda_arricchimento(None) == "")
+
+    voce = voce_scritta(c.costruisci_evento(riga_finta(), regolamento_finto("9015", ["MASTER OVER 30"], entro="2027-03-05"), "2026-11-01"))
+    voce["note_interne"] = (str(voce["note_interne"]) + " Nota a mano. " + traccia).strip()
+    proposta = c.costruisci_evento(riga_finta(), regolamento_finto("9015", ["MASTER OVER 30"], entro="2027-03-06"), "2026-11-16")
+    cambiamenti, _ = c.aggiorna_dal_regolamento(voce, proposta, "2026-11-16", {voce["id"]})
+    verifica("15. regolamento cambiato: la frase dello script c'è e la traccia resta in coda",
+             bool(cambiamenti) and "Aggiornata il 2026-11-16 da converti_fisr.py" in voce["note_interne"] and voce["note_interne"].endswith(traccia), voce["note_interne"])
+    rinominata = c.costruisci_evento(riga_finta(titolo="Memorial Nuovo - Trofeo di Prova"), regolamento_finto("9015", ["MASTER OVER 30"], entro="2027-03-06"), "2026-11-23")
+    rinomina, _ = c.aggiorna_nome(voce, rinominata, "2026-11-23", True)
+    nota = voce["note_interne"]
+    verifica("15. nome cambiato: la traccia resta in coda, una sola", bool(rinomina) and nota.endswith(traccia) and nota.count("Arricchimento ") == 1, nota)
+    verifica("15. le frasi dello script restano in ordine di data, tutte prima della traccia",
+             0 <= nota.find("Nota a mano.") < nota.find("Aggiornata il 2026-11-16") < nota.find("Nome aggiornato il 2026-11-23") < nota.find(traccia), nota)
+
+    voce = voce_scritta(c.costruisci_evento(riga_finta(), regolamento_finto("9016", ["ALLIEVI"]), "2026-11-01"))
+    voce["prova"] = "Regolamento, art. 9-10: categorie ammesse Allievi."
+    voce["note_interne"] = (str(voce["note_interne"]) + " " + traccia).strip()
+    proposta = c.costruisci_evento(riga_finta(), regolamento_finto("9016", ["ALLIEVI", "MASTER OVER 30"]), "2026-11-16")
+    _, dubbi = c.aggiorna_dal_regolamento(voce, proposta, "2026-11-16", {voce["id"]})
+    verifica("15. segnalazione 'Da controllare': prima della traccia", bool(dubbi) and "Da controllare (converti_fisr.py)" in voce["note_interne"] and voce["note_interne"].endswith(traccia), voce["note_interne"])
+
+    voce = voce_scritta(c.costruisci_evento(riga_finta(non_autorizzata=True), None, "2026-11-01"))
+    voce["note_interne"] = (str(voce["note_interne"]) + " " + traccia).strip()
+    proposta = c.costruisci_evento(riga_finta(), regolamento_finto("9017", ["MASTER OVER 30"]), "2026-11-16")
+    promozione = c.promuovi(voce, proposta, "2026-11-16")
+    verifica("15. promozione: la frase dello script c'è e la traccia resta in coda",
+             bool(promozione) and "Promossa il 2026-11-16 da converti_fisr.py" in voce["note_interne"] and voce["note_interne"].endswith(traccia), voce["note_interne"])
 
     superate = sum(esiti)
     print(f"\n{superate}/{len(esiti)} prove superate")

@@ -35,6 +35,11 @@ rapporto ("da controllare") e lascia decidere a chi rivede la PR.
 
 Un regolamento che non ha ancora una riga nella lista (da cui viene la località)
 non diventa una voce: resta nel rapporto finché la lista non lo riporta.
+
+note_interne ha due scrittori, questo script e l'arricchimento. La traccia che
+l'arricchimento lascia in coda ("Arricchimento AAAA-MM-GG: …") deve restare l'ultima
+frase: lo script inserisce le sue frasi subito prima e, prima di scrivere, controlla
+che la traccia di ogni voce sia rimasta identica; altrimenti si ferma.
 """
 
 from __future__ import annotations
@@ -480,6 +485,31 @@ def corrisponde_esistente(nuovo: dict, esistenti: list[dict]) -> dict | None:
 STATI_PROMUOVIBILI = {"da_verificare", "non_autorizzato", "annunciato"}
 FRASE_SENZA_REGOLAMENTO = "Regolamento di gara non trovato: categorie ammesse sconosciute."
 
+# La traccia dell'arricchimento (agenti/arricchimento.md, passo 3, punto 9): "Arricchimento AAAA-MM-GG: esito; …".
+# L'agente la tiene in coda a note_interne e la sostituisce a ogni ricontrollo: le frasi dello script non
+# devono finirle dietro, altrimenti la traccia non è più l'ultima e la sostituzione può cancellarle.
+ESPRESSIONE_TRACCIA_ARRICCHIMENTO = re.compile(r"Arricchimento \d{4}-\d{2}-\d{2}:")
+
+
+def coda_arricchimento(note_interne) -> str:
+    """La traccia dell'arricchimento: dall'ultima "Arricchimento AAAA-MM-GG:" alla fine di note_interne.
+    Stringa vuota se la traccia non c'è."""
+    testo = str(note_interne or "").strip()
+    inizi = [trovata.start() for trovata in ESPRESSIONE_TRACCIA_ARRICCHIMENTO.finditer(testo)]
+    return testo[inizi[-1]:] if inizi else ""
+
+
+def aggiungi_a_note_interne(note_interne, frase: str) -> str:
+    """Aggiunge una frase dello script a note_interne lasciando in coda la traccia dell'arricchimento:
+    la frase va subito prima della traccia; se la traccia non c'è, in fondo."""
+    testo = str(note_interne or "").strip()
+    frase = str(frase or "").strip()
+    if not frase:
+        return testo
+    traccia = coda_arricchimento(testo)
+    prima = testo[: len(testo) - len(traccia)].strip() if traccia else testo
+    return " ".join(parte for parte in (prima, frase, traccia) if parte)
+
 
 def promuovi(esistente: dict, proposta: dict, letto_il: str) -> list[str]:
     """Promozione di una voce esistente (regola 7): aggiorna SUL POSTO la voce e ritorna l'elenco
@@ -527,7 +557,7 @@ def promuovi(esistente: dict, proposta: dict, letto_il: str) -> list[str]:
     note_interne = str(esistente.get("note_interne") or "").replace(FRASE_SENZA_REGOLAMENTO, "").strip()
     regolamento = proposta["url_ufficiale"].rsplit("=", 1)[-1] if "id_manif=" in str(proposta.get("url_ufficiale") or "") else ""
     frase = f"Promossa il {letto_il} da converti_fisr.py: " + "; ".join(cambiamenti) + (f"; regolamento di gara id_manif {regolamento}." if regolamento else ".")
-    esistente["note_interne"] = (note_interne + " " + frase).strip()
+    esistente["note_interne"] = aggiungi_a_note_interne(note_interne, frase)
     return cambiamenti
 
 
@@ -659,11 +689,11 @@ def aggiorna_dal_regolamento(esistente: dict, proposta: dict, letto_il: str, id_
                 presente["letto_il"] = fonte["letto_il"]
             else:
                 fonti_esistenti.append({"url": fonte["url"], "letto_il": fonte["letto_il"]})
-        note_interne = (note_interne + f" Aggiornata il {letto_il} da converti_fisr.py, il regolamento di gara id_manif {numero} è cambiato: " + "; ".join(cambiamenti) + ".").strip()
+        note_interne = aggiungi_a_note_interne(note_interne, f"Aggiornata il {letto_il} da converti_fisr.py, il regolamento di gara id_manif {numero} è cambiato: " + "; ".join(cambiamenti) + ".")
     for cosa in da_controllare:
         frase = f"Da controllare (converti_fisr.py): {cosa}."
         if frase not in note_interne:      # la stessa segnalazione non si ripete ogni settimana
-            note_interne = (note_interne + " " + frase).strip()
+            note_interne = aggiungi_a_note_interne(note_interne, frase)
     if note_interne != str(esistente.get("note_interne") or "").strip():
         esistente["note_interne"] = note_interne
     return cambiamenti, da_controllare
@@ -699,7 +729,7 @@ def aggiorna_nome(esistente: dict, proposta: dict, letto_il: str, unica_riga: bo
             fonte["letto_il"] = letto_il
     frase = (f"Nome aggiornato il {letto_il} da converti_fisr.py perché la lista federale ha cambiato il titolo: "
              f"da «{titolo_vecchio}» a «{titolo_nuovo}»; il nome della voce era «{nome_vecchio}».")
-    esistente["note_interne"] = (str(esistente.get("note_interne") or "").strip() + " " + frase).strip()
+    esistente["note_interne"] = aggiungi_a_note_interne(esistente.get("note_interne"), frase)
     return [f"nome «{nome_vecchio}» → «{proposta['nome']}»"], False
 
 
@@ -721,7 +751,7 @@ def segnala_possibili_doppioni(nuovi: list[dict], esistenti: list[dict], ancora_
             if slug_citta(str(esistente["luogo"])) != slug_citta(nuovo["luogo"]) or somiglianza(str(esistente["nome"]), nuovo["nome"]) < 0.6:
                 continue
             frase = f"Possibile doppione di {esistente['id']} (stessa città, nome simile, data {esistente['data_inizio']}; quella voce non è più nella lista FISR): controllare prima del merge."
-            nuovo["note_interne"] = (str(nuovo.get("note_interne") or "") + " " + frase).strip()
+            nuovo["note_interne"] = aggiungi_a_note_interne(nuovo.get("note_interne"), frase)
             segnalazioni.append(f"- `{nuovo['id']}` ↔ `{esistente['id']}`: possibile doppione (stessa città, nome simile, {giorni} giorni di distanza; la voce esistente non è più nella lista)")
     return segnalazioni
 
@@ -786,6 +816,7 @@ def principale(argomenti: list[str] | None = None) -> int:
     rapporto.append(f"\nRegolamenti di gara: {len(regolamenti)} dalla scansione; {len(abbinate)} righe con regolamento; {len(rimaste)} regolamenti senza riga nella lista.\n")
 
     intestazione, esistenti = carica_eventi(opzioni.eventi)
+    tracce_prima = {id(voce): coda_arricchimento(voce.get("note_interne")) for voce in esistenti}   # per il controllo in uscita
     nuovi: list[dict] = []
     promossi: list[str] = []
     aggiornati: list[str] = []
@@ -889,6 +920,13 @@ def principale(argomenti: list[str] | None = None) -> int:
         opzioni.rapporto.parent.mkdir(parents=True, exist_ok=True)
         opzioni.rapporto.write_text(testo_rapporto, encoding="utf-8")
     print(testo_rapporto)
+
+    # Controllo in uscita: qualunque cosa lo script abbia scritto in note_interne, la traccia dell'arricchimento
+    # deve essere ancora lì, identica e in coda (è ciò che l'agente legge e sostituisce al prossimo ricontrollo).
+    tracce_toccate = [str(voce["id"]) for voce in esistenti if coda_arricchimento(voce.get("note_interne")) != tracce_prima[id(voce)]]
+    if tracce_toccate:
+        print(f"ERRORE: la traccia 'Arricchimento …' in note_interne è cambiata o non è più l'ultima frase in: {tracce_toccate}; eventi.yaml non è stato scritto", file=sys.stderr)
+        return 1
 
     if opzioni.scrivi:
         tutti = sorted(esistenti + nuovi, key=lambda e: (str(e["data_inizio"]), e["id"]))
