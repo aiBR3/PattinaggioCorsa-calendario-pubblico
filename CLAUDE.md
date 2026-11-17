@@ -38,7 +38,8 @@ script/raccogli_fisr.py    ← livello 1: lista + regolamenti di gara di fisr.in
 script/converti_fisr.py    ← livelli 2-3: JSON grezzo → voci di eventi.yaml, con prova citata dall'art. 10
 script/prove_converti_fisr.py ← prove automatiche di converti_fisr.py su casi costruiti (le esegue anche verifica.yml)
 script/genera_ics.py       ← eventi.yaml → calendario.ics + index.html (valida ingresso e uscita)
-script/intervallo_scansione.py ← quali id di regolamento scandire questa settimana (oltre l'ultimo visto)
+script/intervallo_scansione.py ← quali regolamenti leggere questa settimana: l'intervallo attorno all'ultimo che esiste e quelli delle gare future, da rileggere
+script/prove_intervallo_scansione.py ← prove automatiche di intervallo_scansione.py su dati costruiti (le esegue anche verifica.yml)
 script/raccogli_societa.py ← registro delle società dalle classifiche, dai risultati e dai regolamenti di fisr.info
 script/requisiti.txt       ← dipendenze Python
 pagina_web/modello_index.html ← testo della pagina pubblicata (segnaposto {{...}})
@@ -130,8 +131,10 @@ python3 script/genera_ics.py --ingresso dati/eventi.yaml --uscita uscita \
 # Dopo ogni modifica a converti_fisr.py: prove su casi costruiti (riconoscimento, regolamento cambiato, doppioni)
 python3 script/prove_converti_fisr.py
 
-# Settimanalmente serve solo l'intervallo di id oltre l'ultimo visto (è ciò che fa raccolta.yml):
-python3 script/intervallo_scansione.py        # stampa "DA A", es. 7031 7380
+# Settimanalmente (è ciò che fa raccolta.yml) si leggono l'intervallo attorno all'ultimo regolamento che esiste
+# e, uno per uno, i regolamenti delle gare future già in eventi.yaml (per accorgersi quando cambiano):
+python3 script/intervallo_scansione.py                  # stampa "DA A", es. 7052 7401
+python3 script/intervallo_scansione.py --da-rileggere   # stampa gli id per raccogli_fisr.py --rileggi-regolamenti
 
 # A ogni stagione (o quando servono società nuove): registro delle società dalle classifiche federali,
 # dai risultati ("Organizzato da") e dai regolamenti (siti citati); i campi a mano restano
@@ -139,7 +142,7 @@ python3 script/raccogli_societa.py --anno 2026 --registro dati/societa.yaml \
     --raccolta registro/AAAA-MM-GG-raccolta-fisr.json --rapporto registro/AAAA-MM-GG-societa.md
 ```
 
-Il workflow `raccolta.yml` esegue questi stessi passi ogni lunedì (05:17 UTC) con `--da` = 14 giorni prima e l'intervallo di `intervallo_scansione.py`; se `eventi.yaml` cambia apre una PR dal ramo `raccolta/AAAA-MM-GG`, una sola alla volta (se la precedente è ancora aperta non ne apre un'altra). Da "Actions → Run workflow" si può lanciare a mano, anche con un intervallo di id esplicito per una scansione completa. Le PR aperte dal token di Actions non fanno partire `verifica.yml`: per questo il workflow esegue da sé `genera_ics.py` prima di aprirle.
+Il workflow `raccolta.yml` esegue questi stessi passi ogni lunedì (05:17 UTC) con `--da` = 14 giorni prima, l'intervallo di `intervallo_scansione.py` (gli ultimi 50 numeri fino all'ultimo regolamento che esiste davvero e i 300 successivi) e la rilettura, uno per uno, dei regolamenti delle gare da quella data in poi già in `eventi.yaml` (`--rileggi-regolamenti`: senza, un regolamento cambiato non verrebbe visto); se `eventi.yaml` cambia apre una PR dal ramo `raccolta/AAAA-MM-GG`, una sola alla volta (se la precedente è ancora aperta non ne apre un'altra). Da "Actions → Run workflow" si può lanciare a mano, anche con un intervallo di id esplicito per una scansione completa. Le PR aperte dal token di Actions non fanno partire `verifica.yml`: per questo il workflow esegue da sé `genera_ics.py` prima di aprirle.
 
 Cosa decide `converti_fisr.py` e cosa no:
 - regolamento di gara con righe `MASTER …` nell'art. 10 → `confermato`, `categorie: [master]`, prova = le righe citate;

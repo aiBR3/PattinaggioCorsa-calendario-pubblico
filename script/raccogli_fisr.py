@@ -20,6 +20,11 @@ Uso:
                 linka più (succede per le gare passate e per quelle "non ancora
                 autorizzate"): tiene solo quelli completi (data, nome, programma) e nel
                 periodo. L'abbinamento alle righe della lista lo fa converti_fisr.py.
+  --rileggi-regolamenti ID [ID ...]
+                scarica anche questi regolamenti, uno per uno: sono quelli delle gare
+                future già in eventi.yaml (li elenca intervallo_scansione.py --da-rileggere),
+                da rileggere ogni settimana perché gli organizzatori li cambiano (date,
+                categorie, scadenza). Quelli già dentro --scansione-regolamenti si saltano.
   Nota: la pagina ?anno=2026 (stagione 2025/26) contiene anche i mesi della 2026/27;
   chiedere due stagioni consecutive produce righe doppie.
 
@@ -105,17 +110,31 @@ class RigaLista:
 # Rete
 # ---------------------------------------------------------------------------
 
+ATTESE_TRA_TENTATIVI = (2.0, 6.0)   # secondi prima del secondo e del terzo tentativo
+
+
 def scarica(url: str, pausa: float) -> bytes:
-    richiesta = urllib.request.Request(url, headers={"User-Agent": AGENTE_UTENTE})
-    with urllib.request.urlopen(richiesta, timeout=60) as risposta:
-        if risposta.status != 200:
-            raise RuntimeError(f"HTTP {risposta.status} per {url}")
-        contenuto = risposta.read()
-    if pausa > 0:
-        time.sleep(pausa)
-    if not contenuto:
-        raise RuntimeError(f"risposta vuota per {url}")
-    return contenuto
+    """Scarica una pagina. Il server federale ogni tanto chiude la connessione a metà: fino a tre tentativi,
+    poi RuntimeError con l'ultimo errore (chi chiama lo registra tra le anomalie)."""
+    ultimo_errore: Exception | None = None
+    for tentativo in range(len(ATTESE_TRA_TENTATIVI) + 1):
+        if tentativo:
+            time.sleep(ATTESE_TRA_TENTATIVI[tentativo - 1])
+        try:
+            richiesta = urllib.request.Request(url, headers={"User-Agent": AGENTE_UTENTE})
+            with urllib.request.urlopen(richiesta, timeout=60) as risposta:
+                if risposta.status != 200:
+                    raise RuntimeError(f"HTTP {risposta.status} per {url}")
+                contenuto = risposta.read()
+            if not contenuto:
+                raise RuntimeError(f"risposta vuota per {url}")
+        except (urllib.error.URLError, RuntimeError, TimeoutError, OSError) as errore:
+            ultimo_errore = errore
+            continue
+        if pausa > 0:
+            time.sleep(pausa)
+        return contenuto
+    raise RuntimeError(f"{len(ATTESE_TRA_TENTATIVI) + 1} tentativi falliti per {url}: {ultimo_errore}")
 
 
 def decodifica(grezzo: bytes) -> tuple[str, str]:
@@ -381,8 +400,15 @@ def principale(argomenti: list[str] | None = None) -> int:
     analizzatore.add_argument("--pausa", type=float, default=0.5, help="secondi tra una richiesta e l'altra")
     analizzatore.add_argument("--scansione-regolamenti", nargs=2, type=int, metavar=("DA", "A"), default=None,
                               help="scarica i regolamenti con id_manif da DA ad A (inclusi) anche senza link nella lista; tiene solo quelli completi e con data >= --da")
+    analizzatore.add_argument("--rileggi-regolamenti", nargs="*", type=int, metavar="ID", default=[],
+                              help="scarica anche questi regolamenti (id_manif), uno per uno: sono quelli delle gare future già in eventi.yaml, "
+                                   "da rileggere ogni settimana per accorgersi quando cambiano; quelli già dentro --scansione-regolamenti vengono saltati")
     analizzatore.add_argument("--uscita", type=Path, required=True, help="file JSON da scrivere")
     opzioni = analizzatore.parse_args(argomenti)
+    fuori_misura = [numero for numero in opzioni.rileggi_regolamenti if not 1 <= numero <= 1_000_000]
+    if fuori_misura:
+        print(f"ERRORE: --rileggi-regolamenti vuole numeri di regolamento positivi, ricevuti {fuori_misura}", file=sys.stderr)
+        return 2
 
     richieste = [(f"{URL_LISTA}?anno={anno}", f"anno={anno}") for anno in opzioni.anno] if opzioni.anno else [(URL_LISTA, "stagione corrente")]
     righe_totali: list[RigaLista] = []
@@ -422,24 +448,42 @@ def principale(argomenti: list[str] | None = None) -> int:
 
     regolamenti_scansione: list[dict] = []
     scartate_scansione = 0
+
+    def leggi_regolamento(id_manif: int, motivo: str) -> bool:
+        """Scarica un regolamento e lo tiene se è completo e nel periodo. Ritorna True se tenuto."""
+        nonlocal scartate_scansione
+        try:
+            regolamento = analizza_regolamento(str(id_manif), scarica(URL_MODULO + str(id_manif), opzioni.pausa))
+        except (urllib.error.URLError, RuntimeError, TimeoutError) as errore:
+            anomalie_globali.append(f"{motivo} id {id_manif}: scaricamento fallito ({errore})")
+            return False
+        completa = bool(regolamento.dal and regolamento.denominazione and regolamento.righe_programma)
+        nel_periodo = not opzioni.da or date.fromisoformat(regolamento.dal) >= opzioni.da if regolamento.dal else False
+        if completa and nel_periodo:
+            regolamenti_scansione.append(asdict(regolamento))
+            return True
+        scartate_scansione += 1
+        return False
+
+    primo, ultimo = 0, -1    # intervallo vuoto se la scansione non è richiesta
     if opzioni.scansione_regolamenti:
         primo, ultimo = opzioni.scansione_regolamenti
         if primo > ultimo or primo < 1:
             print("ERRORE: --scansione-regolamenti vuole DA <= A, entrambi positivi", file=sys.stderr)
             return 2
         for id_manif in range(primo, ultimo + 1):
-            try:
-                regolamento = analizza_regolamento(str(id_manif), scarica(URL_MODULO + str(id_manif), opzioni.pausa))
-            except (urllib.error.URLError, RuntimeError, TimeoutError) as errore:
-                anomalie_globali.append(f"scansione id {id_manif}: scaricamento fallito ({errore})")
-                continue
-            completa = bool(regolamento.dal and regolamento.denominazione and regolamento.righe_programma)
-            nel_periodo = not opzioni.da or date.fromisoformat(regolamento.dal) >= opzioni.da if regolamento.dal else False
-            if completa and nel_periodo:
-                regolamenti_scansione.append(asdict(regolamento))
-            else:
-                scartate_scansione += 1
+            leggi_regolamento(id_manif, "scansione")
         print(f"scansione id {primo}-{ultimo}: {len(regolamenti_scansione)} regolamenti completi nel periodo, {scartate_scansione} scartate (vuote, bozze o fuori periodo)", file=sys.stderr)
+
+    # Regolamenti delle gare future già note: riletti uno per uno, anche se lontani dall'intervallo.
+    da_rileggere = sorted({numero for numero in opzioni.rileggi_regolamenti if not primo <= numero <= ultimo})
+    riletti_non_tenuti: list[int] = []
+    for id_manif in da_rileggere:
+        if not leggi_regolamento(id_manif, "rilettura"):
+            riletti_non_tenuti.append(id_manif)
+    if opzioni.rileggi_regolamenti:
+        print(f"rilettura dei regolamenti delle gare future: {len(da_rileggere)} fuori dall'intervallo ({len(opzioni.rileggi_regolamenti) - len(da_rileggere)} già dentro), "
+              f"{len(da_rileggere) - len(riletti_non_tenuti)} tenuti" + (f"; non più completi o fuori periodo: {riletti_non_tenuti}" if riletti_non_tenuti else ""), file=sys.stderr)
 
     documento = {
         "generato_il": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -449,7 +493,8 @@ def principale(argomenti: list[str] | None = None) -> int:
         "filtro_da": opzioni.da.isoformat() if opzioni.da else "",
         "anomalie_globali": anomalie_globali,
         "righe": [asdict(riga) for riga in righe_totali],
-        "scansione_regolamenti": {"intervallo": opzioni.scansione_regolamenti or [], "scartate": scartate_scansione},
+        "scansione_regolamenti": {"intervallo": opzioni.scansione_regolamenti or [], "scartate": scartate_scansione,
+                                  "riletti": da_rileggere, "riletti_non_tenuti": riletti_non_tenuti},
         "regolamenti_scansione": regolamenti_scansione,
     }
     opzioni.uscita.parent.mkdir(parents=True, exist_ok=True)
@@ -459,6 +504,10 @@ def principale(argomenti: list[str] | None = None) -> int:
     riletto = json.loads(opzioni.uscita.read_text(encoding="utf-8"))
     if len(riletto["regolamenti_scansione"]) != len(regolamenti_scansione):
         print("ERRORE: i regolamenti scansionati rilette non corrispondono a quelle scritte", file=sys.stderr)
+        return 1
+    numeri_tenuti = [str(regolamento["id_manif"]) for regolamento in riletto["regolamenti_scansione"]]
+    if len(set(numeri_tenuti)) != len(numeri_tenuti):
+        print(f"ERRORE: lo stesso regolamento compare due volte nell'uscita: {sorted(n for n in set(numeri_tenuti) if numeri_tenuti.count(n) > 1)}", file=sys.stderr)
         return 1
     if len(riletto["righe"]) != len(righe_totali):
         print(f"ERRORE: scritte {len(righe_totali)} righe ma rilette {len(riletto['righe'])}", file=sys.stderr)
