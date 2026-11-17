@@ -1363,29 +1363,29 @@
   note: "Iscrizioni dal 02/04/2026 all'11/03/2027 (o fino a esaurimento), quota 66-73 €. Limite di tempo 1:10 h; casco obbligatorio; solo pattini in linea (ruote max 125 mm) e quad."
   note_interne: "L'intestazione della pagina di iscrizione dice ancora '2026', ma il periodo di iscrizione (fino all'11/03/2027) e il calendario SCC Events sono dell'edizione 2027. La versione inglese traduce male l'ammissione ('born in 2012 and later'): fa fede il tedesco. Rileggere quando il sito viene aggiornato. Arricchimento 2026-11-06: sito trovato, pagina dell'edizione giusta, nessuna novità; ricerche: nessuna (pagina già nota); pagine: https://www.generali-berliner-halbmarathon.de/anmelden/inlineskating."
 
-- id: 2027-05-29-laquila-internazionali-ditalia-open-indoor
+- id: 2027-05-28-laquila-internazionali-ditalia-open-indoor
   nome: "Internazionali d'Italia Open Indoor - VII Memorial Romano Maria Cacciani"
-  data_inizio: 2027-05-29
+  data_inizio: 2027-05-28
   data_fine: 2027-05-29
   luogo: "L'Aquila"
   paese: IT
   tipo: gara
-  categorie: []
-  distanze: []
+  categorie: ["master"]
+  distanze: ["5000 m in linea"]
   organizzatore: "C.P.G.A. ASD"
   url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7073"
   url_iscrizione: ""
-  scadenza_iscrizione: 2027-05-26
-  stato: escluso
+  scadenza_iscrizione: 2027-05-24
+  stato: non_autorizzato
   fonti:
     - url: https://www.fisr.info/attivita/corsa_calendario.php
-      letto_il: 2026-11-05
+      letto_il: 2026-11-16
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7073
-      letto_il: 2026-11-05
-  verificato_il: 2026-11-05
-  prova: "Regolamento di gara id_manif 7073, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
-  note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio con curve soprelevate pendenza costante mt 150 alla corda larghezza mt 5.50 con rivestimento VESMACO Tutte le gare si effettueranno esclusivamente in pista soprelevata. Il sabato mattina sarà possibi… Nella lista FISR compare come 'Attività non ancora autorizzata'; il regolamento di gara (bozza) non prevede Master/Amatori."
-  note_interne: ""
+      letto_il: 2026-11-16
+  verificato_il: 2026-11-16
+  prova: "Regolamento di gara id_manif 7073, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 5000 m | In linea'; 'MASTER OVER 75 | M | 5000 m | In linea' e seguenti. Categorie elencate: MASTER OVER 75, MASTER OVER 70, MASTER OVER 65, MASTER OVER 60, MASTER OVER 55, MASTER OVER 50, MASTER OVER 45, MASTER OVER 40, MASTER OVER 35, MASTER OVER 30."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio con curve soprelevate pendenza costante mt 150 alla corda larghezza mt 5.50 con rivestimento VESMACO Tutte le gare si effettueranno esclusivamente in pista soprelevata. Il sabato mattina sarà possibi…"
+  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata' (il regolamento esiste già). Sostituisce la voce 2027-05-29-laquila-internazionali-ditalia-open-indoor, esclusa il 2026-11-05: allora il regolamento 7073 era di un solo giorno (29/05), con iscrizioni entro il 26/05 e le sole categorie Allievi, Ragazzi, Ragazzi 12, Esordienti, Giovanissimi. Tra il 2026-11-09 e il 2026-11-16 l'organizzatore ha cambiato il regolamento: 28-29/05, iscrizioni entro il 24/05, aggiunte le righe Master Over 30-75 (5000 m in linea); la lista federale riporta le stesse date. La vecchia voce non era mai stata pubblicata (esclusa): nella revisione a mano della PR #55 (2026-11-16) è stata tolta e resta questa, con l'id della nuova data d'inizio. Il regolamento rimanda a https://cpga.net/iio per disposizioni e orari. Il sito dell'organizzatore (cpga.net, sito_verificato nel registro) al 2026-11-17 elenca solo le edizioni 2026 (Internazionali corsa 25-27/09/2026, Memorial Cacciani 5-6/12/2026): nessuna pagina dell'edizione di maggio 2027, nessun dato copiato; url_ufficiale resta il regolamento FISR (non sostituito con la home: decide il proprietario). Arricchimento 2026-11-17: sito trovato, pagina dell'evento assente (registro); ricerche: nessuna; pagine: https://cpga.net/, https://cpga.net/iio/, https://cpga.net/iio/iio-corsa/, https://cpga.net/iio/memorial-cacciani/."
 
 - id: 2027-06-06-terni-memorial-alfonso-zenga
   nome: "1° Memorial Alfonso Zenga - Tappa RSC"
@@ -1454,6 +1454,28 @@
   prova: ""
   note: "Gara serale di 10 km sul Kurfürstendamm, dentro la adidas Runners City Night (con le corse di 5 e 10 km). Le condizioni dell'edizione 2027 non sono ancora pubblicate."
   note_interne: "Data dal calendario SCC Events (31/07/2027, 10k, Inline skating). La pagina di iscrizione mostra ancora l'edizione 2026: partenza ore 18:00, classifiche 'Speed' e 'Fitness', ammissione 'according to DRIV WKO from YOB 2014', quote 35-45 €. Rileggere all'apertura delle iscrizioni 2027 e passare a confermato con la prova. Arricchimento 2026-11-06: sito trovato, pagina dell'edizione precedente (quote e condizioni ancora 2026); ricerche: nessuna (pagina già nota); pagine: https://www.berlin-citynight.de/en/registration/10k-inline-skating."
+
+- id: 2027-07-31-san-benedetto-del-tronto-meeting-san-benedetto-tronto
+  nome: "39° Meeting Città di San Benedetto del Tronto"
+  data_inizio: 2027-07-31
+  data_fine: 2027-07-31
+  luogo: "San Benedetto del Tronto (AP)"
+  paese: IT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Patt. Sambenedettesi"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7101"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2027-07-27
+  stato: escluso
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7101
+      letto_il: 2026-11-16
+  verificato_il: 2026-11-16
+  prova: "Regolamento di gara id_manif 7101, art. 10 'Programma gare': categorie elencate ALLIEVI, RAGAZZI, RAGAZZI 12, ESORDIENTI, GIOVANISSIMI; nessuna riga Master o Amatori."
+  note: "Manifestazione di categoria B su pista. Campo di gara: Pista di pattinaggio a curve sopraelevate paraboliche della lunghezza di metri 175 e larghezza metri 5.80.Fondo in resina ATP, Via delle Tamerici."
+  note_interne: "Non compare nella lista corsa_calendario.php: trovato solo tra i regolamenti. Id e luogo corretti a mano nella PR #55 (2026-11-16): senza la riga della lista lo script aveva scritto 'da indicare (vedi note)' e 'luogo-ignoto'. Il campo di gara (via delle Tamerici, CAP 63074) è lo stesso del regolamento 6779 dell'edizione 2026, che la lista federale collocava a San Benedetto del Tronto; l'intestazione del regolamento dà la società organizzatrice in provincia AP."
 
 - id: 2027-08-03-santa-maria-nuova-trofeo-internazionale-giorni-international
   nome: "Trofeo Internazionale 6 Giorni International 2027 - Circuito RSC"
