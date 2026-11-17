@@ -20,7 +20,6 @@ Nel frattempo apri una [issue](https://github.com/aiBR3/PattinaggioCorsa-calenda
 
 ## Come funziona
 
-- le regole per chi lavora al
-progetto (persone, script, agenti) sono in [CLAUDE.md](CLAUDE.md)
+- le regole per chi lavora al progetto (persone, script, agenti) sono in [CLAUDE.md](CLAUDE.md)
 - [script/genera_ics.py](script/genera_ics.py) valida il file e genera `calendario.ics` e `index.html`
 - a ogni modifica sul ramo `main`, il workflow [pubblica.yml](.github/workflows/pubblica.yml) rigenera la pagina web

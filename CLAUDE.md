@@ -28,6 +28,7 @@ Chi lo consulta: chi si iscrive al calendario, da iPhone (app Calendario) o da A
 ```
 CLAUDE.md                  ← questo file
 README.md                  ← per le persone: cos'è e come iscriversi
+CODEOWNERS                 ← il proprietario è responsabile di ogni file: una PR non aperta da lui va approvata da lui prima del merge
 appunti/decisioni.md       ← decisioni prese, con data e motivo
 appunti/diario.md          ← cosa non ha funzionato
 appunti/casi-di-prova.md   ← eventi reali che la scoperta e l'arricchimento devono saper trovare
@@ -47,7 +48,7 @@ pagina_web/modello_index.html ← testo della pagina pubblicata (segnaposto {{..
 pagina_web/stile.css        ← CSS della pagina; ogni altro file in pagina_web/ viene pubblicato così com'è
 .github/workflows/         ← verifica.yml (sulle PR), pubblica.yml (su main → Pages), raccolta.yml (ogni lunedì → PR)
 agenti/                    ← prompt dei compiti: arricchimento.md (procedimento), attivita-pianificata.md (testo e configurazione dell'attività pianificata)
-registro/                  ← un rapporto per esecuzione: AAAA-MM-GG-raccolta-fisr.json, AAAA-MM-GG-conversione-fisr.md
+registro/                  ← un rapporto per esecuzione: AAAA-MM-GG-raccolta-fisr.json e AAAA-MM-GG-conversione-fisr.md (raccolta), AAAA-MM-GG-arricchimento.md, AAAA-MM-GG-societa.md
 uscita/                    ← generato localmente, ignorato da git
 ```
 
