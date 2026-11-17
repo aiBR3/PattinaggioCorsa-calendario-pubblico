@@ -11,6 +11,7 @@
 
 - id: 2026-01-06-pescara-trofeo-befana
   nome: "3° Trofeo della Befana"
+  nome_fonte: "3° TROFEO DELLA BEFANA"
   data_inizio: 2026-01-06
   data_fine: 2026-01-06
   luogo: "Pescara"
@@ -35,6 +36,7 @@
 
 - id: 2026-02-08-campobasso-trofeo-cus-molise-skating
   nome: "I Trofeo CUS Molise Skating Indoor"
+  nome_fonte: "I° Trofeo Cus Molise Skating indoor"
   data_inizio: 2026-02-08
   data_fine: 2026-02-08
   luogo: "Campobasso"
@@ -59,6 +61,7 @@
 
 - id: 2026-02-20-pescara-campionato-italiano-indoor-r
   nome: "Campionato Italiano Indoor cat. R - Trofeo Skate Italia cat. R12"
+  nome_fonte: "Campionato italiano Indoor cat. R - Trofeo Skate Italia cat. R12"
   data_inizio: 2026-02-20
   data_fine: 2026-02-22
   luogo: "Pescara"
@@ -81,6 +84,7 @@
 
 - id: 2026-02-27-pescara-campionato-italiano-indoor-j
   nome: "Campionato Italiano Indoor cat. A/J/S"
+  nome_fonte: "Campionato italiano Indoor cat. A/J/S"
   data_inizio: 2026-02-27
   data_fine: 2026-03-01
   luogo: "Pescara"
@@ -103,6 +107,7 @@
 
 - id: 2026-03-22-rende-trofeo-indoor-cus-unical
   nome: "Trofeo Indoor CUS UNICAL"
+  nome_fonte: "TROFEO INDOOR CUS UNICAL"
   data_inizio: 2026-03-22
   data_fine: 2026-03-22
   luogo: "Rende (CS)"
@@ -127,6 +132,7 @@
 
 - id: 2026-04-06-paderno-dadda-trofeo-primavera
   nome: "XIX Trofeo di Primavera"
+  nome_fonte: "XIX TROFEO DI PRIMAVERA"
   data_inizio: 2026-04-06
   data_fine: 2026-04-06
   luogo: "Paderno d'Adda"
@@ -151,6 +157,7 @@
 
 - id: 2026-04-19-imola-gran-premio-imola
   nome: "48° Gran Premio Città di Imola"
+  nome_fonte: "48° GRAN PREMIO CITTA' DI IMOLA"
   data_inizio: 2026-04-19
   data_fine: 2026-04-19
   luogo: "Imola"
@@ -175,6 +182,7 @@
 
 - id: 2026-04-25-noale-trofeo-noale
   nome: "Trofeo Città di Noale"
+  nome_fonte: "TROFEO CITTA' DI NOALE -"
   data_inizio: 2026-04-25
   data_fine: 2026-04-26
   luogo: "Noale (VE)"
@@ -199,6 +207,7 @@
 
 - id: 2026-04-25-terni-trofeo-appennini-memorial-d
   nome: "1° Trofeo degli Appennini - XIV Memorial D. Pioli"
+  nome_fonte: "1° TROFEO DEGLI APPENNINI - XIV MEMORIAL D.PIOLI"
   data_inizio: 2026-04-25
   data_fine: 2026-04-25
   luogo: "Terni"
@@ -223,6 +232,7 @@
 
 - id: 2026-04-26-pollenza-memorial-gilda-leoperdi-trofeo
   nome: "XI Memorial Gilda Leoperdi - 1° Trofeo Città di Pollenza"
+  nome_fonte: "XI memorial Gilda Leoperdi - 1° Trofeo città di Pollenza"
   data_inizio: 2026-04-26
   data_fine: 2026-04-26
   luogo: "Pollenza"
@@ -247,6 +257,7 @@
 
 - id: 2026-05-01-ferrara-maggio-ferrara-inlne-trofeo
   nome: "1° Maggio Ferrara Inline - Trofeo Internazionale del Lavoro"
+  nome_fonte: "1°maggio Ferrara Inlne - Trofeo Internazionale del Lavoro"
   data_inizio: 2026-05-01
   data_fine: 2026-05-01
   luogo: "Ferrara, piazza Ariostea"
@@ -271,6 +282,7 @@
 
 - id: 2026-05-02-roma-trofeo-roma
   nome: "Trofeo Città di Roma 2026 - 3° edizione"
+  nome_fonte: "TROFEO CITTA' DI ROMA 2026 - 3^ edizione"
   data_inizio: 2026-05-02
   data_fine: 2026-05-03
   luogo: "Roma, pattinodromo delle Tre Fontane"
@@ -295,6 +307,7 @@
 
 - id: 2026-05-02-rovigo-memorial-nazionale-arturo-ponzetti
   nome: "40° Memorial Nazionale Arturo Ponzetti - Tappa comune GPG-CNO"
+  nome_fonte: "40. MEMORIAL NAZIONALE ARTURO PONZETTI -Tappa comune Gpg-Cno"
   data_inizio: 2026-05-02
   data_fine: 2026-05-02
   luogo: "Rovigo"
@@ -319,6 +332,7 @@
 
 - id: 2026-05-07-siena-international-cup-siena-maggio
   nome: "XVII International Cup Città di Siena - 7° Memorial Fabio Belotti"
+  nome_fonte: "XVII INTERNATIONAL CUP CITTA' DI SIENA 7-10 MAGGIO 2026 7° MEMORIAL FABIO BELOTTI"
   data_inizio: 2026-05-07
   data_fine: 2026-05-10
   luogo: "Siena"
@@ -343,6 +357,7 @@
 
 - id: 2026-05-10-spilimbergo-mosaico-roller-next-gen
   nome: "Mosaico Roller Next Gen - Tappa GPG"
+  nome_fonte: "MOSAICO ROLLER NEXT GEN - TAPPA GPG"
   data_inizio: 2026-05-10
   data_fine: 2026-05-10
   luogo: "Spilimbergo"
@@ -367,6 +382,7 @@
 
 - id: 2026-05-14-senigallia-speed-track-european-series
   nome: "Speed Track European Series"
+  nome_fonte: "Speed Track European Series"
   data_inizio: 2026-05-14
   data_fine: 2026-05-17
   luogo: "Senigallia (AN)"
@@ -389,6 +405,7 @@
 
 - id: 2026-05-24-pordenone-campionato-italiano-maratona-allievi
   nome: "Campionato Italiano Maratona cat. J/S/M - Campionato Italiano Mezza Maratona cat. Allievi"
+  nome_fonte: "Campionato Italiano 1/2 maratona cat. Allievi - Campionato Italiano maratona cat. J/S/M"
   data_inizio: 2026-05-24
   data_fine: 2026-05-24
   luogo: "Pordenone (PN); la mezza maratona parte da Aviano (PN)"
@@ -413,6 +430,7 @@
 
 - id: 2026-05-30-bellusco-trofeo-lorenzo-brioni
   nome: "25° Trofeo Lorenzo Brioni"
+  nome_fonte: "25 TROFEO LORENZO BRIONI"
   data_inizio: 2026-05-30
   data_fine: 2026-05-31
   luogo: "Bellusco"
@@ -437,6 +455,7 @@
 
 - id: 2026-05-31-campobasso-trofeo-dimensione-campobasso
   nome: "1° Trofeo Dimensione Città di Campobasso"
+  nome_fonte: "1° Trofeo Dimensione Città di Campobasso"
   data_inizio: 2026-05-31
   data_fine: 2026-05-31
   luogo: "Campobasso"
@@ -461,6 +480,7 @@
 
 - id: 2026-05-31-manduria-manduria-roller-trophy
   nome: "Manduria Roller Trophy"
+  nome_fonte: "MANDURIA ROLLER TROPHY"
   data_inizio: 2026-05-31
   data_fine: 2026-05-31
   luogo: "Manduria"
@@ -485,6 +505,7 @@
 
 - id: 2026-06-02-forli-trofeo-forli-asd-pattinodromo
   nome: "30° Trofeo Città di Forlì - Tappa GPG (in collaborazione con ASD Pattinodromo 3287)"
+  nome_fonte: "30° TROFEO CITTA DI FORLI IN COLLABORAZIONE CON ASD PATTINODROMO 3287 TAPPA GPG"
   data_inizio: 2026-06-02
   data_fine: 2026-06-02
   luogo: "Forlì"
@@ -509,6 +530,7 @@
 
 - id: 2026-06-04-elmas-campionato-italiano-pista-r
   nome: "Campionato Italiano Pista cat. R - Trofeo Skate Italia su pista cat. R12"
+  nome_fonte: "Campionato Italiano Pista cat.R- Trofeo Skate Italia su pista cat. R12"
   data_inizio: 2026-06-04
   data_fine: 2026-06-07
   luogo: "Elmas (CA)"
@@ -531,6 +553,7 @@
 
 - id: 2026-06-11-martinsicuro-giochi-nazionali-societa-bruno
   nome: "Giochi Nazionali per Società Bruno Tiezzi cat. G/E"
+  nome_fonte: "Giochi Nazionali per Societa Bruno Tiezzi"
   data_inizio: 2026-06-11
   data_fine: 2026-06-13
   luogo: "Martinsicuro (TE)"
@@ -553,6 +576,7 @@
 
 - id: 2026-06-20-torino-memorial-samuele-giaccaglia
   nome: "8° Memorial Samuele Giaccaglia"
+  nome_fonte: "8° MEMORIAL SAMUELE GIACCAGLIA"
   data_inizio: 2026-06-20
   data_fine: 2026-06-21
   luogo: "Torino, parco della Colletta"
@@ -577,6 +601,7 @@
 
 - id: 2026-06-21-san-giorgio-ionico-memorial-nazionale-pierfrancesco-mazza
   nome: "3° Memorial Nazionale Pierfrancesco Mazza"
+  nome_fonte: "3° Memorial Nazionale Pierfrancesco Mazza"
   data_inizio: 2026-06-21
   data_fine: 2026-06-21
   luogo: "San Giorgio Ionico (TA)"
@@ -601,6 +626,7 @@
 
 - id: 2026-06-26-bellusco-campionato-italiano-pista-j
   nome: "Campionato Italiano Pista cat. A/J/S"
+  nome_fonte: "Campionato Italiano Pista cat. A/J/S"
   data_inizio: 2026-06-26
   data_fine: 2026-06-28
   luogo: "Bellusco (MB)"
@@ -623,6 +649,7 @@
 
 - id: 2026-07-04-cantu-trofeo-cantu
   nome: "47° Trofeo Città di Cantù"
+  nome_fonte: "47o TROFEO CITTA' di CANTU'"
   data_inizio: 2026-07-04
   data_fine: 2026-07-05
   luogo: "Cantù (CO), circuito stradale Toto Caimi"
@@ -647,6 +674,7 @@
 
 - id: 2026-07-04-fabriano-trofeo-dellamicizia-memorial-donatella
   nome: "46° Trofeo dell'Amicizia e 10° Memorial Donatella Boero"
+  nome_fonte: "46° Trofeo dell'Amicizia e 10° Memorial Donatella Boero"
   data_inizio: 2026-07-04
   data_fine: 2026-07-05
   luogo: "Fabriano (AN)"
@@ -671,6 +699,7 @@
 
 - id: 2026-07-11-san-miniato-memorial-moreno-guerri-trofeo
   nome: "VII Memorial Moreno Guerri - Trofeo Città di San Miniato"
+  nome_fonte: "VII Memorial Moreno Guerri - Trofeo Citta' di San Miniato"
   data_inizio: 2026-07-11
   data_fine: 2026-07-12
   luogo: "San Miniato"
@@ -695,6 +724,7 @@
 
 - id: 2026-07-12-cologno-monzese-trofeo-cologno-monzese
   nome: "5° Trofeo Città di Cologno Monzese"
+  nome_fonte: "5 Trofeo citta' di Cologno Monzese"
   data_inizio: 2026-07-12
   data_fine: 2026-07-12
   luogo: "Cologno Monzese"
@@ -719,6 +749,7 @@
 
 - id: 2026-07-16-torino-campionato-italiano-strada-r
   nome: "Campionato Italiano Strada cat. R - Trofeo Skate Italia su strada cat. R12"
+  nome_fonte: "Campionato Italiano Strada cat.R- Trofeo Skate Italia su strada cat. R12"
   data_inizio: 2026-07-16
   data_fine: 2026-07-19
   luogo: "Torino"
@@ -741,6 +772,7 @@
 
 - id: 2026-07-25-laquila-race-aquila-open-indoor
   nome: "Race L'Aquila Open Indoor - Memorial Romano Maria Cacciani (corsa su pista)"
+  nome_fonte: "RACE L'AQUILA OPEN INDOOR - Corsa su pista - Memorial Romano Maria Cacciani"
   data_inizio: 2026-07-25
   data_fine: 2026-07-26
   luogo: "L'Aquila"
@@ -765,6 +797,7 @@
 
 - id: 2026-07-25-san-giorgio-delle-pertiche-trofeo-vita-avis
   nome: "XIX Trofeo per la Vita con l'AVIS - Tappa GPG e IRC"
+  nome_fonte: "XIX TROFEO PER LA VITA CON L AVIS TAPPA GPG E IRC"
   data_inizio: 2026-07-25
   data_fine: 2026-07-26
   luogo: "San Giorgio delle Pertiche (PD)"
@@ -789,6 +822,7 @@
 
 - id: 2026-08-01-san-benedetto-del-tronto-meeting-san-benedetto-tronto
   nome: "38° Meeting Città di San Benedetto del Tronto"
+  nome_fonte: "38° meeting citta' di San Benedetto del Tronto"
   data_inizio: 2026-08-01
   data_fine: 2026-08-01
   luogo: "San Benedetto del Tronto (AP)"
@@ -813,6 +847,7 @@
 
 - id: 2026-08-05-santa-maria-nuova-giorni-international
   nome: "6 Giorni International 2026"
+  nome_fonte: "6 GIORNI INTERNATIONAL 2026"
   data_inizio: 2026-08-05
   data_fine: 2026-08-09
   luogo: "Santa Maria Nuova (AN)"
@@ -837,6 +872,7 @@
 
 - id: 2026-08-30-mena-di-castagnaro-trofeo-vangadina-corsa-avis
   nome: "Trofeo La Vangadina in Corsa con AVIS"
+  nome_fonte: "Trofeo La Vangadina in Corsa con AVIS"
   data_inizio: 2026-08-30
   data_fine: 2026-08-30
   luogo: "Menà di Castagnaro (VR)"
@@ -861,6 +897,7 @@
 
 - id: 2026-09-03-vado-ligure-campionato-italiano-strada-j
   nome: "Campionato Italiano su Strada cat. A/J/S/M"
+  nome_fonte: "Campionato Italiano su strada cat. A/J/S/M"
   data_inizio: 2026-09-03
   data_fine: 2026-09-09
   luogo: "Vado Ligure (SV), Stadio Chittolina"
@@ -885,6 +922,7 @@
 
 - id: 2026-09-12-cardano-al-campo-trofeo-memorial-antonio-rocchetta
   nome: "8° Trofeo Memorial Antonio Rocchetta - Trofeo Città di Cardano al Campo"
+  nome_fonte: "8° Trofeo Memorial Antonio Rocchetta"
   data_inizio: 2026-09-12
   data_fine: 2026-09-13
   luogo: "Cardano al Campo (VA)"
@@ -907,6 +945,7 @@
 
 - id: 2026-09-13-bagnoli-di-sopra-trofeo-bagnoli-sopra-memorial
   nome: "35° Trofeo Comune di Bagnoli di Sopra - Memorial Guerrino Maggio e Marta Vanzetto - Tappa GPG"
+  nome_fonte: "35° TROFEO COMUNE DI BAGNOLI di SOPRA- MEMORIAL GUERRINO MAGGIO E MARTA VANZETTO-TAPPA GPG"
   data_inizio: 2026-09-13
   data_fine: 2026-09-13
   luogo: "Bagnoli di Sopra (PD), via M. Molini 7"
@@ -931,6 +970,7 @@
 
 - id: 2026-09-13-galbiate-trofeo-sala-galbiate
   nome: "2° Trofeo Sala Galbiate"
+  nome_fonte: "2° TROFEO SALA GALBIATE"
   data_inizio: 2026-09-13
   data_fine: 2026-09-13
   luogo: "Galbiate (LC)"
@@ -955,6 +995,7 @@
 
 - id: 2026-09-13-montesilvano-trofeo-montesilvano
   nome: "1° Trofeo Città di Montesilvano"
+  nome_fonte: "1° TROFEO CITTA' DI MONTESILVANO"
   data_inizio: 2026-09-13
   data_fine: 2026-09-13
   luogo: "Montesilvano"
@@ -979,6 +1020,7 @@
 
 - id: 2026-09-19-cassano-dadda-gran-prix-cassano-dadda
   nome: "16° Gran Prix Cassano d'Adda"
+  nome_fonte: "16° GRAN PRIX CASSANO D'ADDA"
   data_inizio: 2026-09-19
   data_fine: 2026-09-20
   luogo: "Cassano d'Adda"
@@ -1003,6 +1045,7 @@
 
 - id: 2026-09-19-elmas-trofeo-elmas
   nome: "Trofeo Città di Elmas"
+  nome_fonte: "Trofeo Città di Elmas"
   data_inizio: 2026-09-19
   data_fine: 2026-09-20
   luogo: "Elmas (CA)"
@@ -1027,6 +1070,7 @@
 
 - id: 2026-09-20-scaltenigo-memorial-manuel-calzavara-samuele
   nome: "Memorial 2026 Manuel Calzavara e Samuele Spolaore - Tappa GPG"
+  nome_fonte: "MEMORIAL 2026 MANUEL CALZAVARA E SAMUELE SPOLAORE - Tappa GPG"
   data_inizio: 2026-09-20
   data_fine: 2026-09-20
   luogo: "Scaltenigo (VE)"
@@ -1051,6 +1095,7 @@
 
 - id: 2026-09-25-laquila-internazionali-ditalia-open-indoor
   nome: "Internazionali d'Italia Open Indoor"
+  nome_fonte: "INTERNAZIONALI D'ITALIA OPEN INDOOR"
   data_inizio: 2026-09-25
   data_fine: 2026-09-27
   luogo: "L'Aquila"
@@ -1075,6 +1120,7 @@
 
 - id: 2026-09-26-berlino-bmw-berlin-marathon-inlineskating
   nome: "BMW Berlin-Marathon Inlineskating"
+  nome_fonte: ""
   data_inizio: 2026-09-26
   data_fine: 2026-09-26
   luogo: "Berlino, percorso della maratona con arrivo alla Porta di Brandeburgo"
@@ -1099,6 +1145,7 @@
 
 - id: 2026-09-26-trebaseleghe-trofeo-trebaseleghe
   nome: "20° Trofeo Città di Trebaseleghe - Tappa GPG e IRC"
+  nome_fonte: "20° TROFEO CITTA' DI TREBASELEGHE TAPPA GPG - TAPPA IRC."
   data_inizio: 2026-09-26
   data_fine: 2026-09-27
   luogo: "Trebaseleghe (PD)"
@@ -1123,6 +1170,7 @@
 
 - id: 2026-09-27-cinisello-balsamo-memorial-lodovico-bossi
   nome: "1° Memorial Lodovico Bossi"
+  nome_fonte: "1° Memorial Lodovico Bossi"
   data_inizio: 2026-09-27
   data_fine: 2026-09-27
   luogo: "Cinisello Balsamo"
@@ -1147,6 +1195,7 @@
 
 - id: 2026-10-04-montesilvano-trofeo-montesilvano
   nome: "1° Trofeo Città di Montesilvano"
+  nome_fonte: "1° TROFEO CITTA' DI MONTESILVANO"
   data_inizio: 2026-10-04
   data_fine: 2026-10-04
   luogo: "Montesilvano"
@@ -1171,6 +1220,7 @@
 
 - id: 2026-10-17-montichiari-finale-circuiti-senza-frontiere
   nome: "Finale dei Circuiti Senza Frontiere"
+  nome_fonte: "FINALE DEI CIRCUITI SENZA FRONTIERE"
   data_inizio: 2026-10-17
   data_fine: 2026-10-17
   luogo: "Montichiari (BS)"
@@ -1195,6 +1245,7 @@
 
 - id: 2026-10-25-terni-memorial-d-pioli
   nome: "XIV Memorial D. Pioli"
+  nome_fonte: "XIV MEMORIAL D. PIOLI"
   data_inizio: 2026-10-25
   data_fine: 2026-10-25
   luogo: "Terni"
@@ -1219,6 +1270,7 @@
 
 - id: 2026-10-31-napoli-world-skate-marathon-tour-challenger
   nome: "World Skate Marathon Tour 2026 - Naples Challenger Stage"
+  nome_fonte: ""
   data_inizio: 2026-10-31
   data_fine: 2026-10-31
   luogo: "Napoli, Lungomare Caracciolo (circuito di 4 km, centro gara alla Rotonda Diaz)"
@@ -1245,6 +1297,7 @@
 
 - id: 2026-11-08-imola-gran-premio-indoor
   nome: "49° Gran Premio Indoor Città di Imola"
+  nome_fonte: "49° GRAN PREMIO INDOOR CITTà DI IMOLA"
   data_inizio: 2026-11-08
   data_fine: 2026-11-08
   luogo: "Imola (BO), pista piana in cemento, via B. Croce"
@@ -1269,6 +1322,7 @@
 
 - id: 2026-11-28-pescara-trofeo-nazionale
   nome: "4° Trofeo Nazionale Città di Pescara"
+  nome_fonte: "4° TROFEO NAZIONALE CITTÃ DI PESCARA"
   data_inizio: 2026-11-28
   data_fine: 2026-11-29
   luogo: "Pescara, pista 175 m con curve sopraelevate, via Maestri del Lavoro"
@@ -1293,6 +1347,7 @@
 
 - id: 2026-12-06-laquila-internazionali-open-indoor-master-race
   nome: "Internazionali d'Italia Open Indoor — Master Race — Vesmaco Race, VI Memorial Romano Maria Cacciani"
+  nome_fonte: "INTERNAZIONALI D'ITALIA OPEN INDOOR - MASTER RACE - Vesmaco Race VI Memorial Romano Maria Cacciani"
   data_inizio: 2026-12-06
   data_fine: 2026-12-06
   luogo: "L'Aquila, pista con curve sopraelevate 150 m (Vesmaco)"
@@ -1317,6 +1372,7 @@
 
 - id: 2026-12-08-imola-gran-premio-indoor
   nome: "49° Gran Premio Indoor Città di Imola"
+  nome_fonte: "49° GRAN PREMIO INDOOR CITTà DI IMOLA"
   data_inizio: 2026-12-08
   data_fine: 2026-12-08
   luogo: "Imola (BO), pista piana in cemento, via B. Croce"
@@ -1341,6 +1397,7 @@
 
 - id: 2027-04-04-berlino-generali-berlin-half-marathon-inlineskating
   nome: "Generali Berlin Half Marathon Inlineskating"
+  nome_fonte: ""
   data_inizio: 2027-04-04
   data_fine: 2027-04-04
   luogo: "Berlino, percorso della mezza maratona con arrivo alla Porta di Brandeburgo"
@@ -1365,6 +1422,7 @@
 
 - id: 2027-05-28-laquila-internazionali-ditalia-open-indoor
   nome: "Internazionali d'Italia Open Indoor - VII Memorial Romano Maria Cacciani"
+  nome_fonte: "INTERNAZIONALI D'ITALIA OPEN INDOOR -VII Memorial Romano Maria Cacciani"
   data_inizio: 2027-05-28
   data_fine: 2027-05-29
   luogo: "L'Aquila"
@@ -1389,6 +1447,7 @@
 
 - id: 2027-06-06-terni-memorial-alfonso-zenga
   nome: "1° Memorial Alfonso Zenga - Tappa RSC"
+  nome_fonte: "1° Memorial Alfonso Zenga . Tappa RSC"
   data_inizio: 2027-06-06
   data_fine: 2027-06-06
   luogo: "Terni"
@@ -1411,6 +1470,7 @@
 
 - id: 2027-07-03-fabriano-trofeo-dellamicizia-memorial-donatella
   nome: "47° Trofeo dell'Amicizia e 11° Memorial Donatella Boero"
+  nome_fonte: "47' Trofeo dell'Amicizia e 11' Memorial Donatella"
   data_inizio: 2027-07-03
   data_fine: 2027-07-04
   luogo: "Fabriano (AN)"
@@ -1433,6 +1493,7 @@
 
 - id: 2027-07-31-berlino-adidas-runners-city-night-inlineskating
   nome: "adidas Runners City Night Inlineskating"
+  nome_fonte: ""
   data_inizio: 2027-07-31
   data_fine: 2027-07-31
   luogo: "Berlino, Kurfürstendamm"
@@ -1457,6 +1518,7 @@
 
 - id: 2027-07-31-san-benedetto-del-tronto-meeting-san-benedetto-tronto
   nome: "39° Meeting Città di San Benedetto del Tronto"
+  nome_fonte: ""
   data_inizio: 2027-07-31
   data_fine: 2027-07-31
   luogo: "San Benedetto del Tronto (AP)"
@@ -1479,6 +1541,7 @@
 
 - id: 2027-08-03-santa-maria-nuova-trofeo-internazionale-giorni-international
   nome: "Trofeo Internazionale 6 Giorni International 2027 - Circuito RSC"
+  nome_fonte: "Trofeo Internazionale 6 GIORNI INTERNATIONAL 2027 - Circuito RSC"
   data_inizio: 2027-08-03
   data_fine: 2027-08-07
   luogo: "Santa Maria Nuova (AN)"
@@ -1503,6 +1566,7 @@
 
 - id: 2027-09-25-pollenza-memorial-gilda-leoperdi-trofeo
   nome: "XII Memorial Gilda Leoperdi - 2° Trofeo Città di Pollenza"
+  nome_fonte: "XII memorial Gilda Leoperdi - 2° trofeo città di Pollenza"
   data_inizio: 2027-09-25
   data_fine: 2027-09-26
   luogo: "Pollenza"
