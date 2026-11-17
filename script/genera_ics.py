@@ -15,7 +15,13 @@ Cosa fa, nell'ordine:
   3. scrive calendario.ics e index.html nella cartella di uscita (il testo della pagina
      viene da pagina_web/modello_index.html) e vi copia gli altri file di pagina_web/ (stile.css…);
   4. rilegge il file .ics appena scritto e verifica che contenga esattamente
-     gli eventi attesi, con le proprietà obbligatorie e righe conformi.
+     gli eventi attesi, con le proprietà obbligatorie, righe conformi e la
+     descrizione e i link calcolati dai dati.
+
+I link di un evento: nella descrizione, in fondo, [URL] (la pagina dell'organizzatore)
+e [Regolamento FISR] (il regolamento di gara su fisr.info, preso da url_ufficiale o
+dalle fonti), ciascuno solo se c'è; nella proprietà URL e sul nome nella tabella
+della pagina un solo link, quello principale (url_ufficiale, altrimenti url_iscrizione).
 
 Esce con codice 0 solo se tutto è andato bene; altrimenti 1 (errori nei dati
 o nell'uscita) o 2 (errori di uso o di sistema).
@@ -81,6 +87,12 @@ CHIAVI_FONTE = ["url", "letto_il"]
 
 ESPRESSIONE_ID = re.compile(r"^(\d{4}-\d{2}-\d{2})-[a-z0-9]+(?:-[a-z0-9]+)*$")
 ESPRESSIONE_URL = re.compile(r"^https?://\S+$")
+# Regolamento di gara FISR: corsa_trofeo_modulo.php?id_manif=N su fisr.info. Il numero identifica la gara (regola 7).
+ESPRESSIONE_REGOLAMENTO_FISR = re.compile(
+    r"^https?://(?:www\.)?fisr\.info/\S*?corsa_trofeo_modulo\.php\?(?:[^\s#]*&)?id_manif=(\d+)(?:[&#]\S*)?$"
+)
+ETICHETTA_LINK_PRINCIPALE = "URL"                    # la pagina dell'organizzatore (o, in mancanza, quella d'iscrizione)
+ETICHETTA_LINK_REGOLAMENTO = "Regolamento FISR"      # il regolamento di gara su fisr.info
 
 SUFFISSO_UID = "@pattinaggiocorsa-calendario-pubblico"
 NOME_CALENDARIO = "Pattinaggio corsa — gare ed eventi Master/Amatori"
@@ -249,6 +261,27 @@ def converti_fonti(valore, contesto: str, esito: Esito) -> list[Fonte]:
     return fonti
 
 
+def numero_regolamento(indirizzo: str) -> str:
+    """Il numero (id_manif) se l'indirizzo è un regolamento di gara FISR; stringa vuota in ogni altro caso."""
+    if not isinstance(indirizzo, str):
+        return ""
+    trovato = ESPRESSIONE_REGOLAMENTO_FISR.match(indirizzo.strip())
+    return trovato.group(1) if trovato else ""
+
+
+def regolamenti_tra(indirizzi: list[str]) -> list[str]:
+    """Gli indirizzi che sono regolamenti di gara FISR, nell'ordine dato e uno solo per numero di regolamento
+    (lo stesso regolamento sta spesso sia in url_ufficiale sia tra le fonti)."""
+    regolamenti: list[str] = []
+    numeri_visti: set[str] = set()
+    for indirizzo in indirizzi:
+        numero = numero_regolamento(indirizzo)
+        if numero and numero not in numeri_visti:
+            numeri_visti.add(numero)
+            regolamenti.append(indirizzo.strip())
+    return regolamenti
+
+
 def converti_evento(grezzo, posizione: int, esito: Esito) -> Evento | None:
     contesto = f"evento #{posizione}"
     if not isinstance(grezzo, dict):
@@ -323,6 +356,15 @@ def converti_evento(grezzo, posizione: int, esito: Esito) -> Evento | None:
     if scadenza_iscrizione and data_inizio and scadenza_iscrizione > data_inizio:
         esito.avviso(f"{contesto}: la scadenza iscrizioni ({scadenza_iscrizione}) è dopo l'inizio ({data_inizio})")
 
+    # Il link [Regolamento FISR] della descrizione viene da qui: deve essere uno solo e riconoscibile.
+    indirizzi_della_voce = [url_ufficiale, url_iscrizione, *(fonte.url for fonte in fonti)]
+    regolamenti = regolamenti_tra(indirizzi_della_voce)
+    if len(regolamenti) > 1:
+        esito.avviso(f"{contesto}: cita {len(regolamenti)} regolamenti di gara diversi; nella descrizione va solo il primo ({regolamenti[0]})")
+    for indirizzo in indirizzi_della_voce:
+        if "id_manif=" in indirizzo and not numero_regolamento(indirizzo):
+            esito.avviso(f"{contesto}: {indirizzo!r} somiglia a un regolamento di gara FISR ma non ha la forma attesa: non viene mostrato come [{ETICHETTA_LINK_REGOLAMENTO}]")
+
     if len(esito.errori) > errori_prima:
         return None
     assert data_inizio is not None and data_fine is not None  # garantito dai controlli sopra
@@ -384,8 +426,31 @@ def titolo_evento(evento: Evento) -> str:
 
 
 def collegamento_evento(evento: Evento) -> str:
-    """Un solo URL per l'evento: il sito ufficiale o il regolamento di gara; in mancanza, la pagina d'iscrizione."""
+    """Il link principale, uno solo: la pagina dell'organizzatore quando c'è; altrimenti il regolamento di gara
+    (che sta in url_ufficiale finché la pagina dell'organizzatore non è stata letta) o la pagina d'iscrizione.
+    Va nella proprietà URL dell'evento e sul nome nella tabella della pagina."""
     return evento.url_ufficiale or evento.url_iscrizione
+
+
+def collegamento_regolamento(evento: Evento) -> str:
+    """Il regolamento di gara FISR della voce, cercato in url_ufficiale, in url_iscrizione e nelle fonti;
+    stringa vuota se non c'è. Se la voce ne cita più d'uno vale il primo (la validazione lo segnala)."""
+    regolamenti = regolamenti_tra([evento.url_ufficiale, evento.url_iscrizione, *(fonte.url for fonte in evento.fonti)])
+    return regolamenti[0] if regolamenti else ""
+
+
+def collegamenti_descrizione(evento: Evento) -> list[tuple[str, str]]:
+    """Le righe dei link in fondo alla descrizione, come coppie (etichetta, indirizzo), ciascuna solo se c'è:
+    la pagina dell'organizzatore sotto [URL], poi il regolamento di gara sotto [Regolamento FISR].
+    L'etichetta dice sempre che cos'è il link: una voce che ha solo il regolamento mostra solo [Regolamento FISR]
+    (decisione del proprietario, 2026-11-17)."""
+    righe: list[tuple[str, str]] = []
+    principale = collegamento_evento(evento)
+    if principale and not numero_regolamento(principale):
+        righe.append((ETICHETTA_LINK_PRINCIPALE, principale))
+    if regolamento := collegamento_regolamento(evento):
+        righe.append((ETICHETTA_LINK_REGOLAMENTO, regolamento))
+    return righe
 
 
 def etichetta_categorie(evento: Evento) -> str:
@@ -413,8 +478,8 @@ def descrizione_evento(evento: Evento) -> str:
         righe.append(f"[Scadenza iscrizioni] {formatta_data_it(evento.scadenza_iscrizione)}")
     if evento.note:
         righe.append(f"[Informazioni] {evento.note}")
-    if collegamento := collegamento_evento(evento):
-        righe.append(f"[URL] {collegamento}")
+    for etichetta, indirizzo in collegamenti_descrizione(evento):
+        righe.append(f"[{etichetta}] {indirizzo}")
     return "\n".join(righe)
 
 
@@ -446,8 +511,9 @@ def costruisci_calendario(eventi: list[Evento], url_base: str) -> Calendar:
         voce.add("description", descrizione_evento(evento))
         voce.add("location", f"{evento.luogo} ({evento.paese})")
         if collegamento := collegamento_evento(evento):
-            # Proprietà URL (RFC 5545 §3.8.4.6): Calendario di Apple la mostra come campo "URL";
-            # Google Calendar la ignora, per questo lo stesso link sta anche nella descrizione.
+            # Proprietà URL (RFC 5545 §3.8.4.6): Calendario di Apple la mostra come campo "URL" e ne accetta
+            # uno solo, il link principale; Google Calendar la ignora, per questo i link stanno anche
+            # nella descrizione (lì sono due quando ci sono sia l'organizzatore sia il regolamento).
             voce.add("url", collegamento)
         voce.add("categories", [evento.tipo, *evento.categorie])
         if evento.stato in STATUS_ICAL:
@@ -473,7 +539,7 @@ def genera_indice_html(eventi: list[Evento], url_base: str, generato_il: datetim
     righe_tabella: list[str] = []
     for evento in pubblicati:
         nome = html.escape(titolo_evento(evento))
-        if collegamento := collegamento_evento(evento):          # lo stesso link della descrizione nell'ICS
+        if collegamento := collegamento_evento(evento):          # il link principale, lo stesso della proprietà URL nell'ICS
             nome = f'<a href="{html.escape(collegamento)}">{nome}</a>'
         categorie = etichetta_categorie(evento)                   # lo stesso testo della descrizione nell'ICS
         righe_tabella.append(
@@ -579,6 +645,14 @@ def verifica_ics(percorso_ics: Path, eventi: list[Evento], esito: Esito) -> None
             esito.errore(f"{percorso_ics}: DTSTART di {uid} non è una data")
         if uid in attesi and inizio is not None and inizio.dt != attesi[uid].data_inizio:
             esito.errore(f"{percorso_ics}: DTSTART di {uid} è {inizio.dt}, atteso {attesi[uid].data_inizio}")
+        if uid in attesi:
+            # Descrizione e link riletti dal file devono essere quelli calcolati dai dati: è ciò che vede chi consulta.
+            descrizione_attesa = descrizione_evento(attesi[uid])
+            if str(componente.get("description", "")) != descrizione_attesa:
+                esito.errore(f"{percorso_ics}: la descrizione di {uid} riletta dal file non è quella attesa")
+            url_atteso = collegamento_evento(attesi[uid])
+            if str(componente.get("url", "")) != url_atteso:
+                esito.errore(f"{percorso_ics}: la proprietà URL di {uid} è {str(componente.get('url', ''))!r}, attesa {url_atteso!r}")
 
     for uid, conteggio in trovati.items():
         if conteggio > 1:
