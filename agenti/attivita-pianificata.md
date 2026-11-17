@@ -33,6 +33,7 @@ Il repository GitHub `aiBR3/PattinaggioCorsa-calendario-pubblico` è già clonat
 ## Dopo la creazione
 
 - Prima esecuzione di prova fatta dal proprietario il 2026-11-06 alle 16:40 ora italiana ("Esegui ora"): 36 secondi, nessuna PR aperta e nessuna voce da ricontrollare, quindi nessuna modifica, come atteso; `gh api` risponde; dalla shell dell'ambiente fisr.info risponde 200 e skatingclubcomina.eu 301 (la rete è davvero completa). L'agente ha segnalato che le istruzioni della sessione gli chiedono di spingere solo su un ramo `claude/…`: da qui la frase sul ramo nel punto 3 del prompt (la documentazione dice che il prompt può indicare un altro ramo).
+- Prima esecuzione con lavoro vero martedì 2026-11-17 (06:07-06:10 ora italiana, PR #55): riuscita. Il push sul ramo `raccolta/…` è passato, quindi la frase sul ramo nel punto 3 del prompt funziona. Nell'ambiente `pip` e `python3` sono di versioni diverse (3.13 e 3.11): da qui il comando del passo 0.4 di `agenti/arricchimento.md`.
 
 - La prima esecuzione utile è martedì 2026-11-10. Per provarla subito: "Run now" nella pagina dell'attività; senza una PR `raccolta/…` aperta l'agente resta su `main` e fa solo il ricontrollo delle voci vecchie (Passo 1 del prompt), aprendo al massimo una PR `arricchimento/AAAA-MM-GG`.
 - Ogni esecuzione compare in "History" nella pagina dell'attività e si apre come una sessione: lì si legge cosa ha fatto. "Succeeded" dice solo che la sessione è finita senza errore, non che il lavoro è giusto: la verifica è la PR.
