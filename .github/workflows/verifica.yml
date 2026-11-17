@@ -38,6 +38,9 @@ jobs:
       - name: Prova intervallo_scansione.py su dati costruiti
         run: python3 script/prove_intervallo_scansione.py
 
+      - name: Prova i link scritti da genera_ics.py su voci costruite
+        run: python3 script/prove_genera_ics.py
+
       - name: Genera e verifica l'uscita
         run: >
           python3 script/genera_ics.py

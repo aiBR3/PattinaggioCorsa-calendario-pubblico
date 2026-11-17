@@ -38,6 +38,7 @@ script/raccogli_fisr.py    ← livello 1: lista + regolamenti di gara di fisr.in
 script/converti_fisr.py    ← livelli 2-3: JSON grezzo → voci di eventi.yaml, con prova citata dall'art. 10
 script/prove_converti_fisr.py ← prove automatiche di converti_fisr.py su casi costruiti (le esegue anche verifica.yml)
 script/genera_ics.py       ← eventi.yaml → calendario.ics + index.html (valida ingresso e uscita)
+script/prove_genera_ics.py ← prove automatiche dei link scritti da genera_ics.py, su voci costruite (le esegue anche verifica.yml)
 script/intervallo_scansione.py ← quali regolamenti leggere questa settimana: l'intervallo attorno all'ultimo che esiste e quelli delle gare future, da rileggere
 script/prove_intervallo_scansione.py ← prove automatiche di intervallo_scansione.py su dati costruiti (le esegue anche verifica.yml)
 script/raccogli_societa.py ← registro delle società dalle classifiche, dai risultati e dai regolamenti di fisr.info
@@ -54,7 +55,7 @@ uscita/                    ← generato localmente, ignorato da git
 
 ## Cosa vede chi consulta il calendario
 
-Per ogni evento: titolo (con eventuale prefisso di stato), date, luogo, e una descrizione breve, una riga per voce con l'etichetta tra parentesi quadre (mai seguita dai due punti, che gli organizzatori usano nei loro testi), in quest'ordine: `[Categorie ammesse]` (o "Non ancora pubblicate" per `annunciato`, "Da verificare" negli altri casi senza categorie, "Pattinata non competitiva" per le pattinate), `[Distanze]`, `[Organizzatore]`, `[Scadenza iscrizioni]`, le `note` in `[Informazioni]` e per ultimo **un solo link** in `[URL]` (`url_ufficiale`, altrimenti `url_iscrizione`). Lo stesso link va anche nella proprietà `URL` dell'evento (Calendario di Apple la mostra, Google la ignora). `prova`, `fonti`, `stato`, `verificato_il` e `note_interne` sono dati di lavoro: restano nell'YAML e non vanno nella descrizione. Le `note` sono visibili a tutti: scriverle per chi pattina (impianto, orari, quote, come ci si iscrive); tutto il resto (dubbi, doppioni, anomalie di lettura, cosa ricontrollare) va in `note_interne`.
+Per ogni evento: titolo (con eventuale prefisso di stato), date, luogo, e una descrizione breve, una riga per voce con l'etichetta tra parentesi quadre (mai seguita dai due punti, che gli organizzatori usano nei loro testi), in quest'ordine: `[Categorie ammesse]` (o "Non ancora pubblicate" per `annunciato`, "Da verificare" negli altri casi senza categorie, "Pattinata non competitiva" per le pattinate), `[Distanze]`, `[Organizzatore]`, `[Scadenza iscrizioni]`, le `note` in `[Informazioni]` e per ultimi **i link**, ciascuno solo se c'è: `[URL]`, la pagina dell'organizzatore (`url_ufficiale`, altrimenti `url_iscrizione`, quando non è un regolamento di gara), poi `[Regolamento FISR]`, il regolamento di gara su fisr.info (preso da `url_ufficiale` o dalle `fonti`). L'etichetta dice sempre che cos'è il link: una voce che ha solo il regolamento mostra solo `[Regolamento FISR]` (decisione 2026-11-17). Nella proprietà `URL` dell'evento (Calendario di Apple la mostra, Google la ignora) e sul nome nella tabella della pagina va **un solo link**, quello principale: `url_ufficiale`, altrimenti `url_iscrizione`. `prova`, `fonti`, `stato`, `verificato_il` e `note_interne` sono dati di lavoro: restano nell'YAML e non vanno nella descrizione, tranne l'indirizzo del regolamento di gara, che il generatore prende dalle `fonti`. Le `note` sono visibili a tutti: scriverle per chi pattina (impianto, orari, quote, come ci si iscrive); tutto il resto (dubbi, doppioni, anomalie di lettura, cosa ricontrollare) va in `note_interne`.
 
 ## Schema di `dati/eventi.yaml`
 
@@ -73,7 +74,7 @@ Lo script rifiuta chiavi sconosciute, chiavi mancanti e valori incoerenti.
 | `categorie` | lista | sottoinsieme di `[master, amatori]`; **vuota finché non c'è `prova`**. Una gara aperta a tutti per anno di nascita, senza categorie agonistiche obbligatorie (tipiche all'estero: "Jahrgänge 2012 und älter"), vale `[master, amatori]` |
 | `distanze` | lista di testi | es. `["maratona", "10 km"]`; vuota se ignote. Un titolo federale con "Maratona" o "Mezza Maratona" basta per `"maratona"` / `"mezza maratona"` (decisione 2026-11-06); il resto dalla pagina dell'organizzatore o dal regolamento |
 | `organizzatore` | testo | la società o il club che organizza materialmente la gara sul posto (es. "Skating Club Comina A.S.D."), non la federazione che la approva o la rende campionato; può essere vuoto |
-| `url_ufficiale`, `url_iscrizione` | URL http(s) o `""` | |
+| `url_ufficiale`, `url_iscrizione` | URL http(s) o `""` | `url_ufficiale` è il link principale: la pagina dell'evento sul sito dell'organizzatore appena è stata letta nell'edizione giusta; fino ad allora, per le gare FISR, il regolamento di gara, che resta comunque tra le `fonti` (decisione 2026-11-17) |
 | `scadenza_iscrizione` | data o `""` | |
 | `stato` | enum | vedi sotto |
 | `fonti` | lista, **almeno una** | ogni voce: `url` + `letto_il` (data) |
@@ -127,6 +128,9 @@ python3 script/converti_fisr.py --raccolta registro/AAAA-MM-GG-raccolta-fisr.jso
 # 3. Revisione a mano delle voci nuove (nomi, luoghi, organizzatori), poi:
 python3 script/genera_ics.py --ingresso dati/eventi.yaml --uscita uscita \
     --url-base https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico
+
+# Dopo ogni modifica a genera_ics.py: prove sui link di ogni evento (descrizione, proprietà URL, pagina)
+python3 script/prove_genera_ics.py
 
 # Dopo ogni modifica a converti_fisr.py: prove su casi costruiti (riconoscimento, regolamento cambiato, doppioni)
 python3 script/prove_converti_fisr.py
