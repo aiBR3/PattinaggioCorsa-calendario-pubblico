@@ -342,15 +342,15 @@
 
 - id: segnalazioni-tally
   nome: "Segnalazioni volontarie (modulo Tally)"
-  url: ""
+  url: https://tally.so/r/peDGAP
   paese: IT
   metodo: script
   frequenza: settimanale
   copre: [gare, pattinate]
   affidabilita: social
   stato: da_verificare
-  note: "Da creare (Fase 4). Campo obbligatorio 'incolla il testo del post'. Lettura via API Tally; copia su Google Sheet. Sostituisce la lettura di Facebook/Instagram, che hanno il login wall."
-  ultimo_controllo: ""
+  note: "Modulo pubblico creato dal proprietario il 2026-11-22, aperto a chiunque visiti la pagina (decisioni del 2026-11-22 in appunti/decisioni.md). Lo legge script/raccogli_segnalazioni.py ogni lunedì dentro raccolta.yml, attraverso l'API di Tally, con la chiave nel segreto dell'environment segnalazioni. Nel repository entrano solo i candidati ripuliti (dati/segnalazioni.yaml); il testo dell'annuncio e le note restano nel modulo. Una segnalazione è una pista, mai una fonte né una prova: per questo l'affidabilità è social. Resta da_verificare finché la prima lettura vera non è riuscita."
+  ultimo_controllo: 2026-11-22
 
 - id: federazioni-estere
   nome: "Federazioni di CH, ES, PT, FR, AT, DE, SI"
