@@ -100,7 +100,7 @@ Stati:
 | `rinviato` | | sì, titolo con `[RINVIATA]` |
 | `annullato` | | sì, titolo con `[ANNULLATA]` (non usiamo STATUS:CANCELLED: alcune app lo nasconderebbero) |
 | `non_autorizzato` | a calendario federale "in attesa di autorizzazione" | sì, titolo con `[non ancora autorizzata]` |
-| `escluso` | **verificato**: non ammette Master/Amatori, oppure è fuori perimetro o non è una pattinata | **no**; resta nel file come memoria, con la prova |
+| `escluso` | **verificato**: non ammette Master/Amatori, oppure è fuori perimetro, non è una pattinata o non è una gara di pattinaggio (una pista di un aggregatore che il sito dell'organizzatore smentisce) | **no**; resta nel file come memoria, con la prova |
 
 ## Schema di `dati/fonti.yaml`
 

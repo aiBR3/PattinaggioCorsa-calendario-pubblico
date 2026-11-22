@@ -1604,6 +1604,31 @@
   note: "Iscrizioni dal 02/04/2026 all'11/03/2027 (o fino a esaurimento), quota 66-73 €. Limite di tempo 1:10 h; casco obbligatorio; solo pattini in linea (ruote max 125 mm) e quad."
   note_interne: "L'intestazione della pagina di iscrizione dice ancora '2026', ma il periodo di iscrizione (fino all'11/03/2027) e il calendario SCC Events sono dell'edizione 2027. La versione inglese traduce male l'ammissione ('born in 2012 and later'): fa fede il tedesco. Rileggere quando il sito viene aggiornato. Arricchimento 2026-11-06: sito trovato, pagina dell'edizione giusta, nessuna novità; ricerche: nessuna (pagina già nota); pagine: https://www.generali-berliner-halbmarathon.de/anmelden/inlineskating."
 
+- id: 2027-04-11-bonn-deutsche-post-marathon-bonn
+  nome: "Deutsche Post Marathon Bonn"
+  nome_fonte: ""
+  data_inizio: 2027-04-11
+  data_fine: 2027-04-11
+  luogo: "Bonn"
+  paese: DE
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: ""
+  url_ufficiale: "https://www.deutschepostmarathonbonn.de/"
+  url_iscrizione: ""
+  scadenza_iscrizione: ""
+  stato: escluso
+  fonti:
+    - url: https://www.deutschepostmarathonbonn.de/
+      letto_il: 2026-11-22
+    - url: https://www.deutschepostmarathonbonn.de/halbmarathon/
+      letto_il: 2026-11-22
+  verificato_il: 2026-11-22
+  prova: "Non è una gara di pattinaggio: sul sito dell'organizzatore, letto il 2026-11-22, le gare dell'edizione dell'11 aprile 2027 sono maratona, mezza maratona, staffetta, 10 km e gare per aziende e scuole, tutte di corsa; nessuna gara sui pattini, e la ricerca interna del sito con la parola inline dà solo notizie di corsa."
+  note: ""
+  note_interne: "Pista da Skate Terminal (aggregatore), che la elenca come mezza maratona sui pattini: tenuta come memoria per non riproporla (decisione del proprietario, 2026-11-22). La parola Inlinen compare solo in una vecchia descrizione nell'intestazione della home. Da riguardare solo se l'organizzatore annuncia di nuovo una gara sui pattini."
+
 - id: 2027-04-11-linz-fischer-brot-inline-skating-halbmarathon
   nome: "Fischer Brot Inline Skating Halbmarathon"
   nome_fonte: ""
@@ -1920,6 +1945,29 @@
   prova: ""
   note: "45ª edizione, annunciata per il 22 e 23 maggio 2027 all'Esplanade Général de Gaulle. Programma e iscrizioni dell'edizione 2027 non sono ancora pubblicati."
   note_interne: "Pista da Skate Terminal (aggregatore, mai fonte); la gara era già stata vista nel censimento del 2026-11-17. Date, luogo e organizzatore dalla home del sito ufficiale. Le pagine di dettaglio hanno il 2027 nel titolo ma linkano ancora i documenti del 2026 (modulo di iscrizione e programma delle gare): edizione precedente, dati non copiati. Nel 2026 c'erano una maratona Vétérans aperta anche ai non tesserati, la maratona internazionale della World Inline Cup per soli tesserati e due pattinate gratuite: quando escono i documenti 2027, verificare e passare a confermato con la prova. Le pagine dicono iscrizioni online dal 1° febbraio, senza anno: rileggere a febbraio 2027. Arricchimento 2026-11-22: sito trovato, pagina dell'edizione precedente (sito dalla scheda dell'aggregatore Skate Terminal); ricerche: nessuna; pagine: https://rennessurroulettes.com/, https://rennessurroulettes.com/marathon-veterans/, https://rennessurroulettes.com/marathon-international/, https://rennessurroulettes.com/inscriptions/."
+
+- id: 2027-05-23-salisburgo-salzburg-marathon
+  nome: "Salzburg Marathon"
+  nome_fonte: ""
+  data_inizio: 2027-05-23
+  data_fine: 2027-05-23
+  luogo: "Salisburgo"
+  paese: AT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: ""
+  url_ufficiale: "https://salzburg-marathon.at/de/"
+  url_iscrizione: ""
+  scadenza_iscrizione: ""
+  stato: escluso
+  fonti:
+    - url: https://salzburg-marathon.at/de/
+      letto_il: 2026-11-22
+  verificato_il: 2026-11-22
+  prova: "Non è una gara di pattinaggio: sul sito dell'organizzatore, letto il 2026-11-22, le gare del 23 maggio 2027 e dei giorni vicini (maratona, mezza maratona, 10 km, staffetta, corsa femminile, gare per ragazzi e altre) sono tutte di corsa; nessuna gara sui pattini."
+  note: ""
+  note_interne: "Pista da Skate Terminal (aggregatore), che la elenca tra le gare di pattinaggio di velocità: tenuta come memoria per non riproporla (decisione del proprietario, 2026-11-22). Letta la home del sito, con l'elenco delle gare. Da riguardare solo se l'organizzatore annuncia una gara sui pattini."
 
 - id: 2027-05-28-laquila-internazionali-ditalia-open-indoor
   nome: "Internazionali d'Italia Open Indoor - VII Memorial Romano Maria Cacciani"
