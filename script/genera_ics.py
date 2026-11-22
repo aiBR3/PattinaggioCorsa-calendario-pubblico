@@ -317,8 +317,6 @@ def converti_evento(grezzo, posizione: int, esito: Esito) -> Evento | None:
 
     luogo = converti_testo(grezzo["luogo"], "luogo", contesto, esito, obbligatorio=True)
     paese = converti_testo(grezzo["paese"], "paese", contesto, esito, obbligatorio=True)
-    if paese and paese not in PAESI_AMMESSI:
-        esito.errore(f"{contesto}: 'paese' {paese!r} fuori perimetro; ammessi: {sorted(PAESI_AMMESSI)} (se il perimetro cambia, aggiorna CLAUDE.md e questo script)")
 
     tipo = converti_testo(grezzo["tipo"], "tipo", contesto, esito, obbligatorio=True)
     if tipo and tipo not in TIPI_AMMESSI:
@@ -334,6 +332,14 @@ def converti_evento(grezzo, posizione: int, esito: Esito) -> Evento | None:
     stato = converti_testo(grezzo["stato"], "stato", contesto, esito, obbligatorio=True)
     if stato and stato not in STATI_AMMESSI:
         esito.errore(f"{contesto}: 'stato' {stato!r} non ammesso; ammessi: {sorted(STATI_AMMESSI)}")
+    # Perimetro. Un paese fuori dall'elenco è ammesso solo per una voce "escluso": è la memoria di un evento scartato
+    # proprio perché fuori perimetro, così nessuno lo ripropone (decisione 2026-11-22); una voce esclusa non viene pubblicata.
+    if paese and paese not in PAESI_AMMESSI:
+        if stato != "escluso":
+            esito.errore(f"{contesto}: 'paese' {paese!r} fuori perimetro; ammessi: {sorted(PAESI_AMMESSI)}; un altro paese è ammesso solo con stato 'escluso' "
+                         f"(se il perimetro cambia, aggiorna CLAUDE.md e questo script)")
+        elif not re.fullmatch(r"[A-Z]{2}", paese):
+            esito.errore(f"{contesto}: 'paese' {paese!r} deve essere un codice di due lettere maiuscole")
 
     fonti = converti_fonti(grezzo["fonti"], contesto, esito)
     verificato_il = converti_data(grezzo["verificato_il"], "verificato_il", contesto, esito, obbligatoria=False)
