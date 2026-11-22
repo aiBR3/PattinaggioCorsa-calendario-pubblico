@@ -2,32 +2,23 @@
 """
 Calcola quali regolamenti di gara (id_manif) leggere nella raccolta settimanale.
 
-Gli id dei regolamenti di gara su fisr.info crescono con la data di creazione del documento,
-non con la data della gara. Ogni settimana si leggono quindi:
+Gli id dei regolamenti di gara su fisr.info crescono con la data di creazione del documento, non con la data della gara. Ogni settimana si leggono quindi:
 
   1. un intervallo attorno all'ultimo regolamento che ESISTE: per trovare quelli nuovi;
-  2. i regolamenti delle gare future già in dati/eventi.yaml, uno per uno: per accorgersi
-     quando un organizzatore li cambia (date, categorie, scadenza), anche se il loro numero
-     è ormai lontano dall'intervallo. Senza questa rilettura converti_fisr.py non vedrebbe
-     mai un regolamento cambiato.
+  2. i regolamenti delle gare future già in dati/eventi.yaml, uno per uno: per accorgersi quando un organizzatore li cambia (date, categorie, scadenza), anche se il loro numero è ormai lontano dall'intervallo. Senza questa rilettura converti_fisr.py non vedrebbe mai un regolamento cambiato.
 
 Una scansione completa (es. 6300-7100) resta possibile a mano con "Run workflow".
 
 L'ultimo regolamento che esiste si ricava da due posti, e vince il più alto:
   - dati/eventi.yaml: gli URL corsa_trofeo_modulo.php?id_manif=N in url_ufficiale e in fonti;
   - registro/*-raccolta-fisr.json: gli id dei regolamenti scaricati e quelli linkati nelle righe.
-NON conta l'estremo superiore dell'intervallo scandito: quei numeri sono stati provati, non
-trovati (fino al 2026-11-16 contava, e dopo ogni raccolta committata l'intervallo successivo
-saltava in avanti di 300 numeri, lasciando un buco: vedi appunti/diario.md).
+NON conta l'estremo superiore dell'intervallo scandito: quei numeri sono stati provati, non trovati (fino al 2026-11-16 contava, e dopo ogni raccolta committata l'intervallo successivo saltava in avanti di 300 numeri, lasciando un buco: vedi appunti/diario.md).
 
 Uso:
   python3 script/intervallo_scansione.py [--eventi dati/eventi.yaml] [--registro registro] [--margine 300] [--ripresa 50]
-      stampa su stdout due interi separati da uno spazio: "DA A", con DA = ultimo esistente - ripresa + 1
-      (gli ultimi vengono riletti: molti nascono come bozze vuote e si riempiono dopo) e A = ultimo esistente + margine;
+      stampa su stdout due interi separati da uno spazio: "DA A", con DA = ultimo esistente - ripresa + 1 (gli ultimi vengono riletti: molti nascono come bozze vuote e si riempiono dopo) e A = ultimo esistente + margine;
   python3 script/intervallo_scansione.py --da-rileggere [--eventi dati/eventi.yaml] [--dal AAAA-MM-GG]
-      stampa su una riga, separati da spazi, gli id dei regolamenti citati dalle voci con data_inizio >= DAL
-      (predefinito: oggi; raccolta.yml passa la stessa data minima della raccolta; riga vuota se non ce ne sono). raccogli_fisr.py li riceve con --rileggi-regolamenti e salta da sé
-      quelli già dentro l'intervallo.
+      stampa su una riga, separati da spazi, gli id dei regolamenti citati dalle voci con data_inizio >= DAL (predefinito: oggi; raccolta.yml passa la stessa data minima della raccolta; riga vuota se non ce ne sono). raccogli_fisr.py li riceve con --rileggi-regolamenti e salta da sé quelli già dentro l'intervallo.
 Esce con errore se non trova nessun id (meglio fermarsi che scandire a caso).
 """
 
@@ -71,8 +62,7 @@ def id_dagli_eventi(percorso: Path) -> set[int]:
 
 
 def regolamenti_delle_voci_future(percorso: Path, dal: date) -> list[int]:
-    """Gli id dei regolamenti di gara citati (url_ufficiale, fonti) dalle voci con data_inizio >= dal, in ordine.
-    Tutti gli stati: anche una gara oggi esclusa può ricevere le categorie Master in un regolamento rivisto."""
+    """Gli id dei regolamenti di gara citati (url_ufficiale, fonti) dalle voci con data_inizio >= dal, in ordine. Tutti gli stati: anche una gara oggi esclusa può ricevere le categorie Master in un regolamento rivisto."""
     if not percorso.is_file():
         sys.exit(f"file degli eventi non trovato: {percorso}")
     eventi = yaml.safe_load(percorso.read_text(encoding="utf-8"))
@@ -100,8 +90,7 @@ def regolamenti_delle_voci_future(percorso: Path, dal: date) -> list[int]:
 
 
 def id_dal_registro(cartella: Path) -> set[int]:
-    """Gli id dei regolamenti che le raccolte precedenti hanno trovato: quelli scaricati e quelli linkati nelle righe.
-    L'estremo superiore dell'intervallo scandito NON conta: è un numero provato, non un regolamento che esiste."""
+    """Gli id dei regolamenti che le raccolte precedenti hanno trovato: quelli scaricati e quelli linkati nelle righe. L'estremo superiore dell'intervallo scandito NON conta: è un numero provato, non un regolamento che esiste."""
     trovati: set[int] = set()
     if not cartella.is_dir():
         return trovati

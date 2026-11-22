@@ -1,30 +1,16 @@
 # Raccolta settimanale da fisr.info (Fase 2) e, dal 2026-11-22, dal calendario delle pattinate di Pattiniamo l'Italia.
 #
-# Quando: ogni lunedì alle 05:17 UTC, oppure a mano da "Actions → Run workflow"
-# (con la possibilità di indicare un intervallo di id da scandire e una data minima).
-# Cosa: lancia gli script deterministici (raccogli_fisr.py → converti_fisr.py → genera_ics.py);
-# se dati/eventi.yaml cambia (voci nuove, oppure voci esistenti promosse perché è arrivato
-# il regolamento di gara o l'autorizzazione, oppure aggiornate perché il regolamento di gara
-# è cambiato) apre una pull request, che il proprietario
-# rivede (nomi, luoghi, organizzatori, regola 10 di CLAUDE.md) e fonde a mano.
-# Non scrive mai su main. Non giudica: le voci hanno lo stato che converti_fisr.py
-# sa dimostrare con il regolamento di gara (confermato/escluso) oppure da_verificare.
-# Dopo le gare, converti_pattinate.py legge il calendario pubblico di Pattiniamo l'Italia: pattinate nuove
-# (da_verificare, luogo da indicare), date o titoli cambiati, annullamenti. Se quella lettura fallisce
-# eventi.yaml non viene toccato dalle pattinate e il resto della raccolta prosegue: l'errore è nel riassunto.
+# Quando: ogni lunedì alle 05:17 UTC, oppure a mano da "Actions → Run workflow" (con la possibilità di indicare un intervallo di id da scandire e una data minima).
+# Cosa: lancia gli script deterministici (raccogli_fisr.py → converti_fisr.py → genera_ics.py); se dati/eventi.yaml cambia (voci nuove, oppure voci esistenti promosse perché è arrivato il regolamento di gara o l'autorizzazione, oppure aggiornate perché il regolamento di gara è cambiato) apre una pull request, che il proprietario rivede (nomi, luoghi, organizzatori, regola 10 di CLAUDE.md) e fonde a mano. Non scrive mai su main. Non giudica: le voci hanno lo stato che converti_fisr.py sa dimostrare con il regolamento di gara (confermato/escluso) oppure da_verificare.
+# Dopo le gare, converti_pattinate.py legge il calendario pubblico di Pattiniamo l'Italia: pattinate nuove (da_verificare, luogo da indicare), date o titoli cambiati, annullamenti. Se quella lettura fallisce eventi.yaml non viene toccato dalle pattinate e il resto della raccolta prosegue: l'errore è nel riassunto.
 #
-# Prima di tutto un job a parte legge il modulo pubblico delle segnalazioni (script raccogli_segnalazioni.py): è l'unico che
-# conosce la chiave di Tally, non può scrivere nel repository e passa al job di raccolta i soli candidati già ripuliti,
-# che lì vengono ricontrollati e aggiunti a dati/segnalazioni.yaml. Se quella lettura fallisce, la raccolta prosegue.
+# Prima di tutto un job a parte legge il modulo pubblico delle segnalazioni (script raccogli_segnalazioni.py): è l'unico che conosce la chiave di Tally, non può scrivere nel repository e passa al job di raccolta i soli candidati già ripuliti, che lì vengono ricontrollati e aggiunti a dati/segnalazioni.yaml. Se quella lettura fallisce, la raccolta prosegue.
 #
-# Tracce (regola 5): i rapporti di ogni esecuzione sono allegati al job come artefatto;
-# quando c'è una PR sono anche committati in registro/. Il riassunto del job dice cosa è successo.
+# Tracce (regola 5): i rapporti di ogni esecuzione sono allegati al job come artefatto; quando c'è una PR sono anche committati in registro/. Il riassunto del job dice cosa è successo.
 #
 # Requisiti una tantum (impostazioni del repository, le fa il proprietario):
-#   Settings → Actions → General → Workflow permissions:
-#   "Allow GitHub Actions to create and approve pull requests" attivo.
-# Nota: su una PR aperta con il token di Actions verifica.yml non parte da sola (GitHub la tiene in attesa
-# di "Approve workflows to run"), perciò questo workflow esegue da sé genera_ics.py prima di aprire la PR.
+#   Settings → Actions → General → Workflow permissions: "Allow GitHub Actions to create and approve pull requests" attivo.
+# Nota: su una PR aperta con il token di Actions verifica.yml non parte da sola (GitHub la tiene in attesa di "Approve workflows to run"), perciò questo workflow esegue da sé genera_ics.py prima di aprire la PR.
 
 name: Raccolta settimanale da fisr.info
 
@@ -61,9 +47,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # È l'unico job che conosce la chiave di Tally: sta nel segreto dell'environment "segnalazioni", che GitHub consegna
-  # solo ai job lanciati dal ramo main. Ha permessi di sola lettura e non scrive nel repository: passa al job di raccolta
-  # i soli candidati già ripuliti, in base64. Il testo libero delle segnalazioni non esce da qui (regola 9).
+  # È l'unico job che conosce la chiave di Tally: sta nel segreto dell'environment "segnalazioni", che GitHub consegna solo ai job lanciati dal ramo main. Ha permessi di sola lettura e non scrive nel repository: passa al job di raccolta i soli candidati già ripuliti, in base64. Il testo libero delle segnalazioni non esce da qui (regola 9).
   segnalazioni:
     name: Legge le segnalazioni dal modulo
     runs-on: ubuntu-latest
@@ -157,9 +141,7 @@ jobs:
           else
             data_minima=$(date -u -d "${oggi} -14 days" +%Y-%m-%d)
           fi
-          # Regolamenti delle gare future già in eventi.yaml: si rileggono ogni settimana, uno per uno,
-          # perché gli organizzatori li cambiano (date, categorie, scadenza) anche quando il loro numero
-          # è ormai fuori dall'intervallo. Senza rilettura converti_fisr.py non vedrebbe i cambi.
+          # Regolamenti delle gare future già in eventi.yaml: si rileggono ogni settimana, uno per uno, perché gli organizzatori li cambiano (date, categorie, scadenza) anche quando il loro numero è ormai fuori dall'intervallo. Senza rilettura converti_fisr.py non vedrebbe i cambi.
           rileggi=$(python3 script/intervallo_scansione.py --da-rileggere --dal "${data_minima}")
           if ! [[ "${rileggi}" =~ ^[0-9\ ]*$ ]]; then
             echo "::error::intervallo_scansione.py --da-rileggere non ha prodotto un elenco di numeri (ricevuto '${rileggi}')"
@@ -191,8 +173,7 @@ jobs:
           --rapporto "registro/${{ steps.parametri.outputs.oggi }}-conversione-fisr.md"
           --scrivi
 
-      # Le pattinate vengono da un'altra fonte. Se lo script fallisce (fonte non raggiungibile, lettura sospetta,
-      # controllo in uscita) non ha scritto nulla in eventi.yaml: la raccolta delle gare non deve fermarsi per questo.
+      # Le pattinate vengono da un'altra fonte. Se lo script fallisce (fonte non raggiungibile, lettura sospetta, controllo in uscita) non ha scritto nulla in eventi.yaml: la raccolta delle gare non deve fermarsi per questo.
       - name: Pattinate dal calendario di Pattiniamo l'Italia
         id: pattinate
         continue-on-error: true
@@ -207,8 +188,7 @@ jobs:
         run: |
           echo "::warning::converti_pattinate.py è fallito: nessuna pattinata è stata toccata. Il motivo è nel rapporto delle pattinate (riassunto e artefatto del job)."
 
-      # Le segnalazioni lette dal job "segnalazioni" arrivano come variabile d'ambiente, mai dentro un comando: qui vengono
-      # ricontrollate con le stesse regole e aggiunte a dati/segnalazioni.yaml. Se qualcosa non va il file non viene toccato.
+      # Le segnalazioni lette dal job "segnalazioni" arrivano come variabile d'ambiente, mai dentro un comando: qui vengono ricontrollate con le stesse regole e aggiunte a dati/segnalazioni.yaml. Se qualcosa non va il file non viene toccato.
       - name: Unisce le segnalazioni ai candidati
         id: unisci_segnalazioni
         continue-on-error: true

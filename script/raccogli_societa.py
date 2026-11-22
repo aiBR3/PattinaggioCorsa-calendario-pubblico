@@ -3,29 +3,17 @@
 Costruisce e aggiorna il registro delle società di pattinaggio corsa (dati/societa.yaml).
 
 Da dove vengono i dati, per una stagione (parametro "anno" di fisr.info: 2026 = stagione 2025/26):
-  1. Classifiche di società ufficiali su fisr.info → attivita.rollergames.it: Trofeo Tiezzi, Trofeo
-     Bonacossa, Campionati Italiani strada/pista/indoor, più i campionati regionali pista e strada
-     delle 20 regioni. Ogni riga dà CODICE SOCIETÀ FISR (la chiave del registro), sigla e punti.
-  2. Pagine dei risultati di ogni gara della stagione (attivita.rollergames.it/corsa/rrunn/...):
-     l'intestazione "Organizzato da ..." dà il nome esteso della società organizzatrice.
-  3. Regolamenti di gara (corsa_trofeo_modulo.php?id_manif=N, gli id presi da un JSON di raccolta):
-     l'art. 1 dà la sigla della società organizzatrice e il testo spesso riporta il suo sito.
+  1. Classifiche di società ufficiali su fisr.info → attivita.rollergames.it: Trofeo Tiezzi, Trofeo Bonacossa, Campionati Italiani strada/pista/indoor, più i campionati regionali pista e strada delle 20 regioni. Ogni riga dà CODICE SOCIETÀ FISR (la chiave del registro), sigla e punti.
+  2. Pagine dei risultati di ogni gara della stagione (attivita.rollergames.it/corsa/rrunn/...): l'intestazione "Organizzato da ..." dà il nome esteso della società organizzatrice.
+  3. Regolamenti di gara (corsa_trofeo_modulo.php?id_manif=N, gli id presi da un JSON di raccolta): l'art. 1 dà la sigla della società organizzatrice e il testo spesso riporta il suo sito.
 
-Cosa NON fa: non cerca sul web, non apre i siti delle società, non decide nulla. I siti trovati nei
-regolamenti finiscono in `siti_candidati` finché una persona (o l'agente di arricchimento) non li
-verifica e li promuove a `sito`. I campi compilati a mano (nome, citta, sito, social, stato_sito,
-fonte_sito, note) non vengono mai sovrascritti: lo script aggiunge, non toglie.
+Cosa NON fa: non cerca sul web, non apre i siti delle società, non decide nulla. I siti trovati nei regolamenti finiscono in `siti_candidati` finché una persona (o l'agente di arricchimento) non li verifica e li promuove a `sito`. I campi compilati a mano (nome, citta, sito, social, stato_sito, fonte_sito, note) non vengono mai sovrascritti: lo script aggiunge, non toglie.
 
 Uso:
-  python3 script/raccogli_societa.py --anno 2026 --registro dati/societa.yaml \
-      [--raccolta registro/AAAA-MM-GG-raccolta-fisr.json] [--rapporto registro/AAAA-MM-GG-societa.md] \
-      [--pausa 0.3] [--senza-risultati] [--senza-regolamenti]
+  python3 script/raccogli_societa.py --anno 2026 --registro dati/societa.yaml [--raccolta registro/AAAA-MM-GG-raccolta-fisr.json] [--rapporto registro/AAAA-MM-GG-societa.md] [--pausa 0.3] [--senza-risultati] [--senza-regolamenti]
   python3 script/raccogli_societa.py --solo-verifica --registro dati/societa.yaml
 
-Controlli: ogni pagina letta deve avere la forma attesa (tabella con codice numerico, intestazione
-"Organizzato da"), altrimenti la pagina viene segnalata nel rapporto e ignorata; il registro viene
-riletto e validato dopo la scrittura (chiavi, codici unici, URL, date); se qualcosa non torna lo
-script si ferma con un messaggio chiaro e non lascia un file a metà.
+Controlli: ogni pagina letta deve avere la forma attesa (tabella con codice numerico, intestazione "Organizzato da"), altrimenti la pagina viene segnalata nel rapporto e ignorata; il registro viene riletto e validato dopo la scrittura (chiavi, codici unici, URL, date); se qualcosa non torna lo script si ferma con un messaggio chiaro e non lascia un file a metà.
 """
 
 from __future__ import annotations
@@ -239,8 +227,7 @@ def scrivi_registro(percorso: Path, registro: dict[str, dict]) -> None:
         return json.dumps(valore, ensure_ascii=False)
 
     righe = ["# Registro delle società di pattinaggio corsa (chiave: codice società FISR).",
-             "# Generato e aggiornato da script/raccogli_societa.py; i campi nome, citta, sito, social, stato_sito,",
-             "# fonte_sito e note si compilano a mano o dall'arricchimento e lo script non li tocca. Schema in dati/LEGGIMI.md.", ""]
+             "# Generato e aggiornato da script/raccogli_societa.py; i campi nome, citta, sito, social, stato_sito, fonte_sito e note si compilano a mano o dall'arricchimento e lo script non li tocca. Schema in dati/LEGGIMI.md.", ""]
     for chiave in sorted(registro, key=ordine):
         voce = registro[chiave]
         righe.append(f"- codice_fisr: {testo_yaml(voce['codice_fisr'])}")

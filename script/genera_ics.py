@@ -3,28 +3,17 @@
 genera_ics.py — genera calendario.ics e index.html a partire da dati/eventi.yaml.
 
 Uso:
-    python3 script/genera_ics.py --ingresso dati/eventi.yaml --uscita uscita \
-        [--url-base https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico]
+    python3 script/genera_ics.py --ingresso dati/eventi.yaml --uscita uscita [--url-base https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico]
 
 Cosa fa, nell'ordine:
-  1. legge il file YAML e lo valida campo per campo; al primo gruppo di errori
-     si ferma e li elenca tutti, con l'id dell'evento e il campo sbagliato;
-  2. costruisce il calendario: gli eventi con stato "escluso" non vengono
-     pubblicati, tutti gli altri sì (con un prefisso nel titolo se lo stato
-     non è "confermato" o "annunciato");
-  3. scrive calendario.ics e index.html nella cartella di uscita (il testo della pagina
-     viene da pagina_web/modello_index.html) e vi copia gli altri file di pagina_web/ (stile.css…);
-  4. rilegge il file .ics appena scritto e verifica che contenga esattamente
-     gli eventi attesi, con le proprietà obbligatorie, righe conformi e la
-     descrizione e i link calcolati dai dati.
+  1. legge il file YAML e lo valida campo per campo; al primo gruppo di errori si ferma e li elenca tutti, con l'id dell'evento e il campo sbagliato;
+  2. costruisce il calendario: gli eventi con stato "escluso" non vengono pubblicati, tutti gli altri sì (con un prefisso nel titolo se lo stato non è "confermato" o "annunciato");
+  3. scrive calendario.ics e index.html nella cartella di uscita (il testo della pagina viene da pagina_web/modello_index.html) e vi copia gli altri file di pagina_web/ (stile.css…);
+  4. rilegge il file .ics appena scritto e verifica che contenga esattamente gli eventi attesi, con le proprietà obbligatorie, righe conformi e la descrizione e i link calcolati dai dati.
 
-I link di un evento: nella descrizione, in fondo, [URL] (la pagina dell'organizzatore)
-e [Regolamento FISR] (il regolamento di gara su fisr.info, preso da url_ufficiale o
-dalle fonti), ciascuno solo se c'è; nella proprietà URL e sul nome nella tabella
-della pagina un solo link, quello principale (url_ufficiale, altrimenti url_iscrizione).
+I link di un evento: nella descrizione, in fondo, [URL] (la pagina dell'organizzatore) e [Regolamento FISR] (il regolamento di gara su fisr.info, preso da url_ufficiale o dalle fonti), ciascuno solo se c'è; nella proprietà URL e sul nome nella tabella della pagina un solo link, quello principale (url_ufficiale, altrimenti url_iscrizione).
 
-Esce con codice 0 solo se tutto è andato bene; altrimenti 1 (errori nei dati
-o nell'uscita) o 2 (errori di uso o di sistema).
+Esce con codice 0 solo se tutto è andato bene; altrimenti 1 (errori nei dati o nell'uscita) o 2 (errori di uso o di sistema).
 """
 
 from __future__ import annotations
@@ -67,8 +56,7 @@ PREFISSO_TITOLO = {
     "rinviato": "[RINVIATA] ",
     "annullato": "[ANNULLATA] ",
 }
-# STATUS iCalendar. Per "annullato" non usiamo CANCELLED perché alcune app
-# nascondono gli eventi cancellati: meglio il prefisso visibile nel titolo.
+# STATUS iCalendar. Per "annullato" non usiamo CANCELLED perché alcune app nascondono gli eventi cancellati: meglio il prefisso visibile nel titolo.
 STATUS_ICAL = {
     "confermato": "CONFIRMED",
     "annunciato": "TENTATIVE",
@@ -97,9 +85,7 @@ ETICHETTA_LINK_REGOLAMENTO = "Regolamento FISR"      # il regolamento di gara su
 SUFFISSO_UID = "@pattinaggiocorsa-calendario-pubblico"
 NOME_CALENDARIO = "Pattinaggio corsa — gare ed eventi Master/Amatori"
 DESCRIZIONE_CALENDARIO = (
-    "Gare ed eventi di pattinaggio corsa aperti alle categorie Master e "
-    "Amatori/Fitness in Italia e paesi vicini. Generato automaticamente da "
-    "dati/eventi.yaml del repository PattinaggioCorsa-calendario-pubblico."
+    "Gare ed eventi di pattinaggio corsa aperti alle categorie Master e Amatori/Fitness in Italia e paesi vicini. Generato automaticamente da dati/eventi.yaml del repository PattinaggioCorsa-calendario-pubblico."
 )
 NOME_FILE_ICS = "calendario.ics"
 NOME_FILE_HTML = "index.html"
@@ -151,8 +137,7 @@ class Evento:
 
     @property
     def ultima_modifica(self) -> datetime:
-        """Data deterministica: l'ultima data in cui abbiamo toccato l'evento.
-        Serve per DTSTAMP/LAST-MODIFIED senza rumore a ogni generazione."""
+        """Data deterministica: l'ultima data in cui abbiamo toccato l'evento. Serve per DTSTAMP/LAST-MODIFIED senza rumore a ogni generazione."""
         date_note = [fonte.letto_il for fonte in self.fonti]
         if self.verificato_il:
             date_note.append(self.verificato_il)
@@ -270,8 +255,7 @@ def numero_regolamento(indirizzo: str) -> str:
 
 
 def regolamenti_tra(indirizzi: list[str]) -> list[str]:
-    """Gli indirizzi che sono regolamenti di gara FISR, nell'ordine dato e uno solo per numero di regolamento
-    (lo stesso regolamento sta spesso sia in url_ufficiale sia tra le fonti)."""
+    """Gli indirizzi che sono regolamenti di gara FISR, nell'ordine dato e uno solo per numero di regolamento (lo stesso regolamento sta spesso sia in url_ufficiale sia tra le fonti)."""
     regolamenti: list[str] = []
     numeri_visti: set[str] = set()
     for indirizzo in indirizzi:
@@ -332,12 +316,10 @@ def converti_evento(grezzo, posizione: int, esito: Esito) -> Evento | None:
     stato = converti_testo(grezzo["stato"], "stato", contesto, esito, obbligatorio=True)
     if stato and stato not in STATI_AMMESSI:
         esito.errore(f"{contesto}: 'stato' {stato!r} non ammesso; ammessi: {sorted(STATI_AMMESSI)}")
-    # Perimetro. Un paese fuori dall'elenco è ammesso solo per una voce "escluso": è la memoria di un evento scartato
-    # proprio perché fuori perimetro, così nessuno lo ripropone (decisione 2026-11-22); una voce esclusa non viene pubblicata.
+    # Perimetro. Un paese fuori dall'elenco è ammesso solo per una voce "escluso": è la memoria di un evento scartato proprio perché fuori perimetro, così nessuno lo ripropone (decisione 2026-11-22); una voce esclusa non viene pubblicata.
     if paese and paese not in PAESI_AMMESSI:
         if stato != "escluso":
-            esito.errore(f"{contesto}: 'paese' {paese!r} fuori perimetro; ammessi: {sorted(PAESI_AMMESSI)}; un altro paese è ammesso solo con stato 'escluso' "
-                         f"(se il perimetro cambia, aggiorna CLAUDE.md e questo script)")
+            esito.errore(f"{contesto}: 'paese' {paese!r} fuori perimetro; ammessi: {sorted(PAESI_AMMESSI)}; un altro paese è ammesso solo con stato 'escluso' (se il perimetro cambia, aggiorna CLAUDE.md e questo script)")
         elif not re.fullmatch(r"[A-Z]{2}", paese):
             esito.errore(f"{contesto}: 'paese' {paese!r} deve essere un codice di due lettere maiuscole")
 
@@ -432,24 +414,18 @@ def titolo_evento(evento: Evento) -> str:
 
 
 def collegamento_evento(evento: Evento) -> str:
-    """Il link principale, uno solo: la pagina dell'organizzatore quando c'è; altrimenti il regolamento di gara
-    (che sta in url_ufficiale finché la pagina dell'organizzatore non è stata letta) o la pagina d'iscrizione.
-    Va nella proprietà URL dell'evento e sul nome nella tabella della pagina."""
+    """Il link principale, uno solo: la pagina dell'organizzatore quando c'è; altrimenti il regolamento di gara (che sta in url_ufficiale finché la pagina dell'organizzatore non è stata letta) o la pagina d'iscrizione. Va nella proprietà URL dell'evento e sul nome nella tabella della pagina."""
     return evento.url_ufficiale or evento.url_iscrizione
 
 
 def collegamento_regolamento(evento: Evento) -> str:
-    """Il regolamento di gara FISR della voce, cercato in url_ufficiale, in url_iscrizione e nelle fonti;
-    stringa vuota se non c'è. Se la voce ne cita più d'uno vale il primo (la validazione lo segnala)."""
+    """Il regolamento di gara FISR della voce, cercato in url_ufficiale, in url_iscrizione e nelle fonti; stringa vuota se non c'è. Se la voce ne cita più d'uno vale il primo (la validazione lo segnala)."""
     regolamenti = regolamenti_tra([evento.url_ufficiale, evento.url_iscrizione, *(fonte.url for fonte in evento.fonti)])
     return regolamenti[0] if regolamenti else ""
 
 
 def collegamenti_descrizione(evento: Evento) -> list[tuple[str, str]]:
-    """Le righe dei link in fondo alla descrizione, come coppie (etichetta, indirizzo), ciascuna solo se c'è:
-    la pagina dell'organizzatore sotto [URL], poi il regolamento di gara sotto [Regolamento FISR].
-    L'etichetta dice sempre che cos'è il link: una voce che ha solo il regolamento mostra solo [Regolamento FISR]
-    (decisione del proprietario, 2026-11-17)."""
+    """Le righe dei link in fondo alla descrizione, come coppie (etichetta, indirizzo), ciascuna solo se c'è: la pagina dell'organizzatore sotto [URL], poi il regolamento di gara sotto [Regolamento FISR]. L'etichetta dice sempre che cos'è il link: una voce che ha solo il regolamento mostra solo [Regolamento FISR] (decisione del proprietario, 2026-11-17)."""
     righe: list[tuple[str, str]] = []
     principale = collegamento_evento(evento)
     if principale and not numero_regolamento(principale):
@@ -471,10 +447,7 @@ def etichetta_categorie(evento: Evento) -> str:
 
 
 def descrizione_evento(evento: Evento) -> str:
-    """Testo per chi consulta il calendario: poche righe, niente dati di lavoro
-    (prova, fonti, stato: lo stato è già nel titolo come prefisso).
-    Le etichette stanno tra parentesi quadre: i due punti li usano gli organizzatori
-    nei loro testi e creerebbero confusione."""
+    """Testo per chi consulta il calendario: poche righe, niente dati di lavoro (prova, fonti, stato: lo stato è già nel titolo come prefisso). Le etichette stanno tra parentesi quadre: i due punti li usano gli organizzatori nei loro testi e creerebbero confusione."""
     righe: list[str] = ["[Categorie ammesse] " + etichetta_categorie(evento)]
     if evento.distanze:
         righe.append("[Distanze] " + ", ".join(evento.distanze))
@@ -517,9 +490,7 @@ def costruisci_calendario(eventi: list[Evento], url_base: str) -> Calendar:
         voce.add("description", descrizione_evento(evento))
         voce.add("location", f"{evento.luogo} ({evento.paese})")
         if collegamento := collegamento_evento(evento):
-            # Proprietà URL (RFC 5545 §3.8.4.6): Calendario di Apple la mostra come campo "URL" e ne accetta
-            # uno solo, il link principale; Google Calendar la ignora, per questo i link stanno anche
-            # nella descrizione (lì sono due quando ci sono sia l'organizzatore sia il regolamento).
+            # Proprietà URL (RFC 5545 §3.8.4.6): Calendario di Apple la mostra come campo "URL" e ne accetta uno solo, il link principale; Google Calendar la ignora, per questo i link stanno anche nella descrizione (lì sono due quando ci sono sia l'organizzatore sia il regolamento).
             voce.add("url", collegamento)
         voce.add("categories", [evento.tipo, *evento.categorie])
         if evento.stato in STATUS_ICAL:

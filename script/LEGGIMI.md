@@ -25,18 +25,14 @@ script/requisiti.txt       ← dipendenze Python
 ```
 pip install -r script/requisiti.txt
 
-# 1. Raccolta grezza da fisr.info (lista della stagione + regolamenti di gara; la scansione degli id
-#    trova anche i regolamenti di gara che la lista non linka più: gare passate e "non autorizzate")
-python3 script/raccogli_fisr.py --anno 2026 --da 2026-01-01 --regolamenti \
-    --scansione-regolamenti 6300 7100 --uscita registro/AAAA-MM-GG-raccolta-fisr.json
+# 1. Raccolta grezza da fisr.info (lista della stagione + regolamenti di gara; la scansione degli id trova anche i regolamenti di gara che la lista non linka più: gare passate e "non autorizzate")
+python3 script/raccogli_fisr.py --anno 2026 --da 2026-01-01 --regolamenti --scansione-regolamenti 6300 7100 --uscita registro/AAAA-MM-GG-raccolta-fisr.json
 
 # 2. Conversione in voci di eventi.yaml (prima senza --scrivi, per leggere il rapporto)
-python3 script/converti_fisr.py --raccolta registro/AAAA-MM-GG-raccolta-fisr.json \
-    --rapporto registro/AAAA-MM-GG-conversione-fisr.md [--scrivi]
+python3 script/converti_fisr.py --raccolta registro/AAAA-MM-GG-raccolta-fisr.json --rapporto registro/AAAA-MM-GG-conversione-fisr.md [--scrivi]
 
 # 3. Revisione a mano delle voci nuove (nomi, luoghi, organizzatori), poi:
-python3 script/genera_ics.py --ingresso dati/eventi.yaml --uscita uscita \
-    --url-base https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico
+python3 script/genera_ics.py --ingresso dati/eventi.yaml --uscita uscita --url-base https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico
 
 # Dopo ogni modifica a genera_ics.py: prove sui link di ogni evento (descrizione, proprietà URL, pagina)
 python3 script/prove_genera_ics.py
@@ -50,15 +46,12 @@ python3 script/converti_pattinate.py --rapporto registro/AAAA-MM-GG-pattinate.md
 # Dopo ogni modifica a converti_pattinate.py: prove su calendari costruiti (titoli, date, annullamenti, voci escluse)
 python3 script/prove_converti_pattinate.py
 
-# Settimanalmente (è ciò che fa raccolta.yml) si leggono l'intervallo attorno all'ultimo regolamento che esiste
-# e, uno per uno, i regolamenti delle gare future già in eventi.yaml (per accorgersi quando cambiano):
+# Settimanalmente (è ciò che fa raccolta.yml) si leggono l'intervallo attorno all'ultimo regolamento che esiste e, uno per uno, i regolamenti delle gare future già in eventi.yaml (per accorgersi quando cambiano):
 python3 script/intervallo_scansione.py                  # stampa "DA A", es. 7052 7401
 python3 script/intervallo_scansione.py --da-rileggere   # stampa gli id per raccogli_fisr.py --rileggi-regolamenti
 
-# A ogni stagione (o quando servono società nuove): registro delle società dalle classifiche federali,
-# dai risultati ("Organizzato da") e dai regolamenti (siti citati); i campi a mano restano
-python3 script/raccogli_societa.py --anno 2026 --registro dati/societa.yaml \
-    --raccolta registro/AAAA-MM-GG-raccolta-fisr.json --rapporto registro/AAAA-MM-GG-societa.md
+# A ogni stagione (o quando servono società nuove): registro delle società dalle classifiche federali, dai risultati ("Organizzato da") e dai regolamenti (siti citati); i campi a mano restano
+python3 script/raccogli_societa.py --anno 2026 --registro dati/societa.yaml --raccolta registro/AAAA-MM-GG-raccolta-fisr.json --rapporto registro/AAAA-MM-GG-societa.md
 ```
 
 Il workflow `raccolta.yml` esegue questi stessi passi ogni lunedì (05:17 UTC) con `--da` = 14 giorni prima, l'intervallo di `intervallo_scansione.py` (gli ultimi 50 numeri fino all'ultimo regolamento che esiste davvero e i 300 successivi) e la rilettura, uno per uno, dei regolamenti delle gare da quella data in poi già in `eventi.yaml` (`--rileggi-regolamenti`: senza, un regolamento cambiato non verrebbe visto); poi esegue `converti_pattinate.py` sul calendario di Pattiniamo l'Italia (se quella lettura fallisce le pattinate non vengono toccate e la raccolta delle gare prosegue, con l'errore nel riassunto del job) e aggiunge a `dati/segnalazioni.yaml` i candidati che un job a parte ha letto dal modulo pubblico delle segnalazioni (è l'unico job che conosce la chiave di Tally, che sta nel segreto dell'environment `segnalazioni`, consegnato solo al ramo `main`); se `eventi.yaml` o `segnalazioni.yaml` cambiano apre una PR dal ramo `raccolta/AAAA-MM-GG`, una sola alla volta (se la precedente è ancora aperta non ne apre un'altra). Quella PR è aperta dal bot di Actions: finché tocca solo `dati/eventi.yaml`, `dati/societa.yaml`, `dati/segnalazioni.yaml` e `registro/`, che in `CODEOWNERS` non hanno un responsabile, il proprietario la fonde senza doverla prima approvare (decisione 2026-11-17, vedi `appunti/decisioni.md`); se tocca altro, per esempio una voce nuova in `appunti/diario.md`, deve prima approvarla ("Approve"). Da "Actions → Run workflow" si può lanciare a mano, anche con un intervallo di id esplicito per una scansione completa. Su una PR aperta con il token di Actions `verifica.yml` non parte da sola: GitHub crea l'esecuzione ma la tiene ferma finché chi ha accesso in scrittura non preme "Approve workflows to run"; per questo il workflow esegue da sé `genera_ics.py` prima di aprirla. I push successivi sullo stesso ramo fatti con le credenziali del proprietario (l'arricchimento del martedì) fanno partire `verifica.yml` normalmente.
