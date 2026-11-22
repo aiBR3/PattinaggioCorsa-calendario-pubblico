@@ -38,6 +38,12 @@ jobs:
       - name: Prova le regole di converti_pattinate.py su calendari costruiti
         run: python3 script/prove_converti_pattinate.py
 
+      - name: Prova il filtro delle segnalazioni su risposte costruite
+        run: python3 script/prove_raccogli_segnalazioni.py
+
+      - name: Controlla dati/segnalazioni.yaml
+        run: python3 script/raccogli_segnalazioni.py verifica
+
       - name: Prova intervallo_scansione.py su dati costruiti
         run: python3 script/prove_intervallo_scansione.py
 
