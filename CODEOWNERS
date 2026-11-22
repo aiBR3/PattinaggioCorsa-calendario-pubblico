@@ -1,13 +1,9 @@
 # Ogni riga: un modello di percorso seguito dai suoi responsabili. Vale l'ultima riga che corrisponde.
-#
-# A che cosa serve: un bot o un agente non deve poter far entrare modifiche in main senza l'approvazione
-# del proprietario. Una pull request non aperta da lui che tocca un file con un responsabile si può fondere
-# solo dopo la sua approvazione (ruleset "Protezione su main", revisione del code owner).
+# A che cosa serve: un bot o un agente non deve poter far entrare modifiche in main senza l'approvazione del proprietario. Una pull request non aperta da lui che tocca un file con un responsabile si può fondere solo dopo la sua approvazione (ruleset "Protezione su main", revisione del code owner).
 
 * @aiBR3
 
-# Eccezione (decisione 2026-11-17, appunti/decisioni.md): i file che la raccolta del lunedì e l'arricchimento
-# del martedì scrivono ogni settimana non hanno un responsabile, così la loro pull request non resta bloccata.
+# Eccezione (decisione 2026-11-17, appunti/decisioni.md): i file che la raccolta del lunedì e l'arricchimento del martedì scrivono ogni settimana non hanno un responsabile, così la loro pull request non resta bloccata.
 # Una riga senza responsabile toglie quello ereditato dalla riga "*".
 /dati/eventi.yaml
 /dati/societa.yaml
