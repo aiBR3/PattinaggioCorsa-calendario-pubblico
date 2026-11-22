@@ -1604,6 +1604,58 @@
   note: "Iscrizioni dal 02/04/2026 all'11/03/2027 (o fino a esaurimento), quota 66-73 €. Limite di tempo 1:10 h; casco obbligatorio; solo pattini in linea (ruote max 125 mm) e quad."
   note_interne: "L'intestazione della pagina di iscrizione dice ancora '2026', ma il periodo di iscrizione (fino all'11/03/2027) e il calendario SCC Events sono dell'edizione 2027. La versione inglese traduce male l'ammissione ('born in 2012 and later'): fa fede il tedesco. Rileggere quando il sito viene aggiornato. Arricchimento 2026-11-06: sito trovato, pagina dell'edizione giusta, nessuna novità; ricerche: nessuna (pagina già nota); pagine: https://www.generali-berliner-halbmarathon.de/anmelden/inlineskating."
 
+- id: 2027-04-11-bonn-deutsche-post-marathon-bonn
+  nome: "Deutsche Post Marathon Bonn"
+  nome_fonte: ""
+  data_inizio: 2027-04-11
+  data_fine: 2027-04-11
+  luogo: "Bonn"
+  paese: DE
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: ""
+  url_ufficiale: "https://www.deutschepostmarathonbonn.de/"
+  url_iscrizione: ""
+  scadenza_iscrizione: ""
+  stato: escluso
+  fonti:
+    - url: https://www.deutschepostmarathonbonn.de/
+      letto_il: 2026-11-22
+    - url: https://www.deutschepostmarathonbonn.de/halbmarathon/
+      letto_il: 2026-11-22
+  verificato_il: 2026-11-22
+  prova: "Non è una gara di pattinaggio: sul sito dell'organizzatore, letto il 2026-11-22, le gare dell'edizione dell'11 aprile 2027 sono maratona, mezza maratona, staffetta, 10 km e gare per aziende e scuole, tutte di corsa; nessuna gara sui pattini, e la ricerca interna del sito con la parola inline dà solo notizie di corsa."
+  note: ""
+  note_interne: "Pista da Skate Terminal (aggregatore), che la elenca come mezza maratona sui pattini: tenuta come memoria per non riproporla (decisione del proprietario, 2026-11-22). La parola Inlinen compare solo in una vecchia descrizione nell'intestazione della home. Da riguardare solo se l'organizzatore annuncia di nuovo una gara sui pattini."
+
+- id: 2027-04-11-linz-fischer-brot-inline-skating-halbmarathon
+  nome: "Fischer Brot Inline Skating Halbmarathon"
+  nome_fonte: ""
+  data_inizio: 2027-04-11
+  data_fine: 2027-04-11
+  luogo: "Linz, partenza dal ponte autostradale voest, arrivo in Wiener Straße"
+  paese: AT
+  tipo: gara
+  categorie: ["master", "amatori"]
+  distanze: ["mezza maratona"]
+  organizzatore: "Linzer Veranstaltungsgesellschaft m.b.H."
+  url_ufficiale: "https://www.linzmarathon.at/de/bewerbe/fischer-brot-inline-skating-halbmarathon"
+  url_iscrizione: "https://www.linzmarathon.at/de/anmeldung"
+  scadenza_iscrizione: 2027-03-18
+  stato: confermato
+  fonti:
+    - url: https://www.linzmarathon.at/de/bewerbe/fischer-brot-inline-skating-halbmarathon
+      letto_il: 2026-11-22
+    - url: https://www.linzmarathon.at/de/athleteninfo/teilnahmebedingungen
+      letto_il: 2026-11-22
+    - url: https://www.linzmarathon.at/de/anmeldung
+      letto_il: 2026-11-22
+  verificato_il: 2026-11-22
+  prova: "Sito dell'organizzatore, condizioni di partecipazione (https://www.linzmarathon.at/de/athleteninfo/teilnahmebedingungen), in tedesco: alla manifestazione 'ist jede/r berechtigt, der/die das 18. Lebensjahr vollendet hat', e i minorenni con il consenso dei genitori. Nessuna categoria agonistica obbligatoria: gara aperta a tutti per età, Master e amatori ammessi (decisione 2026-11-06). La pagina della gara dice che nel 2027 si corre anche sui pattini e dà orari e quote 2027; la data, domenica 11 aprile 2027, è nella home e nella pagina delle iscrizioni."
+  note: "Mezza maratona sui pattini dentro la 25ª Oberbank Linz Donau Marathon. Partenza alle 08:02 dal ponte autostradale voest, arrivo in Wiener Straße, tempo massimo fino alle 10:30. 200 posti; quota 55 € (prima fase) o 69 € (seconda fase); iscrizioni entro giovedì 18/03/2027 o fino a esaurimento dei posti. Casco obbligatorio. I pettorali non si ritirano il giorno della gara."
+  note_interne: "Pista da Skate Terminal (aggregatore, mai fonte): tutti i dati vengono dal sito dell'organizzatore, letto in tedesco. Arricchimento 2026-11-22: sito trovato, pagina dell'edizione giusta (sito dalla scheda dell'aggregatore Skate Terminal); ricerche: nessuna; pagine: https://www.linzmarathon.at/de/bewerbe/fischer-brot-inline-skating-halbmarathon, https://www.linzmarathon.at/de/athleteninfo/teilnahmebedingungen, https://www.linzmarathon.at/de/anmeldung, https://www.linzmarathon.at/de/."
+
 - id: 2027-04-11-pattinata-bologna-provincia
   nome: "Pattinata – Bologna e provincia"
   nome_fonte: "Bologna e provincia"
@@ -1673,6 +1725,35 @@
   note: ""
   note_interne: "Dal calendario di Pattiniamo l'Italia, che dà solo date e titolo (primo carico del 2026-11-22, rivisto a mano): luogo e organizzatore letti dal titolo."
 
+- id: 2027-04-24-burg-spreewaldmarathon-skate-marathon
+  nome: "Spreewaldmarathon – Skate-Marathon"
+  nome_fonte: ""
+  data_inizio: 2027-04-24
+  data_fine: 2027-04-24
+  luogo: "Burg (Spreewald), Festplatz"
+  paese: DE
+  tipo: gara
+  categorie: ["master", "amatori"]
+  distanze: ["maratona 42,195 km", "24 km Skate-Halbmarathon"]
+  organizzatore: "Spreewald-Marathon e.V."
+  url_ufficiale: "https://spreewaldmarathon.de/wpswm/skaten/"
+  url_iscrizione: "https://lausitzer-sportevents.de/anmeldung/anm.php?N=2027041"
+  scadenza_iscrizione: 2027-04-04
+  stato: confermato
+  fonti:
+    - url: https://spreewaldmarathon.de/wpswm/skaten/
+      letto_il: 2026-11-22
+    - url: https://spreewaldmarathon.de/wpswm/wp-content/uploads/AGB-ALLGEMEINE-TEILNAHMEBEDINGUNGEN.pdf
+      letto_il: 2026-11-22
+    - url: https://spreewaldmarathon.de/wpswm/wp-content/uploads/SM-2027-Kurz-Programm.jpg
+      letto_il: 2026-11-22
+    - url: https://lausitzer-sportevents.de/anmeldung/anm.php?N=2027041
+      letto_il: 2026-11-22
+  verificato_il: 2026-11-22
+  prova: "Condizioni generali dell'organizzatore (AGB, PDF linkato dalla pagina Skaten), in tedesco: 'Teilnahmeberechtigt ist jeder, auch ohne Vereinszugehörigkeit', con la sola età minima prevista per ogni gara; la pagina di iscrizione prevede premi per classi d'età. Gara aperta a tutti: Master e amatori ammessi (decisione 2026-11-06). Giorno, orari e distanze dal programma 2027 (immagine) e dalla pagina di iscrizione: sabato 24/04/2027 a Burg, Skate-Marathon alle 17:00 e Skate-Halbmarathon alle 17:05."
+  note: "Sabato sera a Burg, dentro il 25° Spreewaldmarathon (22-25 aprile): maratona sui pattini alle 17:00 e mezza maratona di 24 km alle 17:05, partenza e arrivo al Festplatz, arrivo chiuso alle 19:20. Quote: maratona 70 € entro il 03/01 e 80 € entro il 04/04; 24 km 60 € e 70 €. Nessuna iscrizione dopo il 04/04/2027. Casco obbligatorio."
+  note_interne: "Pista da Skate Terminal (aggregatore, mai fonte): tutti i dati vengono dal sito dell'organizzatore e dalla sua pagina di iscrizione, letti in tedesco. Il menu del sito chiama la gara corta '23,6 km Skate-Halbmarathon', programma e iscrizione dicono 24 km. Arricchimento 2026-11-22: sito trovato, pagina dell'edizione giusta (sito dalla scheda dell'aggregatore Skate Terminal); ricerche: nessuna; pagine: https://spreewaldmarathon.de/wpswm/skaten/, https://spreewaldmarathon.de/wpswm/42-km-skate-marathon/, https://spreewaldmarathon.de/wpswm/impressum/, https://lausitzer-sportevents.de/anmeldung/anm.php?N=2027041."
+
 - id: 2027-05-01-pattinata-to
   nome: "Pattinata – Torino"
   nome_fonte: "TO"
@@ -1696,6 +1777,31 @@
   note: ""
   note_interne: "Dal calendario di Pattiniamo l'Italia, che dà solo date e titolo (primo carico del 2026-11-22, rivisto a mano): luogo e organizzatore letti dal titolo. Nel titolo il luogo è la sigla 'TO'."
 
+- id: 2027-05-02-duisburg-rhein-ruhr-inline-marathon
+  nome: "Rhein-Ruhr-Inline-Marathon"
+  nome_fonte: ""
+  data_inizio: 2027-05-02
+  data_fine: 2027-05-02
+  luogo: "Duisburg, arrivo nella Schauinsland-Reisen-Arena"
+  paese: DE
+  tipo: gara
+  categorie: ["master", "amatori"]
+  distanze: ["maratona 42,195 km"]
+  organizzatore: "Stadtsportbund Duisburg e.V."
+  url_ufficiale: "https://www.rhein-ruhr-marathon.de/strecke/inline-marathon.html"
+  url_iscrizione: "https://www.rhein-ruhr-marathon.de/anmeldung/online-anmeldung.html"
+  scadenza_iscrizione: ""
+  stato: confermato
+  fonti:
+    - url: https://www.rhein-ruhr-marathon.de/strecke/inline-marathon.html
+      letto_il: 2026-11-22
+    - url: https://www.rhein-ruhr-marathon.de/im-ziel/altersklassenwertung-inline-skating-marathon.html
+      letto_il: 2026-11-22
+  verificato_il: 2026-11-22
+  prova: "Sito dell'organizzatore, pagina delle classi d'età della gara sui pattini (https://www.rhein-ruhr-marathon.de/im-ziel/altersklassenwertung-inline-skating-marathon.html), in tedesco: 'Mindestalter für die Teilnahme am Inline-Skating-Marathon: 16 Jahre'; classifiche per anno di nascita, da Jugend e Junioren fino ai Masters da U40 a U80 (Masters U40: nati dal 1988 al 1992). Ammissione per sola età, senza categorie agonistiche obbligatorie: Master e amatori ammessi (decisione 2026-11-06). Data e quote 2027 dalla pagina della gara: 02 maggio 2027, 28ª edizione."
+  note: "Maratona sui pattini (28ª edizione) dentro il 44° Rhein-Ruhr-Marathon. Partenza unica alle 08:00, tempo massimo 2:30 ore, arrivo nello stadio. Età minima 16 anni; classifiche per età fino ai Masters U80. Ruote al massimo da 125 mm. Quota 75 € entro il 31/12/2026, 85 € entro il 15/03/2027, 95 € entro il 22/04/2027, 105 € fino al giorno della gara."
+  note_interne: "Pista da Skate Terminal (aggregatore, mai fonte): tutti i dati vengono dal sito dell'organizzatore, letto in tedesco. La pagina della gara cita il regolamento della federazione tedesca (WKO del DRIV) per la misura delle ruote e una classifica a parte per un circuito (WSC Cup) ancora da definire. La home ha ancora notizie dell'edizione del 10/05/2026: la pagina della gara e quella delle classi d'età sono del 2027. Arricchimento 2026-11-22: sito trovato, pagina dell'edizione giusta (sito dalla scheda dell'aggregatore Skate Terminal); ricerche: nessuna; pagine: https://www.rhein-ruhr-marathon.de/, https://www.rhein-ruhr-marathon.de/strecke/inline-marathon.html, https://www.rhein-ruhr-marathon.de/im-ziel/altersklassenwertung-inline-skating-marathon.html, https://www.rhein-ruhr-marathon.de/impressum.html."
+
 - id: 2027-05-02-pattinata-fragoroller-bonavigo-vr
   nome: "Pattinata – Fragoroller"
   nome_fonte: "Fragoroller Bonavigo VR"
@@ -1718,6 +1824,35 @@
   prova: ""
   note: ""
   note_interne: "Dal calendario di Pattiniamo l'Italia, che dà solo date e titolo (primo carico del 2026-11-22, rivisto a mano): luogo e organizzatore letti dal titolo. Nell'ultima parte del titolo ci sono solo nomi di persone: organizzatore lasciato vuoto (regola 9)."
+
+- id: 2027-05-08-klettwitz-lausitz-marathon-skate-marathon
+  nome: "Lausitz-Marathon – Skate-Marathon"
+  nome_fonte: ""
+  data_inizio: 2027-05-08
+  data_fine: 2027-05-08
+  luogo: "Klettwitz (Schipkau), ovale di prova del DEKRA Lausitzring"
+  paese: DE
+  tipo: gara
+  categorie: ["master", "amatori"]
+  distanze: ["maratona 42,195 km", "mezza maratona 21,0975 km", "11,428 km", "5,7 km a cronometro individuale"]
+  organizzatore: "Lausitzer-Sportevents e.V."
+  url_ufficiale: "https://lausitz-marathon.de/"
+  url_iscrizione: "https://lausitzer-sportevents.de/anmeldung/anm.php?N=2027061"
+  scadenza_iscrizione: 2027-05-04
+  stato: confermato
+  fonti:
+    - url: https://lausitz-marathon.de/
+      letto_il: 2026-11-22
+    - url: https://lausitz-marathon.de/wp-content/uploads/LM-2027-Programm-DEKRA-A4.jpg
+      letto_il: 2026-11-22
+    - url: https://lausitzer-sportevents.de/marathon/wp-content/uploads/AGB_ALLGEMEINE_-TEILNAHMEBEDINGUNGEN_Lausitzer-Sportevents-e-V.pdf
+      letto_il: 2026-11-22
+    - url: https://lausitzer-sportevents.de/anmeldung/anm.php?N=2027061
+      letto_il: 2026-11-22
+  verificato_il: 2026-11-22
+  prova: "Condizioni generali dell'organizzatore (AGB, PDF linkato dalla home), in tedesco: 'Teilnahmeberechtigt ist jeder, auch ohne Vereinszugehörigkeit', con la sola età minima prevista per ogni gara; il programma 2027 dà la cronometro sui pattini per le età da 6 a oltre 80 anni, con premi per classi d'età. Gara aperta a tutti: Master e amatori ammessi (decisione 2026-11-06). Data, orari e distanze dal programma 2027 (immagine) e dalla pagina di iscrizione: sabato 08/05/2027."
+  note: "Sabato sull'ovale di prova del DEKRA Lausitzring, dentro il 26° Lausitz-Marathon: alle 09:00 cronometro individuale sui pattini di 5,7 km (classifiche per età), alle 14:45 partono insieme 11,4 km, mezza maratona e maratona sui pattini; arrivo chiuso alle 17:45. Quote secondo la data di iscrizione: maratona 50-60 €, mezza maratona 35-45 €, 5,7 km 20-30 €. Iscrizioni online fino al 04/05/2027, poi sul posto fino a 70 minuti prima della partenza. Cauzione di 50 € in contanti per il transponder."
+  note_interne: "Pista da Skate Terminal (aggregatore, mai fonte): tutti i dati vengono dal sito dell'organizzatore e dalla sua pagina di iscrizione, letti in tedesco. Arricchimento 2026-11-22: sito trovato, pagina dell'edizione giusta (sito dalla scheda dell'aggregatore Skate Terminal); ricerche: nessuna; pagine: https://lausitz-marathon.de/, https://lausitzer-sportevents.de/anmeldung/anm.php?N=2027061, https://lausitzer-sportevents.de/marathon/impressum/."
 
 - id: 2027-05-09-pattinata-bologna
   nome: "Pattinata – Bologna"
@@ -1787,6 +1922,52 @@
   prova: ""
   note: ""
   note_interne: "Dal calendario di Pattiniamo l'Italia, che dà solo date e titolo (primo carico del 2026-11-22, rivisto a mano): luogo e organizzatore letti dal titolo. Nel titolo non c'è un gruppo: organizzatore lasciato vuoto."
+
+- id: 2027-05-22-rennes-rennes-sur-roulettes
+  nome: "Rennes sur Roulettes"
+  nome_fonte: ""
+  data_inizio: 2027-05-22
+  data_fine: 2027-05-23
+  luogo: "Rennes, Esplanade Général de Gaulle"
+  paese: FR
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: "Cercle Paul Bert"
+  url_ufficiale: "https://rennessurroulettes.com/"
+  url_iscrizione: ""
+  scadenza_iscrizione: ""
+  stato: annunciato
+  fonti:
+    - url: https://rennessurroulettes.com/
+      letto_il: 2026-11-22
+  verificato_il: ""
+  prova: ""
+  note: "45ª edizione, annunciata per il 22 e 23 maggio 2027 all'Esplanade Général de Gaulle. Programma e iscrizioni dell'edizione 2027 non sono ancora pubblicati."
+  note_interne: "Pista da Skate Terminal (aggregatore, mai fonte); la gara era già stata vista nel censimento del 2026-11-17. Date, luogo e organizzatore dalla home del sito ufficiale. Le pagine di dettaglio hanno il 2027 nel titolo ma linkano ancora i documenti del 2026 (modulo di iscrizione e programma delle gare): edizione precedente, dati non copiati. Nel 2026 c'erano una maratona Vétérans aperta anche ai non tesserati, la maratona internazionale della World Inline Cup per soli tesserati e due pattinate gratuite: quando escono i documenti 2027, verificare e passare a confermato con la prova. Le pagine dicono iscrizioni online dal 1° febbraio, senza anno: rileggere a febbraio 2027. Arricchimento 2026-11-22: sito trovato, pagina dell'edizione precedente (sito dalla scheda dell'aggregatore Skate Terminal); ricerche: nessuna; pagine: https://rennessurroulettes.com/, https://rennessurroulettes.com/marathon-veterans/, https://rennessurroulettes.com/marathon-international/, https://rennessurroulettes.com/inscriptions/."
+
+- id: 2027-05-23-salisburgo-salzburg-marathon
+  nome: "Salzburg Marathon"
+  nome_fonte: ""
+  data_inizio: 2027-05-23
+  data_fine: 2027-05-23
+  luogo: "Salisburgo"
+  paese: AT
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: ""
+  url_ufficiale: "https://salzburg-marathon.at/de/"
+  url_iscrizione: ""
+  scadenza_iscrizione: ""
+  stato: escluso
+  fonti:
+    - url: https://salzburg-marathon.at/de/
+      letto_il: 2026-11-22
+  verificato_il: 2026-11-22
+  prova: "Non è una gara di pattinaggio: sul sito dell'organizzatore, letto il 2026-11-22, le gare del 23 maggio 2027 e dei giorni vicini (maratona, mezza maratona, 10 km, staffetta, corsa femminile, gare per ragazzi e altre) sono tutte di corsa; nessuna gara sui pattini."
+  note: ""
+  note_interne: "Pista da Skate Terminal (aggregatore), che la elenca tra le gare di pattinaggio di velocità: tenuta come memoria per non riproporla (decisione del proprietario, 2026-11-22). Letta la home del sito, con l'elenco delle gare. Da riguardare solo se l'organizzatore annuncia una gara sui pattini."
 
 - id: 2027-05-28-laquila-internazionali-ditalia-open-indoor
   nome: "Internazionali d'Italia Open Indoor - VII Memorial Romano Maria Cacciani"
@@ -1927,6 +2108,29 @@
   prova: ""
   note: ""
   note_interne: "Dal calendario di Pattiniamo l'Italia, che dà solo date e titolo (primo carico del 2026-11-22, rivisto a mano): luogo e organizzatore letti dal titolo. Nel titolo dopo le località c'è la sigla 'GE': non è stata copiata nel luogo."
+
+- id: 2027-06-20-seyssel-rollathlon100
+  nome: "Roll'Athlon100"
+  nome_fonte: ""
+  data_inizio: 2027-06-20
+  data_fine: 2027-06-20
+  luogo: "Seyssel (Alta Savoia)"
+  paese: FR
+  tipo: gara
+  categorie: []
+  distanze: []
+  organizzatore: ""
+  url_ufficiale: "https://rollathlon100.com/"
+  url_iscrizione: ""
+  scadenza_iscrizione: ""
+  stato: annunciato
+  fonti:
+    - url: https://rollathlon100.com/
+      letto_il: 2026-11-22
+  verificato_il: ""
+  prova: ""
+  note: "12ª edizione, annunciata per domenica 20 giugno 2027. Formule, distanze e iscrizioni dell'edizione 2027 non sono ancora pubblicate."
+  note_interne: "Pista da Skate Terminal (aggregatore, mai fonte), che nella scheda dà il 19/06: la data viene dall'annuncio nella home del sito ufficiale, che dice domenica 20 giugno 2027. Le altre pagine del sito sono ancora dell'edizione 2025 (103 km lungo il Rodano con partenza da Motz e arrivo a Seyssel, più una formula per chi non gareggia): dati non copiati. Il luogo viene dalla pagina di accesso, anch'essa del 2025 (villaggio e arrivo a Seyssel): da ricontrollare quando escono le pagine 2027. Organizzatore non letto. Nel 2025 le iscrizioni aprivano il 1° febbraio: rileggere a febbraio 2027. Arricchimento 2026-11-22: sito trovato, pagina dell'edizione precedente (sito dalla scheda dell'aggregatore Skate Terminal); ricerche: nessuna; pagine: https://rollathlon100.com/, https://rollathlon100.com/acces-plan-de-situation/, https://rollathlon100.com/parcours-distances/."
 
 - id: 2027-06-26-pattinata-san-candido-lienz
   nome: "Pattinata – San Candido-Lienz"
