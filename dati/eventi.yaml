@@ -2201,6 +2201,33 @@
   note: ""
   note_interne: "Dal calendario di Pattiniamo l'Italia, che dà solo date e titolo (primo carico del 2026-11-22, rivisto a mano): luogo e organizzatore letti dal titolo."
 
+- id: 2027-07-10-le-mans-24-heures-rollers
+  nome: "24 Heures Rollers du Mans"
+  nome_fonte: ""
+  data_inizio: 2027-07-10
+  data_fine: 2027-07-11
+  luogo: "Le Mans, circuito Bugatti"
+  paese: FR
+  tipo: gara
+  categorie: ["master", "amatori"]
+  distanze: ["24 ore (squadre, duo, solo)", "12 ore in due parti da 6 ore (squadre)", "6 ore (solo, duo, squadre)"]
+  organizzatore: "La Tribu Roller"
+  url_ufficiale: "https://www.24rollers.com/"
+  url_iscrizione: "https://www.24rollers.com/inscriptions"
+  scadenza_iscrizione: ""
+  stato: confermato
+  fonti:
+    - url: https://www.24rollers.com/categories
+      letto_il: 2026-11-22
+    - url: https://www.24rollers.com/regles
+      letto_il: 2026-11-22
+    - url: https://www.24rollers.com/inscriptions
+      letto_il: 2026-11-22
+  verificato_il: 2026-11-22
+  prova: "Sito dell'organizzatore, pagina delle categorie (https://www.24rollers.com/categories), versione francese, formula Prestige 24h: squadre di '7 à 10 personnes à partir de 16 ans' (16 anni compiuti nell'anno), con quattro classifiche tra cui Masters. Le altre formule chiedono solo un'età minima (14 anni la Découverte, 18 anni Enduro, Duo e Solo, 13 anni la 12 ore e la 6 ore), senza categorie agonistiche obbligatorie: gara aperta a tutti per età, Master e amatori ammessi (decisione 2026-11-06). Date nella testata della stessa pagina: 10-11 luglio 2027."
+  note: "Gara di durata sul circuito Bugatti: partenza sabato alle 16:00, arrivo domenica alle 16:00. Sulle 24 ore si corre in squadra (Découverte 11-12 persone dai 14 anni, Prestige 7-10 dai 16 anni, Quads 7-10 su pattini quad, Enduro 3-6 dai 18 anni), in coppia o da soli (dai 18 anni). Nello stesso fine settimana: 12 ore in due parti (sabato 16-22 e domenica 10-16, squadre da 3 a 5, dai 13 anni) e 6 ore (sabato 16-22; solo, duo o squadre). Iscrizioni dal 12/12/2026. Quote di squadra: Découverte 625 €, Prestige 595 €, Enduro 490 €."
+  note_interne: "Aggiunta a mano il 2026-11-22: gara e sito indicati dal proprietario (fonte 24rollers-le-mans). Organizzatore letto nel sito: una notizia del 2025 nella home nomina La Tribu Roller come organizzatrice, insieme al comitato dipartimentale di pattinaggio della Sarthe. La pagina delle categorie non dice la fascia d'età della classifica Masters. Chiusura delle iscrizioni non ancora pubblicata e link alla piattaforma di iscrizione ancora dell'edizione 2026: rileggere la pagina delle iscrizioni dopo il 12/12/2026 e compilare scadenza_iscrizione. Senza l'intestazione Accept-Language: fr il sito risponde in inglese (/en/…): per le prove si legge il francese. Arricchimento 2026-11-22: sito trovato, pagina dell'edizione giusta (sito indicato dal proprietario); ricerche: nessuna; pagine: https://www.24rollers.com/, https://www.24rollers.com/categories, https://www.24rollers.com/regles, https://www.24rollers.com/inscriptions."
+
 - id: 2027-07-10-pattinata-val-brembana
   nome: "Pattinata – Val Brembana"
   nome_fonte: "Val Brembana"

@@ -12,9 +12,9 @@ La [pagina web](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) m
 - se usi l'app Calendario di Google, apri *Google Calendar → Altri calendari → Da URL* e incolla `https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/calendario.ics` (Google aggiorna le sottoscrizioni ogni 12–24 ore circa)
 - dopo che ti sei iscritto al calendario, riceverai gli aggiornamenti in automatico
 
-## Segnalare una gara
+## Segnalazioni
 
-Usa [questo modulo](https://tally.so/r/peDGAP).
+Per segnalare gare mancanti o correzioni, usa [questo modulo](https://tally.so/r/peDGAP).
 
 ## Come funziona
 

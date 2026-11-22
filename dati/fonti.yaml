@@ -136,6 +136,18 @@
   note: "Organizzatore della Berlin-Marathon, della Berlin Half Marathon e della City Night: la pagina elenca ogni evento con data, distanza e disciplina ('Inline skating') e offre un file .ics di tutti gli eventi (https://www.scc-events.com/events-scc-events.ics). Letto il file il 2026-11-17: 12 eventi con data, titolo e luogo, ma senza la disciplina (la parola 'inline' non compare): serve solo ad accorgersi di una data che cambia, non a sapere quali eventi hanno la gara sui pattini, che resta scritto nella pagina HTML. Nel 2027: Half Marathon Inlineskating 04/04 (21 km), City Night Inlineskating 31/07 (10 km); la maratona 26/09/2027 non elenca l'inline. Le pagine di iscrizione (generali-berliner-halbmarathon.de, berlin-citynight.de) contengono la frase di ammissione ('Jahrgänge … und älter'): la versione tedesca è quella da citare, l'inglese a volte è tradotto male. Le pagine dell'edizione passata vengono tolte subito dopo la gara: leggerle in tempo o dalla Wayback Machine."
   ultimo_controllo: 2026-11-17
 
+- id: 24rollers-le-mans
+  nome: "24 Heures Rollers du Mans — sito dell'organizzatore"
+  url: https://www.24rollers.com/
+  paese: FR
+  metodo: agente
+  frequenza: stagionale
+  copre: [gare]
+  affidabilita: organizzatore
+  stato: attiva
+  note: "Indicata dal proprietario il 2026-11-22. Sito dell'organizzatore della 24 ore sui pattini al circuito Bugatti di Le Mans: una gara all'anno, a luglio, con formule da 24, 12 e 6 ore. Senza l'intestazione Accept-Language: fr risponde con la versione inglese (/en/…); dalla shell si legge (200). Pagine utili: la home (date dell'edizione in testata), /categories (formule, età minime, classifiche, quote di squadra), /regles (orari di partenza e di arrivo), /inscriptions (apertura delle iscrizioni). Nessun feed ICS o RSS e nessun dato strutturato dell'evento: si rilegge a mano o con un agente. Letta il 2026-11-22: edizione 2027 il 10-11 luglio, iscrizioni dal 12/12/2026, chiusura non ancora pubblicata, link alla piattaforma di iscrizione ancora dell'edizione 2026. Da rileggere dopo il 12/12/2026 per la scadenza delle iscrizioni, poi una volta a stagione per le date dell'edizione successiva."
+  ultimo_controllo: 2026-11-22
+
 - id: world-inline-cup
   nome: "World Inline Cup — gare"
   url: https://www.world-inline-cup.com/races
