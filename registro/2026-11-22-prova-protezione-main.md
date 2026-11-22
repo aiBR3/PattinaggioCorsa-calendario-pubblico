@@ -7,3 +7,12 @@ Scopo: dopo la modifica del ruleset "Protezione su main" fatta dal proprietario 
 - Regole attive su `main`: `deletion`, `non_fast_forward`, `creation`, `pull_request`, `update`. La regola `update` è "Restrict updates", aggiunta oggi.
 - Parametri di `pull_request`: `required_approving_review_count: 0`, `require_code_owner_review: true`, `dismiss_stale_reviews_on_push: true` (attivata oggi), `require_last_push_approval: false`.
 - Per l'account di Claude l'API risponde `current_user_can_bypass: never`. L'elenco di chi può scavalcare le regole non è leggibile senza permessi di amministratore.
+
+## Prove
+
+Fatte sulla pull request #69, aperta dall'account di Claude. Nessun tentativo di merge da parte dell'account di Claude: gli esiti sono letti dall'API.
+
+| N. | Prova | Atteso | Esito |
+|---|---|---|---|
+| 1 | Stato della PR visto dall'account di Claude, senza approvazioni | bloccata | `mergeable_state: blocked` con nessun revisore richiesto: il blocco viene da "Restrict updates" |
+| 2 | Lo stesso stato dopo l'approvazione del proprietario | ancora bloccata per l'account di Claude | `blocked` anche con la revisione `APPROVED` del proprietario: l'approvazione non permette a un altro account di fondere |
