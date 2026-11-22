@@ -7,4 +7,5 @@
 # Una riga senza responsabile toglie quello ereditato dalla riga "*".
 /dati/eventi.yaml
 /dati/societa.yaml
+/dati/segnalazioni.yaml
 /registro/

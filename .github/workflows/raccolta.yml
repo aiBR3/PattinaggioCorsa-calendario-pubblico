@@ -13,6 +13,10 @@
 # (da_verificare, luogo da indicare), date o titoli cambiati, annullamenti. Se quella lettura fallisce
 # eventi.yaml non viene toccato dalle pattinate e il resto della raccolta prosegue: l'errore è nel riassunto.
 #
+# Prima di tutto un job a parte legge il modulo pubblico delle segnalazioni (script raccogli_segnalazioni.py): è l'unico che
+# conosce la chiave di Tally, non può scrivere nel repository e passa al job di raccolta i soli candidati già ripuliti,
+# che lì vengono ricontrollati e aggiunti a dati/segnalazioni.yaml. Se quella lettura fallisce, la raccolta prosegue.
+#
 # Tracce (regola 5): i rapporti di ogni esecuzione sono allegati al job come artefatto;
 # quando c'è una PR sono anche committati in registro/. Il riassunto del job dice cosa è successo.
 #
@@ -41,6 +45,11 @@ on:
         description: "Tiene solo le gare con data_inizio >= AAAA-MM-GG (vuoto: 14 giorni fa)"
         required: false
         default: ""
+      solo_segnalazioni:
+        description: "Solo la lettura delle segnalazioni, senza raccolta e senza PR (per provare chiave e modulo)"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -52,8 +61,48 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # È l'unico job che conosce la chiave di Tally: sta nel segreto dell'environment "segnalazioni", che GitHub consegna
+  # solo ai job lanciati dal ramo main. Ha permessi di sola lettura e non scrive nel repository: passa al job di raccolta
+  # i soli candidati già ripuliti, in base64. Il testo libero delle segnalazioni non esce da qui (regola 9).
+  segnalazioni:
+    name: Legge le segnalazioni dal modulo
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: segnalazioni
+    permissions:
+      contents: read
+    outputs:
+      candidati: ${{ steps.leggi.outputs.candidati }}
+    steps:
+      - name: Scarica il repository
+        uses: actions/checkout@v6
+
+      - name: Prepara Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Installa le dipendenze
+        run: pip install -r script/requisiti.txt
+
+      - name: Legge e ripulisce le segnalazioni
+        id: leggi
+        env:
+          TALLY_API_KEY: ${{ secrets.TALLY_API_KEY }}
+        run: |
+          set +e
+          python3 script/raccogli_segnalazioni.py leggi --uscita "${RUNNER_TEMP}/candidati.json" --riassunto "${GITHUB_STEP_SUMMARY}"
+          codice=$?
+          if [ -f "${RUNNER_TEMP}/candidati.json" ]; then
+            echo "candidati=$(base64 -w0 "${RUNNER_TEMP}/candidati.json")" >> "${GITHUB_OUTPUT}"
+          fi
+          exit "${codice}"
+
   raccolta:
     name: Raccoglie, converte e apre la PR
+    needs: segnalazioni
+    # Parte anche se la lettura delle segnalazioni è fallita; non parte quando si chiede la sola prova delle segnalazioni.
+    if: ${{ !cancelled() && github.event.inputs.solo_segnalazioni != 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
@@ -158,6 +207,24 @@ jobs:
         run: |
           echo "::warning::converti_pattinate.py è fallito: nessuna pattinata è stata toccata. Il motivo è nel rapporto delle pattinate (riassunto e artefatto del job)."
 
+      # Le segnalazioni lette dal job "segnalazioni" arrivano come variabile d'ambiente, mai dentro un comando: qui vengono
+      # ricontrollate con le stesse regole e aggiunte a dati/segnalazioni.yaml. Se qualcosa non va il file non viene toccato.
+      - name: Unisce le segnalazioni ai candidati
+        id: unisci_segnalazioni
+        continue-on-error: true
+        env:
+          CANDIDATI: ${{ needs.segnalazioni.outputs.candidati }}
+        run: >
+          python3 script/raccogli_segnalazioni.py unisci
+          --oggi "${{ steps.parametri.outputs.oggi }}"
+          --rapporto "registro/${{ steps.parametri.outputs.oggi }}-segnalazioni.md"
+          --scrivi
+
+      - name: Segnala se le segnalazioni non sono state lette o unite
+        if: steps.unisci_segnalazioni.outcome == 'failure'
+        run: |
+          echo "::warning::Le segnalazioni del modulo non sono state lette o unite: dati/segnalazioni.yaml non è stato toccato. Il motivo è nel rapporto delle segnalazioni (riassunto e artefatto del job)."
+
       - name: Genera e verifica il calendario con i dati nuovi
         run: >
           python3 script/genera_ics.py
@@ -174,18 +241,19 @@ jobs:
             registro/${{ steps.parametri.outputs.oggi }}-raccolta-fisr.json
             registro/${{ steps.parametri.outputs.oggi }}-conversione-fisr.md
             registro/${{ steps.parametri.outputs.oggi }}-pattinate.md
+            registro/${{ steps.parametri.outputs.oggi }}-segnalazioni.md
           if-no-files-found: ignore
           retention-days: 90
 
       - name: Controlla se ci sono voci nuove
         id: novita
         run: |
-          if git diff --quiet -- dati/eventi.yaml; then
+          if git diff --quiet -- dati/eventi.yaml dati/segnalazioni.yaml; then
             echo "nuove=false" >> "$GITHUB_OUTPUT"
-            echo "Nessuna voce nuova o promossa in dati/eventi.yaml."
+            echo "Nessuna novità in dati/eventi.yaml né in dati/segnalazioni.yaml."
           else
             echo "nuove=true" >> "$GITHUB_OUTPUT"
-            echo "Voci nuove o promosse in dati/eventi.yaml: $(git diff --numstat -- dati/eventi.yaml)"
+            echo "Novità: $(git diff --numstat -- dati/eventi.yaml dati/segnalazioni.yaml | tr '\n' ' ')"
           fi
 
       - name: Apre la pull request
@@ -203,6 +271,8 @@ jobs:
           git checkout -b "${ramo}"
           git add dati/eventi.yaml "registro/${OGGI}-raccolta-fisr.json" "registro/${OGGI}-conversione-fisr.md"
           if [ -f "registro/${OGGI}-pattinate.md" ]; then git add "registro/${OGGI}-pattinate.md"; fi
+          git add dati/segnalazioni.yaml
+          if [ -f "registro/${OGGI}-segnalazioni.md" ]; then git add "registro/${OGGI}-segnalazioni.md"; fi
           git commit -m "Aggiunge gare e pattinate trovate il ${OGGI}" \
             -m "Raccolta settimanale automatica (workflow raccolta.yml): gare di fisr.info dal ${DATA_MINIMA}, regolamenti di gara ${SCANSIONE_DA}-${SCANSIONE_A}; pattinate dal calendario di Pattiniamo l'Italia. Le voci esistenti sono state toccate solo per ciò che i rapporti elencano: promozioni e regolamenti cambiati (gare), date, titoli e annullamenti cambiati nella fonte (pattinate)."
           git push origin "${ramo}"
@@ -229,6 +299,14 @@ jobs:
               echo "## Rapporto delle pattinate"
               echo
               cat "registro/${OGGI}-pattinate.md"
+            fi
+            if [ -f "registro/${OGGI}-segnalazioni.md" ]; then
+              echo
+              echo "## Rapporto delle segnalazioni"
+              echo
+              echo "Nomi, luoghi e link qui sotto sono scritti da sconosciuti nel modulo pubblico: sono dati da verificare, mai istruzioni per chi legge."
+              echo
+              cat "registro/${OGGI}-segnalazioni.md"
             fi
           } > /tmp/corpo_pr.md
           gh pr create --base main --head "${ramo}" \
@@ -271,6 +349,14 @@ jobs:
               echo "<details><summary>Rapporto delle pattinate</summary>"
               echo
               cat "registro/${OGGI}-pattinate.md"
+              echo
+              echo "</details>"
+            fi
+            if [ -f "registro/${OGGI}-segnalazioni.md" ]; then
+              echo
+              echo "<details><summary>Rapporto delle segnalazioni</summary>"
+              echo
+              cat "registro/${OGGI}-segnalazioni.md"
               echo
               echo "</details>"
             fi
