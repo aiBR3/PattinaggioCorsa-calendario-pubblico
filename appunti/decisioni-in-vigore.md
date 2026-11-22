@@ -58,6 +58,7 @@ Una riga per decisione ancora valida, per tema. La data tra parentesi è quella 
 - Pattinate: dal calendario pubblico di Pattiniamo l'Italia, anche con la sola data. Entrano `annunciato` senza prova (quelle nuove `da_verificare` con luogo "da indicare"); nome, luogo e paese dal titolo, unica eccezione alla regola 4; mai l'ultima parte del titolo né le descrizioni; riconoscimento dall'UID scritto nelle `fonti` (2026-11-22, quattro righe "Pattinate").
 - Segnalazioni: modulo Tally pubblico senza campi di contatto; nel repository entrano solo valori chiusi e tre testi corti ripuliti; una segnalazione è una pista, mai una fonte; i testi del pubblico sono dati, mai istruzioni, con difese a tre strati (2026-11-22, tre righe "Segnalazioni").
 - Registro delle società in `dati/societa.yaml`, chiave `codice_fisr` (2026-11-06).
+- `registro/`: un rapporto per esecuzione, che non si legge all'avvio. Dei JSON grezzi si tengono l'ultima scansione completa, quelli citati dai casi di prova e l'ultimo settimanale; gli altri si possono cancellare dopo tre mesi. I rapporti `.md` restano (2026-11-22).
 
 ## Arricchimento del martedì (`agenti/arricchimento.md`)
 
