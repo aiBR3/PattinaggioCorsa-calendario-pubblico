@@ -9,6 +9,8 @@ lo script per intero e rilegge il file .ics prodotto. Protegge la decisione del 
     di gara (preso da url_ufficiale o dalle fonti), ciascuno solo se c'è, in quest'ordine;
   - una voce che ha solo il regolamento mostra solo [Regolamento FISR];
   - la proprietà URL dell'evento resta un solo link, quello principale.
+E le decisioni del 2026-11-22 sulle pattinate: un paese fuori perimetro è ammesso solo per una voce esclusa;
+una pattinata di cui si conosce solo la data è valida come 'annunciato', senza categorie né prova.
 
 Uso:
     python3 script/prove_genera_ics.py
@@ -237,6 +239,41 @@ def prova_file_ics_per_intero() -> None:
         raise AssertionError("nella pagina il nome dell'evento con due link deve puntare alla pagina dell'organizzatore")
 
 
+def errori_di(**modifiche) -> list[str]:
+    """Gli errori di validazione di una voce di prova (lista vuota se la voce è valida)."""
+    esito = genera_ics.Esito()
+    genera_ics.converti_evento(voce_grezza(**modifiche), 1, esito)
+    return list(esito.errori)
+
+
+def prova_paese_fuori_perimetro_solo_per_le_voci_escluse() -> None:
+    """Decisione 2026-11-22: un'uscita fuori perimetro resta nel file come voce esclusa, per non riproporla."""
+    esclusa = {"paese": "PL", "stato": "escluso", "categorie": [], "prova": "Fuori perimetro: Lontanopoli (Polonia)."}
+    uguale(errori_di(**esclusa), [], "voce esclusa con un paese fuori perimetro")
+    for stato in ("annunciato", "da_verificare", "confermato", "annullato"):
+        categorie = ["master"] if stato == "confermato" else []
+        if not any("fuori perimetro" in errore for errore in errori_di(paese="PL", stato=stato, categorie=categorie)):
+            raise AssertionError(f"una voce '{stato}' con paese PL doveva essere rifiutata")
+    if not any("due lettere" in errore for errore in errori_di(**{**esclusa, "paese": "Polonia"})):
+        raise AssertionError("un paese che non è un codice di due lettere doveva essere rifiutato anche per una voce esclusa")
+    uguale(errori_di(paese="AT"), [], "un paese del perimetro resta valido per ogni stato")
+
+
+def prova_pattinata_annunciata() -> None:
+    """Decisione 2026-11-22: una pattinata di cui si sa solo la data entra come 'annunciato', senza categorie né prova;
+    la fonte è il calendario con l'identificativo dell'evento come frammento dell'indirizzo."""
+    calendario = "https://calendar.google.com/calendar/ical/prova%40group.calendar.google.com/public/basic.ics#abc123@google.com"
+    pagina = "https://movimento-di-prova.example/eventi/"
+    evento, esito = evento_valido(id="2027-05-28-pattinata-val-prova", nome="Pattinata – Val di Prova", tipo="pattinata", stato="annunciato", categorie=[],
+                                  distanze=[], prova="", verificato_il="", note="", url_ufficiale=pagina, fonti=fonti(calendario))
+    uguale(esito.errori, [], "errori di validazione")
+    uguale(genera_ics.titolo_evento(evento), "Pattinata – Val di Prova", "titolo senza prefisso di stato")
+    descrizione = genera_ics.descrizione_evento(evento).splitlines()
+    uguale(descrizione[0], "[Categorie ammesse] Pattinata non competitiva", "prima riga della descrizione")
+    uguale(descrizione[-1], f"[URL] {pagina}", "ultima riga della descrizione")
+    uguale(genera_ics.collegamenti_descrizione(evento), [("URL", pagina)], "link della descrizione")
+
+
 PROVE = [
     prova_riconosce_il_regolamento,
     prova_solo_regolamento,
@@ -249,6 +286,8 @@ PROVE = [
     prova_indirizzo_che_somiglia_a_un_regolamento,
     prova_i_link_chiudono_la_descrizione,
     prova_file_ics_per_intero,
+    prova_paese_fuori_perimetro_solo_per_le_voci_escluse,
+    prova_pattinata_annunciata,
 ]
 
 

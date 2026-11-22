@@ -231,6 +231,18 @@ def principale() -> int:
     verifica("15. promozione: la frase dello script c'è e la traccia resta in coda",
              bool(promozione) and "Promossa il 2026-11-16 da converti_fisr.py" in voce["note_interne"] and voce["note_interne"].endswith(traccia), voce["note_interne"])
 
+    # 16. Le pattinate non sono gare FISR (decisione 2026-11-22): stessa data e stessa città non bastano a scambiarle
+    pattinata = voce_scritta(c.costruisci_evento(riga_finta("2027-03-10"), None, "2026-11-01"))
+    pattinata.update({"id": "2027-03-10-pattinata-prova", "nome": "Pattinata – Prova", "tipo": "pattinata", "stato": "annunciato"})
+    prima = copy.deepcopy(pattinata)
+    proposta = c.costruisci_evento(riga_finta("2027-03-10"), regolamento_finto("9018", ["MASTER OVER 30"]), "2026-11-16")
+    verifica("16. una pattinata nello stesso giorno e nella stessa città non viene scambiata per la gara", c.corrisponde_esistente(proposta, [pattinata]) is None)
+    gara = voce_scritta(c.costruisci_evento(riga_finta("2027-03-10"), None, "2026-11-01"))
+    verifica("16. la gara vera viene ancora riconosciuta, anche con la pattinata accanto", c.corrisponde_esistente(proposta, [pattinata, gara]) is gara)
+    nuova = voce_scritta(c.costruisci_evento(riga_finta("2027-03-20", titolo="Pattinata Prova Trofeo"), None, "2026-11-16"))
+    segnalazioni = c.segnala_possibili_doppioni([nuova], [pattinata], set(), "2027-01-01")
+    verifica("16. una pattinata non viene segnalata come gara sparita dalla lista", segnalazioni == [] and pattinata == prima, segnalazioni)
+
     superate = sum(esiti)
     print(f"\n{superate}/{len(esiti)} prove superate")
     if not esiti:

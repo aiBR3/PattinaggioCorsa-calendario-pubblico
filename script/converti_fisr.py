@@ -466,6 +466,9 @@ def corrisponde_esistente(nuovo: dict, esistenti: list[dict]) -> dict | None:
     """La voce già presente che descrive la stessa gara, o None. In ordine: stesso numero di regolamento
     (vale anche se nel frattempo sono cambiati data e nome), stesso id, stessa data d'inizio con nome simile
     o stessa città."""
+    # Le pattinate (tipo: pattinata) arrivano da un'altra fonte e le gestisce converti_pattinate.py: non sono mai
+    # la gara di una riga della lista federale, nemmeno nello stesso giorno e nella stessa città.
+    esistenti = [e for e in esistenti if str(e.get("tipo")) != "pattinata"]
     numeri = numeri_regolamento(nuovo)
     if numeri:
         stesso_regolamento = [e for e in esistenti if numeri_regolamento(e) & numeri]
@@ -741,8 +744,8 @@ def segnala_possibili_doppioni(nuovi: list[dict], esistenti: list[dict], ancora_
     segnalazioni: list[str] = []
     for nuovo in nuovi:
         for esistente in esistenti:
-            if id(esistente) in ancora_in_lista or str(esistente.get("stato")) == "annullato":
-                continue
+            if id(esistente) in ancora_in_lista or str(esistente.get("stato")) == "annullato" or str(esistente.get("tipo")) == "pattinata":
+                continue    # una pattinata non è mai nella lista federale: non è una gara "sparita"
             if filtro_da and str(esistente["data_inizio"]) < filtro_da:
                 continue    # più vecchia di ciò che la raccolta ha letto: è normale che non sia in lista
             giorni = giorni_tra(esistente["data_inizio"], nuovo["data_inizio"])
