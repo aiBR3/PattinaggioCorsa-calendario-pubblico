@@ -16,3 +16,6 @@ Fatte sulla pull request #69, aperta dall'account di Claude. Nessun tentativo di
 |---|---|---|---|
 | 1 | Stato della PR visto dall'account di Claude, senza approvazioni | bloccata | `mergeable_state: blocked` con nessun revisore richiesto: il blocco viene da "Restrict updates" |
 | 2 | Lo stesso stato dopo l'approvazione del proprietario | ancora bloccata per l'account di Claude | `blocked` anche con la revisione `APPROVED` del proprietario: l'approvazione non permette a un altro account di fondere |
+| 3 | Un commit nuovo dell'account di Claude dopo l'approvazione | l'approvazione decade | la revisione del proprietario passa da `APPROVED` a `DISMISSED` subito dopo il push |
+
+La quarta prova è il merge di questa pull request da parte del proprietario: la presenza di questo file su `main` ne è l'esito. Come si presenta il merge (avviso, spunta per scavalcare le regole) è annotato nella riga del 2026-11-22 di `appunti/decisioni.md`, che arriva con una pull request a parte.
