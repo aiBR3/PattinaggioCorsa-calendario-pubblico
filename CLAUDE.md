@@ -1,6 +1,8 @@
 # CLAUDE.md — regole permanenti per chi lavora in questo repository
 
-Questo file è la memoria permanente di agenti e script. Leggilo per intero prima di fare qualsiasi cosa. Poi leggi `appunti/diario.md` (cosa non ha funzionato, per non riprovarlo) e `appunti/decisioni.md` (perché le cose sono fatte così).
+Questo file è la memoria permanente di agenti e script e vale per intero: se la sessione non lo ha già caricato nel tuo contesto, leggilo prima di fare qualsiasi cosa.
+
+`appunti/diario.md` (cosa non ha funzionato) e `appunti/decisioni.md` (perché le cose sono fatte così) non si leggono per intero all'avvio: si consultano quando servono (decisione 2026-11-22). Del diario scorri i titoli (`grep '^## ' appunti/diario.md`) e leggi le voci che riguardano ciò che stai per fare (regola 6). Nelle decisioni cerca il tema (`grep -n -i 'parola' appunti/decisioni.md`) prima di cambiare una regola, uno schema, uno script o un prompt.
 
 ## Scopo
 
