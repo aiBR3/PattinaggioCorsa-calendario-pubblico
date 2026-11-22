@@ -316,6 +316,18 @@
   note: "Letta il 2026-11-17: piattaforma di gestione delle gare e dei risultati usata da organizzatori tedeschi; la home elenca i prossimi eventi (per il 2027: arena geisingen international 15-18/04, summer cup 10/07, Löwen-Cup Finale 16-17/10) e le serie (Bayern Inline Cup, Inline-Löwen-Cup). Sono soprattutto gare su pista per i giovani; tra le passate c'è 'arena geisingen masters 2026' (23/10). Ogni evento ha una pagina con i documenti dell'organizzatore. Bassa priorità: utile per i Master tedeschi su pista, non per le maratone."
   ultimo_controllo: 2026-11-17
 
+- id: skate-terminal
+  nome: "Skate Terminal — directory mondiale di eventi sui pattini"
+  url: "https://skateterminal.com/explore/?type=events&discipline=distance-skating,inline-skating,roller-skating,speed-skating&category=competitive-events,annual-events&search_location=Visible%20map%20area&lat=43.3183785&lng=11.3314548&proximity=1200.00&sort=upcoming"
+  paese: ""
+  metodo: manuale
+  frequenza: mensile
+  copre: [gare]
+  affidabilita: aggregatore
+  stato: attiva
+  note: "Indicata dal proprietario il 2026-11-22; decisioni dello stesso giorno in appunti/decisioni.md. Directory mondiale di eventi, luoghi e comunità sui pattini. È un aggregatore: vale solo come pista, mai come fonte né come prova (regola 3); una voce nasce dalla pagina dell'organizzatore, che ogni scheda linka. Si legge a mano, una volta al mese, dall'indirizzo registrato qui (quattro discipline, categorie 'competitive-events' e 'annual-events', raggio di 1200 miglia da Siena): due pagine di risultati da 15 schede, la seconda con &pg=2. Niente script e niente lettura automatica: i termini d'uso del sito vietano la raccolta in massa dei dati senza autorizzazione e la creazione di una banca dati concorrente, e il suo robots.txt esclude i crawler di addestramento; per una lettura automatica va prima chiesto il permesso al sito. Le pattinate settimanali di città (categoria 'weekly-events') restano fuori dal calendario. Difetti visti: date sfasate di un giorno tra scheda e testo, orari con il fuso di New York, descrizioni rimaste all'edizione precedente, serie settimanali elencate a stagione finita, la disciplina 'speed skating' comprende il ghiaccio, due maratone di sola corsa date come gare sui pattini. Lettura del 2026-11-22 (registro/2026-11-22-skate-terminal.md): 24 schede; 6 voci nuove dopo la verifica sui siti degli organizzatori (Linz, Spreewald, Duisburg, Lausitz, Rennes, Roll'Athlon100), 2 già presenti (Berlino), 2 piste scartate perché il sito dell'organizzatore non ha una gara sui pattini nel 2027 (Deutsche Post Marathon Bonn 11/04, Salzburg Marathon 23/05), 1 in sospeso (arena geisingen international 15-18/04: date confermate, bando 2027 non ancora pubblicato), 13 fuori tema o fuori perimetro. Non copre le gare italiane e non ha la 24 Heures Rollers di Le Mans."
+  ultimo_controllo: 2026-11-22
+
 - id: uisp-pattinaggio-corsa
   nome: "UISP Pattinaggio — settore corsa"
   url: https://www.uisp.it/pattinaggio/
