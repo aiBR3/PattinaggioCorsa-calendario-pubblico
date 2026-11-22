@@ -6,6 +6,8 @@ Una voce per problema: data, cosa si voleva fare, cosa è successo, cosa fare in
 
 Quando un problema si risolve per sempre, si aggiorna la voce invece di cancellarla.
 
+Le voci su difetti degli script ormai corretti, che una prova automatica impedisce di rifare, passano in `appunti/diario-archivio.md` (decisione 2026-11-22): sono storia, non avvertenze.
+
 ## 2026-11-05 — Sessione Claude (web): API GitHub bloccate dal proxy
 
 - **Volevo:** attivare GitHub Pages e leggere le impostazioni di Actions via `gh api`.
@@ -102,13 +104,11 @@ Quando un problema si risolve per sempre, si aggiorna la voce invece di cancella
 - **Successo:** 50 siti e 32 social trovati, 70 società senza traccia; alla verifica (apertura dalla shell) 44 siti confermati, 11 non raggiungibili dalla shell (HTTP 999, 406, 500, timeout: anti-bot o server lenti, non per forza morti), 1 da verificare. Tre sottoagenti su quattro sono stati fermati dal limite orario dell'account mentre scrivevano l'uscita, ma i file erano già su disco. Consiglio di un sottoagente: con questo motore il nome tra virgolette e la modalità estesa danno risultati utili, la modalità normale restituisce giornali e pattinaggio su ghiaccio.
 - **Invece:** i siti vanno verificati sempre da chi li raccoglie (titolo, dominio e testo), non ci si fida del risultato di ricerca; i siti di blog e `altervista` sono fragili; le società del Sud e delle isole non lasciano traccia oltre alle classifiche.
 
-
 ## 2026-11-06 — Siti renderizzati via JavaScript, WebFetch e Wayback nel secondo collaudo cieco
 
 - **Volevo:** leggere dalla shell la home e la pagina dell'evento di skatingclubcomina.eu (Aruba SuperSite) e, per Vado Ligure, un articolo di ivg.it e uno snapshot della Wayback Machine.
 - **Successo:** `curl` sul sito Aruba restituisce una pagina vuota (contenuto caricato via JavaScript); la pagina dichiara `<meta name="fragment" content="!">` e con `?_escaped_fragment_=` arriva il testo completo. ivg.it risponde 403 con la sfida di Cloudflare ("Enable JavaScript and cookies"). WebFetch rifiuta ogni indirizzo che non sia uscito da una ricerca web della sessione, anche la home presa dal registro. web.archive.org: il sottoagente ha provato l'API CDX (bloccata dal proxy, come già scritto) e non l'indirizzo dello snapshot.
 - **Invece:** per i siti con `<meta name="fragment">` si rilegge lo stesso indirizzo con `?_escaped_fragment_=` (non è un indirizzo indovinato: lo dichiara la pagina); i giornali dietro anti-bot non si riprovano, si passa a un altro; le pagine prese dal registro o dal regolamento si aprono solo dalla shell; la Wayback Machine solo come `https://web.archive.org/web/AAAAMMGG/URL` dalla shell. Tutto scritto nel prompt dell'arricchimento.
-
 
 ## 2026-11-06 — Scelta dell'articolo nel terzo collaudo cieco (Opus, impegno medio)
 
@@ -116,41 +116,17 @@ Quando un problema si risolve per sempre, si aggiorna la voce invece di cancella
 - **Successo:** i risultati di ricerca davano solo il nome del sito (`www.ivg.it`) senza titolo né estratto; il primo tentativo (ivg.it) non si è aperto, il secondo, scelto a caso, era un articolo del 2025 su un'altra gara, e ha consumato il limite di un articolo senza dare nulla. La ricerca mirata con il nome preso dal registro ha ripetuto esattamente la ricerca (a). L'orologio della sessione dava 10-30 secondi per evento: non è una misura.
 - **Invece:** si apre un articolo solo se il titolo o l'estratto nominano la gara, la città o l'organizzatore; se nessun risultato lo fa, nessun articolo. La ricerca mirata si salta quando il nome esatto è già stato usato nella ricerca (a). Per la durata fa fede la pagina dell'attività pianificata. Tutto scritto nel prompt.
 
-
 ## 2026-11-06 — Prima esecuzione dell'attività pianificata: il ramo `claude/…`
 
 - **Volevo:** la prova dell'attività pianificata "Arricchimento calendario pattinaggio corsa" (Opus 5.5, impegno medio, ambiente con rete completa), lanciata a mano dal proprietario.
 - **Successo:** 36 secondi, Passi 0-2 eseguiti, nessuna PR aperta e nessuna voce da ricontrollare (le 4 voci future senza prova o senza link hanno la traccia di oggi e rientrano dal 2026-11-21), niente ramo e niente PR, come previsto; `gh api` risponde; fisr.info 200 e skatingclubcomina.eu 301 dalla shell. Un'anomalia: l'agente ha letto nelle istruzioni della sessione pianificata che deve spingere solo su un ramo `claude/…` generato dalla piattaforma, in contrasto con il prompt (ramo della PR di raccolta oppure `arricchimento/OGGI`), e ha chiesto quale usare.
 - **Invece:** la documentazione delle attività pianificate dice che Claude spinge su un ramo `claude/…` "a meno che il prompt non indichi un altro ramo": il prompt dell'attività ora lo indica esplicitamente (punto 3). Da verificare alla prima esecuzione con lavoro vero che il push sul ramo `raccolta/…` passi; se la piattaforma lo bloccasse, l'alternativa è aprire la PR dell'arricchimento dal ramo `claude/…` verso il ramo di raccolta.
 
-
-## 2026-11-16 — Raccolta: un regolamento cambiato diventa un doppione; un regolamento senza riga in lista resta senza luogo
-
-- **Volevo:** che la raccolta settimanale (PR #55) aggiungesse solo gare nuove.
-- **Successo:** due difetti di `converti_fisr.py`. (1) Tra il 9 e il 16 novembre l'organizzatore ha cambiato il regolamento 7073 (Internazionali d'Italia Open Indoor, L'Aquila, maggio 2027): inizio il 28/05 invece del 29/05, iscrizioni entro il 24/05 invece del 26/05, aggiunte le righe Master Over 30-75. La voce esistente era `escluso` con la prova del regolamento vecchio. Lo script riconosce una voce esistente solo dall'`id` o dalla stessa `data_inizio`: con la data cambiata non l'ha riconosciuta e ha creato una seconda voce (regola 7), lasciando la prima con una prova non più vera. Anche con la data invariata, una voce con prova non viene mai toccata: il cambio di categorie sarebbe finito solo nel rapporto. (2) Il regolamento 7101 (39° Meeting Città di San Benedetto del Tronto, 31/07/2027) non è ancora nella lista, da cui lo script prende la località: ha scritto `luogo: "da indicare (vedi note)"` e un `id` con `luogo-ignoto`, che dopo il merge non si potrebbe più cambiare.
-- **Invece:** revisione a mano sul ramo della PR prima del merge: tolta la vecchia voce esclusa dell'Aquila (mai pubblicata, quindi il suo `id` non era in nessun calendario) e tenuta la nuova, con la storia in `note_interne`; `id`, nome e luogo di San Benedetto corretti con ciò che dicono i documenti federali (stesso campo di gara e stesso CAP del regolamento 6779 dell'edizione 2026). Da fare nello script, in una PR a parte: riconoscere una voce esistente anche dal numero del regolamento (`id_manif`), segnalare in evidenza quando cambia un regolamento già usato come prova, e non generare `id` con `luogo-ignoto`. Finché non c'è, ogni PR di raccolta va riletta cercando voci nuove con lo stesso `id_manif` o lo stesso nome di una voce esistente.
-- **Nota sui tempi:** `raccolta.yml` è fissato alle 05:17 UTC ma GitHub lo ha avviato alle 13:57 UTC il 9/11 e alle 13:42 UTC il 16/11 (oltre 8 ore di ritardo, due volte su due). Non crea problemi finché la PR arriva prima dell'arricchimento del martedì alle 06:07 ora italiana.
-
-
-## 2026-11-16 — Scansione settimanale: "ultimo visto" era l'ultimo numero provato, non l'ultimo regolamento trovato
-
-- **Volevo:** che ogni lunedì la raccolta leggesse i regolamenti nuovi (oltre l'ultimo esistente) e rileggesse quelli già noti delle gare future.
-- **Successo:** `intervallo_scansione.py` contava come "visto" anche l'estremo superiore dell'intervallo scandito scritto nei file `registro/*-raccolta-fisr.json`. Finché l'unico file committato era quello della scansione completa fatta a mano (fino a 7080) il conto tornava; con il primo file di una raccolta settimanale (intervallo 7031-7380, questa PR) l'ultimo visto sarebbe diventato 7380, mentre l'ultimo regolamento che esiste è il 7101. La raccolta successiva avrebbe scandito 7331-7680: saltati i regolamenti nuovi tra 7102 e 7330, e mai più riletti quelli delle gare future, cioè proprio quelli che cambiano (il 7073 con i Master aggiunti, il 7047 con la scadenza spostata). Trovato il 2026-11-16 controllando che cosa avrebbe letto la raccolta dopo il merge, prima che facesse danni.
-- **Invece:** l'intervallo parte dall'ultimo regolamento trovato davvero; i regolamenti delle voci dalla data minima della raccolta in poi vengono riletti uno per uno, qualunque sia il loro numero (`intervallo_scansione.py --da-rileggere` → `raccogli_fisr.py --rileggi-regolamenti`); `scarica()` riprova tre volte. Correzione nella PR #57, con prove automatiche. Lezione: un numero "provato" non è un numero "trovato"; uno stato che dipende dai file committati va provato con i file come saranno dopo il merge, non con quelli di oggi.
-
-
 ## 2026-11-17 — Arricchimento: `pip` e `python3` di versioni diverse nell'ambiente pianificato
 
 - **Volevo:** installare le dipendenze con `pip install -r script/requisiti.txt` (passo 0.4) e poi eseguire `genera_ics.py`.
 - **Successo:** `pip` è quello di sistema (Python 3.13), `python3` è 3.11: l'installazione riesce ma `genera_ics.py` risponde "Manca una dipendenza (No module named 'icalendar')". `python3 -m pip install` senza opzioni fallisce su PyYAML installato da Debian ("RECORD file not found").
 - **Invece:** `python3 -m pip install --ignore-installed -r script/requisiti.txt`. Da valutare se scriverlo così nel passo 0.4 di `agenti/arricchimento.md`.
-
-
-## 2026-11-17 — `note_interne`: lo script scriveva dopo la traccia dell'arricchimento
-
-- **Volevo:** che lo script (`converti_fisr.py`) e l'agente di arricchimento scrivessero tutti e due in `note_interne` senza pestarsi i piedi: lo script la storia dei cambi ("Aggiornata il …", "Nome aggiornato il …"), l'agente la traccia `Arricchimento AAAA-MM-GG: …`, che tiene in coda e sostituisce a ogni ricontrollo.
-- **Successo:** lo script accodava le sue frasi in fondo, quindi dopo la traccia. Simulando la raccolta del 23/11 sulla Master Race dell'Aquila del 06/12/2026 la traccia finiva a metà del testo, seguita da due frasi dello script; l'agente, che la ricontrolla il 24/11, avrebbe potuto cancellarle sostituendo "la frase in coda", oppure lasciare due tracce. Trovato prima che succedesse, guardando il risultato della simulazione e non solo i conteggi.
-- **Invece:** lo script inserisce le sue frasi subito prima della traccia (`aggiungi_a_note_interne`) e, prima di scrivere, controlla che la traccia di ogni voce sia identica a com'era; il prompt dice all'agente di non cancellare nulla se trova testo dopo la traccia. Lezione: quando un campo ha due scrittori, uno dei due deve conoscere e rispettare la forma dell'altro, e la regola va scritta in tutti e due i posti e provata.
 
 ## 2026-11-22 — Account di Claude: push rifiutato con l'app Claude sospesa
 

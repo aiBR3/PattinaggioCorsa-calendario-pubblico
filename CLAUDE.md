@@ -2,7 +2,7 @@
 
 Questo file è la memoria permanente di agenti e script e vale per intero: se la sessione non lo ha già caricato nel tuo contesto, leggilo prima di fare qualsiasi cosa.
 
-`appunti/diario.md` (cosa non ha funzionato) e `appunti/decisioni.md` (perché le cose sono fatte così) non si leggono per intero all'avvio: si consultano quando servono (decisione 2026-11-22). Del diario scorri i titoli (`grep '^## ' appunti/diario.md`) e leggi le voci che riguardano ciò che stai per fare (regola 6). Nelle decisioni cerca il tema (`grep -n -i 'parola' appunti/decisioni.md`) prima di cambiare una regola, uno schema, uno script o un prompt.
+Gli appunti non si leggono all'avvio: si consultano quando servono (decisione 2026-11-22). Del diario (`appunti/diario.md`, cosa non ha funzionato) scorri i titoli (`grep '^## ' appunti/diario.md`) e leggi le voci che riguardano ciò che stai per fare (regola 6). Prima di cambiare una regola, uno schema, uno script o un prompt guarda che cosa è già deciso in `appunti/decisioni-in-vigore.md` (per tema, una riga a decisione); il perché sta nella storia, `appunti/decisioni.md`, dove si cerca per tema o per data (`grep -n -i 'parola' appunti/decisioni.md`). A che punto è il progetto e che cosa resta aperto: `appunti/stato.md`.
 
 ## Scopo
 
@@ -32,7 +32,7 @@ Chi lo consulta: chi si iscrive al calendario, da iPhone (app Calendario) o da A
 - **Due volte al mese**, attività pianificata "rilettura" (`agenti/rilettura-mensile.md`): riapre le pagine degli organizzatori delle gare future già `confermato` o `non_autorizzato`; apre una PR propria solo se c'è qualcosa.
 - **Il proprietario** rivede e fonde. A ogni merge su `main`, `pubblica.yml` genera calendario e pagina e li pubblica su GitHub Pages.
 
-Fasi del progetto e punti aperti: `appunti/decisioni.md`, in fondo.
+Fasi del progetto e punti aperti: `appunti/stato.md`.
 
 ## Struttura del repository
 
@@ -40,8 +40,11 @@ Fasi del progetto e punti aperti: `appunti/decisioni.md`, in fondo.
 CLAUDE.md                  ← questo file
 README.md                  ← per le persone: cos'è e come iscriversi
 CODEOWNERS                 ← il proprietario è responsabile di ogni file tranne dati/eventi.yaml, dati/societa.yaml, dati/segnalazioni.yaml e registro/ (scritti ogni settimana da raccolta e arricchimento): una PR non aperta da lui che tocca gli altri va approvata da lui prima del merge
-appunti/decisioni.md       ← decisioni prese, con data e motivo
+appunti/decisioni-in-vigore.md ← che cosa è deciso oggi, per tema, e chi fa cosa
+appunti/decisioni.md       ← la storia delle decisioni, con data e motivo: ci si cerca, non si legge per intero
+appunti/stato.md           ← come gira oggi, fasi, punti aperti
 appunti/diario.md          ← cosa non ha funzionato
+appunti/diario-archivio.md ← voci di diario su difetti degli script ormai corretti e coperti da prove
 appunti/casi-di-prova.md   ← eventi reali che la scoperta e l'arricchimento devono saper trovare
 dati/LEGGIMI.md            ← schemi di fonti.yaml, societa.yaml e segnalazioni.yaml
 dati/eventi.yaml           ← SORGENTE DI VERITÀ degli eventi
