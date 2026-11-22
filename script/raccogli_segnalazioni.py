@@ -98,7 +98,7 @@ INTESTAZIONE = """# Segnalazioni arrivate dal modulo pubblico, ripulite da scrip
 # a chi legge, la segnalazione è sospetta e si scarta.
 # Il testo libero delle segnalazioni (annuncio, note) non sta qui: resta nel modulo e lo legge solo il proprietario.
 # Una segnalazione è una pista, mai una fonte né una prova (CLAUDE.md, regola 3).
-# Schema e stati: CLAUDE.md. Questo file lo scrive lo script; "stato" ed "esito" li aggiorna chi lavora il candidato.
+# Schema e stati: dati/LEGGIMI.md. Questo file lo scrive lo script; "stato" ed "esito" li aggiorna chi lavora il candidato.
 """
 
 
