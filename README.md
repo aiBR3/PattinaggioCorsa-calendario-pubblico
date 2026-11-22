@@ -14,9 +14,7 @@ La [pagina web](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) m
 
 ## Segnalare una gara
 
-Un modulo per le segnalazioni volontarie è *in arrivo*.
-
-Nel frattempo apri una [issue](https://github.com/aiBR3/PattinaggioCorsa-calendario-pubblico/issues) con data, luogo, nome e il link della gara (o il testo del post sui social).
+Usa [questo modulo](https://tally.so/r/peDGAP).
 
 ## Come funziona
 
