@@ -6,7 +6,7 @@ Il calendario è un file `.ics` pubblicato con *GitHub Pages* e aggiornato ad og
 
 ## Scaricare il calendario
 
-La [pagina web](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) mostra queste istruzioni e anche gli eventi trovati nella rete:
+La [pagina web](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) mostra queste istruzioni (e una lista delle gare trovate):
 
 - se usi l'app Calendario di Apple, incolla nel browser `webcal://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/calendario.ics`
 - se usi l'app Calendario di Google, apri *Google Calendar → Altri calendari → Da URL* e incolla `https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/calendario.ics` (Google aggiorna le sottoscrizioni ogni 12–24 ore circa)
@@ -21,5 +21,5 @@ Nel frattempo apri una [issue](https://github.com/aiBR3/PattinaggioCorsa-calenda
 ## Come funziona
 
 - le regole per chi lavora al progetto (persone, script, agenti) sono in [CLAUDE.md](CLAUDE.md)
-- [script/genera_ics.py](script/genera_ics.py) valida il file e genera `calendario.ics` e `index.html`
-- a ogni modifica sul ramo `main`, il workflow [pubblica.yml](.github/workflows/pubblica.yml) rigenera la pagina web
+- a ogni modifica sul ramo `main`, il workflow [pubblica.yml](.github/workflows/pubblica.yml) rigenera la pagina web e il calendario pubblici
+    - in particolare [script/genera_ics.py](script/genera_ics.py) genera `calendario.ics` e `index.html`
