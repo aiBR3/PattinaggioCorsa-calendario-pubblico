@@ -348,8 +348,8 @@
   frequenza: settimanale
   copre: [gare, pattinate]
   affidabilita: social
-  stato: da_verificare
-  note: "Modulo pubblico creato dal proprietario il 2026-11-22, aperto a chiunque visiti la pagina (decisioni del 2026-11-22 in appunti/decisioni.md). Lo legge script/raccogli_segnalazioni.py ogni lunedì dentro raccolta.yml, attraverso l'API di Tally, con la chiave nel segreto dell'environment segnalazioni. Nel repository entrano solo i candidati ripuliti (dati/segnalazioni.yaml); il testo dell'annuncio e le note restano nel modulo. Una segnalazione è una pista, mai una fonte né una prova: per questo l'affidabilità è social. Resta da_verificare finché la prima lettura vera non è riuscita."
+  stato: attiva
+  note: "Modulo pubblico creato dal proprietario il 2026-11-22, aperto a chiunque visiti la pagina (decisioni del 2026-11-22 in appunti/decisioni.md). Lo legge script/raccogli_segnalazioni.py ogni lunedì dentro raccolta.yml, attraverso l'API di Tally, con la chiave nel segreto dell'environment segnalazioni. Nel repository entrano solo i candidati ripuliti (dati/segnalazioni.yaml); il testo dell'annuncio e le note restano nel modulo. Una segnalazione è una pista, mai una fonte né una prova: per questo l'affidabilità è social. Prima lettura vera riuscita il 2026-11-22 (quattro segnalazioni di prova: due candidati, due scartate)."
   ultimo_controllo: 2026-11-22
 
 - id: federazioni-estere
