@@ -240,7 +240,7 @@ def scrivi_registro(percorso: Path, registro: dict[str, dict]) -> None:
 
     righe = ["# Registro delle società di pattinaggio corsa (chiave: codice società FISR).",
              "# Generato e aggiornato da script/raccogli_societa.py; i campi nome, citta, sito, social, stato_sito,",
-             "# fonte_sito e note si compilano a mano o dall'arricchimento e lo script non li tocca. Schema in CLAUDE.md.", ""]
+             "# fonte_sito e note si compilano a mano o dall'arricchimento e lo script non li tocca. Schema in dati/LEGGIMI.md.", ""]
     for chiave in sorted(registro, key=ordine):
         voce = registro[chiave]
         righe.append(f"- codice_fisr: {testo_yaml(voce['codice_fisr'])}")

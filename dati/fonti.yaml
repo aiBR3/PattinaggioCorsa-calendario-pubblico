@@ -1,5 +1,5 @@
 # Registro delle fonti: dove si trovano le gare e come si leggono.
-# Schema in CLAUDE.md. Una fonte "da_verificare" non è ancora in uso: o non è stata letta davvero (ultimo_controllo vuoto),
+# Schema in dati/LEGGIMI.md. Una fonte "da_verificare" non è ancora in uso: o non è stata letta davvero (ultimo_controllo vuoto),
 # o è stata letta (ultimo_controllo e note dicono quando e che cosa offre) e aspetta che il proprietario decida se attivarla.
 # Una fonte "scartata" è stata letta e non serve: resta qui con il motivo, per non riproporla.
 # Censimento del 2026-11-17: registro/2026-11-17-censimento-fonti.md.
