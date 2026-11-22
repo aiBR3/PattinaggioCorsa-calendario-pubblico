@@ -63,18 +63,19 @@ Il repository GitHub `aiBR3/PattinaggioCorsa-calendario-pubblico` è già clonat
 |---|---|---|
 | Nome | `Rilettura mensile calendario pattinaggio corsa` | |
 | Prompt | il testo qui sopra | |
-| Trigger | Schedule, ogni settimana, giovedì alle 06:23 (ora locale del proprietario, Europe/Rome) | Lontano dalla raccolta del lunedì e dall'arricchimento del martedì. Il modulo non ha "il primo giovedì del mese": l'attività parte ogni giovedì e il Passo 1 del prompt lavora solo quando il giorno del mese è tra 1 e 7 (giro completo) o tra 15 e 21 (giro corto, gare dei 30 giorni successivi); gli altri giovedì si ferma subito. In alternativa, se il modulo accetta un'espressione personalizzata: due giorni fissi del mese, uno tra 1 e 7 e uno tra 15 e 21 (per esempio il 3 e il 17), senza esecuzioni a vuoto |
+| Trigger | Schedule, ogni settimana, giovedì alle 06:23 (ora locale del proprietario, Europe/Rome) | Lontano dalla raccolta del lunedì e dall'arricchimento del martedì. Il modulo non ha "il primo giovedì del mese": l'attività parte ogni giovedì e il Passo 1 del prompt lavora solo quando il giorno del mese è tra 1 e 7 (giro completo) o tra 15 e 21 (giro corto, gare dei 30 giorni successivi); gli altri giovedì si ferma subito. In alternativa, senza esecuzioni a vuoto: due giorni fissi del mese, uno tra 1 e 7 e uno tra 15 e 21 (per esempio il 3 e il 17); per la documentazione si fa dopo la creazione, da Edit → Custom, con un'espressione cron (`CRON_TZ=Europe/Rome 23 6 3,17 * *`) |
 | Repository | `aiBR3/PattinaggioCorsa-calendario-pubblico` | Viene clonato all'avvio di ogni esecuzione |
 | Cloud environment | lo stesso ambiente dell'arricchimento, con Network access = **Full** | L'agente apre dalla shell i siti degli organizzatori, che cambiano con le gare: con `Trusted` ogni `curl` fallisce |
 | Variabili d'ambiente, setup script | nessuno | `pip install` lo fa il Passo 0 del prompt |
-| Modello | a scelta del proprietario; il collaudo cieco del 2026-11-22 è passato con Sonnet | Il compito non cerca e non decide: rilegge pagine note e confronta. Se si sceglie un altro modello conviene ripetere il collaudo |
-| Effort | a scelta del proprietario; nel collaudo era quello predefinito | |
+| Modello | Opus 5.5 | Scelta del proprietario (2026-11-22). I collaudi ciechi sono passati sia con Sonnet (`registro/2026-11-22-rilettura-collaudo-1.md`) sia con Opus a impegno medio (`registro/2026-11-22-rilettura-collaudo-2.md`): Opus è più lento e più costoso, e nel collaudo non ha dato falsi allarmi |
+| Effort | non si sceglie: resta quello predefinito del modello | Il modulo delle attività ha solo il selettore del modello (documentazione di Claude Code letta il 2026-11-22); per la stessa documentazione Opus 5.5 parte da `medium` se nient'altro imposta un livello. Dalla sessione l'impegno di un'attività non si legge: se un giorno servisse fissarlo, la documentazione nomina la variabile d'ambiente `CLAUDE_CODE_EFFORT_LEVEL`, ma non dice se vale per le attività pianificate (non provato) |
 | Connettori | nessuno (togliere tutti quelli proposti) | Come per l'arricchimento: `gh api` passa dal proxy git della sessione |
 | Approvazione | automatica | Senza, l'esecuzione si fermerebbe alla prima richiesta di permesso, di notte |
 | Correzione automatica delle pull request | spenta | Come per l'arricchimento |
 
 ## Dopo la creazione
 
+- Attività creata dal proprietario il 2026-11-22: ogni giovedì alle 06:23 ora italiana, nessun connettore, notifica push a fine esecuzione.
 - Per provarla subito: "Run now" nella pagina dell'attività. Fuori dai giorni 1-7 e 15-21 si ferma con "Oggi non è previsto nessun giro di rilettura": è il comportamento atteso. Per forzare un giro fuori calendario si avvia una sessione a mano con lo stesso testo più le parole "giro completo" (o "giro corto").
 - Senza novità non apre PR e non lascia tracce nel repository: l'esito si legge nella pagina dell'attività ("History") e nella notifica di fine esecuzione.
 - Quando apre una PR (ramo `rilettura/AAAA-MM-GG`), in cima al testo ci sono le cose da decidere: date o luoghi diversi, gare annullate o rinviate, campi che la pagina contraddice, pagine sparite o sospette. L'agente non le applica: le applica il proprietario, o le chiede in una chat.
