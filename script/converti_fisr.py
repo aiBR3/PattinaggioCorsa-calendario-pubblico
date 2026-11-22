@@ -2,44 +2,21 @@
 """
 converti_fisr.py — da raccolta grezza (raccogli_fisr.py) a voci di dati/eventi.yaml.
 
-Livello 2 (normalizzazione + deduplica) e livello 3 "meccanico" (classificazione
-con prova): quando il regolamento di gara ha il programma gare (art. 10), le categorie
-ammesse sono scritte nero su bianco e lo script le cita testualmente. Dove non c'è
-regolamento, lo script NON decide: stato "da_verificare", categorie vuote.
+Livello 2 (normalizzazione + deduplica) e livello 3 "meccanico" (classificazione con prova): quando il regolamento di gara ha il programma gare (art. 10), le categorie ammesse sono scritte nero su bianco e lo script le cita testualmente. Dove non c'è regolamento, lo script NON decide: stato "da_verificare", categorie vuote.
 
 Uso:
-    python3 script/converti_fisr.py --raccolta registro/raccolta.json \
-        --eventi dati/eventi.yaml [--scrivi] [--rapporto registro/rapporto.md]
+    python3 script/converti_fisr.py --raccolta registro/raccolta.json --eventi dati/eventi.yaml [--scrivi] [--rapporto registro/rapporto.md]
 
-Senza --scrivi non tocca eventi.yaml: stampa solo il rapporto. Con --scrivi
-riscrive eventi.yaml con le voci esistenti (riordinate per data) più le nuove.
-Una gara già presente si riconosce prima di tutto dal numero del regolamento di
-gara (id_manif), che la federazione non cambia mai, poi dall'id, poi da stessa
-data d'inizio con nome simile o stessa città. Le voci esistenti vincono: se un
-evento raccolto corrisponde a una voce già presente, lo script lo segnala e non
-la tocca, con due eccezioni (regola 7 di CLAUDE.md):
+Senza --scrivi non tocca eventi.yaml: stampa solo il rapporto. Con --scrivi riscrive eventi.yaml con le voci esistenti (riordinate per data) più le nuove. Una gara già presente si riconosce prima di tutto dal numero del regolamento di gara (id_manif), che la federazione non cambia mai, poi dall'id, poi da stessa data d'inizio con nome simile o stessa città. Le voci esistenti vincono: se un evento raccolto corrisponde a una voce già presente, lo script lo segnala e non la tocca, con due eccezioni (regola 7 di CLAUDE.md):
 
-  - PROMOZIONE: una voce ancora senza prova (da_verificare, non_autorizzato,
-    annunciato) che ora ha il regolamento di gara riceve categorie, prova, stato,
-    verificato_il e la fonte nuova;
-  - REGOLAMENTO CAMBIATO: una voce legata a un regolamento di gara (lo cita in
-    url_ufficiale o nelle fonti) segue il regolamento quando cambia: date,
-    scadenza delle iscrizioni e, se la prova è la frase scritta da questo script,
-    categorie, prova e stato. Se cambia la data d'inizio, la data nell'id la segue.
-    Ogni cambio è scritto in note_interne e nel rapporto, prima → dopo.
+  - PROMOZIONE: una voce ancora senza prova (da_verificare, non_autorizzato, annunciato) che ora ha il regolamento di gara riceve categorie, prova, stato, verificato_il e la fonte nuova;
+  - REGOLAMENTO CAMBIATO: una voce legata a un regolamento di gara (lo cita in url_ufficiale o nelle fonti) segue il regolamento quando cambia: date, scadenza delle iscrizioni e, se la prova è la frase scritta da questo script, categorie, prova e stato. Se cambia la data d'inizio, la data nell'id la segue. Ogni cambio è scritto in note_interne e nel rapporto, prima → dopo.
 
-In entrambi i casi nome, luogo, organizzatore, note e tutto ciò che una persona ha
-scritto restano com'erano. Una prova scritta a mano non viene mai riscritta: se il
-regolamento non le corrisponde più, lo script lo segnala in note_interne e nel
-rapporto ("da controllare") e lascia decidere a chi rivede la PR.
+In entrambi i casi nome, luogo, organizzatore, note e tutto ciò che una persona ha scritto restano com'erano. Una prova scritta a mano non viene mai riscritta: se il regolamento non le corrisponde più, lo script lo segnala in note_interne e nel rapporto ("da controllare") e lascia decidere a chi rivede la PR.
 
-Un regolamento che non ha ancora una riga nella lista (da cui viene la località)
-non diventa una voce: resta nel rapporto finché la lista non lo riporta.
+Un regolamento che non ha ancora una riga nella lista (da cui viene la località) non diventa una voce: resta nel rapporto finché la lista non lo riporta.
 
-note_interne ha due scrittori, questo script e l'arricchimento. La traccia che
-l'arricchimento lascia in coda ("Arricchimento AAAA-MM-GG: …") deve restare l'ultima
-frase: lo script inserisce le sue frasi subito prima e, prima di scrivere, controlla
-che la traccia di ogni voce sia rimasta identica; altrimenti si ferma.
+note_interne ha due scrittori, questo script e l'arricchimento. La traccia che l'arricchimento lascia in coda ("Arricchimento AAAA-MM-GG: …") deve restare l'ultima frase: lo script inserisce le sue frasi subito prima e, prima di scrivere, controlla che la traccia di ogni voce sia rimasta identica; altrimenti si ferma.
 """
 
 from __future__ import annotations
@@ -139,8 +116,7 @@ def normalizza_nome(grezzo: str) -> str:
     testo = normalizza_ordinali(testo)
     testo = re.sub(r"\bcitta\b", "città", testo, flags=re.I)
     testo = re.sub(r"Ã(?=\s|$)", "À", testo)   # residuo di codifica non riparabile: in un nome è sempre una À
-    # Maiuscole: un titolo (o un suo tratto tra due " - ") scritto quasi tutto in maiuscolo torna a maiuscole normali.
-    # Tratto per tratto, perché la federazione mescola: "INTERNAZIONALI D'ITALIA OPEN INDOOR - VII Memorial Romano ...".
+    # Maiuscole: un titolo (o un suo tratto tra due " - ") scritto quasi tutto in maiuscolo torna a maiuscole normali. Tratto per tratto, perché la federazione mescola: "INTERNAZIONALI D'ITALIA OPEN INDOOR - VII Memorial Romano ...".
     tratti = []
     for tratto in testo.split(" - "):
         lettere = [c for c in tratto if c.isalpha()]
@@ -151,8 +127,7 @@ def normalizza_nome(grezzo: str) -> str:
 
 
 def titolo_della_fonte(grezzo: str) -> str:
-    """Il titolo com'è scritto nella fonte federale, per il campo nome_fonte: senza la dicitura
-    'non ancora autorizzata' (che va e viene da sola) e con gli spazi in ordine; nient'altro viene toccato."""
+    """Il titolo com'è scritto nella fonte federale, per il campo nome_fonte: senza la dicitura 'non ancora autorizzata' (che va e viene da sola) e con gli spazi in ordine; nient'altro viene toccato."""
     testo = str(grezzo or "")
     for espressione in DICITURE_DA_TOGLIERE:
         testo = espressione.sub("", testo)
@@ -160,8 +135,7 @@ def titolo_della_fonte(grezzo: str) -> str:
 
 
 def parole_del_titolo(titolo: str) -> list[str]:
-    """Le parole di un titolo, per capire se la fonte lo ha cambiato davvero: maiuscole, accenti, spazi e
-    punteggiatura non contano ('CITTA'' e 'Città', '1°maggio' e '1° maggio' sono lo stesso titolo)."""
+    """Le parole di un titolo, per capire se la fonte lo ha cambiato davvero: maiuscole, accenti, spazi e punteggiatura non contano ('CITTA'' e 'Città', '1°maggio' e '1° maggio' sono lo stesso titolo)."""
     return re.findall(r"[a-z0-9]+", senza_accenti(accenti_da_apostrofo(titolo)).lower())
 
 
@@ -446,8 +420,7 @@ ESPRESSIONE_NUMERO_REGOLAMENTO = re.compile(r"[?&]id_manif=(\d+)")
 
 
 def numeri_regolamento(evento: dict) -> set[str]:
-    """I numeri di regolamento di gara (id_manif) citati da una voce, in url_ufficiale e nelle fonti.
-    La federazione non cambia mai il numero di una gara: è la chiave più stabile che abbiamo."""
+    """I numeri di regolamento di gara (id_manif) citati da una voce, in url_ufficiale e nelle fonti. La federazione non cambia mai il numero di una gara: è la chiave più stabile che abbiamo."""
     testi = [str(evento.get("url_ufficiale") or "")]
     for fonte in evento.get("fonti") or []:
         if isinstance(fonte, dict):
@@ -463,11 +436,8 @@ def giorni_tra(a, b) -> int:
 
 
 def corrisponde_esistente(nuovo: dict, esistenti: list[dict]) -> dict | None:
-    """La voce già presente che descrive la stessa gara, o None. In ordine: stesso numero di regolamento
-    (vale anche se nel frattempo sono cambiati data e nome), stesso id, stessa data d'inizio con nome simile
-    o stessa città."""
-    # Le pattinate (tipo: pattinata) arrivano da un'altra fonte e le gestisce converti_pattinate.py: non sono mai
-    # la gara di una riga della lista federale, nemmeno nello stesso giorno e nella stessa città.
+    """La voce già presente che descrive la stessa gara, o None. In ordine: stesso numero di regolamento (vale anche se nel frattempo sono cambiati data e nome), stesso id, stessa data d'inizio con nome simile o stessa città."""
+    # Le pattinate (tipo: pattinata) arrivano da un'altra fonte e le gestisce converti_pattinate.py: non sono mai la gara di una riga della lista federale, nemmeno nello stesso giorno e nella stessa città.
     esistenti = [e for e in esistenti if str(e.get("tipo")) != "pattinata"]
     numeri = numeri_regolamento(nuovo)
     if numeri:
@@ -488,23 +458,19 @@ def corrisponde_esistente(nuovo: dict, esistenti: list[dict]) -> dict | None:
 STATI_PROMUOVIBILI = {"da_verificare", "non_autorizzato", "annunciato"}
 FRASE_SENZA_REGOLAMENTO = "Regolamento di gara non trovato: categorie ammesse sconosciute."
 
-# La traccia dell'arricchimento (agenti/arricchimento.md, passo 3, punto 9): "Arricchimento AAAA-MM-GG: esito; …".
-# L'agente la tiene in coda a note_interne e la sostituisce a ogni ricontrollo: le frasi dello script non
-# devono finirle dietro, altrimenti la traccia non è più l'ultima e la sostituzione può cancellarle.
+# La traccia dell'arricchimento (agenti/arricchimento.md, passo 3, punto 9): "Arricchimento AAAA-MM-GG: esito; …". L'agente la tiene in coda a note_interne e la sostituisce a ogni ricontrollo: le frasi dello script non devono finirle dietro, altrimenti la traccia non è più l'ultima e la sostituzione può cancellarle.
 ESPRESSIONE_TRACCIA_ARRICCHIMENTO = re.compile(r"Arricchimento \d{4}-\d{2}-\d{2}:")
 
 
 def coda_arricchimento(note_interne) -> str:
-    """La traccia dell'arricchimento: dall'ultima "Arricchimento AAAA-MM-GG:" alla fine di note_interne.
-    Stringa vuota se la traccia non c'è."""
+    """La traccia dell'arricchimento: dall'ultima "Arricchimento AAAA-MM-GG:" alla fine di note_interne. Stringa vuota se la traccia non c'è."""
     testo = str(note_interne or "").strip()
     inizi = [trovata.start() for trovata in ESPRESSIONE_TRACCIA_ARRICCHIMENTO.finditer(testo)]
     return testo[inizi[-1]:] if inizi else ""
 
 
 def aggiungi_a_note_interne(note_interne, frase: str) -> str:
-    """Aggiunge una frase dello script a note_interne lasciando in coda la traccia dell'arricchimento:
-    la frase va subito prima della traccia; se la traccia non c'è, in fondo."""
+    """Aggiunge una frase dello script a note_interne lasciando in coda la traccia dell'arricchimento: la frase va subito prima della traccia; se la traccia non c'è, in fondo."""
     testo = str(note_interne or "").strip()
     frase = str(frase or "").strip()
     if not frase:
@@ -515,12 +481,9 @@ def aggiungi_a_note_interne(note_interne, frase: str) -> str:
 
 
 def promuovi(esistente: dict, proposta: dict, letto_il: str) -> list[str]:
-    """Promozione di una voce esistente (regola 7): aggiorna SUL POSTO la voce e ritorna l'elenco
-    di cosa è cambiato (vuoto = niente da fare). Due soli casi, entrambi senza giudizio:
-      1. la voce non ha prova e la proposta ne porta una (regolamento di gara o titolo ufficiale):
-         prende categorie, prova, stato, verificato_il, e riempie i campi vuoti (url, distanze, scadenza);
-      2. la voce è non_autorizzato con prova già citata e la lista ora non la segna più come
-         "non ancora autorizzata": cambia solo lo stato (confermato/escluso), se coerente con le categorie.
+    """Promozione di una voce esistente (regola 7): aggiorna SUL POSTO la voce e ritorna l'elenco di cosa è cambiato (vuoto = niente da fare). Due soli casi, entrambi senza giudizio:
+      1. la voce non ha prova e la proposta ne porta una (regolamento di gara o titolo ufficiale): prende categorie, prova, stato, verificato_il, e riempie i campi vuoti (url, distanze, scadenza);
+      2. la voce è non_autorizzato con prova già citata e la lista ora non la segna più come "non ancora autorizzata": cambia solo lo stato (confermato/escluso), se coerente con le categorie.
     Nome, luogo, organizzatore, note pubbliche, url_iscrizione, date: mai toccati."""
     stato_vecchio = str(esistente.get("stato") or "")
     if stato_vecchio not in STATI_PROMUOVIBILI:
@@ -576,8 +539,7 @@ FRASI_SUPERATE_DA_CATEGORIE = [
 
 
 def frase_prova_dello_script(prova: str, numero: str) -> str | None:
-    """La frase che questo script ha scritto come prova per il regolamento `numero`, se è ancora nella voce.
-    None se la prova è scritta a mano o viene da un'altra fonte: in quel caso non la si riscrive."""
+    """La frase che questo script ha scritto come prova per il regolamento `numero`, se è ancora nella voce. None se la prova è scritta a mano o viene da un'altra fonte: in quel caso non la si riscrive."""
     inizio = re.escape(f"Regolamento di gara id_manif {numero}, art. 10 'Programma gare': ")
     trovata = re.search(inizio + r"(?:righe .*? Categorie elencate: [^.]*\.|categorie elencate [^;]*; nessuna riga Master o Amatori\.)", prova, flags=re.S)
     return trovata.group(0) if trovata else None
@@ -597,13 +559,9 @@ def categorie_della_frase(frase: str) -> list[str]:
 
 
 def aggiorna_dal_regolamento(esistente: dict, proposta: dict, letto_il: str, id_occupati: set[str]) -> tuple[list[str], list[str]]:
-    """Regolamento cambiato (regola 7): se la voce è legata allo stesso regolamento di gara della proposta
-    (stesso id_manif), la allinea SUL POSTO a ciò che il regolamento e la lista dicono oggi.
-    Ritorna (cambiamenti fatti, cose da controllare a mano); due liste vuote = niente da fare.
+    """Regolamento cambiato (regola 7): se la voce è legata allo stesso regolamento di gara della proposta (stesso id_manif), la allinea SUL POSTO a ciò che il regolamento e la lista dicono oggi. Ritorna (cambiamenti fatti, cose da controllare a mano); due liste vuote = niente da fare.
       - date e scadenza delle iscrizioni: sempre; se cambia la data d'inizio, la data nell'id la segue;
-      - categorie, prova e stato: solo se la prova è la frase scritta da questo script per quel regolamento
-        (frase_prova_dello_script). Le categorie arrivate da altre fonti (es. 'amatori' dalla pagina
-        dell'organizzatore) e il testo aggiunto alla prova restano;
+      - categorie, prova e stato: solo se la prova è la frase scritta da questo script per quel regolamento (frase_prova_dello_script). Le categorie arrivate da altre fonti (es. 'amatori' dalla pagina dell'organizzatore) e il testo aggiunto alla prova restano;
       - prova scritta a mano e regolamento che oggi dà altre categorie: nessun cambio, solo "da controllare".
     Nome, luogo, organizzatore, note pubbliche e url: mai toccati (tranne le frasi di questo script non più vere)."""
     numero = str(proposta.get("_regolamento") or "")
@@ -703,16 +661,11 @@ def aggiorna_dal_regolamento(esistente: dict, proposta: dict, letto_il: str, id_
 
 
 def aggiorna_nome(esistente: dict, proposta: dict, letto_il: str, unica_riga: bool, solo_registrare: bool = False) -> tuple[list[str], bool]:
-    """Il nome segue la fonte quando la fonte cambia il titolo (decisione 2026-11-16).
-    nome_fonte ricorda il titolo com'era nella lista federale all'ultima lettura:
+    """Il nome segue la fonte quando la fonte cambia il titolo (decisione 2026-11-16). nome_fonte ricorda il titolo com'era nella lista federale all'ultima lettura:
       - se è vuoto, lo si registra e il nome non cambia (prima lettura: non c'è nulla con cui confrontare);
-      - se le parole del titolo sono le stesse (maiuscole, accenti e punteggiatura non contano), niente:
-        i ritocchi fatti a mano al nome restano;
-      - se le parole sono cambiate, il nome diventa il titolo nuovo ripulito dallo script, nome_fonte si aggiorna
-        e il nome vecchio resta scritto in note_interne. L'id non cambia.
-    Vale solo per le proposte che vengono da una riga della lista, e solo se a quella voce corrisponde una sola
-    riga (più gare dello stesso giorno in una voce sola hanno più titoli: non si sceglie).
-    Ritorna (cambiamenti, titolo registrato per la prima volta)."""
+      - se le parole del titolo sono le stesse (maiuscole, accenti e punteggiatura non contano), niente: i ritocchi fatti a mano al nome restano;
+      - se le parole sono cambiate, il nome diventa il titolo nuovo ripulito dallo script, nome_fonte si aggiorna e il nome vecchio resta scritto in note_interne. L'id non cambia.
+    Vale solo per le proposte che vengono da una riga della lista, e solo se a quella voce corrisponde una sola riga (più gare dello stesso giorno in una voce sola hanno più titoli: non si sceglie). Ritorna (cambiamenti, titolo registrato per la prima volta)."""
     if not proposta.get("_dalla_lista") or not unica_riga:
         return [], False
     titolo_nuovo = str(proposta.get("nome_fonte") or "")
@@ -730,17 +683,13 @@ def aggiorna_nome(esistente: dict, proposta: dict, letto_il: str, unica_riga: bo
     for fonte in esistente.get("fonti") or []:
         if isinstance(fonte, dict) and fonte.get("url") == URL_LISTA:
             fonte["letto_il"] = letto_il
-    frase = (f"Nome aggiornato il {letto_il} da converti_fisr.py perché la lista federale ha cambiato il titolo: "
-             f"da «{titolo_vecchio}» a «{titolo_nuovo}»; il nome della voce era «{nome_vecchio}».")
+    frase = (f"Nome aggiornato il {letto_il} da converti_fisr.py perché la lista federale ha cambiato il titolo: da «{titolo_vecchio}» a «{titolo_nuovo}»; il nome della voce era «{nome_vecchio}».")
     esistente["note_interne"] = aggiungi_a_note_interne(esistente.get("note_interne"), frase)
     return [f"nome «{nome_vecchio}» → «{proposta['nome']}»"], False
 
 
 def segnala_possibili_doppioni(nuovi: list[dict], esistenti: list[dict], ancora_in_lista: set[int], filtro_da: str) -> list[str]:
-    """Una voce nuova senza regolamento può essere una gara già presente a cui la lista ha cambiato la data:
-    senza il numero del regolamento non si può dire con certezza, quindi lo script non unisce: scrive il sospetto
-    in note_interne della voce nuova e nel rapporto. Sospetto = una voce esistente, sparita dalla lista letta oggi,
-    con stessa città, nome simile e data entro 60 giorni."""
+    """Una voce nuova senza regolamento può essere una gara già presente a cui la lista ha cambiato la data: senza il numero del regolamento non si può dire con certezza, quindi lo script non unisce: scrive il sospetto in note_interne della voce nuova e nel rapporto. Sospetto = una voce esistente, sparita dalla lista letta oggi, con stessa città, nome simile e data entro 60 giorni."""
     segnalazioni: list[str] = []
     for nuovo in nuovi:
         for esistente in esistenti:
@@ -803,8 +752,7 @@ def principale(argomenti: list[str] | None = None) -> int:
     analizzatore.add_argument("--scrivi", action="store_true", help="riscrive eventi.yaml (senza: solo rapporto)")
     analizzatore.add_argument("--rapporto", type=Path, default=None, help="scrive il rapporto in Markdown in questo file")
     analizzatore.add_argument("--solo-nome-fonte", action="store_true",
-                              help="non crea, non promuove e non aggiorna nulla: registra soltanto nome_fonte dove è vuoto, dal titolo della lista "
-                                   "(serve una volta, per dare alle voci già presenti il titolo di una raccolta precedente)")
+                              help="non crea, non promuove e non aggiorna nulla: registra soltanto nome_fonte dove è vuoto, dal titolo della lista (serve una volta, per dare alle voci già presenti il titolo di una raccolta precedente)")
     opzioni = analizzatore.parse_args(argomenti)
 
     raccolta = carica_raccolta(opzioni.raccolta)
@@ -843,8 +791,7 @@ def principale(argomenti: list[str] | None = None) -> int:
                 proposte_per_esistente.append((esistente, evento))
             continue
         # Senza la riga della lista manca la località (e l'id la contiene): non diventa una voce, aspetta la lista.
-        in_attesa.append(f"- regolamento {regolamento['id_manif']}: {evento['nome']!r}, {evento['data_inizio']}, società {regolamento.get('societa') or '?'}; "
-                         f"Master/Amatori nel programma: {', '.join(evento['categorie']) or 'no'}")
+        in_attesa.append(f"- regolamento {regolamento['id_manif']}: {evento['nome']!r}, {evento['data_inizio']}, società {regolamento.get('societa') or '?'}; Master/Amatori nel programma: {', '.join(evento['categorie']) or 'no'}")
     ancora_in_lista = {id(esistente) for esistente, _ in proposte_per_esistente}
     id_occupati = {str(e["id"]) for e in esistenti}
     righe_per_voce: dict[int, int] = {}    # quante righe della lista corrispondono a ciascuna voce
@@ -924,8 +871,7 @@ def principale(argomenti: list[str] | None = None) -> int:
         opzioni.rapporto.write_text(testo_rapporto, encoding="utf-8")
     print(testo_rapporto)
 
-    # Controllo in uscita: qualunque cosa lo script abbia scritto in note_interne, la traccia dell'arricchimento
-    # deve essere ancora lì, identica e in coda (è ciò che l'agente legge e sostituisce al prossimo ricontrollo).
+    # Controllo in uscita: qualunque cosa lo script abbia scritto in note_interne, la traccia dell'arricchimento deve essere ancora lì, identica e in coda (è ciò che l'agente legge e sostituisce al prossimo ricontrollo).
     tracce_toccate = [str(voce["id"]) for voce in esistenti if coda_arricchimento(voce.get("note_interne")) != tracce_prima[id(voce)]]
     if tracce_toccate:
         print(f"ERRORE: la traccia 'Arricchimento …' in note_interne è cambiata o non è più l'ultima frase in: {tracce_toccate}; eventi.yaml non è stato scritto", file=sys.stderr)

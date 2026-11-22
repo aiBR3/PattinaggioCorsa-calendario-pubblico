@@ -2,36 +2,22 @@
 """
 raccogli_fisr.py — raccolta (livello 1) dal calendario corsa di fisr.info.
 
-Legge la lista per stagione (corsa_calendario.php) e, a richiesta, il regolamento di
-ogni gara (corsa_trofeo_modulo.php?id_manif=N). Restituisce dati GREZZI in JSON:
-non classifica, non scarta, non corregge i nomi. Chi decide è un altro passo.
+Legge la lista per stagione (corsa_calendario.php) e, a richiesta, il regolamento di ogni gara (corsa_trofeo_modulo.php?id_manif=N). Restituisce dati GREZZI in JSON: non classifica, non scarta, non corregge i nomi. Chi decide è un altro passo.
 
 Uso:
-    python3 script/raccogli_fisr.py --uscita registro/raccolta.json \
-        [--anno 2026] [--anno 2027] [--da 2026-01-01] [--regolamenti] [--pausa 0.5]
+    python3 script/raccogli_fisr.py --uscita registro/raccolta.json [--anno 2026] [--anno 2027] [--da 2026-01-01] [--regolamenti] [--pausa 0.5]
 
-  --anno N      parametro "anno" di fisr.info: N=2026 dà la stagione 2025/26,
-                N=2027 la 2026/27, e così via. Senza --anno: la stagione corrente.
+  --anno N      parametro "anno" di fisr.info: N=2026 dà la stagione 2025/26, N=2027 la 2026/27, e così via. Senza --anno: la stagione corrente.
   --da DATA     tiene solo le righe con data di inizio >= DATA (dopo il parsing).
   --regolamenti   scarica anche la pagina del regolamento di ogni gara che ha il link.
   --pausa S     secondi di attesa tra una richiesta e l'altra (educazione verso il sito).
   --scansione-regolamenti DA A
-                scarica i regolamenti con id_manif da DA ad A anche se la lista non li
-                linka più (succede per le gare passate e per quelle "non ancora
-                autorizzate"): tiene solo quelli completi (data, nome, programma) e nel
-                periodo. L'abbinamento alle righe della lista lo fa converti_fisr.py.
+                scarica i regolamenti con id_manif da DA ad A anche se la lista non li linka più (succede per le gare passate e per quelle "non ancora autorizzate"): tiene solo quelli completi (data, nome, programma) e nel periodo. L'abbinamento alle righe della lista lo fa converti_fisr.py.
   --rileggi-regolamenti ID [ID ...]
-                scarica anche questi regolamenti, uno per uno: sono quelli delle gare
-                future già in eventi.yaml (li elenca intervallo_scansione.py --da-rileggere),
-                da rileggere ogni settimana perché gli organizzatori li cambiano (date,
-                categorie, scadenza). Quelli già dentro --scansione-regolamenti si saltano.
-  Nota: la pagina ?anno=2026 (stagione 2025/26) contiene anche i mesi della 2026/27;
-  chiedere due stagioni consecutive produce righe doppie.
+                scarica anche questi regolamenti, uno per uno: sono quelli delle gare future già in eventi.yaml (li elenca intervallo_scansione.py --da-rileggere), da rileggere ogni settimana perché gli organizzatori li cambiano (date, categorie, scadenza). Quelli già dentro --scansione-regolamenti si saltano.
+  Nota: la pagina ?anno=2026 (stagione 2025/26) contiene anche i mesi della 2026/27; chiedere due stagioni consecutive produce righe doppie.
 
-Controlli: la lista deve avere almeno un mese e ogni riga 7 celle; le date vengono
-interpretate ma la stringa originale è sempre conservata; ogni anomalia finisce
-nel campo "anomalie" della riga, mai scartata in silenzio. Il JSON scritto viene
-riletto e contato prima di uscire. Codice di uscita: 0 ok, 1 anomalie gravi, 2 uso.
+Controlli: la lista deve avere almeno un mese e ogni riga 7 celle; le date vengono interpretate ma la stringa originale è sempre conservata; ogni anomalia finisce nel campo "anomalie" della riga, mai scartata in silenzio. Il JSON scritto viene riletto e contato prima di uscire. Codice di uscita: 0 ok, 1 anomalie gravi, 2 uso.
 """
 
 from __future__ import annotations
@@ -114,8 +100,7 @@ ATTESE_TRA_TENTATIVI = (2.0, 6.0)   # secondi prima del secondo e del terzo tent
 
 
 def scarica(url: str, pausa: float) -> bytes:
-    """Scarica una pagina. Il server federale ogni tanto chiude la connessione a metà: fino a tre tentativi,
-    poi RuntimeError con l'ultimo errore (chi chiama lo registra tra le anomalie)."""
+    """Scarica una pagina. Il server federale ogni tanto chiude la connessione a metà: fino a tre tentativi, poi RuntimeError con l'ultimo errore (chi chiama lo registra tra le anomalie)."""
     ultimo_errore: Exception | None = None
     for tentativo in range(len(ATTESE_TRA_TENTATIVI) + 1):
         if tentativo:
@@ -192,8 +177,7 @@ def pulisci_html(frammento: str) -> str:
 # ---------------------------------------------------------------------------
 
 def interpreta_data_lista(grezza: str, anno: int, mese: int) -> tuple[str, str, list[str]]:
-    """'08/11' → un giorno; '28-29/11' → intervallo; '27/02-01/03' → intervallo a cavallo di mesi.
-    L'anno viene dal mese della tabella; se il mese finale è minore di quello iniziale, l'anno finale è +1."""
+    """'08/11' → un giorno; '28-29/11' → intervallo; '27/02-01/03' → intervallo a cavallo di mesi. L'anno viene dal mese della tabella; se il mese finale è minore di quello iniziale, l'anno finale è +1."""
     anomalie: list[str] = []
     grezza = grezza.strip()
     if corrispondenza := re.fullmatch(r"(\d{1,2})/(\d{1,2})", grezza):
@@ -224,8 +208,7 @@ def interpreta_data_lista(grezza: str, anno: int, mese: int) -> tuple[str, str, 
 
 
 def interpreta_data_breve(grezza: str, anno_riferimento: int, mese_riferimento: int) -> str:
-    """'27/09' → AAAA-MM-GG, con l'anno del mese di riferimento (anno precedente se la scadenza
-    è in un mese successivo a quello della gara, cioè a cavallo d'anno)."""
+    """'27/09' → AAAA-MM-GG, con l'anno del mese di riferimento (anno precedente se la scadenza è in un mese successivo a quello della gara, cioè a cavallo d'anno)."""
     corrispondenza = re.fullmatch(r"(\d{1,2})/(\d{1,2})", grezza.strip())
     if not corrispondenza:
         return ""
@@ -401,8 +384,7 @@ def principale(argomenti: list[str] | None = None) -> int:
     analizzatore.add_argument("--scansione-regolamenti", nargs=2, type=int, metavar=("DA", "A"), default=None,
                               help="scarica i regolamenti con id_manif da DA ad A (inclusi) anche senza link nella lista; tiene solo quelli completi e con data >= --da")
     analizzatore.add_argument("--rileggi-regolamenti", nargs="*", type=int, metavar="ID", default=[],
-                              help="scarica anche questi regolamenti (id_manif), uno per uno: sono quelli delle gare future già in eventi.yaml, "
-                                   "da rileggere ogni settimana per accorgersi quando cambiano; quelli già dentro --scansione-regolamenti vengono saltati")
+                              help="scarica anche questi regolamenti (id_manif), uno per uno: sono quelli delle gare future già in eventi.yaml, da rileggere ogni settimana per accorgersi quando cambiano; quelli già dentro --scansione-regolamenti vengono saltati")
     analizzatore.add_argument("--uscita", type=Path, required=True, help="file JSON da scrivere")
     opzioni = analizzatore.parse_args(argomenti)
     fuori_misura = [numero for numero in opzioni.rileggi_regolamenti if not 1 <= numero <= 1_000_000]
@@ -482,8 +464,7 @@ def principale(argomenti: list[str] | None = None) -> int:
         if not leggi_regolamento(id_manif, "rilettura"):
             riletti_non_tenuti.append(id_manif)
     if opzioni.rileggi_regolamenti:
-        print(f"rilettura dei regolamenti delle gare future: {len(da_rileggere)} fuori dall'intervallo ({len(opzioni.rileggi_regolamenti) - len(da_rileggere)} già dentro), "
-              f"{len(da_rileggere) - len(riletti_non_tenuti)} tenuti" + (f"; non più completi o fuori periodo: {riletti_non_tenuti}" if riletti_non_tenuti else ""), file=sys.stderr)
+        print(f"rilettura dei regolamenti delle gare future: {len(da_rileggere)} fuori dall'intervallo ({len(opzioni.rileggi_regolamenti) - len(da_rileggere)} già dentro), {len(da_rileggere) - len(riletti_non_tenuti)} tenuti" + (f"; non più completi o fuori periodo: {riletti_non_tenuti}" if riletti_non_tenuti else ""), file=sys.stderr)
 
     documento = {
         "generato_il": datetime.now(timezone.utc).isoformat(timespec="seconds"),

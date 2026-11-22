@@ -2,13 +2,10 @@
 """
 prove_converti_pattinate.py — prove automatiche di converti_pattinate.py su calendari costruiti.
 
-Non legge la rete e non tocca dati/eventi.yaml: scrive in una cartella temporanea un eventi.yaml con una
-gara finta e dei file ICS finti, esegue lo script per intero (come fa raccolta.yml) e rilegge ciò che ha
-scritto. Protegge le decisioni del 2026-11-22 sulle pattinate (appunti/decisioni.md):
+Non legge la rete e non tocca dati/eventi.yaml: scrive in una cartella temporanea un eventi.yaml con una gara finta e dei file ICS finti, esegue lo script per intero (come fa raccolta.yml) e rilegge ciò che ha scritto. Protegge le decisioni del 2026-11-22 sulle pattinate (appunti/decisioni.md):
   - una pattinata nuova entra con le date, il titolo senza la sigla e senza l'ultima parte, `da_verificare`;
   - l'ultima parte del titolo (gruppo e persone) e la descrizione non finiscono in nessun file;
-  - la voce si riconosce dall'identificativo dell'evento scritto nelle `fonti`; date, titolo e annullamento
-    la seguono; ciò che una persona ha scritto (luogo, paese, organizzatore, stato) resta;
+  - la voce si riconosce dall'identificativo dell'evento scritto nelle `fonti`; date, titolo e annullamento la seguono; ciò che una persona ha scritto (luogo, paese, organizzatore, stato) resta;
   - una voce `escluso` non viene toccata; una voce sparita dalla fonte viene solo segnalata;
   - una lettura in cui sparisce gran parte delle voci non scrive nulla.
 I nomi di gruppi e persone usati qui sono inventati.

@@ -1,6 +1,5 @@
 # Registro delle società di pattinaggio corsa (chiave: codice società FISR).
-# Generato e aggiornato da script/raccogli_societa.py; i campi nome, citta, sito, social, stato_sito,
-# fonte_sito e note si compilano a mano o dall'arricchimento e lo script non li tocca. Schema in dati/LEGGIMI.md.
+# Generato e aggiornato da script/raccogli_societa.py; i campi nome, citta, sito, social, stato_sito, fonte_sito e note si compilano a mano o dall'arricchimento e lo script non li tocca. Schema in dati/LEGGIMI.md.
 
 - codice_fisr: "81"
   nome_fisr: "SKATING CONCOREZZO"

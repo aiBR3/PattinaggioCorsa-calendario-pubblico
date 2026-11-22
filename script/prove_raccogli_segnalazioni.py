@@ -2,8 +2,7 @@
 """
 prove_raccogli_segnalazioni.py — prove automatiche di raccogli_segnalazioni.py su risposte costruite.
 
-Non legge la rete, non conosce nessuna chiave e non tocca dati/segnalazioni.yaml: costruisce risposte finte
-dell'API del modulo, le fa passare dal filtro e lavora su file temporanei. Protegge le decisioni del 2026-11-22:
+Non legge la rete, non conosce nessuna chiave e non tocca dati/segnalazioni.yaml: costruisce risposte finte dell'API del modulo, le fa passare dal filtro e lavora su file temporanei. Protegge le decisioni del 2026-11-22:
   - dal modulo passano solo valori chiusi (tipo, paese, date) e tre testi corti ripuliti (nome, luogo, link);
   - il testo dell'annuncio e le note non finiscono in nessun file, nemmeno nel rapporto;
   - una segnalazione che sembra un'istruzione per chi la legge non viene scritta: viene solo contata;

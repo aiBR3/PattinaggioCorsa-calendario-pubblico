@@ -2,10 +2,7 @@
 """
 prove_converti_fisr.py — prove automatiche di converti_fisr.py su casi costruiti.
 
-Non legge la rete e non tocca dati/eventi.yaml: costruisce righe di lista e regolamenti
-di gara finti e controlla come converti_fisr.py riconosce una voce esistente e cosa fa
-quando un regolamento cambia (regola 7 di CLAUDE.md). Il caso reale da cui nascono queste
-regole (L'Aquila 2027, regolamento 7073) è il caso 6 di appunti/casi-di-prova.md.
+Non legge la rete e non tocca dati/eventi.yaml: costruisce righe di lista e regolamenti di gara finti e controlla come converti_fisr.py riconosce una voce esistente e cosa fa quando un regolamento cambia (regola 7 di CLAUDE.md). Il caso reale da cui nascono queste regole (L'Aquila 2027, regolamento 7073) è il caso 6 di appunti/casi-di-prova.md.
 
 Uso:
     python3 script/prove_converti_fisr.py

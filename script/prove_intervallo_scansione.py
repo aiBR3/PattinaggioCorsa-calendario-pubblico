@@ -2,10 +2,8 @@
 """
 prove_intervallo_scansione.py — prove automatiche di intervallo_scansione.py su dati costruiti.
 
-Non legge la rete e non tocca il repository: scrive un eventi.yaml e un registro finti in una
-cartella temporanea e controlla ciò che intervallo_scansione.py stampa. Protegge due regole:
-  - l'ultimo regolamento "esistente" è l'ultimo trovato davvero, non l'ultimo numero provato
-    (l'errore del 2026-11-16: vedi appunti/diario.md);
+Non legge la rete e non tocca il repository: scrive un eventi.yaml e un registro finti in una cartella temporanea e controlla ciò che intervallo_scansione.py stampa. Protegge due regole:
+  - l'ultimo regolamento "esistente" è l'ultimo trovato davvero, non l'ultimo numero provato (l'errore del 2026-11-16: vedi appunti/diario.md);
   - i regolamenti delle gare future vengono elencati per essere riletti ogni settimana.
 
 Uso:

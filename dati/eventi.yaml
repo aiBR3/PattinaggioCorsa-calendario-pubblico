@@ -1,12 +1,9 @@
-# Sorgente di verità del calendario. Ogni modifica passa da una pull request.
-# Schema, stati e regole: CLAUDE.md. Lo script script/genera_ics.py valida
-# ogni campo e si rifiuta di generare il calendario se qualcosa non torna.
+# Sorgente di verità del calendario. Ogni modifica passa da una pull request. Schema, stati e regole: CLAUDE.md. Lo script script/genera_ics.py valida ogni campo e si rifiuta di generare il calendario se qualcosa non torna.
 #
 # Promemoria:
 #   - id = data_inizio + città + slug (minuscole, senza accenti, trattini)
 #   - categorie si compila SOLO con prova compilata (frase citata dal regolamento di gara)
-#   - stato "escluso" = verificato: NON ammette Master/Amatori → resta qui come
-#     memoria (così nessuno lo ripropone) ma non finisce nel calendario
+#   - stato "escluso" = verificato: NON ammette Master/Amatori → resta qui come memoria (così nessuno lo ripropone) ma non finisce nel calendario
 #   - ogni voce ha almeno una fonte con url e letto_il
 
 - id: 2026-01-06-pescara-trofeo-befana

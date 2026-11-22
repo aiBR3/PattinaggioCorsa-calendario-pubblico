@@ -2,47 +2,30 @@
 """
 converti_pattinate.py — dal calendario pubblico di Pattiniamo l'Italia alle voci `tipo: pattinata` di dati/eventi.yaml.
 
-La fonte è un Google Calendar pubblico (file ICS): per ogni pattinata dà solo le date e un titolo
-nella forma "PPUG - luogo o nome - gruppo che organizza"; niente luogo, niente orari. Le regole che
-questo script applica sono le decisioni del proprietario del 2026-11-22 (appunti/decisioni.md).
+La fonte è un Google Calendar pubblico (file ICS): per ogni pattinata dà solo le date e un titolo nella forma "PPUG - luogo o nome - gruppo che organizza"; niente luogo, niente orari. Le regole che questo script applica sono le decisioni del proprietario del 2026-11-22 (appunti/decisioni.md).
 
 Uso:
-    python3 script/converti_pattinate.py [--eventi dati/eventi.yaml] [--oggi AAAA-MM-GG]
-        [--ics FILE.ics] [--rapporto registro/AAAA-MM-GG-pattinate.md] [--scrivi]
+    python3 script/converti_pattinate.py [--eventi dati/eventi.yaml] [--oggi AAAA-MM-GG] [--ics FILE.ics] [--rapporto registro/AAAA-MM-GG-pattinate.md] [--scrivi]
 
-Senza --scrivi non tocca eventi.yaml: stampa solo il rapporto. Senza --ics scarica il calendario dalla rete.
-Legge solo gli eventi con data d'inizio da --oggi in poi (regola del progetto: gli eventi passati non si toccano).
+Senza --scrivi non tocca eventi.yaml: stampa solo il rapporto. Senza --ics scarica il calendario dalla rete. Legge solo gli eventi con data d'inizio da --oggi in poi (regola del progetto: gli eventi passati non si toccano).
 
 Che cosa fa:
-  - RICONOSCE una voce già presente dall'identificativo (UID) che Google dà all'evento, scritto nelle
-    `fonti` della voce come frammento dell'indirizzo del calendario (…/basic.ics#UID): è la chiave stabile,
-    come il numero di regolamento per le gare FISR. Se l'UID non c'è più ma una pattinata con la stessa data
-    d'inizio e lo stesso titolo sì, è lo stesso evento ricreato nella fonte: la voce prende l'UID nuovo.
-  - CREA una voce per ogni evento nuovo: date, nome ricavato dal titolo, `stato: da_verificare`,
-    `luogo: "da indicare"`, `paese: IT`. Luogo, paese e organizzatore li compila chi rivede la voce
-    (l'agente del martedì o il proprietario), che poi la porta ad `annunciato` oppure, se è fuori
-    perimetro o non è una pattinata, a `escluso`.
+  - RICONOSCE una voce già presente dall'identificativo (UID) che Google dà all'evento, scritto nelle `fonti` della voce come frammento dell'indirizzo del calendario (…/basic.ics#UID): è la chiave stabile, come il numero di regolamento per le gare FISR. Se l'UID non c'è più ma una pattinata con la stessa data d'inizio e lo stesso titolo sì, è lo stesso evento ricreato nella fonte: la voce prende l'UID nuovo.
+  - CREA una voce per ogni evento nuovo: date, nome ricavato dal titolo, `stato: da_verificare`, `luogo: "da indicare"`, `paese: IT`. Luogo, paese e organizzatore li compila chi rivede la voce (l'agente del martedì o il proprietario), che poi la porta ad `annunciato` oppure, se è fuori perimetro o non è una pattinata, a `escluso`.
   - SEGUE le date: se cambiano nella fonte cambiano nella voce, e la data nell'`id` segue `data_inizio`.
-  - SEGUE il titolo: `nome_fonte` ricorda il titolo ripulito all'ultima lettura; se le sue parole cambiano,
-    `nome` diventa il titolo nuovo e quello vecchio resta in `note_interne`.
+  - SEGUE il titolo: `nome_fonte` ricorda il titolo ripulito all'ultima lettura; se le sue parole cambiano, `nome` diventa il titolo nuovo e quello vecchio resta in `note_interne`.
   - ANNULLA: un titolo che dice "ANNULLATA" (o un evento con STATUS:CANCELLED) porta la voce ad `annullato`.
   - SEGNALA, senza cancellare né cambiare stato, le voci future che non sono più nella fonte.
-  - NON TOCCA le voci `escluso` (sono la memoria di ciò che è stato scartato) e nient'altro di ciò che
-    una persona ha scritto: luogo, paese, organizzatore, note, link.
+  - NON TOCCA le voci `escluso` (sono la memoria di ciò che è stato scartato) e nient'altro di ciò che una persona ha scritto: luogo, paese, organizzatore, note, link.
 
 Che cosa non fa mai (regola 9 di CLAUDE.md: niente informazioni personali):
-  - non copia l'ultima parte del titolo, dove la fonte scrive il gruppo e spesso i nomi delle persone
-    che organizzano; se il titolo ha una parte sola, la tiene e lo segnala nel rapporto;
+  - non copia l'ultima parte del titolo, dove la fonte scrive il gruppo e spesso i nomi delle persone che organizzano; se il titolo ha una parte sola, la tiene e lo segnala nel rapporto;
   - non legge e non copia le descrizioni degli eventi;
   - non scrive titoli grezzi né descrizioni in nessun file, nemmeno nel rapporto.
 
-`note_interne` ha più scrittori: le frasi di questo script vanno prima della traccia "Arricchimento
-AAAA-MM-GG: …" lasciata dall'arricchimento, che resta l'ultima frase; prima di scrivere lo script
-controlla che la traccia di ogni voce sia rimasta identica, altrimenti si ferma.
+`note_interne` ha più scrittori: le frasi di questo script vanno prima della traccia "Arricchimento AAAA-MM-GG: …" lasciata dall'arricchimento, che resta l'ultima frase; prima di scrivere lo script controlla che la traccia di ogni voce sia rimasta identica, altrimenti si ferma.
 
-Esce con 0 se tutto è andato bene, con 1 se non ha potuto leggere la fonte, se la lettura è sospetta
-(troppe voci sparite in una volta) o se il controllo in uscita fallisce: in questi casi eventi.yaml
-non viene scritto e il rapporto, se richiesto, riporta l'errore (regola 5).
+Esce con 0 se tutto è andato bene, con 1 se non ha potuto leggere la fonte, se la lettura è sospetta (troppe voci sparite in una volta) o se il controllo in uscita fallisce: in questi casi eventi.yaml non viene scritto e il rapporto, se richiesto, riporta l'errore (regola 5).
 """
 
 from __future__ import annotations
@@ -86,8 +69,7 @@ FUSO_ITALIANO = ZoneInfo("Europe/Rome")
 
 SIGLA = re.compile(r"\bPPUG\b", re.I)
 ESPRESSIONE_ANNULLATA = re.compile(r"\bANNULLAT[AOIE]\b", re.I)
-# Il trattino che separa le parti del titolo ha almeno uno spazio accanto ("San Candido  -Lienz");
-# quello dentro un nome non ne ha ("Sanremo-Ospedaletti") e resta dov'è.
+# Il trattino che separa le parti del titolo ha almeno uno spazio accanto ("San Candido  -Lienz"); quello dentro un nome non ne ha ("Sanremo-Ospedaletti") e resta dov'è.
 SEPARATORE_PARTI = re.compile(r"\s+[-–—]\s*|\s*[-–—]\s+")
 PAROLE_FUORI_DALLO_SLUG = {"pattinata", "pattinate", "ppug", "di", "del", "della", "dei", "delle", "e", "a", "al", "in", "il", "la", "le", "i"}
 FRASE_SPARITA = f"l'evento non è più nel {NOME_FONTE}"
@@ -142,9 +124,7 @@ def scarica_calendario(indirizzo: str = URL_CALENDARIO, tentativi: int = 3, atte
 def ripulisci_titolo(titolo: str) -> tuple[str, bool, bool]:
     """Dal titolo della fonte a (titolo ripulito, una sola parte?, annullata?).
 
-    Toglie la sigla PPUG e la parola ANNULLATA, divide il titolo nelle sue parti e butta l'ultima,
-    dove la fonte scrive il gruppo che organizza e spesso i nomi delle persone (regola 9). Se la parte
-    è una sola la tiene: non c'è modo di sapere che cosa contiene, e il rapporto lo segnala."""
+    Toglie la sigla PPUG e la parola ANNULLATA, divide il titolo nelle sue parti e butta l'ultima, dove la fonte scrive il gruppo che organizza e spesso i nomi delle persone (regola 9). Se la parte è una sola la tiene: non c'è modo di sapere che cosa contiene, e il rapporto lo segnala."""
     testo = re.sub(r"\s+", " ", str(titolo or "")).strip()
     annullata = bool(ESPRESSIONE_ANNULLATA.search(testo))
     testo = ESPRESSIONE_ANNULLATA.sub(" ", testo)
@@ -157,15 +137,13 @@ def ripulisci_titolo(titolo: str) -> tuple[str, bool, bool]:
     if len(parti) >= 2:
         parti = parti[:-1]
     ripulito = " - ".join(parti)
-    # Una parola lunga scritta tutta in maiuscolo torna normale ("PESCARA" → "Pescara"); le sigle corte
-    # ("TN", "GPM") restano come sono.
+    # Una parola lunga scritta tutta in maiuscolo torna normale ("PESCARA" → "Pescara"); le sigle corte ("TN", "GPM") restano come sono.
     ripulito = re.sub(r"[A-ZÀ-Ý]{5,}", lambda trovata: trovata.group(0).capitalize(), ripulito)
     return ripulito, una_sola_parte, annullata
 
 
 def _giorno(valore, fine_esclusiva: bool = False) -> date:
-    """Il giorno di un DTSTART o DTEND. Un orario con fuso viene letto in ora italiana.
-    Per una fine esclusiva (giornata intera, oppure mezzanotte in punto) il giorno è quello prima."""
+    """Il giorno di un DTSTART o DTEND. Un orario con fuso viene letto in ora italiana. Per una fine esclusiva (giornata intera, oppure mezzanotte in punto) il giorno è quello prima."""
     if isinstance(valore, datetime):
         locale = valore.astimezone(FUSO_ITALIANO) if valore.tzinfo is not None else valore
         giorno = locale.date()
@@ -178,8 +156,7 @@ def _giorno(valore, fine_esclusiva: bool = False) -> date:
 
 
 def leggi_eventi_fonte(contenuto: bytes, oggi: date, anomalie: list[str]) -> tuple[list[EventoFonte], int]:
-    """Gli eventi della fonte con data d'inizio da `oggi` in poi, e il numero di eventi totali nel file.
-    Ogni evento che non si può usare finisce in `anomalie`, indicato solo con data e UID."""
+    """Gli eventi della fonte con data d'inizio da `oggi` in poi, e il numero di eventi totali nel file. Ogni evento che non si può usare finisce in `anomalie`, indicato solo con data e UID."""
     if not isinstance(contenuto, (bytes, bytearray)) or not contenuto.strip():
         raise ErroreFonte("il calendario è vuoto")
     try:
@@ -305,14 +282,12 @@ def voce_nuova(evento: EventoFonte, oggi: date, occupati: set[str]) -> dict:
         "verificato_il": "",
         "prova": "",
         "note": "",
-        "note_interne": f"Proposta il {oggi.isoformat()} da {FIRMA} dal {NOME_FONTE}, che dà solo date e titolo: luogo, paese e organizzatore "
-                        f"sono da compilare leggendo il titolo nella fonte, senza copiare nomi di persone (regola 9).{avviso}",
+        "note_interne": f"Proposta il {oggi.isoformat()} da {FIRMA} dal {NOME_FONTE}, che dà solo date e titolo: luogo, paese e organizzatore sono da compilare leggendo il titolo nella fonte, senza copiare nomi di persone (regola 9).{avviso}",
     }
 
 
 def segna_lettura(voce: dict, uid: str, oggi: date) -> None:
-    """Aggiorna la data di lettura della fonte della voce (solo quando la voce è cambiata: altrimenti
-    ogni settimana cambierebbero tutte le voci senza che sia successo nulla)."""
+    """Aggiorna la data di lettura della fonte della voce (solo quando la voce è cambiata: altrimenti ogni settimana cambierebbero tutte le voci senza che sia successo nulla)."""
     atteso = indirizzo_con_uid(uid)
     for fonte in voce.get("fonti") or []:
         if isinstance(fonte, dict) and str(fonte.get("url") or "").startswith(URL_CALENDARIO + "#"):
@@ -323,8 +298,7 @@ def segna_lettura(voce: dict, uid: str, oggi: date) -> None:
 
 
 def aggiorna_voce(voce: dict, evento: EventoFonte, oggi: date, occupati: set[str]) -> list[str]:
-    """Porta nella voce ciò che è cambiato nella fonte: date (e la data nell'id), titolo, annullamento.
-    Restituisce le frasi per il rapporto; lista vuota se non è cambiato nulla."""
+    """Porta nella voce ciò che è cambiato nella fonte: date (e la data nell'id), titolo, annullamento. Restituisce le frasi per il rapporto; lista vuota se non è cambiato nulla."""
     cambiamenti: list[str] = []
     frasi: list[str] = []
     inizio_prima, fine_prima = str(voce["data_inizio"]), str(voce["data_fine"])
@@ -354,8 +328,7 @@ def aggiorna_voce(voce: dict, evento: EventoFonte, oggi: date, occupati: set[str
         voce["nome_fonte"] = evento.titolo_ripulito
         voce["nome"] = nome_proposto(evento.titolo_ripulito)
         cambiamenti.append(f"titolo cambiato nella fonte: nome «{nome_prima}» → «{voce['nome']}» (luogo e organizzatore da ricontrollare)")
-        frasi.append(f"Nome aggiornato il {oggi.isoformat()} da {FIRMA} (titolo cambiato nel {NOME_FONTE}): prima «{nome_prima}». "
-                     f"Da controllare: luogo e organizzatore erano stati letti dal titolo precedente.")
+        frasi.append(f"Nome aggiornato il {oggi.isoformat()} da {FIRMA} (titolo cambiato nel {NOME_FONTE}): prima «{nome_prima}». Da controllare: luogo e organizzatore erano stati letti dal titolo precedente.")
     stato = str(voce.get("stato") or "")
     if evento.annullata and stato != "annullato":
         voce["stato"] = "annullato"
@@ -372,8 +345,7 @@ def aggiorna_voce(voce: dict, evento: EventoFonte, oggi: date, occupati: set[str
 
 
 def elabora(esistenti: list[dict], eventi_fonte: list[EventoFonte], oggi: date) -> dict:
-    """Confronta la fonte con le voci presenti. Modifica `esistenti` sul posto e restituisce il resoconto:
-    voci nuove, aggiornate, sparite, già escluse, invariate, da rileggere a mano."""
+    """Confronta la fonte con le voci presenti. Modifica `esistenti` sul posto e restituisce il resoconto: voci nuove, aggiornate, sparite, già escluse, invariate, da rileggere a mano."""
     pattinate = [voce for voce in esistenti if str(voce.get("tipo")) == "pattinata" and uid_della_voce(voce)]
     per_uid: dict[str, dict] = {}
     for voce in pattinate:
@@ -386,8 +358,7 @@ def elabora(esistenti: list[dict], eventi_fonte: list[EventoFonte], oggi: date) 
     for evento in eventi_fonte:
         voce = per_uid.get(evento.uid)
         if voce is None:
-            # Stesso evento ricreato nella fonte (UID nuovo): stessa data d'inizio e stesso titolo di una voce
-            # il cui UID non è più nel calendario.
+            # Stesso evento ricreato nella fonte (UID nuovo): stessa data d'inizio e stesso titolo di una voce il cui UID non è più nel calendario.
             for candidata in pattinate:
                 if id(candidata) in viste or uid_della_voce(candidata) & uid_nella_fonte:
                     continue
@@ -470,8 +441,7 @@ def principale(argomenti: list[str] | None = None) -> int:
         return 1
 
     rapporto: list[str] = [f"# Pattinate dal {NOME_FONTE}, lettura del {oggi.isoformat()}", "",
-                           f"Fonte: {URL_CALENDARIO} (pagina pubblica: {URL_PAGINA_EVENTI}). Eventi letti: quelli con inizio dal {oggi.isoformat()} in poi. "
-                           "Di ogni evento lo script tiene date, identificativo e titolo senza l'ultima parte; le descrizioni non vengono lette."]
+                           f"Fonte: {URL_CALENDARIO} (pagina pubblica: {URL_PAGINA_EVENTI}). Eventi letti: quelli con inizio dal {oggi.isoformat()} in poi. Di ogni evento lo script tiene date, identificativo e titolo senza l'ultima parte; le descrizioni non vengono lette."]
 
     def chiudi(codice: int) -> int:
         testo = "\n".join(rapporto) + "\n"
@@ -515,19 +485,14 @@ def principale(argomenti: list[str] | None = None) -> int:
                   and str(voce.get("stato")) != "escluso" and str(voce["data_inizio"]) >= oggi.isoformat())
     # Una lettura in cui sparisce gran parte delle voci è più probabilmente un calendario letto male che un fatto.
     if len(resoconto["sparite"]) > max(2, seguite // 2):
-        return fallisci(f"lettura sospetta: {len(resoconto['sparite'])} voci future su {seguite} non sono più nella fonte "
-                        f"(eventi futuri letti: {len(eventi_fonte)}). Nessuna modifica: rileggere a mano.")
+        return fallisci(f"lettura sospetta: {len(resoconto['sparite'])} voci future su {seguite} non sono più nella fonte (eventi futuri letti: {len(eventi_fonte)}). Nessuna modifica: rileggere a mano.")
     righe_sparite = segnala_sparite(resoconto["sparite"], oggi)
     nuove: list[dict] = resoconto["nuove"]
 
-    rapporto.extend(["", f"Eventi nel calendario: {totale_nel_file}; futuri letti: {len(eventi_fonte)}. "
-                         f"Voci nuove: {len(nuove)}; aggiornate: {len(resoconto['aggiornate'])}; invariate: {resoconto['invariate']}; "
-                         f"già escluse (non toccate): {len(resoconto['escluse'])}; non più nella fonte: {len(resoconto['sparite'])}; "
-                         f"eventi saltati: {len(anomalie)}."])
+    rapporto.extend(["", f"Eventi nel calendario: {totale_nel_file}; futuri letti: {len(eventi_fonte)}. Voci nuove: {len(nuove)}; aggiornate: {len(resoconto['aggiornate'])}; invariate: {resoconto['invariate']}; già escluse (non toccate): {len(resoconto['escluse'])}; non più nella fonte: {len(resoconto['sparite'])}; eventi saltati: {len(anomalie)}."])
     rapporto.extend(["", f"## Voci nuove: {len(nuove)}", ""])
     if nuove:
-        rapporto.append("Entrano come `da_verificare` con `luogo: \"da indicare\"`: chi le rivede compila luogo, paese e organizzatore leggendo il titolo nella fonte "
-                        "e le porta ad `annunciato`, oppure a `escluso` se sono fuori perimetro o non sono pattinate.")
+        rapporto.append("Entrano come `da_verificare` con `luogo: \"da indicare\"`: chi le rivede compila luogo, paese e organizzatore leggendo il titolo nella fonte e le porta ad `annunciato`, oppure a `escluso` se sono fuori perimetro o non sono pattinate.")
         rapporto.extend(["", "| Inizio | Fine | Nome proposto | Stato | `id` |", "|---|---|---|---|---|"])
         for voce in sorted(nuove, key=lambda v: (v["data_inizio"], v["id"])):
             rapporto.append(f"| {voce['data_inizio']} | {voce['data_fine']} | {voce['nome']} | {voce['stato']} | `{voce['id']}` |")
