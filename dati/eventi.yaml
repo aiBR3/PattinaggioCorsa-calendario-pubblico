@@ -1342,31 +1342,6 @@
   note: "Manifestazione di categoria B su pista."
   note_interne: ""
 
-- id: 2026-12-06-laquila-internazionali-open-indoor-master-race
-  nome: "Internazionali d'Italia Open Indoor — Master Race — Vesmaco Race, VI Memorial Romano Maria Cacciani"
-  nome_fonte: "INTERNAZIONALI D'ITALIA OPEN INDOOR - MASTER RACE - Vesmaco Race VI Memorial Romano Maria Cacciani"
-  data_inizio: 2026-12-06
-  data_fine: 2026-12-06
-  luogo: "L'Aquila, pista con curve sopraelevate 150 m (Vesmaco)"
-  paese: IT
-  tipo: gara
-  categorie: ["master"]
-  distanze: ["7 giri in linea", "3000 m in linea"]
-  organizzatore: "C.P.G.A. ASD"
-  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7047"
-  url_iscrizione: ""
-  scadenza_iscrizione: 2026-11-30
-  stato: non_autorizzato
-  fonti:
-    - url: https://www.fisr.info/attivita/corsa_calendario.php
-      letto_il: 2026-11-05
-    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7047
-      letto_il: 2026-11-05
-  verificato_il: 2026-11-05
-  prova: "Regolamento di gara id_manif 7047, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 7 g | In linea'; 'MASTER OVER 75 | F | 3000 m | In linea' e seguenti, da MASTER OVER 75 a MASTER OVER 30, F e M."
-  note: ""
-  note_interne: "Nel calendario fisr.info compare come 'Attività non ancora autorizzata' e senza link, ma il regolamento di gara (id_manif 7047, manifestazione di categoria B su pista) esiste già e prevede le categorie Master: da ricontrollare quando arriva l'autorizzazione. Scadenza iscrizioni 30/11, termine depennamenti 01/12. I giornali (2023) citano accanto agli Internazionali un Campionato Nazionale CSEN: possibile gara promozionale, da verificare su una fonte ufficiale. Arricchimento 2026-11-06: sito non trovato; ricerche: 'C.P.G.A. ASD L'Aquila pattinaggio' | 'Internazionali d'Italia Open Indoor L'Aquila 2026 pattinaggio' | 'Vesmaco Race Memorial Cacciani L'Aquila pattinaggio corsa'; pagine: nessuna."
-
 - id: 2026-12-06-pattinata-firenze-babbi
   nome: "Pattinata – Firenze Babbi"
   nome_fonte: "Firenze Babbi"
@@ -1506,6 +1481,31 @@
   prova: ""
   note: ""
   note_interne: "Dal calendario di Pattiniamo l'Italia, che dà solo date e titolo (primo carico del 2026-11-22, rivisto a mano): luogo e organizzatore letti dal titolo. Dubbio per il proprietario: il Weissensee è un lago alpino e l'uscita è a febbraio, potrebbe essere pattinaggio su ghiaccio; il titolo non lo dice. Nell'ultima parte del titolo ci sono il nome di una persona e una sigla, non copiati."
+
+- id: 2027-02-14-laquila-internazionali-open-indoor-master-race
+  nome: "Master Race - Internazionali d'Italia Open Indoor - Vesmaco Race VII Memorial Romano Maria Cacciani"
+  nome_fonte: "MASTER RACE - INTERNAZIONALI D'ITALIA OPEN INDOOR - Vesmaco Race VII Memorial Romano Maria Cacciani"
+  data_inizio: 2027-02-14
+  data_fine: 2027-02-14
+  luogo: "L'Aquila, pista con curve sopraelevate 150 m (Vesmaco)"
+  paese: IT
+  tipo: gara
+  categorie: ["master"]
+  distanze: ["7 giri in linea", "3000 m in linea"]
+  organizzatore: "C.P.G.A. ASD"
+  url_ufficiale: "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7047"
+  url_iscrizione: ""
+  scadenza_iscrizione: 2027-02-09
+  stato: non_autorizzato
+  fonti:
+    - url: https://www.fisr.info/attivita/corsa_calendario.php
+      letto_il: 2026-11-23
+    - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7047
+      letto_il: 2026-11-23
+  verificato_il: 2026-11-23
+  prova: "Regolamento di gara id_manif 7047, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 7 g | In linea'; 'MASTER OVER 75 | F | 3000 m | In linea' e seguenti, da MASTER OVER 75 a MASTER OVER 30, F e M."
+  note: ""
+  note_interne: "Nel calendario fisr.info compare come 'Attività non ancora autorizzata' e senza link, ma il regolamento di gara (id_manif 7047, manifestazione di categoria B su pista) esiste già e prevede le categorie Master: da ricontrollare quando arriva l'autorizzazione. Scadenza iscrizioni 30/11, termine depennamenti 01/12. I giornali (2023) citano accanto agli Internazionali un Campionato Nazionale CSEN: possibile gara promozionale, da verificare su una fonte ufficiale. Aggiornata il 2026-11-23 da converti_fisr.py, il regolamento di gara id_manif 7047 è cambiato: date 2026-12-06–2026-12-06 → 2027-02-14–2027-02-14; id 2026-12-06-laquila-internazionali-open-indoor-master-race → 2027-02-14-laquila-internazionali-open-indoor-master-race; scadenza iscrizioni 2026-11-30 → 2027-02-09. Nome aggiornato il 2026-11-23 da converti_fisr.py perché la lista federale ha cambiato il titolo: da «INTERNAZIONALI D'ITALIA OPEN INDOOR - MASTER RACE - Vesmaco Race VI Memorial Romano Maria Cacciani» a «MASTER RACE - INTERNAZIONALI D'ITALIA OPEN INDOOR - Vesmaco Race VII Memorial Romano Maria Cacciani»; il nome della voce era «Internazionali d'Italia Open Indoor — Master Race — Vesmaco Race, VI Memorial Romano Maria Cacciani». Arricchimento 2026-11-06: sito non trovato; ricerche: 'C.P.G.A. ASD L'Aquila pattinaggio' | 'Internazionali d'Italia Open Indoor L'Aquila 2026 pattinaggio' | 'Vesmaco Race Memorial Cacciani L'Aquila pattinaggio corsa'; pagine: nessuna."
 
 - id: 2027-03-21-pattinata-assago-pavia-mi
   nome: "Pattinata – Assago Pavia"
@@ -2367,7 +2367,7 @@
 
 - id: 2027-07-31-san-benedetto-del-tronto-meeting-san-benedetto-tronto
   nome: "39° Meeting Città di San Benedetto del Tronto"
-  nome_fonte: ""
+  nome_fonte: "39° meeting città di San Benedetto del Tronto"
   data_inizio: 2027-07-31
   data_fine: 2027-07-31
   luogo: "San Benedetto del Tronto (AP)"
