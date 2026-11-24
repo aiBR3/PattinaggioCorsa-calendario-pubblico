@@ -69,7 +69,7 @@ Una riga per decisione ancora valida, per tema. La data tra parentesi è quella 
 - Ricontrollo: le voci future di cui non è ancora stata letta la pagina dell'organizzatore, almeno 14 giorni dopo l'ultimo controllo, al massimo 5 per esecuzione; 3 ricerche più 1 mirata per evento. Valori provvisori (2026-11-06, 2026-11-17).
 - Quando legge la pagina dell'evento dell'edizione giusta, `url_ufficiale` passa a quella pagina e il regolamento resta tra le `fonti` (2026-11-17).
 - Le pattinate restano fuori dal ricontrollo: lavora solo quelle nuove della settimana (2026-11-22).
-- Regolamento cambiato: quando lo script lo segnala nella voce, rilegge l'art. 10 e, se le righe citate dalla prova non ci sono più ma le categorie sì, riallinea la citazione e lo dice tra i dubbi; categorie, stato e distanze diverse li segnala soltanto (2026-11-24).
+- Regolamento cambiato: quando lo script lo segnala nella voce, rilegge l'art. 10 e, se la citazione della prova non lo descrive più (righe sparite, cambiate o aggiunte, data dell'edizione) ma le categorie della voce sono le stesse, la riallinea e lo dice tra i dubbi; categorie, stato e distanze diverse li segnala soltanto (2026-11-24).
 - Il registro `registro/AAAA-MM-GG-arricchimento.md` si committa solo quando c'è una PR (2026-11-06). Le dipendenze si installano con `python3 -m pip install --ignore-installed` (2026-11-17).
 
 ## Rilettura (`agenti/rilettura-mensile.md`)
