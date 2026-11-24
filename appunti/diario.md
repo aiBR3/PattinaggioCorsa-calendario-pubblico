@@ -4,6 +4,8 @@ Scopo: non risolvere lo stesso problema due volte. Prima di tentare qualcosa, ce
 
 Una voce per problema: data, cosa si voleva fare, cosa è successo, cosa fare invece.
 
+Qui va ciò che non si deve ritentare allo stesso modo. Un guasto passeggero (un sito che oggi non risponde, un errore di rete) sta nel rapporto di `registro/` e nelle `note_interne` della voce, non qui (regola 5 di `CLAUDE.md`, decisione 2026-11-24).
+
 Quando un problema si risolve per sempre, si aggiorna la voce invece di cancellarla.
 
 Le voci su difetti degli script ormai corretti, che una prova automatica impedisce di rifare, passano in `appunti/diario-archivio.md` (decisione 2026-11-22): sono storia, non avvertenze.
