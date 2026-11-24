@@ -13,11 +13,12 @@ Una riga per decisione ancora valida, per tema. La data tra parentesi è quella 
 ## Chi scrive e chi fonde
 
 - Solo pull request; su `main` fonde solo il proprietario (2026-11-05). Nel ruleset "Protezione su main" è l'unico che può scavalcare "Restrict updates", e un'approvazione decade ai commit successivi (2026-11-22).
-- `CODEOWNERS`: tutto è del proprietario tranne `dati/eventi.yaml`, `dati/societa.yaml`, `dati/segnalazioni.yaml` e `registro/`, che raccolta e arricchimento scrivono ogni settimana (2026-11-17, 2026-11-22).
+- `CODEOWNERS`: tutto è del proprietario tranne `dati/eventi.yaml`, `dati/societa.yaml`, `dati/segnalazioni.yaml` e `registro/`, che raccolta e arricchimento scrivono ogni settimana (2026-11-17, 2026-11-22). `appunti/diario.md` resta del proprietario (2026-11-24).
 - Le sessioni Claude e le attività pianificate lavorano con un account GitHub secondario, senza permessi di amministratore; nei file il suo nome non si scrive (2026-11-22).
 - GitHub Pages pubblica solo dal ramo `main` (2026-11-22).
 - Niente informazioni personali nel repository (2026-11-05).
 - La memoria degli agenti è il repository (2026-11-05). All'avvio si legge solo `CLAUDE.md`; diario, decisioni e stato si consultano quando servono (2026-11-22, "Avvio leggero").
+- Nel diario va ciò che non si deve ritentare allo stesso modo; un guasto passeggero (un sito che oggi non risponde, un errore di rete) resta nel rapporto di `registro/` e nelle `note_interne` della voce (2026-11-24).
 
 ## Metodo
 

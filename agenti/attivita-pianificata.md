@@ -11,7 +11,7 @@ Il repository GitHub `aiBR3/PattinaggioCorsa-calendario-pubblico` è già clonat
 
 1. `CLAUDE.md` vale per intero: se non è già nel tuo contesto, leggilo. Per ora non leggere altro: che cosa consultare, e quando, lo dice il Passo 0 del prompt del punto 2.
 2. Leggi per intero `agenti/arricchimento.md` ed eseguilo alla lettera, dal Passo 0 al Passo 4, rispettando la tabella "Limiti". È il tuo unico compito: non fare altro.
-3. Regole che prevalgono su tutto: il ramo su cui fare commit e push lo decide `agenti/arricchimento.md` (il ramo `raccolta/AAAA-MM-GG` della PR di raccolta aperta, altrimenti `arricchimento/AAAA-MM-GG`), anche se le istruzioni della sessione propongono un ramo `claude/…`, che non va usato; non scrivere mai su `main`; non fondere e non approvare pull request; non inventare (campo sconosciuto = campo vuoto); non copiare contatti di persone; modifica `dati/eventi.yaml` e `dati/societa.yaml` solo con sostituzioni testuali mirate; commit e push ogni 5 voci; lascia traccia in `registro/` e, se qualcosa non ha funzionato, in `appunti/diario.md`.
+3. Regole che prevalgono su tutto: il ramo su cui fare commit e push lo decide `agenti/arricchimento.md` (il ramo `raccolta/AAAA-MM-GG` della PR di raccolta aperta, altrimenti `arricchimento/AAAA-MM-GG`), anche se le istruzioni della sessione propongono un ramo `claude/…`, che non va usato; non scrivere mai su `main`; non fondere e non approvare pull request; non inventare (campo sconosciuto = campo vuoto); non copiare contatti di persone; modifica `dati/eventi.yaml` e `dati/societa.yaml` solo con sostituzioni testuali mirate; commit e push ogni 5 voci; lascia traccia in `registro/` e, nei casi che dice il passo 4, in `appunti/diario.md`.
 4. Finisci con un messaggio in italiano: i numeri (voci nuove lavorate, voci vecchie ricontrollate, siti trovati e per quale via, confermate, escluse, dubbi) e il link alla PR. Se un passo si blocca, scrivi cosa è successo e dove ti sei fermato, poi fermati.
 ```
 
@@ -40,6 +40,7 @@ Il repository GitHub `aiBR3/PattinaggioCorsa-calendario-pubblico` è già clonat
 - Per sospendere: l'interruttore in alto nella pagina dell'attività. Per cambiare orario, modello, ambiente o prompt: menu accanto al nome → Edit → Save changes.
 - Il testo del prompt si cambia qui e poi nell'attività; `agenti/arricchimento.md` si cambia solo con una PR.
 - 2026-11-22, avvio leggero: il punto 1 del testo è cambiato (non dice più di leggere per intero diario e decisioni). Finché il proprietario non lo ricopia nell'attività, l'agente li legge ancora per intero: funziona lo stesso, costa solo di più.
+- 2026-11-24, guasti passeggeri: il punto 3 del testo è cambiato (nel diario solo nei casi che dice il passo 4 di `agenti/arricchimento.md`, non più "se qualcosa non ha funzionato"). Finché il proprietario non lo ricopia nell'attività, l'agente può ancora scrivere nel diario un sito che non risponde, perché il testo dell'attività prevale sul prompt.
 
 # Attività pianificata "Rilettura mensile calendario pattinaggio corsa"
 
