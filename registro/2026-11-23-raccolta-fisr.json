@@ -1,0 +1,3008 @@
+{
+ "generato_il": "2026-11-23T16:09:42+00:00",
+ "fonte": "https://www.fisr.info/attivita/corsa_calendario.php",
+ "richieste": [
+  "stagione corrente"
+ ],
+ "stagioni": [
+  "2026/27"
+ ],
+ "filtro_da": "2026-11-09",
+ "anomalie_globali": [],
+ "righe": [
+  {
+   "stagione": "2026/27",
+   "mese_tabella": "2026-11",
+   "data_grezza": "28-29/11",
+   "data_inizio": "2026-11-28",
+   "data_fine": "2026-11-29",
+   "evento_grezzo": "4° TROFEO NAZIONALE CITTÃ DI PESCARA",
+   "evento": "4° TROFEO NAZIONALE CITTÃ DI PESCARA",
+   "localita": "Pescara",
+   "organizzatore": "C.SP.P.PESCARA",
+   "scadenza_iscrizioni_grezza": "20/11",
+   "scadenza_iscrizioni": "2026-11-20",
+   "termine_depennamenti_grezzo": "24/11",
+   "non_autorizzata": false,
+   "formato": "7_celle",
+   "id_manif": "7052",
+   "url_modulo": "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7052",
+   "anomalie": [],
+   "regolamento": {
+    "id_manif": "7052",
+    "url": "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7052",
+    "scaricata": true,
+    "codifica": "cp1252",
+    "denominazione": "4° TROFEO NAZIONALE CITTÃ DI PESCARA",
+    "dal": "2026-11-28",
+    "al": "2026-11-29",
+    "dal_grezzo": "28/11/26 - 29/11/26",
+    "categoria_manifestazione": "B",
+    "disciplina": "pista",
+    "societa": "C.SP.P.PESCARA",
+    "campo_gara": "Pista mt 175 con curve sopraelevate e fondo vesmaco, Via Maestri del Lavoro. CAP della localit 65125.",
+    "orario_inizio": "9:00",
+    "iscrizioni_entro": "2026-11-20",
+    "righe_programma": [
+     {
+      "categoria": "SENIORES",
+      "sesso": "F",
+      "distanza": "300 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "SENIORES",
+      "sesso": "F",
+      "distanza": "500 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "SENIORES",
+      "sesso": "F",
+      "distanza": "5000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "SENIORES",
+      "sesso": "F",
+      "distanza": "8000 m",
+      "tipo": "Eliminazione"
+     },
+     {
+      "categoria": "SENIORES",
+      "sesso": "M",
+      "distanza": "300 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "SENIORES",
+      "sesso": "M",
+      "distanza": "500 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "SENIORES",
+      "sesso": "M",
+      "distanza": "5000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "SENIORES",
+      "sesso": "M",
+      "distanza": "8000 m",
+      "tipo": "Eliminazione"
+     },
+     {
+      "categoria": "JUNIORES",
+      "sesso": "F",
+      "distanza": "300 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "JUNIORES",
+      "sesso": "F",
+      "distanza": "500 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "JUNIORES",
+      "sesso": "F",
+      "distanza": "5000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "JUNIORES",
+      "sesso": "F",
+      "distanza": "8000 m",
+      "tipo": "Eliminazione"
+     },
+     {
+      "categoria": "JUNIORES",
+      "sesso": "M",
+      "distanza": "300 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "JUNIORES",
+      "sesso": "M",
+      "distanza": "500 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "JUNIORES",
+      "sesso": "M",
+      "distanza": "5000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "JUNIORES",
+      "sesso": "M",
+      "distanza": "8000 m",
+      "tipo": "Eliminazione"
+     },
+     {
+      "categoria": "ALLIEVI",
+      "sesso": "F",
+      "distanza": "300 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "ALLIEVI",
+      "sesso": "F",
+      "distanza": "500 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "ALLIEVI",
+      "sesso": "F",
+      "distanza": "3000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "ALLIEVI",
+      "sesso": "F",
+      "distanza": "5000 m",
+      "tipo": "Eliminazione"
+     },
+     {
+      "categoria": "ALLIEVI",
+      "sesso": "M",
+      "distanza": "300 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "ALLIEVI",
+      "sesso": "M",
+      "distanza": "500 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "ALLIEVI",
+      "sesso": "M",
+      "distanza": "3000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "ALLIEVI",
+      "sesso": "M",
+      "distanza": "5000 m",
+      "tipo": "Eliminazione"
+     },
+     {
+      "categoria": "RAGAZZI",
+      "sesso": "F",
+      "distanza": "12 g",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "RAGAZZI",
+      "sesso": "F",
+      "distanza": "200 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "RAGAZZI",
+      "sesso": "F",
+      "distanza": "300 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "RAGAZZI",
+      "sesso": "F",
+      "distanza": "3000 m",
+      "tipo": "Eliminazione"
+     },
+     {
+      "categoria": "RAGAZZI",
+      "sesso": "M",
+      "distanza": "12 g",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "RAGAZZI",
+      "sesso": "M",
+      "distanza": "200 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "RAGAZZI",
+      "sesso": "M",
+      "distanza": "300 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "RAGAZZI",
+      "sesso": "M",
+      "distanza": "3000 m",
+      "tipo": "Eliminazione"
+     },
+     {
+      "categoria": "RAGAZZI 12",
+      "sesso": "F",
+      "distanza": "12 g",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "RAGAZZI 12",
+      "sesso": "F",
+      "distanza": "200 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "RAGAZZI 12",
+      "sesso": "F",
+      "distanza": "300 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "RAGAZZI 12",
+      "sesso": "F",
+      "distanza": "3000 m",
+      "tipo": "Eliminazione"
+     },
+     {
+      "categoria": "RAGAZZI 12",
+      "sesso": "M",
+      "distanza": "12 g",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "RAGAZZI 12",
+      "sesso": "M",
+      "distanza": "200 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "RAGAZZI 12",
+      "sesso": "M",
+      "distanza": "300 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "RAGAZZI 12",
+      "sesso": "M",
+      "distanza": "3000 m",
+      "tipo": "Eliminazione"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "F",
+      "distanza": "40 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "F",
+      "distanza": "200 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "F",
+      "distanza": "400 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "F",
+      "distanza": "800 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "M",
+      "distanza": "40 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "M",
+      "distanza": "200 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "M",
+      "distanza": "400 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "M",
+      "distanza": "800 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "F",
+      "distanza": "40 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "F",
+      "distanza": "200 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "F",
+      "distanza": "300 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "F",
+      "distanza": "600 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "M",
+      "distanza": "40 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "M",
+      "distanza": "200 m",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "M",
+      "distanza": "300 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "M",
+      "distanza": "600 m",
+      "tipo": "In linea"
+     }
+    ],
+    "categorie_programma": [
+     "SENIORES",
+     "JUNIORES",
+     "ALLIEVI",
+     "RAGAZZI",
+     "RAGAZZI 12",
+     "ESORDIENTI",
+     "GIOVANISSIMI"
+    ],
+    "righe_master_amatori": [],
+    "anomalie": []
+   }
+  },
+  {
+   "stagione": "2026/27",
+   "mese_tabella": "2026-12",
+   "data_grezza": "08/12",
+   "data_inizio": "2026-12-08",
+   "data_fine": "2026-12-08",
+   "evento_grezzo": "49° GRAN PREMIO INDOOR CITTà DI IMOLA",
+   "evento": "49° GRAN PREMIO INDOOR CITTà DI IMOLA",
+   "localita": "IMOLA",
+   "organizzatore": "GRUPPO IMOLESE P.",
+   "scadenza_iscrizioni_grezza": "02/12",
+   "scadenza_iscrizioni": "2026-12-02",
+   "termine_depennamenti_grezzo": "05/12",
+   "non_autorizzata": false,
+   "formato": "7_celle",
+   "id_manif": "7046",
+   "url_modulo": "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7046",
+   "anomalie": [],
+   "regolamento": {
+    "id_manif": "7046",
+    "url": "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7046",
+    "scaricata": true,
+    "codifica": "cp1252",
+    "denominazione": "49° GRAN PREMIO INDOOR CITTà DI IMOLA",
+    "dal": "2026-12-08",
+    "al": "2026-12-08",
+    "dal_grezzo": "08/12/26 - 08/12/26",
+    "categoria_manifestazione": "B",
+    "disciplina": "pista",
+    "societa": "GRUPPO IMOLESE P.",
+    "campo_gara": "Pista Piana in cemento sviluppo: per le cat. G-E 90mt per le cat. R12-R-A-J-S-M 100mt, via B. Croce Imola.. CAP della localit 40026.",
+    "orario_inizio": "9 30",
+    "iscrizioni_entro": "2026-12-02",
+    "righe_programma": [
+     {
+      "categoria": "SENIORES",
+      "sesso": "F",
+      "distanza": "3 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "SENIORES",
+      "sesso": "F",
+      "distanza": "3000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "SENIORES",
+      "sesso": "M",
+      "distanza": "3 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "SENIORES",
+      "sesso": "M",
+      "distanza": "3000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "JUNIORES",
+      "sesso": "F",
+      "distanza": "3 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "JUNIORES",
+      "sesso": "F",
+      "distanza": "3000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "JUNIORES",
+      "sesso": "M",
+      "distanza": "3 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "JUNIORES",
+      "sesso": "M",
+      "distanza": "3000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "ALLIEVI",
+      "sesso": "F",
+      "distanza": "3 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "ALLIEVI",
+      "sesso": "F",
+      "distanza": "3000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "ALLIEVI",
+      "sesso": "M",
+      "distanza": "3 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "ALLIEVI",
+      "sesso": "M",
+      "distanza": "3000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "RAGAZZI",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "RAGAZZI",
+      "sesso": "F",
+      "distanza": "2000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "RAGAZZI",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "RAGAZZI",
+      "sesso": "M",
+      "distanza": "2000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "RAGAZZI 12",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "RAGAZZI 12",
+      "sesso": "F",
+      "distanza": "2000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "RAGAZZI 12",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "RAGAZZI 12",
+      "sesso": "M",
+      "distanza": "2000 m",
+      "tipo": "punti"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "F",
+      "distanza": "0 g",
+      "tipo": "Destrezza S"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint (GE)"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "F",
+      "distanza": "10 g",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "M",
+      "distanza": "0 g",
+      "tipo": "Destrezza S"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint (GE)"
+     },
+     {
+      "categoria": "ESORDIENTI",
+      "sesso": "M",
+      "distanza": "10 g",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "F",
+      "distanza": "0 g",
+      "tipo": "Destrezza S"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint (GE)"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "F",
+      "distanza": "6 g",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "M",
+      "distanza": "0 g",
+      "tipo": "Destrezza S"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint (GE)"
+     },
+     {
+      "categoria": "GIOVANISSIMI",
+      "sesso": "M",
+      "distanza": "6 g",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 75",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 75",
+      "sesso": "F",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 75",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 75",
+      "sesso": "M",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 70",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 70",
+      "sesso": "F",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 70",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 70",
+      "sesso": "M",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 65",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 65",
+      "sesso": "F",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 65",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 65",
+      "sesso": "M",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 60",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 60",
+      "sesso": "F",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 60",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 60",
+      "sesso": "M",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 55",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 55",
+      "sesso": "F",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 55",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 55",
+      "sesso": "M",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 50",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 50",
+      "sesso": "F",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 50",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 50",
+      "sesso": "M",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 45",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 45",
+      "sesso": "F",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 45",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 45",
+      "sesso": "M",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 40",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 40",
+      "sesso": "F",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 40",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 40",
+      "sesso": "M",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 35",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 35",
+      "sesso": "F",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 35",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 35",
+      "sesso": "M",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 30",
+      "sesso": "F",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 30",
+      "sesso": "F",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     },
+     {
+      "categoria": "MASTER OVER 30",
+      "sesso": "M",
+      "distanza": "2 g",
+      "tipo": "Sprint"
+     },
+     {
+      "categoria": "MASTER OVER 30",
+      "sesso": "M",
+      "distanza": "2000 m",
+      "tipo": "In linea"
+     }
+    ],
+    "categorie_programma": [
+     "SENIORES",
+     "JUNIORES",
+     "ALLIEVI",
+     "RAGAZZI",
+     "RAGAZZI 12",
+     "ESORDIENTI",
+     "GIOVANISSIMI",
+     "MASTER OVER 75",
+     "MASTER OVER 70",
+     "MASTER OVER 65",
+     "MASTER OVER 60",
+     "MASTER OVER 55",
+     "MASTER OVER 50",
+     "MASTER OVER 45",
+     "MASTER OVER 40",
+     "MASTER OVER 35",
+     "MASTER OVER 30"
+    ],
+    "righe_master_amatori": [
+     "MASTER OVER 75 | F | 2 g | Sprint |",
+     "MASTER OVER 75 | F | 2000 m | In linea |",
+     "MASTER OVER 75 | M | 2 g | Sprint |",
+     "MASTER OVER 75 | M | 2000 m | In linea |",
+     "MASTER OVER 70 | F | 2 g | Sprint |",
+     "MASTER OVER 70 | F | 2000 m | In linea |",
+     "MASTER OVER 70 | M | 2 g | Sprint |",
+     "MASTER OVER 70 | M | 2000 m | In linea |",
+     "MASTER OVER 65 | F | 2 g | Sprint |",
+     "MASTER OVER 65 | F | 2000 m | In linea |",
+     "MASTER OVER 65 | M | 2 g | Sprint |",
+     "MASTER OVER 65 | M | 2000 m | In linea |",
+     "MASTER OVER 60 | F | 2 g | Sprint |",
+     "MASTER OVER 60 | F | 2000 m | In linea |",
+     "MASTER OVER 60 | M | 2 g | Sprint |",
+     "MASTER OVER 60 | M | 2000 m | In linea |",
+     "MASTER OVER 55 | F | 2 g | Sprint |",
+     "MASTER OVER 55 | F | 2000 m | In linea |",
+     "MASTER OVER 55 | M | 2 g | Sprint |",
+     "MASTER OVER 55 | M | 2000 m | In linea |",
+     "MASTER OVER 50 | F | 2 g | Sprint |",
+     "MASTER OVER 50 | F | 2000 m | In linea |",
+     "MASTER OVER 50 | M | 2 g | Sprint |",
+     "MASTER OVER 50 | M | 2000 m | In linea |",
+     "MASTER OVER 45 | F | 2 g | Sprint |",
+     "MASTER OVER 45 | F | 2000 m | In linea |",
+     "MASTER OVER 45 | M | 2 g | Sprint |",
+     "MASTER OVER 45 | M | 2000 m | In linea |",
+     "MASTER OVER 40 | F | 2 g | Sprint |",
+     "MASTER OVER 40 | F | 2000 m | In linea |",
+     "MASTER OVER 40 | M | 2 g | Sprint |",
+     "MASTER OVER 40 | M | 2000 m | In linea |",
+     "MASTER OVER 35 | F | 2 g | Sprint |",
+     "MASTER OVER 35 | F | 2000 m | In linea |",
+     "MASTER OVER 35 | M | 2 g | Sprint |",
+     "MASTER OVER 35 | M | 2000 m | In linea |",
+     "MASTER OVER 30 | F | 2 g | Sprint |",
+     "MASTER OVER 30 | F | 2000 m | In linea |",
+     "MASTER OVER 30 | M | 2 g | Sprint |",
+     "MASTER OVER 30 | M | 2000 m | In linea |",
+     "Martedì 8 Dicembre : ? G-E m/f Ritrovo ore 9 00 Inizio gare ore 9 30. ? Rag.12 Ritrovo ore 11 00 Inizio gare ore 11 30 ? PRIMI PASSI ? SKATEAMO ritrovo ore 12 30 inizio esibizione ore 13 00 ? Master m/f Ritrovo ore13 00 Inizio gare ore 13 30. ? Rag.- All.-Jun.-Sen. m/f Ritrovo ore14 00 Inizio gare o",
+     "Per le Categorie G-E-R12 utilizzeranno Numeri gara consegnati dall?organizzazione LE ISCRIZIONI SI POSSONO PAGARE CON : In Contanti o con POS sul campo gara -TRAMITE BONIFICO BANCARIO alla Società Organizzatrice entro il 5/12/2026 : Gruppo Imolese Pattinaggio Banca di Imola A.G.D. Campanella IBAN: I"
+    ],
+    "anomalie": []
+   }
+  },
+  {
+   "stagione": "2026/27",
+   "mese_tabella": "2027-02",
+   "data_grezza": "14/02",
+   "data_inizio": "2027-02-14",
+   "data_fine": "2027-02-14",
+   "evento_grezzo": "MASTER RACE - INTERNAZIONALI D'ITALIA OPEN INDOOR - Vesmaco Race VII Memorial Romano Maria Cacciani Attivita' non ancora autorizzata",
+   "evento": "MASTER RACE - INTERNAZIONALI D'ITALIA OPEN INDOOR - Vesmaco Race VII Memorial Romano Maria Cacciani Attivita' non ancora autorizzata",
+   "localita": "L'AQUILA",
+   "organizzatore": "C.P.G.A. ASD",
+   "scadenza_iscrizioni_grezza": "09/02",
+   "scadenza_iscrizioni": "2027-02-09",
+   "termine_depennamenti_grezzo": "10/02",
+   "non_autorizzata": true,
+   "formato": "7_celle",
+   "id_manif": "",
+   "url_modulo": "",
+   "anomalie": [],
+   "regolamento": null
+  },
+  {
+   "stagione": "2026/27",
+   "mese_tabella": "2027-05",
+   "data_grezza": "28-29/05",
+   "data_inizio": "2027-05-28",
+   "data_fine": "2027-05-29",
+   "evento_grezzo": "INTERNAZIONALI D'ITALIA OPEN INDOOR -VII Memorial Romano Maria Cacciani Attivita' non ancora autorizzata",
+   "evento": "INTERNAZIONALI D'ITALIA OPEN INDOOR -VII Memorial Romano Maria Cacciani Attivita' non ancora autorizzata",
+   "localita": "L'AQUILA",
+   "organizzatore": "C.P.G.A. ASD",
+   "scadenza_iscrizioni_grezza": "24/05",
+   "scadenza_iscrizioni": "2027-05-24",
+   "termine_depennamenti_grezzo": "25/05",
+   "non_autorizzata": true,
+   "formato": "7_celle",
+   "id_manif": "",
+   "url_modulo": "",
+   "anomalie": [],
+   "regolamento": null
+  },
+  {
+   "stagione": "2026/27",
+   "mese_tabella": "2027-06",
+   "data_grezza": "06/06",
+   "data_inizio": "2027-06-06",
+   "data_fine": "2027-06-06",
+   "evento_grezzo": "1° Memorial Alfonso Zenga . Tappa RSC Attivita' non ancora autorizzata",
+   "evento": "1° Memorial Alfonso Zenga . Tappa RSC Attivita' non ancora autorizzata",
+   "localita": "Terni",
+   "organizzatore": "EURO S.CLUB",
+   "scadenza_iscrizioni_grezza": "02/06",
+   "scadenza_iscrizioni": "2027-06-02",
+   "termine_depennamenti_grezzo": "04/06",
+   "non_autorizzata": true,
+   "formato": "7_celle",
+   "id_manif": "",
+   "url_modulo": "",
+   "anomalie": [],
+   "regolamento": null
+  },
+  {
+   "stagione": "2026/27",
+   "mese_tabella": "2027-07",
+   "data_grezza": "03-04/07",
+   "data_inizio": "2027-07-03",
+   "data_fine": "2027-07-04",
+   "evento_grezzo": "47' Trofeo dell'Amicizia e 11' Memorial Donatella Attivita' non ancora autorizzata",
+   "evento": "47' Trofeo dell'Amicizia e 11' Memorial Donatella Attivita' non ancora autorizzata",
+   "localita": "Fabriano (AN)",
+   "organizzatore": "FORTITUDO FABRIANO",
+   "scadenza_iscrizioni_grezza": "30/06",
+   "scadenza_iscrizioni": "2027-06-30",
+   "termine_depennamenti_grezzo": "01/07",
+   "non_autorizzata": true,
+   "formato": "7_celle",
+   "id_manif": "",
+   "url_modulo": "",
+   "anomalie": [],
+   "regolamento": null
+  },
+  {
+   "stagione": "2026/27",
+   "mese_tabella": "2027-07",
+   "data_grezza": "31/07",
+   "data_inizio": "2027-07-31",
+   "data_fine": "2027-07-31",
+   "evento_grezzo": "39° meeting città di San Benedetto del Tronto Attivita' non ancora autorizzata",
+   "evento": "39° meeting città di San Benedetto del Tronto Attivita' non ancora autorizzata",
+   "localita": "San Benedetto del Tronto",
+   "organizzatore": "PATT. SAMBENEDETTESI",
+   "scadenza_iscrizioni_grezza": "27/07",
+   "scadenza_iscrizioni": "2027-07-27",
+   "termine_depennamenti_grezzo": "29/07",
+   "non_autorizzata": true,
+   "formato": "7_celle",
+   "id_manif": "",
+   "url_modulo": "",
+   "anomalie": [],
+   "regolamento": null
+  },
+  {
+   "stagione": "2026/27",
+   "mese_tabella": "2027-08",
+   "data_grezza": "03-07/08",
+   "data_inizio": "2027-08-03",
+   "data_fine": "2027-08-07",
+   "evento_grezzo": "Trofeo Internazionale 6 GIORNI INTERNATIONAL 2027 - Circuito RSC Attivita' non ancora autorizzata",
+   "evento": "Trofeo Internazionale 6 GIORNI INTERNATIONAL 2027 - Circuito RSC Attivita' non ancora autorizzata",
+   "localita": "Santa Maria Nuova (AN)",
+   "organizzatore": "S.MARIA NUOVA",
+   "scadenza_iscrizioni_grezza": "29/07",
+   "scadenza_iscrizioni": "2027-07-29",
+   "termine_depennamenti_grezzo": "31/07",
+   "non_autorizzata": true,
+   "formato": "7_celle",
+   "id_manif": "",
+   "url_modulo": "",
+   "anomalie": [],
+   "regolamento": null
+  },
+  {
+   "stagione": "2026/27",
+   "mese_tabella": "2027-09",
+   "data_grezza": "25-26/09",
+   "data_inizio": "2027-09-25",
+   "data_fine": "2027-09-26",
+   "evento_grezzo": "XII memorial Gilda Leoperdi - 2° trofeo città di Pollenza Attivita' non ancora autorizzata",
+   "evento": "XII memorial Gilda Leoperdi - 2° trofeo città di Pollenza Attivita' non ancora autorizzata",
+   "localita": "Pollenza",
+   "organizzatore": "A.P.D.JUVENILIA",
+   "scadenza_iscrizioni_grezza": "22/09",
+   "scadenza_iscrizioni": "2027-09-22",
+   "termine_depennamenti_grezzo": "23/09",
+   "non_autorizzata": true,
+   "formato": "7_celle",
+   "id_manif": "",
+   "url_modulo": "",
+   "anomalie": [],
+   "regolamento": null
+  }
+ ],
+ "scansione_regolamenti": {
+  "intervallo": [
+   7052,
+   7401
+  ],
+  "scartate": 346,
+  "riletti": [
+   7046,
+   7047
+  ],
+  "riletti_non_tenuti": []
+ },
+ "regolamenti_scansione": [
+  {
+   "id_manif": "7052",
+   "url": "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7052",
+   "scaricata": true,
+   "codifica": "cp1252",
+   "denominazione": "4° TROFEO NAZIONALE CITTÃ DI PESCARA",
+   "dal": "2026-11-28",
+   "al": "2026-11-29",
+   "dal_grezzo": "28/11/26 - 29/11/26",
+   "categoria_manifestazione": "B",
+   "disciplina": "pista",
+   "societa": "C.SP.P.PESCARA",
+   "campo_gara": "Pista mt 175 con curve sopraelevate e fondo vesmaco, Via Maestri del Lavoro. CAP della localit 65125.",
+   "orario_inizio": "9:00",
+   "iscrizioni_entro": "2026-11-20",
+   "righe_programma": [
+    {
+     "categoria": "SENIORES",
+     "sesso": "F",
+     "distanza": "300 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "SENIORES",
+     "sesso": "F",
+     "distanza": "500 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "SENIORES",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "SENIORES",
+     "sesso": "F",
+     "distanza": "8000 m",
+     "tipo": "Eliminazione"
+    },
+    {
+     "categoria": "SENIORES",
+     "sesso": "M",
+     "distanza": "300 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "SENIORES",
+     "sesso": "M",
+     "distanza": "500 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "SENIORES",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "SENIORES",
+     "sesso": "M",
+     "distanza": "8000 m",
+     "tipo": "Eliminazione"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "F",
+     "distanza": "300 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "F",
+     "distanza": "500 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "F",
+     "distanza": "8000 m",
+     "tipo": "Eliminazione"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "M",
+     "distanza": "300 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "M",
+     "distanza": "500 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "M",
+     "distanza": "8000 m",
+     "tipo": "Eliminazione"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "300 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "500 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "Eliminazione"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "300 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "500 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "Eliminazione"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "12 g",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "200 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "300 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "Eliminazione"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "12 g",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "200 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "300 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "Eliminazione"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "12 g",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "200 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "300 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "Eliminazione"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "12 g",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "200 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "300 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "Eliminazione"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "40 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "200 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "400 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "800 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "40 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "200 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "400 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "800 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "40 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "200 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "300 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "600 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "40 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "200 m",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "300 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "600 m",
+     "tipo": "In linea"
+    }
+   ],
+   "categorie_programma": [
+    "SENIORES",
+    "JUNIORES",
+    "ALLIEVI",
+    "RAGAZZI",
+    "RAGAZZI 12",
+    "ESORDIENTI",
+    "GIOVANISSIMI"
+   ],
+   "righe_master_amatori": [],
+   "anomalie": []
+  },
+  {
+   "id_manif": "7059",
+   "url": "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7059",
+   "scaricata": true,
+   "codifica": "utf-8",
+   "denominazione": "Trofeo Internazionale 6 GIORNI INTERNATIONAL 2027 - Circuito RSC",
+   "dal": "2027-08-03",
+   "al": "2027-08-07",
+   "dal_grezzo": "03/08/27 - 07/08/27",
+   "categoria_manifestazione": "A",
+   "disciplina": "pista",
+   "societa": "S.MARIA NUOVA",
+   "campo_gara": "Pista piana interna riverniciata con materiale resinoso 20x40 mt. Pista esterna riverniciata con materiale resinoso con curve sopraelevate a pendenza crescente lunga 165 mt. Pista omologata secondo le direttive Skate Italia., via Ravagli 5. CAP della localit 60030.",
+   "orario_inizio": "16:00",
+   "iscrizioni_entro": "2027-07-29",
+   "righe_programma": [
+    {
+     "categoria": "SENIORES",
+     "sesso": "F",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "SENIORES",
+     "sesso": "M",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "F",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "M",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "PRIMI PASSI",
+     "sesso": "F",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "PRIMI PASSI",
+     "sesso": "M",
+     "distanza": "0 m",
+     "tipo": "In linea"
+    }
+   ],
+   "categorie_programma": [
+    "SENIORES",
+    "JUNIORES",
+    "ALLIEVI",
+    "RAGAZZI",
+    "RAGAZZI 12",
+    "ESORDIENTI",
+    "GIOVANISSIMI",
+    "PRIMI PASSI"
+   ],
+   "righe_master_amatori": [],
+   "anomalie": []
+  },
+  {
+   "id_manif": "7073",
+   "url": "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7073",
+   "scaricata": true,
+   "codifica": "cp1252",
+   "denominazione": "INTERNAZIONALI D'ITALIA OPEN INDOOR -VII Memorial Romano Maria Cacciani",
+   "dal": "2027-05-28",
+   "al": "2027-05-29",
+   "dal_grezzo": "28/05/27 - 29/05/27",
+   "categoria_manifestazione": "B",
+   "disciplina": "pista",
+   "societa": "C.P.G.A. ASD",
+   "campo_gara": "Pista di pattinaggio con curve soprelevate pendenza costante mt 150 alla corda larghezza mt 5.50 con rivestimento VESMACO Tutte le gare si effettueranno esclusivamente in pista soprelevata. Il sabato mattina sarà possibile provare la pista. Le disposizioni e orari saranno pubblicati sul sito https://cpga.net/iio che vi preghiamo di consultare costantemente, Viale Ovidio snc - Pattinodromo coperto E. De Felice-di fianco Piscina Comunale.. CAP della localit 67100.",
+   "orario_inizio": "16:00",
+   "iscrizioni_entro": "2027-05-24",
+   "righe_programma": [
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "4 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "12 g",
+     "tipo": "Americana"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "Eliminazione"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "4 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "12 g",
+     "tipo": "Americana"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "Eliminazione"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "800 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "800 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "600 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "600 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 75",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 75",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 70",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 70",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 65",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 65",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 60",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 60",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 55",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 55",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 50",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 50",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 45",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 45",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 40",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 40",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 35",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 35",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 30",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 30",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "In linea"
+    }
+   ],
+   "categorie_programma": [
+    "ALLIEVI",
+    "RAGAZZI",
+    "RAGAZZI 12",
+    "ESORDIENTI",
+    "GIOVANISSIMI",
+    "MASTER OVER 75",
+    "MASTER OVER 70",
+    "MASTER OVER 65",
+    "MASTER OVER 60",
+    "MASTER OVER 55",
+    "MASTER OVER 50",
+    "MASTER OVER 45",
+    "MASTER OVER 40",
+    "MASTER OVER 35",
+    "MASTER OVER 30"
+   ],
+   "righe_master_amatori": [
+    "MASTER OVER 75 | F | 5000 m | In linea |",
+    "MASTER OVER 75 | M | 5000 m | In linea |",
+    "MASTER OVER 70 | F | 5000 m | In linea |",
+    "MASTER OVER 70 | M | 5000 m | In linea |",
+    "MASTER OVER 65 | F | 5000 m | In linea |",
+    "MASTER OVER 65 | M | 5000 m | In linea |",
+    "MASTER OVER 60 | F | 5000 m | In linea |",
+    "MASTER OVER 60 | M | 5000 m | In linea |",
+    "MASTER OVER 55 | F | 5000 m | In linea |",
+    "MASTER OVER 55 | M | 5000 m | In linea |",
+    "MASTER OVER 50 | F | 5000 m | In linea |",
+    "MASTER OVER 50 | M | 5000 m | In linea |",
+    "MASTER OVER 45 | F | 5000 m | In linea |",
+    "MASTER OVER 45 | M | 5000 m | In linea |",
+    "MASTER OVER 40 | F | 5000 m | In linea |",
+    "MASTER OVER 40 | M | 5000 m | In linea |",
+    "MASTER OVER 35 | F | 5000 m | In linea |",
+    "MASTER OVER 35 | M | 5000 m | In linea |",
+    "MASTER OVER 30 | F | 5000 m | In linea |",
+    "MASTER OVER 30 | M | 5000 m | In linea |"
+   ],
+   "anomalie": []
+  },
+  {
+   "id_manif": "7101",
+   "url": "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7101",
+   "scaricata": true,
+   "codifica": "cp1252",
+   "denominazione": "39° meeting città di San Benedetto del Tronto",
+   "dal": "2027-07-31",
+   "al": "2027-07-31",
+   "dal_grezzo": "31/07/27 - 31/07/27",
+   "categoria_manifestazione": "B",
+   "disciplina": "pista",
+   "societa": "PATT. SAMBENEDETTESI",
+   "campo_gara": "Pista di pattinaggio a curve sopraelevate paraboliche della lunghezza di metri 175 e larghezza metri 5.80.Fondo in resina ATP, Via delle Tamerici. CAP della localit 63074.",
+   "orario_inizio": "16.00",
+   "iscrizioni_entro": "2027-07-27",
+   "righe_programma": [
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "5000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "5000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "12 g",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "12 g",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "5 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "30 m",
+     "tipo": "Sprint in corsia"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "5 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "30 m",
+     "tipo": "Sprint in corsia"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "3 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "30 m",
+     "tipo": "Sprint in corsia"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "3 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "30 m",
+     "tipo": "Sprint in corsia"
+    }
+   ],
+   "categorie_programma": [
+    "ALLIEVI",
+    "RAGAZZI",
+    "RAGAZZI 12",
+    "ESORDIENTI",
+    "GIOVANISSIMI"
+   ],
+   "righe_master_amatori": [],
+   "anomalie": []
+  },
+  {
+   "id_manif": "7046",
+   "url": "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7046",
+   "scaricata": true,
+   "codifica": "cp1252",
+   "denominazione": "49° GRAN PREMIO INDOOR CITTà DI IMOLA",
+   "dal": "2026-12-08",
+   "al": "2026-12-08",
+   "dal_grezzo": "08/12/26 - 08/12/26",
+   "categoria_manifestazione": "B",
+   "disciplina": "pista",
+   "societa": "GRUPPO IMOLESE P.",
+   "campo_gara": "Pista Piana in cemento sviluppo: per le cat. G-E 90mt per le cat. R12-R-A-J-S-M 100mt, via B. Croce Imola.. CAP della localit 40026.",
+   "orario_inizio": "9 30",
+   "iscrizioni_entro": "2026-12-02",
+   "righe_programma": [
+    {
+     "categoria": "SENIORES",
+     "sesso": "F",
+     "distanza": "3 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "SENIORES",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "SENIORES",
+     "sesso": "M",
+     "distanza": "3 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "SENIORES",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "F",
+     "distanza": "3 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "M",
+     "distanza": "3 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "JUNIORES",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "3 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "3 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "2000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "2000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "2000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "2000 m",
+     "tipo": "punti"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "0 g",
+     "tipo": "Destrezza S"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint (GE)"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "10 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "0 g",
+     "tipo": "Destrezza S"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint (GE)"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "10 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "0 g",
+     "tipo": "Destrezza S"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint (GE)"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "6 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "0 g",
+     "tipo": "Destrezza S"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint (GE)"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "6 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 75",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 75",
+     "sesso": "F",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 75",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 75",
+     "sesso": "M",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 70",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 70",
+     "sesso": "F",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 70",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 70",
+     "sesso": "M",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 65",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 65",
+     "sesso": "F",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 65",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 65",
+     "sesso": "M",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 60",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 60",
+     "sesso": "F",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 60",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 60",
+     "sesso": "M",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 55",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 55",
+     "sesso": "F",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 55",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 55",
+     "sesso": "M",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 50",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 50",
+     "sesso": "F",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 50",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 50",
+     "sesso": "M",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 45",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 45",
+     "sesso": "F",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 45",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 45",
+     "sesso": "M",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 40",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 40",
+     "sesso": "F",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 40",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 40",
+     "sesso": "M",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 35",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 35",
+     "sesso": "F",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 35",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 35",
+     "sesso": "M",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 30",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 30",
+     "sesso": "F",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 30",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "MASTER OVER 30",
+     "sesso": "M",
+     "distanza": "2000 m",
+     "tipo": "In linea"
+    }
+   ],
+   "categorie_programma": [
+    "SENIORES",
+    "JUNIORES",
+    "ALLIEVI",
+    "RAGAZZI",
+    "RAGAZZI 12",
+    "ESORDIENTI",
+    "GIOVANISSIMI",
+    "MASTER OVER 75",
+    "MASTER OVER 70",
+    "MASTER OVER 65",
+    "MASTER OVER 60",
+    "MASTER OVER 55",
+    "MASTER OVER 50",
+    "MASTER OVER 45",
+    "MASTER OVER 40",
+    "MASTER OVER 35",
+    "MASTER OVER 30"
+   ],
+   "righe_master_amatori": [
+    "MASTER OVER 75 | F | 2 g | Sprint |",
+    "MASTER OVER 75 | F | 2000 m | In linea |",
+    "MASTER OVER 75 | M | 2 g | Sprint |",
+    "MASTER OVER 75 | M | 2000 m | In linea |",
+    "MASTER OVER 70 | F | 2 g | Sprint |",
+    "MASTER OVER 70 | F | 2000 m | In linea |",
+    "MASTER OVER 70 | M | 2 g | Sprint |",
+    "MASTER OVER 70 | M | 2000 m | In linea |",
+    "MASTER OVER 65 | F | 2 g | Sprint |",
+    "MASTER OVER 65 | F | 2000 m | In linea |",
+    "MASTER OVER 65 | M | 2 g | Sprint |",
+    "MASTER OVER 65 | M | 2000 m | In linea |",
+    "MASTER OVER 60 | F | 2 g | Sprint |",
+    "MASTER OVER 60 | F | 2000 m | In linea |",
+    "MASTER OVER 60 | M | 2 g | Sprint |",
+    "MASTER OVER 60 | M | 2000 m | In linea |",
+    "MASTER OVER 55 | F | 2 g | Sprint |",
+    "MASTER OVER 55 | F | 2000 m | In linea |",
+    "MASTER OVER 55 | M | 2 g | Sprint |",
+    "MASTER OVER 55 | M | 2000 m | In linea |",
+    "MASTER OVER 50 | F | 2 g | Sprint |",
+    "MASTER OVER 50 | F | 2000 m | In linea |",
+    "MASTER OVER 50 | M | 2 g | Sprint |",
+    "MASTER OVER 50 | M | 2000 m | In linea |",
+    "MASTER OVER 45 | F | 2 g | Sprint |",
+    "MASTER OVER 45 | F | 2000 m | In linea |",
+    "MASTER OVER 45 | M | 2 g | Sprint |",
+    "MASTER OVER 45 | M | 2000 m | In linea |",
+    "MASTER OVER 40 | F | 2 g | Sprint |",
+    "MASTER OVER 40 | F | 2000 m | In linea |",
+    "MASTER OVER 40 | M | 2 g | Sprint |",
+    "MASTER OVER 40 | M | 2000 m | In linea |",
+    "MASTER OVER 35 | F | 2 g | Sprint |",
+    "MASTER OVER 35 | F | 2000 m | In linea |",
+    "MASTER OVER 35 | M | 2 g | Sprint |",
+    "MASTER OVER 35 | M | 2000 m | In linea |",
+    "MASTER OVER 30 | F | 2 g | Sprint |",
+    "MASTER OVER 30 | F | 2000 m | In linea |",
+    "MASTER OVER 30 | M | 2 g | Sprint |",
+    "MASTER OVER 30 | M | 2000 m | In linea |",
+    "Martedì 8 Dicembre : ? G-E m/f Ritrovo ore 9 00 Inizio gare ore 9 30. ? Rag.12 Ritrovo ore 11 00 Inizio gare ore 11 30 ? PRIMI PASSI ? SKATEAMO ritrovo ore 12 30 inizio esibizione ore 13 00 ? Master m/f Ritrovo ore13 00 Inizio gare ore 13 30. ? Rag.- All.-Jun.-Sen. m/f Ritrovo ore14 00 Inizio gare o",
+    "Per le Categorie G-E-R12 utilizzeranno Numeri gara consegnati dall?organizzazione LE ISCRIZIONI SI POSSONO PAGARE CON : In Contanti o con POS sul campo gara -TRAMITE BONIFICO BANCARIO alla Società Organizzatrice entro il 5/12/2026 : Gruppo Imolese Pattinaggio Banca di Imola A.G.D. Campanella IBAN: I"
+   ],
+   "anomalie": []
+  },
+  {
+   "id_manif": "7047",
+   "url": "https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7047",
+   "scaricata": true,
+   "codifica": "cp1252",
+   "denominazione": "MASTER RACE - INTERNAZIONALI D'ITALIA OPEN INDOOR - Vesmaco Race VII Memorial Romano Maria Cacciani",
+   "dal": "2027-02-14",
+   "al": "2027-02-14",
+   "dal_grezzo": "14/02/27 - 14/02/27",
+   "categoria_manifestazione": "B",
+   "disciplina": "pista",
+   "societa": "C.P.G.A. ASD",
+   "campo_gara": "Pista di pattinaggio con curve soprelevate pendenza costante mt 150 alla corda larghezza mt 5.50 con rivestimento VESMACO Tutte le gare si effettueranno salvo conferma del ST corsa esclusivamente in pista soprelevata. Il sabato pomeriggio dalle ore 16:00 alle ore 19:00 sarà possibile provare la pista. Le disposizioni variazioni al presente programma e orari saranno pubblicati sul sito https://cpga.net/iio, Viale Ovidio snc - Pattinodromo coperto E. De Felice-c/o Stadio Comunale di fianco piscina comunale.. CAP della localit 67100.",
+   "orario_inizio": "09:00",
+   "iscrizioni_entro": "2027-02-09",
+   "righe_programma": [
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "3 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "3 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ALLIEVI",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "6 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "12 g",
+     "tipo": "Americana"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "6 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "12 g",
+     "tipo": "Americana"
+    },
+    {
+     "categoria": "RAGAZZI",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "6 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "F",
+     "distanza": "12 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "6 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "RAGAZZI 12",
+     "sesso": "M",
+     "distanza": "12 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "F",
+     "distanza": "6 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "ESORDIENTI",
+     "sesso": "M",
+     "distanza": "6 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "F",
+     "distanza": "4 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "1 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "2 g",
+     "tipo": "Sprint"
+    },
+    {
+     "categoria": "GIOVANISSIMI",
+     "sesso": "M",
+     "distanza": "4 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 60",
+     "sesso": "F",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 60",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 60",
+     "sesso": "M",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 60",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 55",
+     "sesso": "F",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 55",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 55",
+     "sesso": "M",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 55",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 50",
+     "sesso": "F",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 50",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 50",
+     "sesso": "M",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 50",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 45",
+     "sesso": "F",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 45",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 45",
+     "sesso": "M",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 45",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 40",
+     "sesso": "F",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 40",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 40",
+     "sesso": "M",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 40",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 35",
+     "sesso": "F",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 35",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 35",
+     "sesso": "M",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 35",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 30",
+     "sesso": "F",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 30",
+     "sesso": "F",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 30",
+     "sesso": "M",
+     "distanza": "7 g",
+     "tipo": "In linea"
+    },
+    {
+     "categoria": "MASTER OVER 30",
+     "sesso": "M",
+     "distanza": "3000 m",
+     "tipo": "In linea"
+    }
+   ],
+   "categorie_programma": [
+    "ALLIEVI",
+    "RAGAZZI",
+    "RAGAZZI 12",
+    "ESORDIENTI",
+    "GIOVANISSIMI",
+    "MASTER OVER 60",
+    "MASTER OVER 55",
+    "MASTER OVER 50",
+    "MASTER OVER 45",
+    "MASTER OVER 40",
+    "MASTER OVER 35",
+    "MASTER OVER 30"
+   ],
+   "righe_master_amatori": [
+    "MASTER RACE - INTERNAZIONALI D'ITALIA OPEN INDOOR - Vesmaco Race VII Memorial Romano Maria Cacciani.",
+    "MASTER OVER 60 | F | 7 g | In linea |",
+    "MASTER OVER 60 | F | 3000 m | In linea |",
+    "MASTER OVER 60 | M | 7 g | In linea |",
+    "MASTER OVER 60 | M | 3000 m | In linea |",
+    "MASTER OVER 55 | F | 7 g | In linea |",
+    "MASTER OVER 55 | F | 3000 m | In linea |",
+    "MASTER OVER 55 | M | 7 g | In linea |",
+    "MASTER OVER 55 | M | 3000 m | In linea |",
+    "MASTER OVER 50 | F | 7 g | In linea |",
+    "MASTER OVER 50 | F | 3000 m | In linea |",
+    "MASTER OVER 50 | M | 7 g | In linea |",
+    "MASTER OVER 50 | M | 3000 m | In linea |",
+    "MASTER OVER 45 | F | 7 g | In linea |",
+    "MASTER OVER 45 | F | 3000 m | In linea |",
+    "MASTER OVER 45 | M | 7 g | In linea |",
+    "MASTER OVER 45 | M | 3000 m | In linea |",
+    "MASTER OVER 40 | F | 7 g | In linea |",
+    "MASTER OVER 40 | F | 3000 m | In linea |",
+    "MASTER OVER 40 | M | 7 g | In linea |",
+    "MASTER OVER 40 | M | 3000 m | In linea |",
+    "MASTER OVER 35 | F | 7 g | In linea |",
+    "MASTER OVER 35 | F | 3000 m | In linea |",
+    "MASTER OVER 35 | M | 7 g | In linea |",
+    "MASTER OVER 35 | M | 3000 m | In linea |",
+    "MASTER OVER 30 | F | 7 g | In linea |",
+    "MASTER OVER 30 | F | 3000 m | In linea |",
+    "MASTER OVER 30 | M | 7 g | In linea |",
+    "MASTER OVER 30 | M | 3000 m | In linea |",
+    "I numeri gara potranno essere ritirati nel pomeriggio del 13 febbraio e la mattina del 14 febbraio. Il costo di iscrizione va assolto tramite bonifico bancario istantaneo. Dovrà essere accreditato in conto entro il 10 febbraio inviando ricevuta di pagamento tramite email a cpgaaq@virgilio.it- Conto "
+   ],
+   "anomalie": []
+  }
+ ]
+}

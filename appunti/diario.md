@@ -139,3 +139,9 @@ Le voci su difetti degli script ormai corretti, che una prova automatica impedis
 - **Volevo:** riprendere il lavoro in una chat nuova aggiungendo il repository alla sessione con accesso in scrittura (`add_repo`, accesso `push`), come dice il passo 0 di `agenti/arricchimento.md` per le esecuzioni a mano.
 - **Successo:** la richiesta è stata rifiutata dal controllo dei permessi della sessione ("Unauthorized Access"), prima di arrivare a GitHub. L'accesso in sola lettura è stato dato subito (il repository è pubblico: il clone anonimo funziona), ma senza l'aggancio `gh api` sul repository risponde 403 e non si può spingere né leggere PR ed esecuzioni di Actions.
 - **Invece:** fermarsi, dirlo al proprietario e nel frattempo lavorare in sola lettura, senza cercare altre strade. Dopo la conferma del proprietario in chat, al secondo tentativo la stessa richiesta è passata. Non riguarda l'attività pianificata, che parte con il repository già collegato.
+
+## 2026-11-24 — Arricchimento: cpga.net non raggiungibile
+
+- **Volevo:** rileggere dal sito dell'organizzatore (cpga.net, `sito_verificato` nel registro) la pagina del Memorial Cacciani, spostato dal regolamento 7047 al 14/02/2027.
+- **Successo:** dalla shell il proxy ha risposto 502 ("connect_unreachable") per due tentativi; il 2026-11-17 lo stesso sito si apriva.
+- **Invece:** esito "sito non raggiungibile", nessun'altra via (passo 3, punto 4 di `agenti/arricchimento.md`); la voce torna nel ricontrollo fra 14 giorni.
