@@ -52,7 +52,7 @@ Una riga per decisione ancora valida, per tema. La data tra parentesi è quella 
 - Una PR alla volta dal ramo `raccolta/AAAA-MM-GG`, solo se i dati cambiano; `registro/` committato solo in quella PR, altrimenti artefatto di 90 giorni (2026-11-06). Il workflow esegue `genera_ics.py` prima di aprirla, perché su una PR del token di Actions `verifica.yml` resta in attesa di approvazione (2026-11-06, corretta il 2026-11-17).
 - Regolamenti letti ogni settimana: l'intervallo attorno all'ultimo che esiste davvero (da −50 a +300) e, uno per uno, quelli delle gare future; la scansione completa solo a mano (2026-11-06, 2026-11-16).
 - Stessa gara = stesso numero di regolamento (2026-11-16).
-- Una voce segue il suo regolamento quando cambia; le prove scritte a mano non si riscrivono (2026-11-16).
+- Una voce segue il suo regolamento quando cambia; le prove scritte a mano lo script non le riscrive (2026-11-16): una citazione rimasta vecchia la riallinea l'arricchimento (2026-11-24).
 - Una voce senza prova viene promossa quando arriva il regolamento (2026-11-06); da `non_autorizzato` promuove solo la lista (2026-11-16).
 - Un regolamento senza riga nella lista non diventa una voce; i doppioni sospetti si segnalano, non si uniscono (2026-11-16).
 - Pattinate: dal calendario pubblico di Pattiniamo l'Italia, anche con la sola data. Entrano `annunciato` senza prova (quelle nuove `da_verificare` con luogo "da indicare"); nome, luogo e paese dal titolo, unica eccezione alla regola 4; mai l'ultima parte del titolo né le descrizioni; riconoscimento dall'UID scritto nelle `fonti` (2026-11-22, quattro righe "Pattinate").
@@ -68,6 +68,7 @@ Una riga per decisione ancora valida, per tema. La data tra parentesi è quella 
 - Ricontrollo: le voci future di cui non è ancora stata letta la pagina dell'organizzatore, almeno 14 giorni dopo l'ultimo controllo, al massimo 5 per esecuzione; 3 ricerche più 1 mirata per evento. Valori provvisori (2026-11-06, 2026-11-17).
 - Quando legge la pagina dell'evento dell'edizione giusta, `url_ufficiale` passa a quella pagina e il regolamento resta tra le `fonti` (2026-11-17).
 - Le pattinate restano fuori dal ricontrollo: lavora solo quelle nuove della settimana (2026-11-22).
+- Regolamento cambiato: quando lo script lo segnala nella voce, rilegge l'art. 10 e, se le righe citate dalla prova non ci sono più ma le categorie sì, riallinea la citazione e lo dice tra i dubbi; categorie, stato e distanze diverse li segnala soltanto (2026-11-24).
 - Il registro `registro/AAAA-MM-GG-arricchimento.md` si committa solo quando c'è una PR (2026-11-06). Le dipendenze si installano con `python3 -m pip install --ignore-installed` (2026-11-17).
 
 ## Rilettura (`agenti/rilettura-mensile.md`)
