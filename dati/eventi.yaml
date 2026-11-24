@@ -1388,7 +1388,7 @@
   verificato_il: 2026-11-05
   prova: "Regolamento, art. 10: righe di programma da 'MASTER OVER 30' a 'MASTER OVER 75', F e M, '2 g Sprint' e '2000 m In linea'. Orari: 'Master m/f Ritrovo ore13 00 Inizio gare ore 13 30.' Premi: 'Verrà premiata la società Master + numerosa con Il Trofeo Memorial MASSIMO PANINI.'"
   note: "Manifestazione di categoria B su pista piana in cemento (90/100 m). Aperta ai tesserati in regola per l'anno in corso (art. 2). Iscrizioni solo tramite il sito federale entro le 24 del 02/12, conferme entro le 17 del 05/12."
-  note_interne: "Categorie Amatori non menzionate. Arricchimento 2026-11-06: sito non trovato; ricerche: 'Gruppo Imolese Pattinaggio Imola' | 'Gran Premio Indoor Città di Imola 2026 pattinaggio' | 'Gruppo Imolese Pattinaggio Memorial Massimo Panini indoor pattinaggio corsa'; pagine: nessuna."
+  note_interne: "Categorie Amatori non menzionate. Un sito turistico del comune colloca in via Benedetto Croce 34 l'impianto sportivo Ricci Petitoni (pista coperta e anello di pattinaggio): da confermare su una fonte ufficiale. Arricchimento 2026-11-24: sito non trovato; regolamento 7046 riletto, nessun sito citato; ricerche: 'pattinaggio corsa Imola «Gran Premio Indoor» dicembre 2026' | 'Imola pista pattinaggio via Benedetto Croce società pattinaggio corsa' (precedenti del 2026-11-06: 'Gruppo Imolese Pattinaggio Imola' | 'Gran Premio Indoor Città di Imola 2026 pattinaggio' | 'Gruppo Imolese Pattinaggio Memorial Massimo Panini indoor pattinaggio corsa'); pagine: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7046."
 
 - id: 2027-01-06-pattinata-befane
   nome: "Pattinata – Befane (Treviso)"
@@ -1501,11 +1501,11 @@
     - url: https://www.fisr.info/attivita/corsa_calendario.php
       letto_il: 2026-11-23
     - url: https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7047
-      letto_il: 2026-11-23
-  verificato_il: 2026-11-23
-  prova: "Regolamento di gara id_manif 7047, art. 10 'Programma gare': righe 'MASTER OVER 75 | F | 7 g | In linea'; 'MASTER OVER 75 | F | 3000 m | In linea' e seguenti, da MASTER OVER 75 a MASTER OVER 30, F e M."
+      letto_il: 2026-11-24
+  verificato_il: 2026-11-24
+  prova: "Regolamento di gara id_manif 7047 (edizione del 14/02/27), art. 10 'Programma gare': righe 'MASTER OVER 60 | F | 7 g | In linea'; 'MASTER OVER 60 | F | 3000 m | In linea' e seguenti, da MASTER OVER 60 a MASTER OVER 30, F e M."
   note: ""
-  note_interne: "Nel calendario fisr.info compare come 'Attività non ancora autorizzata' e senza link, ma il regolamento di gara (id_manif 7047, manifestazione di categoria B su pista) esiste già e prevede le categorie Master: da ricontrollare quando arriva l'autorizzazione. Scadenza iscrizioni 30/11, termine depennamenti 01/12. I giornali (2023) citano accanto agli Internazionali un Campionato Nazionale CSEN: possibile gara promozionale, da verificare su una fonte ufficiale. Aggiornata il 2026-11-23 da converti_fisr.py, il regolamento di gara id_manif 7047 è cambiato: date 2026-12-06–2026-12-06 → 2027-02-14–2027-02-14; id 2026-12-06-laquila-internazionali-open-indoor-master-race → 2027-02-14-laquila-internazionali-open-indoor-master-race; scadenza iscrizioni 2026-11-30 → 2027-02-09. Nome aggiornato il 2026-11-23 da converti_fisr.py perché la lista federale ha cambiato il titolo: da «INTERNAZIONALI D'ITALIA OPEN INDOOR - MASTER RACE - Vesmaco Race VI Memorial Romano Maria Cacciani» a «MASTER RACE - INTERNAZIONALI D'ITALIA OPEN INDOOR - Vesmaco Race VII Memorial Romano Maria Cacciani»; il nome della voce era «Internazionali d'Italia Open Indoor — Master Race — Vesmaco Race, VI Memorial Romano Maria Cacciani». Arricchimento 2026-11-06: sito non trovato; ricerche: 'C.P.G.A. ASD L'Aquila pattinaggio' | 'Internazionali d'Italia Open Indoor L'Aquila 2026 pattinaggio' | 'Vesmaco Race Memorial Cacciani L'Aquila pattinaggio corsa'; pagine: nessuna."
+  note_interne: "Nel calendario fisr.info compare come 'Attività non ancora autorizzata' e senza link, ma il regolamento di gara (id_manif 7047, manifestazione di categoria B su pista) esiste già e prevede le categorie Master: da ricontrollare quando arriva l'autorizzazione. Scadenza iscrizioni 30/11, termine depennamenti 01/12. I giornali (2023) citano accanto agli Internazionali un Campionato Nazionale CSEN: possibile gara promozionale, da verificare su una fonte ufficiale. Aggiornata il 2026-11-23 da converti_fisr.py, il regolamento di gara id_manif 7047 è cambiato: date 2026-12-06–2026-12-06 → 2027-02-14–2027-02-14; id 2026-12-06-laquila-internazionali-open-indoor-master-race → 2027-02-14-laquila-internazionali-open-indoor-master-race; scadenza iscrizioni 2026-11-30 → 2027-02-09. Nome aggiornato il 2026-11-23 da converti_fisr.py perché la lista federale ha cambiato il titolo: da «INTERNAZIONALI D'ITALIA OPEN INDOOR - MASTER RACE - Vesmaco Race VI Memorial Romano Maria Cacciani» a «MASTER RACE - INTERNAZIONALI D'ITALIA OPEN INDOOR - Vesmaco Race VII Memorial Romano Maria Cacciani»; il nome della voce era «Internazionali d'Italia Open Indoor — Master Race — Vesmaco Race, VI Memorial Romano Maria Cacciani». Arricchimento 2026-11-24: sito non raggiungibile (registro: cpga.net, 502 dalla shell); il regolamento 7047 riletto oggi ha le righe Master solo da Over 30 a Over 60 (prima arrivava a Over 75) e aggiunge Allievi, Ragazzi, Ragazzi 12, Esordienti, Giovanissimi: prova aggiornata; la frase 'Scadenza iscrizioni 30/11, termine depennamenti 01/12' più sopra è dell'edizione di dicembre (ora iscrizioni entro il 09/02/27, conferme entro il 10/02/27); il regolamento rimanda a https://cpga.net/iio per orari e variazioni; ricerche: nessuna; pagine: https://cpga.net/, https://www.fisr.info/attivita/corsa_trofeo_modulo.php?id_manif=7047."
 
 - id: 2027-03-21-pattinata-assago-pavia-mi
   nome: "Pattinata – Assago Pavia"
@@ -2048,17 +2048,19 @@
   categorie: []
   distanze: []
   organizzatore: "Euro S. Club"
-  url_ufficiale: ""
+  url_ufficiale: "https://www.eurosportclub.it/"
   url_iscrizione: ""
   scadenza_iscrizione: 2027-06-02
   stato: non_autorizzato
   fonti:
     - url: https://www.fisr.info/attivita/corsa_calendario.php
       letto_il: 2026-11-05
+    - url: https://www.eurosportclub.it/
+      letto_il: 2026-11-24
   verificato_il: ""
   prova: ""
   note: ""
-  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'. I giornali locali chiamano la società 'Euro Sport Club Terni' e ne collocano le gare al ciclopattinodromo Renato Perona (piazzale Senio): da confermare su una fonte ufficiale. Arricchimento 2026-11-06: sito non trovato; ricerche: 'Euro Skating Club Terni pattinaggio corsa' | 'Memorial Alfonso Zenga Terni pattinaggio' | 'Euro Sport Club Terni inline skating sito'; pagine: nessuna."
+  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'. I giornali locali chiamano la società 'Euro Sport Club Terni' e ne collocano le gare al ciclopattinodromo Renato Perona (piazzale Senio): da confermare su una fonte ufficiale. Arricchimento 2026-11-24: sito trovato, pagina dell'evento assente (registro); home e notizie del sito della società (fino al 18/12/2026) senza pagina del Memorial Zenga; nessun segno di compromissione; ricerche: nessuna (precedenti del 2026-11-06: 'Euro Skating Club Terni pattinaggio corsa' | 'Memorial Alfonso Zenga Terni pattinaggio' | 'Euro Sport Club Terni inline skating sito'); pagine: https://www.eurosportclub.it/, https://www.eurosportclub.it/category/news/."
 
 - id: 2027-06-12-pattinata-ciliegissima-modena-vignola-rollermo
   nome: "Pattinata – Ciliegissima"
@@ -2163,17 +2165,19 @@
   categorie: []
   distanze: []
   organizzatore: "Fortitudo Fabriano"
-  url_ufficiale: ""
+  url_ufficiale: "https://www.rollerspeedcentro.it"
   url_iscrizione: ""
   scadenza_iscrizione: 2027-06-30
   stato: non_autorizzato
   fonti:
     - url: https://www.fisr.info/attivita/corsa_calendario.php
       letto_il: 2026-11-05
+    - url: https://www.rollerspeedcentro.it
+      letto_il: 2026-11-24
   verificato_il: ""
   prova: ""
   note: ""
-  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'. Il cognome 'Boero' manca nel titolo della lista: preso dall'edizione 2026. Arricchimento 2026-11-06: sito non trovato; ricerche: 'Fortitudo Fabriano pattinaggio corsa' | 'Trofeo dell'Amicizia Memorial Donatella Boero Fabriano pattinaggio' | 'Fortitudo Pattinaggio Fabriano inline sito ufficiale'; pagine: nessuna."
+  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'. Il cognome 'Boero' manca nel titolo della lista: preso dall'edizione 2026. Arricchimento 2026-11-24: sito trovato, pagina dell'evento assente (registro: il sito del registro è quello del circuito Roller Speed Centro, citato nel regolamento 6711, non un sito proprio della società); home e pagina delle gare elencano solo le gare 2026 (Fabriano 4/5 luglio, 46° Trofeo dell'Amicizia); nessun segno di compromissione; ricerche: nessuna (precedenti del 2026-11-06: 'Fortitudo Fabriano pattinaggio corsa' | 'Trofeo dell'Amicizia Memorial Donatella Boero Fabriano pattinaggio' | 'Fortitudo Pattinaggio Fabriano inline sito ufficiale'); pagine: https://www.rollerspeedcentro.it, https://www.rollerspeedcentro.it/le-gare/."
 
 - id: 2027-07-03-pattinata-cesenatico
   nome: "Pattinata – Cesenatico"
@@ -2336,11 +2340,11 @@
     - url: https://www.scc-events.com/en/events/calendar
       letto_il: 2026-11-06
     - url: https://www.berlin-citynight.de/en/registration/10k-inline-skating
-      letto_il: 2026-11-06
+      letto_il: 2026-11-24
   verificato_il: ""
   prova: ""
   note: "Gara serale di 10 km sul Kurfürstendamm, dentro la adidas Runners City Night (con le corse di 5 e 10 km). Le condizioni dell'edizione 2027 non sono ancora pubblicate."
-  note_interne: "Data dal calendario SCC Events (31/07/2027, 10k, Inline skating). La pagina di iscrizione mostra ancora l'edizione 2026: partenza ore 18:00, classifiche 'Speed' e 'Fitness', ammissione 'according to DRIV WKO from YOB 2014', quote 35-45 €. Rileggere all'apertura delle iscrizioni 2027 e passare a confermato con la prova. Arricchimento 2026-11-06: sito trovato, pagina dell'edizione precedente (quote e condizioni ancora 2026); ricerche: nessuna (pagina già nota); pagine: https://www.berlin-citynight.de/en/registration/10k-inline-skating."
+  note_interne: "Data dal calendario SCC Events (31/07/2027, 10k, Inline skating). La pagina di iscrizione mostra ancora l'edizione 2026: partenza ore 18:00, classifiche 'Speed' e 'Fitness', ammissione 'according to DRIV WKO from YOB 2014', quote 35-45 €. Rileggere all'apertura delle iscrizioni 2027 e passare a confermato con la prova. Arricchimento 2026-11-24: sito trovato, pagina dell'edizione precedente (registro; la pagina riletta mostra ancora 'Participation fee 2026' e le stesse condizioni); ricerche: nessuna (pagina già nota); pagine: https://www.berlin-citynight.de/en/registration/10k-inline-skating."
 
 - id: 2027-07-31-pattinata-alpe-adria-2027-ud
   nome: "Pattinata – Alpe Adria 2027"
@@ -2595,7 +2599,7 @@
   verificato_il: ""
   prova: ""
   note: ""
-  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'. I giornali locali chiamano la società 'Polisportiva Juvenilia Pollenza' e inseriscono la gara nel Circuito Centro Marche: da confermare su una fonte ufficiale. Arricchimento 2026-11-06: sito non trovato; ricerche: 'A.P.D. Juvenilia Pollenza pattinaggio' | 'Memorial Gilda Leoperdi Trofeo Città di Pollenza pattinaggio' | 'Polisportiva Juvenilia Pollenza pattinaggio corsa sito'; pagine: nessuna."
+  note_interne: "Nella lista FISR compare come 'Attività non ancora autorizzata'. I giornali locali chiamano la società 'Polisportiva Juvenilia Pollenza' e inseriscono la gara nel Circuito Centro Marche: da confermare su una fonte ufficiale. Arricchimento 2026-11-24: solo social (Fase 4) (registro: la società è 'solo_social'); ricerche: nessuna (precedenti del 2026-11-06: 'A.P.D. Juvenilia Pollenza pattinaggio' | 'Memorial Gilda Leoperdi Trofeo Città di Pollenza pattinaggio' | 'Polisportiva Juvenilia Pollenza pattinaggio corsa sito'); pagine: nessuna."
 
 - id: 2027-10-02-pattinata-nice-antibes
   nome: "Pattinata – Nice Antibes"
