@@ -2,7 +2,7 @@
 
 Una riga per decisione, con data e motivo. Le decisioni si cambiano con una nuova riga, non cancellando quella vecchia.
 
-Questo file non si legge per intero: ci si cerca per tema o per data (`grep -n -i 'parola' appunti/decisioni.md`). Che cosa vale oggi sta, in breve e per tema, in `appunti/decisioni-in-vigore.md`: una decisione nuova si scrive qui in fondo e si riporta là. Fasi e punti aperti stanno in `appunti/stato.md`.
+Questo file non si legge per intero: ci si cerca per tema o per data (`grep -n -i 'parola' appunti/decisioni.md`). In quale file sta oggi ogni regola lo dice, per tema, `appunti/decisioni-in-vigore.md`: una decisione nuova si scrive nel file dove si applica e, con il motivo, qui in fondo. Fasi e punti aperti stanno in `appunti/stato.md`.
 
 | Data | Tema | Decisione | Motivo |
 |---|---|---|---|
