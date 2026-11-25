@@ -42,7 +42,7 @@ README.md                  ← per le persone: cos'è e come iscriversi
 CODEOWNERS                 ← il proprietario è responsabile di ogni file tranne dati/eventi.yaml, dati/societa.yaml, dati/segnalazioni.yaml e registro/ (scritti ogni settimana da raccolta e arricchimento): una PR non aperta da lui che tocca gli altri va approvata da lui prima del merge
 appunti/decisioni-in-vigore.md ← che cosa è deciso oggi, per tema, e chi fa cosa
 appunti/decisioni.md       ← la storia delle decisioni, con data e motivo: ci si cerca, non si legge per intero
-appunti/stato.md           ← come gira oggi, fasi, punti aperti
+appunti/stato.md           ← fasi e punti aperti
 appunti/diario.md          ← cosa non ha funzionato
 appunti/diario-archivio.md ← voci di diario su difetti degli script ormai corretti e coperti da prove
 appunti/casi-di-prova.md   ← eventi reali che la scoperta e l'arricchimento devono saper trovare
