@@ -20,7 +20,7 @@ Per segnalare gare mancanti o correzioni, usa [questo modulo](https://tally.so/r
 
 - le regole per chi lavora al progetto (persone, script, agenti) sono in [CLAUDE.md](CLAUDE.md)
 - queste operazioni pianificate trovano le novità o gli eventi modificati e aggiornano il calendario
-	- ogni lunedì > [raccolta.yml](.github/workflows/raccolta.yml) (da GitHub)
-	- ogni martedì > [arricchimento.md](agenti/arricchimento.md) (da Claude)
-	- ogni mese > [rilettura-mensile.md](agenti/rilettura-mensile.md) (da Claude)
-	- a ogni modifica sul ramo `main` > [pubblica.yml](.github/workflows/pubblica.yml) (rigenera la pagina web e il calendario pubblici)
+	- ogni lunedì → [raccolta.yml](.github/workflows/raccolta.yml) (da GitHub)
+	- ogni martedì → [arricchimento.md](agenti/arricchimento.md) (da Claude)
+	- ogni mese → [rilettura-mensile.md](agenti/rilettura-mensile.md) (da Claude)
+	- a ogni modifica sul ramo `main` → [pubblica.yml](.github/workflows/pubblica.yml) (rigenera la pagina web e il calendario pubblici)
