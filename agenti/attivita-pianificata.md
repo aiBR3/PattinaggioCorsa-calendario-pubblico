@@ -39,8 +39,8 @@ Il repository GitHub `aiBR3/PattinaggioCorsa-calendario-pubblico` è già clonat
 - Ogni esecuzione compare in "History" nella pagina dell'attività e si apre come una sessione: lì si legge cosa ha fatto. "Succeeded" dice solo che la sessione è finita senza errore, non che il lavoro è giusto: la verifica è la PR.
 - Per sospendere: l'interruttore in alto nella pagina dell'attività. Per cambiare orario, modello, ambiente o prompt: menu accanto al nome → Edit → Save changes.
 - Il testo del prompt si cambia qui e poi nell'attività; `agenti/arricchimento.md` si cambia solo con una PR.
-- 2026-11-22, avvio leggero: il punto 1 del testo è cambiato (non dice più di leggere per intero diario e decisioni). Finché il proprietario non lo ricopia nell'attività, l'agente li legge ancora per intero: funziona lo stesso, costa solo di più.
-- 2026-11-24, guasti passeggeri: il punto 3 del testo è cambiato (nel diario solo nei casi che dice il passo 4 di `agenti/arricchimento.md`, non più "se qualcosa non ha funzionato"). Finché il proprietario non lo ricopia nell'attività, l'agente può ancora scrivere nel diario un sito che non risponde, perché il testo dell'attività prevale sul prompt.
+- 2026-11-22, avvio leggero: il punto 1 del testo è cambiato (non dice più di leggere per intero diario e decisioni); il proprietario lo ha ricopiato nell'attività lo stesso giorno.
+- 2026-11-24, guasti passeggeri: il punto 3 del testo è cambiato (nel diario solo nei casi che dice il passo 4 di `agenti/arricchimento.md`, non più "se qualcosa non ha funzionato"); il proprietario lo ha ricopiato nell'attività lo stesso giorno.
 
 # Attività pianificata "Rilettura mensile calendario pattinaggio corsa"
 
@@ -84,4 +84,4 @@ Il repository GitHub `aiBR3/PattinaggioCorsa-calendario-pubblico` è già clonat
 - Prima esecuzione di prova fatta dal proprietario il 2026-11-22 alle 20:10 ora italiana ("Run now"), con Opus 5.5 a impegno medio: 14 secondi, riuscita. Il 22 non è un giorno di giro e l'agente si è fermato subito senza toccare nulla, come atteso: la scelta del giro dalla data funziona nel caso "nessun giro".
 - Non ancora provato dal vero: un giro completo (il primo è giovedì 2026-12-03), il giro corto, la rete dell'ambiente verso i siti degli organizzatori, il push sul ramo `rilettura/…` e l'apertura della PR. La prima esecuzione con lavoro va guardata.
 - Il testo del prompt si cambia qui e poi nell'attività; `agenti/rilettura-mensile.md` si cambia solo con una PR.
-- 2026-11-22, avvio leggero: il punto 1 del testo è cambiato, come per l'arricchimento; va ricopiato nell'attività. Questo prompt non è mai stato collaudato senza diario e decisioni: la prima esecuzione con lavoro (giovedì 2026-12-03) va guardata anche per questo.
+- 2026-11-22, avvio leggero: il punto 1 del testo è cambiato, come per l'arricchimento; il proprietario lo ha ricopiato nell'attività lo stesso giorno. Questo prompt non è mai stato collaudato senza diario e decisioni: la prima esecuzione con lavoro (giovedì 2026-12-03) va guardata anche per questo.
