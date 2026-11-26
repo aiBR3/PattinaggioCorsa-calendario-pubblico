@@ -30,7 +30,7 @@ Indice per tema. Ogni riga dice in quale file sta la regola, cioè dove si legge
 
 ## Dati e schema
 
-- Campi, stati e prefissi nel titolo delle voci: `CLAUDE.md`, "Schema di `dati/eventi.yaml`" (stati e `note` 2026-11-05; `organizzatore`, `distanze` e gare aperte per anno di nascita 2026-11-06; `id` e `nome_fonte` 2026-11-16; `url_ufficiale` 2026-11-17; codici di paese fuori perimetro e pattinate 2026-11-22).
+- Campi, stati e prefissi nel titolo delle voci: `dati/LEGGIMI.md`, "Schema di `dati/eventi.yaml`" (stati e `note` 2026-11-05; `organizzatore`, `distanze` e gare aperte per anno di nascita 2026-11-06; `id` e `nome_fonte` 2026-11-16; `url_ufficiale` 2026-11-17; codici di paese fuori perimetro e pattinate 2026-11-22; spostato da `CLAUDE.md` 2026-11-26).
 - L'ordine delle frasi in `note_interne`, con la traccia dell'arricchimento per ultima: `script/LEGGIMI.md`, "Cosa decide `converti_fisr.py` e cosa no", voce "note interne" (2026-11-17, 2026-11-22).
 - Schemi di fonti, società e segnalazioni: `dati/LEGGIMI.md` (registro delle società 2026-11-06; segnalazioni 2026-11-22).
 - Le parole da usare ("regolamento di gara"): `CLAUDE.md`, Convenzioni (2026-11-05).

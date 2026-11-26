@@ -1,4 +1,4 @@
-# Sorgente di verità del calendario. Ogni modifica passa da una pull request. Schema, stati e regole: CLAUDE.md. Lo script script/genera_ics.py valida ogni campo e si rifiuta di generare il calendario se qualcosa non torna.
+# Sorgente di verità del calendario. Ogni modifica passa da una pull request. Schema e stati: dati/LEGGIMI.md. Regole: CLAUDE.md. Lo script script/genera_ics.py valida ogni campo e si rifiuta di generare il calendario se qualcosa non torna.
 #
 # Promemoria:
 #   - id = data_inizio + città + slug (minuscole, senza accenti, trattini)
