@@ -21,7 +21,7 @@ Il repository GitHub `aiBR3/PattinaggioCorsa-calendario-pubblico` è già clonat
 |---|---|---|
 | Nome | `Arricchimento calendario pattinaggio corsa` | |
 | Prompt | il testo qui sopra | |
-| Trigger | Schedule, ogni settimana, martedì alle 06:07 (ora locale del proprietario, Europe/Rome) | Dopo la raccolta del lunedì (05:17 UTC); il proprietario ha chiesto "intorno alle 6"; non in punto, perché le esecuzioni in punto possono partire in ritardo |
+| Trigger | Schedule, ogni settimana, martedì alle 06:07 (ora locale del proprietario, Europe/Rome) | Dopo la raccolta del lunedì; il proprietario ha chiesto "intorno alle 6"; non in punto, perché le esecuzioni in punto possono partire in ritardo |
 | Repository | `aiBR3/PattinaggioCorsa-calendario-pubblico` | Viene clonato all'avvio di ogni esecuzione |
 | Cloud environment | un ambiente dedicato (nome suggerito `Calendario pattinaggio`) con Network access = **Full** | L'ambiente `Default` ha accesso di rete `Trusted`: solo registri di pacchetti e GitHub. L'agente deve raggiungere dalla shell fisr.info, attivita.rollergames.it, web.archive.org e i siti degli organizzatori, che non si conoscono in anticipo: con `Trusted` ogni `curl` fallisce e l'arricchimento non trova nulla. In alternativa a `Full`: `Custom` con `fisr.info`, `www.fisr.info`, `attivita.rollergames.it`, `web.archive.org` e la casella "Also include default list of common package managers"; ma i siti degli organizzatori resterebbero fuori |
 | Variabili d'ambiente, setup script | nessuno | `pip install` lo fa il Passo 0 del prompt |
@@ -32,19 +32,14 @@ Il repository GitHub `aiBR3/PattinaggioCorsa-calendario-pubblico` è già clonat
 
 ## Dopo la creazione
 
-- Prima esecuzione di prova fatta dal proprietario il 2026-11-06 alle 16:40 ora italiana ("Esegui ora"): 36 secondi, nessuna PR aperta e nessuna voce da ricontrollare, quindi nessuna modifica, come atteso; `gh api` risponde; dalla shell dell'ambiente fisr.info risponde 200 e skatingclubcomina.eu 301 (la rete è davvero completa). L'agente ha segnalato che le istruzioni della sessione gli chiedono di spingere solo su un ramo `claude/…`: da qui la frase sul ramo nel punto 3 del prompt (la documentazione dice che il prompt può indicare un altro ramo).
-- Prima esecuzione pianificata martedì 2026-11-10: 57 secondi, riuscita, niente da fare (nessuna PR di raccolta aperta, nessuna voce da ricontrollare) e quindi nessuna traccia su GitHub, come atteso.
-- Prima esecuzione con lavoro vero martedì 2026-11-17 (06:07-06:10 ora italiana, PR #55): riuscita. Il push sul ramo `raccolta/…` è passato, quindi la frase sul ramo nel punto 3 del prompt funziona. Nell'ambiente `pip` e `python3` sono di versioni diverse (3.13 e 3.11): da qui il comando del passo 0.4 di `agenti/arricchimento.md`.
 - Per provarla fuori orario: "Run now" nella pagina dell'attività; senza una PR `raccolta/…` aperta l'agente resta su `main` e fa solo il ricontrollo delle voci vecchie (Passo 1 del prompt), aprendo al massimo una PR `arricchimento/AAAA-MM-GG`.
 - Ogni esecuzione compare in "History" nella pagina dell'attività e si apre come una sessione: lì si legge cosa ha fatto. "Succeeded" dice solo che la sessione è finita senza errore, non che il lavoro è giusto: la verifica è la PR.
 - Per sospendere: l'interruttore in alto nella pagina dell'attività. Per cambiare orario, modello, ambiente o prompt: menu accanto al nome → Edit → Save changes.
 - Il testo del prompt si cambia qui e poi nell'attività; `agenti/arricchimento.md` si cambia solo con una PR.
-- 2026-11-22, avvio leggero: il punto 1 del testo è cambiato (non dice più di leggere per intero diario e decisioni); il proprietario lo ha ricopiato nell'attività lo stesso giorno.
-- 2026-11-24, guasti passeggeri: il punto 3 del testo è cambiato (nel diario solo nei casi che dice il passo 4 di `agenti/arricchimento.md`, non più "se qualcosa non ha funzionato"); il proprietario lo ha ricopiato nell'attività lo stesso giorno.
 
 # Attività pianificata "Rilettura mensile calendario pattinaggio corsa"
 
-Seconda attività pianificata Claude (decisione del proprietario, 2026-11-22): esegue `agenti/rilettura-mensile.md`, cioè riapre le pagine degli organizzatori delle gare future già confermate o non ancora autorizzate. Anche questa la crea e la gestisce il proprietario, dalla stessa pagina delle attività pianificate; questa sezione è la memoria della sua configurazione. Collaudo cieco prima della creazione: `registro/2026-11-22-rilettura-collaudo-1.md`.
+Seconda attività pianificata Claude (decisione del proprietario, 2026-11-22): esegue `agenti/rilettura-mensile.md`. Anche questa la crea e la gestisce il proprietario, dalla stessa pagina delle attività pianificate; questa sezione è la memoria della sua configurazione. Collaudo cieco prima della creazione: `registro/2026-11-22-rilettura-collaudo-1.md`.
 
 ## Testo del prompt (da incollare tale e quale)
 
@@ -65,23 +60,20 @@ Il repository GitHub `aiBR3/PattinaggioCorsa-calendario-pubblico` è già clonat
 |---|---|---|
 | Nome | `Rilettura mensile calendario pattinaggio corsa` | |
 | Prompt | il testo qui sopra | |
-| Trigger | Schedule, ogni settimana, giovedì alle 06:23 (ora locale del proprietario, Europe/Rome) | Lontano dalla raccolta del lunedì e dall'arricchimento del martedì. Il modulo non ha "il primo giovedì del mese": l'attività parte ogni giovedì e il Passo 1 del prompt lavora solo quando il giorno del mese è tra 1 e 7 (giro completo) o tra 15 e 21 (giro corto, gare dei 30 giorni successivi); gli altri giovedì si ferma subito. In alternativa, senza esecuzioni a vuoto: due giorni fissi del mese, uno tra 1 e 7 e uno tra 15 e 21 (per esempio il 3 e il 17); per la documentazione si fa dopo la creazione, da Edit → Custom, con un'espressione cron (`CRON_TZ=Europe/Rome 23 6 3,17 * *`) |
+| Trigger | Schedule, ogni settimana, giovedì alle 06:23 (ora locale del proprietario, Europe/Rome) | Lontano dalla raccolta del lunedì e dall'arricchimento del martedì. Il modulo non ha "il primo giovedì del mese": l'attività parte ogni giovedì e il Passo 1 del prompt decide dal giorno del mese quale giro fare, o nessuno. In alternativa, senza esecuzioni a vuoto: due giorni fissi del mese, uno per ciascuna finestra del Passo 1 (per esempio il 3 e il 17); per la documentazione si fa dopo la creazione, da Edit → Custom, con un'espressione cron (`CRON_TZ=Europe/Rome 23 6 3,17 * *`) |
 | Repository | `aiBR3/PattinaggioCorsa-calendario-pubblico` | Viene clonato all'avvio di ogni esecuzione |
 | Cloud environment | lo stesso ambiente dell'arricchimento, con Network access = **Full** | L'agente apre dalla shell i siti degli organizzatori, che cambiano con le gare: con `Trusted` ogni `curl` fallisce |
 | Variabili d'ambiente, setup script | nessuno | `pip install` lo fa il Passo 0 del prompt |
 | Modello | Opus 5.5 | Scelta del proprietario (2026-11-22). I collaudi ciechi sono passati sia con Sonnet (`registro/2026-11-22-rilettura-collaudo-1.md`) sia con Opus a impegno medio (`registro/2026-11-22-rilettura-collaudo-2.md`): Opus è più lento e più costoso, e nel collaudo non ha dato falsi allarmi |
-| Effort | Medium (Medio) | Impostato dal proprietario nell'attività il 2026-11-22, come per l'arricchimento; è il livello del collaudo 2. Correzione: la versione precedente di questa riga diceva che l'impegno non si può scegliere, sulla base della documentazione di Claude Code letta quel giorno, che descrive solo il selettore del modello; il proprietario lo ha invece scelto. Dalla sessione l'impegno di un'attività non si legge: fa fede la pagina dell'attività |
+| Effort | Medium (Medio) | Impostato dal proprietario nell'attività il 2026-11-22, come per l'arricchimento; è il livello del collaudo 2. Dalla sessione l'impegno di un'attività non si legge: fa fede la pagina dell'attività |
 | Connettori | nessuno (togliere tutti quelli proposti) | Come per l'arricchimento: `gh api` passa dal proxy git della sessione |
 | Approvazione | automatica | Senza, l'esecuzione si fermerebbe alla prima richiesta di permesso, di notte |
 | Correzione automatica delle pull request | spenta | Come per l'arricchimento |
+| Notifiche | push a fine esecuzione | Senza novità l'attività non apre una PR: l'esito si legge lì e nella pagina dell'attività |
 
 ## Dopo la creazione
 
-- Attività creata dal proprietario il 2026-11-22: ogni giovedì alle 06:23 ora italiana, nessun connettore, notifica push a fine esecuzione.
-- Per provarla subito: "Run now" nella pagina dell'attività. Fuori dai giorni 1-7 e 15-21 si ferma con "Oggi non è previsto nessun giro di rilettura": è il comportamento atteso. Per forzare un giro fuori calendario si avvia una sessione a mano con lo stesso testo più le parole "giro completo" (o "giro corto").
+- Per provarla subito: "Run now" nella pagina dell'attività. Nei giorni senza giro si ferma con "Oggi non è previsto nessun giro di rilettura": è il comportamento atteso. Per forzare un giro fuori calendario si avvia una sessione a mano con lo stesso testo più le parole "giro completo" (o "giro corto").
 - Senza novità non apre PR e non lascia tracce nel repository: l'esito si legge nella pagina dell'attività ("History") e nella notifica di fine esecuzione.
 - Quando apre una PR (ramo `rilettura/AAAA-MM-GG`), in cima al testo ci sono le cose da decidere: date o luoghi diversi, gare annullate o rinviate, campi che la pagina contraddice, pagine sparite o sospette. L'agente non le applica: le applica il proprietario, o le chiede in una chat.
-- Prima esecuzione di prova fatta dal proprietario il 2026-11-22 alle 20:10 ora italiana ("Run now"), con Opus 5.5 a impegno medio: 14 secondi, riuscita. Il 22 non è un giorno di giro e l'agente si è fermato subito senza toccare nulla, come atteso: la scelta del giro dalla data funziona nel caso "nessun giro".
-- Non ancora provato dal vero: un giro completo (il primo è giovedì 2026-12-03), il giro corto, la rete dell'ambiente verso i siti degli organizzatori, il push sul ramo `rilettura/…` e l'apertura della PR. La prima esecuzione con lavoro va guardata.
 - Il testo del prompt si cambia qui e poi nell'attività; `agenti/rilettura-mensile.md` si cambia solo con una PR.
-- 2026-11-22, avvio leggero: il punto 1 del testo è cambiato, come per l'arricchimento; il proprietario lo ha ricopiato nell'attività lo stesso giorno. Questo prompt non è mai stato collaudato senza diario e decisioni: la prima esecuzione con lavoro (giovedì 2026-12-03) va guardata anche per questo.
