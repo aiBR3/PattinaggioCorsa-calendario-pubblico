@@ -49,6 +49,9 @@ jobs:
       - name: Controlla dati/comunicati.yaml
         run: python3 script/raccogli_comunicati.py verifica
 
+      - name: Prova la lettura di un comunicato su PDF costruiti
+        run: python3 script/prove_leggi_comunicato.py
+
       - name: Prova intervallo_scansione.py su dati costruiti
         run: python3 script/prove_intervallo_scansione.py
 

@@ -50,13 +50,13 @@ Indice per tema. Ogni riga dice in quale file sta la regola, cioè dove si legge
 - Che cosa decide `converti_fisr.py` (riconoscimento, promozione, regolamento cambiato, nome, doppioni): `script/LEGGIMI.md`, "Cosa decide `converti_fisr.py` e cosa no" (2026-11-06, 2026-11-16, 2026-11-24). Stessa gara, stesso numero di regolamento: `CLAUDE.md`, regola 7 (2026-11-16).
 - Pattinate di Pattiniamo l'Italia: `script/LEGGIMI.md`, "Cosa fa `converti_pattinate.py` e cosa no"; il luogo letto dal titolo: `CLAUDE.md`, regola 4 (2026-11-22, quattro righe "Pattinate").
 - Segnalazioni, che cosa entra nel repository e come si trattano i testi del pubblico: `dati/LEGGIMI.md`, "Schema di `dati/segnalazioni.yaml`", e `CLAUDE.md`, Convenzioni. Solo qui: il modulo Tally è pubblico e non ha campi di contatto (2026-11-22, tre righe "Segnalazioni").
-- Comunicati FISR: che cosa elenca `raccogli_comunicati.py`, che cosa controlla e quando i comunicati entrano in una PR: `script/LEGGIMI.md`, "Cosa fa `raccogli_comunicati.py` e cosa no" e paragrafo "Il workflow `raccolta.yml`"; schema e stati: `dati/LEGGIMI.md`, "Schema di `dati/comunicati.yaml`" (2026-11-26). Ciò che è deciso per la lettura e non è ancora realizzato: `appunti/stato.md`, "Fase 4, prossime fonti".
+- Comunicati FISR: che cosa elenca `raccogli_comunicati.py`, che cosa controlla e quando i comunicati entrano in una PR: `script/LEGGIMI.md`, "Cosa fa `raccogli_comunicati.py` e cosa no" e paragrafo "Il workflow `raccolta.yml`"; schema e stati: `dati/LEGGIMI.md`, "Schema di `dati/comunicati.yaml`" (2026-11-26). Come si leggono: `script/LEGGIMI.md`, "Cosa fa `leggi_comunicato.py` e cosa no"; che cosa ne fa l'agente del martedì: `agenti/comunicati.md` (2026-11-26, riga sulla lettura).
 - Quando si committa `registro/`: `CLAUDE.md`, regola 5 (2026-11-06).
 - Solo qui. Che cosa si conserva in `registro/`: un rapporto per esecuzione, che non si legge all'avvio; dei JSON grezzi si tengono l'ultima scansione completa, quelli citati dai casi di prova e l'ultimo settimanale, e gli altri si possono cancellare dopo tre mesi; i rapporti `.md` restano (2026-11-22).
 
 ## Arricchimento del martedì
 
-- Procedimento, limiti, che cosa l'agente decide da solo e che cosa non tocca mai, su quale ramo scrive: `agenti/arricchimento.md` (2026-11-06, 2026-11-17; pattinate 2026-11-22; regolamento cambiato 2026-11-24).
+- Procedimento, limiti, che cosa l'agente decide da solo e che cosa non tocca mai, su quale ramo scrive: `agenti/arricchimento.md` (2026-11-06, 2026-11-17; pattinate 2026-11-22; regolamento cambiato 2026-11-24; revisione dopo i collaudi 4, 5 e 6, note pubbliche dopo uno spostamento di data, sito di un altro soggetto nel registro, "FISR" come organizzatore 2026-11-26). La procedura per i comunicati FISR sta in un file a parte, `agenti/comunicati.md`, letto solo quando ce ne sono di nuovi (2026-11-26).
 - Modello, impegno, orario, rete, approvazione: `agenti/attivita-pianificata.md`, "Configurazione" (2026-11-06, "Fase 3 attiva").
 
 ## Rilettura
