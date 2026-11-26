@@ -6,7 +6,7 @@ Il calendario è un file `.ics` pubblicato con *GitHub Pages* e aggiornato ad og
 
 ## Iscriversi al calendario
 
-La [pagina web](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) mostra queste istruzioni (e una lista delle gare trovate):
+Il [sito web](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) mostra queste istruzioni (e una lista delle gare trovate):
 
 - se usi l'app Calendario di Apple, incolla nel browser `webcal://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/calendario.ics`
 - se usi l'app Calendario di Google, vai su *[calendar.google.com](https://calendar.google.com/) → attiva il sito desktop → Altri calendari → Da URL* e incolla `https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/calendario.ics` (Google aggiorna le sottoscrizioni ogni 12–24 ore circa)
@@ -14,13 +14,13 @@ La [pagina web](https://aibr3.github.io/PattinaggioCorsa-calendario-pubblico/) m
 
 ## Segnalazioni
 
-Per segnalare gare mancanti o correzioni, usa [questo modulo](https://tally.so/r/peDGAP).
+Per segnalare gare mancanti o correzioni usa [questo modulo](https://tally.so/r/peDGAP).
 
 ## Come funziona
 
-- le regole per chi lavora al progetto (persone, script, agenti) sono in [CLAUDE.md](CLAUDE.md)
-- queste operazioni pianificate trovano le novità o gli eventi modificati e aggiornano il calendario
+- Le regole per chi lavora al progetto (persone, script, agenti) sono in [CLAUDE.md](CLAUDE.md)
+- Queste operazioni pianificate trovano le novità o gli eventi modificati e aggiornano il calendario:
 	- ogni lunedì → [raccolta.yml](.github/workflows/raccolta.yml) (da GitHub)
 	- ogni martedì → [arricchimento.md](agenti/arricchimento.md) (da Claude)
 	- ogni mese → [rilettura-mensile.md](agenti/rilettura-mensile.md) (da Claude)
-	- a ogni modifica sul ramo `main` → [pubblica.yml](.github/workflows/pubblica.yml) (rigenera la pagina web e il calendario pubblici)
+	- a ogni modifica sul ramo `main` → [pubblica.yml](.github/workflows/pubblica.yml) rigenera la pagina web e il calendario pubblici
