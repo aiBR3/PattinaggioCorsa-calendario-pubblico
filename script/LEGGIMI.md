@@ -12,6 +12,8 @@ script/converti_pattinate.py ← calendario pubblico di Pattiniamo l'Italia (fil
 script/prove_converti_pattinate.py ← prove automatiche di converti_pattinate.py su calendari costruiti (le esegue anche verifica.yml)
 script/raccogli_segnalazioni.py ← modulo pubblico delle segnalazioni (API di Tally) → candidati ripuliti di dati/segnalazioni.yaml; è il filtro tra il testo del pubblico e il repository
 script/prove_raccogli_segnalazioni.py ← prove automatiche di raccogli_segnalazioni.py su risposte costruite (le esegue anche verifica.yml)
+script/raccogli_comunicati.py ← pagina dei comunicati ufficiali FISR della corsa (fisr.it) → elenco di dati/comunicati.yaml; non apre i PDF, non abbina e non decide
+script/prove_raccogli_comunicati.py ← prove automatiche di raccogli_comunicati.py su pagine costruite (le esegue anche verifica.yml)
 script/genera_ics.py       ← eventi.yaml → calendario.ics + index.html (valida ingresso e uscita)
 script/prove_genera_ics.py ← prove automatiche dei link scritti da genera_ics.py, su voci costruite (le esegue anche verifica.yml)
 script/intervallo_scansione.py ← quali regolamenti leggere questa settimana: l'intervallo attorno all'ultimo che esiste e quelli delle gare future, da rileggere
@@ -46,6 +48,12 @@ python3 script/converti_pattinate.py --rapporto registro/AAAA-MM-GG-pattinate.md
 # Dopo ogni modifica a converti_pattinate.py: prove su calendari costruiti (titoli, date, annullamenti, voci escluse)
 python3 script/prove_converti_pattinate.py
 
+# Comunicati ufficiali FISR: dalla pagina di fisr.it all'elenco di dati/comunicati.yaml (prima senza --scrivi, per leggere il rapporto)
+python3 script/raccogli_comunicati.py aggiorna --rapporto registro/AAAA-MM-GG-comunicati.md [--scrivi]
+
+# Dopo ogni modifica a raccogli_comunicati.py: prove su pagine costruite (primo carico, titoli cambiati, cambio d'anno, letture sospette)
+python3 script/prove_raccogli_comunicati.py
+
 # Settimanalmente (è ciò che fa raccolta.yml) si leggono l'intervallo attorno all'ultimo regolamento che esiste e, uno per uno, i regolamenti delle gare future già in eventi.yaml (per accorgersi quando cambiano):
 python3 script/intervallo_scansione.py                  # stampa "DA A", es. 7052 7401
 python3 script/intervallo_scansione.py --da-rileggere   # stampa gli id per raccogli_fisr.py --rileggi-regolamenti
@@ -54,7 +62,7 @@ python3 script/intervallo_scansione.py --da-rileggere   # stampa gli id per racc
 python3 script/raccogli_societa.py --anno 2026 --registro dati/societa.yaml --raccolta registro/AAAA-MM-GG-raccolta-fisr.json --rapporto registro/AAAA-MM-GG-societa.md
 ```
 
-Il workflow `raccolta.yml` esegue questi stessi passi ogni lunedì con `--da` = 14 giorni prima, l'intervallo di `intervallo_scansione.py` (gli ultimi 50 numeri fino all'ultimo regolamento che esiste davvero e i 300 successivi) e la rilettura, uno per uno, dei regolamenti delle gare da quella data in poi già in `eventi.yaml` (`--rileggi-regolamenti`: senza, un regolamento cambiato non verrebbe visto); poi esegue `converti_pattinate.py` sul calendario di Pattiniamo l'Italia (se quella lettura fallisce le pattinate non vengono toccate e la raccolta delle gare prosegue, con l'errore nel riassunto del job) e aggiunge a `dati/segnalazioni.yaml` i candidati che un job a parte ha letto dal modulo pubblico delle segnalazioni (è l'unico job che conosce la chiave di Tally, che sta nel segreto dell'environment `segnalazioni`, consegnato solo al ramo `main`); se `eventi.yaml` o `segnalazioni.yaml` cambiano apre una PR dal ramo `raccolta/AAAA-MM-GG`, una sola alla volta (se la precedente è ancora aperta non ne apre un'altra). Quella PR è aperta dal bot di Actions: chi la rivede e chi la fonde è scritto in `appunti/decisioni-in-vigore.md`, "Chi scrive e chi fonde". Da "Actions → Run workflow" si può lanciare a mano, anche con un intervallo di id esplicito per una scansione completa. Su una PR aperta con il token di Actions `verifica.yml` non parte da sola: GitHub crea l'esecuzione ma la tiene ferma finché chi ha accesso in scrittura non preme "Approve workflows to run"; per questo il workflow esegue da sé `genera_ics.py` prima di aprirla. I push successivi sullo stesso ramo fatti con l'account secondario di Claude (l'arricchimento del martedì) fanno partire `verifica.yml` da sola (verificato il 2026-11-24 sulla PR #93). L'esecuzione rimasta ferma sul commit del bot, se nessuno la approva, alla chiusura della PR risulta fallita senza nessun job: non è un errore.
+Il workflow `raccolta.yml` esegue questi stessi passi ogni lunedì con `--da` = 14 giorni prima, l'intervallo di `intervallo_scansione.py` (gli ultimi 50 numeri fino all'ultimo regolamento che esiste davvero e i 300 successivi) e la rilettura, uno per uno, dei regolamenti delle gare da quella data in poi già in `eventi.yaml` (`--rileggi-regolamenti`: senza, un regolamento cambiato non verrebbe visto); poi esegue `converti_pattinate.py` sul calendario di Pattiniamo l'Italia (se quella lettura fallisce le pattinate non vengono toccate e la raccolta delle gare prosegue, con l'errore nel riassunto del job) e aggiunge a `dati/segnalazioni.yaml` i candidati che un job a parte ha letto dal modulo pubblico delle segnalazioni (è l'unico job che conosce la chiave di Tally, che sta nel segreto dell'environment `segnalazioni`, consegnato solo al ramo `main`); poi `raccogli_comunicati.py` elenca in `dati/comunicati.yaml` i comunicati ufficiali FISR nuovi (se la lettura fallisce il file non viene toccato e la raccolta prosegue); se `eventi.yaml` o `segnalazioni.yaml` cambiano apre una PR dal ramo `raccolta/AAAA-MM-GG`, una sola alla volta (se la precedente è ancora aperta non ne apre un'altra). Un comunicato nuovo da solo non fa aprire la PR: entra in quella che si apre per gli altri motivi e fino ad allora viene ritrovato ogni lunedì; cambierà quando l'agente del martedì leggerà i comunicati (`appunti/stato.md`, "Fase 4, prossime fonti"). Quella PR è aperta dal bot di Actions: chi la rivede e chi la fonde è scritto in `appunti/decisioni-in-vigore.md`, "Chi scrive e chi fonde". Da "Actions → Run workflow" si può lanciare a mano, anche con un intervallo di id esplicito per una scansione completa. Su una PR aperta con il token di Actions `verifica.yml` non parte da sola: GitHub crea l'esecuzione ma la tiene ferma finché chi ha accesso in scrittura non preme "Approve workflows to run"; per questo il workflow esegue da sé `genera_ics.py` prima di aprirla. I push successivi sullo stesso ramo fatti con l'account secondario di Claude (l'arricchimento del martedì) fanno partire `verifica.yml` da sola (verificato il 2026-11-24 sulla PR #93). L'esecuzione rimasta ferma sul commit del bot, se nessuno la approva, alla chiusura della PR risulta fallita senza nessun job: non è un errore.
 
 Cosa decide `converti_fisr.py` e cosa no:
 - regolamento di gara con righe `MASTER …` nell'art. 10 → `confermato`, `categorie: [master]`, prova = le righe citate;
@@ -82,6 +90,17 @@ Cosa fa `converti_pattinate.py` e cosa no (decisioni del 2026-11-22):
 - **mai**: toccare una voce `escluso` (è la memoria di ciò che è stato scartato), una voce che non è una pattinata, oppure luogo, paese, organizzatore, note e link scritti da una persona; cambiare la data di lettura di una voce che non è cambiata (altrimenti ogni settimana ci sarebbe una PR senza novità). Le sue frasi in `note_interne` vanno prima della traccia `Arricchimento …`, come quelle di `converti_fisr.py`.
 
 `python3 script/prove_converti_pattinate.py` prova queste regole su calendari costruiti.
+
+Cosa fa `raccogli_comunicati.py` e cosa no (decisioni del 2026-11-22 e del 2026-11-26):
+- **fonte**: la pagina dei comunicati ufficiali della corsa su fisr.it. L'indice elenca gli anni, ciascuno con il link alla sua pagina e il numero dei comunicati; l'indirizzo della pagina di un anno non si può costruire (`601-2026`, `565-2025`) e si legge dall'indice. Lo script legge i due anni più recenti, mai uno precedente a `primo_anno`: un comunicato su un evento dell'anno dopo sta nella pagina dell'anno in cui è pubblicato;
+- **che cosa elenca**: di ogni comunicato il numero di scaricamento, la data di pubblicazione, il titolo ripulito (lettere, cifre e pochi segni) e il link, scritto senza la coda che segue il numero (il sito risponde lo stesso: verificato il 2026-11-26). Un comunicato che il file non conosce entra come `nuovo`;
+- **non decide** (regola 2): non apre i PDF, non abbina un comunicato a una gara, non scarta raduni e ranking. Tocca a chi lavora il comunicato;
+- **titolo cambiato**: il file segue la fonte; se il comunicato era già stato lavorato e le parole del titolo sono cambiate (maiuscole e punteggiatura non contano) torna `nuovo`, con lo stato e l'esito di prima scritti nell'`esito`. La federazione ritocca i titoli dopo la pubblicazione, per esempio quando cambiano le date;
+- **comunicato sparito dalla fonte**: la voce resta com'è ed è segnalata nel rapporto;
+- **si ferma senza scrivere** se un blocco della pagina non ha link, titolo o data, se un link porta fuori dalla pagina dei comunicati, se la pagina di un anno mostra meno comunicati di quanti l'indice ne dichiara (pagina incompleta), se in una lettura i comunicati nuovi sono più di 20 o se sparisce più della metà di quelli noti di un anno;
+- **primo carico** (`--primo-carico`, una volta sola): legge l'anno più recente e segna tutto `storico`. Fatto il 2026-11-26 con i 45 comunicati del 2026.
+
+`python3 script/prove_raccogli_comunicati.py` prova queste regole su pagine costruite.
 
 ## La pagina pubblicata
 
