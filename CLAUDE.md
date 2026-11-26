@@ -28,7 +28,7 @@ Chi lo consulta: chi si iscrive al calendario, da iPhone (app Calendario) o da A
 ## Come gira il calendario
 
 - **Lunedì**, `raccolta.yml`: script, nessun modello decide. Legge fisr.info, le pattinate di Pattiniamo l'Italia e il modulo pubblico delle segnalazioni, ed elenca i comunicati ufficiali FISR; se i dati cambiano apre una PR dal ramo `raccolta/AAAA-MM-GG`.
-- **Martedì**, attività pianificata "arricchimento" (`agenti/arricchimento.md`): applica la regola 10 alle voci nuove della PR, ricontrolla poche voci vecchie e lavora i candidati delle segnalazioni; scrive sullo stesso ramo e commenta la PR.
+- **Martedì**, attività pianificata "arricchimento" (`agenti/arricchimento.md`): applica la regola 10 alle voci nuove della PR, ricontrolla poche voci vecchie, lavora i candidati delle segnalazioni e legge i comunicati FISR nuovi (`agenti/comunicati.md`); scrive sullo stesso ramo e commenta la PR.
 - **Due volte al mese**, attività pianificata "rilettura" (`agenti/rilettura-mensile.md`): riapre le pagine degli organizzatori delle gare future già `confermato` o `non_autorizzato`; apre una PR propria solo se c'è qualcosa.
 - **Il proprietario** rivede e fonde. A ogni merge su `main`, `pubblica.yml` genera calendario e pagina e li pubblica su GitHub Pages.
 
@@ -57,7 +57,7 @@ script/                    ← raccolta, conversione, generazione del calendario
 pagina_web/modello_index.html ← testo della pagina pubblicata (segnaposto {{...}})
 pagina_web/stile.css        ← CSS della pagina; ogni altro file in pagina_web/ viene pubblicato così com'è
 .github/workflows/         ← verifica.yml (sulle PR), pubblica.yml (su main → Pages), raccolta.yml (ogni lunedì → PR)
-agenti/                    ← prompt dei compiti: arricchimento.md (arricchimento del martedì), rilettura-mensile.md (rilettura delle gare già confermate), attivita-pianificata.md (testo e configurazione delle attività pianificate)
+agenti/                    ← prompt dei compiti: arricchimento.md (arricchimento del martedì), comunicati.md (la sua procedura per i comunicati FISR, letta solo quando ce ne sono di nuovi), rilettura-mensile.md (rilettura delle gare già confermate), attivita-pianificata.md (testo e configurazione delle attività pianificate)
 registro/                  ← un rapporto per esecuzione: AAAA-MM-GG-raccolta-fisr.json, AAAA-MM-GG-conversione-fisr.md, AAAA-MM-GG-pattinate.md, AAAA-MM-GG-segnalazioni.md e AAAA-MM-GG-comunicati.md (raccolta), AAAA-MM-GG-arricchimento.md, AAAA-MM-GG-rilettura.md, AAAA-MM-GG-societa.md
 uscita/                    ← generato localmente, ignorato da git
 ```
