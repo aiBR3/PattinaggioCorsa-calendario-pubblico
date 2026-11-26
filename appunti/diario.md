@@ -147,3 +147,9 @@ Le voci su difetti degli script ormai corretti, che una prova automatica impedis
 - **Volevo:** rileggere dal sito dell'organizzatore (cpga.net, `sito_verificato` nel registro) la pagina del Memorial Cacciani, spostato dal regolamento 7047 al 14/02/2027.
 - **Successo:** dalla shell il proxy ha risposto 502 ("connect_unreachable") per due tentativi; il 2026-11-17 lo stesso sito si apriva.
 - **Invece:** esito "sito non raggiungibile", nessun'altra via (passo 3, punto 4 di `agenti/arricchimento.md`); la voce torna nel ricontrollo fra 14 giorni.
+
+## 2026-11-26 — pypdf: l'importazione si interrompe dove la libreria `cryptography` del sistema è guasta
+
+- **Volevo:** leggere il testo dei comunicati FISR con `pypdf`, anche con il Python 3.11 di sistema (quello che l'ambiente delle attività pianificate chiama `python3`).
+- **Successo:** nella sessione, con Python 3.11, `import pypdf` si interrompe con `pyo3_runtime.PanicException: Python API call failed`. pypdf prova a importare `cryptography`; quella installata dal sistema non trova `_cffi_backend` e l'errore che ne esce non è un `ImportError`, quindi il ripiego previsto da pypdf non scatta. Con il Python 3.13 della stessa macchina non succede. Se nell'ambiente delle attività pianificate sia lo stesso non è stato provato.
+- **Invece:** `script/leggi_comunicato.py` dichiara assenti `cryptography` e `Crypto` (`sys.modules.setdefault(…, None)`) prima di importare pypdf, che così usa il suo ripiego in puro Python: i comunicati non sono cifrati e la crittografia non serve. Con Python 3.11 e 3.13 il testo estratto dai 45 comunicati del 2026 è identico. Chi importa pypdf in un altro script deve fare lo stesso.
