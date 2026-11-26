@@ -2,7 +2,7 @@
 
 Questo file è la memoria permanente di agenti e script e vale per intero: se la sessione non lo ha già caricato nel tuo contesto, leggilo prima di fare qualsiasi cosa.
 
-Gli appunti non si leggono all'avvio: si consultano quando servono (decisione 2026-11-22). Del diario (`appunti/diario.md`, cosa non ha funzionato) scorri i titoli (`grep '^## ' appunti/diario.md`) e leggi le voci che riguardano ciò che stai per fare (regola 6). Prima di cambiare una regola, uno schema, uno script o un prompt guarda che cosa è già deciso in `appunti/decisioni-in-vigore.md` (per tema, una riga a decisione); il perché sta nella storia, `appunti/decisioni.md`, dove si cerca per tema o per data (`grep -n -i 'parola' appunti/decisioni.md`). A che punto è il progetto e che cosa resta aperto: `appunti/stato.md`.
+Gli appunti non si leggono all'avvio: si consultano quando servono (decisione 2026-11-22). Del diario (`appunti/diario.md`, cosa non ha funzionato) scorri i titoli (`grep '^## ' appunti/diario.md`) e leggi le voci che riguardano ciò che stai per fare (regola 6). Prima di cambiare una regola, uno schema, uno script o un prompt cerca in `appunti/decisioni-in-vigore.md` (indice per tema) in quale file sta ciò che è già deciso e con quale data; il perché sta nella storia, `appunti/decisioni.md`, dove si cerca per tema o per data (`grep -n -i 'parola' appunti/decisioni.md`). A che punto è il progetto e che cosa resta aperto: `appunti/stato.md`.
 
 ## Scopo
 
@@ -39,8 +39,8 @@ Fasi del progetto e punti aperti: `appunti/stato.md`.
 ```
 CLAUDE.md                  ← questo file
 README.md                  ← per le persone: cos'è e come iscriversi
-CODEOWNERS                 ← il proprietario è responsabile di ogni file tranne dati/eventi.yaml, dati/societa.yaml, dati/segnalazioni.yaml e registro/ (scritti ogni settimana da raccolta e arricchimento): una PR non aperta da lui che tocca gli altri va approvata da lui prima del merge
-appunti/decisioni-in-vigore.md ← che cosa è deciso oggi, per tema, e chi fa cosa
+CODEOWNERS                 ← elenca i file senza responsabile, quelli che raccolta e arricchimento scrivono ogni settimana; tutti gli altri sono del proprietario (che cosa ne segue per le PR: appunti/decisioni-in-vigore.md, "Chi scrive e chi fonde")
+appunti/decisioni-in-vigore.md ← indice per tema: in quale file sta ogni regola in vigore, e chi fa cosa
 appunti/decisioni.md       ← la storia delle decisioni, con data e motivo: ci si cerca, non si legge per intero
 appunti/stato.md           ← fasi e punti aperti
 appunti/diario.md          ← cosa non ha funzionato
