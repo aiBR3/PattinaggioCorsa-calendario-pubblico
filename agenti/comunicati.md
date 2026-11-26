@@ -29,7 +29,7 @@ Quelli con `stato: nuovo`, dal numero di scaricamento più basso, fino al limite
 
 Valgono i punti 6, 7 e 8 del passo 3 di `agenti/arricchimento.md`: si compila solo ciò che è vuoto, un dato già scritto non si cambia, e una differenza tra il comunicato e la voce (date, luogo, organizzatore, scadenza) va in `note_interne` e in testa ai dubbi. In particolare:
 
-- `organizzatore`, se vuoto: la società che il comunicato indica come organizzatrice, con maiuscole normali;
+- `organizzatore`, se è vuoto o è soltanto "FISR" (ciò che la lista federale scrive per i campionati): la società che il comunicato indica come organizzatrice, con maiuscole normali;
 - `luogo`: l'impianto, se la voce ha solo la città;
 - `scadenza_iscrizione` e `distanze`: solo le gare Master o Amatori, come le scrive il comunicato;
 - `note`: ciò che serve a chi pattina, cioè giorni e orari delle gare Master o Amatori, prova del percorso, come ci si iscrive;
