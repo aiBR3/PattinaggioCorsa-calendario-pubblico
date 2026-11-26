@@ -10,7 +10,7 @@ I comunicati ufficiali sono PDF della federazione. Per un campionato la lista fe
 
 ## Quali comunicati
 
-Quelli con `stato: nuovo`, dal numero di scaricamento più basso, fino al limite della tabella "Limiti". Gli altri restano `nuovo` per la prossima esecuzione e li elenchi sotto "Non fatto". I comunicati con un altro stato non si toccano. Un `esito` che comincia con `Riaperto il …` dice che il comunicato era già stato lavorato e che la federazione ne ha poi cambiato il titolo: si rilavora da capo, e ciò che dalle voci risulta già scritto non si cambia.
+Quelli con `stato: nuovo`, dal numero di scaricamento più basso, fino al limite della tabella "Limiti": conta i comunicati aperti, non quelli scartati dal titolo. Gli altri restano `nuovo` per la prossima esecuzione e li elenchi sotto "Non fatto". I comunicati con un altro stato non si toccano. Un `esito` che comincia con `Riaperto il …` dice che il comunicato era già stato lavorato e che la federazione ne ha poi cambiato il titolo: si rilavora da capo, e ciò che dalle voci risulta già scritto non si cambia.
 
 ## Per ogni comunicato
 
@@ -31,10 +31,11 @@ Valgono i punti 6, 7 e 8 del passo 3 di `agenti/arricchimento.md`: si compila so
 
 - `organizzatore`, se è vuoto o è soltanto "FISR" (ciò che la lista federale scrive per i campionati): la società che il comunicato indica come organizzatrice, con maiuscole normali;
 - `luogo`: l'impianto, se la voce ha solo la città;
-- `scadenza_iscrizione` e `distanze`: solo le gare Master o Amatori, come le scrive il comunicato;
+- `scadenza_iscrizione`, se vuota;
+- `distanze`: le gare Master o Amatori come le scrive il comunicato, con la categoria. Le distanze che la voce ha soltanto dal titolo federale ("maratona", "mezza maratona") si riscrivono in quella forma, ciascuna con le sue categorie tra parentesi, senza toglierne nessuna: è la regola del punto 6;
 - `note`: ciò che serve a chi pattina, cioè giorni e orari delle gare Master o Amatori, prova del percorso, come ci si iscrive;
 - `fonti`: l'`url` del comunicato così com'è scritto in `dati/comunicati.yaml`, con `letto_il: OGGI`;
-- `categorie`, `prova` e `stato` secondo il punto 7: il comunicato è un documento FISR e vale come prova (regola 3). La citazione dice numero e data del comunicato e il titolo della sezione, per esempio `Comunicato ufficiale FISR n. 37 del 24 luglio 2026, "Gare previste": «Categoria Master F/M …»`. Se la voce ha già una prova, la frase nuova si accoda;
+- `categorie`, `prova` e `stato` secondo il punto 7: il comunicato è un documento FISR e vale come prova (regola 3). La citazione dice numero e data del comunicato e il titolo della sezione, per esempio `Comunicato ufficiale FISR n. 37 del 24 luglio 2026, "Gare previste": «Categoria Master F/M …»`. Se la voce ha già una prova, la frase nuova si accoda; in tutti e due i casi metti `verificato_il: OGGI`;
 - `url_ufficiale` non diventa mai il comunicato (decisione del 2026-11-26): resta la pagina dell'organizzatore, o vuoto finché non c'è.
 
 In `note_interne`, prima della frase `Arricchimento`, aggiungi una frase `Comunicato n. N del AAAA-MM-GG letto il OGGI: …` con i campi compilati e, se il comunicato cita il sito dell'evento o dell'organizzatore, `sito citato: INDIRIZZO`.
