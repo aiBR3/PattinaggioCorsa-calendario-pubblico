@@ -1,6 +1,6 @@
 # Script, raccolta e pagina: come funzionano
 
-Questo file si legge prima di toccare uno script, un workflow o la pagina, e prima di eseguire a mano raccolta o conversione. Le regole che valgono sempre e lo schema di `dati/eventi.yaml` stanno in `CLAUDE.md`. Il testo qui sotto è stato spostato da `CLAUDE.md` il 2026-11-22 senza cambiare le parole (decisione "Avvio leggero").
+Questo file si legge prima di toccare uno script, un workflow o la pagina, e prima di eseguire a mano raccolta o conversione. Le regole che valgono sempre stanno in `CLAUDE.md`, lo schema di `dati/eventi.yaml` in `dati/LEGGIMI.md`. Il testo qui sotto è stato spostato da `CLAUDE.md` il 2026-11-22 senza cambiare le parole (decisione "Avvio leggero").
 
 ## Gli script
 

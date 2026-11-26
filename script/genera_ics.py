@@ -33,7 +33,7 @@ except ImportError as errore:  # pragma: no cover
     sys.exit(f"Manca una dipendenza ({errore}). Installa: pip install -r script/requisiti.txt")
 
 # ---------------------------------------------------------------------------
-# Regole del dominio (devono coincidere con CLAUDE.md)
+# Regole del dominio (devono coincidere con lo schema di dati/eventi.yaml in dati/LEGGIMI.md e con il perimetro in CLAUDE.md)
 # ---------------------------------------------------------------------------
 
 PAESI_AMMESSI = {"IT", "CH", "ES", "PT", "FR", "AT", "DE", "SI"}
@@ -319,7 +319,7 @@ def converti_evento(grezzo, posizione: int, esito: Esito) -> Evento | None:
     # Perimetro. Un paese fuori dall'elenco è ammesso solo per una voce "escluso": è la memoria di un evento scartato proprio perché fuori perimetro, così nessuno lo ripropone (decisione 2026-11-22); una voce esclusa non viene pubblicata.
     if paese and paese not in PAESI_AMMESSI:
         if stato != "escluso":
-            esito.errore(f"{contesto}: 'paese' {paese!r} fuori perimetro; ammessi: {sorted(PAESI_AMMESSI)}; un altro paese è ammesso solo con stato 'escluso' (se il perimetro cambia, aggiorna CLAUDE.md e questo script)")
+            esito.errore(f"{contesto}: 'paese' {paese!r} fuori perimetro; ammessi: {sorted(PAESI_AMMESSI)}; un altro paese è ammesso solo con stato 'escluso' (se il perimetro cambia, aggiorna CLAUDE.md, dati/LEGGIMI.md e questo script)")
         elif not re.fullmatch(r"[A-Z]{2}", paese):
             esito.errore(f"{contesto}: 'paese' {paese!r} deve essere un codice di due lettere maiuscole")
 
