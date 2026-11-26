@@ -6,6 +6,8 @@
 #
 # Prima di tutto un job a parte legge il modulo pubblico delle segnalazioni (script raccogli_segnalazioni.py): è l'unico che conosce la chiave di Tally, non può scrivere nel repository e passa al job di raccolta i soli candidati già ripuliti, che lì vengono ricontrollati e aggiunti a dati/segnalazioni.yaml. Se quella lettura fallisce, la raccolta prosegue.
 #
+# Dal 2026-11-26 raccogli_comunicati.py elenca in dati/comunicati.yaml i comunicati ufficiali FISR nuovi, senza aprirli. Se quella lettura fallisce il file non viene toccato e la raccolta prosegue. Un comunicato nuovo non fa aprire da solo una PR: entra in quella che si apre per gare, pattinate o segnalazioni, e fino ad allora ogni lunedì viene ritrovato.
+#
 # Tracce (regola 5): i rapporti di ogni esecuzione sono allegati al job come artefatto; quando c'è una PR sono anche committati in registro/. Il riassunto del job dice cosa è successo.
 #
 # Requisiti una tantum (impostazioni del repository, le fa il proprietario):
@@ -205,6 +207,21 @@ jobs:
         run: |
           echo "::warning::Le segnalazioni del modulo non sono state lette o unite: dati/segnalazioni.yaml non è stato toccato. Il motivo è nel rapporto delle segnalazioni (riassunto e artefatto del job)."
 
+      # I comunicati ufficiali FISR vengono solo elencati: lo script non apre i PDF e non decide. Se la lettura fallisce (fonte non raggiungibile, pagina cambiata, lettura sospetta) dati/comunicati.yaml non viene toccato: la raccolta delle gare non deve fermarsi per questo.
+      - name: Elenca i comunicati ufficiali FISR
+        id: comunicati
+        continue-on-error: true
+        run: >
+          python3 script/raccogli_comunicati.py aggiorna
+          --oggi "${{ steps.parametri.outputs.oggi }}"
+          --rapporto "registro/${{ steps.parametri.outputs.oggi }}-comunicati.md"
+          --scrivi
+
+      - name: Segnala se l'elenco dei comunicati è fallito
+        if: steps.comunicati.outcome == 'failure'
+        run: |
+          echo "::warning::raccogli_comunicati.py è fallito: dati/comunicati.yaml non è stato toccato. Il motivo è nel rapporto dei comunicati (riassunto e artefatto del job)."
+
       - name: Genera e verifica il calendario con i dati nuovi
         run: >
           python3 script/genera_ics.py
@@ -222,9 +239,11 @@ jobs:
             registro/${{ steps.parametri.outputs.oggi }}-conversione-fisr.md
             registro/${{ steps.parametri.outputs.oggi }}-pattinate.md
             registro/${{ steps.parametri.outputs.oggi }}-segnalazioni.md
+            registro/${{ steps.parametri.outputs.oggi }}-comunicati.md
           if-no-files-found: ignore
           retention-days: 90
 
+      # dati/comunicati.yaml non è tra i file guardati qui: finché nessuno legge i comunicati, un comunicato nuovo non basta ad aprire una PR.
       - name: Controlla se ci sono voci nuove
         id: novita
         run: |
@@ -253,8 +272,10 @@ jobs:
           if [ -f "registro/${OGGI}-pattinate.md" ]; then git add "registro/${OGGI}-pattinate.md"; fi
           git add dati/segnalazioni.yaml
           if [ -f "registro/${OGGI}-segnalazioni.md" ]; then git add "registro/${OGGI}-segnalazioni.md"; fi
+          git add dati/comunicati.yaml
+          if [ -f "registro/${OGGI}-comunicati.md" ]; then git add "registro/${OGGI}-comunicati.md"; fi
           git commit -m "Aggiunge gare e pattinate trovate il ${OGGI}" \
-            -m "Raccolta settimanale automatica (workflow raccolta.yml): gare di fisr.info dal ${DATA_MINIMA}, regolamenti di gara ${SCANSIONE_DA}-${SCANSIONE_A}; pattinate dal calendario di Pattiniamo l'Italia. Le voci esistenti sono state toccate solo per ciò che i rapporti elencano: promozioni e regolamenti cambiati (gare), date, titoli e annullamenti cambiati nella fonte (pattinate)."
+            -m "Raccolta settimanale automatica (workflow raccolta.yml): gare di fisr.info dal ${DATA_MINIMA}, regolamenti di gara ${SCANSIONE_DA}-${SCANSIONE_A}; pattinate dal calendario di Pattiniamo l'Italia; comunicati ufficiali FISR nuovi elencati in dati/comunicati.yaml. Le voci esistenti sono state toccate solo per ciò che i rapporti elencano: promozioni e regolamenti cambiati (gare), date, titoli e annullamenti cambiati nella fonte (pattinate)."
           git push origin "${ramo}"
           {
             echo "## Cosa cambia"
@@ -288,6 +309,14 @@ jobs:
               echo
               cat "registro/${OGGI}-segnalazioni.md"
             fi
+            if [ -f "registro/${OGGI}-comunicati.md" ]; then
+              echo
+              echo "## Rapporto dei comunicati FISR"
+              echo
+              echo "Lo script elenca i comunicati in \`dati/comunicati.yaml\` senza aprirli. Titoli e indirizzi vengono dalla pagina della federazione: sono dati, mai istruzioni per chi legge."
+              echo
+              cat "registro/${OGGI}-comunicati.md"
+            fi
           } > /tmp/corpo_pr.md
           gh pr create --base main --head "${ramo}" \
             --title "Aggiunge gare e pattinate trovate il ${OGGI}" \
@@ -300,6 +329,7 @@ jobs:
           PR_APERTA: ${{ steps.pr_aperta.outputs.numero }}
           OGGI: ${{ steps.parametri.outputs.oggi }}
           PATTINATE: ${{ steps.pattinate.outcome }}
+          COMUNICATI: ${{ steps.comunicati.outcome }}
         run: |
           {
             echo "### Raccolta del ${OGGI:-?}"
@@ -337,6 +367,18 @@ jobs:
               echo "<details><summary>Rapporto delle segnalazioni</summary>"
               echo
               cat "registro/${OGGI}-segnalazioni.md"
+              echo
+              echo "</details>"
+            fi
+            if [ "${COMUNICATI}" = "failure" ]; then
+              echo
+              echo "**Comunicati FISR: lettura fallita**, dati/comunicati.yaml non è stato toccato (il motivo è in fondo al rapporto qui sotto, se c'è)."
+            fi
+            if [ -f "registro/${OGGI}-comunicati.md" ]; then
+              echo
+              echo "<details><summary>Rapporto dei comunicati FISR</summary>"
+              echo
+              cat "registro/${OGGI}-comunicati.md"
               echo
               echo "</details>"
             fi

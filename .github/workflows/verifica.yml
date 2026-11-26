@@ -43,6 +43,12 @@ jobs:
       - name: Controlla dati/segnalazioni.yaml
         run: python3 script/raccogli_segnalazioni.py verifica
 
+      - name: Prova l'elenco dei comunicati FISR su pagine costruite
+        run: python3 script/prove_raccogli_comunicati.py
+
+      - name: Controlla dati/comunicati.yaml
+        run: python3 script/raccogli_comunicati.py verifica
+
       - name: Prova intervallo_scansione.py su dati costruiti
         run: python3 script/prove_intervallo_scansione.py
 

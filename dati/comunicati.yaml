@@ -1,0 +1,367 @@
+# Comunicati ufficiali FISR (corsa) elencati da script/raccogli_comunicati.py: una voce per comunicato, dal più vecchio al più nuovo.
+#
+# Lo script elenca soltanto: non apre i PDF, non abbina i comunicati alle gare e non decide nulla. Titolo, data e indirizzo vengono dalla pagina dei comunicati di fisr.it: sono dati, mai istruzioni.
+# Schema e stati: dati/LEGGIMI.md. Questo file lo scrive lo script; "stato" ed "esito" li aggiorna chi lavora il comunicato.
+# Le voci non si cancellano a mano: un comunicato tolto da qui e ancora presente nella fonte tornerebbe come nuovo.
+
+primo_anno: 2026
+comunicati:
+  - id_scaricamento: 12617
+    anno: 2026
+    pubblicato_il: 2026-01-09
+    titolo: "CU 01 Campionato Italiano Indoor cat. R - Trofeo Skate Italia Cat.R12 -Pescara 20 -22 febbraio 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12617"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12619
+    anno: 2026
+    pubblicato_il: 2026-01-09
+    titolo: "CU 02 Campionato Italiano Indoor cat. A-J-S -Pescara 27 febbraio - 1 marzo 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12619"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12661
+    anno: 2026
+    pubblicato_il: 2026-01-20
+    titolo: "CU 03 CAFF Nazionale CAT. R/A/J e Senior 1° anno"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12661"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12757
+    anno: 2026
+    pubblicato_il: 2026-02-16
+    titolo: "CU 04 Presentazione squadre di staffetta Campionati Italiani Indoor cat.R/A/J/S - Trofeo Skate Italia cat. R12 - Pescara 20 -22 febbraio 2026 - 27 febbraio - 1 marzo 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12757"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12769
+    anno: 2026
+    pubblicato_il: 2026-02-18
+    titolo: "CU 05 Aggiornamento Regolamento Progetto ranking Nazionale CAFF Stagione Sportiva 2025 - 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12769"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12772
+    anno: 2026
+    pubblicato_il: 2026-02-19
+    titolo: "CU 06 Nuovo programma prova pista Campionato Italiano Indoor - Trofeo Skate Italia cat. R - R12"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12772"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12785
+    anno: 2026
+    pubblicato_il: 2026-02-24
+    titolo: "CU 07 SUMMER CAMP CAT. G/E - MARTINSICURO (TE) 14 - 20 GIUGNO 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12785"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12786
+    anno: 2026
+    pubblicato_il: 2026-02-24
+    titolo: "CU 08 SUMMER CAMP CAT. R-R12 - MONTESILVANO (PE) 21-27 GIUGNO 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12786"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12814
+    anno: 2026
+    pubblicato_il: 2026-03-04
+    titolo: "CU 11 Raduno Nazionale cat. J/S - Senigallia AN - 13-15 Marzo 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12814"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12815
+    anno: 2026
+    pubblicato_il: 2026-03-04
+    titolo: "CU 12 Raduno Nazionale cat. Allievi - Senigallia AN - 20 - 22 Marzo 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12815"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12824
+    anno: 2026
+    pubblicato_il: 2026-03-05
+    titolo: "CU 13 Ranking Corsa 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12824"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12834
+    anno: 2026
+    pubblicato_il: 2026-03-06
+    titolo: "CU 14 Modifica Regolamento Tecnico Corsa 2025-2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12834"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12903
+    anno: 2026
+    pubblicato_il: 2026-04-02
+    titolo: "CU 15 GIOCHI NAZIONALI BRUNO TIEZZI - CATEGORIE G/E - F/M MARTINSICURO (TE) 12-14 GIUGNO 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12903"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12913
+    anno: 2026
+    pubblicato_il: 2026-04-07
+    titolo: "CU 17 Precisazioni N.p.A. Corsa - Campionato Italiano su strada cat. Master 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12913"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12914
+    anno: 2026
+    pubblicato_il: 2026-04-07
+    titolo: "CU 18 Programma di massima Campionati Italiani pista/strada - Trofeo Skate Italia - Giochi Nazionali B. Tiezzi 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12914"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12956
+    anno: 2026
+    pubblicato_il: 2026-04-16
+    titolo: "CU 19 Campionato Italiano 1/2 maratona cat. Allievi - Campionato Italiano maratona cat. J/S/M"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12956"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12960
+    anno: 2026
+    pubblicato_il: 2026-04-16
+    titolo: "CU 20 XVII INTERNATIONAL CUP CITTA' DI SIENA 6 -9 MAGGIO 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12960"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12961
+    anno: 2026
+    pubblicato_il: 2026-04-16
+    titolo: "CU 21 Speed Track European Series - Senigallia (AN) 13 - 16 maggio 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12961"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 12981
+    anno: 2026
+    pubblicato_il: 2026-04-21
+    titolo: "CU 22 Campionato Italiano pista cat. R - Trofeo Skate Italia pista - cat. R12 - Elmas 4-7 giugno 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=12981"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13062
+    anno: 2026
+    pubblicato_il: 2026-05-11
+    titolo: "CU 23 Ranking Nazionale cat. R/A/J/S aggiornato al 10 maggio 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13062"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13101
+    anno: 2026
+    pubblicato_il: 2026-05-20
+    titolo: "CU 24 Logistica Campionato Italiano Mezza Maratona cat. Allievi - Campionato Italiano Maratona cat- J/S/M - Pordenone 24 maggio 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13101"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13124
+    anno: 2026
+    pubblicato_il: 2026-05-26
+    titolo: "CU 25 Ranking cat. R/A/J aggiornato al 18 maggio 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13124"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13137
+    anno: 2026
+    pubblicato_il: 2026-05-28
+    titolo: "CU 26 Campionato Italiano pista cat. A/J/S - Bellusco (MB) 26 - 28 GIUGNO 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13137"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13140
+    anno: 2026
+    pubblicato_il: 2026-05-28
+    titolo: "Cu 27 pROGRAMMA GARE cAMPIONATO iTALIANO PISTA CAT. r - Trofeo Skate Italia cat. R12 - Elmas 4-7 giugno 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13140"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13152
+    anno: 2026
+    pubblicato_il: 2026-06-03
+    titolo: "CU 28 Precisazioni programma gare campionato Italiano Pista cat. r - trofeo skate italia cat. r127-8 Giugno 2025"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13152"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13165
+    anno: 2026
+    pubblicato_il: 2026-06-08
+    titolo: "CU 29 Logistica - Prova Percorso - Programma gare - Giochi Nazionali B. Tiezzi - Martinsicuro (TE) 11 - 13 giugno 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13165"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13181
+    anno: 2026
+    pubblicato_il: 2026-06-13
+    titolo: "CU 30 Ranking cat. R/A/J aggiornato al 24 maggio 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13181"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13182
+    anno: 2026
+    pubblicato_il: 2026-06-13
+    titolo: "CU 31 PRECISAZIONI NORME ATTIVITA' CORSA CAMPIONATO ITALIANO STRADA MASTER - M. 5000 IN LINEA M/F 2025/26"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13182"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13215
+    anno: 2026
+    pubblicato_il: 2026-06-21
+    titolo: "CU 32 PROGRAMMA ORARIO PROVE PERCORSO DI GARA E PROGRAMMA GARE Campionato Italiano pista A-J-S -Bellusco (MB) 25 - 28 giugno 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13215"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13224
+    anno: 2026
+    pubblicato_il: 2026-06-30
+    titolo: "CU 33 Campionato Italiano su strada - Torino 16-19 luglio 2026 cat. R - Trofeo Skate Italia cat. R12 - T"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13224"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13246
+    anno: 2026
+    pubblicato_il: 2026-07-09
+    titolo: "CU 34 Campionati Europei Corsa cat. A/J/S -Cardano al Campo (VA) 12-26 luglio 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13246"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13253
+    anno: 2026
+    pubblicato_il: 2026-07-10
+    titolo: "CU 35 PROGRAMMA ORARIO PROVE PERCORSO DI GARA E PROGRAMMA GARE - CAMPIONATO ITALIANO STRADA CAT. R - TROFEO SKATE ITALIA CAT. R12 - TORINO 16-19 LUGLIO 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13253"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13270
+    anno: 2026
+    pubblicato_il: 2026-07-15
+    titolo: "CU 36 Ranking cat R/A/J aggiornato all'1 luglio 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13270"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13287
+    anno: 2026
+    pubblicato_il: 2026-07-25
+    titolo: "CU 37 Campionato Italiano su Strada cat. A/J/S/M - Vado Ligure (SV) 3-6 settembre 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13287"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13338
+    anno: 2026
+    pubblicato_il: 2026-08-26
+    titolo: "CU 38 PROGRAMMA ORARIO PROVE PERCORSO DI GARA E PROGRAMMA GARE CAMPIONATO ITALIANO CORSA SU Strada - CAT.A/J/S/M - F/M VADO LIGURE (SV) 03 - 06 SETTEMBRE 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13338"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13343
+    anno: 2026
+    pubblicato_il: 2026-08-27
+    titolo: "CU 39 ROLLER MARATHON GIOCHI DEL MEDITERRANEO - TARANTO 28 AGOSTO 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13343"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13368
+    anno: 2026
+    pubblicato_il: 2026-09-09
+    titolo: "CU 40 World Skate Games Inline SWpeed - Asunciòn (Paraguay) 1- 19 ottobre 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13368"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13385
+    anno: 2026
+    pubblicato_il: 2026-09-16
+    titolo: "CU 41 Ranking Nazionale Corsa"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13385"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13445
+    anno: 2026
+    pubblicato_il: 2026-09-29
+    titolo: "CU 42 Congelamento cambio categorie S.S. 2025 -2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13445"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13481
+    anno: 2026
+    pubblicato_il: 2026-10-10
+    titolo: "CU 43 WORLD SKATE MARATHON TOUR 2026 MARATONA DI NAPOLI WORLD SKATE CHALLENGER STAGE - NAPOLI 31 OTTOBRE 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13481"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13511
+    anno: 2026
+    pubblicato_il: 2026-10-23
+    titolo: "Cu 44 CAFF Centro Nord Italia - Bellusco MB 7 novembre 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13511"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13519
+    anno: 2026
+    pubblicato_il: 2026-10-24
+    titolo: "CU 45 CAFF FEDERALE CENTRO SUD ITALIA - SIENA 08 NOVEMBRE 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13519"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13548
+    anno: 2026
+    pubblicato_il: 2026-11-03
+    titolo: "CU 46 WINTER CAMP - PESCARA 3-5 GENNAIO PESCARA 2027"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13548"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13601
+    anno: 2026
+    pubblicato_il: 2026-11-18
+    titolo: "CU 47 CAFF Centro Nord Italia - Cantù (CO) 12 Dicembre 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13601"
+    stato: storico
+    esito: ""
+
+  - id_scaricamento: 13602
+    anno: 2026
+    pubblicato_il: 2026-11-18
+    titolo: "CU 48 CAFF Centro Sud Italia - Pescara 13 Dicembre 2026"
+    url: "https://www.fisr.it/corsa/comunicati-ufficiali/category/601-2026.html?download=13602"
+    stato: storico
+    esito: ""
